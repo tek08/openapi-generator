@@ -4,10 +4,17 @@
 #include <thread>
 #include <functional>
 
+<<<<<<< HEAD
 OAIPetApiTests::OAIPetApiTests(utility::string_t host, utility::string_t basePath){
     apiconfiguration = std::make_shared<ApiConfiguration>();
     apiconfiguration->setBaseUrl(host + basePath);
     apiconfiguration->setUserAgent(utility::conversions::to_string_t("OpenAPI Client"));
+=======
+OAIPetApiTests::OAIPetApiTests(std::string host, std::string basePath){
+    apiconfiguration = std::make_shared<ApiConfiguration>();
+    apiconfiguration->setBaseUrl(host + basePath);
+    apiconfiguration->setUserAgent(U("OpenAPI Client"));
+>>>>>>> ooof
     apiclient = std::make_shared<ApiClient>(apiconfiguration);
     api = std::make_shared<PetApi>(apiclient);
 }
@@ -25,8 +32,13 @@ void OAIPetApiTests::runTests(){
 void OAIPetApiTests::testAddPet(){
     auto req = std::make_shared<Pet>();
     req->setId(12345);
+<<<<<<< HEAD
     req->setName(utility::conversions::to_string_t("cpprest-pet"));
     req->setStatus(utility::conversions::to_string_t("123"));
+=======
+    req->setName("cpprest-pet");
+    req->setStatus(U("123"));
+>>>>>>> ooof
 
     std::function<void()> responseCallback = []()
     {
@@ -49,7 +61,11 @@ void OAIPetApiTests::testAddPet(){
 
 void OAIPetApiTests::testFindPetsByStatus(){
     auto req = std::vector<utility::string_t>();
+<<<<<<< HEAD
     req.push_back(utility::conversions::to_string_t("123"));
+=======
+    req.push_back(U("123"));
+>>>>>>> ooof
     auto reqTask = api->findPetsByStatus(req)
             .then([=](std::vector<std::shared_ptr<Pet>> pets)
             {

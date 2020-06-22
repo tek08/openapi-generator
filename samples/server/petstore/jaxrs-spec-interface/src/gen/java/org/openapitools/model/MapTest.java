@@ -17,7 +17,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class MapTest  implements Serializable {
+=======
+public class MapTest  implements Serializable {
+>>>>>>> ooof
   
   private @Valid Map<String, Map<String, String>> mapMapOfString = new HashMap<String, Map<String, String>>();
  

@@ -10,7 +10,11 @@ class UserApiImpl extends UserApi {
   /**
     * @inheritdoc
     */
+<<<<<<< HEAD
   override def createUser(user: User): Unit = {
+=======
+  override def createUser(body: User): Unit = {
+>>>>>>> ooof
     // TODO: Implement better logic
 
     
@@ -19,7 +23,11 @@ class UserApiImpl extends UserApi {
   /**
     * @inheritdoc
     */
+<<<<<<< HEAD
   override def createUsersWithArrayInput(user: List[User]): Unit = {
+=======
+  override def createUsersWithArrayInput(body: List[User]): Unit = {
+>>>>>>> ooof
     // TODO: Implement better logic
 
     
@@ -28,7 +36,11 @@ class UserApiImpl extends UserApi {
   /**
     * @inheritdoc
     */
+<<<<<<< HEAD
   override def createUsersWithListInput(user: List[User]): Unit = {
+=======
+  override def createUsersWithListInput(body: List[User]): Unit = {
+>>>>>>> ooof
     // TODO: Implement better logic
 
     
@@ -73,7 +85,11 @@ class UserApiImpl extends UserApi {
   /**
     * @inheritdoc
     */
+<<<<<<< HEAD
   override def updateUser(username: String, user: User): Unit = {
+=======
+  override def updateUser(username: String, body: User): Unit = {
+>>>>>>> ooof
     // TODO: Implement better logic
 
     

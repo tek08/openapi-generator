@@ -17,7 +17,11 @@ class ParametersTest extends TestCase
     /** @var  UserApi */
     private $userApi;
 
+<<<<<<< HEAD
     public function setUp(): void
+=======
+    public function setUp()
+>>>>>>> ooof
     {
         $this->fakeHttpClient = new FakeHttpClient();
         $this->fakeApi = new Api\FakeApi($this->fakeHttpClient);

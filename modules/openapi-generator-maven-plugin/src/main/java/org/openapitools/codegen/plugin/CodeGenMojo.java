@@ -85,6 +85,17 @@ public class CodeGenMojo extends AbstractMojo {
     @Parameter(name = "verbose", defaultValue = "false")
     private boolean verbose;
 
+<<<<<<< HEAD
+=======
+    // TODO: 5.0 Remove `language` option.
+    /**
+     * Client language to generate.
+     */
+    @Parameter(name = "language")
+    private String language;
+
+
+>>>>>>> ooof
     /**
      * The name of the generator to use.
      */
@@ -530,8 +541,25 @@ public class CodeGenMojo extends AbstractMojo {
                 configurator.setGenerateAliasAsModel(generateAliasAsModel);
             }
 
+<<<<<<< HEAD
             if (isNotEmpty(generatorName)) {
                 configurator.setGeneratorName(generatorName);
+=======
+            // TODO: After 3.0.0 release (maybe for 3.1.0): Fully deprecate lang.
+            if (isNotEmpty(generatorName)) {
+                configurator.setGeneratorName(generatorName);
+
+                // check if generatorName & language are set together, inform user this needs to be updated to prevent future issues.
+                if (isNotEmpty(language)) {
+                    LOGGER.warn("The 'language' option is deprecated and was replaced by 'generatorName'. Both can not be set together");
+                    throw new MojoExecutionException(
+                            "Illegal configuration: 'language' and  'generatorName' can not be set both, remove 'language' from your configuration");
+                }
+            } else if (isNotEmpty(language)) {
+                LOGGER.warn(
+                        "The 'language' option is deprecated and may reference language names only in the next major release (4.0). Please use 'generatorName' instead.");
+                configurator.setGeneratorName(language);
+>>>>>>> ooof
             } else {
                 LOGGER.error("A generator name (generatorName) is required.");
                 throw new MojoExecutionException("The generator requires 'generatorName'. Refer to documentation for a list of options.");
@@ -704,7 +732,11 @@ public class CodeGenMojo extends AbstractMojo {
                     originalEnvironmentVariables.put(key, GlobalSettings.getProperty(key));
                     String value = environmentVariables.get(key);
                     if (value != null) {
+<<<<<<< HEAD
                         configurator.addGlobalProperty(key, value);
+=======
+                        configurator.addSystemProperty(key, value);
+>>>>>>> ooof
                     }
                 }
             }

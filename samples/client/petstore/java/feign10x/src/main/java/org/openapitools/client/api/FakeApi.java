@@ -19,7 +19,11 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public interface FakeApi extends ApiClient.Api {
 
 
@@ -407,7 +411,11 @@ public interface FakeApi extends ApiClient.Api {
       return this;
     }
     public TestQueryParameterCollectionFormatQueryParams http(final List<String> value) {
+<<<<<<< HEAD
       put("http", EncodingUtils.encodeCollection(value, "ssv"));
+=======
+      put("http", EncodingUtils.encodeCollection(value, "space"));
+>>>>>>> ooof
       return this;
     }
     public TestQueryParameterCollectionFormatQueryParams url(final List<String> value) {

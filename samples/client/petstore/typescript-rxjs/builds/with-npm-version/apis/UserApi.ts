@@ -57,7 +57,11 @@ export class UserApi extends BaseAPI {
      * Create user
      */
     createUser = ({ body }: CreateUserRequest): Observable<void> => {
+<<<<<<< HEAD
         throwIfNullOrUndefined(body, 'body', 'createUser');
+=======
+        throwIfNullOrUndefined(body, 'createUser');
+>>>>>>> ooof
 
         const headers: HttpHeaders = {
             'Content-Type': 'application/json',
@@ -75,7 +79,11 @@ export class UserApi extends BaseAPI {
      * Creates list of users with given input array
      */
     createUsersWithArrayInput = ({ body }: CreateUsersWithArrayInputRequest): Observable<void> => {
+<<<<<<< HEAD
         throwIfNullOrUndefined(body, 'body', 'createUsersWithArrayInput');
+=======
+        throwIfNullOrUndefined(body, 'createUsersWithArrayInput');
+>>>>>>> ooof
 
         const headers: HttpHeaders = {
             'Content-Type': 'application/json',
@@ -93,7 +101,11 @@ export class UserApi extends BaseAPI {
      * Creates list of users with given input array
      */
     createUsersWithListInput = ({ body }: CreateUsersWithListInputRequest): Observable<void> => {
+<<<<<<< HEAD
         throwIfNullOrUndefined(body, 'body', 'createUsersWithListInput');
+=======
+        throwIfNullOrUndefined(body, 'createUsersWithListInput');
+>>>>>>> ooof
 
         const headers: HttpHeaders = {
             'Content-Type': 'application/json',
@@ -112,7 +124,11 @@ export class UserApi extends BaseAPI {
      * Delete user
      */
     deleteUser = ({ username }: DeleteUserRequest): Observable<void> => {
+<<<<<<< HEAD
         throwIfNullOrUndefined(username, 'username', 'deleteUser');
+=======
+        throwIfNullOrUndefined(username, 'deleteUser');
+>>>>>>> ooof
 
         return this.request<void>({
             path: '/user/{username}'.replace('{username}', encodeURI(username)),
@@ -124,7 +140,11 @@ export class UserApi extends BaseAPI {
      * Get user by user name
      */
     getUserByName = ({ username }: GetUserByNameRequest): Observable<User> => {
+<<<<<<< HEAD
         throwIfNullOrUndefined(username, 'username', 'getUserByName');
+=======
+        throwIfNullOrUndefined(username, 'getUserByName');
+>>>>>>> ooof
 
         return this.request<User>({
             path: '/user/{username}'.replace('{username}', encodeURI(username)),
@@ -136,8 +156,13 @@ export class UserApi extends BaseAPI {
      * Logs user into the system
      */
     loginUser = ({ username, password }: LoginUserRequest): Observable<string> => {
+<<<<<<< HEAD
         throwIfNullOrUndefined(username, 'username', 'loginUser');
         throwIfNullOrUndefined(password, 'password', 'loginUser');
+=======
+        throwIfNullOrUndefined(username, 'loginUser');
+        throwIfNullOrUndefined(password, 'loginUser');
+>>>>>>> ooof
 
         const query: HttpQuery = { // required parameters are used directly since they are already checked by throwIfNullOrUndefined
             'username': username,
@@ -166,8 +191,13 @@ export class UserApi extends BaseAPI {
      * Updated user
      */
     updateUser = ({ username, body }: UpdateUserRequest): Observable<void> => {
+<<<<<<< HEAD
         throwIfNullOrUndefined(username, 'username', 'updateUser');
         throwIfNullOrUndefined(body, 'body', 'updateUser');
+=======
+        throwIfNullOrUndefined(username, 'updateUser');
+        throwIfNullOrUndefined(body, 'updateUser');
+>>>>>>> ooof
 
         const headers: HttpHeaders = {
             'Content-Type': 'application/json',

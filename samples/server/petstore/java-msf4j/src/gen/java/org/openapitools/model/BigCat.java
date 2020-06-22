@@ -12,7 +12,11 @@ import org.openapitools.model.Cat;
 /**
  * BigCat
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen")
+=======
+
+>>>>>>> ooof
 public class BigCat extends Cat  {
   /**
    * Gets or Sets kind

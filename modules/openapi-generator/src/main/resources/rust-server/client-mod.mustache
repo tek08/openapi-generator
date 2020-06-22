@@ -8,11 +8,19 @@ pub mod callbacks;
 
 {{/hasCallbacks}}
 /// Convert input into a base path, e.g. "http://example:123". Also checks the scheme as it goes.
+<<<<<<< HEAD
 fn into_base_path(input: impl TryInto<Uri, Error=hyper::http::uri::InvalidUri>, correct_scheme: Option<&'static str>) -> Result<String, ClientInitError> {
     // First convert to Uri, since a base path is a subset of Uri.
     let uri = input.try_into()?;
 
     let scheme = uri.scheme_str().ok_or(ClientInitError::InvalidScheme)?;
+=======
+fn into_base_path(input: &str, correct_scheme: Option<&'static str>) -> Result<String, ClientInitError> {
+    // First convert to Uri, since a base path is a subset of Uri.
+    let uri = Uri::from_str(input)?;
+
+    let scheme = uri.scheme_part().ok_or(ClientInitError::InvalidScheme)?;
+>>>>>>> ooof
 
     // Check the scheme if necessary
     if let Some(correct_scheme) = correct_scheme {
@@ -22,11 +30,16 @@ fn into_base_path(input: impl TryInto<Uri, Error=hyper::http::uri::InvalidUri>, 
     }
 
     let host = uri.host().ok_or_else(|| ClientInitError::MissingHost)?;
+<<<<<<< HEAD
     let port = uri.port_u16().map(|x| format!(":{}", x)).unwrap_or_default();
+=======
+    let port = uri.port_part().map(|x| format!(":{}", x)).unwrap_or_default();
+>>>>>>> ooof
     Ok(format!("{}://{}{}{}", scheme, host, port, uri.path().trim_end_matches('/')))
 }
 
 /// A client that implements the API by making HTTP calls out to a server.
+<<<<<<< HEAD
 pub struct Client<S, C> where
     S: Service<
            (Request<Body>, C),
@@ -52,12 +65,25 @@ impl<S, C> fmt::Debug for Client<S, C> where
     S::Future: Send + 'static,
     S::Error: Into<crate::ServiceError> + fmt::Display,
     C: Clone + Send + Sync + 'static
+=======
+pub struct Client<F>
+{
+    /// Inner service
+    client_service: Arc<Box<dyn Service<ReqBody=Body, Future=F> + Send + Sync>>,
+
+    /// Base path of the API
+    base_path: String,
+}
+
+impl<F> fmt::Debug for Client<F>
+>>>>>>> ooof
 {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "Client {{ base_path: {} }}", self.base_path)
     }
 }
 
+<<<<<<< HEAD
 impl<S, C> Clone for Client<S, C> where
     S: Service<
            (Request<Body>, C),
@@ -71,13 +97,25 @@ impl<S, C> Clone for Client<S, C> where
             client_service: self.client_service.clone(),
             base_path: self.base_path.clone(),
             marker: PhantomData,
+=======
+impl<F> Clone for Client<F>
+{
+    fn clone(&self) -> Self {
+        Client {
+            client_service: self.client_service.clone(),
+            base_path: self.base_path.clone(),
+>>>>>>> ooof
         }
     }
 }
 
+<<<<<<< HEAD
 impl<Connector, C> Client<DropContextService<hyper::client::Client<Connector, Body>, C>, C> where
     Connector: hyper::client::connect::Connect + Clone + Send + Sync + 'static,
     C: Clone + Send + Sync + 'static,
+=======
+impl Client<hyper::client::ResponseFuture>
+>>>>>>> ooof
 {
     /// Create a client with a custom implementation of hyper::client::Connect.
     ///
@@ -90,6 +128,7 @@ impl<Connector, C> Client<DropContextService<hyper::client::Client<Connector, Bo
     ///
     /// # Arguments
     ///
+<<<<<<< HEAD
     /// * `base_path` - base path of the client API, i.e. "http://www.my-api-implementation.com"
     /// * `protocol` - Which protocol to use when constructing the request url, e.g. `Some("http")`
     /// * `connector` - Implementation of `hyper::client::Connect` to use for the client
@@ -185,6 +224,32 @@ impl<C> Client<DropContextService<hyper::client::Client<hyper::client::HttpConne
     ///
     /// # Arguments
     /// * `base_path` - base path of the client API, i.e. "http://www.my-api-implementation.com"
+=======
+    /// * `base_path` - base path of the client API, i.e. "www.my-api-implementation.com"
+    /// * `protocol` - Which protocol to use when constructing the request url, e.g. `Some("http")`
+    /// * `connector` - Implementation of `hyper::client::Connect` to use for the client
+    pub fn try_new_with_connector<C>(
+        base_path: &str,
+        protocol: Option<&'static str>,
+        connector: C,
+    ) -> Result<Self, ClientInitError> where
+      C: hyper::client::connect::Connect + 'static,
+      C::Transport: 'static,
+      C::Future: 'static,
+    {
+        let client_service = Box::new(hyper::client::Client::builder().build(connector));
+
+        Ok(Client {
+            client_service: Arc::new(client_service),
+            base_path: into_base_path(base_path, protocol)?,
+        })
+    }
+
+    /// Create an HTTP client.
+    ///
+    /// # Arguments
+    /// * `base_path` - base path of the client API, i.e. "www.my-api-implementation.com"
+>>>>>>> ooof
     pub fn try_new_http(
         base_path: &str,
     ) -> Result<Self, ClientInitError> {
@@ -192,6 +257,7 @@ impl<C> Client<DropContextService<hyper::client::Client<hyper::client::HttpConne
 
         Self::try_new_with_connector(base_path, Some("http"), http_connector)
     }
+<<<<<<< HEAD
 }
 
 #[cfg(any(target_os = "macos", target_os = "windows", target_os = "ios"))]
@@ -207,6 +273,13 @@ impl<C> Client<DropContextService<hyper::client::Client<HttpsConnector, Body>, C
     ///
     /// # Arguments
     /// * `base_path` - base path of the client API, i.e. "https://www.my-api-implementation.com"
+=======
+
+    /// Create a client with a TLS connection to the server
+    ///
+    /// # Arguments
+    /// * `base_path` - base path of the client API, i.e. "www.my-api-implementation.com"
+>>>>>>> ooof
     pub fn try_new_https(base_path: &str) -> Result<Self, ClientInitError>
     {
         let https_connector = Connector::builder()
@@ -219,7 +292,11 @@ impl<C> Client<DropContextService<hyper::client::Client<HttpsConnector, Body>, C
     /// Create a client with a TLS connection to the server using a pinned certificate
     ///
     /// # Arguments
+<<<<<<< HEAD
     /// * `base_path` - base path of the client API, i.e. "https://www.my-api-implementation.com"
+=======
+    /// * `base_path` - base path of the client API, i.e. "www.my-api-implementation.com"
+>>>>>>> ooof
     /// * `ca_certificate` - Path to CA certificate used to authenticate the server
     #[cfg(not(any(target_os = "macos", target_os = "windows", target_os = "ios")))]
     pub fn try_new_https_pinned<CA>(
@@ -240,7 +317,11 @@ impl<C> Client<DropContextService<hyper::client::Client<HttpsConnector, Body>, C
     /// Create a client with a mutually authenticated TLS connection to the server.
     ///
     /// # Arguments
+<<<<<<< HEAD
     /// * `base_path` - base path of the client API, i.e. "https://www.my-api-implementation.com"
+=======
+    /// * `base_path` - base path of the client API, i.e. "www.my-api-implementation.com"
+>>>>>>> ooof
     /// * `ca_certificate` - Path to CA certificate used to authenticate the server
     /// * `client_key` - Path to the client private key
     /// * `client_certificate` - Path to the client's public certificate associated with the private key
@@ -266,6 +347,7 @@ impl<C> Client<DropContextService<hyper::client::Client<HttpsConnector, Body>, C
     }
 }
 
+<<<<<<< HEAD
 impl<S, C> Client<S, C> where
     S: Service<
            (Request<Body>, C),
@@ -287,6 +369,20 @@ impl<S, C> Client<S, C> where
             client_service,
             base_path: into_base_path(base_path, None)?,
             marker: PhantomData,
+=======
+impl<F> Client<F>
+{
+    /// Constructor for creating a `Client` by passing in a pre-made `swagger::Service`
+    ///
+    /// This allows adding custom wrappers around the underlying transport, for example for logging.
+    pub fn try_new_with_client_service(
+        client_service: Arc<Box<dyn Service<ReqBody=Body, Future=F> + Send + Sync>>,
+        base_path: &str,
+    ) -> Result<Self, ClientInitError> {
+        Ok(Client {
+            client_service: client_service,
+            base_path: into_base_path(base_path, None)?,
+>>>>>>> ooof
         })
     }
 }
@@ -325,12 +421,17 @@ impl fmt::Display for ClientInitError {
     }
 }
 
+<<<<<<< HEAD
 impl Error for ClientInitError {
+=======
+impl error::Error for ClientInitError {
+>>>>>>> ooof
     fn description(&self) -> &str {
         "Failed to produce a hyper client."
     }
 }
 
+<<<<<<< HEAD
 #[async_trait]
 impl<S, C> Api<C> for Client<S, C> where
     S: Service<
@@ -348,6 +449,12 @@ impl<S, C> Api<C> for Client<S, C> where
         }
     }
 
+=======
+impl<C, F> Api<C> for Client<F> where
+    C: Has<XSpanIdString> {{#hasAuthMethods}}+ Has<Option<AuthData>>{{/hasAuthMethods}},
+    F: Future<Item=Response<Body>, Error=hyper::Error> + Send + 'static
+{
+>>>>>>> ooof
 {{#apiInfo}}
   {{#apis}}
     {{#operations}}

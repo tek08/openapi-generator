@@ -17,7 +17,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class ArrayOfArrayOfNumberOnly  implements Serializable {
+=======
+public class ArrayOfArrayOfNumberOnly  implements Serializable {
+>>>>>>> ooof
   
   private @Valid List<List<BigDecimal>> arrayArrayNumber = new ArrayList<List<BigDecimal>>();
 

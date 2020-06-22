@@ -4,7 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+<<<<<<< HEAD
 **Cultivar** | **string** |  | 
+=======
+**Cultivar** | Pointer to **string** |  | 
+>>>>>>> ooof
 **Mealy** | Pointer to **bool** |  | [optional] 
 
 ## Methods

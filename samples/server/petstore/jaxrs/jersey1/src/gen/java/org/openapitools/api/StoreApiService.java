@@ -19,7 +19,11 @@ import com.sun.jersey.multipart.FormDataParam;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.validation.constraints.*;
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen")
+=======
+
+>>>>>>> ooof
 public abstract class StoreApiService {
       public abstract Response deleteOrder(String orderId,SecurityContext securityContext)
       throws NotFoundException;

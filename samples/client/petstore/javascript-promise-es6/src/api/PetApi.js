@@ -38,6 +38,7 @@ export default class PetApi {
 
     /**
      * Add a new pet to the store
+<<<<<<< HEAD
      * @param {module:model/Pet} pet Pet object that needs to be added to the store
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -47,6 +48,16 @@ export default class PetApi {
       // verify the required parameter 'pet' is set
       if (pet === undefined || pet === null) {
         throw new Error("Missing the required parameter 'pet' when calling addPet");
+=======
+     * @param {module:model/Pet} body Pet object that needs to be added to the store
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    addPetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling addPet");
+>>>>>>> ooof
       }
 
       let pathParams = {
@@ -62,6 +73,7 @@ export default class PetApi {
       let contentTypes = ['application/json', 'application/xml'];
       let accepts = [];
       let returnType = null;
+<<<<<<< HEAD
       let basePaths = ['http://petstore.swagger.io/v2', 'http://path-server-test.petstore.local/v2'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof opts['_base_path_index'] !== 'undefined') {
@@ -75,16 +87,30 @@ export default class PetApi {
         '/pet', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath
+=======
+      return this.apiClient.callApi(
+        '/pet', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+>>>>>>> ooof
       );
     }
 
     /**
      * Add a new pet to the store
+<<<<<<< HEAD
      * @param {module:model/Pet} pet Pet object that needs to be added to the store
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     addPet(pet, opts) {
       return this.addPetWithHttpInfo(pet, opts)
+=======
+     * @param {module:model/Pet} body Pet object that needs to be added to the store
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    addPet(body) {
+      return this.addPetWithHttpInfo(body)
+>>>>>>> ooof
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -289,6 +315,7 @@ export default class PetApi {
 
     /**
      * Update an existing pet
+<<<<<<< HEAD
      * @param {module:model/Pet} pet Pet object that needs to be added to the store
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -298,6 +325,16 @@ export default class PetApi {
       // verify the required parameter 'pet' is set
       if (pet === undefined || pet === null) {
         throw new Error("Missing the required parameter 'pet' when calling updatePet");
+=======
+     * @param {module:model/Pet} body Pet object that needs to be added to the store
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    updatePetWithHttpInfo(body) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updatePet");
+>>>>>>> ooof
       }
 
       let pathParams = {
@@ -313,6 +350,7 @@ export default class PetApi {
       let contentTypes = ['application/json', 'application/xml'];
       let accepts = [];
       let returnType = null;
+<<<<<<< HEAD
       let basePaths = ['http://petstore.swagger.io/v2', 'http://path-server-test.petstore.local/v2'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof opts['_base_path_index'] !== 'undefined') {
@@ -326,16 +364,30 @@ export default class PetApi {
         '/pet', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath
+=======
+      return this.apiClient.callApi(
+        '/pet', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+>>>>>>> ooof
       );
     }
 
     /**
      * Update an existing pet
+<<<<<<< HEAD
      * @param {module:model/Pet} pet Pet object that needs to be added to the store
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     updatePet(pet, opts) {
       return this.updatePetWithHttpInfo(pet, opts)
+=======
+     * @param {module:model/Pet} body Pet object that needs to be added to the store
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    updatePet(body) {
+      return this.updatePetWithHttpInfo(body)
+>>>>>>> ooof
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -1,7 +1,11 @@
 <?php
 /**
  * StoreApiInterfaceTest
+<<<<<<< HEAD
  * PHP version 7.1.3
+=======
+ * PHP version 5
+>>>>>>> ooof
  *
  * @category Class
  * @package  OpenAPI\Server\Tests\Api

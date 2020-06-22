@@ -22,7 +22,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class FakeApi {
   private ApiClient apiClient;
 
@@ -732,7 +736,11 @@ if (param2 != null)
 
     localVarQueryParams.addAll(apiClient.parameterToPairs("csv", "pipe", pipe));
     localVarQueryParams.addAll(apiClient.parameterToPairs("csv", "ioutil", ioutil));
+<<<<<<< HEAD
     localVarQueryParams.addAll(apiClient.parameterToPairs("ssv", "http", http));
+=======
+    localVarQueryParams.addAll(apiClient.parameterToPairs("space", "http", http));
+>>>>>>> ooof
     localVarQueryParams.addAll(apiClient.parameterToPairs("csv", "url", url));
     localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "context", context));
 

@@ -14,17 +14,27 @@
 package org.openapitools.client.model;
 
 import org.openapitools.client.ApiException;
+<<<<<<< HEAD
 import java.util.Objects;
+=======
+>>>>>>> ooof
 import java.lang.reflect.Type;
 import java.util.Map;
 import javax.ws.rs.core.GenericType;
 
+<<<<<<< HEAD
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * Abstract class for oneOf,anyOf schemas defined in OpenAPI spec
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+/**
+ * Abstract class for oneOf,anyOf schemas defined in OpenAPI spec
+ */
+
+>>>>>>> ooof
 public abstract class AbstractOpenApiSchema {
 
     // store the actual instance of the schema/object
@@ -41,28 +51,44 @@ public abstract class AbstractOpenApiSchema {
         this.isNullable = isNullable;
     }
 
+<<<<<<< HEAD
     /**
      * Get the list of oneOf/anyOf composed schemas allowed to be stored in this object
+=======
+    /***
+     * Get the list of schemas allowed to be stored in this object
+>>>>>>> ooof
      *
      * @return an instance of the actual schema/object
      */
     public abstract Map<String, GenericType> getSchemas();
 
+<<<<<<< HEAD
     /**
+=======
+    /***
+>>>>>>> ooof
      * Get the actual instance
      *
      * @return an instance of the actual schema/object
      */
+<<<<<<< HEAD
     @JsonValue
     public Object getActualInstance() {return instance;}
 
     /**
+=======
+    public Object getActualInstance() {return instance;}
+
+    /***
+>>>>>>> ooof
      * Set the actual instance
      *
      * @param instance the actual instance of the schema/object
      */
     public void setActualInstance(Object instance) {this.instance = instance;}
 
+<<<<<<< HEAD
     /**
      * Get the instant recursively when the schemas defined in oneOf/anyof happen to be oneOf/anyOf schema as well
      *
@@ -83,6 +109,9 @@ public abstract class AbstractOpenApiSchema {
     }
 
     /**
+=======
+    /***
+>>>>>>> ooof
      * Get the schema type (e.g. anyOf, oneOf)
      *
      * @return the schema type
@@ -91,6 +120,7 @@ public abstract class AbstractOpenApiSchema {
         return schemaType;
     }
 
+<<<<<<< HEAD
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -132,6 +162,9 @@ public abstract class AbstractOpenApiSchema {
     }
 
     /**
+=======
+    /***
+>>>>>>> ooof
      * Is nullalble
      *
      * @return true if it's nullable
@@ -143,7 +176,10 @@ public abstract class AbstractOpenApiSchema {
             return Boolean.FALSE;
         }
     }
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> ooof
 }

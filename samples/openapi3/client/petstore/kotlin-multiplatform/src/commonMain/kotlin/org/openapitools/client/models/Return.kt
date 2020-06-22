@@ -14,7 +14,10 @@ package org.openapitools.client.models
 
 import kotlinx.serialization.*
 import kotlinx.serialization.internal.CommonEnumSerializer
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * Model for testing reserved words
  * @param `return` 
@@ -22,5 +25,11 @@ import kotlinx.serialization.internal.CommonEnumSerializer
 @Serializable
 data class Return (
     @SerialName(value = "return") val `return`: kotlin.Int? = null
+<<<<<<< HEAD
 )
+=======
+) 
+
+
+>>>>>>> ooof
 

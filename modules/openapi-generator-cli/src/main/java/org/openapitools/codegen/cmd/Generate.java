@@ -29,7 +29,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
+<<<<<<< HEAD
 import org.apache.commons.lang3.StringUtils;
+=======
+>>>>>>> ooof
 import org.openapitools.codegen.*;
 import org.openapitools.codegen.config.CodegenConfigurator;
 import org.slf4j.Logger;
@@ -53,8 +56,13 @@ public class Generate extends OpenApiGeneratorCommand {
             description = "where to write the generated files (current dir by default)")
     private String output = "";
 
+<<<<<<< HEAD
     @Option(name = {"-i", "--input-spec"}, title = "spec file",
             description = "location of the OpenAPI spec, as URL or file (required if not loaded via config using -c)")
+=======
+    @Option(name = {"-i", "--input-spec"}, title = "spec file", required = true,
+            description = "location of the OpenAPI spec, as URL or file (required)")
+>>>>>>> ooof
     private String spec;
 
     @Option(name = {"-t", "--template-dir"}, title = "template directory",
@@ -72,8 +80,14 @@ public class Generate extends OpenApiGeneratorCommand {
                     + "Pass in a URL-encoded string of name:header with a comma separating multiple values")
     private String auth;
 
+<<<<<<< HEAD
     @Option(
             name = {"--global-property"},
+=======
+    // TODO: Remove -D short option in 5.0
+    @Option(
+            name = {"-D", "--global-property"},
+>>>>>>> ooof
             title = "global properties",
             description = "sets specified global properties (previously called 'system properties') in "
                     + "the format of name=value,name=value (or multiple options, each with name=value)")
@@ -231,7 +245,11 @@ public class Generate extends OpenApiGeneratorCommand {
     @Option(name = {"--log-to-stderr"},
             title = "Log to STDERR",
             description = "write all log messages (not just errors) to STDOUT."
+<<<<<<< HEAD
                     + " Useful for piping the JSON output of debug options (e.g. `--global-property debugOperations`) to an external parser directly while testing a generator.")
+=======
+                    + " Useful for piping the JSON output of debug options (e.g. `-DdebugOperations`) to an external parser directly while testing a generator.")
+>>>>>>> ooof
     private Boolean logToStderr;
 
     @Option(name = {"--enable-post-process-file"}, title = "enable post-process file", description = CodegenConstants.ENABLE_POST_PROCESS_FILE_DESC)
@@ -265,10 +283,13 @@ public class Generate extends OpenApiGeneratorCommand {
             if (configFile != null && configFile.length() > 0) {
                 // attempt to load from configFile
                 configurator = CodegenConfigurator.fromFile(configFile);
+<<<<<<< HEAD
             } else if (StringUtils.isEmpty(spec)) {
                 // if user doesn't pass configFile and does not pass spec, we can fail immediately because one of these two is required to run.
                 System.err.println("[error] Required option '-i' is missing");
                 System.exit(1);
+=======
+>>>>>>> ooof
             }
 
             // if a config file wasn't specified, or we were unable to read it
@@ -300,9 +321,17 @@ public class Generate extends OpenApiGeneratorCommand {
             configurator.setInputSpec(spec);
         }
 
+<<<<<<< HEAD
         // Generator name should not be validated here, as it's validated in toClientOptInput
         if (isNotEmpty(generatorName)) {
             configurator.setGeneratorName(generatorName);
+=======
+        if (isNotEmpty(generatorName)) {
+            configurator.setGeneratorName(generatorName);
+        } else {
+            System.err.println("[error] A generator name (--generator-name / -g) is required.");
+            System.exit(1);
+>>>>>>> ooof
         }
 
         if (isNotEmpty(output)) {
@@ -410,6 +439,10 @@ public class Generate extends OpenApiGeneratorCommand {
         }
 
         if (globalProperties != null && !globalProperties.isEmpty()) {
+<<<<<<< HEAD
+=======
+            System.err.println("[DEPRECATED] -D arguments after 'generate' are application arguments and not Java System Properties, please consider changing to --global-property, apply your system properties to JAVA_OPTS, or move the -D arguments before the jar option.");
+>>>>>>> ooof
             applyGlobalPropertiesKvpList(globalProperties, configurator);
         }
         applyInstantiationTypesKvpList(instantiationTypes, configurator);

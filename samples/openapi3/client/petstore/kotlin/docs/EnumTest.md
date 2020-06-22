@@ -4,8 +4,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+<<<<<<< HEAD
 **enumStringRequired** | [**inline**](#EnumStringRequiredEnum) |  | 
 **enumString** | [**inline**](#EnumStringEnum) |  |  [optional]
+=======
+**enumString** | [**inline**](#EnumStringEnum) |  |  [optional]
+**enumStringRequired** | [**inline**](#EnumStringRequiredEnum) |  | 
+>>>>>>> ooof
 **enumInteger** | [**inline**](#EnumIntegerEnum) |  |  [optional]
 **enumNumber** | [**inline**](#EnumNumberEnum) |  |  [optional]
 **outerEnum** | [**OuterEnum**](OuterEnum.md) |  |  [optional]
@@ -14,6 +19,7 @@ Name | Type | Description | Notes
 **outerEnumIntegerDefaultValue** | [**OuterEnumIntegerDefaultValue**](OuterEnumIntegerDefaultValue.md) |  |  [optional]
 
 
+<<<<<<< HEAD
 <a name="EnumStringRequiredEnum"></a>
 ## Enum: enum_string_required
 Name | Value
@@ -26,6 +32,20 @@ enumStringRequired | UPPER, lower,
 Name | Value
 ---- | -----
 enumString | UPPER, lower, 
+=======
+<a name="EnumStringEnum"></a>
+## Enum: enum_string
+Name | Value
+---- | -----
+enumString | UPPER, lower, 
+
+
+<a name="EnumStringRequiredEnum"></a>
+## Enum: enum_string_required
+Name | Value
+---- | -----
+enumStringRequired | UPPER, lower, 
+>>>>>>> ooof
 
 
 <a name="EnumIntegerEnum"></a>

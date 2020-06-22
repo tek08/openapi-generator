@@ -16,7 +16,11 @@ import java.io.InputStream;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSCXFCDIServerCodegen")
+=======
+
+>>>>>>> ooof
 public interface StoreApiService {
       public Response deleteOrder(String orderId, SecurityContext securityContext);
       public Response getInventory(SecurityContext securityContext);

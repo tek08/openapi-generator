@@ -58,7 +58,11 @@ impl<T> RequestParser<T> for ApiRequestParser {
           {{#urls}}
             {{#requests}}
             // {{{operationId}}} - {{{httpMethod}}} {{{path}}}
+<<<<<<< HEAD
             &hyper::Method::{{{vendorExtensions.x-http-method}}} if path.matched(paths::ID_{{{vendorExtensions.x-path-id}}}) => Ok("{{{operationId}}}"),
+=======
+            &hyper::Method::{{{vendorExtensions.HttpMethod}}} if path.matched(paths::ID_{{{vendorExtensions.PATH_ID}}}) => Ok("{{{operationId}}}"),
+>>>>>>> ooof
             {{/requests}}
           {{/urls}}
         {{/callbacks}}

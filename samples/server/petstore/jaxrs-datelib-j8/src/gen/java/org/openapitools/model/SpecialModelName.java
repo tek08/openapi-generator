@@ -29,7 +29,11 @@ import javax.validation.Valid;
 @JsonPropertyOrder({
   SpecialModelName.JSON_PROPERTY_$_SPECIAL_PROPERTY_NAME
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen")
+=======
+
+>>>>>>> ooof
 public class SpecialModelName  implements Serializable {
   public static final String JSON_PROPERTY_$_SPECIAL_PROPERTY_NAME = "$special[property.name]";
   @JsonProperty(JSON_PROPERTY_$_SPECIAL_PROPERTY_NAME)

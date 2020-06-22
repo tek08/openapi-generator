@@ -590,11 +590,20 @@ public abstract class AbstractCSharpCodegen extends DefaultCodegen implements Co
      * @param models list of all models
      */
     protected void updateValueTypeProperty(Map<String, Object> models) {
+<<<<<<< HEAD
+=======
+        // TODO: 5.0: Remove the camelCased vendorExtension within the below loop and ensure templates use the newer property naming.
+        once(LOGGER).warn("4.3.0 has deprecated the use of vendor extensions which don't follow lower-kebab casing standards with x- prefix.");
+>>>>>>> ooof
         for (Map.Entry<String, Object> entry : models.entrySet()) {
             String openAPIName = entry.getKey();
             CodegenModel model = ModelUtils.getModelByName(openAPIName, models);
             if (model != null) {
                 for (CodegenProperty var : model.vars) {
+<<<<<<< HEAD
+=======
+                    var.vendorExtensions.put("isValueType", isValueType(var));  // TODO: 5.0 Remove
+>>>>>>> ooof
                     var.vendorExtensions.put("x-is-value-type", isValueType(var));
                 }
             }
@@ -986,7 +995,11 @@ public abstract class AbstractCSharpCodegen extends DefaultCodegen implements Co
             return getArrayTypeDeclaration((ArraySchema) p);
         } else if (ModelUtils.isMapSchema(p)) {
             // Should we also support maps of maps?
+<<<<<<< HEAD
             Schema inner = getAdditionalProperties(p);
+=======
+            Schema inner = ModelUtils.getAdditionalProperties(p);
+>>>>>>> ooof
             return getSchemaType(p) + "<string, " + getTypeDeclaration(inner) + ">";
         }
         return super.getTypeDeclaration(p);

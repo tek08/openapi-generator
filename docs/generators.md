@@ -15,7 +15,10 @@ The following generators are available:
 * [cpp-qt5-client](generators/cpp-qt5-client.md)  
 * [cpp-restsdk](generators/cpp-restsdk.md)  
 * [cpp-tizen](generators/cpp-tizen.md)  
+<<<<<<< HEAD
 * [cpp-ue4 (beta)](generators/cpp-ue4.md)  
+=======
+>>>>>>> ooof
 * [csharp](generators/csharp.md)  
 * [csharp-dotnet2 (deprecated)](generators/csharp-dotnet2.md)  
 * [csharp-netcore](generators/csharp-netcore.md)  
@@ -58,11 +61,20 @@ The following generators are available:
 * [scala-httpclient-deprecated (deprecated)](generators/scala-httpclient-deprecated.md)  
 * [scala-sttp (beta)](generators/scala-sttp.md)  
 * [scalaz](generators/scalaz.md)  
+<<<<<<< HEAD
 * [swift4-deprecated (deprecated)](generators/swift4-deprecated.md)  
 * [swift5 (beta)](generators/swift5.md)  
 * [typescript (experimental)](generators/typescript.md)  
 * [typescript-angular](generators/typescript-angular.md)  
 * [typescript-angularjs-deprecated (deprecated)](generators/typescript-angularjs-deprecated.md)  
+=======
+* [swift2-deprecated (deprecated)](generators/swift2-deprecated.md)  
+* [swift3-deprecated (deprecated)](generators/swift3-deprecated.md)  
+* [swift4-deprecated (deprecated)](generators/swift4-deprecated.md)  
+* [swift5 (beta)](generators/swift5.md)  
+* [typescript-angular](generators/typescript-angular.md)  
+* [typescript-angularjs](generators/typescript-angularjs.md)  
+>>>>>>> ooof
 * [typescript-aurelia](generators/typescript-aurelia.md)  
 * [typescript-axios](generators/typescript-axios.md)  
 * [typescript-fetch](generators/typescript-fetch.md)  
@@ -105,6 +117,10 @@ The following generators are available:
 * [kotlin-spring](generators/kotlin-spring.md)  
 * [kotlin-vertx (beta)](generators/kotlin-vertx.md)  
 * [nodejs-express-server (beta)](generators/nodejs-express-server.md)  
+<<<<<<< HEAD
+=======
+* [nodejs-server-deprecated (deprecated)](generators/nodejs-server-deprecated.md)  
+>>>>>>> ooof
 * [php-laravel](generators/php-laravel.md)  
 * [php-lumen](generators/php-lumen.md)  
 * [php-silex-deprecated (deprecated)](generators/php-silex-deprecated.md)  

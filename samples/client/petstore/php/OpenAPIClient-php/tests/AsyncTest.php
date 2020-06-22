@@ -14,7 +14,11 @@ class AsyncTest extends TestCase
     /** @var  int */
     private $petId;
 
+<<<<<<< HEAD
     public function setUp(): void
+=======
+    public function setUp()
+>>>>>>> ooof
     {
         $this->api = new Api\PetApi();
 
@@ -58,6 +62,7 @@ class AsyncTest extends TestCase
 
         list($pet, $status, $headers) = $promise->wait();
         $this->assertEquals(200, $status);
+<<<<<<< HEAD
         $this->assertIsArray($headers);
         $this->assertInstanceOf(Pet::class, $pet);
     }
@@ -65,6 +70,17 @@ class AsyncTest extends TestCase
     public function testAsyncThrowingException()
     {
         $this->expectException(\OpenAPI\Client\ApiException::class);
+=======
+        $this->assertInternalType('array', $headers);
+        $this->assertInstanceOf(Pet::class, $pet);
+    }
+
+    /**
+     * @expectedException \OpenAPI\Client\ApiException
+     */
+    public function testAsyncThrowingException()
+    {
+>>>>>>> ooof
         $promise = $this->api->getPetByIdAsync(0);
         $promise->wait();
     }
@@ -78,9 +94,17 @@ class AsyncTest extends TestCase
         sleep(1);
     }
 
+<<<<<<< HEAD
     public function testAsyncHttpInfoThrowingException()
     {
         $this->expectException(\OpenAPI\Client\ApiException::class);
+=======
+    /**
+     * @expectedException \OpenAPI\Client\ApiException
+     */
+    public function testAsyncHttpInfoThrowingException()
+    {
+>>>>>>> ooof
         $promise = $this->api->getPetByIdAsyncWithHttpInfo(0);
         $promise->wait();
     }

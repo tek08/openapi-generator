@@ -3,7 +3,10 @@ package org.openapitools.api;
 import java.io.File;
 import org.openapitools.model.ModelApiResponse;
 import org.openapitools.model.Pet;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
@@ -18,7 +21,11 @@ import javax.validation.Valid;
 
 @Path("/pet")
 @Api(description = "the pet API")
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class PetApi {
+=======
+public class PetApi {
+>>>>>>> ooof
 
     @POST
     @Consumes({ "application/json", "application/xml" })
@@ -72,17 +79,28 @@ import javax.validation.Valid;
     @GET
     @Path("/findByTags")
     @Produces({ "application/xml", "application/json" })
+<<<<<<< HEAD
     @ApiOperation(value = "Finds Pets by tags", notes = "Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.", response = Pet.class, responseContainer = "Set", authorizations = {
+=======
+    @ApiOperation(value = "Finds Pets by tags", notes = "Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.", response = Pet.class, responseContainer = "List", authorizations = {
+>>>>>>> ooof
         @Authorization(value = "petstore_auth", scopes = {
             @AuthorizationScope(scope = "write:pets", description = "modify pets in your account"),
             @AuthorizationScope(scope = "read:pets", description = "read your pets")
         })
     }, tags={ "pet",  })
     @ApiResponses(value = { 
+<<<<<<< HEAD
         @ApiResponse(code = 200, message = "successful operation", response = Pet.class, responseContainer = "Set"),
         @ApiResponse(code = 400, message = "Invalid tag value", response = Void.class)
     })
     public Response findPetsByTags(@QueryParam("tags") @NotNull   @ApiParam("Tags to filter by")  Set<String> tags) {
+=======
+        @ApiResponse(code = 200, message = "successful operation", response = Pet.class, responseContainer = "List"),
+        @ApiResponse(code = 400, message = "Invalid tag value", response = Void.class)
+    })
+    public Response findPetsByTags(@QueryParam("tags") @NotNull   @ApiParam("Tags to filter by")  List<String> tags) {
+>>>>>>> ooof
         return Response.ok().entity("magic!").build();
     }
 

@@ -43,7 +43,11 @@ public class FakeApiServiceImpl implements FakeApi {
     {
         try {
             File cacheFile = new File(System.getProperty("jaxrs.test.server.json",
+<<<<<<< HEAD
                     "/Users/joschi/src/openapi-generator/samples/server/petstore/jaxrs-cxf-test-data/src/main/resources/test-data.json"));
+=======
+                    "/home/tduperron/git/zomzog/openapi-generator/samples/server/petstore/jaxrs-cxf-test-data/src/main/resources/test-data.json"));
+>>>>>>> ooof
             cache = JsonCache.Factory.instance.get("test-data").load(cacheFile).child("/org.openapitools.api/FakeApi");
         } catch (CacheException e) {
             e.printStackTrace();
@@ -128,9 +132,15 @@ public class FakeApiServiceImpl implements FakeApi {
     }
 
     /**
+<<<<<<< HEAD
      * Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트
      *
      * Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트
+=======
+     * Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
+     *
+     * Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
+>>>>>>> ooof
      *
      */
     @Override
@@ -178,9 +188,12 @@ public class FakeApiServiceImpl implements FakeApi {
 
     }
 
+<<<<<<< HEAD
     @Override
     public void testQueryParameterCollectionFormat(List<String> pipe, List<String> ioutil, List<String> http, List<String> url, List<String> context) {
 
     }
 
+=======
+>>>>>>> ooof
 }

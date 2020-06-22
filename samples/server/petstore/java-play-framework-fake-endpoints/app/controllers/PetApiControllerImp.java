@@ -3,16 +3,25 @@ package controllers;
 import java.io.InputStream;
 import apimodels.ModelApiResponse;
 import apimodels.Pet;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 
 import play.mvc.Http;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.HashMap;
+<<<<<<< HEAD
 import java.util.LinkedHashSet;
 import java.io.FileInputStream;
 import javax.validation.constraints.*;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen")
+=======
+import java.io.FileInputStream;
+import javax.validation.constraints.*;
+
+>>>>>>> ooof
 public class PetApiControllerImp implements PetApiControllerImpInterface {
     @Override
     public void addPet(Pet body) throws Exception {
@@ -31,9 +40,15 @@ public class PetApiControllerImp implements PetApiControllerImpInterface {
     }
 
     @Override
+<<<<<<< HEAD
     public Set<Pet> findPetsByTags( @NotNull Set<String> tags) throws Exception {
         //Do your magic!!!
         return new LinkedHashSet<Pet>();
+=======
+    public List<Pet> findPetsByTags( @NotNull List<String> tags) throws Exception {
+        //Do your magic!!!
+        return new ArrayList<Pet>();
+>>>>>>> ooof
     }
 
     @Override

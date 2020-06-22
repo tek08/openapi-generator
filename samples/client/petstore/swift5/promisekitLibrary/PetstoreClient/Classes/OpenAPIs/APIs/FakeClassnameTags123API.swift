@@ -8,8 +8,11 @@
 import Foundation
 import PromiseKit
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 open class FakeClassnameTags123API {
     /**
      To test class name in snake case

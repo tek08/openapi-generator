@@ -30,7 +30,11 @@ import java.util.Map;
 /**
  * AdditionalPropertiesNumber
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class AdditionalPropertiesNumber extends HashMap<String, BigDecimal> {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

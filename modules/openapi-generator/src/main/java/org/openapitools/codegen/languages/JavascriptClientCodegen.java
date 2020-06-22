@@ -139,12 +139,18 @@ public class JavascriptClientCodegen extends DefaultCodegen implements CodegenCo
         defaultIncludes = new HashSet<String>(languageSpecificPrimitives);
 
         instantiationTypes.put("array", "Array");
+<<<<<<< HEAD
         instantiationTypes.put("set", "Array");
+=======
+>>>>>>> ooof
         instantiationTypes.put("list", "Array");
         instantiationTypes.put("map", "Object");
         typeMapping.clear();
         typeMapping.put("array", "Array");
+<<<<<<< HEAD
         typeMapping.put("set", "Array");
+=======
+>>>>>>> ooof
         typeMapping.put("map", "Object");
         typeMapping.put("List", "Array");
         typeMapping.put("boolean", "Boolean");
@@ -198,7 +204,11 @@ public class JavascriptClientCodegen extends DefaultCodegen implements CodegenCo
         cliOptions.add(new CliOption(CodegenConstants.HIDE_GENERATION_TIMESTAMP, CodegenConstants.HIDE_GENERATION_TIMESTAMP_DESC)
                 .defaultValue(Boolean.TRUE.toString()));
         cliOptions.add(new CliOption(USE_ES6,
+<<<<<<< HEAD
                 "use JavaScript ES6 (ECMAScript 6). Default is ES6. (This option has been deprecated and will be removed in the 5.x release as ES5 is no longer supported)")
+=======
+                "use JavaScript ES6 (ECMAScript 6) (beta). Default is ES6.")
+>>>>>>> ooof
                 .defaultValue(Boolean.TRUE.toString()));
         cliOptions.add(new CliOption(CodegenConstants.MODEL_PROPERTY_NAMING, CodegenConstants.MODEL_PROPERTY_NAMING_DESC).defaultValue("camelCase"));
         cliOptions.add(new CliOption(NPM_REPOSITORY, "Use this property to set an url your private npmRepo in the package.json"));
@@ -613,7 +623,11 @@ public class JavascriptClientCodegen extends DefaultCodegen implements CodegenCo
             Schema inner = ap.getItems();
             return "[" + getTypeDeclaration(inner) + "]";
         } else if (ModelUtils.isMapSchema(p)) {
+<<<<<<< HEAD
             Schema inner = getAdditionalProperties(p);
+=======
+            Schema inner = ModelUtils.getAdditionalProperties(p);
+>>>>>>> ooof
             return "{String: " + getTypeDeclaration(inner) + "}";
         }
         return super.getTypeDeclaration(p);
@@ -862,6 +876,12 @@ public class JavascriptClientCodegen extends DefaultCodegen implements CodegenCo
     @Override
     public CodegenModel fromModel(String name, Schema model) {
 
+<<<<<<< HEAD
+=======
+        // TODO: 5.0: Remove the camelCased vendorExtension below and ensure templates use the newer property naming.
+        once(LOGGER).warn("4.3.0 has deprecated the use of vendor extensions which don't follow lower-kebab casing standards with x- prefix.");
+
+>>>>>>> ooof
         Map<String, Schema> allDefinitions = ModelUtils.getSchemas(this.openAPI);
         CodegenModel codegenModel = super.fromModel(name, model);
 
@@ -874,6 +894,7 @@ public class JavascriptClientCodegen extends DefaultCodegen implements CodegenCo
             ArraySchema am = (ArraySchema) model;
             if (codegenModel != null && am.getItems() != null) {
                 String itemType = getSchemaType(am.getItems());
+<<<<<<< HEAD
                 codegenModel.vendorExtensions.put("x-is-array", true);
                 codegenModel.vendorExtensions.put("x-item-type", itemType);
             }
@@ -881,10 +902,27 @@ public class JavascriptClientCodegen extends DefaultCodegen implements CodegenCo
             if (codegenModel != null && getAdditionalProperties(model) != null) {
                 String itemType = getSchemaType(getAdditionalProperties(model));
                 codegenModel.vendorExtensions.put("x-is-map", true);
+=======
+                codegenModel.vendorExtensions.put("x-isArray", true); // TODO: 5.0 Remove
+                codegenModel.vendorExtensions.put("x-is-array", true);
+                codegenModel.vendorExtensions.put("x-itemType", itemType); // TODO: 5.0 Remove
+                codegenModel.vendorExtensions.put("x-item-type", itemType);
+            }
+        } else if (ModelUtils.isMapSchema(model)) {
+            if (codegenModel != null && ModelUtils.getAdditionalProperties(model) != null) {
+                String itemType = getSchemaType(ModelUtils.getAdditionalProperties(model));
+                codegenModel.vendorExtensions.put("x-isMap", true); // TODO: 5.0 Remove
+                codegenModel.vendorExtensions.put("x-is-map", true);
+                codegenModel.vendorExtensions.put("x-itemType", itemType); // TODO: 5.0 Remove
+>>>>>>> ooof
                 codegenModel.vendorExtensions.put("x-item-type", itemType);
             } else {
                 String type = model.getType();
                 if (codegenModel != null && isPrimitiveType(type)) {
+<<<<<<< HEAD
+=======
+                    codegenModel.vendorExtensions.put("x-isPrimitive", true); // TODO: 5.0 Remove
+>>>>>>> ooof
                     codegenModel.vendorExtensions.put("x-is-primitive", true);
                 }
             }
@@ -917,7 +955,11 @@ public class JavascriptClientCodegen extends DefaultCodegen implements CodegenCo
 
     private String getJSDocType(CodegenModel cm, CodegenProperty cp) {
         if (Boolean.TRUE.equals(cp.isContainer)) {
+<<<<<<< HEAD
             if (cp.containerType.equals("array") || cp.containerType.equals("set"))
+=======
+            if (cp.containerType.equals("array"))
+>>>>>>> ooof
                 return "Array.<" + getJSDocType(cm, cp.items) + ">";
             else if (cp.containerType.equals("map"))
                 return "Object.<String, " + getJSDocType(cm, cp.items) + ">";
@@ -984,6 +1026,12 @@ public class JavascriptClientCodegen extends DefaultCodegen implements CodegenCo
         // vendor-extension: x-codegen-argList.
         Map<String, Object> operations = (Map<String, Object>) objs.get("operations");
 
+<<<<<<< HEAD
+=======
+        // TODO: 5.0: Remove the camelCased vendorExtension below and ensure templates use the newer property naming.
+        once(LOGGER).warn("4.3.0 has deprecated the use of vendor extensions which don't follow lower-kebab casing standards with x- prefix.");
+
+>>>>>>> ooof
         if (operations != null) {
             List<CodegenOperation> ops = (List<CodegenOperation>) operations.get("operation");
             for (CodegenOperation operation : ops) {
@@ -1010,7 +1058,13 @@ public class JavascriptClientCodegen extends DefaultCodegen implements CodegenCo
                     argList.add("callback");
                 }
                 String joinedArgList = StringUtils.join(argList, ", ");
+<<<<<<< HEAD
                 operation.vendorExtensions.put("x-codegen-arg-list", joinedArgList);
+=======
+                operation.vendorExtensions.put("x-codegen-argList", joinedArgList); // TODO: 5.0 Remove
+                operation.vendorExtensions.put("x-codegen-arg-list", joinedArgList);
+                operation.vendorExtensions.put("x-codegen-hasOptionalParams", hasOptionalParams); // TODO: 5.0 Remove
+>>>>>>> ooof
                 operation.vendorExtensions.put("x-codegen-has-optional-params", hasOptionalParams);
 
                 // Store JSDoc type specification into vendor-extension: x-jsdoc-type.
@@ -1036,6 +1090,12 @@ public class JavascriptClientCodegen extends DefaultCodegen implements CodegenCo
         objs = super.postProcessModelsEnum(objs);
         List<Object> models = (List<Object>) objs.get("models");
 
+<<<<<<< HEAD
+=======
+        // TODO: 5.0: Remove the camelCased vendorExtension below and ensure templates use the newer property naming.
+        once(LOGGER).warn("4.3.0 has deprecated the use of vendor extensions which don't follow lower-kebab casing standards with x- prefix.");
+
+>>>>>>> ooof
         for (Object _mo : models) {
             Map<String, Object> mo = (Map<String, Object>) _mo;
             CodegenModel cm = (CodegenModel) mo.get("model");
@@ -1086,8 +1146,15 @@ public class JavascriptClientCodegen extends DefaultCodegen implements CodegenCo
             for (CodegenProperty var : cm.vars) {
                 Optional.ofNullable(lastRequired).ifPresent(_lastRequired -> {
                     if (var == _lastRequired) {
+<<<<<<< HEAD
                         var.vendorExtensions.put("x-codegen-has-more-required", false);
                     } else if (var.required) {
+=======
+                        var.vendorExtensions.put("x-codegen-hasMoreRequired", false); // TODO: 5.0 Remove
+                        var.vendorExtensions.put("x-codegen-has-more-required", false);
+                    } else if (var.required) {
+                        var.vendorExtensions.put("x-codegen-hasMoreRequired", true); // TODO: 5.0 Remove
+>>>>>>> ooof
                         var.vendorExtensions.put("x-codegen-has-more-required", true);
                     }
                 });

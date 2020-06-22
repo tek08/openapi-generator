@@ -10,7 +10,11 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen")
+=======
+
+>>>>>>> ooof
 public class Tag   {
   @JsonProperty("id")
   private Long id;

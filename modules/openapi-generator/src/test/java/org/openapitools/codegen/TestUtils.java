@@ -18,6 +18,7 @@ import io.swagger.v3.oas.models.servers.Server;
 import io.swagger.v3.parser.core.models.ParseOptions;
 
 import org.openapitools.codegen.MockDefaultGenerator.WrittenTemplateBasedFile;
+<<<<<<< HEAD
 import org.openapitools.codegen.utils.ModelUtils;
 import org.testng.Assert;
 
@@ -28,6 +29,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collections;
 import java.util.List;
+=======
+import org.testng.Assert;
+
+import java.io.File;
+import java.util.Collections;
+>>>>>>> ooof
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -58,6 +65,7 @@ public class TestUtils {
      * @return A "raw" OpenAPI document
      */
     public static OpenAPI parseSpec(String specFilePath) {
+<<<<<<< HEAD
         OpenAPI openAPI = new OpenAPIParser().readLocation(specFilePath, null, new ParseOptions()).getOpenAPI();
         // Invoke helper function to get the original swagger version.
         // See https://github.com/swagger-api/swagger-parser/pull/1374
@@ -71,6 +79,13 @@ public class TestUtils {
         // Invoke helper function to get the original swagger version.
         ModelUtils.getOpenApiVersion(openAPI, jsonOrYaml, null);
         return openAPI;
+=======
+        return new OpenAPIParser().readLocation(specFilePath, null, new ParseOptions()).getOpenAPI();
+    }
+
+    public static OpenAPI parseContent(String jsonOrYaml) {
+        return new OpenAPIParser().readContents(jsonOrYaml, null, null).getOpenAPI();
+>>>>>>> ooof
     }
 
     public static OpenAPI createOpenAPI() {
@@ -97,6 +112,7 @@ public class TestUtils {
         return openAPI;
     }
 
+<<<<<<< HEAD
     /**
      * Extract file from {@link MockDefaultGenerator}
      *
@@ -108,6 +124,8 @@ public class TestUtils {
      * @deprecated Since 5.0. Please avoid this method and usage of {@link MockDefaultGenerator}, prefer {@link DefaultGenerator#DefaultGenerator(Boolean)} with dryRun=true.
      */
     @Deprecated
+=======
+>>>>>>> ooof
     public static WrittenTemplateBasedFile getTemplateBasedFile(MockDefaultGenerator generator, File root, String filename) {
         String defaultApiFilename = new File(root, filename).getAbsolutePath().replace("\\", "/");
         Optional<WrittenTemplateBasedFile> optional = generator.getTemplateBasedFiles().stream().filter(f -> defaultApiFilename.equals(f.getOutputFilename())).findFirst();
@@ -115,6 +133,7 @@ public class TestUtils {
         return optional.get();
     }
 
+<<<<<<< HEAD
     public static void ensureContainsFile(List<File> generatedFiles, File root, String filename) {
         Path path = root.toPath().resolve(filename);
         assertTrue(generatedFiles.contains(path.toFile()), "File '" + path.toAbsolutePath().toString() + "' was not found in the list of generated files");
@@ -123,6 +142,26 @@ public class TestUtils {
     public static void ensureDoesNotContainsFile(List<File> generatedFiles, File root, String filename) {
         Path path = root.toPath().resolve(filename);
         assertFalse(generatedFiles.contains(path.toFile()), "File '" + path.toAbsolutePath().toString() + "' was found in the list of generated files");
+=======
+    public static void ensureContainsFile(Map<String, String> generatedFiles, File root, String filename) {
+        File file = new File(root, filename);
+        String absoluteFilename = file.getAbsolutePath().replace("\\", "/");
+        if (!generatedFiles.containsKey(absoluteFilename)) {
+            fail("Could not find '" + absoluteFilename + "' file in list:\n" +
+                    generatedFiles.keySet().stream().sorted().collect(Collectors.joining(",\n")));
+        }
+        assertTrue(generatedFiles.containsKey(absoluteFilename), "File '" + absoluteFilename + "' was not found in the list of generated files");
+    }
+
+    public static void ensureDoesNotContainsFile(Map<String, String> generatedFiles, File root, String filename) {
+        File file = new File(root, filename);
+        String absoluteFilename = file.getAbsolutePath().replace("\\", "/");
+        if (generatedFiles.containsKey(absoluteFilename)) {
+            fail("File '" + absoluteFilename + "' exists in file in list:\n" +
+                    generatedFiles.keySet().stream().sorted().collect(Collectors.joining(",\n")));
+        }
+        assertFalse(generatedFiles.containsKey(absoluteFilename), "File '" + absoluteFilename + "' was found in the list of generated files");
+>>>>>>> ooof
     }
 
     public static void validateJavaSourceFiles(Map<String, String> fileMap) {
@@ -134,6 +173,7 @@ public class TestUtils {
         );
     }
 
+<<<<<<< HEAD
     public static void validateJavaSourceFiles(List<File> files) {
         files.forEach( f -> {
                     String fileName = f.getName();
@@ -150,6 +190,8 @@ public class TestUtils {
         );
     }
 
+=======
+>>>>>>> ooof
     public static void assertValidJavaSourceCode(String javaSourceCode, String filename) {
         try {
             CompilationUnit compilation = StaticJavaParser.parse(javaSourceCode);
@@ -160,6 +202,7 @@ public class TestUtils {
         }
     }
 
+<<<<<<< HEAD
     public static void assertFileContains(Path path, String... lines) {
         try {
             String generatedFile = new String(Files.readAllBytes(path), StandardCharsets.UTF_8);
@@ -170,12 +213,25 @@ public class TestUtils {
         } catch (IOException e) {
             fail("Unable to evaluate file " + path.toString());
         }
+=======
+
+    public static void assertFileContains(MockDefaultGenerator generator, String path, String... lines) {
+        final String generatedFile = generator.getFiles().get(path);
+        if (null == generatedFile) {
+            fail("File " + path +  " not found in " + generator.getFiles().keySet());
+        }
+        String file = linearize(generatedFile);
+        assertNotNull(file);
+        for (String line : lines)
+            assertTrue(file.contains(linearize(line)));
+>>>>>>> ooof
     }
 
     private static String linearize(String target) {
         return target.replaceAll("\r?\n", "").replaceAll("\\s+", "\\s");
     }
 
+<<<<<<< HEAD
     public static void assertFileNotContains(Path path, String... lines) {
         String generatedFile = null;
         try {
@@ -184,6 +240,10 @@ public class TestUtils {
             fail("Unable to evaluate file " + path.toString());
         }
         String file = linearize(generatedFile);
+=======
+    public static void assertFileNotContains(MockDefaultGenerator generator, String path, String... lines) {
+        String file = linearize(generator.getFiles().get(path));
+>>>>>>> ooof
         assertNotNull(file);
         for (String line : lines)
             assertFalse(file.contains(linearize(line)));

@@ -11,7 +11,10 @@ package petstore
 
 import (
 	"encoding/json"
+<<<<<<< HEAD
 	"fmt"
+=======
+>>>>>>> ooof
 )
 
 // EnumClass the model 'EnumClass'
@@ -24,6 +27,7 @@ const (
 	XYZ EnumClass = "(xyz)"
 )
 
+<<<<<<< HEAD
 func (v *EnumClass) UnmarshalJSON(src []byte) error {
 	var value string
 	err := json.Unmarshal(src, &value)
@@ -41,6 +45,8 @@ func (v *EnumClass) UnmarshalJSON(src []byte) error {
 	return fmt.Errorf("%+v is not a valid EnumClass", value)
 }
 
+=======
+>>>>>>> ooof
 // Ptr returns reference to EnumClass value
 func (v EnumClass) Ptr() *EnumClass {
 	return &v

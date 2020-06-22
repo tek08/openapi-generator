@@ -12,9 +12,16 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+<<<<<<< HEAD
 import org.springframework.web.util.UriComponentsBuilder;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
+=======
+import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.util.UriComponentsBuilder;
+import org.springframework.core.ParameterizedTypeReference;
+>>>>>>> ooof
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -23,7 +30,11 @@ import org.springframework.http.MediaType;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.Flux;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class UserApi {
     private ApiClient apiClient;
 
@@ -49,6 +60,7 @@ public class UserApi {
      * This can only be done by the logged in user.
      * <p><b>0</b> - successful operation
      * @param body Created user object
+<<<<<<< HEAD
      * @throws WebClientResponseException if an error occurs while attempting to invoke the API
      */
     public Mono<Void> createUser(User body) throws WebClientResponseException {
@@ -56,6 +68,15 @@ public class UserApi {
         // verify the required parameter 'body' is set
         if (body == null) {
             throw new WebClientResponseException("Missing the required parameter 'body' when calling createUser", HttpStatus.BAD_REQUEST.value(), HttpStatus.BAD_REQUEST.getReasonPhrase(), null, null, null);
+=======
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public Mono<Void> createUser(User body) throws RestClientException {
+        Object postBody = body;
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'body' when calling createUser");
+>>>>>>> ooof
         }
         // create path and map variables
         final Map<String, Object> pathParams = new HashMap<String, Object>();
@@ -80,6 +101,7 @@ public class UserApi {
      * 
      * <p><b>0</b> - successful operation
      * @param body List of user object
+<<<<<<< HEAD
      * @throws WebClientResponseException if an error occurs while attempting to invoke the API
      */
     public Mono<Void> createUsersWithArrayInput(List<User> body) throws WebClientResponseException {
@@ -87,6 +109,15 @@ public class UserApi {
         // verify the required parameter 'body' is set
         if (body == null) {
             throw new WebClientResponseException("Missing the required parameter 'body' when calling createUsersWithArrayInput", HttpStatus.BAD_REQUEST.value(), HttpStatus.BAD_REQUEST.getReasonPhrase(), null, null, null);
+=======
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public Mono<Void> createUsersWithArrayInput(List<User> body) throws RestClientException {
+        Object postBody = body;
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'body' when calling createUsersWithArrayInput");
+>>>>>>> ooof
         }
         // create path and map variables
         final Map<String, Object> pathParams = new HashMap<String, Object>();
@@ -111,6 +142,7 @@ public class UserApi {
      * 
      * <p><b>0</b> - successful operation
      * @param body List of user object
+<<<<<<< HEAD
      * @throws WebClientResponseException if an error occurs while attempting to invoke the API
      */
     public Mono<Void> createUsersWithListInput(List<User> body) throws WebClientResponseException {
@@ -118,6 +150,15 @@ public class UserApi {
         // verify the required parameter 'body' is set
         if (body == null) {
             throw new WebClientResponseException("Missing the required parameter 'body' when calling createUsersWithListInput", HttpStatus.BAD_REQUEST.value(), HttpStatus.BAD_REQUEST.getReasonPhrase(), null, null, null);
+=======
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public Mono<Void> createUsersWithListInput(List<User> body) throws RestClientException {
+        Object postBody = body;
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'body' when calling createUsersWithListInput");
+>>>>>>> ooof
         }
         // create path and map variables
         final Map<String, Object> pathParams = new HashMap<String, Object>();
@@ -143,6 +184,7 @@ public class UserApi {
      * <p><b>400</b> - Invalid username supplied
      * <p><b>404</b> - User not found
      * @param username The name that needs to be deleted
+<<<<<<< HEAD
      * @throws WebClientResponseException if an error occurs while attempting to invoke the API
      */
     public Mono<Void> deleteUser(String username) throws WebClientResponseException {
@@ -150,6 +192,15 @@ public class UserApi {
         // verify the required parameter 'username' is set
         if (username == null) {
             throw new WebClientResponseException("Missing the required parameter 'username' when calling deleteUser", HttpStatus.BAD_REQUEST.value(), HttpStatus.BAD_REQUEST.getReasonPhrase(), null, null, null);
+=======
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public Mono<Void> deleteUser(String username) throws RestClientException {
+        Object postBody = null;
+        // verify the required parameter 'username' is set
+        if (username == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'username' when calling deleteUser");
+>>>>>>> ooof
         }
         // create path and map variables
         final Map<String, Object> pathParams = new HashMap<String, Object>();
@@ -179,6 +230,7 @@ public class UserApi {
      * <p><b>404</b> - User not found
      * @param username The name that needs to be fetched. Use user1 for testing.
      * @return User
+<<<<<<< HEAD
      * @throws WebClientResponseException if an error occurs while attempting to invoke the API
      */
     public Mono<User> getUserByName(String username) throws WebClientResponseException {
@@ -186,6 +238,15 @@ public class UserApi {
         // verify the required parameter 'username' is set
         if (username == null) {
             throw new WebClientResponseException("Missing the required parameter 'username' when calling getUserByName", HttpStatus.BAD_REQUEST.value(), HttpStatus.BAD_REQUEST.getReasonPhrase(), null, null, null);
+=======
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public Mono<User> getUserByName(String username) throws RestClientException {
+        Object postBody = null;
+        // verify the required parameter 'username' is set
+        if (username == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'username' when calling getUserByName");
+>>>>>>> ooof
         }
         // create path and map variables
         final Map<String, Object> pathParams = new HashMap<String, Object>();
@@ -217,6 +278,7 @@ public class UserApi {
      * @param username The user name for login
      * @param password The password for login in clear text
      * @return String
+<<<<<<< HEAD
      * @throws WebClientResponseException if an error occurs while attempting to invoke the API
      */
     public Mono<String> loginUser(String username, String password) throws WebClientResponseException {
@@ -228,6 +290,19 @@ public class UserApi {
         // verify the required parameter 'password' is set
         if (password == null) {
             throw new WebClientResponseException("Missing the required parameter 'password' when calling loginUser", HttpStatus.BAD_REQUEST.value(), HttpStatus.BAD_REQUEST.getReasonPhrase(), null, null, null);
+=======
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public Mono<String> loginUser(String username, String password) throws RestClientException {
+        Object postBody = null;
+        // verify the required parameter 'username' is set
+        if (username == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'username' when calling loginUser");
+        }
+        // verify the required parameter 'password' is set
+        if (password == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'password' when calling loginUser");
+>>>>>>> ooof
         }
         // create path and map variables
         final Map<String, Object> pathParams = new HashMap<String, Object>();
@@ -256,9 +331,15 @@ public class UserApi {
      * Logs out current logged in user session
      * 
      * <p><b>0</b> - successful operation
+<<<<<<< HEAD
      * @throws WebClientResponseException if an error occurs while attempting to invoke the API
      */
     public Mono<Void> logoutUser() throws WebClientResponseException {
+=======
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public Mono<Void> logoutUser() throws RestClientException {
+>>>>>>> ooof
         Object postBody = null;
         // create path and map variables
         final Map<String, Object> pathParams = new HashMap<String, Object>();
@@ -285,6 +366,7 @@ public class UserApi {
      * <p><b>404</b> - User not found
      * @param username name that need to be deleted
      * @param body Updated user object
+<<<<<<< HEAD
      * @throws WebClientResponseException if an error occurs while attempting to invoke the API
      */
     public Mono<Void> updateUser(String username, User body) throws WebClientResponseException {
@@ -296,6 +378,19 @@ public class UserApi {
         // verify the required parameter 'body' is set
         if (body == null) {
             throw new WebClientResponseException("Missing the required parameter 'body' when calling updateUser", HttpStatus.BAD_REQUEST.value(), HttpStatus.BAD_REQUEST.getReasonPhrase(), null, null, null);
+=======
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public Mono<Void> updateUser(String username, User body) throws RestClientException {
+        Object postBody = body;
+        // verify the required parameter 'username' is set
+        if (username == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'username' when calling updateUser");
+        }
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'body' when calling updateUser");
+>>>>>>> ooof
         }
         // create path and map variables
         final Map<String, Object> pathParams = new HashMap<String, Object>();

@@ -5,6 +5,7 @@ All URIs are relative to *http://petstore.swagger.io:80/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**deleteOrder**](StoreApi.md#deleteOrder) | **DELETE** /store/order/{order_id} | Delete purchase order by ID
+<<<<<<< HEAD
 [**deleteOrderWithHttpInfo**](StoreApi.md#deleteOrder) | **DELETE** /store/order/{order_id} | Delete purchase order by ID
 [**getInventory**](StoreApi.md#getInventory) | **GET** /store/inventory | Returns pet inventories by status
 [**getInventoryWithHttpInfo**](StoreApi.md#getInventory) | **GET** /store/inventory | Returns pet inventories by status
@@ -12,12 +13,21 @@ Method | HTTP request | Description
 [**getOrderByIdWithHttpInfo**](StoreApi.md#getOrderById) | **GET** /store/order/{order_id} | Find purchase order by ID
 [**placeOrder**](StoreApi.md#placeOrder) | **POST** /store/order | Place an order for a pet
 [**placeOrderWithHttpInfo**](StoreApi.md#placeOrder) | **POST** /store/order | Place an order for a pet
+=======
+[**getInventory**](StoreApi.md#getInventory) | **GET** /store/inventory | Returns pet inventories by status
+[**getOrderById**](StoreApi.md#getOrderById) | **GET** /store/order/{order_id} | Find purchase order by ID
+[**placeOrder**](StoreApi.md#placeOrder) | **POST** /store/order | Place an order for a pet
+>>>>>>> ooof
 
 
 
 ## deleteOrder
 
+<<<<<<< HEAD
 > void deleteOrder(orderId)
+=======
+> deleteOrder(orderId)
+>>>>>>> ooof
 
 Delete purchase order by ID
 
@@ -42,7 +52,10 @@ public class Example {
         String orderId = "orderId_example"; // String | ID of the order that needs to be deleted
         try {
             apiInstance.deleteOrder(orderId);
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling StoreApi#deleteOrder");
             System.err.println("Status code: " + e.getCode());
@@ -63,7 +76,10 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 null (empty response body)
 
 ### Authorization
@@ -81,6 +97,7 @@ No authorization required
 | **400** | Invalid ID supplied |  -  |
 | **404** | Order not found |  -  |
 
+<<<<<<< HEAD
 ## deleteOrderWithHttpInfo
 
 > ApiResponse<Void> deleteOrder deleteOrderWithHttpInfo(orderId)
@@ -153,6 +170,12 @@ No authorization required
 ## getInventory
 
 > Map<String, Integer> getInventory()
+=======
+
+## getInventory
+
+> Map&lt;String, Integer&gt; getInventory()
+>>>>>>> ooof
 
 Returns pet inventories by status
 
@@ -183,7 +206,10 @@ public class Example {
         StoreApi apiInstance = new StoreApi(defaultClient);
         try {
             Map<String, Integer> result = apiInstance.getInventory();
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling StoreApi#getInventory");
@@ -204,6 +230,7 @@ This endpoint does not need any parameter.
 
 **Map&lt;String, Integer&gt;**
 
+<<<<<<< HEAD
 
 ### Authorization
 
@@ -276,6 +303,8 @@ This endpoint does not need any parameter.
 ApiResponse<**Map&lt;String, Integer&gt;**>
 
 
+=======
+>>>>>>> ooof
 ### Authorization
 
 [api_key](../README.md#api_key)
@@ -318,7 +347,10 @@ public class Example {
         Long orderId = 56L; // Long | ID of pet that needs to be fetched
         try {
             Order result = apiInstance.getOrderById(orderId);
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling StoreApi#getOrderById");
@@ -342,6 +374,7 @@ Name | Type | Description  | Notes
 
 [**Order**](Order.md)
 
+<<<<<<< HEAD
 
 ### Authorization
 
@@ -413,6 +446,8 @@ Name | Type | Description  | Notes
 ApiResponse<[**Order**](Order.md)>
 
 
+=======
+>>>>>>> ooof
 ### Authorization
 
 No authorization required
@@ -455,7 +490,10 @@ public class Example {
         Order body = new Order(); // Order | order placed for purchasing the pet
         try {
             Order result = apiInstance.placeOrder(body);
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling StoreApi#placeOrder");
@@ -479,6 +517,7 @@ Name | Type | Description  | Notes
 
 [**Order**](Order.md)
 
+<<<<<<< HEAD
 
 ### Authorization
 
@@ -547,6 +586,8 @@ Name | Type | Description  | Notes
 ApiResponse<[**Order**](Order.md)>
 
 
+=======
+>>>>>>> ooof
 ### Authorization
 
 No authorization required

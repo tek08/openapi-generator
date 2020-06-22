@@ -495,7 +495,11 @@ public class ElixirClientCodegen extends DefaultCodegen implements CodegenConfig
             Schema inner = ap.getItems();
             return "[" + getTypeDeclaration(inner) + "]";
         } else if (ModelUtils.isMapSchema(p)) {
+<<<<<<< HEAD
             Schema inner = getAdditionalProperties(p);
+=======
+            Schema inner = ModelUtils.getAdditionalProperties(p);
+>>>>>>> ooof
             return "%{optional(String.t) => " + getTypeDeclaration(inner) + "}";
         } else if (ModelUtils.isPasswordSchema(p)) {
             return "String.t";
@@ -741,8 +745,12 @@ public class ElixirClientCodegen extends DefaultCodegen implements CodegenConfig
                 sb.append(returnBaseType);
                 sb.append(".t");
             } else {
+<<<<<<< HEAD
                 if (returnContainer.equals("array") ||
                     returnContainer.equals("set")) {
+=======
+                if (returnContainer.equals("array")) {
+>>>>>>> ooof
                     sb.append("list(");
                     if (!returnTypeIsPrimitive) {
                         sb.append(moduleName);

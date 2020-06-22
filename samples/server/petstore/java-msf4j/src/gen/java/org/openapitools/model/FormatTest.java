@@ -13,7 +13,11 @@ import java.util.UUID;
 /**
  * FormatTest
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen")
+=======
+
+>>>>>>> ooof
 public class FormatTest   {
   @JsonProperty("integer")
   private Integer integer;

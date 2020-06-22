@@ -7,27 +7,44 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 public struct MapTest: Codable { 
 
+=======
+public struct MapTest: Codable {
+>>>>>>> ooof
 
     public enum MapOfEnumString: String, Codable, CaseIterable {
         case upper = "UPPER"
         case lower = "lower"
     }
+<<<<<<< HEAD
     public var mapMapOfString: [String:[String:String]]?
     public var mapOfEnumString: [String:String]?
     public var directMap: [String:Bool]?
     public var indirectMap: StringBooleanMap?
 
     public init(mapMapOfString: [String:[String:String]]?, mapOfEnumString: [String:String]?, directMap: [String:Bool]?, indirectMap: StringBooleanMap?) {
+=======
+    public var mapMapOfString: [String: [String: String]]?
+    public var mapOfEnumString: [String: String]?
+    public var directMap: [String: Bool]?
+    public var indirectMap: StringBooleanMap?
+
+    public init(mapMapOfString: [String: [String: String]]?, mapOfEnumString: [String: String]?, directMap: [String: Bool]?, indirectMap: StringBooleanMap?) {
+>>>>>>> ooof
         self.mapMapOfString = mapMapOfString
         self.mapOfEnumString = mapOfEnumString
         self.directMap = directMap
         self.indirectMap = indirectMap
     }
 
+<<<<<<< HEAD
     public enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    public enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case mapMapOfString = "map_map_of_string"
         case mapOfEnumString = "map_of_enum_string"
         case directMap = "direct_map"

@@ -122,8 +122,12 @@ class ApiClient(object):
             query_params=None, header_params=None, body=None, post_params=None,
             files=None, response_type=None, auth_settings=None,
             _return_http_data_only=None, collection_formats=None,
+<<<<<<< HEAD
             _preload_content=True, _request_timeout=None, _host=None,
             _request_auth=None):
+=======
+            _preload_content=True, _request_timeout=None, _host=None):
+>>>>>>> ooof
 
         config = self.configuration
 
@@ -164,9 +168,13 @@ class ApiClient(object):
             post_params.extend(self.files_parameters(files))
 
         # auth setting
+<<<<<<< HEAD
         self.update_params_for_auth(
             header_params, query_params, auth_settings,
             request_auth=_request_auth)
+=======
+        self.update_params_for_auth(header_params, query_params, auth_settings)
+>>>>>>> ooof
 
         # body
         if body:
@@ -326,8 +334,12 @@ class ApiClient(object):
                  body=None, post_params=None, files=None,
                  response_type=None, auth_settings=None, async_req=None,
                  _return_http_data_only=None, collection_formats=None,
+<<<<<<< HEAD
                  _preload_content=True, _request_timeout=None, _host=None,
                  _request_auth=None):
+=======
+                 _preload_content=True, _request_timeout=None, _host=None):
+>>>>>>> ooof
         """Makes the HTTP request (synchronous) and returns deserialized data.
 
         To make an async_req request, set the async_req parameter.
@@ -357,10 +369,13 @@ class ApiClient(object):
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
+<<<<<<< HEAD
         :param _request_auth: set to override the auth_settings for an a single
                               request; this effectively ignores the authentication
                               in the spec for a single request.
         :type _request_token: dict, optional
+=======
+>>>>>>> ooof
         :return:
             If async_req parameter is True,
             the request will be called asynchronously.
@@ -374,8 +389,12 @@ class ApiClient(object):
                                    body, post_params, files,
                                    response_type, auth_settings,
                                    _return_http_data_only, collection_formats,
+<<<<<<< HEAD
                                    _preload_content, _request_timeout, _host,
                                    _request_auth)
+=======
+                                   _preload_content, _request_timeout, _host)
+>>>>>>> ooof
 
         return self.pool.apply_async(self.__call_api, (resource_path,
                                                        method, path_params,
@@ -388,7 +407,11 @@ class ApiClient(object):
                                                        collection_formats,
                                                        _preload_content,
                                                        _request_timeout,
+<<<<<<< HEAD
                                                        _host, _request_auth))
+=======
+                                                       _host))
+>>>>>>> ooof
 
     def request(self, method, url, query_params=None, headers=None,
                 post_params=None, body=None, _preload_content=True,
@@ -535,19 +558,27 @@ class ApiClient(object):
         else:
             return content_types[0]
 
+<<<<<<< HEAD
     def update_params_for_auth(self, headers, querys, auth_settings,
                                request_auth=None):
+=======
+    def update_params_for_auth(self, headers, querys, auth_settings):
+>>>>>>> ooof
         """Updates header and query params based on authentication setting.
 
         :param headers: Header parameters dict to be updated.
         :param querys: Query parameters tuple list to be updated.
         :param auth_settings: Authentication setting identifiers list.
+<<<<<<< HEAD
         :param request_auth: if set, the provided settings will
                              override the token in the configuration.
+=======
+>>>>>>> ooof
         """
         if not auth_settings:
             return
 
+<<<<<<< HEAD
         if request_auth:
             self._apply_auth_params(headers, querys, request_auth)
             return
@@ -574,6 +605,21 @@ class ApiClient(object):
             raise ApiValueError(
                 'Authentication token must be in `query` or `header`'
             )
+=======
+        for auth in auth_settings:
+            auth_setting = self.configuration.auth_settings().get(auth)
+            if auth_setting:
+                if auth_setting['in'] == 'cookie':
+                    headers['Cookie'] = auth_setting['value']
+                elif auth_setting['in'] == 'header':
+                    headers[auth_setting['key']] = auth_setting['value']
+                elif auth_setting['in'] == 'query':
+                    querys.append((auth_setting['key'], auth_setting['value']))
+                else:
+                    raise ApiValueError(
+                        'Authentication token must be in `query` or `header`'
+                    )
+>>>>>>> ooof
 
     def __deserialize_file(self, response):
         """Deserializes body to file

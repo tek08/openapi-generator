@@ -28,10 +28,17 @@ class UserApi {
 
     List<String> contentTypes = [];
 
+<<<<<<< HEAD
     String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = [];
 
     if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+=======
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    List<String> authNames = [];
+
+    if(contentType.startsWith("multipart/form-data")) {
+>>>>>>> ooof
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -46,7 +53,11 @@ class UserApi {
                                              postBody,
                                              headerParams,
                                              formParams,
+<<<<<<< HEAD
                                              nullableContentType,
+=======
+                                             contentType,
+>>>>>>> ooof
                                              authNames);
     return response;
   }
@@ -85,10 +96,17 @@ class UserApi {
 
     List<String> contentTypes = [];
 
+<<<<<<< HEAD
     String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = [];
 
     if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+=======
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    List<String> authNames = [];
+
+    if(contentType.startsWith("multipart/form-data")) {
+>>>>>>> ooof
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -103,7 +121,11 @@ class UserApi {
                                              postBody,
                                              headerParams,
                                              formParams,
+<<<<<<< HEAD
                                              nullableContentType,
+=======
+                                             contentType,
+>>>>>>> ooof
                                              authNames);
     return response;
   }
@@ -142,10 +164,17 @@ class UserApi {
 
     List<String> contentTypes = [];
 
+<<<<<<< HEAD
     String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = [];
 
     if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+=======
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    List<String> authNames = [];
+
+    if(contentType.startsWith("multipart/form-data")) {
+>>>>>>> ooof
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -160,7 +189,11 @@ class UserApi {
                                              postBody,
                                              headerParams,
                                              formParams,
+<<<<<<< HEAD
                                              nullableContentType,
+=======
+                                             contentType,
+>>>>>>> ooof
                                              authNames);
     return response;
   }
@@ -199,10 +232,17 @@ class UserApi {
 
     List<String> contentTypes = [];
 
+<<<<<<< HEAD
     String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = [];
 
     if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+=======
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    List<String> authNames = [];
+
+    if(contentType.startsWith("multipart/form-data")) {
+>>>>>>> ooof
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -217,7 +257,11 @@ class UserApi {
                                              postBody,
                                              headerParams,
                                              formParams,
+<<<<<<< HEAD
                                              nullableContentType,
+=======
+                                             contentType,
+>>>>>>> ooof
                                              authNames);
     return response;
   }
@@ -256,10 +300,17 @@ class UserApi {
 
     List<String> contentTypes = [];
 
+<<<<<<< HEAD
     String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = [];
 
     if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+=======
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    List<String> authNames = [];
+
+    if(contentType.startsWith("multipart/form-data")) {
+>>>>>>> ooof
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -274,7 +325,11 @@ class UserApi {
                                              postBody,
                                              headerParams,
                                              formParams,
+<<<<<<< HEAD
                                              nullableContentType,
+=======
+                                             contentType,
+>>>>>>> ooof
                                              authNames);
     return response;
   }
@@ -319,10 +374,17 @@ class UserApi {
 
     List<String> contentTypes = [];
 
+<<<<<<< HEAD
     String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = [];
 
     if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+=======
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    List<String> authNames = [];
+
+    if(contentType.startsWith("multipart/form-data")) {
+>>>>>>> ooof
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -337,7 +399,11 @@ class UserApi {
                                              postBody,
                                              headerParams,
                                              formParams,
+<<<<<<< HEAD
                                              nullableContentType,
+=======
+                                             contentType,
+>>>>>>> ooof
                                              authNames);
     return response;
   }
@@ -374,10 +440,17 @@ class UserApi {
 
     List<String> contentTypes = [];
 
+<<<<<<< HEAD
     String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = [];
 
     if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+=======
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    List<String> authNames = [];
+
+    if(contentType.startsWith("multipart/form-data")) {
+>>>>>>> ooof
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -392,7 +465,11 @@ class UserApi {
                                              postBody,
                                              headerParams,
                                              formParams,
+<<<<<<< HEAD
                                              nullableContentType,
+=======
+                                             contentType,
+>>>>>>> ooof
                                              authNames);
     return response;
   }
@@ -434,10 +511,17 @@ class UserApi {
 
     List<String> contentTypes = [];
 
+<<<<<<< HEAD
     String nullableContentType = contentTypes.isNotEmpty ? contentTypes[0] : null;
     List<String> authNames = [];
 
     if(nullableContentType != null && nullableContentType.startsWith("multipart/form-data")) {
+=======
+    String contentType = contentTypes.isNotEmpty ? contentTypes[0] : "application/json";
+    List<String> authNames = [];
+
+    if(contentType.startsWith("multipart/form-data")) {
+>>>>>>> ooof
       bool hasFields = false;
       MultipartRequest mp = MultipartRequest(null, null);
       if(hasFields)
@@ -452,7 +536,11 @@ class UserApi {
                                              postBody,
                                              headerParams,
                                              formParams,
+<<<<<<< HEAD
                                              nullableContentType,
+=======
+                                             contentType,
+>>>>>>> ooof
                                              authNames);
     return response;
   }

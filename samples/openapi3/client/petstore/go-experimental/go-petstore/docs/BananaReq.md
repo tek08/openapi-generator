@@ -4,7 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+<<<<<<< HEAD
 **LengthCm** | **float32** |  | 
+=======
+**LengthCm** | Pointer to **float32** |  | 
+>>>>>>> ooof
 **Sweet** | Pointer to **bool** |  | [optional] 
 
 ## Methods

@@ -2,9 +2,16 @@
 
 
 #[allow(unused_imports)]
+<<<<<<< HEAD
 use futures::{future, Stream, stream};
 #[allow(unused_imports)]
 use ops_v3::{Api, ApiNoContext, Client, ContextWrapperExt, models,
+=======
+use futures::{Future, future, Stream, stream};
+#[allow(unused_imports)]
+use ops_v3::{Api, ApiNoContext, Client, ContextWrapperExt, models,
+                      ApiError,
+>>>>>>> ooof
                       Op10GetResponse,
                       Op11GetResponse,
                       Op12GetResponse,
@@ -41,7 +48,11 @@ use ops_v3::{Api, ApiNoContext, Client, ContextWrapperExt, models,
                       Op6GetResponse,
                       Op7GetResponse,
                       Op8GetResponse,
+<<<<<<< HEAD
                       Op9GetResponse,
+=======
+                      Op9GetResponse
+>>>>>>> ooof
                      };
 use clap::{App, Arg};
 
@@ -50,9 +61,13 @@ use log::info;
 
 // swagger::Has may be unused if there are no examples
 #[allow(unused_imports)]
+<<<<<<< HEAD
 use swagger::{AuthData, ContextBuilder, EmptyContext, Has, Push, XSpanIdString};
 
 type ClientContext = swagger::make_context_ty!(ContextBuilder, EmptyContext, Option<AuthData>, XSpanIdString);
+=======
+use swagger::{ContextBuilder, EmptyContext, XSpanIdString, Has, Push, AuthData};
+>>>>>>> ooof
 
 // rt may be unused if there are no examples
 #[allow(unused_mut)]
@@ -124,6 +139,7 @@ fn main() {
                            matches.value_of("host").unwrap(),
                            matches.value_of("port").unwrap());
 
+<<<<<<< HEAD
     let context: ClientContext =
         swagger::make_context!(ContextBuilder, EmptyContext, None as Option<AuthData>, XSpanIdString::default());
 
@@ -140,6 +156,24 @@ fn main() {
         Box::new(client.with_context(context))
     };
 
+=======
+    let client = if matches.is_present("https") {
+        // Using Simple HTTPS
+        Client::try_new_https(&base_url)
+            .expect("Failed to create HTTPS client")
+    } else {
+        // Using HTTP
+        Client::try_new_http(
+            &base_url)
+            .expect("Failed to create HTTP client")
+    };
+
+    let context: swagger::make_context_ty!(ContextBuilder, EmptyContext, Option<AuthData>, XSpanIdString) =
+        swagger::make_context!(ContextBuilder, EmptyContext, None as Option<AuthData>, XSpanIdString::default());
+
+    let client = client.with_context(context);
+
+>>>>>>> ooof
     let mut rt = tokio::runtime::Runtime::new().unwrap();
 
     match matches.value_of("operation") {

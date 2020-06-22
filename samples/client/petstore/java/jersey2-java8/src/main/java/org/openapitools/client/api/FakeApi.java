@@ -23,7 +23,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class FakeApi {
   private ApiClient apiClient;
 
@@ -115,7 +119,11 @@ public class FakeApi {
 
     return apiClient.invokeAPI("FakeApi.createXmlItem", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, null);
+=======
+                               localVarAuthNames, null, null);
+>>>>>>> ooof
   }
   /**
    * 
@@ -177,7 +185,11 @@ public class FakeApi {
 
     return apiClient.invokeAPI("FakeApi.fakeOuterBooleanSerialize", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, localVarReturnType);
+=======
+                               localVarAuthNames, localVarReturnType, null);
+>>>>>>> ooof
   }
   /**
    * 
@@ -239,7 +251,11 @@ public class FakeApi {
 
     return apiClient.invokeAPI("FakeApi.fakeOuterCompositeSerialize", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, localVarReturnType);
+=======
+                               localVarAuthNames, localVarReturnType, null);
+>>>>>>> ooof
   }
   /**
    * 
@@ -301,7 +317,11 @@ public class FakeApi {
 
     return apiClient.invokeAPI("FakeApi.fakeOuterNumberSerialize", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, localVarReturnType);
+=======
+                               localVarAuthNames, localVarReturnType, null);
+>>>>>>> ooof
   }
   /**
    * 
@@ -363,7 +383,11 @@ public class FakeApi {
 
     return apiClient.invokeAPI("FakeApi.fakeOuterStringSerialize", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, localVarReturnType);
+=======
+                               localVarAuthNames, localVarReturnType, null);
+>>>>>>> ooof
   }
   /**
    * 
@@ -427,7 +451,11 @@ public class FakeApi {
 
     return apiClient.invokeAPI("FakeApi.testBodyWithFileSchema", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, null);
+=======
+                               localVarAuthNames, null, null);
+>>>>>>> ooof
   }
   /**
    * 
@@ -499,7 +527,11 @@ public class FakeApi {
 
     return apiClient.invokeAPI("FakeApi.testBodyWithQueryParams", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, null);
+=======
+                               localVarAuthNames, null, null);
+>>>>>>> ooof
   }
   /**
    * To test \&quot;client\&quot; model
@@ -566,7 +598,11 @@ public class FakeApi {
 
     return apiClient.invokeAPI("FakeApi.testClientModel", localVarPath, "PATCH", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, localVarReturnType);
+=======
+                               localVarAuthNames, localVarReturnType, null);
+>>>>>>> ooof
   }
   /**
    * Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트
@@ -701,7 +737,11 @@ if (paramCallback != null)
 
     return apiClient.invokeAPI("FakeApi.testEndpointParameters", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, null);
+=======
+                               localVarAuthNames, null, null);
+>>>>>>> ooof
   }
   /**
    * To test enum parameters
@@ -788,7 +828,11 @@ if (enumFormString != null)
 
     return apiClient.invokeAPI("FakeApi.testEnumParameters", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, null);
+=======
+                               localVarAuthNames, null, null);
+>>>>>>> ooof
   }
 
 private ApiResponse<Void> testGroupParametersWithHttpInfo(Integer requiredStringGroup, Boolean requiredBooleanGroup, Long requiredInt64Group, Integer stringGroup, Boolean booleanGroup, Long int64Group) throws ApiException {
@@ -844,7 +888,11 @@ if (booleanGroup != null)
 
     return apiClient.invokeAPI("FakeApi.testGroupParameters", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, null);
+=======
+                               localVarAuthNames, null, null);
+>>>>>>> ooof
   }
 
   public class APItestGroupParametersRequest {
@@ -1023,7 +1071,11 @@ if (booleanGroup != null)
 
     return apiClient.invokeAPI("FakeApi.testInlineAdditionalProperties", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, null);
+=======
+                               localVarAuthNames, null, null);
+>>>>>>> ooof
   }
   /**
    * test json serialization of form data
@@ -1098,7 +1150,11 @@ if (param2 != null)
 
     return apiClient.invokeAPI("FakeApi.testJsonFormData", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, null);
+=======
+                               localVarAuthNames, null, null);
+>>>>>>> ooof
   }
   /**
    * 
@@ -1174,7 +1230,11 @@ if (param2 != null)
 
     localVarQueryParams.addAll(apiClient.parameterToPairs("csv", "pipe", pipe));
     localVarQueryParams.addAll(apiClient.parameterToPairs("csv", "ioutil", ioutil));
+<<<<<<< HEAD
     localVarQueryParams.addAll(apiClient.parameterToPairs("ssv", "http", http));
+=======
+    localVarQueryParams.addAll(apiClient.parameterToPairs("space", "http", http));
+>>>>>>> ooof
     localVarQueryParams.addAll(apiClient.parameterToPairs("csv", "url", url));
     localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "context", context));
 
@@ -1195,6 +1255,10 @@ if (param2 != null)
 
     return apiClient.invokeAPI("FakeApi.testQueryParameterCollectionFormat", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, null);
+=======
+                               localVarAuthNames, null, null);
+>>>>>>> ooof
   }
 }

@@ -6,7 +6,10 @@ import org.openapitools.client.EncodingUtils;
 import java.io.File;
 import org.openapitools.client.model.ModelApiResponse;
 import org.openapitools.client.model.Pet;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,7 +17,11 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public interface PetApi extends ApiClient.Api {
 
 
@@ -91,13 +98,21 @@ public interface PetApi extends ApiClient.Api {
    * Finds Pets by tags
    * Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
    * @param tags Tags to filter by (required)
+<<<<<<< HEAD
    * @return Set&lt;Pet&gt;
+=======
+   * @return List&lt;Pet&gt;
+>>>>>>> ooof
    */
   @RequestLine("GET /pet/findByTags?tags={tags}")
   @Headers({
     "Accept: application/json",
   })
+<<<<<<< HEAD
   Set<Pet> findPetsByTags(@Param("tags") Set<String> tags);
+=======
+  List<Pet> findPetsByTags(@Param("tags") List<String> tags);
+>>>>>>> ooof
 
   /**
    * Finds Pets by tags
@@ -112,20 +127,32 @@ public interface PetApi extends ApiClient.Api {
    *   <ul>
    *   <li>tags - Tags to filter by (required)</li>
    *   </ul>
+<<<<<<< HEAD
    * @return Set&lt;Pet&gt;
+=======
+   * @return List&lt;Pet&gt;
+>>>>>>> ooof
    */
   @RequestLine("GET /pet/findByTags?tags={tags}")
   @Headers({
   "Accept: application/json",
   })
+<<<<<<< HEAD
   Set<Pet> findPetsByTags(@QueryMap(encoded=true) Map<String, Object> queryParams);
+=======
+  List<Pet> findPetsByTags(@QueryMap(encoded=true) Map<String, Object> queryParams);
+>>>>>>> ooof
 
   /**
    * A convenience class for generating query parameters for the
    * <code>findPetsByTags</code> method in a fluent style.
    */
   public static class FindPetsByTagsQueryParams extends HashMap<String, Object> {
+<<<<<<< HEAD
     public FindPetsByTagsQueryParams tags(final Set<String> value) {
+=======
+    public FindPetsByTagsQueryParams tags(final List<String> value) {
+>>>>>>> ooof
       put("tags", EncodingUtils.encodeCollection(value, "csv"));
       return this;
     }

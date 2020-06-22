@@ -13,7 +13,11 @@ import java.util.Map;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen")
+=======
+
+>>>>>>> ooof
 public class AdditionalPropertiesArray extends HashMap<String, List>  {
   @JsonProperty("name")
   private String name;

@@ -26,10 +26,15 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.HashMap;
+<<<<<<< HEAD
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+=======
+import java.util.List;
+import java.util.Map;
+>>>>>>> ooof
 import java.util.concurrent.ThreadLocalRandom;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -326,7 +331,11 @@ public class PetApiTest {
 
         api.updatePet(pet);
 
+<<<<<<< HEAD
         Set<Pet> pets = api.findPetsByTags(new HashSet<>(Arrays.asList("friendly")));
+=======
+        List<Pet> pets = api.findPetsByTags(Arrays.asList("friendly"));
+>>>>>>> ooof
         assertNotNull(pets);
 
         boolean found = false;
@@ -398,7 +407,11 @@ public class PetApiTest {
         assertTrue(pet1.hashCode() == pet1.hashCode());
 
         pet2.setName("really-happy");
+<<<<<<< HEAD
         pet2.setPhotoUrls(new HashSet<>(Arrays.asList("http://foo.bar.com/1", "http://foo.bar.com/2")));
+=======
+        pet2.setPhotoUrls(Arrays.asList("http://foo.bar.com/1", "http://foo.bar.com/2"));
+>>>>>>> ooof
         assertFalse(pet1.equals(pet2));
         assertFalse(pet2.equals(pet1));
         assertFalse(pet1.hashCode() == (pet2.hashCode()));
@@ -406,7 +419,11 @@ public class PetApiTest {
         assertTrue(pet2.hashCode() == pet2.hashCode());
 
         pet1.setName("really-happy");
+<<<<<<< HEAD
         pet1.setPhotoUrls(new HashSet<>(Arrays.asList("http://foo.bar.com/1", "http://foo.bar.com/2")));
+=======
+        pet1.setPhotoUrls(Arrays.asList("http://foo.bar.com/1", "http://foo.bar.com/2"));
+>>>>>>> ooof
         assertTrue(pet1.equals(pet2));
         assertTrue(pet2.equals(pet1));
         assertTrue(pet1.hashCode() == pet2.hashCode());
@@ -425,7 +442,11 @@ public class PetApiTest {
 
         pet.setCategory(category);
         pet.setStatus(Pet.StatusEnum.AVAILABLE);
+<<<<<<< HEAD
         Set<String> photos = new HashSet<>(Arrays.asList("http://foo.bar.com/1", "http://foo.bar.com/2"));
+=======
+        List<String> photos = Arrays.asList("http://foo.bar.com/1", "http://foo.bar.com/2");
+>>>>>>> ooof
         pet.setPhotoUrls(photos);
 
         return pet;

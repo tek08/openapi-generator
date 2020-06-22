@@ -8,8 +8,11 @@
 import Foundation
 import Combine
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 open class AnotherFakeAPI {
     /**
      To test special tags

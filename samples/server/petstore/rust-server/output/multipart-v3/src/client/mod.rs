@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 use async_trait::async_trait;
 use futures::{Stream, future, future::BoxFuture, stream, future::TryFutureExt, future::FutureExt, stream::StreamExt};
 use hyper::header::{HeaderName, HeaderValue, CONTENT_TYPE};
@@ -19,6 +20,31 @@ use std::task::{Context, Poll};
 use swagger::{ApiError, AuthData, BodyExt, Connector, DropContextService, Has, XSpanIdString};
 use url::form_urlencoded;
 
+=======
+use futures;
+use futures::{Future, Stream, future, stream};
+use hyper;
+use hyper::client::HttpConnector;
+use hyper::header::{HeaderName, HeaderValue, CONTENT_TYPE};
+use hyper::{Body, Uri, Response};
+#[cfg(not(any(target_os = "macos", target_os = "windows", target_os = "ios")))]
+use hyper_openssl::HttpsConnector;
+use serde_json;
+use std::borrow::Cow;
+use std::convert::TryInto;
+use std::io::{Read, Error, ErrorKind};
+use std::error;
+use std::fmt;
+use std::path::Path;
+use std::sync::Arc;
+use std::str;
+use std::str::FromStr;
+use std::string::ToString;
+use swagger;
+use swagger::{ApiError, Connector, client::Service, XSpanIdString, Has, AuthData};
+use url::form_urlencoded;
+use url::percent_encoding::{utf8_percent_encode, PATH_SEGMENT_ENCODE_SET, QUERY_ENCODE_SET};
+>>>>>>> ooof
 use mime::Mime;
 use std::io::Cursor;
 use multipart::client::lazy::Multipart;
@@ -28,6 +54,7 @@ use mime_multipart::{Node, Part, generate_boundary, write_multipart};
 use crate::models;
 use crate::header;
 
+<<<<<<< HEAD
 /// https://url.spec.whatwg.org/#fragment-percent-encode-set
 #[allow(dead_code)]
 const FRAGMENT_ENCODE_SET: &AsciiSet = &percent_encoding::CONTROLS
@@ -39,6 +66,15 @@ const FRAGMENT_ENCODE_SET: &AsciiSet = &percent_encoding::CONTROLS
 /// the vertical bar (|) is encoded.
 #[allow(dead_code)]
 const ID_ENCODE_SET: &AsciiSet = &FRAGMENT_ENCODE_SET.add(b'|');
+=======
+url::define_encode_set! {
+    /// This encode set is used for object IDs
+    ///
+    /// Aside from the special characters defined in the `PATH_SEGMENT_ENCODE_SET`,
+    /// the vertical bar (|) is encoded.
+    pub ID_ENCODE_SET = [PATH_SEGMENT_ENCODE_SET] | {'|'}
+}
+>>>>>>> ooof
 
 use crate::{Api,
      MultipartRelatedRequestPostResponse,
@@ -47,11 +83,19 @@ use crate::{Api,
      };
 
 /// Convert input into a base path, e.g. "http://example:123". Also checks the scheme as it goes.
+<<<<<<< HEAD
 fn into_base_path(input: impl TryInto<Uri, Error=hyper::http::uri::InvalidUri>, correct_scheme: Option<&'static str>) -> Result<String, ClientInitError> {
     // First convert to Uri, since a base path is a subset of Uri.
     let uri = input.try_into()?;
 
     let scheme = uri.scheme_str().ok_or(ClientInitError::InvalidScheme)?;
+=======
+fn into_base_path(input: &str, correct_scheme: Option<&'static str>) -> Result<String, ClientInitError> {
+    // First convert to Uri, since a base path is a subset of Uri.
+    let uri = Uri::from_str(input)?;
+
+    let scheme = uri.scheme_part().ok_or(ClientInitError::InvalidScheme)?;
+>>>>>>> ooof
 
     // Check the scheme if necessary
     if let Some(correct_scheme) = correct_scheme {
@@ -61,11 +105,16 @@ fn into_base_path(input: impl TryInto<Uri, Error=hyper::http::uri::InvalidUri>, 
     }
 
     let host = uri.host().ok_or_else(|| ClientInitError::MissingHost)?;
+<<<<<<< HEAD
     let port = uri.port_u16().map(|x| format!(":{}", x)).unwrap_or_default();
+=======
+    let port = uri.port_part().map(|x| format!(":{}", x)).unwrap_or_default();
+>>>>>>> ooof
     Ok(format!("{}://{}{}{}", scheme, host, port, uri.path().trim_end_matches('/')))
 }
 
 /// A client that implements the API by making HTTP calls out to a server.
+<<<<<<< HEAD
 pub struct Client<S, C> where
     S: Service<
            (Request<Body>, C),
@@ -91,12 +140,25 @@ impl<S, C> fmt::Debug for Client<S, C> where
     S::Future: Send + 'static,
     S::Error: Into<crate::ServiceError> + fmt::Display,
     C: Clone + Send + Sync + 'static
+=======
+pub struct Client<F>
+{
+    /// Inner service
+    client_service: Arc<Box<dyn Service<ReqBody=Body, Future=F> + Send + Sync>>,
+
+    /// Base path of the API
+    base_path: String,
+}
+
+impl<F> fmt::Debug for Client<F>
+>>>>>>> ooof
 {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "Client {{ base_path: {} }}", self.base_path)
     }
 }
 
+<<<<<<< HEAD
 impl<S, C> Clone for Client<S, C> where
     S: Service<
            (Request<Body>, C),
@@ -110,13 +172,25 @@ impl<S, C> Clone for Client<S, C> where
             client_service: self.client_service.clone(),
             base_path: self.base_path.clone(),
             marker: PhantomData,
+=======
+impl<F> Clone for Client<F>
+{
+    fn clone(&self) -> Self {
+        Client {
+            client_service: self.client_service.clone(),
+            base_path: self.base_path.clone(),
+>>>>>>> ooof
         }
     }
 }
 
+<<<<<<< HEAD
 impl<Connector, C> Client<DropContextService<hyper::client::Client<Connector, Body>, C>, C> where
     Connector: hyper::client::connect::Connect + Clone + Send + Sync + 'static,
     C: Clone + Send + Sync + 'static,
+=======
+impl Client<hyper::client::ResponseFuture>
+>>>>>>> ooof
 {
     /// Create a client with a custom implementation of hyper::client::Connect.
     ///
@@ -129,6 +203,7 @@ impl<Connector, C> Client<DropContextService<hyper::client::Client<Connector, Bo
     ///
     /// # Arguments
     ///
+<<<<<<< HEAD
     /// * `base_path` - base path of the client API, i.e. "http://www.my-api-implementation.com"
     /// * `protocol` - Which protocol to use when constructing the request url, e.g. `Some("http")`
     /// * `connector` - Implementation of `hyper::client::Connect` to use for the client
@@ -224,6 +299,32 @@ impl<C> Client<DropContextService<hyper::client::Client<hyper::client::HttpConne
     ///
     /// # Arguments
     /// * `base_path` - base path of the client API, i.e. "http://www.my-api-implementation.com"
+=======
+    /// * `base_path` - base path of the client API, i.e. "www.my-api-implementation.com"
+    /// * `protocol` - Which protocol to use when constructing the request url, e.g. `Some("http")`
+    /// * `connector` - Implementation of `hyper::client::Connect` to use for the client
+    pub fn try_new_with_connector<C>(
+        base_path: &str,
+        protocol: Option<&'static str>,
+        connector: C,
+    ) -> Result<Self, ClientInitError> where
+      C: hyper::client::connect::Connect + 'static,
+      C::Transport: 'static,
+      C::Future: 'static,
+    {
+        let client_service = Box::new(hyper::client::Client::builder().build(connector));
+
+        Ok(Client {
+            client_service: Arc::new(client_service),
+            base_path: into_base_path(base_path, protocol)?,
+        })
+    }
+
+    /// Create an HTTP client.
+    ///
+    /// # Arguments
+    /// * `base_path` - base path of the client API, i.e. "www.my-api-implementation.com"
+>>>>>>> ooof
     pub fn try_new_http(
         base_path: &str,
     ) -> Result<Self, ClientInitError> {
@@ -231,6 +332,7 @@ impl<C> Client<DropContextService<hyper::client::Client<hyper::client::HttpConne
 
         Self::try_new_with_connector(base_path, Some("http"), http_connector)
     }
+<<<<<<< HEAD
 }
 
 #[cfg(any(target_os = "macos", target_os = "windows", target_os = "ios"))]
@@ -246,6 +348,13 @@ impl<C> Client<DropContextService<hyper::client::Client<HttpsConnector, Body>, C
     ///
     /// # Arguments
     /// * `base_path` - base path of the client API, i.e. "https://www.my-api-implementation.com"
+=======
+
+    /// Create a client with a TLS connection to the server
+    ///
+    /// # Arguments
+    /// * `base_path` - base path of the client API, i.e. "www.my-api-implementation.com"
+>>>>>>> ooof
     pub fn try_new_https(base_path: &str) -> Result<Self, ClientInitError>
     {
         let https_connector = Connector::builder()
@@ -258,7 +367,11 @@ impl<C> Client<DropContextService<hyper::client::Client<HttpsConnector, Body>, C
     /// Create a client with a TLS connection to the server using a pinned certificate
     ///
     /// # Arguments
+<<<<<<< HEAD
     /// * `base_path` - base path of the client API, i.e. "https://www.my-api-implementation.com"
+=======
+    /// * `base_path` - base path of the client API, i.e. "www.my-api-implementation.com"
+>>>>>>> ooof
     /// * `ca_certificate` - Path to CA certificate used to authenticate the server
     #[cfg(not(any(target_os = "macos", target_os = "windows", target_os = "ios")))]
     pub fn try_new_https_pinned<CA>(
@@ -279,7 +392,11 @@ impl<C> Client<DropContextService<hyper::client::Client<HttpsConnector, Body>, C
     /// Create a client with a mutually authenticated TLS connection to the server.
     ///
     /// # Arguments
+<<<<<<< HEAD
     /// * `base_path` - base path of the client API, i.e. "https://www.my-api-implementation.com"
+=======
+    /// * `base_path` - base path of the client API, i.e. "www.my-api-implementation.com"
+>>>>>>> ooof
     /// * `ca_certificate` - Path to CA certificate used to authenticate the server
     /// * `client_key` - Path to the client private key
     /// * `client_certificate` - Path to the client's public certificate associated with the private key
@@ -305,6 +422,7 @@ impl<C> Client<DropContextService<hyper::client::Client<HttpsConnector, Body>, C
     }
 }
 
+<<<<<<< HEAD
 impl<S, C> Client<S, C> where
     S: Service<
            (Request<Body>, C),
@@ -326,6 +444,20 @@ impl<S, C> Client<S, C> where
             client_service,
             base_path: into_base_path(base_path, None)?,
             marker: PhantomData,
+=======
+impl<F> Client<F>
+{
+    /// Constructor for creating a `Client` by passing in a pre-made `swagger::Service`
+    ///
+    /// This allows adding custom wrappers around the underlying transport, for example for logging.
+    pub fn try_new_with_client_service(
+        client_service: Arc<Box<dyn Service<ReqBody=Body, Future=F> + Send + Sync>>,
+        base_path: &str,
+    ) -> Result<Self, ClientInitError> {
+        Ok(Client {
+            client_service: client_service,
+            base_path: into_base_path(base_path, None)?,
+>>>>>>> ooof
         })
     }
 }
@@ -364,12 +496,17 @@ impl fmt::Display for ClientInitError {
     }
 }
 
+<<<<<<< HEAD
 impl Error for ClientInitError {
+=======
+impl error::Error for ClientInitError {
+>>>>>>> ooof
     fn description(&self) -> &str {
         "Failed to produce a hyper client."
     }
 }
 
+<<<<<<< HEAD
 #[async_trait]
 impl<S, C> Api<C> for Client<S, C> where
     S: Service<
@@ -388,19 +525,32 @@ impl<S, C> Api<C> for Client<S, C> where
     }
 
     async fn multipart_related_request_post(
+=======
+impl<C, F> Api<C> for Client<F> where
+    C: Has<XSpanIdString> ,
+    F: Future<Item=Response<Body>, Error=hyper::Error> + Send + 'static
+{
+    fn multipart_related_request_post(
+>>>>>>> ooof
         &self,
         param_required_binary_field: swagger::ByteArray,
         param_object_field: Option<models::MultipartRequestObjectField>,
         param_optional_binary_field: Option<swagger::ByteArray>,
+<<<<<<< HEAD
         context: &C) -> Result<MultipartRelatedRequestPostResponse, ApiError>
     {
         let mut client_service = self.client_service.clone();
+=======
+        context: &C) -> Box<dyn Future<Item=MultipartRelatedRequestPostResponse, Error=ApiError> + Send>
+    {
+>>>>>>> ooof
         let mut uri = format!(
             "{}/multipart_related_request",
             self.base_path
         );
 
         // Query parameters
+<<<<<<< HEAD
         let query_string = {
             let mut query_string = form_urlencoded::Serializer::new("".to_owned());
             query_string.finish()
@@ -408,19 +558,37 @@ impl<S, C> Api<C> for Client<S, C> where
         if !query_string.is_empty() {
             uri += "?";
             uri += &query_string;
+=======
+        let mut query_string = url::form_urlencoded::Serializer::new("".to_owned());
+        let query_string_str = query_string.finish();
+        if !query_string_str.is_empty() {
+            uri += "?";
+            uri += &query_string_str;
+>>>>>>> ooof
         }
 
         let uri = match Uri::from_str(&uri) {
             Ok(uri) => uri,
+<<<<<<< HEAD
             Err(err) => return Err(ApiError(format!("Unable to build URI: {}", err))),
         };
 
         let mut request = match Request::builder()
+=======
+            Err(err) => return Box::new(future::err(ApiError(format!("Unable to build URI: {}", err)))),
+        };
+
+        let mut request = match hyper::Request::builder()
+>>>>>>> ooof
             .method("POST")
             .uri(uri)
             .body(Body::empty()) {
                 Ok(req) => req,
+<<<<<<< HEAD
                 Err(e) => return Err(ApiError(format!("Unable to create request: {}", e)))
+=======
+                Err(e) => return Box::new(future::err(ApiError(format!("Unable to create request: {}", e))))
+>>>>>>> ooof
         };
 
         // Construct the Body for a multipart/related request. The mime 0.2.6 library
@@ -491,6 +659,7 @@ impl<S, C> Api<C> for Client<S, C> where
             &[header.as_bytes(), "; boundary=".as_bytes(), &boundary, "; type=\"application/json\"".as_bytes()].concat()
         ) {
             Ok(h) => h,
+<<<<<<< HEAD
             Err(e) => return Err(ApiError(format!("Unable to create header: {} - {}", header, e)))
         });
 
@@ -531,20 +700,73 @@ impl<S, C> Api<C> for Client<S, C> where
     }
 
     async fn multipart_request_post(
+=======
+            Err(e) => return Box::new(future::err(ApiError(format!("Unable to create header: {} - {}", header, e))))
+        });
+
+        let header = HeaderValue::from_str((context as &dyn Has<XSpanIdString>).get().0.clone().to_string().as_str());
+        request.headers_mut().insert(HeaderName::from_static("x-span-id"), match header {
+            Ok(h) => h,
+            Err(e) => return Box::new(future::err(ApiError(format!("Unable to create X-Span ID header value: {}", e))))
+        });
+
+        Box::new(self.client_service.request(request)
+                             .map_err(|e| ApiError(format!("No response received: {}", e)))
+                             .and_then(|mut response| {
+            match response.status().as_u16() {
+                201 => {
+                    let body = response.into_body();
+                    Box::new(
+                        future::ok(
+                            MultipartRelatedRequestPostResponse::OK
+                        )
+                    ) as Box<dyn Future<Item=_, Error=_> + Send>
+                },
+                code => {
+                    let headers = response.headers().clone();
+                    Box::new(response.into_body()
+                            .take(100)
+                            .concat2()
+                            .then(move |body|
+                                future::err(ApiError(format!("Unexpected response code {}:\n{:?}\n\n{}",
+                                    code,
+                                    headers,
+                                    match body {
+                                        Ok(ref body) => match str::from_utf8(body) {
+                                            Ok(body) => Cow::from(body),
+                                            Err(e) => Cow::from(format!("<Body was not UTF8: {:?}>", e)),
+                                        },
+                                        Err(e) => Cow::from(format!("<Failed to read body: {}>", e)),
+                                    })))
+                            )
+                    ) as Box<dyn Future<Item=_, Error=_> + Send>
+                }
+            }
+        }))
+    }
+
+    fn multipart_request_post(
+>>>>>>> ooof
         &self,
         param_string_field: String,
         param_binary_field: swagger::ByteArray,
         param_optional_string_field: Option<String>,
         param_object_field: Option<models::MultipartRequestObjectField>,
+<<<<<<< HEAD
         context: &C) -> Result<MultipartRequestPostResponse, ApiError>
     {
         let mut client_service = self.client_service.clone();
+=======
+        context: &C) -> Box<dyn Future<Item=MultipartRequestPostResponse, Error=ApiError> + Send>
+    {
+>>>>>>> ooof
         let mut uri = format!(
             "{}/multipart_request",
             self.base_path
         );
 
         // Query parameters
+<<<<<<< HEAD
         let query_string = {
             let mut query_string = form_urlencoded::Serializer::new("".to_owned());
             query_string.finish()
@@ -552,18 +774,33 @@ impl<S, C> Api<C> for Client<S, C> where
         if !query_string.is_empty() {
             uri += "?";
             uri += &query_string;
+=======
+        let mut query_string = url::form_urlencoded::Serializer::new("".to_owned());
+        let query_string_str = query_string.finish();
+        if !query_string_str.is_empty() {
+            uri += "?";
+            uri += &query_string_str;
+>>>>>>> ooof
         }
 
         let uri = match Uri::from_str(&uri) {
             Ok(uri) => uri,
+<<<<<<< HEAD
             Err(err) => return Err(ApiError(format!("Unable to build URI: {}", err))),
         };
 
         let mut request = match Request::builder()
+=======
+            Err(err) => return Box::new(future::err(ApiError(format!("Unable to build URI: {}", err)))),
+        };
+
+        let mut request = match hyper::Request::builder()
+>>>>>>> ooof
             .method("POST")
             .uri(uri)
             .body(Body::empty()) {
                 Ok(req) => req,
+<<<<<<< HEAD
                 Err(e) => return Err(ApiError(format!("Unable to create request: {}", e)))
         };
 
@@ -690,12 +927,139 @@ impl<S, C> Api<C> for Client<S, C> where
         context: &C) -> Result<MultipleIdenticalMimeTypesPostResponse, ApiError>
     {
         let mut client_service = self.client_service.clone();
+=======
+                Err(e) => return Box::new(future::err(ApiError(format!("Unable to create request: {}", e))))
+        };
+
+        let mut multipart = Multipart::new();
+
+        // For each parameter, encode as appropriate and add to the multipart body as a stream.
+
+        let string_field_str = match serde_json::to_string(&param_string_field) {
+            Ok(str) => str,
+            Err(e) => return Box::new(future::err(ApiError(format!("Unable to parse string_field to string: {}", e)))),
+        };
+
+        let string_field_vec = string_field_str.as_bytes().to_vec();
+
+        let string_field_mime = mime_0_2::Mime::from_str("application/json").expect("impossible to fail to parse");
+
+        let string_field_cursor = Cursor::new(string_field_vec);
+
+        multipart.add_stream("string_field",  string_field_cursor,  None as Option<&str>, Some(string_field_mime));
+
+        let optional_string_field_str = match serde_json::to_string(&param_optional_string_field) {
+            Ok(str) => str,
+            Err(e) => return Box::new(future::err(ApiError(format!("Unable to parse optional_string_field to string: {}", e)))),
+        };
+
+        let optional_string_field_vec = optional_string_field_str.as_bytes().to_vec();
+
+        let optional_string_field_mime = mime_0_2::Mime::from_str("application/json").expect("impossible to fail to parse");
+
+        let optional_string_field_cursor = Cursor::new(optional_string_field_vec);
+
+        multipart.add_stream("optional_string_field",  optional_string_field_cursor,  None as Option<&str>, Some(optional_string_field_mime));
+
+        let object_field_str = match serde_json::to_string(&param_object_field) {
+            Ok(str) => str,
+            Err(e) => return Box::new(future::err(ApiError(format!("Unable to parse object_field to string: {}", e)))),
+        };
+
+        let object_field_vec = object_field_str.as_bytes().to_vec();
+
+        let object_field_mime = mime_0_2::Mime::from_str("application/json").expect("impossible to fail to parse");
+
+        let object_field_cursor = Cursor::new(object_field_vec);
+
+        multipart.add_stream("object_field",  object_field_cursor,  None as Option<&str>, Some(object_field_mime));
+
+        let binary_field_vec = param_binary_field.to_vec();
+
+        let binary_field_mime = match mime_0_2::Mime::from_str("application/octet-stream") {
+            Ok(mime) => mime,
+            Err(err) => return Box::new(future::err(ApiError(format!("Unable to get mime type: {:?}", err)))),
+        };
+
+        let binary_field_cursor = Cursor::new(binary_field_vec);
+
+        let filename = None as Option<&str> ;
+        multipart.add_stream("binary_field",  binary_field_cursor,  filename, Some(binary_field_mime));
+        let mut fields = match multipart.prepare() {
+            Ok(fields) => fields,
+            Err(err) => return Box::new(future::err(ApiError(format!("Unable to build request: {}", err)))),
+        };
+
+        let mut body_string = String::new();
+        match fields.read_to_string(&mut body_string) {
+            Ok(_) => (),
+            Err(err) => return Box::new(future::err(ApiError(format!("Unable to build body: {}", err)))),
+        }
+        let boundary = fields.boundary();
+
+        let multipart_header = format!("multipart/form-data;boundary={}", boundary);
+
+        *request.body_mut() = Body::from(body_string);
+        request.headers_mut().insert(CONTENT_TYPE, match HeaderValue::from_str(&multipart_header) {
+            Ok(h) => h,
+            Err(e) => return Box::new(future::err(ApiError(format!("Unable to create header: {} - {}", multipart_header, e))))
+        });
+
+        let header = HeaderValue::from_str((context as &dyn Has<XSpanIdString>).get().0.clone().to_string().as_str());
+        request.headers_mut().insert(HeaderName::from_static("x-span-id"), match header {
+            Ok(h) => h,
+            Err(e) => return Box::new(future::err(ApiError(format!("Unable to create X-Span ID header value: {}", e))))
+        });
+
+        Box::new(self.client_service.request(request)
+                             .map_err(|e| ApiError(format!("No response received: {}", e)))
+                             .and_then(|mut response| {
+            match response.status().as_u16() {
+                201 => {
+                    let body = response.into_body();
+                    Box::new(
+                        future::ok(
+                            MultipartRequestPostResponse::OK
+                        )
+                    ) as Box<dyn Future<Item=_, Error=_> + Send>
+                },
+                code => {
+                    let headers = response.headers().clone();
+                    Box::new(response.into_body()
+                            .take(100)
+                            .concat2()
+                            .then(move |body|
+                                future::err(ApiError(format!("Unexpected response code {}:\n{:?}\n\n{}",
+                                    code,
+                                    headers,
+                                    match body {
+                                        Ok(ref body) => match str::from_utf8(body) {
+                                            Ok(body) => Cow::from(body),
+                                            Err(e) => Cow::from(format!("<Body was not UTF8: {:?}>", e)),
+                                        },
+                                        Err(e) => Cow::from(format!("<Failed to read body: {}>", e)),
+                                    })))
+                            )
+                    ) as Box<dyn Future<Item=_, Error=_> + Send>
+                }
+            }
+        }))
+    }
+
+    fn multiple_identical_mime_types_post(
+        &self,
+        param_binary1: Option<swagger::ByteArray>,
+        param_binary2: Option<swagger::ByteArray>,
+        context: &C) -> Box<dyn Future<Item=MultipleIdenticalMimeTypesPostResponse, Error=ApiError> + Send>
+    {
+>>>>>>> ooof
         let mut uri = format!(
             "{}/multiple-identical-mime-types",
             self.base_path
         );
 
         // Query parameters
+<<<<<<< HEAD
         let query_string = {
             let mut query_string = form_urlencoded::Serializer::new("".to_owned());
             query_string.finish()
@@ -703,19 +1067,37 @@ impl<S, C> Api<C> for Client<S, C> where
         if !query_string.is_empty() {
             uri += "?";
             uri += &query_string;
+=======
+        let mut query_string = url::form_urlencoded::Serializer::new("".to_owned());
+        let query_string_str = query_string.finish();
+        if !query_string_str.is_empty() {
+            uri += "?";
+            uri += &query_string_str;
+>>>>>>> ooof
         }
 
         let uri = match Uri::from_str(&uri) {
             Ok(uri) => uri,
+<<<<<<< HEAD
             Err(err) => return Err(ApiError(format!("Unable to build URI: {}", err))),
         };
 
         let mut request = match Request::builder()
+=======
+            Err(err) => return Box::new(future::err(ApiError(format!("Unable to build URI: {}", err)))),
+        };
+
+        let mut request = match hyper::Request::builder()
+>>>>>>> ooof
             .method("POST")
             .uri(uri)
             .body(Body::empty()) {
                 Ok(req) => req,
+<<<<<<< HEAD
                 Err(e) => return Err(ApiError(format!("Unable to create request: {}", e)))
+=======
+                Err(e) => return Box::new(future::err(ApiError(format!("Unable to create request: {}", e))))
+>>>>>>> ooof
         };
 
         // Construct the Body for a multipart/related request. The mime 0.2.6 library
@@ -771,6 +1153,7 @@ impl<S, C> Api<C> for Client<S, C> where
             &[header.as_bytes(), "; boundary=".as_bytes(), &boundary, "; type=\"application/json\"".as_bytes()].concat()
         ) {
             Ok(h) => h,
+<<<<<<< HEAD
             Err(e) => return Err(ApiError(format!("Unable to create header: {} - {}", header, e)))
         });
 
@@ -808,6 +1191,50 @@ impl<S, C> Api<C> for Client<S, C> where
                 )))
             }
         }
+=======
+            Err(e) => return Box::new(future::err(ApiError(format!("Unable to create header: {} - {}", header, e))))
+        });
+
+        let header = HeaderValue::from_str((context as &dyn Has<XSpanIdString>).get().0.clone().to_string().as_str());
+        request.headers_mut().insert(HeaderName::from_static("x-span-id"), match header {
+            Ok(h) => h,
+            Err(e) => return Box::new(future::err(ApiError(format!("Unable to create X-Span ID header value: {}", e))))
+        });
+
+        Box::new(self.client_service.request(request)
+                             .map_err(|e| ApiError(format!("No response received: {}", e)))
+                             .and_then(|mut response| {
+            match response.status().as_u16() {
+                200 => {
+                    let body = response.into_body();
+                    Box::new(
+                        future::ok(
+                            MultipleIdenticalMimeTypesPostResponse::OK
+                        )
+                    ) as Box<dyn Future<Item=_, Error=_> + Send>
+                },
+                code => {
+                    let headers = response.headers().clone();
+                    Box::new(response.into_body()
+                            .take(100)
+                            .concat2()
+                            .then(move |body|
+                                future::err(ApiError(format!("Unexpected response code {}:\n{:?}\n\n{}",
+                                    code,
+                                    headers,
+                                    match body {
+                                        Ok(ref body) => match str::from_utf8(body) {
+                                            Ok(body) => Cow::from(body),
+                                            Err(e) => Cow::from(format!("<Body was not UTF8: {:?}>", e)),
+                                        },
+                                        Err(e) => Cow::from(format!("<Failed to read body: {}>", e)),
+                                    })))
+                            )
+                    ) as Box<dyn Future<Item=_, Error=_> + Send>
+                }
+            }
+        }))
+>>>>>>> ooof
     }
 
 }

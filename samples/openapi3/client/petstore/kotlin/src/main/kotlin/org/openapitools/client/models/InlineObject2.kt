@@ -14,7 +14,10 @@ package org.openapitools.client.models
 
 import com.squareup.moshi.Json
 import java.io.Serializable
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * 
  * @param enumFormStringArray Form parameter enum test (string array)
@@ -24,6 +27,7 @@ import java.io.Serializable
 data class InlineObject2 (
     /* Form parameter enum test (string array) */
     @Json(name = "enum_form_string_array")
+<<<<<<< HEAD
     val enumFormStringArray: kotlin.collections.List<InlineObject2.EnumFormStringArray>? = null,
     /* Form parameter enum test (string) */
     @Json(name = "enum_form_string")
@@ -33,6 +37,19 @@ data class InlineObject2 (
         private const val serialVersionUID: Long = 123
     }
 
+=======
+    val enumFormStringArray: kotlin.Array<InlineObject2.EnumFormStringArray>? = null,
+    /* Form parameter enum test (string) */
+    @Json(name = "enum_form_string")
+    val enumFormString: InlineObject2.EnumFormString? = null
+) 
+: Serializable 
+
+{
+	companion object {
+		private const val serialVersionUID: Long = 123
+	}
+>>>>>>> ooof
     /**
     * Form parameter enum test (string array)
     * Values: greaterThan,dollar

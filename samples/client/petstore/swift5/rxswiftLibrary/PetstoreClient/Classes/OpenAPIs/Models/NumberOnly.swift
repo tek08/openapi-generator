@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 public struct NumberOnly: Codable { 
 
+=======
+public struct NumberOnly: Codable {
+>>>>>>> ooof
 
     public var justNumber: Double?
 
@@ -17,7 +21,11 @@ public struct NumberOnly: Codable {
         self.justNumber = justNumber
     }
 
+<<<<<<< HEAD
     public enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    public enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case justNumber = "JustNumber"
     }
 

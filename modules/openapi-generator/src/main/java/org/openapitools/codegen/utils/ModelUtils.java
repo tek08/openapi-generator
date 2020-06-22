@@ -17,8 +17,11 @@
 
 package org.openapitools.codegen.utils;
 
+<<<<<<< HEAD
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+=======
+>>>>>>> ooof
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.Operation;
 import io.swagger.v3.oas.models.PathItem;
@@ -28,10 +31,13 @@ import io.swagger.v3.oas.models.media.*;
 import io.swagger.v3.oas.models.parameters.Parameter;
 import io.swagger.v3.oas.models.parameters.RequestBody;
 import io.swagger.v3.oas.models.responses.ApiResponse;
+<<<<<<< HEAD
 import io.swagger.v3.parser.core.models.AuthorizationValue;
 import io.swagger.v3.parser.util.ClasspathHelper;
 import io.swagger.v3.parser.ObjectMapperFactory;
 import io.swagger.v3.parser.util.RemoteUrl;
+=======
+>>>>>>> ooof
 import io.swagger.v3.parser.util.SchemaTypeUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.openapitools.codegen.CodegenModel;
@@ -39,6 +45,7 @@ import org.openapitools.codegen.IJsonSchemaValidationProperties;
 import org.openapitools.codegen.config.GlobalSettings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+<<<<<<< HEAD
 import org.apache.commons.io.FileUtils;
 
 import java.math.BigDecimal;
@@ -49,6 +56,13 @@ import java.util.stream.Collectors;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+=======
+
+import java.math.BigDecimal;
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
+>>>>>>> ooof
 
 import static org.openapitools.codegen.utils.OnceLogger.once;
 
@@ -59,6 +73,7 @@ public class ModelUtils {
 
     private static final String generateAliasAsModelKey = "generateAliasAsModel";
 
+<<<<<<< HEAD
     // A vendor extension to track the value of the 'swagger' field in a 2.0 doc, if applicable.
     private static final String openapiDocVersion = "x-original-swagger-version";
 
@@ -80,6 +95,8 @@ public class ModelUtils {
         return Boolean.parseBoolean(GlobalSettings.getProperty(disallowAdditionalPropertiesIfNotPresent, "true"));
     }
 
+=======
+>>>>>>> ooof
     public static void setGenerateAliasAsModel(boolean value) {
         GlobalSettings.setProperty(generateAliasAsModelKey, Boolean.toString(value));
     }
@@ -690,6 +707,51 @@ public class ModelUtils {
     }
 
     /**
+<<<<<<< HEAD
+=======
+     * Return true if the schema value can be any type, i.e. it can be
+     * the null value, integer, number, string, object or array.
+     * One use case is when the "type" attribute in the OAS schema is unspecified.
+     *
+     * Examples:
+     *
+     *     arbitraryTypeValue:
+     *       description: This is an arbitrary type schema.
+     *         It is not a free-form object.
+     *         The value can be any type except the 'null' value.
+     *     arbitraryTypeNullableValue:
+     *       description: This is an arbitrary type schema.
+     *         It is not a free-form object.
+     *         The value can be any type, including the 'null' value.
+     *       nullable: true
+     *
+     * @param schema the OAS schema.
+     * @return true if the schema value can be an arbitrary type.
+     */
+    public static boolean isAnyTypeSchema(Schema schema) {
+        if (schema == null) {
+            once(LOGGER).error("Schema cannot be null in isAnyTypeSchema check");
+            return false;
+        }
+
+        if (isFreeFormObject(schema)) {
+            // make sure it's not free form object
+            return false;
+        }
+
+        if (schema.getClass().equals(Schema.class) && schema.get$ref() == null && schema.getType() == null &&
+                (schema.getProperties() == null || schema.getProperties().isEmpty()) &&
+                schema.getAdditionalProperties() == null && schema.getNot() == null &&
+                schema.getEnum() == null) {
+            return true;
+            // If and when type arrays are supported in a future OAS specification,
+            // we could return true if the type array includes all possible JSON schema types.
+        }
+        return false;
+    }
+
+    /**
+>>>>>>> ooof
      * Check to see if the schema is a free form object.
      *
      * A free form object is an object (i.e. 'type: object' in a OAS document) that:
@@ -716,11 +778,18 @@ public class ModelUtils {
      *       description: This is NOT a free-form object.
      *         The value can be any type except the 'null' value.
      *
+<<<<<<< HEAD
      * @param openAPI the object that encapsulates the OAS document.
      * @param schema potentially containing a '$ref'
      * @return true if it's a free-form object
      */
     public static boolean isFreeFormObject(OpenAPI openAPI, Schema schema) {
+=======
+     * @param schema potentially containing a '$ref'
+     * @return true if it's a free-form object
+     */
+    public static boolean isFreeFormObject(Schema schema) {
+>>>>>>> ooof
         if (schema == null) {
             // TODO: Is this message necessary? A null schema is not a free-form object, so the result is correct.
             once(LOGGER).error("Schema cannot be null in isFreeFormObject check");
@@ -730,7 +799,11 @@ public class ModelUtils {
         // not free-form if allOf, anyOf, oneOf is not empty
         if (schema instanceof ComposedSchema) {
             ComposedSchema cs = (ComposedSchema) schema;
+<<<<<<< HEAD
             List<Schema> interfaces = ModelUtils.getInterfaces(cs);
+=======
+            List<Schema> interfaces = getInterfaces(cs);
+>>>>>>> ooof
             if (interfaces != null && !interfaces.isEmpty()) {
                 return false;
             }
@@ -740,7 +813,11 @@ public class ModelUtils {
         if ("object".equals(schema.getType())) {
             // no properties
             if ((schema.getProperties() == null || schema.getProperties().isEmpty())) {
+<<<<<<< HEAD
                 Schema addlProps = getAdditionalProperties(openAPI, schema);
+=======
+                Schema addlProps = getAdditionalProperties(schema);
+>>>>>>> ooof
                 // additionalProperties not defined
                 if (addlProps == null) {
                     return true;
@@ -1026,7 +1103,11 @@ public class ModelUtils {
         if (schema != null && StringUtils.isNotEmpty(schema.get$ref())) {
             String simpleRef = ModelUtils.getSimpleRef(schema.get$ref());
             if (importMappings.containsKey(simpleRef)) {
+<<<<<<< HEAD
                 LOGGER.debug("Schema unaliasing of {} omitted because aliased class is to be mapped to {}", simpleRef, importMappings.get(simpleRef));
+=======
+                LOGGER.info("Schema unaliasing of {} omitted because aliased class is to be mapped to {}", simpleRef, importMappings.get(simpleRef));
+>>>>>>> ooof
                 return schema;
             }
             Schema ref = allSchemas.get(simpleRef);
@@ -1071,6 +1152,7 @@ public class ModelUtils {
         return schema;
     }
 
+<<<<<<< HEAD
     /**
      * Returns the additionalProperties Schema for the specified input schema.
      * 
@@ -1138,6 +1220,18 @@ public class ModelUtils {
         return null;
     }
     
+=======
+    public static Schema getAdditionalProperties(Schema schema) {
+        if (schema.getAdditionalProperties() instanceof Schema) {
+            return (Schema) schema.getAdditionalProperties();
+        }
+        if (schema.getAdditionalProperties() instanceof Boolean && (Boolean) schema.getAdditionalProperties()) {
+            return new ObjectSchema();
+        }
+        return null;
+    }
+
+>>>>>>> ooof
     public static Header getReferencedHeader(OpenAPI openAPI, Header header) {
         if (header != null && StringUtils.isNotEmpty(header.get$ref())) {
             String name = getSimpleRef(header.get$ref());
@@ -1461,6 +1555,7 @@ public class ModelUtils {
             if (maxProperties != null) target.setMaxProperties(maxProperties);
         }
     }
+<<<<<<< HEAD
 
     private static ObjectMapper getRightMapper(String data) {
         ObjectMapper mapper;
@@ -1539,4 +1634,6 @@ public class ModelUtils {
 
         return new SemVer(version);
     }
+=======
+>>>>>>> ooof
 }

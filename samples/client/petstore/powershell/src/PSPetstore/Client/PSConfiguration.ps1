@@ -92,7 +92,11 @@ Access token for authentication/authorization
 .PARAMETER SkipCertificateCheck
 Skip certificate verification
 
+<<<<<<< HEAD
 .PARAMETER DefaultHeaders
+=======
+.PARAMETER DefaultHeaders 
+>>>>>>> ooof
 Default HTTP headers to be included in the HTTP request
 
 .PARAMETER PassThru
@@ -130,6 +134,10 @@ function Set-PSConfiguration {
             if (!($null -ne $URL.AbsoluteURI -and $URL.Scheme -match '[http|https]')) {
                 throw "Invalid URL '$($BaseUrl)' cannot be used in the base URL."
             }
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
             $Script:Configuration["BaseUrl"] = $BaseUrl
         }
 
@@ -161,7 +169,11 @@ function Set-PSConfiguration {
             $Script:Configuration['SkipCertificateCheck'] = $true
         } else {
             $Script:Configuration['SkipCertificateCheck'] = $false
+<<<<<<< HEAD
         }
+=======
+        } 
+>>>>>>> ooof
 
         If ($DefaultHeaders) {
             $Script:Configuration['DefaultHeaders'] = $DefaultHeaders
@@ -340,7 +352,11 @@ Get the URL from the host settings.
 .PARAMETER Index
 Index of the host settings (array)
 
+<<<<<<< HEAD
 .PARAMETER Variables
+=======
+.PARAMETER Variables 
+>>>>>>> ooof
 Names and values of the variables (hashtable)
 
 .DESCRIPTION
@@ -388,6 +404,7 @@ function Get-PSUrlFromHostSetting {
 
     }
 }
+<<<<<<< HEAD
 
 <#
 .SYNOPSIS
@@ -525,3 +542,5 @@ function Get-PSConfigurationHttpSigning{
     $httpSignatureConfiguration = $Script:Configuration["HttpSigning"]
     return $httpSignatureConfiguration
 }
+=======
+>>>>>>> ooof

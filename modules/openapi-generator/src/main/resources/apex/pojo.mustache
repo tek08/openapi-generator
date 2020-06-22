@@ -34,19 +34,32 @@ public class {{classname}}{{#parent}} extends {{{parent}}}{{/parent}}{{#interfac
 
   {{/vars}}
 {{#vendorExtensions}}
+<<<<<<< HEAD
   {{#x-property-mappings}}
     private static final Map<String, String> propertyMappings = new Map<String, String>{
       {{#x-property-mappings}}
         '{{externalName}}' => '{{internalName}}'{{^-last}},{{/-last}}
       {{/x-property-mappings}}
+=======
+  {{#hasPropertyMappings}}
+    private static final Map<String, String> propertyMappings = new Map<String, String>{
+      {{#propertyMappings}}
+        '{{externalName}}' => '{{internalName}}'{{^-last}},{{/-last}}
+      {{/propertyMappings}}
+>>>>>>> ooof
     };
 
     public Map<String, String> getPropertyMappings() {
         return propertyMappings;
     }
 
+<<<<<<< HEAD
   {{/x-property-mappings}}
   {{#x-has-default-values}}
+=======
+  {{/hasPropertyMappings}}
+  {{#hasDefaultValues}}
+>>>>>>> ooof
     public {{classname}}() {
     {{#vars}}
       {{#defaultValue}}
@@ -55,7 +68,11 @@ public class {{classname}}{{#parent}} extends {{{parent}}}{{/parent}}{{#interfac
     {{/vars}}
     }
 
+<<<<<<< HEAD
   {{/x-has-default-values}}
+=======
+  {{/hasDefaultValues}}
+>>>>>>> ooof
 {{/vendorExtensions}}
     public static {{classname}} getExample() {
         {{classname}} {{classVarName}} = new {{classname}}();

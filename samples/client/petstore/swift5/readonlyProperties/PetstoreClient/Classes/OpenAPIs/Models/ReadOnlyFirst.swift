@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 public struct ReadOnlyFirst: Codable { 
 
+=======
+public struct ReadOnlyFirst: Codable {
+>>>>>>> ooof
 
     public private(set) var bar: String?
     public private(set) var baz: String?

@@ -21,9 +21,13 @@
 {{#cppNamespaceDeclarations}}
 namespace {{this}} {
 {{/cppNamespaceDeclarations}}
+<<<<<<< HEAD
 {{#vendorExtensions.x-has-forward-declarations}}
 {{#vendorExtensions.x-forward-declarations}}{{.}}
 {{/vendorExtensions.x-forward-declarations}}{{/vendorExtensions.x-has-forward-declarations}}
+=======
+
+>>>>>>> ooof
 class {{classname}} : public {{prefix}}{{^isEnum}}Object{{/isEnum}}{{#isEnum}}Enum{{/isEnum}} {
 public:
     {{classname}}();

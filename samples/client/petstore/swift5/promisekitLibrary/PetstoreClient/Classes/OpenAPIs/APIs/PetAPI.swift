@@ -8,8 +8,11 @@
 import Foundation
 import PromiseKit
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 open class PetAPI {
     /**
      Add a new pet to the store
@@ -60,7 +63,11 @@ open class PetAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - returns: Promise<Void>
      */
+<<<<<<< HEAD
     open class func deletePet( petId: Int64,  apiKey: String? = nil, apiResponseQueue: DispatchQueue = PetstoreClientAPI.apiResponseQueue) -> Promise<Void> {
+=======
+    open class func deletePet( petId: Int64, apiKey: String? = nil, apiResponseQueue: DispatchQueue = PetstoreClientAPI.apiResponseQueue) -> Promise<Void> {
+>>>>>>> ooof
         let deferred = Promise<Void>.pending()
         deletePetWithRequestBuilder(petId: petId, apiKey: apiKey).execute(apiResponseQueue) { result -> Void in
             switch result {
@@ -89,8 +96,13 @@ open class PetAPI {
         let petIdPostEscape = petIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         path = path.replacingOccurrences(of: "{petId}", with: petIdPostEscape, options: .literal, range: nil)
         let URLString = PetstoreClientAPI.basePath + path
+<<<<<<< HEAD
         let parameters: [String:Any]? = nil
         
+=======
+        let parameters: [String: Any]? = nil
+
+>>>>>>> ooof
         let url = URLComponents(string: URLString)
         let nillableHeaders: [String: Any?] = [
             "api_key": apiKey?.encodeToJSON()
@@ -144,8 +156,13 @@ open class PetAPI {
     open class func findPetsByStatusWithRequestBuilder(status: [String]) -> RequestBuilder<[Pet]> {
         let path = "/pet/findByStatus"
         let URLString = PetstoreClientAPI.basePath + path
+<<<<<<< HEAD
         let parameters: [String:Any]? = nil
         
+=======
+        let parameters: [String: Any]? = nil
+
+>>>>>>> ooof
         var url = URLComponents(string: URLString)
         url?.queryItems = APIHelper.mapValuesToQueryItems([
             "status": status.encodeToJSON()
@@ -163,7 +180,10 @@ open class PetAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - returns: Promise<[Pet]>
      */
+<<<<<<< HEAD
     @available(*, deprecated, message: "This operation is deprecated.")
+=======
+>>>>>>> ooof
     open class func findPetsByTags( tags: [String], apiResponseQueue: DispatchQueue = PetstoreClientAPI.apiResponseQueue) -> Promise<[Pet]> {
         let deferred = Promise<[Pet]>.pending()
         findPetsByTagsWithRequestBuilder(tags: tags).execute(apiResponseQueue) { result -> Void in
@@ -187,12 +207,20 @@ open class PetAPI {
      - parameter tags: (query) Tags to filter by 
      - returns: RequestBuilder<[Pet]> 
      */
+<<<<<<< HEAD
     @available(*, deprecated, message: "This operation is deprecated.")
     open class func findPetsByTagsWithRequestBuilder(tags: [String]) -> RequestBuilder<[Pet]> {
         let path = "/pet/findByTags"
         let URLString = PetstoreClientAPI.basePath + path
         let parameters: [String:Any]? = nil
         
+=======
+    open class func findPetsByTagsWithRequestBuilder(tags: [String]) -> RequestBuilder<[Pet]> {
+        let path = "/pet/findByTags"
+        let URLString = PetstoreClientAPI.basePath + path
+        let parameters: [String: Any]? = nil
+
+>>>>>>> ooof
         var url = URLComponents(string: URLString)
         url?.queryItems = APIHelper.mapValuesToQueryItems([
             "tags": tags.encodeToJSON()
@@ -239,8 +267,13 @@ open class PetAPI {
         let petIdPostEscape = petIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         path = path.replacingOccurrences(of: "{petId}", with: petIdPostEscape, options: .literal, range: nil)
         let URLString = PetstoreClientAPI.basePath + path
+<<<<<<< HEAD
         let parameters: [String:Any]? = nil
         
+=======
+        let parameters: [String: Any]? = nil
+
+>>>>>>> ooof
         let url = URLComponents(string: URLString)
 
         let requestBuilder: RequestBuilder<Pet>.Type = PetstoreClientAPI.requestBuilderFactory.getBuilder()
@@ -298,7 +331,11 @@ open class PetAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - returns: Promise<Void>
      */
+<<<<<<< HEAD
     open class func updatePetWithForm( petId: Int64,  name: String? = nil,  status: String? = nil, apiResponseQueue: DispatchQueue = PetstoreClientAPI.apiResponseQueue) -> Promise<Void> {
+=======
+    open class func updatePetWithForm( petId: Int64, name: String? = nil, status: String? = nil, apiResponseQueue: DispatchQueue = PetstoreClientAPI.apiResponseQueue) -> Promise<Void> {
+>>>>>>> ooof
         let deferred = Promise<Void>.pending()
         updatePetWithFormWithRequestBuilder(petId: petId, name: name, status: status).execute(apiResponseQueue) { result -> Void in
             switch result {
@@ -328,14 +365,22 @@ open class PetAPI {
         let petIdPostEscape = petIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         path = path.replacingOccurrences(of: "{petId}", with: petIdPostEscape, options: .literal, range: nil)
         let URLString = PetstoreClientAPI.basePath + path
+<<<<<<< HEAD
         let formParams: [String:Any?] = [
+=======
+        let formParams: [String: Any?] = [
+>>>>>>> ooof
             "name": name?.encodeToJSON(),
             "status": status?.encodeToJSON()
         ]
 
         let nonNullParameters = APIHelper.rejectNil(formParams)
         let parameters = APIHelper.convertBoolToString(nonNullParameters)
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> ooof
         let url = URLComponents(string: URLString)
 
         let requestBuilder: RequestBuilder<Void>.Type = PetstoreClientAPI.requestBuilderFactory.getNonDecodableBuilder()
@@ -352,7 +397,11 @@ open class PetAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - returns: Promise<ApiResponse>
      */
+<<<<<<< HEAD
     open class func uploadFile( petId: Int64,  additionalMetadata: String? = nil,  file: URL? = nil, apiResponseQueue: DispatchQueue = PetstoreClientAPI.apiResponseQueue) -> Promise<ApiResponse> {
+=======
+    open class func uploadFile( petId: Int64, additionalMetadata: String? = nil, file: URL? = nil, apiResponseQueue: DispatchQueue = PetstoreClientAPI.apiResponseQueue) -> Promise<ApiResponse> {
+>>>>>>> ooof
         let deferred = Promise<ApiResponse>.pending()
         uploadFileWithRequestBuilder(petId: petId, additionalMetadata: additionalMetadata, file: file).execute(apiResponseQueue) { result -> Void in
             switch result {
@@ -382,14 +431,22 @@ open class PetAPI {
         let petIdPostEscape = petIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         path = path.replacingOccurrences(of: "{petId}", with: petIdPostEscape, options: .literal, range: nil)
         let URLString = PetstoreClientAPI.basePath + path
+<<<<<<< HEAD
         let formParams: [String:Any?] = [
+=======
+        let formParams: [String: Any?] = [
+>>>>>>> ooof
             "additionalMetadata": additionalMetadata?.encodeToJSON(),
             "file": file?.encodeToJSON()
         ]
 
         let nonNullParameters = APIHelper.rejectNil(formParams)
         let parameters = APIHelper.convertBoolToString(nonNullParameters)
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> ooof
         let url = URLComponents(string: URLString)
 
         let requestBuilder: RequestBuilder<ApiResponse>.Type = PetstoreClientAPI.requestBuilderFactory.getBuilder()
@@ -406,7 +463,11 @@ open class PetAPI {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - returns: Promise<ApiResponse>
      */
+<<<<<<< HEAD
     open class func uploadFileWithRequiredFile( petId: Int64,  requiredFile: URL,  additionalMetadata: String? = nil, apiResponseQueue: DispatchQueue = PetstoreClientAPI.apiResponseQueue) -> Promise<ApiResponse> {
+=======
+    open class func uploadFileWithRequiredFile( petId: Int64, requiredFile: URL, additionalMetadata: String? = nil, apiResponseQueue: DispatchQueue = PetstoreClientAPI.apiResponseQueue) -> Promise<ApiResponse> {
+>>>>>>> ooof
         let deferred = Promise<ApiResponse>.pending()
         uploadFileWithRequiredFileWithRequestBuilder(petId: petId, requiredFile: requiredFile, additionalMetadata: additionalMetadata).execute(apiResponseQueue) { result -> Void in
             switch result {
@@ -436,14 +497,22 @@ open class PetAPI {
         let petIdPostEscape = petIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         path = path.replacingOccurrences(of: "{petId}", with: petIdPostEscape, options: .literal, range: nil)
         let URLString = PetstoreClientAPI.basePath + path
+<<<<<<< HEAD
         let formParams: [String:Any?] = [
+=======
+        let formParams: [String: Any?] = [
+>>>>>>> ooof
             "additionalMetadata": additionalMetadata?.encodeToJSON(),
             "requiredFile": requiredFile.encodeToJSON()
         ]
 
         let nonNullParameters = APIHelper.rejectNil(formParams)
         let parameters = APIHelper.convertBoolToString(nonNullParameters)
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> ooof
         let url = URLComponents(string: URLString)
 
         let requestBuilder: RequestBuilder<ApiResponse>.Type = PetstoreClientAPI.requestBuilderFactory.getBuilder()

@@ -48,10 +48,19 @@ build_script:
   - nuget restore samples\client\petstore\csharp\OpenAPIClientNetStandard\Org.OpenAPITools.sln
   - msbuild samples\client\petstore\csharp\OpenAPIClientNetStandard\Org.OpenAPITools.sln /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
   # install openapi-generator locally
+<<<<<<< HEAD
   - mvn --no-snapshot-updates --quiet clean install -Dorg.slf4j.simpleLogger.defaultLogLevel=error
   # run the locally installed openapi-generator-gradle-plugin
   - gradle -b modules\openapi-generator-gradle-plugin\samples\local-spec\build.gradle buildGoSdk --stacktrace
 test_script:
+=======
+  - mvn clean install --quiet -Dorg.slf4j.simpleLogger.defaultLogLevel=error
+  # run the locally installed openapi-generator-gradle-plugin
+  - gradle -b modules\openapi-generator-gradle-plugin\samples\local-spec\build.gradle buildGoSdk --info
+test_script:
+  # restore test-related files
+  - copy /b/v/y CI\samples.ci\client\petstore\csharp\OpenAPIClient\src\Org.OpenAPITools.Test\Org.OpenAPITools.Test.csproj samples\client\petstore\csharp\OpenAPIClient\src\Org.OpenAPITools.Test\Org.OpenAPITools.Test.csproj
+>>>>>>> ooof
   # test c# API client (netcore)
   - dotnet test samples\client\petstore\csharp-netcore\OpenAPIClient\src\Org.OpenAPITools.Test\Org.OpenAPITools.Test.csproj
   - dotnet test samples\client\petstore\csharp-netcore\OpenAPIClientCore\src\Org.OpenAPITools.Test\Org.OpenAPITools.Test.csproj
@@ -60,12 +69,20 @@ test_script:
   # test c# API client (with PropertyChanged)
   - nunit3-console samples\client\petstore\csharp\OpenAPIClientWithPropertyChanged\src\Org.OpenAPITools.Test\bin\Debug\Org.OpenAPITools.Test.dll --result=myresults.xml;format=AppVeyor
 
+<<<<<<< HEAD
 ### TODO: Execute all generators via powershell or other
   # generate all petstore clients
   # - .\bin\windows\run-all-petstore.cmd
   # generate all petstore clients (openapi3)
   # - .\bin\openapi3\windows\run-all-petstore.cmd
 
+=======
+  # generate all petstore clients
+  - .\bin\windows\run-all-petstore.cmd
+
+  # generate all petstore clients (openapi3)
+  - .\bin\openapi3\windows\run-all-petstore.cmd
+>>>>>>> ooof
   # test ps pestore
   - ps: |
       $ErrorActionPreference = "Stop"

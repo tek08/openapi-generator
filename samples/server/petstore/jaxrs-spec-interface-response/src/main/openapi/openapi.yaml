@@ -32,10 +32,17 @@ paths:
         description: Pet object that needs to be added to the store
         required: true
       responses:
+<<<<<<< HEAD
         "200":
           content: {}
           description: successful operation
         "405":
+=======
+        200:
+          content: {}
+          description: successful operation
+        405:
+>>>>>>> ooof
           content: {}
           description: Invalid input
       security:
@@ -63,6 +70,7 @@ paths:
         description: Pet object that needs to be added to the store
         required: true
       responses:
+<<<<<<< HEAD
         "200":
           content: {}
           description: successful operation
@@ -73,6 +81,18 @@ paths:
           content: {}
           description: Pet not found
         "405":
+=======
+        200:
+          content: {}
+          description: successful operation
+        400:
+          content: {}
+          description: Invalid ID supplied
+        404:
+          content: {}
+          description: Pet not found
+        405:
+>>>>>>> ooof
           content: {}
           description: Validation exception
       security:
@@ -108,7 +128,11 @@ paths:
           type: array
         style: form
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content:
             application/xml:
               schema:
@@ -121,7 +145,11 @@ paths:
                   $ref: '#/components/schemas/Pet'
                 type: array
           description: successful operation
+<<<<<<< HEAD
         "400":
+=======
+        400:
+>>>>>>> ooof
           content: {}
           description: Invalid status value
       security:
@@ -150,25 +178,39 @@ paths:
           items:
             type: string
           type: array
+<<<<<<< HEAD
           uniqueItems: true
         style: form
       responses:
         "200":
+=======
+        style: form
+      responses:
+        200:
+>>>>>>> ooof
           content:
             application/xml:
               schema:
                 items:
                   $ref: '#/components/schemas/Pet'
                 type: array
+<<<<<<< HEAD
                 uniqueItems: true
+=======
+>>>>>>> ooof
             application/json:
               schema:
                 items:
                   $ref: '#/components/schemas/Pet'
                 type: array
+<<<<<<< HEAD
                 uniqueItems: true
           description: successful operation
         "400":
+=======
+          description: successful operation
+        400:
+>>>>>>> ooof
           content: {}
           description: Invalid tag value
       security:
@@ -197,10 +239,17 @@ paths:
           format: int64
           type: integer
       responses:
+<<<<<<< HEAD
         "200":
           content: {}
           description: successful operation
         "400":
+=======
+        200:
+          content: {}
+          description: successful operation
+        400:
+>>>>>>> ooof
           content: {}
           description: Invalid pet value
       security:
@@ -225,7 +274,11 @@ paths:
           format: int64
           type: integer
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content:
             application/xml:
               schema:
@@ -234,10 +287,17 @@ paths:
               schema:
                 $ref: '#/components/schemas/Pet'
           description: successful operation
+<<<<<<< HEAD
         "400":
           content: {}
           description: Invalid ID supplied
         "404":
+=======
+        400:
+          content: {}
+          description: Invalid ID supplied
+        404:
+>>>>>>> ooof
           content: {}
           description: Pet not found
       security:
@@ -270,7 +330,11 @@ paths:
                   description: Updated status of the pet
                   type: string
       responses:
+<<<<<<< HEAD
         "405":
+=======
+        405:
+>>>>>>> ooof
           content: {}
           description: Invalid input
       security:
@@ -308,7 +372,11 @@ paths:
                   format: binary
                   type: string
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content:
             application/json:
               schema:
@@ -330,7 +398,11 @@ paths:
       description: Returns a map of status codes to quantities
       operationId: getInventory
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content:
             application/json:
               schema:
@@ -358,7 +430,11 @@ paths:
         description: order placed for purchasing the pet
         required: true
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content:
             application/xml:
               schema:
@@ -367,7 +443,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/Order'
           description: successful operation
+<<<<<<< HEAD
         "400":
+=======
+        400:
+>>>>>>> ooof
           content: {}
           description: Invalid Order
       summary: Place an order for a pet
@@ -391,10 +471,17 @@ paths:
         schema:
           type: string
       responses:
+<<<<<<< HEAD
         "400":
           content: {}
           description: Invalid ID supplied
         "404":
+=======
+        400:
+          content: {}
+          description: Invalid ID supplied
+        404:
+>>>>>>> ooof
           content: {}
           description: Order not found
       summary: Delete purchase order by ID
@@ -418,7 +505,11 @@ paths:
           minimum: 1
           type: integer
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content:
             application/xml:
               schema:
@@ -427,10 +518,17 @@ paths:
               schema:
                 $ref: '#/components/schemas/Order'
           description: successful operation
+<<<<<<< HEAD
         "400":
           content: {}
           description: Invalid ID supplied
         "404":
+=======
+        400:
+          content: {}
+          description: Invalid ID supplied
+        404:
+>>>>>>> ooof
           content: {}
           description: Order not found
       summary: Find purchase order by ID
@@ -527,7 +625,11 @@ paths:
         schema:
           type: string
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content:
             application/xml:
               schema:
@@ -547,7 +649,11 @@ paths:
               schema:
                 format: date-time
                 type: string
+<<<<<<< HEAD
         "400":
+=======
+        400:
+>>>>>>> ooof
           content: {}
           description: Invalid username/password supplied
       summary: Logs user into the system
@@ -581,10 +687,17 @@ paths:
         schema:
           type: string
       responses:
+<<<<<<< HEAD
         "400":
           content: {}
           description: Invalid username supplied
         "404":
+=======
+        400:
+          content: {}
+          description: Invalid username supplied
+        404:
+>>>>>>> ooof
           content: {}
           description: User not found
       summary: Delete user
@@ -603,7 +716,11 @@ paths:
         schema:
           type: string
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content:
             application/xml:
               schema:
@@ -612,10 +729,17 @@ paths:
               schema:
                 $ref: '#/components/schemas/User'
           description: successful operation
+<<<<<<< HEAD
         "400":
           content: {}
           description: Invalid username supplied
         "404":
+=======
+        400:
+          content: {}
+          description: Invalid username supplied
+        404:
+>>>>>>> ooof
           content: {}
           description: User not found
       summary: Get user by user name
@@ -642,10 +766,17 @@ paths:
         description: Updated user object
         required: true
       responses:
+<<<<<<< HEAD
         "400":
           content: {}
           description: Invalid user supplied
         "404":
+=======
+        400:
+          content: {}
+          description: Invalid user supplied
+        404:
+>>>>>>> ooof
           content: {}
           description: User not found
       summary: Updated user
@@ -668,7 +799,11 @@ paths:
         description: client model
         required: true
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content:
             application/json:
               schema:
@@ -725,7 +860,11 @@ paths:
           format: int64
           type: integer
       responses:
+<<<<<<< HEAD
         "400":
+=======
+        400:
+>>>>>>> ooof
           content: {}
           description: Someting wrong
       summary: Fake endpoint to test group parameters (optional)
@@ -826,10 +965,17 @@ paths:
                   - (xyz)
                   type: string
       responses:
+<<<<<<< HEAD
         "400":
           content: {}
           description: Invalid request
         "404":
+=======
+        400:
+          content: {}
+          description: Invalid request
+        404:
+>>>>>>> ooof
           content: {}
           description: Not found
       summary: To test enum parameters
@@ -850,7 +996,11 @@ paths:
         description: client model
         required: true
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content:
             application/json:
               schema:
@@ -865,11 +1015,19 @@ paths:
       x-tags:
       - tag: fake
     post:
+<<<<<<< HEAD
       description: |-
         Fake endpoint for testing various parameters
          假端點
          偽のエンドポイント
          가짜 엔드 포인트
+=======
+      description: |
+        Fake endpoint for testing various parameters
+        假端點
+        偽のエンドポイント
+        가짜 엔드 포인트
+>>>>>>> ooof
       operationId: testEndpointParameters
       requestBody:
         content:
@@ -948,19 +1106,34 @@ paths:
               - pattern_without_delimiter
         required: true
       responses:
+<<<<<<< HEAD
         "400":
           content: {}
           description: Invalid username supplied
         "404":
+=======
+        400:
+          content: {}
+          description: Invalid username supplied
+        404:
+>>>>>>> ooof
           content: {}
           description: User not found
       security:
       - http_basic_test: []
+<<<<<<< HEAD
       summary: |-
         Fake endpoint for testing various parameters
          假端點
          偽のエンドポイント
          가짜 엔드 포인트
+=======
+      summary: |
+        Fake endpoint for testing various parameters
+        假端點
+        偽のエンドポイント
+        가짜 엔드 포인트
+>>>>>>> ooof
       tags:
       - fake
       x-contentType: application/x-www-form-urlencoded
@@ -979,7 +1152,11 @@ paths:
         description: Input number as post body
         required: false
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content:
             '*/*':
               schema:
@@ -1004,7 +1181,11 @@ paths:
         description: Input string as post body
         required: false
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content:
             '*/*':
               schema:
@@ -1029,7 +1210,11 @@ paths:
         description: Input boolean as post body
         required: false
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content:
             '*/*':
               schema:
@@ -1054,7 +1239,11 @@ paths:
         description: Input composite as post body
         required: false
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content:
             '*/*':
               schema:
@@ -1086,7 +1275,11 @@ paths:
               - param2
         required: true
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content: {}
           description: successful operation
       summary: test json serialization of form data
@@ -1109,7 +1302,11 @@ paths:
         description: request body
         required: true
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content: {}
           description: successful operation
       summary: test inline additionalProperties
@@ -1136,7 +1333,11 @@ paths:
               $ref: '#/components/schemas/User'
         required: true
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content: {}
           description: Success
       tags:
@@ -1173,7 +1374,11 @@ paths:
         description: XmlItem Body
         required: true
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content: {}
           description: successful operation
       summary: creates an XmlItem
@@ -1196,7 +1401,11 @@ paths:
         description: client model
         required: true
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content:
             application/json:
               schema:
@@ -1222,7 +1431,11 @@ paths:
               $ref: '#/components/schemas/FileSchemaTestClass'
         required: true
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content: {}
           description: Success
       tags:
@@ -1280,7 +1493,11 @@ paths:
           type: array
         style: form
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content: {}
           description: Success
       tags:
@@ -1315,7 +1532,11 @@ paths:
               - requiredFile
         required: true
       responses:
+<<<<<<< HEAD
         "200":
+=======
+        200:
+>>>>>>> ooof
           content:
             application/json:
               schema:
@@ -1461,7 +1682,10 @@ components:
           items:
             type: string
           type: array
+<<<<<<< HEAD
           uniqueItems: true
+=======
+>>>>>>> ooof
           xml:
             name: photoUrl
             wrapped: true
@@ -1528,7 +1752,11 @@ components:
           type: integer
         property:
           type: string
+<<<<<<< HEAD
         "123Number":
+=======
+        123Number:
+>>>>>>> ooof
           readOnly: true
           type: integer
       required:
@@ -1536,7 +1764,11 @@ components:
       type: object
       xml:
         name: Name
+<<<<<<< HEAD
     "200_response":
+=======
+    200_response:
+>>>>>>> ooof
       description: Model for testing model name starting with number
       properties:
         name:
@@ -1805,7 +2037,11 @@ components:
       type: object
     List:
       properties:
+<<<<<<< HEAD
         "123-list":
+=======
+        123-list:
+>>>>>>> ooof
           type: string
       type: object
     Client:

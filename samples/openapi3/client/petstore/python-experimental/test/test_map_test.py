@@ -11,6 +11,7 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
@@ -21,6 +22,12 @@ except ImportError:
     string_boolean_map = sys.modules[
         'petstore_api.model.string_boolean_map']
 from petstore_api.model.map_test import MapTest
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestMapTest(unittest.TestCase):
@@ -35,7 +42,11 @@ class TestMapTest(unittest.TestCase):
     def testMapTest(self):
         """Test MapTest"""
         # FIXME: construct object with mandatory attributes with example values
+<<<<<<< HEAD
         # model = MapTest()  # noqa: E501
+=======
+        # model = petstore_api.MapTest()  # noqa: E501
+>>>>>>> ooof
         pass
 
 

@@ -19,10 +19,17 @@ import io.swagger.annotations.ApiModelProperty
 data class InlineObject1(
 
     @ApiModelProperty(example = "null", value = "Additional data to pass to server")
+<<<<<<< HEAD
     @field:JsonProperty("additionalMetadata") val additionalMetadata: kotlin.String? = null,
 
     @ApiModelProperty(example = "null", value = "file to upload")
     @field:JsonProperty("file") val file: org.springframework.core.io.Resource? = null
+=======
+    @JsonProperty("additionalMetadata") val additionalMetadata: kotlin.String? = null,
+
+    @ApiModelProperty(example = "null", value = "file to upload")
+    @JsonProperty("file") val file: org.springframework.core.io.Resource? = null
+>>>>>>> ooof
 ) {
 
 }

@@ -12,11 +12,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
 /**
  * Model for testing model name starting with number
  **/
 @ApiModel(description = "Model for testing model name starting with number")
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class Model200Response  implements Serializable {
+=======
+public class Model200Response  implements Serializable {
+>>>>>>> ooof
   
   private @Valid Integer name;
   private @Valid String propertyClass;
@@ -29,17 +37,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("name")
   public Integer getName() {
     return name;
   }
+<<<<<<< HEAD
 
   public void setName(Integer name) {
     this.name = name;
   }/**
+=======
+  public void setName(Integer name) {
+    this.name = name;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public Model200Response propertyClass(String propertyClass) {
     this.propertyClass = propertyClass;
@@ -47,18 +66,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("class")
   public String getPropertyClass() {
     return propertyClass;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
   public void setPropertyClass(String propertyClass) {
     this.propertyClass = propertyClass;
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -98,7 +127,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
     }
     return o.toString().replace("\n", "\n    ");
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 }
 

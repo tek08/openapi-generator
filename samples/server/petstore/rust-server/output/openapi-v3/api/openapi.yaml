@@ -211,7 +211,10 @@ paths:
           headers:
             Success-Info:
               explode: false
+<<<<<<< HEAD
               required: true
+=======
+>>>>>>> ooof
               schema:
                 type: String
               style: simple
@@ -407,6 +410,7 @@ paths:
           description: Success
       tags:
       - Repo
+<<<<<<< HEAD
   /json-complex-query-param:
     get:
       parameters:
@@ -424,6 +428,8 @@ paths:
       responses:
         "200":
           description: Success
+=======
+>>>>>>> ooof
 components:
   schemas:
     EnumWithStarObject:
@@ -558,6 +564,7 @@ components:
       type: boolean
     OptionalObjectHeader:
       type: integer
+<<<<<<< HEAD
     AdditionalPropertiesWithList:
       additionalProperties:
         items:
@@ -565,6 +572,8 @@ components:
         type: array
       maxProperties: 1
       type: object
+=======
+>>>>>>> ooof
     NullableTest:
       properties:
         nullable:

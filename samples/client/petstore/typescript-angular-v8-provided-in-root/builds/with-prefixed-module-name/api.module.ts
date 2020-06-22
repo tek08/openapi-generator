@@ -2,6 +2,10 @@ import { NgModule, ModuleWithProviders, SkipSelf, Optional } from '@angular/core
 import { Configuration } from './configuration';
 import { HttpClient } from '@angular/common/http';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
 import { PetService } from './api/pet.service';
 import { StoreService } from './api/store.service';
 import { UserService } from './api/user.service';

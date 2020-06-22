@@ -277,7 +277,11 @@
 #'
 #' }
 #' @importFrom R6 R6Class
+<<<<<<< HEAD
 #' @importFrom base64enc base64encode
+=======
+#' @importFrom caTools base64encode
+>>>>>>> ooof
 #' @export
 UserApi <- R6::R6Class(
   'UserApi',

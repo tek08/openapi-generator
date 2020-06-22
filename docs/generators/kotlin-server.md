@@ -45,9 +45,15 @@ sidebar_label: kotlin-server
 
 | Type/Alias | Instantiated By |
 | ---------- | --------------- |
+<<<<<<< HEAD
 |array|kotlin.Array|
 |list|kotlin.collections.ArrayList|
 |map|kotlin.collections.HashMap|
+=======
+|array|kotlin.arrayOf|
+|list|kotlin.arrayOf|
+|map|kotlin.mapOf|
+>>>>>>> ooof
 
 
 ## LANGUAGE PRIMITIVES

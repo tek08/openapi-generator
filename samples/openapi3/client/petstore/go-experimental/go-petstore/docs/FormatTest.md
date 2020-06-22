@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Integer** | Pointer to **int32** |  | [optional] 
 **Int32** | Pointer to **int32** |  | [optional] 
 **Int64** | Pointer to **int64** |  | [optional] 
+<<<<<<< HEAD
 **Number** | **float32** |  | 
 **Float** | Pointer to **float32** |  | [optional] 
 **Double** | Pointer to **float64** |  | [optional] 
@@ -17,6 +18,18 @@ Name | Type | Description | Notes
 **DateTime** | Pointer to [**time.Time**](time.Time.md) |  | [optional] 
 **Uuid** | Pointer to **string** |  | [optional] 
 **Password** | **string** |  | 
+=======
+**Number** | Pointer to **float32** |  | 
+**Float** | Pointer to **float32** |  | [optional] 
+**Double** | Pointer to **float64** |  | [optional] 
+**String** | Pointer to **string** |  | [optional] 
+**Byte** | Pointer to **string** |  | 
+**Binary** | Pointer to [***os.File**](*os.File.md) |  | [optional] 
+**Date** | Pointer to **string** |  | 
+**DateTime** | Pointer to [**time.Time**](time.Time.md) |  | [optional] 
+**Uuid** | Pointer to **string** |  | [optional] 
+**Password** | Pointer to **string** |  | 
+>>>>>>> ooof
 **PatternWithDigits** | Pointer to **string** | A string that is a 10 digit number. Can have leading zeros. | [optional] 
 **PatternWithDigitsAndDelimiter** | Pointer to **string** | A string starting with &#39;image_&#39; (case insensitive) and one to three digits following i.e. Image_01. | [optional] 
 

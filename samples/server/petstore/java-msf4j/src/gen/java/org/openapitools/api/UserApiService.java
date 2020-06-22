@@ -17,7 +17,11 @@ import java.io.InputStream;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen")
+=======
+
+>>>>>>> ooof
 public abstract class UserApiService {
     public abstract Response createUser(User body
  ) throws NotFoundException;

@@ -16,7 +16,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class EnumArrays  implements Serializable {
+=======
+public class EnumArrays  implements Serializable {
+>>>>>>> ooof
   
 
 public enum JustSymbolEnum {
@@ -95,17 +99,28 @@ public enum ArrayEnumEnum {
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("just_symbol")
   public JustSymbolEnum getJustSymbol() {
     return justSymbol;
   }
+<<<<<<< HEAD
 
   public void setJustSymbol(JustSymbolEnum justSymbol) {
     this.justSymbol = justSymbol;
   }/**
+=======
+  public void setJustSymbol(JustSymbolEnum justSymbol) {
+    this.justSymbol = justSymbol;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public EnumArrays arrayEnum(List<ArrayEnumEnum> arrayEnum) {
     this.arrayEnum = arrayEnum;
@@ -113,18 +128,28 @@ public enum ArrayEnumEnum {
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("array_enum")
   public List<ArrayEnumEnum> getArrayEnum() {
     return arrayEnum;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
   public void setArrayEnum(List<ArrayEnumEnum> arrayEnum) {
     this.arrayEnum = arrayEnum;
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -164,7 +189,10 @@ public enum ArrayEnumEnum {
     }
     return o.toString().replace("\n", "\n    ");
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 }
 

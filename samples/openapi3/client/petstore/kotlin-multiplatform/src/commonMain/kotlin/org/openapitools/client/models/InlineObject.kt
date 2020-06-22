@@ -14,7 +14,10 @@ package org.openapitools.client.models
 
 import kotlinx.serialization.*
 import kotlinx.serialization.internal.CommonEnumSerializer
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * 
  * @param name Updated name of the pet
@@ -26,5 +29,11 @@ data class InlineObject (
     @SerialName(value = "name") val name: kotlin.String? = null,
     /* Updated status of the pet */
     @SerialName(value = "status") val status: kotlin.String? = null
+<<<<<<< HEAD
 )
+=======
+) 
+
+
+>>>>>>> ooof
 

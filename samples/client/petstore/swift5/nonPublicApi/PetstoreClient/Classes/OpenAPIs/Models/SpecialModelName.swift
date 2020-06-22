@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 internal struct SpecialModelName: Codable { 
 
+=======
+internal struct SpecialModelName: Codable {
+>>>>>>> ooof
 
     internal var specialPropertyName: Int64?
 
@@ -17,7 +21,11 @@ internal struct SpecialModelName: Codable {
         self.specialPropertyName = specialPropertyName
     }
 
+<<<<<<< HEAD
     internal enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    internal enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case specialPropertyName = "$special[property.name]"
     }
 

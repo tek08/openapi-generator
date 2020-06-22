@@ -6,7 +6,10 @@ import org.openapitools.model.*;
 import java.io.File;
 import org.openapitools.model.ModelApiResponse;
 import org.openapitools.model.Pet;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 
 import java.util.List;
 import org.openapitools.api.NotFoundException;
@@ -19,7 +22,11 @@ import org.wso2.msf4j.formparam.FileInfo;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen")
+=======
+
+>>>>>>> ooof
 public class PetApiServiceImpl extends PetApiService {
     @Override
     public Response addPet(Pet body
@@ -41,7 +48,11 @@ public class PetApiServiceImpl extends PetApiService {
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();
     }
     @Override
+<<<<<<< HEAD
     public Response findPetsByTags(Set<String> tags
+=======
+    public Response findPetsByTags(List<String> tags
+>>>>>>> ooof
  ) throws NotFoundException {
         // do some magic!
         return Response.ok().entity(new ApiResponseMessage(ApiResponseMessage.OK, "magic!")).build();

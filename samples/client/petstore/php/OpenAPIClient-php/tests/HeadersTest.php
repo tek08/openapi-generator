@@ -11,7 +11,11 @@ class HeadersTest extends TestCase
     /** @var  FakeHttpClient */
     private $fakeHttpClient;
 
+<<<<<<< HEAD
     public function setUp(): void
+=======
+    public function setUp()
+>>>>>>> ooof
     {
         $this->fakeHttpClient = new FakeHttpClient();
     }

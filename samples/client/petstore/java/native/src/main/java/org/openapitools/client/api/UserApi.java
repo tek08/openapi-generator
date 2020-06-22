@@ -14,7 +14,10 @@ package org.openapitools.client.api;
 
 import org.openapitools.client.ApiClient;
 import org.openapitools.client.ApiException;
+<<<<<<< HEAD
 import org.openapitools.client.ApiResponse;
+=======
+>>>>>>> ooof
 import org.openapitools.client.Pair;
 
 import org.openapitools.client.model.User;
@@ -36,7 +39,12 @@ import java.util.StringJoiner;
 import java.util.List;
 import java.util.Map;
 
+<<<<<<< HEAD
 @javax.annotation.processing.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+
+>>>>>>> ooof
 public class UserApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -44,7 +52,11 @@ public class UserApi {
   private final Consumer<HttpRequest.Builder> memberVarInterceptor;
   private final Duration memberVarReadTimeout;
   private final Consumer<HttpResponse<InputStream>> memberVarResponseInterceptor;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> ooof
   public UserApi() {
     this(new ApiClient());
   }
@@ -64,6 +76,7 @@ public class UserApi {
    * @param body Created user object (required)
    * @throws ApiException if fails to make API call
    */
+<<<<<<< HEAD
   public void createUser(User body) throws ApiException {
     createUserWithHttpInfo(body);
   }
@@ -108,6 +121,12 @@ public class UserApi {
     // verify the required parameter 'body' is set
     if (body == null) {
       throw new ApiException(400, "Missing the required parameter 'body' when calling createUser");
+=======
+  public void createUser (User body) throws ApiException {
+    // verify the required parameter 'body' is set
+    if (body == null) {
+        throw new ApiException(400, "Missing the required parameter 'body' when calling createUser");
+>>>>>>> ooof
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -122,6 +141,7 @@ public class UserApi {
     try {
       byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(body);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+<<<<<<< HEAD
     } catch (IOException e) {
       throw new ApiException(e);
     }
@@ -170,6 +190,26 @@ public class UserApi {
           localVarResponse.headers().map(),
           null
         );
+=======
+      if (memberVarReadTimeout != null) {
+        localVarRequestBuilder.timeout(memberVarReadTimeout);
+      }
+      if (memberVarInterceptor != null) {
+        memberVarInterceptor.accept(localVarRequestBuilder);
+      }
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+      localVarRequestBuilder.build(),
+      HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }          
+      if (localVarResponse.statusCode()/ 100 != 2) {
+          throw new ApiException(localVarResponse.statusCode(),
+              "createUser call received non-success response",
+              localVarResponse.headers(),
+              localVarResponse.body() == null ? null : new String(localVarResponse.body().readAllBytes()));
+      }
+>>>>>>> ooof
     } catch (IOException e) {
       throw new ApiException(e);
     }
@@ -178,11 +218,24 @@ public class UserApi {
       throw new ApiException(e);
     }
   }
+<<<<<<< HEAD
 
   private HttpRequest.Builder createUsersWithArrayInputRequestBuilder(List<User> body) throws ApiException {
     // verify the required parameter 'body' is set
     if (body == null) {
       throw new ApiException(400, "Missing the required parameter 'body' when calling createUsersWithArrayInput");
+=======
+  /**
+   * Creates list of users with given input array
+   * 
+   * @param body List of user object (required)
+   * @throws ApiException if fails to make API call
+   */
+  public void createUsersWithArrayInput (List<User> body) throws ApiException {
+    // verify the required parameter 'body' is set
+    if (body == null) {
+        throw new ApiException(400, "Missing the required parameter 'body' when calling createUsersWithArrayInput");
+>>>>>>> ooof
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -197,6 +250,7 @@ public class UserApi {
     try {
       byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(body);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+<<<<<<< HEAD
     } catch (IOException e) {
       throw new ApiException(e);
     }
@@ -245,6 +299,26 @@ public class UserApi {
           localVarResponse.headers().map(),
           null
         );
+=======
+      if (memberVarReadTimeout != null) {
+        localVarRequestBuilder.timeout(memberVarReadTimeout);
+      }
+      if (memberVarInterceptor != null) {
+        memberVarInterceptor.accept(localVarRequestBuilder);
+      }
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+      localVarRequestBuilder.build(),
+      HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }          
+      if (localVarResponse.statusCode()/ 100 != 2) {
+          throw new ApiException(localVarResponse.statusCode(),
+              "createUsersWithArrayInput call received non-success response",
+              localVarResponse.headers(),
+              localVarResponse.body() == null ? null : new String(localVarResponse.body().readAllBytes()));
+      }
+>>>>>>> ooof
     } catch (IOException e) {
       throw new ApiException(e);
     }
@@ -253,11 +327,24 @@ public class UserApi {
       throw new ApiException(e);
     }
   }
+<<<<<<< HEAD
 
   private HttpRequest.Builder createUsersWithListInputRequestBuilder(List<User> body) throws ApiException {
     // verify the required parameter 'body' is set
     if (body == null) {
       throw new ApiException(400, "Missing the required parameter 'body' when calling createUsersWithListInput");
+=======
+  /**
+   * Creates list of users with given input array
+   * 
+   * @param body List of user object (required)
+   * @throws ApiException if fails to make API call
+   */
+  public void createUsersWithListInput (List<User> body) throws ApiException {
+    // verify the required parameter 'body' is set
+    if (body == null) {
+        throw new ApiException(400, "Missing the required parameter 'body' when calling createUsersWithListInput");
+>>>>>>> ooof
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -272,6 +359,7 @@ public class UserApi {
     try {
       byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(body);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+<<<<<<< HEAD
     } catch (IOException e) {
       throw new ApiException(e);
     }
@@ -320,6 +408,26 @@ public class UserApi {
           localVarResponse.headers().map(),
           null
         );
+=======
+      if (memberVarReadTimeout != null) {
+        localVarRequestBuilder.timeout(memberVarReadTimeout);
+      }
+      if (memberVarInterceptor != null) {
+        memberVarInterceptor.accept(localVarRequestBuilder);
+      }
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+      localVarRequestBuilder.build(),
+      HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }          
+      if (localVarResponse.statusCode()/ 100 != 2) {
+          throw new ApiException(localVarResponse.statusCode(),
+              "createUsersWithListInput call received non-success response",
+              localVarResponse.headers(),
+              localVarResponse.body() == null ? null : new String(localVarResponse.body().readAllBytes()));
+      }
+>>>>>>> ooof
     } catch (IOException e) {
       throw new ApiException(e);
     }
@@ -328,11 +436,24 @@ public class UserApi {
       throw new ApiException(e);
     }
   }
+<<<<<<< HEAD
 
   private HttpRequest.Builder deleteUserRequestBuilder(String username) throws ApiException {
     // verify the required parameter 'username' is set
     if (username == null) {
       throw new ApiException(400, "Missing the required parameter 'username' when calling deleteUser");
+=======
+  /**
+   * Delete user
+   * This can only be done by the logged in user.
+   * @param username The name that needs to be deleted (required)
+   * @throws ApiException if fails to make API call
+   */
+  public void deleteUser (String username) throws ApiException {
+    // verify the required parameter 'username' is set
+    if (username == null) {
+        throw new ApiException(400, "Missing the required parameter 'username' when calling deleteUser");
+>>>>>>> ooof
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -344,6 +465,7 @@ public class UserApi {
 
     localVarRequestBuilder.header("Accept", "application/json");
 
+<<<<<<< HEAD
     localVarRequestBuilder.method("DELETE", HttpRequest.BodyPublishers.noBody());
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
@@ -392,6 +514,28 @@ public class UserApi {
           localVarResponse.headers().map(),
           memberVarObjectMapper.readValue(localVarResponse.body(), new TypeReference<User>() {})
         );
+=======
+    try {
+      localVarRequestBuilder.method("DELETE", HttpRequest.BodyPublishers.noBody());
+      if (memberVarReadTimeout != null) {
+        localVarRequestBuilder.timeout(memberVarReadTimeout);
+      }
+      if (memberVarInterceptor != null) {
+        memberVarInterceptor.accept(localVarRequestBuilder);
+      }
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+      localVarRequestBuilder.build(),
+      HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }          
+      if (localVarResponse.statusCode()/ 100 != 2) {
+          throw new ApiException(localVarResponse.statusCode(),
+              "deleteUser call received non-success response",
+              localVarResponse.headers(),
+              localVarResponse.body() == null ? null : new String(localVarResponse.body().readAllBytes()));
+      }
+>>>>>>> ooof
     } catch (IOException e) {
       throw new ApiException(e);
     }
@@ -400,11 +544,25 @@ public class UserApi {
       throw new ApiException(e);
     }
   }
+<<<<<<< HEAD
 
   private HttpRequest.Builder getUserByNameRequestBuilder(String username) throws ApiException {
     // verify the required parameter 'username' is set
     if (username == null) {
       throw new ApiException(400, "Missing the required parameter 'username' when calling getUserByName");
+=======
+  /**
+   * Get user by user name
+   * 
+   * @param username The name that needs to be fetched. Use user1 for testing. (required)
+   * @return User
+   * @throws ApiException if fails to make API call
+   */
+  public User getUserByName (String username) throws ApiException {
+    // verify the required parameter 'username' is set
+    if (username == null) {
+        throw new ApiException(400, "Missing the required parameter 'username' when calling getUserByName");
+>>>>>>> ooof
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -416,6 +574,7 @@ public class UserApi {
 
     localVarRequestBuilder.header("Accept", "application/json");
 
+<<<<<<< HEAD
     localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
@@ -466,6 +625,29 @@ public class UserApi {
           localVarResponse.headers().map(),
           memberVarObjectMapper.readValue(localVarResponse.body(), new TypeReference<String>() {})
         );
+=======
+    try {
+      localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
+      if (memberVarReadTimeout != null) {
+        localVarRequestBuilder.timeout(memberVarReadTimeout);
+      }
+      if (memberVarInterceptor != null) {
+        memberVarInterceptor.accept(localVarRequestBuilder);
+      }
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+      localVarRequestBuilder.build(),
+      HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }          
+      if (localVarResponse.statusCode()/ 100 != 2) {
+          throw new ApiException(localVarResponse.statusCode(),
+              "getUserByName call received non-success response",
+              localVarResponse.headers(),
+              localVarResponse.body() == null ? null : new String(localVarResponse.body().readAllBytes()));
+      }
+      return memberVarObjectMapper.readValue(localVarResponse.body(), new TypeReference<User>() {});
+>>>>>>> ooof
     } catch (IOException e) {
       throw new ApiException(e);
     }
@@ -474,6 +656,7 @@ public class UserApi {
       throw new ApiException(e);
     }
   }
+<<<<<<< HEAD
 
   private HttpRequest.Builder loginUserRequestBuilder(String username, String password) throws ApiException {
     // verify the required parameter 'username' is set
@@ -483,6 +666,24 @@ public class UserApi {
     // verify the required parameter 'password' is set
     if (password == null) {
       throw new ApiException(400, "Missing the required parameter 'password' when calling loginUser");
+=======
+  /**
+   * Logs user into the system
+   * 
+   * @param username The user name for login (required)
+   * @param password The password for login in clear text (required)
+   * @return String
+   * @throws ApiException if fails to make API call
+   */
+  public String loginUser (String username, String password) throws ApiException {
+    // verify the required parameter 'username' is set
+    if (username == null) {
+        throw new ApiException(400, "Missing the required parameter 'username' when calling loginUser");
+    }
+    // verify the required parameter 'password' is set
+    if (password == null) {
+        throw new ApiException(400, "Missing the required parameter 'password' when calling loginUser");
+>>>>>>> ooof
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -503,6 +704,7 @@ public class UserApi {
 
     localVarRequestBuilder.header("Accept", "application/json");
 
+<<<<<<< HEAD
     localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
@@ -547,6 +749,29 @@ public class UserApi {
           localVarResponse.headers().map(),
           null
         );
+=======
+    try {
+      localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
+      if (memberVarReadTimeout != null) {
+        localVarRequestBuilder.timeout(memberVarReadTimeout);
+      }
+      if (memberVarInterceptor != null) {
+        memberVarInterceptor.accept(localVarRequestBuilder);
+      }
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+      localVarRequestBuilder.build(),
+      HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }          
+      if (localVarResponse.statusCode()/ 100 != 2) {
+          throw new ApiException(localVarResponse.statusCode(),
+              "loginUser call received non-success response",
+              localVarResponse.headers(),
+              localVarResponse.body() == null ? null : new String(localVarResponse.body().readAllBytes()));
+      }
+      return memberVarObjectMapper.readValue(localVarResponse.body(), new TypeReference<String>() {});
+>>>>>>> ooof
     } catch (IOException e) {
       throw new ApiException(e);
     }
@@ -555,8 +780,17 @@ public class UserApi {
       throw new ApiException(e);
     }
   }
+<<<<<<< HEAD
 
   private HttpRequest.Builder logoutUserRequestBuilder() throws ApiException {
+=======
+  /**
+   * Logs out current logged in user session
+   * 
+   * @throws ApiException if fails to make API call
+   */
+  public void logoutUser () throws ApiException {
+>>>>>>> ooof
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -566,6 +800,7 @@ public class UserApi {
 
     localVarRequestBuilder.header("Accept", "application/json");
 
+<<<<<<< HEAD
     localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
     if (memberVarReadTimeout != null) {
       localVarRequestBuilder.timeout(memberVarReadTimeout);
@@ -614,6 +849,28 @@ public class UserApi {
           localVarResponse.headers().map(),
           null
         );
+=======
+    try {
+      localVarRequestBuilder.method("GET", HttpRequest.BodyPublishers.noBody());
+      if (memberVarReadTimeout != null) {
+        localVarRequestBuilder.timeout(memberVarReadTimeout);
+      }
+      if (memberVarInterceptor != null) {
+        memberVarInterceptor.accept(localVarRequestBuilder);
+      }
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+      localVarRequestBuilder.build(),
+      HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }          
+      if (localVarResponse.statusCode()/ 100 != 2) {
+          throw new ApiException(localVarResponse.statusCode(),
+              "logoutUser call received non-success response",
+              localVarResponse.headers(),
+              localVarResponse.body() == null ? null : new String(localVarResponse.body().readAllBytes()));
+      }
+>>>>>>> ooof
     } catch (IOException e) {
       throw new ApiException(e);
     }
@@ -622,6 +879,7 @@ public class UserApi {
       throw new ApiException(e);
     }
   }
+<<<<<<< HEAD
 
   private HttpRequest.Builder updateUserRequestBuilder(String username, User body) throws ApiException {
     // verify the required parameter 'username' is set
@@ -631,6 +889,23 @@ public class UserApi {
     // verify the required parameter 'body' is set
     if (body == null) {
       throw new ApiException(400, "Missing the required parameter 'body' when calling updateUser");
+=======
+  /**
+   * Updated user
+   * This can only be done by the logged in user.
+   * @param username name that need to be deleted (required)
+   * @param body Updated user object (required)
+   * @throws ApiException if fails to make API call
+   */
+  public void updateUser (String username, User body) throws ApiException {
+    // verify the required parameter 'username' is set
+    if (username == null) {
+        throw new ApiException(400, "Missing the required parameter 'username' when calling updateUser");
+    }
+    // verify the required parameter 'body' is set
+    if (body == null) {
+        throw new ApiException(400, "Missing the required parameter 'body' when calling updateUser");
+>>>>>>> ooof
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -646,6 +921,7 @@ public class UserApi {
     try {
       byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(body);
       localVarRequestBuilder.method("PUT", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+<<<<<<< HEAD
     } catch (IOException e) {
       throw new ApiException(e);
     }
@@ -656,5 +932,32 @@ public class UserApi {
       memberVarInterceptor.accept(localVarRequestBuilder);
     }
     return localVarRequestBuilder;
+=======
+      if (memberVarReadTimeout != null) {
+        localVarRequestBuilder.timeout(memberVarReadTimeout);
+      }
+      if (memberVarInterceptor != null) {
+        memberVarInterceptor.accept(localVarRequestBuilder);
+      }
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+      localVarRequestBuilder.build(),
+      HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }          
+      if (localVarResponse.statusCode()/ 100 != 2) {
+          throw new ApiException(localVarResponse.statusCode(),
+              "updateUser call received non-success response",
+              localVarResponse.headers(),
+              localVarResponse.body() == null ? null : new String(localVarResponse.body().readAllBytes()));
+      }
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiException(e);
+    }
+>>>>>>> ooof
   }
 }

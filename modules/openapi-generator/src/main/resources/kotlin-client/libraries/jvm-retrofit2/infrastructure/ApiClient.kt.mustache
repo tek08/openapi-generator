@@ -1,5 +1,6 @@
 package {{packageName}}.infrastructure
 
+<<<<<<< HEAD
 {{#hasOAuthMethods}}
 import org.apache.oltu.oauth2.client.request.OAuthClientRequest.AuthenticationRequestBuilder
 import org.apache.oltu.oauth2.client.request.OAuthClientRequest.TokenRequestBuilder
@@ -39,11 +40,21 @@ import retrofit2.converter.gson.GsonConverterFactory
 {{/gson}}
 {{#moshi}}
 import com.squareup.moshi.Moshi
+=======
+import okhttp3.OkHttpClient
+import retrofit2.Retrofit
+import retrofit2.converter.scalars.ScalarsConverterFactory
+{{#gson}}
+import retrofit2.converter.gson.GsonConverterFactory
+{{/gson}}
+{{#moshi}}
+>>>>>>> ooof
 import retrofit2.converter.moshi.MoshiConverterFactory
 {{/moshi}}
 
 {{#nonPublicApi}}internal {{/nonPublicApi}}class ApiClient(
     private var baseUrl: String = defaultBasePath,
+<<<<<<< HEAD
     private val okHttpClientBuilder: OkHttpClient.Builder? = null,
     private val serializerBuilder: {{#gson}}Gson{{/gson}}{{#moshi}}Moshi.{{/moshi}}Builder = Serializer.{{#gson}}gson{{/gson}}{{#moshi}}moshi{{/moshi}}Builder
 ) {
@@ -82,12 +93,22 @@ import retrofit2.converter.moshi.MoshiConverterFactory
             }).apply {
                 level = HttpLoggingInterceptor.Level.BODY
             })
+=======
+    private var okHttpClient: OkHttpClient
+) {
+    companion object {
+        @JvmStatic
+        val defaultBasePath: String by lazy {
+            System.getProperties().getProperty("{{packageName}}.baseUrl", "{{{basePath}}}")
+        }
+>>>>>>> ooof
     }
 
     init {
         normalizeBaseUrl()
     }
 
+<<<<<<< HEAD
     {{#hasAuthMethods}}
     constructor(
         baseUrl: String = defaultBasePath,
@@ -282,6 +303,23 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
     fun <S> createService(serviceClass: Class<S>): S {
         return retrofitBuilder.client(clientBuilder.build()).build().create(serviceClass)
+=======
+    val retrofitBuilder: Retrofit.Builder by lazy {
+
+        Retrofit.Builder()
+        .baseUrl(baseUrl)
+        .addConverterFactory(ScalarsConverterFactory.create())
+        {{#gson}}
+        .addConverterFactory(GsonConverterFactory.create(Serializer.gson))
+        {{/gson}}
+        {{#moshi}}
+        .addConverterFactory(MoshiConverterFactory.create(Serializer.moshi))
+        {{/moshi}}
+    }
+
+    fun <S> createService(serviceClass: Class<S>): S {
+        return retrofitBuilder.client(okHttpClient).build().create(serviceClass)
+>>>>>>> ooof
     }
 
     private fun normalizeBaseUrl() {
@@ -289,6 +327,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
             baseUrl += "/"
         }
     }
+<<<<<<< HEAD
 
     private inline fun <T, reified U> Iterable<T>.runOnFirst(callback: U.() -> Unit) {
         for (element in this) {
@@ -305,4 +344,6 @@ import retrofit2.converter.moshi.MoshiConverterFactory
             System.getProperties().getProperty("{{packageName}}.baseUrl", "{{{basePath}}}")
         }
     }
+=======
+>>>>>>> ooof
 }

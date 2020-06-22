@@ -80,11 +80,19 @@ class PetApi(
    * Add a new pet to the store
    * 
    *
+<<<<<<< HEAD
    * @param pet Pet object that needs to be added to the store 
    * @return Pet
    */
   def addPet(pet: Pet): Option[Pet] = {
     val await = Try(Await.result(addPetAsync(pet), Duration.Inf))
+=======
+   * @param body Pet object that needs to be added to the store 
+   * @return void
+   */
+  def addPet(body: Pet) = {
+    val await = Try(Await.result(addPetAsync(body), Duration.Inf))
+>>>>>>> ooof
     await match {
       case Success(i) => Some(await.get)
       case Failure(t) => None
@@ -95,11 +103,19 @@ class PetApi(
    * Add a new pet to the store asynchronously
    * 
    *
+<<<<<<< HEAD
    * @param pet Pet object that needs to be added to the store 
    * @return Future(Pet)
    */
   def addPetAsync(pet: Pet): Future[Pet] = {
       helper.addPet(pet)
+=======
+   * @param body Pet object that needs to be added to the store 
+   * @return Future(void)
+   */
+  def addPetAsync(body: Pet) = {
+      helper.addPet(body)
+>>>>>>> ooof
   }
 
   /**
@@ -212,11 +228,19 @@ class PetApi(
    * Update an existing pet
    * 
    *
+<<<<<<< HEAD
    * @param pet Pet object that needs to be added to the store 
    * @return Pet
    */
   def updatePet(pet: Pet): Option[Pet] = {
     val await = Try(Await.result(updatePetAsync(pet), Duration.Inf))
+=======
+   * @param body Pet object that needs to be added to the store 
+   * @return void
+   */
+  def updatePet(body: Pet) = {
+    val await = Try(Await.result(updatePetAsync(body), Duration.Inf))
+>>>>>>> ooof
     await match {
       case Success(i) => Some(await.get)
       case Failure(t) => None
@@ -227,11 +251,19 @@ class PetApi(
    * Update an existing pet asynchronously
    * 
    *
+<<<<<<< HEAD
    * @param pet Pet object that needs to be added to the store 
    * @return Future(Pet)
    */
   def updatePetAsync(pet: Pet): Future[Pet] = {
       helper.updatePet(pet)
+=======
+   * @param body Pet object that needs to be added to the store 
+   * @return Future(void)
+   */
+  def updatePetAsync(body: Pet) = {
+      helper.updatePet(body)
+>>>>>>> ooof
   }
 
   /**
@@ -298,7 +330,11 @@ class PetApi(
 
 class PetApiAsyncHelper(client: TransportClient, config: SwaggerConfig) extends ApiClient(client, config) {
 
+<<<<<<< HEAD
   def addPet(pet: Pet)(implicit reader: ClientResponseReader[Pet], writer: RequestWriter[Pet]): Future[Pet] = {
+=======
+  def addPet(body: Pet)(implicit reader: ClientResponseReader[Unit], writer: RequestWriter[Pet]): Future[Unit] = {
+>>>>>>> ooof
     // create path and map variables
     val path = (addFmt("/pet"))
 
@@ -306,9 +342,15 @@ class PetApiAsyncHelper(client: TransportClient, config: SwaggerConfig) extends 
     val queryParams = new mutable.HashMap[String, String]
     val headerParams = new mutable.HashMap[String, String]
 
+<<<<<<< HEAD
     if (pet == null) throw new Exception("Missing required parameter 'pet' when calling PetApi->addPet")
 
     val resFuture = client.submit("POST", path, queryParams.toMap, headerParams.toMap, writer.write(pet))
+=======
+    if (body == null) throw new Exception("Missing required parameter 'body' when calling PetApi->addPet")
+
+    val resFuture = client.submit("POST", path, queryParams.toMap, headerParams.toMap, writer.write(body))
+>>>>>>> ooof
     resFuture flatMap { resp =>
       val status = Response.Status.fromStatusCode(resp.statusCode)
       status.getFamily match {
@@ -406,7 +448,11 @@ class PetApiAsyncHelper(client: TransportClient, config: SwaggerConfig) extends 
     }
   }
 
+<<<<<<< HEAD
   def updatePet(pet: Pet)(implicit reader: ClientResponseReader[Pet], writer: RequestWriter[Pet]): Future[Pet] = {
+=======
+  def updatePet(body: Pet)(implicit reader: ClientResponseReader[Unit], writer: RequestWriter[Pet]): Future[Unit] = {
+>>>>>>> ooof
     // create path and map variables
     val path = (addFmt("/pet"))
 
@@ -414,9 +460,15 @@ class PetApiAsyncHelper(client: TransportClient, config: SwaggerConfig) extends 
     val queryParams = new mutable.HashMap[String, String]
     val headerParams = new mutable.HashMap[String, String]
 
+<<<<<<< HEAD
     if (pet == null) throw new Exception("Missing required parameter 'pet' when calling PetApi->updatePet")
 
     val resFuture = client.submit("PUT", path, queryParams.toMap, headerParams.toMap, writer.write(pet))
+=======
+    if (body == null) throw new Exception("Missing required parameter 'body' when calling PetApi->updatePet")
+
+    val resFuture = client.submit("PUT", path, queryParams.toMap, headerParams.toMap, writer.write(body))
+>>>>>>> ooof
     resFuture flatMap { resp =>
       val status = Response.Status.fromStatusCode(resp.statusCode)
       status.getFamily match {

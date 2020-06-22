@@ -41,6 +41,7 @@ class DefaultApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+<<<<<<< HEAD
 
         >>> thread = api.foo_get(async_req=True)
         >>> result = thread.get()
@@ -51,14 +52,29 @@ class DefaultApi(object):
                                  be returned without reading/decoding response
                                  data. Default is True.
         :type _preload_content: bool, optional
+=======
+        >>> thread = api.foo_get(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+>>>>>>> ooof
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
+<<<<<<< HEAD
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
         :rtype: InlineResponseDefault
+=======
+        :return: InlineResponseDefault
+                 If the method is called asynchronously,
+                 returns the request thread.
+>>>>>>> ooof
         """
         kwargs['_return_http_data_only'] = True
         return self.foo_get_with_http_info(**kwargs)  # noqa: E501
@@ -68,6 +84,7 @@ class DefaultApi(object):
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+<<<<<<< HEAD
 
         >>> thread = api.foo_get_with_http_info(async_req=True)
         >>> result = thread.get()
@@ -81,10 +98,22 @@ class DefaultApi(object):
                                  be returned without reading/decoding response
                                  data. Default is True.
         :type _preload_content: bool, optional
+=======
+        >>> thread = api.foo_get_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+>>>>>>> ooof
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
+<<<<<<< HEAD
         :param _request_auth: set to override the auth_settings for an a single
                               request; this effectively ignores the authentication
                               in the spec for a single request.
@@ -93,6 +122,11 @@ class DefaultApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         :rtype: tuple(InlineResponseDefault, status_code(int), headers(HTTPHeaderDict))
+=======
+        :return: tuple(InlineResponseDefault, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+>>>>>>> ooof
         """
 
         local_var_params = locals()
@@ -104,8 +138,12 @@ class DefaultApi(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
+<<<<<<< HEAD
                 '_request_timeout',
                 '_request_auth'
+=======
+                '_request_timeout'
+>>>>>>> ooof
             ]
         )
 
@@ -151,5 +189,9 @@ class DefaultApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
+<<<<<<< HEAD
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
+=======
+            collection_formats=collection_formats)
+>>>>>>> ooof

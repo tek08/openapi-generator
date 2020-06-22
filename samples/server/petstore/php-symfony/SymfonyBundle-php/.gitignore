@@ -29,10 +29,13 @@
 !bin/symfony_requirements
 /vendor/
 
+<<<<<<< HEAD
 # Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
 # You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
 composer.lock
 
+=======
+>>>>>>> ooof
 # Assets and user uploads
 /web/bundles/
 /web/uploads/
@@ -55,6 +58,7 @@ composer.lock
 
 # From root gitignore
 /Tests/cache/
+<<<<<<< HEAD
 /Tests/logs/
 
 # PHP Coding Standards Fixer
@@ -66,3 +70,6 @@ composer.lock
 
 # No reason to commit PHP CS Fixer cache files
 /.php_cs.cache
+=======
+/Tests/logs/
+>>>>>>> ooof

@@ -9,7 +9,11 @@ import Foundation
 
 /** Model for testing model name same as property name */
 
+<<<<<<< HEAD
 @objc public class Name: NSObject, Codable { 
+=======
+@objc public class Name: NSObject, Codable {
+>>>>>>> ooof
 
     public var name: Int
     public var snakeCase: Int?
@@ -33,7 +37,11 @@ import Foundation
         self._123number = _123number
     }
 
+<<<<<<< HEAD
     public enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    public enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case name
         case snakeCase = "snake_case"
         case property

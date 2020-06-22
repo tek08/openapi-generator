@@ -4,8 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+<<<<<<< HEAD
 **Param** | **string** | field1 | 
 **Param2** | **string** | field2 | 
+=======
+**Param** | Pointer to **string** | field1 | 
+**Param2** | Pointer to **string** | field2 | 
+>>>>>>> ooof
 
 ## Methods
 

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.*;
 import com.fasterxml.jackson.databind.*;
 import org.openapitools.jackson.nullable.JsonNullableModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+<<<<<<< HEAD
 import org.openapitools.client.model.*;
 
 import java.text.DateFormat;
@@ -15,6 +16,14 @@ import javax.ws.rs.core.GenericType;
 import javax.ws.rs.ext.ContextResolver;
 
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+import java.text.DateFormat;
+
+import javax.ws.rs.ext.ContextResolver;
+
+
+>>>>>>> ooof
 public class JSON implements ContextResolver<ObjectMapper> {
   private ObjectMapper mapper;
 
@@ -51,6 +60,7 @@ public class JSON implements ContextResolver<ObjectMapper> {
    * @return object mapper
    */
   public ObjectMapper getMapper() { return mapper; }
+<<<<<<< HEAD
 
   /**
    * Returns the target model class that should be used to deserialize the input data.
@@ -244,4 +254,6 @@ public class JSON implements ContextResolver<ObjectMapper> {
   public static void setDefault(JSON json) {
     JSON.json = json;
   }
+=======
+>>>>>>> ooof
 }

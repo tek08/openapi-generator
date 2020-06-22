@@ -4,6 +4,7 @@ from __future__ import print_function
 import time
 import {{{packageName}}}
 from pprint import pprint
+<<<<<<< HEAD
 {{#apiInfo}}
 {{#apis}}
 {{#-first}}
@@ -14,12 +15,19 @@ from {{apiPackage}} import {{classVarName}}
 {{#operations}}
 {{#operation}}
 {{#-first}}
+=======
+{{#apiInfo}}{{#apis}}{{#-first}}{{#operations}}{{#operation}}{{#-first}}
+>>>>>>> ooof
 {{> python_doc_auth_partial}}
 
 # Enter a context with an instance of the API client
 with {{{packageName}}}.ApiClient(configuration) as api_client:
     # Create an instance of the API class
+<<<<<<< HEAD
     api_instance = {{classVarName}}.{{{classname}}}(api_client)
+=======
+    api_instance = {{{packageName}}}.{{{classname}}}(api_client)
+>>>>>>> ooof
     {{#allParams}}{{paramName}} = {{{example}}} # {{{dataType}}} | {{{description}}}{{^required}} (optional){{/required}}{{#defaultValue}} (default to {{{.}}}){{/defaultValue}}
     {{/allParams}}
 
@@ -29,12 +37,16 @@ with {{{packageName}}}.ApiClient(configuration) as api_client:
         pprint(api_response){{/returnType}}
     except {{{packageName}}}.ApiException as e:
         print("Exception when calling {{classname}}->{{operationId}}: %s\n" % e)
+<<<<<<< HEAD
 {{/-first}}
 {{/operation}}
 {{/operations}}
 {{/-first}}
 {{/apis}}
 {{/apiInfo}}
+=======
+    {{/-first}}{{/operation}}{{/operations}}{{/-first}}{{/apis}}{{/apiInfo}}
+>>>>>>> ooof
 ```
 
 ## Documentation for API Endpoints
@@ -91,6 +103,7 @@ Class | Method | HTTP request | Description
 
 {{#apiInfo}}{{#apis}}{{^hasMore}}{{infoEmail}}
 {{/hasMore}}{{/apis}}{{/apiInfo}}
+<<<<<<< HEAD
 
 ## Notes for Large OpenAPI documents
 If the OpenAPI document is large, imports in {{{packageName}}}.apis and {{{packageName}}}.models may fail with a
@@ -110,3 +123,5 @@ import {{{packageName}}}
 from {{{packageName}}}.apis import *
 from {{{packageName}}}.models import *
 ```
+=======
+>>>>>>> ooof

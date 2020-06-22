@@ -29,7 +29,11 @@ import javax.validation.Valid;
 @JsonPropertyOrder({
   HealthCheckResult.JSON_PROPERTY_NULLABLE_MESSAGE
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen")
+=======
+
+>>>>>>> ooof
 public class HealthCheckResult   {
   public static final String JSON_PROPERTY_NULLABLE_MESSAGE = "NullableMessage";
   @JsonProperty(JSON_PROPERTY_NULLABLE_MESSAGE)

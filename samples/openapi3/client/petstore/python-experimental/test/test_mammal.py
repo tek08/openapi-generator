@@ -11,6 +11,7 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
@@ -26,6 +27,12 @@ except ImportError:
     zebra = sys.modules[
         'petstore_api.model.zebra']
 from petstore_api.model.mammal import Mammal
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestMammal(unittest.TestCase):
@@ -39,11 +46,17 @@ class TestMammal(unittest.TestCase):
 
     def testMammal(self):
         """Test Mammal"""
+<<<<<<< HEAD
 
         # tests that we can make a BasquePig by traveling through descendant discriminator in Pig
         model = Mammal(class_name="BasquePig")
         from petstore_api.model import basque_pig
         assert isinstance(model, basque_pig.BasquePig)
+=======
+        # FIXME: construct object with mandatory attributes with example values
+        # model = petstore_api.Mammal()  # noqa: E501
+        pass
+>>>>>>> ooof
 
 
 if __name__ == '__main__':

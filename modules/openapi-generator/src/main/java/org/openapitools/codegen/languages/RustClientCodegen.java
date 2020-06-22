@@ -39,6 +39,7 @@ import static org.openapitools.codegen.utils.StringUtils.underscore;
 public class RustClientCodegen extends DefaultCodegen implements CodegenConfig {
     private static final Logger LOGGER = LoggerFactory.getLogger(RustClientCodegen.class);
     private boolean useSingleRequestParameter = false;
+<<<<<<< HEAD
     private boolean supportAsync = true;
     private boolean supportMultipleResponses = false;
 
@@ -48,6 +49,14 @@ public class RustClientCodegen extends DefaultCodegen implements CodegenConfig {
     public static final String REQWEST_LIBRARY = "reqwest";
     public static final String SUPPORT_ASYNC = "supportAsync";
     public static final String SUPPORT_MULTIPLE_RESPONSES = "supportMultipleResponses";
+=======
+
+    public static final String PACKAGE_NAME = "packageName";
+    public static final String PACKAGE_VERSION = "packageVersion";
+
+    public static final String HYPER_LIBRARY = "hyper";
+    public static final String REQWEST_LIBRARY = "reqwest";
+>>>>>>> ooof
 
     protected String packageName = "openapi";
     protected String packageVersion = "1.0.0";
@@ -175,20 +184,30 @@ public class RustClientCodegen extends DefaultCodegen implements CodegenConfig {
                 .defaultValue(Boolean.TRUE.toString()));
         cliOptions.add(new CliOption(CodegenConstants.USE_SINGLE_REQUEST_PARAMETER, CodegenConstants.USE_SINGLE_REQUEST_PARAMETER_DESC, SchemaTypeUtil.BOOLEAN_TYPE)
                 .defaultValue(Boolean.FALSE.toString()));
+<<<<<<< HEAD
         cliOptions.add(new CliOption(SUPPORT_ASYNC, "If set, generate async function call instead. This option is for 'reqwest' library only", SchemaTypeUtil.BOOLEAN_TYPE)
                 .defaultValue(Boolean.TRUE.toString()));
         cliOptions.add(new CliOption(SUPPORT_MULTIPLE_RESPONSES, "If set, return type wraps an enum of all possible 2xx schemas. This option is for 'reqwest' library only", SchemaTypeUtil.BOOLEAN_TYPE)
             .defaultValue(Boolean.FALSE.toString()));
+=======
+>>>>>>> ooof
 
         supportedLibraries.put(HYPER_LIBRARY, "HTTP client: Hyper.");
         supportedLibraries.put(REQWEST_LIBRARY, "HTTP client: Reqwest.");
 
         CliOption libraryOption = new CliOption(CodegenConstants.LIBRARY, "library template (sub-template) to use.");
         libraryOption.setEnum(supportedLibraries);
+<<<<<<< HEAD
         // set reqwest as the default
         libraryOption.setDefault(REQWEST_LIBRARY);
         cliOptions.add(libraryOption);
         setLibrary(REQWEST_LIBRARY);
+=======
+        // set hyper as the default
+        libraryOption.setDefault(HYPER_LIBRARY);
+        cliOptions.add(libraryOption);
+        setLibrary(HYPER_LIBRARY);
+>>>>>>> ooof
     }
 
     @Override
@@ -202,6 +221,12 @@ public class RustClientCodegen extends DefaultCodegen implements CodegenConfig {
         // Index all CodegenModels by model name.
         Map<String, CodegenModel> allModels = new HashMap<>();
 
+<<<<<<< HEAD
+=======
+        // TODO: 5.0: Remove the camelCased vendorExtension below and ensure templates use the newer property naming.
+        once(LOGGER).warn("4.3.0 has deprecated the use of vendor extensions which don't follow lower-kebab casing standards with x- prefix.");
+
+>>>>>>> ooof
         for (Map.Entry<String, Object> entry : objs.entrySet()) {
             String modelName = toModelName(entry.getKey());
             Map<String, Object> inner = (Map<String, Object>) entry.getValue();
@@ -230,7 +255,13 @@ public class RustClientCodegen extends DefaultCodegen implements CodegenConfig {
                     }
                     // TODO: figure out how to properly have the original property type that didn't go through toVarName
                     String vendorExtensionTagName = cm.discriminator.getPropertyName().replace("_", "");
+<<<<<<< HEAD
                     cm.vendorExtensions.put("x-tag-name", vendorExtensionTagName);
+=======
+                    cm.vendorExtensions.put("tagName", vendorExtensionTagName); // TODO: 5.0 Remove
+                    cm.vendorExtensions.put("x-tag-name", vendorExtensionTagName);
+                    cm.vendorExtensions.put("mappedModels", discriminatorVars); // TODO: 5.0 Remove
+>>>>>>> ooof
                     cm.vendorExtensions.put("x-mapped-models", discriminatorVars);
                 }
             }
@@ -259,6 +290,7 @@ public class RustClientCodegen extends DefaultCodegen implements CodegenConfig {
         }
         writePropertyBack(CodegenConstants.USE_SINGLE_REQUEST_PARAMETER, getUseSingleRequestParameter());
 
+<<<<<<< HEAD
         if (additionalProperties.containsKey(SUPPORT_ASYNC)) {
             this.setSupportAsync(convertPropertyToBoolean(SUPPORT_ASYNC));
         }
@@ -269,6 +301,8 @@ public class RustClientCodegen extends DefaultCodegen implements CodegenConfig {
         }
         writePropertyBack(SUPPORT_MULTIPLE_RESPONSES, getSupportMultipleReturns());
 
+=======
+>>>>>>> ooof
         additionalProperties.put(CodegenConstants.PACKAGE_NAME, packageName);
         additionalProperties.put(CodegenConstants.PACKAGE_VERSION, packageVersion);
 
@@ -296,6 +330,7 @@ public class RustClientCodegen extends DefaultCodegen implements CodegenConfig {
         supportingFiles.add(new SupportingFile("lib.mustache", "src", "lib.rs"));
         supportingFiles.add(new SupportingFile("Cargo.mustache", "", "Cargo.toml"));
 
+<<<<<<< HEAD
         supportingFiles.add(new SupportingFile(getLibrary() + "/api_mod.mustache", apiFolder, "mod.rs"));
         supportingFiles.add(new SupportingFile(getLibrary() + "/configuration.mustache", apiFolder, "configuration.rs"));
         if (HYPER_LIBRARY.equals(getLibrary())) {
@@ -320,6 +355,15 @@ public class RustClientCodegen extends DefaultCodegen implements CodegenConfig {
 
     public void setSupportMultipleReturns(boolean supportMultipleResponses) {
         this.supportMultipleResponses = supportMultipleResponses;
+=======
+        if (HYPER_LIBRARY.equals(getLibrary())) {
+            supportingFiles.add(new SupportingFile("request.rs", apiFolder, "request.rs"));
+        }
+
+        supportingFiles.add(new SupportingFile(getLibrary() + "/configuration.mustache", apiFolder, "configuration.rs"));
+        supportingFiles.add(new SupportingFile(getLibrary() + "/client.mustache", apiFolder, "client.rs"));
+        supportingFiles.add(new SupportingFile(getLibrary() + "/api_mod.mustache", apiFolder, "mod.rs"));
+>>>>>>> ooof
     }
 
     private boolean getUseSingleRequestParameter() {
@@ -450,7 +494,11 @@ public class RustClientCodegen extends DefaultCodegen implements CodegenConfig {
             }
             return "Vec<" + getTypeDeclaration(inner) + ">";
         } else if (ModelUtils.isMapSchema(p)) {
+<<<<<<< HEAD
             Schema inner = getAdditionalProperties(p);
+=======
+            Schema inner = ModelUtils.getAdditionalProperties(p);
+>>>>>>> ooof
             if (inner == null) {
                 LOGGER.warn(p.getName() + "(map property) does not have a proper inner type defined. Default to string");
                 inner = new StringSchema().description("TODO default missing map inner type to string");

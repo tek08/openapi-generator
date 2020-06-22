@@ -15,7 +15,11 @@ import java.io.InputStream;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.validation.constraints.*;
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen")
+=======
+
+>>>>>>> ooof
 public abstract class FakeClassnameTestApiService {
     public abstract Response testClassname(Client client,SecurityContext securityContext) throws NotFoundException;
 }

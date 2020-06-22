@@ -69,7 +69,11 @@ describe 'StoreApi' do
 
   # unit tests for place_order
   # Place an order for a pet
+<<<<<<< HEAD
   # @param order order placed for purchasing the pet
+=======
+  # @param body order placed for purchasing the pet
+>>>>>>> ooof
   # @param [Hash] opts the optional parameters
   # @return [Order]
   describe 'place_order test' do

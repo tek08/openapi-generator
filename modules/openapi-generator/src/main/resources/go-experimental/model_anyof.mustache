@@ -15,6 +15,7 @@ func (dst *{{classname}}) UnmarshalJSON(data []byte) error {
 	}
 
 	{{/isNullable}}
+<<<<<<< HEAD
 	{{#discriminator}}
 	{{#mappedModels}}
     {{#-first}}
@@ -44,6 +45,8 @@ func (dst *{{classname}}) UnmarshalJSON(data []byte) error {
 
 	{{/mappedModels}}
 	{{/discriminator}}
+=======
+>>>>>>> ooof
 	{{#anyOf}}
 	// try to unmarshal JSON data into {{{.}}}
 	err = json.Unmarshal(data, &dst.{{{.}}});
@@ -72,5 +75,8 @@ func (src *{{classname}}) MarshalJSON() ([]byte, error) {
 {{/anyOf}}
 	return nil, nil // no data in anyOf schemas
 }
+<<<<<<< HEAD
 
 {{>nullable_model}}
+=======
+>>>>>>> ooof

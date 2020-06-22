@@ -68,7 +68,11 @@ class SpecialModelName(object):
 
 
         :param special_property_name: The special_property_name of this SpecialModelName.  # noqa: E501
+<<<<<<< HEAD
         :type special_property_name: int
+=======
+        :type: int
+>>>>>>> ooof
         """
 
         self._special_property_name = special_property_name

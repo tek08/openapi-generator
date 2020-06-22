@@ -16,17 +16,31 @@ import org.openapitools.client.models.CatAllOf
 
 import kotlinx.serialization.*
 import kotlinx.serialization.internal.CommonEnumSerializer
+<<<<<<< HEAD
 
 /**
  * 
  * @param className 
  * @param color 
+=======
+/**
+ * 
+>>>>>>> ooof
  * @param declawed 
  */
 @Serializable
 data class Cat (
+<<<<<<< HEAD
     @SerialName(value = "className") @Required override val className: kotlin.String,
     @SerialName(value = "color") override val color: kotlin.String? = null,
     @SerialName(value = "declawed") val declawed: kotlin.Boolean? = null
 ) : Animal
+=======
+    @SerialName(value = "className") @Required val className: kotlin.String,
+    @SerialName(value = "declawed") val declawed: kotlin.Boolean? = null,
+    @SerialName(value = "color") val color: kotlin.String? = null
+) 
+
+
+>>>>>>> ooof
 

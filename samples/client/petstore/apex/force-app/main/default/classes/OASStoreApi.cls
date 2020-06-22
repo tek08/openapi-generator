@@ -98,23 +98,39 @@ public class OASStoreApi {
     /**
      * Place an order for a pet
      * 
+<<<<<<< HEAD
      * @param oaSOrder order placed for purchasing the pet (required)
+=======
+     * @param body order placed for purchasing the pet (required)
+>>>>>>> ooof
      * @return OASOrder
      * @throws OAS.ApiException if fails to make API call
      */
     public OASOrder placeOrder(Map<String, Object> params) {
+<<<<<<< HEAD
         client.assertNotNull(params.get('oaSOrder'), 'oaSOrder');
+=======
+        client.assertNotNull(params.get('body'), 'body');
+>>>>>>> ooof
         List<OAS.Param> query = new List<OAS.Param>();
         List<OAS.Param> form = new List<OAS.Param>();
 
         return (OASOrder) client.invoke(
             'POST', '/store/order',
+<<<<<<< HEAD
             (OASOrder) params.get('oaSOrder'),
+=======
+            (OASOrder) params.get('body'),
+>>>>>>> ooof
             query, form,
             new Map<String, Object>(),
             new Map<String, Object>(),
             new List<String>{ 'application/xml', 'application/json' },
+<<<<<<< HEAD
             new List<String>{ 'application/json' },
+=======
+            new List<String>(),
+>>>>>>> ooof
             new List<String>(),
             OASOrder.class
         );

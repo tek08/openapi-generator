@@ -2,6 +2,7 @@
 
 /**
  * OpenAPI Petstore
+<<<<<<< HEAD
  * PHP version 7.2
  *
  * @package OpenAPIServer
@@ -20,6 +21,17 @@
  * https://github.com/openapitools/openapi-generator
  */
 
+=======
+ *
+ * PHP version 7.1
+ *
+ * @package OpenAPIServer\Api
+ * @author  OpenAPI Generator team
+ * @version 1.0.0
+ * @link    https://github.com/openapitools/openapi-generator
+ */
+
+>>>>>>> ooof
 require_once __DIR__ . '/vendor/autoload.php';
 
 use OpenAPIServer\SlimRouter;
@@ -65,6 +77,7 @@ $config['tokenAuthenticationOptions'] = [
 /**
  * Mocker Middleware options.
  */
+<<<<<<< HEAD
 $mocker = new OpenApiDataMocker();
 $mocker->setModelsNamespace('OpenAPIServer\Model\\');
 $config['mockerOptions'] = [
@@ -87,6 +100,23 @@ $config['mockerOptions'] = [
     //         // return first response key
     //         reset($responses);
     //         return key($responses);
+=======
+$config['mockerOptions'] = [
+    // 'dataMocker' => new OpenApiDataMocker(),
+
+    // 'getMockResponseCallback' => function (ServerRequestInterface $request, array $responses) {
+    //     // check if client clearly asks for mocked response
+    //     if (
+    //         $request->hasHeader('X-OpenAPIServer-Mock')
+    //         && $request->getHeader('X-OpenAPIServer-Mock')[0] === 'ping'
+    //     ) {
+    //         if (array_key_exists('default', $responses)) {
+    //             return $responses['default'];
+    //         }
+
+    //         // return first response
+    //         return $responses[array_key_first($responses)];
+>>>>>>> ooof
     //     }
 
     //     return false;

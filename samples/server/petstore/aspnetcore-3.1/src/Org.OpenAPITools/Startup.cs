@@ -34,7 +34,11 @@ namespace Org.OpenAPITools
         /// <summary>
         /// Constructor
         /// </summary>
+<<<<<<< HEAD
         /// <param name="configuration"></param>
+=======
+        /// <param name="env"></param>
+>>>>>>> ooof
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -96,6 +100,10 @@ namespace Org.OpenAPITools
                         Version = "1.0.0",
                     });
                     c.CustomSchemaIds(type => type.FriendlyId(true));
+<<<<<<< HEAD
+=======
+                    c.DescribeAllEnumsAsStrings();
+>>>>>>> ooof
                     c.IncludeXmlComments($"{AppContext.BaseDirectory}{Path.DirectorySeparatorChar}{Assembly.GetEntryAssembly().GetName().Name}.xml");
                     // Sets the basePath property in the Swagger document generated
                     c.DocumentFilter<BasePathFilter>("/v2");

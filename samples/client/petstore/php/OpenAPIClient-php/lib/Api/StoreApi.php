@@ -1,7 +1,11 @@
 <?php
 /**
  * StoreApi
+<<<<<<< HEAD
  * PHP version 7.2
+=======
+ * PHP version 7.1
+>>>>>>> ooof
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -884,15 +888,25 @@ class StoreApi
      *
      * Place an order for a pet
      *
+<<<<<<< HEAD
      * @param  \OpenAPI\Client\Model\Order $order order placed for purchasing the pet (required)
+=======
+     * @param  \OpenAPI\Client\Model\Order $body order placed for purchasing the pet (required)
+>>>>>>> ooof
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\Order
      */
+<<<<<<< HEAD
     public function placeOrder($order)
     {
         list($response) = $this->placeOrderWithHttpInfo($order);
+=======
+    public function placeOrder($body)
+    {
+        list($response) = $this->placeOrderWithHttpInfo($body);
+>>>>>>> ooof
         return $response;
     }
 
@@ -901,15 +915,25 @@ class StoreApi
      *
      * Place an order for a pet
      *
+<<<<<<< HEAD
      * @param  \OpenAPI\Client\Model\Order $order order placed for purchasing the pet (required)
+=======
+     * @param  \OpenAPI\Client\Model\Order $body order placed for purchasing the pet (required)
+>>>>>>> ooof
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\Order, HTTP status code, HTTP response headers (array of strings)
      */
+<<<<<<< HEAD
     public function placeOrderWithHttpInfo($order)
     {
         $request = $this->placeOrderRequest($order);
+=======
+    public function placeOrderWithHttpInfo($body)
+    {
+        $request = $this->placeOrderRequest($body);
+>>>>>>> ooof
 
         try {
             $options = $this->createHttpClientOption();
@@ -989,14 +1013,24 @@ class StoreApi
      *
      * Place an order for a pet
      *
+<<<<<<< HEAD
      * @param  \OpenAPI\Client\Model\Order $order order placed for purchasing the pet (required)
+=======
+     * @param  \OpenAPI\Client\Model\Order $body order placed for purchasing the pet (required)
+>>>>>>> ooof
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+<<<<<<< HEAD
     public function placeOrderAsync($order)
     {
         return $this->placeOrderAsyncWithHttpInfo($order)
+=======
+    public function placeOrderAsync($body)
+    {
+        return $this->placeOrderAsyncWithHttpInfo($body)
+>>>>>>> ooof
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1009,15 +1043,26 @@ class StoreApi
      *
      * Place an order for a pet
      *
+<<<<<<< HEAD
      * @param  \OpenAPI\Client\Model\Order $order order placed for purchasing the pet (required)
+=======
+     * @param  \OpenAPI\Client\Model\Order $body order placed for purchasing the pet (required)
+>>>>>>> ooof
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+<<<<<<< HEAD
     public function placeOrderAsyncWithHttpInfo($order)
     {
         $returnType = '\OpenAPI\Client\Model\Order';
         $request = $this->placeOrderRequest($order);
+=======
+    public function placeOrderAsyncWithHttpInfo($body)
+    {
+        $returnType = '\OpenAPI\Client\Model\Order';
+        $request = $this->placeOrderRequest($body);
+>>>>>>> ooof
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1056,17 +1101,30 @@ class StoreApi
     /**
      * Create request for operation 'placeOrder'
      *
+<<<<<<< HEAD
      * @param  \OpenAPI\Client\Model\Order $order order placed for purchasing the pet (required)
+=======
+     * @param  \OpenAPI\Client\Model\Order $body order placed for purchasing the pet (required)
+>>>>>>> ooof
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
+<<<<<<< HEAD
     protected function placeOrderRequest($order)
     {
         // verify the required parameter 'order' is set
         if ($order === null || (is_array($order) && count($order) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $order when calling placeOrder'
+=======
+    protected function placeOrderRequest($body)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling placeOrder'
+>>>>>>> ooof
             );
         }
 
@@ -1082,8 +1140,13 @@ class StoreApi
 
         // body params
         $_tempBody = null;
+<<<<<<< HEAD
         if (isset($order)) {
             $_tempBody = $order;
+=======
+        if (isset($body)) {
+            $_tempBody = $body;
+>>>>>>> ooof
         }
 
         if ($multipart) {
@@ -1093,7 +1156,11 @@ class StoreApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/xml', 'application/json'],
+<<<<<<< HEAD
                 ['application/json']
+=======
+                []
+>>>>>>> ooof
             );
         }
 

@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 internal struct DogAllOf: Codable { 
 
+=======
+internal struct DogAllOf: Codable {
+>>>>>>> ooof
 
     internal var breed: String?
 

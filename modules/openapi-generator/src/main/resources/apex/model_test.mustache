@@ -86,11 +86,16 @@ private class {{classname}}Test {
         System.assertEquals({{classVarName}}3.hashCode(), {{classVarName}}4.hashCode());
     }
   {{#vendorExtensions}}
+<<<<<<< HEAD
     {{#x-has-property-mappings}}
+=======
+    {{#hasPropertyMappings}}
+>>>>>>> ooof
 
     @isTest
     private static void maintainRenamedProperties() {
         {{classname}} {{classVarName}} = new {{classname}}();
+<<<<<<< HEAD
         Map<String, String> x-property-mappings = {{classVarName}}.getx-property-mappings();
       {{#x-property-mappings}}
         System.assertEquals('{{internalName}}', x-property-mappings.get('{{externalName}}'));
@@ -98,6 +103,15 @@ private class {{classname}}Test {
     }
     {{/x-has-property-mappings}}
     {{#x-has-default-values}}
+=======
+        Map<String, String> propertyMappings = {{classVarName}}.getPropertyMappings();
+      {{#propertyMappings}}
+        System.assertEquals('{{internalName}}', propertyMappings.get('{{externalName}}'));
+      {{/propertyMappings}}
+    }
+    {{/hasPropertyMappings}}
+    {{#hasDefaultValues}}
+>>>>>>> ooof
 
     @isTest
     private static void defaultValuesPopulated() {
@@ -113,7 +127,11 @@ private class {{classname}}Test {
         {{/defaultValue}}
       {{/vars}}
     }
+<<<<<<< HEAD
     {{/x-has-default-values}}
+=======
+    {{/hasDefaultValues}}
+>>>>>>> ooof
   {{/vendorExtensions}}
 {{/isEnum}}
 }

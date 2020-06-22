@@ -68,7 +68,11 @@ class AdditionalPropertiesAnyType(object):
 
 
         :param name: The name of this AdditionalPropertiesAnyType.  # noqa: E501
+<<<<<<< HEAD
         :type name: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._name = name

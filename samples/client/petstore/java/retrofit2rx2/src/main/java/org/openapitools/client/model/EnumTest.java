@@ -28,7 +28,11 @@ import org.openapitools.client.model.OuterEnum;
 /**
  * EnumTest
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class EnumTest {
   /**
    * Gets or Sets enumString

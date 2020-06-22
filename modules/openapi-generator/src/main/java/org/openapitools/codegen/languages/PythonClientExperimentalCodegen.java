@@ -38,9 +38,14 @@ import org.openapitools.codegen.meta.Stability;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+<<<<<<< HEAD
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
+=======
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+>>>>>>> ooof
 import java.io.File;
 import java.util.*;
 import java.util.regex.Pattern;
@@ -54,6 +59,7 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
     public PythonClientExperimentalCodegen() {
         super();
 
+<<<<<<< HEAD
         // Composed schemas can have the 'additionalProperties' keyword, as specified in JSON schema.
         // In principle, this should be enabled by default for all code generators. However due to limitations
         // in other code generators, support needs to be enabled on a case-by-case basis.
@@ -63,6 +69,8 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
         // undeclared properties. This is compliant with the JSON schema specification.
         this.setDisallowAdditionalPropertiesIfNotPresent(false);
 
+=======
+>>>>>>> ooof
         modifyFeatureSet(features -> features
                 .includeDocumentationFeatures(DocumentationFeature.Readme)
                 .wireFormatFeatures(EnumSet.of(WireFormatFeature.JSON, WireFormatFeature.XML, WireFormatFeature.Custom))
@@ -98,9 +106,12 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
         apiDocTemplateFiles.remove("api_doc.mustache");
         apiDocTemplateFiles.put("python-experimental/api_doc.mustache", ".md");
 
+<<<<<<< HEAD
         apiTestTemplateFiles.remove("api_test.mustache", ".py");
         apiTestTemplateFiles.put("python-experimental/api_test.mustache", ".py");
 
+=======
+>>>>>>> ooof
         modelDocTemplateFiles.remove("model_doc.mustache");
         modelDocTemplateFiles.put("python-experimental/model_doc.mustache", ".md");
 
@@ -127,7 +138,10 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
         this.setLegacyDiscriminatorBehavior(false);
 
         super.processOpts();
+<<<<<<< HEAD
         modelPackage = packageName + "." + "model";
+=======
+>>>>>>> ooof
 
         supportingFiles.remove(new SupportingFile("api_client.mustache", packagePath(), "api_client.py"));
         supportingFiles.add(new SupportingFile("python-experimental/api_client.mustache", packagePath(), "api_client.py"));
@@ -135,14 +149,21 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
         supportingFiles.add(new SupportingFile("python-experimental/model_utils.mustache", packagePath(), "model_utils.py"));
 
         supportingFiles.remove(new SupportingFile("__init__model.mustache", packagePath() + File.separatorChar + "models", "__init__.py"));
+<<<<<<< HEAD
         supportingFiles.add(new SupportingFile("python-experimental/__init__model.mustache", packagePath() + File.separatorChar + "model", "__init__.py"));
+=======
+        supportingFiles.add(new SupportingFile("python-experimental/__init__model.mustache", packagePath() + File.separatorChar + "models", "__init__.py"));
+>>>>>>> ooof
 
         supportingFiles.remove(new SupportingFile("__init__package.mustache", packagePath(), "__init__.py"));
         supportingFiles.add(new SupportingFile("python-experimental/__init__package.mustache", packagePath(), "__init__.py"));
 
+<<<<<<< HEAD
         // add the models and apis folders
         supportingFiles.add(new SupportingFile("python-experimental/__init__models.mustache", packagePath() + File.separatorChar + "models", "__init__.py"));
         supportingFiles.add(new SupportingFile("python-experimental/__init__apis.mustache", packagePath() + File.separatorChar + "apis", "__init__.py"));
+=======
+>>>>>>> ooof
 
         // Generate the 'signing.py' module, but only if the 'HTTP signature' security scheme is specified in the OAS.
         Map<String, SecurityScheme> securitySchemeMap = openAPI != null ?
@@ -197,15 +218,25 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
         return "python-experimental";
     }
 
+<<<<<<< HEAD
     public String dateToString(Schema p, OffsetDateTime date, DateTimeFormatter dateFormatter, DateTimeFormatter dateTimeFormatter) {
+=======
+    public String dateToString(Schema p, Date date, DateFormat dateFormatter, DateFormat dateTimeFormatter) {
+>>>>>>> ooof
         // converts a date into a date or date-time python string
         if (!(ModelUtils.isDateSchema(p) || ModelUtils.isDateTimeSchema(p))) {
             throw new RuntimeException("passed schema must be of type Date or DateTime");
         }
         if (ModelUtils.isDateSchema(p)) {
+<<<<<<< HEAD
             return "dateutil_parser('" + date.format(dateFormatter) + "').date()";
         }
         return "dateutil_parser('" + date.format(dateTimeFormatter) + "')";
+=======
+            return "dateutil_parser('" + dateFormatter.format(date) + "').date()";
+        }
+        return "dateutil_parser('" + dateTimeFormatter.format(date) + "')";
+>>>>>>> ooof
     }
 
     /**
@@ -229,17 +260,32 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
         }
 
         // convert datetime and date enums if they exist
+<<<<<<< HEAD
         DateTimeFormatter iso8601Date = DateTimeFormatter.ISO_DATE;
         DateTimeFormatter iso8601DateTime = DateTimeFormatter.ISO_DATE_TIME;
+=======
+        DateFormat iso8601Date = new SimpleDateFormat("yyyy-MM-dd", Locale.ROOT);
+        DateFormat iso8601DateTime = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX", Locale.ROOT);
+        TimeZone utc = TimeZone.getTimeZone("UTC");
+        iso8601Date.setTimeZone(utc);
+        iso8601DateTime.setTimeZone(utc);
+>>>>>>> ooof
 
         if (ModelUtils.isDateSchema(p) || ModelUtils.isDateTimeSchema(p)) {
             List<Object> currentEnum = p.getEnum();
             List<String> fixedEnum = new ArrayList<String>();
             String fixedValue = null;
+<<<<<<< HEAD
             OffsetDateTime date = null;
             if (currentEnum != null && !currentEnum.isEmpty()) {
                 for (Object enumItem : currentEnum) {
                     date = (OffsetDateTime) enumItem;
+=======
+            Date date = null;
+            if (currentEnum != null && !currentEnum.isEmpty()) {
+                for (Object enumItem : currentEnum) {
+                    date = (Date) enumItem;
+>>>>>>> ooof
                     fixedValue = dateToString(p, date, iso8601Date, iso8601DateTime);
                     fixedEnum.add(fixedValue);
                 }
@@ -249,6 +295,7 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
             // convert the example if it exists
             Object currentExample = p.getExample();
             if (currentExample != null) {
+<<<<<<< HEAD
                 try {
                     date = (OffsetDateTime) currentExample;
                 } catch (ClassCastException e) {
@@ -259,11 +306,21 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
                 fixedEnum.add(fixedValue);
                 p.setExample(fixedValue);
                 LOGGER.warn(fixedValue);
+=======
+                date = (Date) currentExample;
+                fixedValue = dateToString(p, date, iso8601Date, iso8601DateTime);
+                fixedEnum.add(fixedValue);
+                p.setExample(fixedValue);
+>>>>>>> ooof
             }
 
             // fix defaultObject
             if (defaultObject != null) {
+<<<<<<< HEAD
                 date = (OffsetDateTime) defaultObject;
+=======
+                date = (Date) defaultObject;
+>>>>>>> ooof
                 fixedValue = dateToString(p, date, iso8601Date, iso8601DateTime);
                 p.setDefault(fixedValue);
                 defaultObject = fixedValue;
@@ -379,9 +436,13 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
         }
     }
 
+<<<<<<< HEAD
     /**
      * Override with special post-processing for all models.
      */
+=======
+    // override with any special post-processing for all models
+>>>>>>> ooof
     @SuppressWarnings({"static-method", "unchecked"})
     public Map<String, Object> postProcessAllModels(Map<String, Object> objs) {
         // loop through all models and delete ones where type!=object and the model has no validations and enums
@@ -416,6 +477,7 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
                     }
                 }
 
+<<<<<<< HEAD
                 Schema modelSchema = ModelUtils.getSchema(this.openAPI, cm.name);
                 CodegenProperty modelProperty = fromProperty("value", modelSchema);
 
@@ -432,6 +494,21 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
                         // remove these models because they are aliases and do not have any enums or validations
                         modelSchemasToRemove.put(cm.name, modelSchema);
                     }
+=======
+                // fix the imports that each model has, change them to absolute
+                fixModelImports(cm.imports);
+
+                Schema modelSchema = ModelUtils.getSchema(this.openAPI, cm.name);
+                CodegenProperty modelProperty = fromProperty("value", modelSchema);
+                if (cm.isEnum || cm.isAlias) {
+                    if (!modelProperty.isEnum && !modelProperty.hasValidation) {
+                        // remove these models because they are aliases and do not have any enums or validations
+                        modelSchemasToRemove.put(cm.name, modelSchema);
+                    }
+                } else if (cm.isArrayModel && !modelProperty.isEnum && !modelProperty.hasValidation) {
+                    // remove any ArrayModels which lack validation and enums
+                    modelSchemasToRemove.put(cm.name, modelSchema);
+>>>>>>> ooof
                 }
             }
         }
@@ -532,9 +609,15 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
             // set the example value
             if (modelProp.isEnum) {
                 String value = modelProp._enum.get(0).toString();
+<<<<<<< HEAD
                 result.example = result.dataType + "(" + toEnumValue(value, simpleDataType) + ")";
             } else {
                 result.example = result.dataType + "(" + result.example + ")";
+=======
+                result.example = this.packageName + "." + result.baseType + "(" + toEnumValue(value, simpleDataType) + ")";
+            } else {
+                result.example = this.packageName + "." + result.baseType + "(" + result.example + ")";
+>>>>>>> ooof
             }
         } else if (!result.isPrimitiveType) {
             // fix the baseType for the api docs so the .md link to the class's documentation file is correct
@@ -832,10 +915,17 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
         result.unescapedDescription = simpleModelName(name);
 
         // make non-object type models have one property so we can use it to store enums and validations
+<<<<<<< HEAD
         if (result.isAlias || result.isEnum || result.isArrayModel) {
             Schema modelSchema = ModelUtils.getSchema(this.openAPI, result.name);
             CodegenProperty modelProperty = fromProperty("value", modelSchema);
             if (modelProperty.isEnum == true || modelProperty.hasValidation == true || result.isArrayModel) {
+=======
+        if (result.isAlias || result.isEnum) {
+            Schema modelSchema = ModelUtils.getSchema(this.openAPI, result.name);
+            CodegenProperty modelProperty = fromProperty("value", modelSchema);
+            if (modelProperty.isEnum == true || modelProperty.hasValidation == true) {
+>>>>>>> ooof
                 // these models are non-object models with enums and/or validations
                 // add a single property to the model so we can have a way to access validations
                 result.isAlias = true;
@@ -850,6 +940,10 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
                         postProcessModelProperty(result, prop);
                     }
                 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
             }
         }
 
@@ -911,7 +1005,11 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
      * Primitive types in the OAS specification are implemented in Python using the corresponding
      * Python primitive types.
      * Composed types (e.g. allAll, oneOf, anyOf) are represented in Python using list of types.
+<<<<<<< HEAD
      *
+=======
+     * 
+>>>>>>> ooof
      * The caller should set the prefix and suffix arguments to empty string, except when
      * getTypeString invokes itself recursively. A non-empty prefix/suffix may be specified
      * to wrap the return value in a python dict, list or tuple.
@@ -919,6 +1017,7 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
      * Examples:
      * - "bool, date, float"  The data must be a bool, date or float.
      * - "[bool, date]"       The data must be an array, and the array items must be a bool or date.
+<<<<<<< HEAD
      *
      * @param p The OAS schema.
      * @param prefix prepended to the returned value.
@@ -928,10 +1027,21 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
      * @return a comma-separated string representation of the Python types
      */
     private String getTypeString(Schema p, String prefix, String suffix, List<String> referencedModelNames) {
+=======
+     * 
+     * @param p The OAS schema.
+     * @param prefix prepended to the returned value.
+     * @param suffix appended to the returned value.
+     * @return a comma-separated string representation of the Python types
+     */
+    private String getTypeString(Schema p, String prefix, String suffix) {
+        // this is used to set dataType, which defines a python tuple of classes
+>>>>>>> ooof
         String fullSuffix = suffix;
         if (")".equals(suffix)) {
             fullSuffix = "," + suffix;
         }
+<<<<<<< HEAD
         if (StringUtils.isNotEmpty(p.get$ref())) {
             // The input schema is a reference. If the resolved schema is
             // a composed schema, convert the name to a Python class.
@@ -945,18 +1055,30 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
             }
         }
         if (isAnyTypeSchema(p)) {
+=======
+        if (ModelUtils.isAnyTypeSchema(p)) {
+>>>>>>> ooof
             return prefix + "bool, date, datetime, dict, float, int, list, str, none_type" + suffix;
         }
         // Resolve $ref because ModelUtils.isXYZ methods do not automatically resolve references.
         if (ModelUtils.isNullable(ModelUtils.getReferencedSchema(this.openAPI, p))) {
             fullSuffix = ", none_type" + suffix;
         }
+<<<<<<< HEAD
         if (isFreeFormObject(p) && getAdditionalProperties(p) == null) {
             return prefix + "bool, date, datetime, dict, float, int, list, str" + fullSuffix;
         }
         if ((ModelUtils.isMapSchema(p) || "object".equals(p.getType())) && getAdditionalProperties(p) != null) {
             Schema inner = getAdditionalProperties(p);
             return prefix + "{str: " + getTypeString(inner, "(", ")", referencedModelNames) + "}" + fullSuffix;
+=======
+        if (ModelUtils.isFreeFormObject(p) && ModelUtils.getAdditionalProperties(p) == null) {
+            return prefix + "bool, date, datetime, dict, float, int, list, str" + fullSuffix;
+        }
+        if ((ModelUtils.isMapSchema(p) || "object".equals(p.getType())) && ModelUtils.getAdditionalProperties(p) != null) {
+            Schema inner = ModelUtils.getAdditionalProperties(p);
+            return prefix + "{str: " + getTypeString(inner, "(", ")") + "}" + fullSuffix;
+>>>>>>> ooof
         } else if (ModelUtils.isArraySchema(p)) {
             ArraySchema ap = (ArraySchema) p;
             Schema inner = ap.getItems();
@@ -969,9 +1091,15 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
                 //    "[bool, date, datetime, dict, float, int, list, str, none_type]"
                 // Using recursion to wrap the allowed python types in an array.
                 Schema anyType = new Schema(); // A Schema without any attribute represents 'any type'.
+<<<<<<< HEAD
                 return getTypeString(anyType, "[", "]", referencedModelNames);
             } else {
                 return prefix + getTypeString(inner, "[", "]", referencedModelNames) + fullSuffix;
+=======
+                return getTypeString(anyType, "[", "]");
+            } else {
+                return prefix + getTypeString(inner, "[", "]") + fullSuffix;
+>>>>>>> ooof
             }
         }
         if (ModelUtils.isFileSchema(p)) {
@@ -993,7 +1121,11 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
         // in Python we will wrap this in () to make it a tuple but here we
         // will omit the parens so the generated documentaion will not include
         // them
+<<<<<<< HEAD
         return getTypeString(p, "", "", null);
+=======
+        return getTypeString(p, "", "");
+>>>>>>> ooof
     }
 
     @Override
@@ -1006,6 +1138,7 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
 
     @Override
     protected void addAdditionPropertiesToCodeGenModel(CodegenModel codegenModel, Schema schema) {
+<<<<<<< HEAD
         Schema addProps = getAdditionalProperties(schema);
         if (addProps != null) {
             // if AdditionalProperties exists, get its datatype and
@@ -1022,6 +1155,16 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
         }
         // If addProps is null, the value of the 'additionalProperties' keyword is set
         // to false, i.e. no additional properties are allowed.
+=======
+        Schema addProps = ModelUtils.getAdditionalProperties(schema);
+        if (addProps != null && addProps.get$ref() == null) {
+            // if AdditionalProperties exists and is an inline definition, get its datatype and store it in m.parent
+            String typeString = getTypeDeclaration(addProps);
+            codegenModel.additionalPropertiesType = typeString;
+        } else {
+            addParentContainer(codegenModel, codegenModel.name, schema);
+        }
+>>>>>>> ooof
     }
 
     @Override
@@ -1076,7 +1219,11 @@ public class PythonClientExperimentalCodegen extends PythonClientCodegen {
             example = "'" + escapeText(example) + "'";
         } else if (!languageSpecificPrimitives.contains(type)) {
             // type is a model class, e.g. user.User
+<<<<<<< HEAD
             example = type + "()";
+=======
+            example = this.packageName + "." + getPythonClassName(type) + "()";
+>>>>>>> ooof
         } else {
             LOGGER.warn("Type " + type + " not handled properly in setParameterExampleValue");
         }

@@ -10,7 +10,16 @@ npm run build
 
 ### publishing
 
+<<<<<<< HEAD
 First build the package then run ```npm publish dist``` (don't forget to specify the `dist` folder!)
+=======
+{{#useNgPackagr}}
+First build the package then run ```npm publish dist``` (don't forget to specify the `dist` folder!)
+{{/useNgPackagr}}
+{{^useNgPackagr}}
+First build the package then run ```npm publish```
+{{/useNgPackagr}}
+>>>>>>> ooof
 
 ### consuming
 
@@ -25,14 +34,32 @@ npm install {{npmName}}@{{npmVersion}} --save
 _without publishing (not recommended):_
 
 ```
+<<<<<<< HEAD
 npm install PATH_TO_GENERATED_PACKAGE/dist.tgz --save
+=======
+{{#useNgPackagr}}
+npm install PATH_TO_GENERATED_PACKAGE/dist.tgz --save
+{{/useNgPackagr}}
+{{^useNgPackagr}}
+npm install PATH_TO_GENERATED_PACKAGE/{{npmName}}-{{npmVersion}}.tgz --save
+{{/useNgPackagr}}
+>>>>>>> ooof
 ```
 
 _It's important to take the tgz file, otherwise you'll get trouble with links on windows_
 
 _using `npm link`:_
 
+<<<<<<< HEAD
 In PATH_TO_GENERATED_PACKAGE/dist:
+=======
+{{#useNgPackagr}}
+In PATH_TO_GENERATED_PACKAGE/dist:
+{{/useNgPackagr}}
+{{^useNgPackagr}}
+In PATH_TO_GENERATED_PACKAGE:
+{{/useNgPackagr}}
+>>>>>>> ooof
 ```
 npm link
 ```
@@ -55,14 +82,25 @@ In your Angular project:
 ```
 // without configuring providers
 import { ApiModule } from '{{npmName}}';
+<<<<<<< HEAD
 import { HttpClientModule } from '@angular/common/http';
+=======
+{{#useHttpClient}}import { HttpClientModule } from '@angular/common/http';{{/useHttpClient}}
+{{^useHttpClient}}import { HttpModule } from '@angular/http';{{/useHttpClient}}
+>>>>>>> ooof
 
 @NgModule({
     imports: [
         ApiModule,
+<<<<<<< HEAD
         // make sure to import the HttpClientModule in the AppModule only,
         // see https://github.com/angular/angular/issues/20575
         HttpClientModule
+=======
+        {{#useHttpClient}}// make sure to import the HttpClientModule in the AppModule only,
+        // see https://github.com/angular/angular/issues/20575
+        HttpClientModule{{/useHttpClient}}{{^useHttpClient}}HttpModule{{/useHttpClient}}
+>>>>>>> ooof
     ],
     declarations: [ AppComponent ],
     providers: [],
@@ -134,15 +172,26 @@ in order to avoid naming conflicts:
 ```
 import { ApiModule } from 'my-api-path';
 import { ApiModule as OtherApiModule } from 'my-other-api-path';
+<<<<<<< HEAD
 import { HttpClientModule } from '@angular/common/http';
+=======
+{{#useHttpClient}}import { HttpClientModule } from '@angular/common/http';{{/useHttpClient}}
+{{^useHttpClient}}import { HttpModule } from '@angular/http';{{/useHttpClient}}
+>>>>>>> ooof
 
 @NgModule({
   imports: [
     ApiModule,
     OtherApiModule,
+<<<<<<< HEAD
     // make sure to import the HttpClientModule in the AppModule only,
     // see https://github.com/angular/angular/issues/20575
     HttpClientModule
+=======
+    {{#useHttpClient}}// make sure to import the HttpClientModule in the AppModule only,
+    // see https://github.com/angular/angular/issues/20575
+    HttpClientModule{{/useHttpClient}}{{^useHttpClient}}HttpModule{{/useHttpClient}}
+>>>>>>> ooof
   ]
 })
 export class AppModule {

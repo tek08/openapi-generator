@@ -73,7 +73,11 @@ class Model200Response(object):
 
 
         :param name: The name of this Model200Response.  # noqa: E501
+<<<<<<< HEAD
         :type name: int
+=======
+        :type: int
+>>>>>>> ooof
         """
 
         self._name = name
@@ -94,7 +98,11 @@ class Model200Response(object):
 
 
         :param _class: The _class of this Model200Response.  # noqa: E501
+<<<<<<< HEAD
         :type _class: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self.__class = _class

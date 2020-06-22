@@ -258,6 +258,12 @@ public class ScalaPlayFrameworkServerCodegen extends AbstractScalaCodegen implem
         objs = super.postProcessAllModels(objs);
         Map<String, CodegenModel> modelsByClassName = new HashMap<>();
 
+<<<<<<< HEAD
+=======
+        // TODO: 5.0: Remove the camelCased vendorExtension below and ensure templates use the newer property naming.
+        once(LOGGER).warn("4.3.0 has deprecated the use of vendor extensions which don't follow lower-kebab casing standards with x- prefix.");
+
+>>>>>>> ooof
         for (Object _outer : objs.values()) {
             Map<String, Object> outer = (Map<String, Object>) _outer;
             List<Map<String, Object>> models = (List<Map<String, Object>>) outer.get("models");
@@ -268,6 +274,10 @@ public class ScalaPlayFrameworkServerCodegen extends AbstractScalaCodegen implem
                 cm.classVarName = camelize(cm.classVarName, true);
                 modelsByClassName.put(cm.classname, cm);
                 boolean hasFiles = cm.vars.stream().anyMatch(var -> var.isFile);
+<<<<<<< HEAD
+=======
+                cm.vendorExtensions.put("hasFiles", hasFiles); // TODO: 5.0 Remove
+>>>>>>> ooof
                 cm.vendorExtensions.put("x-has-files", hasFiles);
             }
         }
@@ -285,6 +295,12 @@ public class ScalaPlayFrameworkServerCodegen extends AbstractScalaCodegen implem
         objs = super.postProcessSupportingFileData(objs);
         generateJSONSpecFile(objs);
 
+<<<<<<< HEAD
+=======
+        // TODO: 5.0: Remove the camelCased vendorExtension below and ensure templates use the newer property naming.
+        once(LOGGER).warn("4.3.0 has deprecated the use of vendor extensions which don't follow lower-kebab casing standards with x- prefix.");
+
+>>>>>>> ooof
         // Prettify routes file
         Map<String, Object> apiInfo = (Map<String, Object>) objs.get("apiInfo");
         List<Map<String, Object>> apis = (List<Map<String, Object>>) apiInfo.get("apis");
@@ -297,9 +313,17 @@ public class ScalaPlayFrameworkServerCodegen extends AbstractScalaCodegen implem
                 .reduce(0, Integer::max);
         ops.forEach(op -> {
             String paddedPath = rightPad(op.path, maxPathLength - op.httpMethod.length());
+<<<<<<< HEAD
             op.vendorExtensions.put("x-padded-path", paddedPath);
         });
         ops.forEach(op -> {
+=======
+            op.vendorExtensions.put("paddedPath", paddedPath); // TODO: 5.0 Remove
+            op.vendorExtensions.put("x-padded-path", paddedPath);
+        });
+        ops.forEach(op -> {
+            op.vendorExtensions.put("hasPathParams", op.getHasPathParams()); // TODO: 5.0 Remove
+>>>>>>> ooof
             op.vendorExtensions.put("x-has-path-params", op.getHasPathParams());
         });
 
@@ -365,7 +389,11 @@ public class ScalaPlayFrameworkServerCodegen extends AbstractScalaCodegen implem
         }
 
         if (ModelUtils.isMapSchema(p)) {
+<<<<<<< HEAD
             Schema ap = getAdditionalProperties(p);
+=======
+            Schema ap = ModelUtils.getAdditionalProperties(p);
+>>>>>>> ooof
             String inner = getSchemaType(ap);
             return "Map.empty[String, " + inner + "]";
         }

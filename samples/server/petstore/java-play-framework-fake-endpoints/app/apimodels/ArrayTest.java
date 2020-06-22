@@ -11,7 +11,11 @@ import javax.validation.constraints.*;
 /**
  * ArrayTest
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen")
+=======
+
+>>>>>>> ooof
 @SuppressWarnings({"UnusedReturnValue", "WeakerAccess"})
 public class ArrayTest   {
   @JsonProperty("array_of_string")

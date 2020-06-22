@@ -30,7 +30,11 @@ import android.os.Parcel;
 /**
  * EnumTest
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class EnumTest implements Parcelable {
   /**
    * Gets or Sets enumString

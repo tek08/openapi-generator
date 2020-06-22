@@ -47,6 +47,10 @@ public class ClojureClientCodegen extends DefaultCodegen implements CodegenConfi
     private static final String PROJECT_LICENSE_URL = "projectLicenseUrl";
     private static final String BASE_NAMESPACE = "baseNamespace";
 
+<<<<<<< HEAD
+=======
+    static final String X_BASE_SPEC = "x-baseSpec"; // TODO: 5.0 Remove
+>>>>>>> ooof
     static final String VENDOR_EXTENSION_X_BASE_SPEC = "x-base-spec";
     static final String X_MODELS = "x-models";
 
@@ -201,10 +205,23 @@ public class ClojureClientCodegen extends DefaultCodegen implements CodegenConfi
     @Override
     public CodegenModel fromModel(String name, Schema mod) {
         CodegenModel model = super.fromModel(name, mod);
+<<<<<<< HEAD
         // If a var is a base spec we won't need to import it
         for (CodegenProperty var : model.vars) {
             var.vendorExtensions.put(VENDOR_EXTENSION_X_BASE_SPEC, baseSpecs.contains(var.complexType));
             if (var.items != null) {
+=======
+
+        // TODO: 5.0: Remove the camelCased vendorExtension below and ensure templates use the newer property naming.
+        once(LOGGER).warn("4.3.0 has deprecated the use of vendor extensions which don't follow lower-kebab casing standards with x- prefix.");
+
+        // If a var is a base spec we won't need to import it
+        for (CodegenProperty var : model.vars) {
+            var.vendorExtensions.put(X_BASE_SPEC, baseSpecs.contains(var.complexType)); // TODO: 5.0 Remove
+            var.vendorExtensions.put(VENDOR_EXTENSION_X_BASE_SPEC, baseSpecs.contains(var.complexType));
+            if (var.items != null) {
+                var.items.vendorExtensions.put(X_BASE_SPEC, baseSpecs.contains(var.items.complexType)); // TODO: 5.0 Remove
+>>>>>>> ooof
                 var.items.vendorExtensions.put(VENDOR_EXTENSION_X_BASE_SPEC, baseSpecs.contains(var.items.complexType));
             }
         }

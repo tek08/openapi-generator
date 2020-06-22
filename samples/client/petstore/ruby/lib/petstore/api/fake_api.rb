@@ -19,6 +19,7 @@ module Petstore
     def initialize(api_client = ApiClient.default)
       @api_client = api_client
     end
+<<<<<<< HEAD
     # Health check endpoint
     # @param [Hash] opts the optional parameters
     # @return [HealthCheckResult]
@@ -104,24 +105,66 @@ module Petstore
       # query parameters
       query_params = opts[:query_params] || {}
       query_params[:'query_1'] = opts[:'query_1'] if !opts[:'query_1'].nil?
+=======
+    # creates an XmlItem
+    # this route creates an XmlItem
+    # @param xml_item [XmlItem] XmlItem Body
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def create_xml_item(xml_item, opts = {})
+      create_xml_item_with_http_info(xml_item, opts)
+      nil
+    end
+
+    # creates an XmlItem
+    # this route creates an XmlItem
+    # @param xml_item [XmlItem] XmlItem Body
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def create_xml_item_with_http_info(xml_item, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: FakeApi.create_xml_item ...'
+      end
+      # verify the required parameter 'xml_item' is set
+      if @api_client.config.client_side_validation && xml_item.nil?
+        fail ArgumentError, "Missing the required parameter 'xml_item' when calling FakeApi.create_xml_item"
+      end
+      # resource path
+      local_var_path = '/fake/create_xml_item'
+
+      # query parameters
+      query_params = opts[:query_params] || {}
+>>>>>>> ooof
 
       # header parameters
       header_params = opts[:header_params] || {}
       # HTTP header 'Content-Type'
+<<<<<<< HEAD
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json', 'application/xml'])
       header_params[:'header_1'] = opts[:'header_1'] if !opts[:'header_1'].nil?
+=======
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/xml', 'application/xml; charset=utf-8', 'application/xml; charset=utf-16', 'text/xml', 'text/xml; charset=utf-8', 'text/xml; charset=utf-16'])
+>>>>>>> ooof
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
+<<<<<<< HEAD
       post_body = opts[:body] || @api_client.object_to_http_body(pet) 
+=======
+      post_body = opts[:body] || @api_client.object_to_http_body(xml_item) 
+>>>>>>> ooof
 
       # return_type
       return_type = opts[:return_type] 
 
       # auth_names
+<<<<<<< HEAD
       auth_names = opts[:auth_names] || ['http_signature_test']
+=======
+      auth_names = opts[:auth_names] || []
+>>>>>>> ooof
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -132,9 +175,15 @@ module Petstore
         :return_type => return_type
       )
 
+<<<<<<< HEAD
       data, status_code, headers = @api_client.call_api(:GET, local_var_path, new_options)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: FakeApi#fake_http_signature_test\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+=======
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path, new_options)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: FakeApi#create_xml_item\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+>>>>>>> ooof
       end
       return data, status_code, headers
     end
@@ -166,8 +215,11 @@ module Petstore
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+<<<<<<< HEAD
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+=======
+>>>>>>> ooof
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -199,7 +251,11 @@ module Petstore
 
     # Test serialization of object with outer number type
     # @param [Hash] opts the optional parameters
+<<<<<<< HEAD
     # @option opts [OuterComposite] :outer_composite Input composite as post body
+=======
+    # @option opts [OuterComposite] :body Input composite as post body
+>>>>>>> ooof
     # @return [OuterComposite]
     def fake_outer_composite_serialize(opts = {})
       data, _status_code, _headers = fake_outer_composite_serialize_with_http_info(opts)
@@ -208,7 +264,11 @@ module Petstore
 
     # Test serialization of object with outer number type
     # @param [Hash] opts the optional parameters
+<<<<<<< HEAD
     # @option opts [OuterComposite] :outer_composite Input composite as post body
+=======
+    # @option opts [OuterComposite] :body Input composite as post body
+>>>>>>> ooof
     # @return [Array<(OuterComposite, Integer, Hash)>] OuterComposite data, response status code and response headers
     def fake_outer_composite_serialize_with_http_info(opts = {})
       if @api_client.config.debugging
@@ -224,14 +284,21 @@ module Petstore
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+<<<<<<< HEAD
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+=======
+>>>>>>> ooof
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
+<<<<<<< HEAD
       post_body = opts[:body] || @api_client.object_to_http_body(opts[:'outer_composite']) 
+=======
+      post_body = opts[:body] || @api_client.object_to_http_body(opts[:'body']) 
+>>>>>>> ooof
 
       # return_type
       return_type = opts[:return_type] || 'OuterComposite' 
@@ -282,8 +349,11 @@ module Petstore
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+<<<<<<< HEAD
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+=======
+>>>>>>> ooof
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -340,8 +410,11 @@ module Petstore
       header_params = opts[:header_params] || {}
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['*/*'])
+<<<<<<< HEAD
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+=======
+>>>>>>> ooof
 
       # form parameters
       form_params = opts[:form_params] || {}
@@ -372,15 +445,24 @@ module Petstore
     end
 
     # For this test, the body for this request much reference a schema named `File`.
+<<<<<<< HEAD
     # @param file_schema_test_class [FileSchemaTestClass] 
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def test_body_with_file_schema(file_schema_test_class, opts = {})
       test_body_with_file_schema_with_http_info(file_schema_test_class, opts)
+=======
+    # @param body [FileSchemaTestClass] 
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def test_body_with_file_schema(body, opts = {})
+      test_body_with_file_schema_with_http_info(body, opts)
+>>>>>>> ooof
       nil
     end
 
     # For this test, the body for this request much reference a schema named &#x60;File&#x60;.
+<<<<<<< HEAD
     # @param file_schema_test_class [FileSchemaTestClass] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
@@ -391,6 +473,18 @@ module Petstore
       # verify the required parameter 'file_schema_test_class' is set
       if @api_client.config.client_side_validation && file_schema_test_class.nil?
         fail ArgumentError, "Missing the required parameter 'file_schema_test_class' when calling FakeApi.test_body_with_file_schema"
+=======
+    # @param body [FileSchemaTestClass] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def test_body_with_file_schema_with_http_info(body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: FakeApi.test_body_with_file_schema ...'
+      end
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling FakeApi.test_body_with_file_schema"
+>>>>>>> ooof
       end
       # resource path
       local_var_path = '/fake/body-with-file-schema'
@@ -407,7 +501,11 @@ module Petstore
       form_params = opts[:form_params] || {}
 
       # http body (model)
+<<<<<<< HEAD
       post_body = opts[:body] || @api_client.object_to_http_body(file_schema_test_class) 
+=======
+      post_body = opts[:body] || @api_client.object_to_http_body(body) 
+>>>>>>> ooof
 
       # return_type
       return_type = opts[:return_type] 
@@ -432,19 +530,34 @@ module Petstore
     end
 
     # @param query [String] 
+<<<<<<< HEAD
     # @param user [User] 
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def test_body_with_query_params(query, user, opts = {})
       test_body_with_query_params_with_http_info(query, user, opts)
+=======
+    # @param body [User] 
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def test_body_with_query_params(query, body, opts = {})
+      test_body_with_query_params_with_http_info(query, body, opts)
+>>>>>>> ooof
       nil
     end
 
     # @param query [String] 
+<<<<<<< HEAD
     # @param user [User] 
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def test_body_with_query_params_with_http_info(query, user, opts = {})
+=======
+    # @param body [User] 
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def test_body_with_query_params_with_http_info(query, body, opts = {})
+>>>>>>> ooof
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: FakeApi.test_body_with_query_params ...'
       end
@@ -452,9 +565,15 @@ module Petstore
       if @api_client.config.client_side_validation && query.nil?
         fail ArgumentError, "Missing the required parameter 'query' when calling FakeApi.test_body_with_query_params"
       end
+<<<<<<< HEAD
       # verify the required parameter 'user' is set
       if @api_client.config.client_side_validation && user.nil?
         fail ArgumentError, "Missing the required parameter 'user' when calling FakeApi.test_body_with_query_params"
+=======
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling FakeApi.test_body_with_query_params"
+>>>>>>> ooof
       end
       # resource path
       local_var_path = '/fake/body-with-query-params'
@@ -472,7 +591,11 @@ module Petstore
       form_params = opts[:form_params] || {}
 
       # http body (model)
+<<<<<<< HEAD
       post_body = opts[:body] || @api_client.object_to_http_body(user) 
+=======
+      post_body = opts[:body] || @api_client.object_to_http_body(body) 
+>>>>>>> ooof
 
       # return_type
       return_type = opts[:return_type] 
@@ -498,16 +621,25 @@ module Petstore
 
     # To test \"client\" model
     # To test \"client\" model
+<<<<<<< HEAD
     # @param client [Client] client model
     # @param [Hash] opts the optional parameters
     # @return [Client]
     def test_client_model(client, opts = {})
       data, _status_code, _headers = test_client_model_with_http_info(client, opts)
+=======
+    # @param body [Client] client model
+    # @param [Hash] opts the optional parameters
+    # @return [Client]
+    def test_client_model(body, opts = {})
+      data, _status_code, _headers = test_client_model_with_http_info(body, opts)
+>>>>>>> ooof
       data
     end
 
     # To test \&quot;client\&quot; model
     # To test \&quot;client\&quot; model
+<<<<<<< HEAD
     # @param client [Client] client model
     # @param [Hash] opts the optional parameters
     # @return [Array<(Client, Integer, Hash)>] Client data, response status code and response headers
@@ -518,6 +650,18 @@ module Petstore
       # verify the required parameter 'client' is set
       if @api_client.config.client_side_validation && client.nil?
         fail ArgumentError, "Missing the required parameter 'client' when calling FakeApi.test_client_model"
+=======
+    # @param body [Client] client model
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Client, Integer, Hash)>] Client data, response status code and response headers
+    def test_client_model_with_http_info(body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: FakeApi.test_client_model ...'
+      end
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling FakeApi.test_client_model"
+>>>>>>> ooof
       end
       # resource path
       local_var_path = '/fake'
@@ -536,7 +680,11 @@ module Petstore
       form_params = opts[:form_params] || {}
 
       # http body (model)
+<<<<<<< HEAD
       post_body = opts[:body] || @api_client.object_to_http_body(client) 
+=======
+      post_body = opts[:body] || @api_client.object_to_http_body(body) 
+>>>>>>> ooof
 
       # return_type
       return_type = opts[:return_type] || 'Client' 
@@ -560,8 +708,13 @@ module Petstore
       return data, status_code, headers
     end
 
+<<<<<<< HEAD
     # Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
     # Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
+=======
+    # Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트
+    # Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트
+>>>>>>> ooof
     # @param number [Float] None
     # @param double [Float] None
     # @param pattern_without_delimiter [String] None
@@ -583,8 +736,13 @@ module Petstore
       nil
     end
 
+<<<<<<< HEAD
     # Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
     # Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
+=======
+    # Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트
+    # Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트
+>>>>>>> ooof
     # @param number [Float] None
     # @param double [Float] None
     # @param pattern_without_delimiter [String] None
@@ -798,7 +956,11 @@ module Petstore
 
       # query parameters
       query_params = opts[:query_params] || {}
+<<<<<<< HEAD
       query_params[:'enum_query_string_array'] = @api_client.build_collection_param(opts[:'enum_query_string_array'], :multi) if !opts[:'enum_query_string_array'].nil?
+=======
+      query_params[:'enum_query_string_array'] = @api_client.build_collection_param(opts[:'enum_query_string_array'], :csv) if !opts[:'enum_query_string_array'].nil?
+>>>>>>> ooof
       query_params[:'enum_query_string'] = opts[:'enum_query_string'] if !opts[:'enum_query_string'].nil?
       query_params[:'enum_query_integer'] = opts[:'enum_query_integer'] if !opts[:'enum_query_integer'].nil?
       query_params[:'enum_query_double'] = opts[:'enum_query_double'] if !opts[:'enum_query_double'].nil?
@@ -906,7 +1068,11 @@ module Petstore
       return_type = opts[:return_type] 
 
       # auth_names
+<<<<<<< HEAD
       auth_names = opts[:auth_names] || ['bearer_test']
+=======
+      auth_names = opts[:auth_names] || []
+>>>>>>> ooof
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -925,15 +1091,24 @@ module Petstore
     end
 
     # test inline additionalProperties
+<<<<<<< HEAD
     # @param request_body [Hash<String, String>] request body
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def test_inline_additional_properties(request_body, opts = {})
       test_inline_additional_properties_with_http_info(request_body, opts)
+=======
+    # @param param [Hash<String, String>] request body
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def test_inline_additional_properties(param, opts = {})
+      test_inline_additional_properties_with_http_info(param, opts)
+>>>>>>> ooof
       nil
     end
 
     # test inline additionalProperties
+<<<<<<< HEAD
     # @param request_body [Hash<String, String>] request body
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
@@ -944,6 +1119,18 @@ module Petstore
       # verify the required parameter 'request_body' is set
       if @api_client.config.client_side_validation && request_body.nil?
         fail ArgumentError, "Missing the required parameter 'request_body' when calling FakeApi.test_inline_additional_properties"
+=======
+    # @param param [Hash<String, String>] request body
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def test_inline_additional_properties_with_http_info(param, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: FakeApi.test_inline_additional_properties ...'
+      end
+      # verify the required parameter 'param' is set
+      if @api_client.config.client_side_validation && param.nil?
+        fail ArgumentError, "Missing the required parameter 'param' when calling FakeApi.test_inline_additional_properties"
+>>>>>>> ooof
       end
       # resource path
       local_var_path = '/fake/inline-additionalProperties'
@@ -960,7 +1147,11 @@ module Petstore
       form_params = opts[:form_params] || {}
 
       # http body (model)
+<<<<<<< HEAD
       post_body = opts[:body] || @api_client.object_to_http_body(request_body) 
+=======
+      post_body = opts[:body] || @api_client.object_to_http_body(param) 
+>>>>>>> ooof
 
       # return_type
       return_type = opts[:return_type] 
@@ -1102,9 +1293,15 @@ module Petstore
 
       # query parameters
       query_params = opts[:query_params] || {}
+<<<<<<< HEAD
       query_params[:'pipe'] = @api_client.build_collection_param(pipe, :multi)
       query_params[:'ioutil'] = @api_client.build_collection_param(ioutil, :csv)
       query_params[:'http'] = @api_client.build_collection_param(http, :ssv)
+=======
+      query_params[:'pipe'] = @api_client.build_collection_param(pipe, :csv)
+      query_params[:'ioutil'] = @api_client.build_collection_param(ioutil, :csv)
+      query_params[:'http'] = @api_client.build_collection_param(http, :space)
+>>>>>>> ooof
       query_params[:'url'] = @api_client.build_collection_param(url, :csv)
       query_params[:'context'] = @api_client.build_collection_param(context, :multi)
 

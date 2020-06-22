@@ -46,7 +46,11 @@ export class Configuration {
     }
 
     get apiKey(): ((name: string) => string) | undefined {
+<<<<<<< HEAD
         const { apiKey } = this.configuration;
+=======
+        const apiKey = this.configuration.apiKey;
+>>>>>>> ooof
         if (!apiKey) {
             return undefined;
         }
@@ -54,7 +58,11 @@ export class Configuration {
     }
 
     get accessToken(): ((name: string, scopes?: string[]) => string) | undefined {
+<<<<<<< HEAD
         const { accessToken } = this.configuration;
+=======
+        const accessToken = this.configuration.accessToken;
+>>>>>>> ooof
         if (!accessToken) {
             return undefined;
         }
@@ -72,7 +80,11 @@ export class BaseAPI {
         this.middleware = configuration.middleware;
     }
 
+<<<<<<< HEAD
     withMiddleware = (middlewares: Middleware[]): this => {
+=======
+    withMiddleware = (middlewares: Middleware[]) => {
+>>>>>>> ooof
         const next = this.clone();
         next.middleware = next.middleware.concat(middlewares);
         return next;
@@ -132,7 +144,11 @@ export class BaseAPI {
      * Create a shallow clone of `this` by constructing a new instance
      * and then shallow cloning data members.
      */
+<<<<<<< HEAD
     private clone = (): this =>
+=======
+    private clone = (): BaseAPI =>
+>>>>>>> ooof
         Object.assign(Object.create(Object.getPrototypeOf(this)), this);
 }
 
@@ -189,9 +205,15 @@ export const throwIfRequired = (params: {[key: string]: any}, key: string, nickn
     }
 };
 
+<<<<<<< HEAD
 export const throwIfNullOrUndefined = (value: any, paramName: string, nickname: string) => {
     if (value == null) {
         throw new Error(`Parameter "${paramName}" was null or undefined when calling "${nickname}".`);
+=======
+export const throwIfNullOrUndefined = (value: any, nickname?: string) => {
+    if (value == null) {
+        throw new Error(`Parameter "${value}" was null or undefined when calling "${nickname}".`);
+>>>>>>> ooof
     }
 };
 

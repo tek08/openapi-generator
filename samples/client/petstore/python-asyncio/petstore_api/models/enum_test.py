@@ -87,7 +87,11 @@ class EnumTest(object):
 
 
         :param enum_string: The enum_string of this EnumTest.  # noqa: E501
+<<<<<<< HEAD
         :type enum_string: str
+=======
+        :type: str
+>>>>>>> ooof
         """
         allowed_values = ["UPPER", "lower", ""]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and enum_string not in allowed_values:  # noqa: E501
@@ -114,7 +118,11 @@ class EnumTest(object):
 
 
         :param enum_string_required: The enum_string_required of this EnumTest.  # noqa: E501
+<<<<<<< HEAD
         :type enum_string_required: str
+=======
+        :type: str
+>>>>>>> ooof
         """
         if self.local_vars_configuration.client_side_validation and enum_string_required is None:  # noqa: E501
             raise ValueError("Invalid value for `enum_string_required`, must not be `None`")  # noqa: E501
@@ -143,7 +151,11 @@ class EnumTest(object):
 
 
         :param enum_integer: The enum_integer of this EnumTest.  # noqa: E501
+<<<<<<< HEAD
         :type enum_integer: int
+=======
+        :type: int
+>>>>>>> ooof
         """
         allowed_values = [1, -1]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and enum_integer not in allowed_values:  # noqa: E501
@@ -170,7 +182,11 @@ class EnumTest(object):
 
 
         :param enum_number: The enum_number of this EnumTest.  # noqa: E501
+<<<<<<< HEAD
         :type enum_number: float
+=======
+        :type: float
+>>>>>>> ooof
         """
         allowed_values = [1.1, -1.2]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and enum_number not in allowed_values:  # noqa: E501
@@ -197,7 +213,11 @@ class EnumTest(object):
 
 
         :param outer_enum: The outer_enum of this EnumTest.  # noqa: E501
+<<<<<<< HEAD
         :type outer_enum: OuterEnum
+=======
+        :type: OuterEnum
+>>>>>>> ooof
         """
 
         self._outer_enum = outer_enum

@@ -166,7 +166,11 @@ public class TypeScriptAxiosClientCodegen extends AbstractTypeScriptClientCodege
 
     @Override
     protected void addAdditionPropertiesToCodeGenModel(CodegenModel codegenModel, Schema schema) {
+<<<<<<< HEAD
         codegenModel.additionalPropertiesType = getTypeDeclaration(getAdditionalProperties(schema));
+=======
+        codegenModel.additionalPropertiesType = getTypeDeclaration(ModelUtils.getAdditionalProperties(schema));
+>>>>>>> ooof
         addImport(codegenModel, codegenModel.additionalPropertiesType);
     }
 

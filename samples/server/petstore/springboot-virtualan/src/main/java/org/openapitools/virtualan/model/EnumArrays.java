@@ -15,7 +15,11 @@ import javax.validation.constraints.*;
 /**
  * EnumArrays
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
+=======
+
+>>>>>>> ooof
 public class EnumArrays   {
   /**
    * Gets or Sets justSymbol

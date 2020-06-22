@@ -1,5 +1,6 @@
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.Response;
+<<<<<<< HEAD
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -110,6 +111,14 @@ public class {{classname}} extends AbstractOpenApiSchema{{#vendorExtensions.x-im
         {{/isNullable}}
         }
     }
+=======
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+{{>additionalModelTypeAnnotations}}{{>generatedAnnotation}}{{>xmlAnnotation}}
+public class {{classname}} extends AbstractOpenApiSchema{{#vendorExtensions.x-implements}}, {{{.}}}{{/vendorExtensions.x-implements}} {
+>>>>>>> ooof
 
     // store a list of schema names defined in oneOf
     public final static Map<String, GenericType> schemas = new HashMap<String, GenericType>();
@@ -117,6 +126,7 @@ public class {{classname}} extends AbstractOpenApiSchema{{#vendorExtensions.x-im
     public {{classname}}() {
         super("oneOf", {{#isNullable}}Boolean.TRUE{{/isNullable}}{{^isNullable}}Boolean.FALSE{{/isNullable}});
     }
+<<<<<<< HEAD
 {{> libraries/jersey2/additional_properties }}
     {{#additionalPropertiesType}}
     /**
@@ -139,11 +149,15 @@ public class {{classname}} extends AbstractOpenApiSchema{{#vendorExtensions.x-im
     }
 
     {{/oneOf}}
+=======
+
+>>>>>>> ooof
     static {
         {{#oneOf}}
         schemas.put("{{{.}}}", new GenericType<{{{.}}}>() {
         });
         {{/oneOf}}
+<<<<<<< HEAD
         JSON.registerDescendants({{classname}}.class, Collections.unmodifiableMap(schemas));
         {{#discriminator}}
         // Initialize and register the discriminator mappings.
@@ -154,6 +168,8 @@ public class {{classname}} extends AbstractOpenApiSchema{{#vendorExtensions.x-im
         mappings.put("{{name}}", {{classname}}.class);
         JSON.registerDiscriminator({{classname}}.class, "{{propertyBaseName}}", mappings);
         {{/discriminator}}
+=======
+>>>>>>> ooof
     }
 
     @Override
@@ -161,6 +177,7 @@ public class {{classname}} extends AbstractOpenApiSchema{{#vendorExtensions.x-im
         return {{classname}}.schemas;
     }
 
+<<<<<<< HEAD
     /**
      * Set the instance that matches the oneOf child schema, check
      * the instance parameter is valid against the oneOf child schemas.
@@ -171,14 +188,25 @@ public class {{classname}} extends AbstractOpenApiSchema{{#vendorExtensions.x-im
     @Override
     public void setActualInstance(Object instance) {
         {{#isNullable}}
+=======
+    @Override
+    public void setActualInstance(Object instance) {
+        {{#isNulalble}}
+>>>>>>> ooof
         if (instance == null) {
            super.setActualInstance(instance);
            return;
         }
 
+<<<<<<< HEAD
         {{/isNullable}}
         {{#oneOf}}
         if (JSON.isInstanceOf({{{.}}}.class, instance, new HashSet<Class<?>>())) {
+=======
+        {{/isNulalble}}
+        {{#oneOf}}
+        if (instance instanceof {{{.}}}) {
+>>>>>>> ooof
             super.setActualInstance(instance);
             return;
         }

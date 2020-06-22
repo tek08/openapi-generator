@@ -54,10 +54,17 @@ class StoreApiController @Inject()(cc: ControllerComponents, api: StoreApi) exte
     */
   def placeOrder(): Action[AnyContent] = Action { request =>
     def executeApi(): Order = {
+<<<<<<< HEAD
       val order = request.body.asJson.map(_.as[Order]).getOrElse {
         throw new OpenApiExceptions.MissingRequiredParameterException("body", "order")
       }
       api.placeOrder(order)
+=======
+      val body = request.body.asJson.map(_.as[Order]).getOrElse {
+        throw new OpenApiExceptions.MissingRequiredParameterException("body", "body")
+      }
+      api.placeOrder(body)
+>>>>>>> ooof
     }
 
     val result = executeApi()

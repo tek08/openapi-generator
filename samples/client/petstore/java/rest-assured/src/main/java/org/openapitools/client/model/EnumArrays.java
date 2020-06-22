@@ -32,7 +32,11 @@ import org.hibernate.validator.constraints.*;
 /**
  * EnumArrays
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class EnumArrays {
   /**
    * Gets or Sets justSymbol

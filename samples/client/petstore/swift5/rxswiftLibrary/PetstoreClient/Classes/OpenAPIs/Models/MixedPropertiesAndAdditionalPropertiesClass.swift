@@ -7,6 +7,7 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 public struct MixedPropertiesAndAdditionalPropertiesClass: Codable { 
 
@@ -16,6 +17,15 @@ public struct MixedPropertiesAndAdditionalPropertiesClass: Codable {
     public var map: [String:Animal]?
 
     public init(uuid: UUID?, dateTime: Date?, map: [String:Animal]?) {
+=======
+public struct MixedPropertiesAndAdditionalPropertiesClass: Codable {
+
+    public var uuid: UUID?
+    public var dateTime: Date?
+    public var map: [String: Animal]?
+
+    public init(uuid: UUID?, dateTime: Date?, map: [String: Animal]?) {
+>>>>>>> ooof
         self.uuid = uuid
         self.dateTime = dateTime
         self.map = map

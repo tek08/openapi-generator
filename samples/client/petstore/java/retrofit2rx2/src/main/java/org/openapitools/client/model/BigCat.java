@@ -29,7 +29,11 @@ import org.openapitools.client.model.Cat;
 /**
  * BigCat
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 
 public class BigCat extends Cat {
   /**

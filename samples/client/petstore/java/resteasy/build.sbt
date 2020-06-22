@@ -20,7 +20,10 @@ lazy val root = (project in file(".")).
       "com.fasterxml.jackson.datatype" % "jackson-datatype-joda" % "2.9.10" % "compile",
       "joda-time" % "joda-time" % "2.9.9" % "compile",
       "com.brsanthu" % "migbase64" % "2.2" % "compile",
+<<<<<<< HEAD
 	  "javax.annotation" % "javax.annotation-api" % "1.3.2" % "compile",
+=======
+>>>>>>> ooof
       "junit" % "junit" % "4.13" % "test",
       "com.novocode" % "junit-interface" % "0.10" % "test"
     )

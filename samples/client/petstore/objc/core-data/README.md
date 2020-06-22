@@ -42,8 +42,11 @@ Import the following:
 #import <SwaggerClient/SWGDefaultConfiguration.h>
 // load models
 #import <SwaggerClient/SWGCategory.h>
+<<<<<<< HEAD
 #import <SwaggerClient/SWGInlineObject.h>
 #import <SwaggerClient/SWGInlineObject1.h>
+=======
+>>>>>>> ooof
 #import <SwaggerClient/SWGOrder.h>
 #import <SwaggerClient/SWGPet.h>
 #import <SwaggerClient/SWGTag.h>
@@ -116,8 +119,11 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [SWGCategory](docs/SWGCategory.md)
+<<<<<<< HEAD
  - [SWGInlineObject](docs/SWGInlineObject.md)
  - [SWGInlineObject1](docs/SWGInlineObject1.md)
+=======
+>>>>>>> ooof
  - [SWGOrder](docs/SWGOrder.md)
  - [SWGPet](docs/SWGPet.md)
  - [SWGTag](docs/SWGTag.md)

@@ -31,7 +31,11 @@ import javax.validation.Valid;
 
 
 @io.swagger.annotations.Api(description = "the store API")
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen")
+=======
+
+>>>>>>> ooof
 public class StoreApi  {
    private final StoreApiService delegate;
 

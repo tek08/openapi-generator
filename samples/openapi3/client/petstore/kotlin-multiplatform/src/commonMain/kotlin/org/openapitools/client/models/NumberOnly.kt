@@ -14,7 +14,10 @@ package org.openapitools.client.models
 
 import kotlinx.serialization.*
 import kotlinx.serialization.internal.CommonEnumSerializer
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * 
  * @param justNumber 
@@ -22,5 +25,11 @@ import kotlinx.serialization.internal.CommonEnumSerializer
 @Serializable
 data class NumberOnly (
     @SerialName(value = "JustNumber") val justNumber: kotlin.Double? = null
+<<<<<<< HEAD
 )
+=======
+) 
+
+
+>>>>>>> ooof
 

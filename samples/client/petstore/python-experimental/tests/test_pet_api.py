@@ -30,8 +30,12 @@ from petstore_api.exceptions import (
     ApiValueError,
     ApiTypeError,
 )
+<<<<<<< HEAD
 from petstore_api.api.pet_api import PetApi
 from petstore_api.model import pet
+=======
+
+>>>>>>> ooof
 from .util import id_gen
 
 import urllib3
@@ -76,11 +80,16 @@ class PetApiTests(unittest.TestCase):
         config.host = HOST
         config.access_token = 'ACCESS_TOKEN'
         self.api_client = petstore_api.ApiClient(config)
+<<<<<<< HEAD
         self.pet_api = PetApi(self.api_client)
+=======
+        self.pet_api = petstore_api.PetApi(self.api_client)
+>>>>>>> ooof
         self.setUpModels()
         self.setUpFiles()
 
     def setUpModels(self):
+<<<<<<< HEAD
         from petstore_api.model import category, tag
         self.category = category.Category()
         self.category.id = id_gen()
@@ -89,6 +98,15 @@ class PetApiTests(unittest.TestCase):
         self.tag.id = id_gen()
         self.tag.name = "python-pet-tag"
         self.pet = pet.Pet(name="hello kity", photo_urls=["http://foo.bar.com/1", "http://foo.bar.com/2"])
+=======
+        self.category = petstore_api.Category()
+        self.category.id = id_gen()
+        self.category.name = "dog"
+        self.tag = petstore_api.Tag()
+        self.tag.id = id_gen()
+        self.tag.name = "python-pet-tag"
+        self.pet = petstore_api.Pet(name="hello kity", photo_urls=["http://foo.bar.com/1", "http://foo.bar.com/2"])
+>>>>>>> ooof
         self.pet.id = id_gen()
         self.pet.status = "sold"
         self.pet.category = self.category
@@ -164,8 +182,13 @@ class PetApiTests(unittest.TestCase):
         self.pet_api.add_pet(self.pet, _request_timeout=(1, 2))
 
     def test_separate_default_client_instances(self):
+<<<<<<< HEAD
         pet_api = PetApi()
         pet_api2 = PetApi()
+=======
+        pet_api = petstore_api.PetApi()
+        pet_api2 = petstore_api.PetApi()
+>>>>>>> ooof
         self.assertNotEqual(pet_api.api_client, pet_api2.api_client)
 
         pet_api.api_client.user_agent = 'api client 3'
@@ -174,8 +197,13 @@ class PetApiTests(unittest.TestCase):
         self.assertNotEqual(pet_api.api_client.user_agent, pet_api2.api_client.user_agent)
 
     def test_separate_default_config_instances(self):
+<<<<<<< HEAD
         pet_api = PetApi()
         pet_api2 = PetApi()
+=======
+        pet_api = petstore_api.PetApi()
+        pet_api2 = petstore_api.PetApi()
+>>>>>>> ooof
         self.assertNotEqual(pet_api.api_client.configuration, pet_api2.api_client.configuration)
 
         pet_api.api_client.configuration.host = 'somehost'
@@ -189,7 +217,11 @@ class PetApiTests(unittest.TestCase):
 
         thread = self.pet_api.get_pet_by_id(self.pet.id, async_req=True)
         result = thread.get()
+<<<<<<< HEAD
         self.assertIsInstance(result, pet.Pet)
+=======
+        self.assertIsInstance(result, petstore_api.Pet)
+>>>>>>> ooof
 
     def test_async_with_result(self):
         self.pet_api.add_pet(self.pet, async_req=False)
@@ -210,7 +242,11 @@ class PetApiTests(unittest.TestCase):
                                             _return_http_data_only=False)
         data, status, headers = thread.get()
 
+<<<<<<< HEAD
         self.assertIsInstance(data, pet.Pet)
+=======
+        self.assertIsInstance(data, petstore_api.Pet)
+>>>>>>> ooof
         self.assertEqual(status, 200)
 
     def test_async_exception(self):

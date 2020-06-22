@@ -1,5 +1,6 @@
 #![allow(missing_docs, trivial_casts, unused_variables, unused_mut, unused_imports, unused_extern_crates, non_camel_case_types)]
 
+<<<<<<< HEAD
 use async_trait::async_trait;
 use futures::Stream;
 use std::error::Error;
@@ -7,6 +8,15 @@ use std::task::{Poll, Context};
 use swagger::{ApiError, ContextWrapper};
 
 type ServiceError = Box<dyn Error + Send + Sync + 'static>;
+=======
+use futures::Stream;
+use std::io::Error;
+
+#[deprecated(note = "Import swagger-rs directly")]
+pub use swagger::{ApiError, ContextWrapper};
+#[deprecated(note = "Import futures directly")]
+pub use futures::Future;
+>>>>>>> ooof
 
 pub const BASE_PATH: &'static str = "{{{basePathWithoutHost}}}";
 {{#appVersion}}
@@ -23,12 +33,16 @@ pub const API_VERSION: &'static str = "{{{appVersion}}}";
   {{/apis}}
 {{/apiInfo}}
 /// API
+<<<<<<< HEAD
 #[async_trait]
 pub trait Api<C: Send + Sync> {
     fn poll_ready(&self, _cx: &mut Context) -> Poll<Result<(), Box<dyn Error + Send + Sync + 'static>>> {
         Poll::Ready(Ok(()))
     }
 
+=======
+pub trait Api<C> {
+>>>>>>> ooof
 {{#apiInfo}}
   {{#apis}}
     {{#operations}}
@@ -36,12 +50,20 @@ pub trait Api<C: Send + Sync> {
 {{#summary}}
     /// {{{summary}}}
 {{/summary}}
+<<<<<<< HEAD
     async fn {{#vendorExtensions}}{{{x-operation-id}}}{{/vendorExtensions}}(
+=======
+    fn {{#vendorExtensions}}{{{operation_id}}}{{/vendorExtensions}}(
+>>>>>>> ooof
         &self,
 {{#allParams}}
         {{{paramName}}}: {{^required}}Option<{{/required}}{{#isListContainer}}&{{/isListContainer}}{{{dataType}}}{{^required}}>{{/required}},
 {{/allParams}}
+<<<<<<< HEAD
         context: &C) -> Result<{{{operationId}}}Response, ApiError>;
+=======
+        context: &C) -> Box<dyn Future<Item={{{operationId}}}Response, Error=ApiError> + Send>;
+>>>>>>> ooof
 
       {{/operation}}
     {{/operations}}
@@ -49,6 +71,7 @@ pub trait Api<C: Send + Sync> {
 {{/apiInfo}}
 }
 
+<<<<<<< HEAD
 /// API where `Context` isn't passed on every API call
 #[async_trait]
 pub trait ApiNoContext<C: Send + Sync> {
@@ -57,6 +80,10 @@ pub trait ApiNoContext<C: Send + Sync> {
 
     fn context(&self) -> &C;
 
+=======
+/// API without a `Context`
+pub trait ApiNoContext {
+>>>>>>> ooof
 {{#apiInfo}}
   {{#apis}}
     {{#operations}}
@@ -64,12 +91,20 @@ pub trait ApiNoContext<C: Send + Sync> {
 {{#summary}}
     /// {{{summary}}}
 {{/summary}}
+<<<<<<< HEAD
     async fn {{#vendorExtensions}}{{{x-operation-id}}}{{/vendorExtensions}}(
+=======
+    fn {{#vendorExtensions}}{{{operation_id}}}{{/vendorExtensions}}(
+>>>>>>> ooof
         &self,
 {{#allParams}}
         {{{paramName}}}: {{^required}}Option<{{/required}}{{#isListContainer}}&{{/isListContainer}}{{{dataType}}}{{^required}}>{{/required}},
 {{/allParams}}
+<<<<<<< HEAD
         ) -> Result<{{{operationId}}}Response, ApiError>;
+=======
+        ) -> Box<dyn Future<Item={{{operationId}}}Response, Error=ApiError> + Send>;
+>>>>>>> ooof
 
       {{/operation}}
     {{/operations}}
@@ -78,6 +113,7 @@ pub trait ApiNoContext<C: Send + Sync> {
 }
 
 /// Trait to extend an API to make it easy to bind it to a context.
+<<<<<<< HEAD
 pub trait ContextWrapperExt<C: Send + Sync> where Self: Sized
 {
     /// Binds this API to a context.
@@ -86,10 +122,20 @@ pub trait ContextWrapperExt<C: Send + Sync> where Self: Sized
 
 impl<T: Api<C> + Send + Sync, C: Clone + Send + Sync> ContextWrapperExt<C> for T {
     fn with_context(self: T, context: C) -> ContextWrapper<T, C> {
+=======
+pub trait ContextWrapperExt<'a, C> where Self: Sized {
+    /// Binds this API to a context.
+    fn with_context(self: &'a Self, context: C) -> ContextWrapper<'a, Self, C>;
+}
+
+impl<'a, T: Api<C> + Sized, C> ContextWrapperExt<'a, C> for T {
+    fn with_context(self: &'a T, context: C) -> ContextWrapper<'a, T, C> {
+>>>>>>> ooof
          ContextWrapper::<T, C>::new(self, context)
     }
 }
 
+<<<<<<< HEAD
 #[async_trait]
 impl<T: Api<C> + Send + Sync, C: Clone + Send + Sync> ApiNoContext<C> for ContextWrapper<T, C> {
     fn poll_ready(&self, cx: &mut Context) -> Poll<Result<(), ServiceError>> {
@@ -100,6 +146,9 @@ impl<T: Api<C> + Send + Sync, C: Clone + Send + Sync> ApiNoContext<C> for Contex
         ContextWrapper::context(self)
     }
 
+=======
+impl<'a, T: Api<C>, C> ApiNoContext for ContextWrapper<'a, T, C> {
+>>>>>>> ooof
 {{#apiInfo}}
   {{#apis}}
     {{#operations}}
@@ -107,15 +156,25 @@ impl<T: Api<C> + Send + Sync, C: Clone + Send + Sync> ApiNoContext<C> for Contex
 {{#summary}}
     /// {{{summary}}}
 {{/summary}}
+<<<<<<< HEAD
     async fn {{#vendorExtensions}}{{{x-operation-id}}}{{/vendorExtensions}}(
+=======
+    fn {{#vendorExtensions}}{{{operation_id}}}{{/vendorExtensions}}(
+>>>>>>> ooof
         &self,
 {{#allParams}}
         {{{paramName}}}: {{^required}}Option<{{/required}}{{#isListContainer}}&{{/isListContainer}}{{{dataType}}}{{^required}}>{{/required}},
 {{/allParams}}
+<<<<<<< HEAD
         ) -> Result<{{{operationId}}}Response, ApiError>
     {
         let context = self.context().clone();
         self.api().{{#vendorExtensions}}{{{x-operation-id}}}{{/vendorExtensions}}({{#allParams}}{{{paramName}}}, {{/allParams}}&context).await
+=======
+        ) -> Box<dyn Future<Item={{{operationId}}}Response, Error=ApiError> + Send>
+    {
+        self.api().{{#vendorExtensions}}{{{operation_id}}}{{/vendorExtensions}}({{#allParams}}{{{paramName}}}, {{/allParams}}&self.context())
+>>>>>>> ooof
     }
 
       {{/operation}}
@@ -123,7 +182,10 @@ impl<T: Api<C> + Send + Sync, C: Clone + Send + Sync> ApiNoContext<C> for Contex
   {{/apis}}
 {{/apiInfo}}
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 {{#hasCallbacks}}
 
 {{#apiInfo}}
@@ -143,12 +205,16 @@ impl<T: Api<C> + Send + Sync, C: Clone + Send + Sync> ApiNoContext<C> for Contex
 {{/apiInfo}}
 
 /// Callback API
+<<<<<<< HEAD
 #[async_trait]
 pub trait CallbackApi<C: Send + Sync> {
     fn poll_ready(&self, _cx: &mut Context) -> Poll<Result<(), Box<dyn Error + Send + Sync + 'static>>> {
         Poll::Ready(Ok(()))
     }
 
+=======
+pub trait CallbackApi<C> {
+>>>>>>> ooof
 {{#apiInfo}}
   {{#apis}}
     {{#operations}}
@@ -159,17 +225,30 @@ pub trait CallbackApi<C: Send + Sync> {
 {{#summary}}
     /// {{{summary}}}
 {{/summary}}
+<<<<<<< HEAD
     async fn {{#vendorExtensions}}{{{x-operation-id}}}{{/vendorExtensions}}(
         &self,
 {{#vendorExtensions}}
   {{#x-callback-params}}
         callback_{{.}}: String,
   {{/x-callback-params}}
+=======
+    fn {{#vendorExtensions}}{{{operation_id}}}{{/vendorExtensions}}(
+        &self,
+{{#vendorExtensions}}
+  {{#callbackParams}}
+        callback_{{.}}: String,
+  {{/callbackParams}}
+>>>>>>> ooof
 {{/vendorExtensions}}
 {{#allParams}}
         {{{paramName}}}: {{^required}}Option<{{/required}}{{#isListContainer}}&{{/isListContainer}}{{{dataType}}}{{^required}}>{{/required}},
 {{/allParams}}
+<<<<<<< HEAD
         context: &C) -> Result<{{{operationId}}}Response, ApiError>;
+=======
+        context: &C) -> Box<dyn Future<Item={{{operationId}}}Response, Error=ApiError> + Send>;
+>>>>>>> ooof
 
             {{/requests}}
           {{/urls}}
@@ -181,12 +260,16 @@ pub trait CallbackApi<C: Send + Sync> {
 }
 
 /// Callback API without a `Context`
+<<<<<<< HEAD
 #[async_trait]
 pub trait CallbackApiNoContext<C: Send + Sync> {
     fn poll_ready(&self, _cx: &mut Context) -> Poll<Result<(), Box<dyn Error + Send + Sync + 'static>>>;
 
     fn context(&self) -> &C;
 
+=======
+pub trait CallbackApiNoContext {
+>>>>>>> ooof
 {{#apiInfo}}
   {{#apis}}
     {{#operations}}
@@ -197,17 +280,30 @@ pub trait CallbackApiNoContext<C: Send + Sync> {
 {{#summary}}
     /// {{{summary}}}
 {{/summary}}
+<<<<<<< HEAD
     async fn {{#vendorExtensions}}{{{x-operation-id}}}{{/vendorExtensions}}(
         &self,
 {{#vendorExtensions}}
   {{#x-callback-params}}
         callback_{{.}}: String,
   {{/x-callback-params}}
+=======
+    fn {{#vendorExtensions}}{{{operation_id}}}{{/vendorExtensions}}(
+        &self,
+{{#vendorExtensions}}
+  {{#callbackParams}}
+        callback_{{.}}: String,
+  {{/callbackParams}}
+>>>>>>> ooof
 {{/vendorExtensions}}
 {{#allParams}}
         {{{paramName}}}: {{^required}}Option<{{/required}}{{#isListContainer}}&{{/isListContainer}}{{{dataType}}}{{^required}}>{{/required}},
 {{/allParams}}
+<<<<<<< HEAD
         ) -> Result<{{{operationId}}}Response, ApiError>;
+=======
+        ) -> Box<dyn Future<Item={{{operationId}}}Response, Error=ApiError> + Send>;
+>>>>>>> ooof
 
             {{/requests}}
           {{/urls}}
@@ -218,6 +314,7 @@ pub trait CallbackApiNoContext<C: Send + Sync> {
 {{/apiInfo}}
 }
 
+<<<<<<< HEAD
 pub trait CallbackContextWrapperExt<C: Send + Sync> where Self: Sized
 {
     /// Binds this API to a context.
@@ -226,10 +323,21 @@ pub trait CallbackContextWrapperExt<C: Send + Sync> where Self: Sized
 
 impl<T: CallbackApi<C> + Send + Sync, C: Clone + Send + Sync> CallbackContextWrapperExt<C> for T {
     fn with_context(self: T, context: C) -> ContextWrapper<T, C> {
+=======
+/// Trait to extend an API to make it easy to bind it to a context.
+pub trait CallbackContextWrapperExt<'a, C> where Self: Sized {
+    /// Binds this API to a context.
+    fn with_context(self: &'a Self, context: C) -> ContextWrapper<'a, Self, C>;
+}
+
+impl<'a, T: CallbackApi<C> + Sized, C> CallbackContextWrapperExt<'a, C> for T {
+    fn with_context(self: &'a T, context: C) -> ContextWrapper<'a, T, C> {
+>>>>>>> ooof
          ContextWrapper::<T, C>::new(self, context)
     }
 }
 
+<<<<<<< HEAD
 #[async_trait]
 impl<T: CallbackApi<C> + Send + Sync, C: Clone + Send + Sync> CallbackApiNoContext<C> for ContextWrapper<T, C> {
     fn poll_ready(&self, cx: &mut Context) -> Poll<Result<(), ServiceError>> {
@@ -240,6 +348,9 @@ impl<T: CallbackApi<C> + Send + Sync, C: Clone + Send + Sync> CallbackApiNoConte
         ContextWrapper::context(self)
     }
 
+=======
+impl<'a, T: CallbackApi<C>, C> CallbackApiNoContext for ContextWrapper<'a, T, C> {
+>>>>>>> ooof
 {{#apiInfo}}
   {{#apis}}
     {{#operations}}
@@ -250,16 +361,26 @@ impl<T: CallbackApi<C> + Send + Sync, C: Clone + Send + Sync> CallbackApiNoConte
               {{#summary}}
     /// {{{summary}}}
               {{/summary}}
+<<<<<<< HEAD
     async fn {{#vendorExtensions}}{{{x-operation-id}}}{{/vendorExtensions}}(
         &self,
 {{#vendorExtensions}}
   {{#x-callback-params}}
         callback_{{.}}: String,
   {{/x-callback-params}}
+=======
+    fn {{#vendorExtensions}}{{{operation_id}}}{{/vendorExtensions}}(
+        &self,
+{{#vendorExtensions}}
+  {{#callbackParams}}
+        callback_{{.}}: String,
+  {{/callbackParams}}
+>>>>>>> ooof
 {{/vendorExtensions}}
 {{#allParams}}
         {{{paramName}}}: {{^required}}Option<{{/required}}{{#isListContainer}}&{{/isListContainer}}{{{dataType}}}{{^required}}>{{/required}},
 {{/allParams}}
+<<<<<<< HEAD
         ) -> Result<{{{operationId}}}Response, ApiError>
     {
         let context = self.context().clone();
@@ -268,11 +389,24 @@ impl<T: CallbackApi<C> + Send + Sync, C: Clone + Send + Sync> CallbackApiNoConte
   {{#x-callback-params}}
             callback_{{.}},
   {{/x-callback-params}}
+=======
+        ) -> Box<dyn Future<Item={{{operationId}}}Response, Error=ApiError> + Send>
+    {
+        self.api().{{#vendorExtensions}}{{{operation_id}}}{{/vendorExtensions}}(
+{{#vendorExtensions}}
+  {{#callbackParams}}
+            callback_{{.}},
+  {{/callbackParams}}
+>>>>>>> ooof
 {{/vendorExtensions}}
 {{#allParams}}
             {{{paramName}}},
 {{/allParams}}
+<<<<<<< HEAD
             &context).await
+=======
+            &self.context())
+>>>>>>> ooof
     }
 
             {{/requests}}

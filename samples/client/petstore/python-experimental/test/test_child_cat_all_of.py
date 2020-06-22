@@ -11,11 +11,18 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
 import petstore_api
 from petstore_api.model.child_cat_all_of import ChildCatAllOf
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestChildCatAllOf(unittest.TestCase):
@@ -30,7 +37,11 @@ class TestChildCatAllOf(unittest.TestCase):
     def testChildCatAllOf(self):
         """Test ChildCatAllOf"""
         # FIXME: construct object with mandatory attributes with example values
+<<<<<<< HEAD
         # model = ChildCatAllOf()  # noqa: E501
+=======
+        # model = petstore_api.ChildCatAllOf()  # noqa: E501
+>>>>>>> ooof
         pass
 
 

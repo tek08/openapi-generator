@@ -12,6 +12,7 @@ const (
 	{{/allowableValues}}
 )
 
+<<<<<<< HEAD
 func (v *{{{classname}}}) UnmarshalJSON(src []byte) error {
 	var value {{^format}}{{dataType}}{{/format}}{{#format}}{{{format}}}{{/format}}
 	err := json.Unmarshal(src, &value)
@@ -29,6 +30,8 @@ func (v *{{{classname}}}) UnmarshalJSON(src []byte) error {
 	return fmt.Errorf("%+v is not a valid {{classname}}", value)
 }
 
+=======
+>>>>>>> ooof
 // Ptr returns reference to {{{name}}} value
 func (v {{{classname}}}) Ptr() *{{{classname}}} {
 	return &v

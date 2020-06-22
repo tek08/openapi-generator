@@ -2,7 +2,11 @@
 /**
  * EnumTest
  *
+<<<<<<< HEAD
  * PHP version 7.2
+=======
+ * PHP version 7.1
+>>>>>>> ooof
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -61,10 +65,14 @@ class EnumTest implements ModelInterface, ArrayAccess
         'enum_string_required' => 'string',
         'enum_integer' => 'int',
         'enum_number' => 'double',
+<<<<<<< HEAD
         'outer_enum' => '\OpenAPI\Client\Model\OuterEnum',
         'outer_enum_integer' => '\OpenAPI\Client\Model\OuterEnumInteger',
         'outer_enum_default_value' => '\OpenAPI\Client\Model\OuterEnumDefaultValue',
         'outer_enum_integer_default_value' => '\OpenAPI\Client\Model\OuterEnumIntegerDefaultValue'
+=======
+        'outer_enum' => '\OpenAPI\Client\Model\OuterEnum'
+>>>>>>> ooof
     ];
 
     /**
@@ -77,10 +85,14 @@ class EnumTest implements ModelInterface, ArrayAccess
         'enum_string_required' => null,
         'enum_integer' => 'int32',
         'enum_number' => 'double',
+<<<<<<< HEAD
         'outer_enum' => null,
         'outer_enum_integer' => null,
         'outer_enum_default_value' => null,
         'outer_enum_integer_default_value' => null
+=======
+        'outer_enum' => null
+>>>>>>> ooof
     ];
 
     /**
@@ -114,10 +126,14 @@ class EnumTest implements ModelInterface, ArrayAccess
         'enum_string_required' => 'enum_string_required',
         'enum_integer' => 'enum_integer',
         'enum_number' => 'enum_number',
+<<<<<<< HEAD
         'outer_enum' => 'outerEnum',
         'outer_enum_integer' => 'outerEnumInteger',
         'outer_enum_default_value' => 'outerEnumDefaultValue',
         'outer_enum_integer_default_value' => 'outerEnumIntegerDefaultValue'
+=======
+        'outer_enum' => 'outerEnum'
+>>>>>>> ooof
     ];
 
     /**
@@ -130,10 +146,14 @@ class EnumTest implements ModelInterface, ArrayAccess
         'enum_string_required' => 'setEnumStringRequired',
         'enum_integer' => 'setEnumInteger',
         'enum_number' => 'setEnumNumber',
+<<<<<<< HEAD
         'outer_enum' => 'setOuterEnum',
         'outer_enum_integer' => 'setOuterEnumInteger',
         'outer_enum_default_value' => 'setOuterEnumDefaultValue',
         'outer_enum_integer_default_value' => 'setOuterEnumIntegerDefaultValue'
+=======
+        'outer_enum' => 'setOuterEnum'
+>>>>>>> ooof
     ];
 
     /**
@@ -146,10 +166,14 @@ class EnumTest implements ModelInterface, ArrayAccess
         'enum_string_required' => 'getEnumStringRequired',
         'enum_integer' => 'getEnumInteger',
         'enum_number' => 'getEnumNumber',
+<<<<<<< HEAD
         'outer_enum' => 'getOuterEnum',
         'outer_enum_integer' => 'getOuterEnumInteger',
         'outer_enum_default_value' => 'getOuterEnumDefaultValue',
         'outer_enum_integer_default_value' => 'getOuterEnumIntegerDefaultValue'
+=======
+        'outer_enum' => 'getOuterEnum'
+>>>>>>> ooof
     ];
 
     /**
@@ -281,9 +305,12 @@ class EnumTest implements ModelInterface, ArrayAccess
         $this->container['enum_integer'] = isset($data['enum_integer']) ? $data['enum_integer'] : null;
         $this->container['enum_number'] = isset($data['enum_number']) ? $data['enum_number'] : null;
         $this->container['outer_enum'] = isset($data['outer_enum']) ? $data['outer_enum'] : null;
+<<<<<<< HEAD
         $this->container['outer_enum_integer'] = isset($data['outer_enum_integer']) ? $data['outer_enum_integer'] : null;
         $this->container['outer_enum_default_value'] = isset($data['outer_enum_default_value']) ? $data['outer_enum_default_value'] : null;
         $this->container['outer_enum_integer_default_value'] = isset($data['outer_enum_integer_default_value']) ? $data['outer_enum_integer_default_value'] : null;
+=======
+>>>>>>> ooof
     }
 
     /**
@@ -500,6 +527,7 @@ class EnumTest implements ModelInterface, ArrayAccess
 
         return $this;
     }
+<<<<<<< HEAD
 
     /**
      * Gets outer_enum_integer
@@ -572,6 +600,8 @@ class EnumTest implements ModelInterface, ArrayAccess
 
         return $this;
     }
+=======
+>>>>>>> ooof
     /**
      * Returns true if offset exists. False otherwise.
      *

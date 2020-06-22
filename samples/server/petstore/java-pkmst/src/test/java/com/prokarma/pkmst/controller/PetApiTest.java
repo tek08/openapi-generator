@@ -52,7 +52,11 @@ public class PetApiTest {
     @Test
     public void addPetTest() throws Exception {
         Pet pet = null;
+<<<<<<< HEAD
         ResponseEntity<Void> response = api.addPet(pet , accept);
+=======
+    ResponseEntity<Void> response = api.addPet(pet , accept);
+>>>>>>> ooof
 
         // TODO: test validations
     }
@@ -69,7 +73,11 @@ public class PetApiTest {
     public void deletePetTest() throws Exception {
         Long petId = null;
         String apiKey = null;
+<<<<<<< HEAD
         ResponseEntity<Void> response = api.deletePet(petId, apiKey , accept);
+=======
+    ResponseEntity<Void> response = api.deletePet(petId, apiKey , accept);
+>>>>>>> ooof
 
         // TODO: test validations
     }
@@ -85,7 +93,11 @@ public class PetApiTest {
     @Test
     public void findPetsByStatusTest() throws Exception {
         List<String> status = null;
+<<<<<<< HEAD
         ResponseEntity<List<Pet>> response = api.findPetsByStatus(status , accept);
+=======
+    ResponseEntity<List<Pet>> response = api.findPetsByStatus(status , accept);
+>>>>>>> ooof
 
         // TODO: test validations
     }
@@ -101,7 +113,11 @@ public class PetApiTest {
     @Test
     public void findPetsByTagsTest() throws Exception {
         List<String> tags = null;
+<<<<<<< HEAD
         ResponseEntity<List<Pet>> response = api.findPetsByTags(tags , accept);
+=======
+    ResponseEntity<List<Pet>> response = api.findPetsByTags(tags , accept);
+>>>>>>> ooof
 
         // TODO: test validations
     }
@@ -117,7 +133,11 @@ public class PetApiTest {
     @Test
     public void getPetByIdTest() throws Exception {
         Long petId = null;
+<<<<<<< HEAD
         ResponseEntity<Pet> response = api.getPetById(petId , accept);
+=======
+    ResponseEntity<Pet> response = api.getPetById(petId , accept);
+>>>>>>> ooof
 
         // TODO: test validations
     }
@@ -133,7 +153,11 @@ public class PetApiTest {
     @Test
     public void updatePetTest() throws Exception {
         Pet pet = null;
+<<<<<<< HEAD
         ResponseEntity<Void> response = api.updatePet(pet , accept);
+=======
+    ResponseEntity<Void> response = api.updatePet(pet , accept);
+>>>>>>> ooof
 
         // TODO: test validations
     }
@@ -151,7 +175,11 @@ public class PetApiTest {
         Long petId = null;
         String name = null;
         String status = null;
+<<<<<<< HEAD
         ResponseEntity<Void> response = api.updatePetWithForm(petId, name, status , accept);
+=======
+    ResponseEntity<Void> response = api.updatePetWithForm(petId, name, status , accept);
+>>>>>>> ooof
 
         // TODO: test validations
     }
@@ -169,7 +197,11 @@ public class PetApiTest {
         Long petId = null;
         String additionalMetadata = null;
         MultipartFile file = null;
+<<<<<<< HEAD
         ResponseEntity<ModelApiResponse> response = api.uploadFile(petId, additionalMetadata, file , accept);
+=======
+    ResponseEntity<ModelApiResponse> response = api.uploadFile(petId, additionalMetadata, file , accept);
+>>>>>>> ooof
 
         // TODO: test validations
     }

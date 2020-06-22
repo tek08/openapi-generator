@@ -18,7 +18,11 @@ Method | HTTP request | Description
 
 ## addPet
 
+<<<<<<< HEAD
 > addPet(pet)
+=======
+> addPet(body)
+>>>>>>> ooof
 
 Add a new pet to the store
 
@@ -32,8 +36,13 @@ let petstore_auth = defaultClient.authentications['petstore_auth'];
 petstore_auth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new OpenApiPetstore.PetApi();
+<<<<<<< HEAD
 let pet = new OpenApiPetstore.Pet(); // Pet | Pet object that needs to be added to the store
 apiInstance.addPet(pet).then(() => {
+=======
+let body = new OpenApiPetstore.Pet(); // Pet | Pet object that needs to be added to the store
+apiInstance.addPet(body).then(() => {
+>>>>>>> ooof
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -46,7 +55,11 @@ apiInstance.addPet(pet).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **pet** | [**Pet**](Pet.md)| Pet object that needs to be added to the store | 
+=======
+ **body** | [**Pet**](Pet.md)| Pet object that needs to be added to the store | 
+>>>>>>> ooof
 
 ### Return type
 
@@ -260,7 +273,11 @@ Name | Type | Description  | Notes
 
 ## updatePet
 
+<<<<<<< HEAD
 > updatePet(pet)
+=======
+> updatePet(body)
+>>>>>>> ooof
 
 Update an existing pet
 
@@ -274,8 +291,13 @@ let petstore_auth = defaultClient.authentications['petstore_auth'];
 petstore_auth.accessToken = 'YOUR ACCESS TOKEN';
 
 let apiInstance = new OpenApiPetstore.PetApi();
+<<<<<<< HEAD
 let pet = new OpenApiPetstore.Pet(); // Pet | Pet object that needs to be added to the store
 apiInstance.updatePet(pet).then(() => {
+=======
+let body = new OpenApiPetstore.Pet(); // Pet | Pet object that needs to be added to the store
+apiInstance.updatePet(body).then(() => {
+>>>>>>> ooof
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -288,7 +310,11 @@ apiInstance.updatePet(pet).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **pet** | [**Pet**](Pet.md)| Pet object that needs to be added to the store | 
+=======
+ **body** | [**Pet**](Pet.md)| Pet object that needs to be added to the store | 
+>>>>>>> ooof
 
 ### Return type
 

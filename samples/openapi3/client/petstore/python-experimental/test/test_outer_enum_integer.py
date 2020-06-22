@@ -11,11 +11,18 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
 import petstore_api
 from petstore_api.model.outer_enum_integer import OuterEnumInteger
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestOuterEnumInteger(unittest.TestCase):
@@ -30,7 +37,11 @@ class TestOuterEnumInteger(unittest.TestCase):
     def testOuterEnumInteger(self):
         """Test OuterEnumInteger"""
         # FIXME: construct object with mandatory attributes with example values
+<<<<<<< HEAD
         # model = OuterEnumInteger()  # noqa: E501
+=======
+        # model = petstore_api.OuterEnumInteger()  # noqa: E501
+>>>>>>> ooof
         pass
 
 

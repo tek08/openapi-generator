@@ -150,7 +150,11 @@ No authorization required
 
 ## placeOrder
 
+<<<<<<< HEAD
 > Order placeOrder(order)
+=======
+> Order placeOrder(body)
+>>>>>>> ooof
 
 Place an order for a pet
 
@@ -160,8 +164,13 @@ Place an order for a pet
 import OpenApiPetstore from 'open_api_petstore';
 
 let apiInstance = new OpenApiPetstore.StoreApi();
+<<<<<<< HEAD
 let order = new OpenApiPetstore.Order(); // Order | order placed for purchasing the pet
 apiInstance.placeOrder(order, (error, data, response) => {
+=======
+let body = new OpenApiPetstore.Order(); // Order | order placed for purchasing the pet
+apiInstance.placeOrder(body, (error, data, response) => {
+>>>>>>> ooof
   if (error) {
     console.error(error);
   } else {
@@ -175,7 +184,11 @@ apiInstance.placeOrder(order, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **order** | [**Order**](Order.md)| order placed for purchasing the pet | 
+=======
+ **body** | [**Order**](Order.md)| order placed for purchasing the pet | 
+>>>>>>> ooof
 
 ### Return type
 
@@ -187,6 +200,10 @@ No authorization required
 
 ### HTTP request headers
 
+<<<<<<< HEAD
 - **Content-Type**: application/json
+=======
+- **Content-Type**: Not defined
+>>>>>>> ooof
 - **Accept**: application/xml, application/json
 

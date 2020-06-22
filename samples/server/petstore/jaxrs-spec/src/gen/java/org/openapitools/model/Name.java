@@ -16,7 +16,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Model for testing model name same as property name
  **/
 @ApiModel(description = "Model for testing model name same as property name")
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class Name  implements Serializable {
+=======
+public class Name  implements Serializable {
+>>>>>>> ooof
   
   private @Valid Integer name;
   private @Valid Integer snakeCase;

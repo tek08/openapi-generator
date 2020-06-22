@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 use futures::{future, future::BoxFuture, Stream, stream, future::FutureExt, stream::TryStreamExt};
 use hyper::{Request, Response, StatusCode, Body, HeaderMap};
 use hyper::header::{HeaderName, HeaderValue, CONTENT_TYPE};
@@ -12,6 +13,25 @@ use swagger::{ApiError, BodyExt, Has, RequestParser, XSpanIdString};
 pub use swagger::auth::Authorization;
 use swagger::auth::Scopes;
 use url::form_urlencoded;
+=======
+use std::marker::PhantomData;
+use futures::{Future, future, Stream, stream};
+use hyper;
+use hyper::{Request, Response, Error, StatusCode, Body, HeaderMap};
+use hyper::header::{HeaderName, HeaderValue, CONTENT_TYPE};
+use log::warn;
+use serde_json;
+#[allow(unused_imports)]
+use std::convert::{TryFrom, TryInto};
+use std::io;
+use url::form_urlencoded;
+#[allow(unused_imports)]
+use swagger;
+use swagger::{ApiError, XSpanIdString, Has, RequestParser};
+pub use swagger::auth::Authorization;
+use swagger::auth::Scopes;
+use swagger::context::ContextualPayload;
+>>>>>>> ooof
 
 #[allow(unused_imports)]
 use crate::models;
@@ -19,8 +39,11 @@ use crate::header;
 
 pub use crate::context;
 
+<<<<<<< HEAD
 type ServiceFuture = BoxFuture<'static, Result<Response<Body>, crate::ServiceError>>;
 
+=======
+>>>>>>> ooof
 use crate::{Api,
      AllOfGetResponse,
      DummyGetResponse,
@@ -59,6 +82,7 @@ mod paths {
     pub(crate) static ID_SOLO_OBJECT: usize = 7;
 }
 
+<<<<<<< HEAD
 pub struct MakeService<T, C> where
     T: Api<C> + Clone + Send + 'static,
     C: Has<XSpanIdString>  + Send + Sync + 'static
@@ -70,6 +94,17 @@ pub struct MakeService<T, C> where
 impl<T, C> MakeService<T, C> where
     T: Api<C> + Clone + Send + 'static,
     C: Has<XSpanIdString>  + Send + Sync + 'static
+=======
+pub struct MakeService<T, RC> {
+    api_impl: T,
+    marker: PhantomData<RC>,
+}
+
+impl<T, RC> MakeService<T, RC>
+where
+    T: Api<RC> + Clone + Send + 'static,
+    RC: Has<XSpanIdString>  + 'static
+>>>>>>> ooof
 {
     pub fn new(api_impl: T) -> Self {
         MakeService {
@@ -79,6 +114,7 @@ impl<T, C> MakeService<T, C> where
     }
 }
 
+<<<<<<< HEAD
 impl<T, C, Target> hyper::service::Service<Target> for MakeService<T, C> where
     T: Api<C> + Clone + Send + 'static,
     C: Has<XSpanIdString>  + Send + Sync + 'static
@@ -118,6 +154,46 @@ impl<T, C> Service<T, C> where
     T: Api<C> + Clone + Send + 'static,
     C: Has<XSpanIdString>  + Send + Sync + 'static
 {
+=======
+impl<'a, T, SC, RC> hyper::service::MakeService<&'a SC> for MakeService<T, RC>
+where
+    T: Api<RC> + Clone + Send + 'static,
+    RC: Has<XSpanIdString>  + 'static + Send
+{
+    type ReqBody = ContextualPayload<Body, RC>;
+    type ResBody = Body;
+    type Error = Error;
+    type Service = Service<T, RC>;
+    type Future = future::FutureResult<Self::Service, Self::MakeError>;
+    type MakeError = Error;
+
+    fn make_service(&mut self, _ctx: &'a SC) -> Self::Future {
+        future::FutureResult::from(Ok(Service::new(
+            self.api_impl.clone(),
+        )))
+    }
+}
+
+type ServiceFuture = Box<dyn Future<Item = Response<Body>, Error = Error> + Send>;
+
+fn method_not_allowed() -> ServiceFuture {
+    Box::new(future::ok(
+        Response::builder().status(StatusCode::METHOD_NOT_ALLOWED)
+            .body(Body::empty())
+            .expect("Unable to create Method Not Allowed response")
+    ))
+}
+
+pub struct Service<T, RC> {
+    api_impl: T,
+    marker: PhantomData<RC>,
+}
+
+impl<T, RC> Service<T, RC>
+where
+    T: Api<RC> + Clone + Send + 'static,
+    RC: Has<XSpanIdString>  + 'static {
+>>>>>>> ooof
     pub fn new(api_impl: T) -> Self {
         Service {
             api_impl: api_impl,
@@ -126,6 +202,7 @@ impl<T, C> Service<T, C> where
     }
 }
 
+<<<<<<< HEAD
 impl<T, C> Clone for Service<T, C> where
     T: Api<C> + Clone + Send + 'static,
     C: Has<XSpanIdString>  + Send + Sync + 'static
@@ -158,16 +235,46 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
         let (parts, body) = request.into_parts();
         let (method, uri, headers) = (parts.method, parts.uri, parts.headers);
         let path = paths::GLOBAL_REGEX_SET.matches(uri.path());
+=======
+impl<T, C> hyper::service::Service for Service<T, C>
+where
+    T: Api<C> + Clone + Send + 'static,
+    C: Has<XSpanIdString>  + 'static + Send
+{
+    type ReqBody = ContextualPayload<Body, C>;
+    type ResBody = Body;
+    type Error = Error;
+    type Future = ServiceFuture;
+
+    fn call(&mut self, req: Request<Self::ReqBody>) -> Self::Future {
+        let api_impl = self.api_impl.clone();
+        let (parts, body) = req.into_parts();
+        let (method, uri, headers) = (parts.method, parts.uri, parts.headers);
+        let path = paths::GLOBAL_REGEX_SET.matches(uri.path());
+        let mut context = body.context;
+        let body = body.inner;
+>>>>>>> ooof
 
         match &method {
 
             // AllOfGet - GET /allOf
             &hyper::Method::GET if path.matched(paths::ID_ALLOF) => {
+<<<<<<< HEAD
                                 let result = api_impl.all_of_get(
                                         &context
                                     ).await;
                                 let mut response = Response::new(Body::empty());
                                 response.headers_mut().insert(
+=======
+                Box::new({
+                        {{
+                                Box::new(
+                                    api_impl.all_of_get(
+                                        &context
+                                    ).then(move |result| {
+                                        let mut response = Response::new(Body::empty());
+                                        response.headers_mut().insert(
+>>>>>>> ooof
                                             HeaderName::from_static("x-span-id"),
                                             HeaderValue::from_str((&context as &dyn Has<XSpanIdString>).get().0.clone().to_string().as_str())
                                                 .expect("Unable to create X-Span-ID header value"));
@@ -194,16 +301,35 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                             },
                                         }
 
+<<<<<<< HEAD
                                         Ok(response)
+=======
+                                        future::ok(response)
+                                    }
+                                ))
+                        }}
+                }) as Self::Future
+>>>>>>> ooof
             },
 
             // DummyGet - GET /dummy
             &hyper::Method::GET if path.matched(paths::ID_DUMMY) => {
+<<<<<<< HEAD
                                 let result = api_impl.dummy_get(
                                         &context
                                     ).await;
                                 let mut response = Response::new(Body::empty());
                                 response.headers_mut().insert(
+=======
+                Box::new({
+                        {{
+                                Box::new(
+                                    api_impl.dummy_get(
+                                        &context
+                                    ).then(move |result| {
+                                        let mut response = Response::new(Body::empty());
+                                        response.headers_mut().insert(
+>>>>>>> ooof
                                             HeaderName::from_static("x-span-id"),
                                             HeaderValue::from_str((&context as &dyn Has<XSpanIdString>).get().0.clone().to_string().as_str())
                                                 .expect("Unable to create X-Span-ID header value"));
@@ -223,7 +349,15 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                             },
                                         }
 
+<<<<<<< HEAD
                                         Ok(response)
+=======
+                                        future::ok(response)
+                                    }
+                                ))
+                        }}
+                }) as Self::Future
+>>>>>>> ooof
             },
 
             // DummyPut - PUT /dummy
@@ -231,8 +365,14 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                 // Body parameters (note that non-required body parameters will ignore garbage
                 // values, rather than causing a 400 response). Produce warning header and logs for
                 // any unused fields.
+<<<<<<< HEAD
                 let result = body.to_raw().await;
                 match result {
+=======
+                Box::new(body.concat2()
+                    .then(move |result| -> Self::Future {
+                        match result {
+>>>>>>> ooof
                             Ok(body) => {
                                 let mut unused_elements = Vec::new();
                                 let param_nested_response: Option<models::InlineObject> = if !body.is_empty() {
@@ -242,16 +382,24 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                             unused_elements.push(path.to_string());
                                     }) {
                                         Ok(param_nested_response) => param_nested_response,
+<<<<<<< HEAD
                                         Err(e) => return Ok(Response::builder()
                                                         .status(StatusCode::BAD_REQUEST)
                                                         .body(Body::from(format!("Couldn't parse body parameter nested_response - doesn't match schema: {}", e)))
                                                         .expect("Unable to create Bad Request response for invalid body parameter nested_response due to schema")),
+=======
+                                        Err(e) => return Box::new(future::ok(Response::builder()
+                                                        .status(StatusCode::BAD_REQUEST)
+                                                        .body(Body::from(format!("Couldn't parse body parameter nested_response - doesn't match schema: {}", e)))
+                                                        .expect("Unable to create Bad Request response for invalid body parameter nested_response due to schema"))),
+>>>>>>> ooof
                                     }
                                 } else {
                                     None
                                 };
                                 let param_nested_response = match param_nested_response {
                                     Some(param_nested_response) => param_nested_response,
+<<<<<<< HEAD
                                     None => return Ok(Response::builder()
                                                         .status(StatusCode::BAD_REQUEST)
                                                         .body(Body::from("Missing required body parameter nested_response"))
@@ -264,6 +412,21 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                     ).await;
                                 let mut response = Response::new(Body::empty());
                                 response.headers_mut().insert(
+=======
+                                    None => return Box::new(future::ok(Response::builder()
+                                                        .status(StatusCode::BAD_REQUEST)
+                                                        .body(Body::from("Missing required body parameter nested_response"))
+                                                        .expect("Unable to create Bad Request response for missing body parameter nested_response"))),
+                                };
+
+                                Box::new(
+                                    api_impl.dummy_put(
+                                            param_nested_response,
+                                        &context
+                                    ).then(move |result| {
+                                        let mut response = Response::new(Body::empty());
+                                        response.headers_mut().insert(
+>>>>>>> ooof
                                             HeaderName::from_static("x-span-id"),
                                             HeaderValue::from_str((&context as &dyn Has<XSpanIdString>).get().0.clone().to_string().as_str())
                                                 .expect("Unable to create X-Span-ID header value"));
@@ -290,6 +453,7 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                             },
                                         }
 
+<<<<<<< HEAD
                                         Ok(response)
                             },
                             Err(e) => Ok(Response::builder()
@@ -297,15 +461,39 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                                 .body(Body::from(format!("Couldn't read body parameter nested_response: {}", e)))
                                                 .expect("Unable to create Bad Request response due to unable to read body parameter nested_response")),
                         }
+=======
+                                        future::ok(response)
+                                    }
+                                ))
+                            },
+                            Err(e) => Box::new(future::ok(Response::builder()
+                                                .status(StatusCode::BAD_REQUEST)
+                                                .body(Body::from(format!("Couldn't read body parameter nested_response: {}", e)))
+                                                .expect("Unable to create Bad Request response due to unable to read body parameter nested_response"))),
+                        }
+                    })
+                ) as Self::Future
+>>>>>>> ooof
             },
 
             // FileResponseGet - GET /file_response
             &hyper::Method::GET if path.matched(paths::ID_FILE_RESPONSE) => {
+<<<<<<< HEAD
                                 let result = api_impl.file_response_get(
                                         &context
                                     ).await;
                                 let mut response = Response::new(Body::empty());
                                 response.headers_mut().insert(
+=======
+                Box::new({
+                        {{
+                                Box::new(
+                                    api_impl.file_response_get(
+                                        &context
+                                    ).then(move |result| {
+                                        let mut response = Response::new(Body::empty());
+                                        response.headers_mut().insert(
+>>>>>>> ooof
                                             HeaderName::from_static("x-span-id"),
                                             HeaderValue::from_str((&context as &dyn Has<XSpanIdString>).get().0.clone().to_string().as_str())
                                                 .expect("Unable to create X-Span-ID header value"));
@@ -332,16 +520,35 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                             },
                                         }
 
+<<<<<<< HEAD
                                         Ok(response)
+=======
+                                        future::ok(response)
+                                    }
+                                ))
+                        }}
+                }) as Self::Future
+>>>>>>> ooof
             },
 
             // GetStructuredYaml - GET /get-structured-yaml
             &hyper::Method::GET if path.matched(paths::ID_GET_STRUCTURED_YAML) => {
+<<<<<<< HEAD
                                 let result = api_impl.get_structured_yaml(
                                         &context
                                     ).await;
                                 let mut response = Response::new(Body::empty());
                                 response.headers_mut().insert(
+=======
+                Box::new({
+                        {{
+                                Box::new(
+                                    api_impl.get_structured_yaml(
+                                        &context
+                                    ).then(move |result| {
+                                        let mut response = Response::new(Body::empty());
+                                        response.headers_mut().insert(
+>>>>>>> ooof
                                             HeaderName::from_static("x-span-id"),
                                             HeaderValue::from_str((&context as &dyn Has<XSpanIdString>).get().0.clone().to_string().as_str())
                                                 .expect("Unable to create X-Span-ID header value"));
@@ -368,7 +575,15 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                             },
                                         }
 
+<<<<<<< HEAD
                                         Ok(response)
+=======
+                                        future::ok(response)
+                                    }
+                                ))
+                        }}
+                }) as Self::Future
+>>>>>>> ooof
             },
 
             // HtmlPost - POST /html
@@ -376,22 +591,36 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                 // Body parameters (note that non-required body parameters will ignore garbage
                 // values, rather than causing a 400 response). Produce warning header and logs for
                 // any unused fields.
+<<<<<<< HEAD
                 let result = body.to_raw().await;
                 match result {
+=======
+                Box::new(body.concat2()
+                    .then(move |result| -> Self::Future {
+                        match result {
+>>>>>>> ooof
                             Ok(body) => {
                                 let param_body: Option<String> = if !body.is_empty() {
                                     match String::from_utf8(body.to_vec()) {
                                         Ok(param_body) => Some(param_body),
+<<<<<<< HEAD
                                         Err(e) => return Ok(Response::builder()
                                                         .status(StatusCode::BAD_REQUEST)
                                                         .body(Body::from(format!("Couldn't parse body parameter body - not valid UTF-8: {}", e)))
                                                         .expect("Unable to create Bad Request response for invalid body parameter body due to UTF-8")),
+=======
+                                        Err(e) => return Box::new(future::ok(Response::builder()
+                                                        .status(StatusCode::BAD_REQUEST)
+                                                        .body(Body::from(format!("Couldn't parse body parameter body - not valid UTF-8: {}", e)))
+                                                        .expect("Unable to create Bad Request response for invalid body parameter body due to UTF-8"))),
+>>>>>>> ooof
                                     }
                                 } else {
                                     None
                                 };
                                 let param_body = match param_body {
                                     Some(param_body) => param_body,
+<<<<<<< HEAD
                                     None => return Ok(Response::builder()
                                                         .status(StatusCode::BAD_REQUEST)
                                                         .body(Body::from("Missing required body parameter body"))
@@ -404,6 +633,21 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                     ).await;
                                 let mut response = Response::new(Body::empty());
                                 response.headers_mut().insert(
+=======
+                                    None => return Box::new(future::ok(Response::builder()
+                                                        .status(StatusCode::BAD_REQUEST)
+                                                        .body(Body::from("Missing required body parameter body"))
+                                                        .expect("Unable to create Bad Request response for missing body parameter body"))),
+                                };
+
+                                Box::new(
+                                    api_impl.html_post(
+                                            param_body,
+                                        &context
+                                    ).then(move |result| {
+                                        let mut response = Response::new(Body::empty());
+                                        response.headers_mut().insert(
+>>>>>>> ooof
                                             HeaderName::from_static("x-span-id"),
                                             HeaderValue::from_str((&context as &dyn Has<XSpanIdString>).get().0.clone().to_string().as_str())
                                                 .expect("Unable to create X-Span-ID header value"));
@@ -430,6 +674,7 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                             },
                                         }
 
+<<<<<<< HEAD
                                         Ok(response)
                             },
                             Err(e) => Ok(Response::builder()
@@ -437,6 +682,19 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                                 .body(Body::from(format!("Couldn't read body parameter body: {}", e)))
                                                 .expect("Unable to create Bad Request response due to unable to read body parameter body")),
                         }
+=======
+                                        future::ok(response)
+                                    }
+                                ))
+                            },
+                            Err(e) => Box::new(future::ok(Response::builder()
+                                                .status(StatusCode::BAD_REQUEST)
+                                                .body(Body::from(format!("Couldn't read body parameter body: {}", e)))
+                                                .expect("Unable to create Bad Request response due to unable to read body parameter body"))),
+                        }
+                    })
+                ) as Self::Future
+>>>>>>> ooof
             },
 
             // PostYaml - POST /post-yaml
@@ -444,22 +702,36 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                 // Body parameters (note that non-required body parameters will ignore garbage
                 // values, rather than causing a 400 response). Produce warning header and logs for
                 // any unused fields.
+<<<<<<< HEAD
                 let result = body.to_raw().await;
                 match result {
+=======
+                Box::new(body.concat2()
+                    .then(move |result| -> Self::Future {
+                        match result {
+>>>>>>> ooof
                             Ok(body) => {
                                 let param_value: Option<String> = if !body.is_empty() {
                                     match String::from_utf8(body.to_vec()) {
                                         Ok(param_value) => Some(param_value),
+<<<<<<< HEAD
                                         Err(e) => return Ok(Response::builder()
                                                         .status(StatusCode::BAD_REQUEST)
                                                         .body(Body::from(format!("Couldn't parse body parameter value - not valid UTF-8: {}", e)))
                                                         .expect("Unable to create Bad Request response for invalid body parameter value due to UTF-8")),
+=======
+                                        Err(e) => return Box::new(future::ok(Response::builder()
+                                                        .status(StatusCode::BAD_REQUEST)
+                                                        .body(Body::from(format!("Couldn't parse body parameter value - not valid UTF-8: {}", e)))
+                                                        .expect("Unable to create Bad Request response for invalid body parameter value due to UTF-8"))),
+>>>>>>> ooof
                                     }
                                 } else {
                                     None
                                 };
                                 let param_value = match param_value {
                                     Some(param_value) => param_value,
+<<<<<<< HEAD
                                     None => return Ok(Response::builder()
                                                         .status(StatusCode::BAD_REQUEST)
                                                         .body(Body::from("Missing required body parameter value"))
@@ -472,6 +744,21 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                     ).await;
                                 let mut response = Response::new(Body::empty());
                                 response.headers_mut().insert(
+=======
+                                    None => return Box::new(future::ok(Response::builder()
+                                                        .status(StatusCode::BAD_REQUEST)
+                                                        .body(Body::from("Missing required body parameter value"))
+                                                        .expect("Unable to create Bad Request response for missing body parameter value"))),
+                                };
+
+                                Box::new(
+                                    api_impl.post_yaml(
+                                            param_value,
+                                        &context
+                                    ).then(move |result| {
+                                        let mut response = Response::new(Body::empty());
+                                        response.headers_mut().insert(
+>>>>>>> ooof
                                             HeaderName::from_static("x-span-id"),
                                             HeaderValue::from_str((&context as &dyn Has<XSpanIdString>).get().0.clone().to_string().as_str())
                                                 .expect("Unable to create X-Span-ID header value"));
@@ -491,6 +778,7 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                             },
                                         }
 
+<<<<<<< HEAD
                                         Ok(response)
                             },
                             Err(e) => Ok(Response::builder()
@@ -498,15 +786,39 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                                 .body(Body::from(format!("Couldn't read body parameter value: {}", e)))
                                                 .expect("Unable to create Bad Request response due to unable to read body parameter value")),
                         }
+=======
+                                        future::ok(response)
+                                    }
+                                ))
+                            },
+                            Err(e) => Box::new(future::ok(Response::builder()
+                                                .status(StatusCode::BAD_REQUEST)
+                                                .body(Body::from(format!("Couldn't read body parameter value: {}", e)))
+                                                .expect("Unable to create Bad Request response due to unable to read body parameter value"))),
+                        }
+                    })
+                ) as Self::Future
+>>>>>>> ooof
             },
 
             // RawJsonGet - GET /raw_json
             &hyper::Method::GET if path.matched(paths::ID_RAW_JSON) => {
+<<<<<<< HEAD
                                 let result = api_impl.raw_json_get(
                                         &context
                                     ).await;
                                 let mut response = Response::new(Body::empty());
                                 response.headers_mut().insert(
+=======
+                Box::new({
+                        {{
+                                Box::new(
+                                    api_impl.raw_json_get(
+                                        &context
+                                    ).then(move |result| {
+                                        let mut response = Response::new(Body::empty());
+                                        response.headers_mut().insert(
+>>>>>>> ooof
                                             HeaderName::from_static("x-span-id"),
                                             HeaderValue::from_str((&context as &dyn Has<XSpanIdString>).get().0.clone().to_string().as_str())
                                                 .expect("Unable to create X-Span-ID header value"));
@@ -533,7 +845,15 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                             },
                                         }
 
+<<<<<<< HEAD
                                         Ok(response)
+=======
+                                        future::ok(response)
+                                    }
+                                ))
+                        }}
+                }) as Self::Future
+>>>>>>> ooof
             },
 
             // SoloObjectPost - POST /solo-object
@@ -541,8 +861,14 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                 // Body parameters (note that non-required body parameters will ignore garbage
                 // values, rather than causing a 400 response). Produce warning header and logs for
                 // any unused fields.
+<<<<<<< HEAD
                 let result = body.to_raw().await;
                 match result {
+=======
+                Box::new(body.concat2()
+                    .then(move |result| -> Self::Future {
+                        match result {
+>>>>>>> ooof
                             Ok(body) => {
                                 let mut unused_elements = Vec::new();
                                 let param_value: Option<serde_json::Value> = if !body.is_empty() {
@@ -552,16 +878,24 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                             unused_elements.push(path.to_string());
                                     }) {
                                         Ok(param_value) => param_value,
+<<<<<<< HEAD
                                         Err(e) => return Ok(Response::builder()
                                                         .status(StatusCode::BAD_REQUEST)
                                                         .body(Body::from(format!("Couldn't parse body parameter value - doesn't match schema: {}", e)))
                                                         .expect("Unable to create Bad Request response for invalid body parameter value due to schema")),
+=======
+                                        Err(e) => return Box::new(future::ok(Response::builder()
+                                                        .status(StatusCode::BAD_REQUEST)
+                                                        .body(Body::from(format!("Couldn't parse body parameter value - doesn't match schema: {}", e)))
+                                                        .expect("Unable to create Bad Request response for invalid body parameter value due to schema"))),
+>>>>>>> ooof
                                     }
                                 } else {
                                     None
                                 };
                                 let param_value = match param_value {
                                     Some(param_value) => param_value,
+<<<<<<< HEAD
                                     None => return Ok(Response::builder()
                                                         .status(StatusCode::BAD_REQUEST)
                                                         .body(Body::from("Missing required body parameter value"))
@@ -574,6 +908,21 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                     ).await;
                                 let mut response = Response::new(Body::empty());
                                 response.headers_mut().insert(
+=======
+                                    None => return Box::new(future::ok(Response::builder()
+                                                        .status(StatusCode::BAD_REQUEST)
+                                                        .body(Body::from("Missing required body parameter value"))
+                                                        .expect("Unable to create Bad Request response for missing body parameter value"))),
+                                };
+
+                                Box::new(
+                                    api_impl.solo_object_post(
+                                            param_value,
+                                        &context
+                                    ).then(move |result| {
+                                        let mut response = Response::new(Body::empty());
+                                        response.headers_mut().insert(
+>>>>>>> ooof
                                             HeaderName::from_static("x-span-id"),
                                             HeaderValue::from_str((&context as &dyn Has<XSpanIdString>).get().0.clone().to_string().as_str())
                                                 .expect("Unable to create X-Span-ID header value"));
@@ -600,6 +949,7 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                             },
                                         }
 
+<<<<<<< HEAD
                                         Ok(response)
                             },
                             Err(e) => Ok(Response::builder()
@@ -607,6 +957,19 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
                                                 .body(Body::from(format!("Couldn't read body parameter value: {}", e)))
                                                 .expect("Unable to create Bad Request response due to unable to read body parameter value")),
                         }
+=======
+                                        future::ok(response)
+                                    }
+                                ))
+                            },
+                            Err(e) => Box::new(future::ok(Response::builder()
+                                                .status(StatusCode::BAD_REQUEST)
+                                                .body(Body::from(format!("Couldn't read body parameter value: {}", e)))
+                                                .expect("Unable to create Bad Request response due to unable to read body parameter value"))),
+                        }
+                    })
+                ) as Self::Future
+>>>>>>> ooof
             },
 
             _ if path.matched(paths::ID_ALLOF) => method_not_allowed(),
@@ -617,11 +980,31 @@ impl<T, C> hyper::service::Service<(Request<Body>, C)> for Service<T, C> where
             _ if path.matched(paths::ID_POST_YAML) => method_not_allowed(),
             _ if path.matched(paths::ID_RAW_JSON) => method_not_allowed(),
             _ if path.matched(paths::ID_SOLO_OBJECT) => method_not_allowed(),
+<<<<<<< HEAD
             _ => Ok(Response::builder().status(StatusCode::NOT_FOUND)
                     .body(Body::empty())
                     .expect("Unable to create Not Found response"))
         }
     } Box::pin(run(self.api_impl.clone(), req)) }
+=======
+            _ => Box::new(future::ok(
+                Response::builder().status(StatusCode::NOT_FOUND)
+                    .body(Body::empty())
+                    .expect("Unable to create Not Found response")
+            )) as Self::Future
+        }
+    }
+}
+
+impl<T, C> Clone for Service<T, C> where T: Clone
+{
+    fn clone(&self) -> Self {
+        Service {
+            api_impl: self.api_impl.clone(),
+            marker: self.marker.clone(),
+        }
+    }
+>>>>>>> ooof
 }
 
 /// Request parser for `Api`.

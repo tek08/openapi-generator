@@ -15,8 +15,11 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.HashMap;
+=======
+>>>>>>> ooof
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -24,8 +27,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+<<<<<<< HEAD
 import org.openapitools.client.JSON;
 
+=======
+>>>>>>> ooof
 
 /**
  * ReadOnlyFirst
@@ -34,7 +40,11 @@ import org.openapitools.client.JSON;
   ReadOnlyFirst.JSON_PROPERTY_BAR,
   ReadOnlyFirst.JSON_PROPERTY_BAZ
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class ReadOnlyFirst {
   public static final String JSON_PROPERTY_BAR = "bar";
   private String bar;
@@ -60,6 +70,10 @@ public class ReadOnlyFirst {
 
 
   public ReadOnlyFirst baz(String baz) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.baz = baz;
     return this;
   }
@@ -83,9 +97,12 @@ public class ReadOnlyFirst {
   }
 
 
+<<<<<<< HEAD
   /**
    * Return true if this ReadOnlyFirst object is equal to o.
    */
+=======
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {

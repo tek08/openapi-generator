@@ -57,11 +57,19 @@ Please follow the [installation](#installation) procedure and then run the follo
 require 'petstore'
 
 api_instance = Petstore::AnotherFakeApi.new
+<<<<<<< HEAD
 client = Petstore::Client.new # Client | client model
 
 begin
   #To test special tags
   result = api_instance.call_123_test_special_tags(client)
+=======
+body = Petstore::Client.new # Client | client model
+
+begin
+  #To test special tags
+  result = api_instance.call_123_test_special_tags(body)
+>>>>>>> ooof
   p result
 rescue Petstore::ApiError => e
   puts "Exception when calling AnotherFakeApi->call_123_test_special_tags: #{e}"
@@ -76,9 +84,13 @@ All URIs are relative to *http://petstore.swagger.io:80/v2*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *Petstore::AnotherFakeApi* | [**call_123_test_special_tags**](docs/AnotherFakeApi.md#call_123_test_special_tags) | **PATCH** /another-fake/dummy | To test special tags
+<<<<<<< HEAD
 *Petstore::DefaultApi* | [**foo_get**](docs/DefaultApi.md#foo_get) | **GET** /foo | 
 *Petstore::FakeApi* | [**fake_health_get**](docs/FakeApi.md#fake_health_get) | **GET** /fake/health | Health check endpoint
 *Petstore::FakeApi* | [**fake_http_signature_test**](docs/FakeApi.md#fake_http_signature_test) | **GET** /fake/http-signature-test | test http signature authentication
+=======
+*Petstore::FakeApi* | [**create_xml_item**](docs/FakeApi.md#create_xml_item) | **POST** /fake/create_xml_item | creates an XmlItem
+>>>>>>> ooof
 *Petstore::FakeApi* | [**fake_outer_boolean_serialize**](docs/FakeApi.md#fake_outer_boolean_serialize) | **POST** /fake/outer/boolean | 
 *Petstore::FakeApi* | [**fake_outer_composite_serialize**](docs/FakeApi.md#fake_outer_composite_serialize) | **POST** /fake/outer/composite | 
 *Petstore::FakeApi* | [**fake_outer_number_serialize**](docs/FakeApi.md#fake_outer_number_serialize) | **POST** /fake/outer/number | 
@@ -86,7 +98,11 @@ Class | Method | HTTP request | Description
 *Petstore::FakeApi* | [**test_body_with_file_schema**](docs/FakeApi.md#test_body_with_file_schema) | **PUT** /fake/body-with-file-schema | 
 *Petstore::FakeApi* | [**test_body_with_query_params**](docs/FakeApi.md#test_body_with_query_params) | **PUT** /fake/body-with-query-params | 
 *Petstore::FakeApi* | [**test_client_model**](docs/FakeApi.md#test_client_model) | **PATCH** /fake | To test \"client\" model
+<<<<<<< HEAD
 *Petstore::FakeApi* | [**test_endpoint_parameters**](docs/FakeApi.md#test_endpoint_parameters) | **POST** /fake | Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
+=======
+*Petstore::FakeApi* | [**test_endpoint_parameters**](docs/FakeApi.md#test_endpoint_parameters) | **POST** /fake | Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트
+>>>>>>> ooof
 *Petstore::FakeApi* | [**test_enum_parameters**](docs/FakeApi.md#test_enum_parameters) | **GET** /fake | To test enum parameters
 *Petstore::FakeApi* | [**test_group_parameters**](docs/FakeApi.md#test_group_parameters) | **DELETE** /fake | Fake endpoint to test group parameters (optional)
 *Petstore::FakeApi* | [**test_inline_additional_properties**](docs/FakeApi.md#test_inline_additional_properties) | **POST** /fake/inline-additionalProperties | test inline additionalProperties
@@ -118,12 +134,28 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+<<<<<<< HEAD
  - [Petstore::AdditionalPropertiesClass](docs/AdditionalPropertiesClass.md)
+=======
+ - [Petstore::AdditionalPropertiesAnyType](docs/AdditionalPropertiesAnyType.md)
+ - [Petstore::AdditionalPropertiesArray](docs/AdditionalPropertiesArray.md)
+ - [Petstore::AdditionalPropertiesBoolean](docs/AdditionalPropertiesBoolean.md)
+ - [Petstore::AdditionalPropertiesClass](docs/AdditionalPropertiesClass.md)
+ - [Petstore::AdditionalPropertiesInteger](docs/AdditionalPropertiesInteger.md)
+ - [Petstore::AdditionalPropertiesNumber](docs/AdditionalPropertiesNumber.md)
+ - [Petstore::AdditionalPropertiesObject](docs/AdditionalPropertiesObject.md)
+ - [Petstore::AdditionalPropertiesString](docs/AdditionalPropertiesString.md)
+>>>>>>> ooof
  - [Petstore::Animal](docs/Animal.md)
  - [Petstore::ApiResponse](docs/ApiResponse.md)
  - [Petstore::ArrayOfArrayOfNumberOnly](docs/ArrayOfArrayOfNumberOnly.md)
  - [Petstore::ArrayOfNumberOnly](docs/ArrayOfNumberOnly.md)
  - [Petstore::ArrayTest](docs/ArrayTest.md)
+<<<<<<< HEAD
+=======
+ - [Petstore::BigCat](docs/BigCat.md)
+ - [Petstore::BigCatAllOf](docs/BigCatAllOf.md)
+>>>>>>> ooof
  - [Petstore::Capitalization](docs/Capitalization.md)
  - [Petstore::Cat](docs/Cat.md)
  - [Petstore::CatAllOf](docs/CatAllOf.md)
@@ -137,6 +169,7 @@ Class | Method | HTTP request | Description
  - [Petstore::EnumTest](docs/EnumTest.md)
  - [Petstore::File](docs/File.md)
  - [Petstore::FileSchemaTestClass](docs/FileSchemaTestClass.md)
+<<<<<<< HEAD
  - [Petstore::Foo](docs/Foo.md)
  - [Petstore::FormatTest](docs/FormatTest.md)
  - [Petstore::HasOnlyReadOnly](docs/HasOnlyReadOnly.md)
@@ -148,25 +181,42 @@ Class | Method | HTTP request | Description
  - [Petstore::InlineObject4](docs/InlineObject4.md)
  - [Petstore::InlineObject5](docs/InlineObject5.md)
  - [Petstore::InlineResponseDefault](docs/InlineResponseDefault.md)
+=======
+ - [Petstore::FormatTest](docs/FormatTest.md)
+ - [Petstore::HasOnlyReadOnly](docs/HasOnlyReadOnly.md)
+>>>>>>> ooof
  - [Petstore::List](docs/List.md)
  - [Petstore::MapTest](docs/MapTest.md)
  - [Petstore::MixedPropertiesAndAdditionalPropertiesClass](docs/MixedPropertiesAndAdditionalPropertiesClass.md)
  - [Petstore::Model200Response](docs/Model200Response.md)
  - [Petstore::ModelReturn](docs/ModelReturn.md)
  - [Petstore::Name](docs/Name.md)
+<<<<<<< HEAD
  - [Petstore::NullableClass](docs/NullableClass.md)
+=======
+>>>>>>> ooof
  - [Petstore::NumberOnly](docs/NumberOnly.md)
  - [Petstore::Order](docs/Order.md)
  - [Petstore::OuterComposite](docs/OuterComposite.md)
  - [Petstore::OuterEnum](docs/OuterEnum.md)
+<<<<<<< HEAD
  - [Petstore::OuterEnumDefaultValue](docs/OuterEnumDefaultValue.md)
  - [Petstore::OuterEnumInteger](docs/OuterEnumInteger.md)
  - [Petstore::OuterEnumIntegerDefaultValue](docs/OuterEnumIntegerDefaultValue.md)
+=======
+>>>>>>> ooof
  - [Petstore::Pet](docs/Pet.md)
  - [Petstore::ReadOnlyFirst](docs/ReadOnlyFirst.md)
  - [Petstore::SpecialModelName](docs/SpecialModelName.md)
  - [Petstore::Tag](docs/Tag.md)
+<<<<<<< HEAD
  - [Petstore::User](docs/User.md)
+=======
+ - [Petstore::TypeHolderDefault](docs/TypeHolderDefault.md)
+ - [Petstore::TypeHolderExample](docs/TypeHolderExample.md)
+ - [Petstore::User](docs/User.md)
+ - [Petstore::XmlItem](docs/XmlItem.md)
+>>>>>>> ooof
 
 
 ## Documentation for Authorization
@@ -186,17 +236,23 @@ Class | Method | HTTP request | Description
 - **API key parameter name**: api_key_query
 - **Location**: URL query string
 
+<<<<<<< HEAD
 ### bearer_test
 
 - **Type**: Bearer authentication (JWT)
 
+=======
+>>>>>>> ooof
 ### http_basic_test
 
 - **Type**: HTTP basic authentication
 
+<<<<<<< HEAD
 ### http_signature_test
 
 
+=======
+>>>>>>> ooof
 ### petstore_auth
 
 

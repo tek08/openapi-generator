@@ -15,7 +15,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class NumberOnly  implements Serializable {
+=======
+public class NumberOnly  implements Serializable {
+>>>>>>> ooof
   
   private @Valid BigDecimal justNumber;
 

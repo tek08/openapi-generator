@@ -8,8 +8,12 @@
 import Foundation
 
 /** Model for testing reserved words */
+<<<<<<< HEAD
 internal struct Return: Codable { 
 
+=======
+internal struct Return: Codable {
+>>>>>>> ooof
 
     internal var _return: Int?
 
@@ -17,7 +21,11 @@ internal struct Return: Codable {
         self._return = _return
     }
 
+<<<<<<< HEAD
     internal enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    internal enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case _return = "return"
     }
 

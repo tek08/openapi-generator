@@ -1,7 +1,11 @@
 <?php
 /**
  * PetApi
+<<<<<<< HEAD
  * PHP version 7.2
+=======
+ * PHP version 7.1
+>>>>>>> ooof
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -120,19 +124,29 @@ class PetApi
      *
      * Add a new pet to the store
      *
+<<<<<<< HEAD
      * This oepration contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: http://petstore.swagger.io/v2
      * URL: http://path-server-test.petstore.local/v2
      *
      * @param  \OpenAPI\Client\Model\Pet $pet Pet object that needs to be added to the store (required)
+=======
+     * @param  \OpenAPI\Client\Model\Pet $body Pet object that needs to be added to the store (required)
+>>>>>>> ooof
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
+<<<<<<< HEAD
     public function addPet($pet)
     {
         $this->addPetWithHttpInfo($pet);
+=======
+    public function addPet($body)
+    {
+        $this->addPetWithHttpInfo($body);
+>>>>>>> ooof
     }
 
     /**
@@ -140,19 +154,29 @@ class PetApi
      *
      * Add a new pet to the store
      *
+<<<<<<< HEAD
      * This oepration contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: http://petstore.swagger.io/v2
      * URL: http://path-server-test.petstore.local/v2
      *
      * @param  \OpenAPI\Client\Model\Pet $pet Pet object that needs to be added to the store (required)
+=======
+     * @param  \OpenAPI\Client\Model\Pet $body Pet object that needs to be added to the store (required)
+>>>>>>> ooof
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
+<<<<<<< HEAD
     public function addPetWithHttpInfo($pet)
     {
         $request = $this->addPetRequest($pet);
+=======
+    public function addPetWithHttpInfo($body)
+    {
+        $request = $this->addPetRequest($body);
+>>>>>>> ooof
 
         try {
             $options = $this->createHttpClientOption();
@@ -196,18 +220,28 @@ class PetApi
      *
      * Add a new pet to the store
      *
+<<<<<<< HEAD
      * This oepration contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: http://petstore.swagger.io/v2
      * URL: http://path-server-test.petstore.local/v2
      *
      * @param  \OpenAPI\Client\Model\Pet $pet Pet object that needs to be added to the store (required)
+=======
+     * @param  \OpenAPI\Client\Model\Pet $body Pet object that needs to be added to the store (required)
+>>>>>>> ooof
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+<<<<<<< HEAD
     public function addPetAsync($pet)
     {
         return $this->addPetAsyncWithHttpInfo($pet)
+=======
+    public function addPetAsync($body)
+    {
+        return $this->addPetAsyncWithHttpInfo($body)
+>>>>>>> ooof
             ->then(
                 function ($response) {
                     return $response[0];
@@ -220,19 +254,30 @@ class PetApi
      *
      * Add a new pet to the store
      *
+<<<<<<< HEAD
      * This oepration contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: http://petstore.swagger.io/v2
      * URL: http://path-server-test.petstore.local/v2
      *
      * @param  \OpenAPI\Client\Model\Pet $pet Pet object that needs to be added to the store (required)
+=======
+     * @param  \OpenAPI\Client\Model\Pet $body Pet object that needs to be added to the store (required)
+>>>>>>> ooof
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+<<<<<<< HEAD
     public function addPetAsyncWithHttpInfo($pet)
     {
         $returnType = '';
         $request = $this->addPetRequest($pet);
+=======
+    public function addPetAsyncWithHttpInfo($body)
+    {
+        $returnType = '';
+        $request = $this->addPetRequest($body);
+>>>>>>> ooof
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -260,21 +305,34 @@ class PetApi
     /**
      * Create request for operation 'addPet'
      *
+<<<<<<< HEAD
      * This oepration contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: http://petstore.swagger.io/v2
      * URL: http://path-server-test.petstore.local/v2
      *
      * @param  \OpenAPI\Client\Model\Pet $pet Pet object that needs to be added to the store (required)
+=======
+     * @param  \OpenAPI\Client\Model\Pet $body Pet object that needs to be added to the store (required)
+>>>>>>> ooof
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
+<<<<<<< HEAD
     protected function addPetRequest($pet)
     {
         // verify the required parameter 'pet' is set
         if ($pet === null || (is_array($pet) && count($pet) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $pet when calling addPet'
+=======
+    protected function addPetRequest($body)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling addPet'
+>>>>>>> ooof
             );
         }
 
@@ -290,8 +348,13 @@ class PetApi
 
         // body params
         $_tempBody = null;
+<<<<<<< HEAD
         if (isset($pet)) {
             $_tempBody = $pet;
+=======
+        if (isset($body)) {
+            $_tempBody = $body;
+>>>>>>> ooof
         }
 
         if ($multipart) {
@@ -350,6 +413,7 @@ class PetApi
             $headers
         );
 
+<<<<<<< HEAD
         $operationHosts = ["http://petstore.swagger.io/v2", "http://path-server-test.petstore.local/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
@@ -360,6 +424,12 @@ class PetApi
         return new Request(
             'POST',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+=======
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+>>>>>>> ooof
             $headers,
             $httpBody
         );
@@ -1438,19 +1508,29 @@ class PetApi
      *
      * Update an existing pet
      *
+<<<<<<< HEAD
      * This oepration contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: http://petstore.swagger.io/v2
      * URL: http://path-server-test.petstore.local/v2
      *
      * @param  \OpenAPI\Client\Model\Pet $pet Pet object that needs to be added to the store (required)
+=======
+     * @param  \OpenAPI\Client\Model\Pet $body Pet object that needs to be added to the store (required)
+>>>>>>> ooof
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
+<<<<<<< HEAD
     public function updatePet($pet)
     {
         $this->updatePetWithHttpInfo($pet);
+=======
+    public function updatePet($body)
+    {
+        $this->updatePetWithHttpInfo($body);
+>>>>>>> ooof
     }
 
     /**
@@ -1458,19 +1538,29 @@ class PetApi
      *
      * Update an existing pet
      *
+<<<<<<< HEAD
      * This oepration contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: http://petstore.swagger.io/v2
      * URL: http://path-server-test.petstore.local/v2
      *
      * @param  \OpenAPI\Client\Model\Pet $pet Pet object that needs to be added to the store (required)
+=======
+     * @param  \OpenAPI\Client\Model\Pet $body Pet object that needs to be added to the store (required)
+>>>>>>> ooof
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
+<<<<<<< HEAD
     public function updatePetWithHttpInfo($pet)
     {
         $request = $this->updatePetRequest($pet);
+=======
+    public function updatePetWithHttpInfo($body)
+    {
+        $request = $this->updatePetRequest($body);
+>>>>>>> ooof
 
         try {
             $options = $this->createHttpClientOption();
@@ -1514,18 +1604,28 @@ class PetApi
      *
      * Update an existing pet
      *
+<<<<<<< HEAD
      * This oepration contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: http://petstore.swagger.io/v2
      * URL: http://path-server-test.petstore.local/v2
      *
      * @param  \OpenAPI\Client\Model\Pet $pet Pet object that needs to be added to the store (required)
+=======
+     * @param  \OpenAPI\Client\Model\Pet $body Pet object that needs to be added to the store (required)
+>>>>>>> ooof
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+<<<<<<< HEAD
     public function updatePetAsync($pet)
     {
         return $this->updatePetAsyncWithHttpInfo($pet)
+=======
+    public function updatePetAsync($body)
+    {
+        return $this->updatePetAsyncWithHttpInfo($body)
+>>>>>>> ooof
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1538,19 +1638,30 @@ class PetApi
      *
      * Update an existing pet
      *
+<<<<<<< HEAD
      * This oepration contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: http://petstore.swagger.io/v2
      * URL: http://path-server-test.petstore.local/v2
      *
      * @param  \OpenAPI\Client\Model\Pet $pet Pet object that needs to be added to the store (required)
+=======
+     * @param  \OpenAPI\Client\Model\Pet $body Pet object that needs to be added to the store (required)
+>>>>>>> ooof
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+<<<<<<< HEAD
     public function updatePetAsyncWithHttpInfo($pet)
     {
         $returnType = '';
         $request = $this->updatePetRequest($pet);
+=======
+    public function updatePetAsyncWithHttpInfo($body)
+    {
+        $returnType = '';
+        $request = $this->updatePetRequest($body);
+>>>>>>> ooof
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1578,21 +1689,34 @@ class PetApi
     /**
      * Create request for operation 'updatePet'
      *
+<<<<<<< HEAD
      * This oepration contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
      * URL: http://petstore.swagger.io/v2
      * URL: http://path-server-test.petstore.local/v2
      *
      * @param  \OpenAPI\Client\Model\Pet $pet Pet object that needs to be added to the store (required)
+=======
+     * @param  \OpenAPI\Client\Model\Pet $body Pet object that needs to be added to the store (required)
+>>>>>>> ooof
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
+<<<<<<< HEAD
     protected function updatePetRequest($pet)
     {
         // verify the required parameter 'pet' is set
         if ($pet === null || (is_array($pet) && count($pet) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $pet when calling updatePet'
+=======
+    protected function updatePetRequest($body)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling updatePet'
+>>>>>>> ooof
             );
         }
 
@@ -1608,8 +1732,13 @@ class PetApi
 
         // body params
         $_tempBody = null;
+<<<<<<< HEAD
         if (isset($pet)) {
             $_tempBody = $pet;
+=======
+        if (isset($body)) {
+            $_tempBody = $body;
+>>>>>>> ooof
         }
 
         if ($multipart) {
@@ -1668,6 +1797,7 @@ class PetApi
             $headers
         );
 
+<<<<<<< HEAD
         $operationHosts = ["http://petstore.swagger.io/v2", "http://path-server-test.petstore.local/v2"];
         if ($this->hostIndex < 0 || $this->hostIndex >= sizeof($operationHosts)) {
             throw new \InvalidArgumentException("Invalid index {$this->hostIndex} when selecting the host. Must be less than ".sizeof($operationHosts));
@@ -1678,6 +1808,12 @@ class PetApi
         return new Request(
             'PUT',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+=======
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'PUT',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+>>>>>>> ooof
             $headers,
             $httpBody
         );

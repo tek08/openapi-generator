@@ -11,6 +11,7 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
@@ -31,6 +32,12 @@ except ImportError:
     scalene_triangle = sys.modules[
         'petstore_api.model.scalene_triangle']
 from petstore_api.model.triangle import Triangle
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestTriangle(unittest.TestCase):
@@ -44,12 +51,21 @@ class TestTriangle(unittest.TestCase):
 
     def testTriangle(self):
         """Test Triangle"""
+<<<<<<< HEAD
         tri = Triangle(shape_type="Triangle", triangle_type="EquilateralTriangle")
         assert isinstance(tri, equilateral_triangle.EquilateralTriangle)
         tri = Triangle(shape_type="Triangle", triangle_type="IsoscelesTriangle")
         assert isinstance(tri, isosceles_triangle.IsoscelesTriangle)
         tri = Triangle(shape_type="Triangle", triangle_type="ScaleneTriangle")
         assert isinstance(tri, scalene_triangle.ScaleneTriangle)
+=======
+        equilateral_triangle = petstore_api.Triangle(shape_type="Triangle", triangle_type="EquilateralTriangle")
+        assert isinstance(equilateral_triangle, petstore_api.EquilateralTriangle)
+        isosceles_triangle = petstore_api.Triangle(shape_type="Triangle", triangle_type="IsoscelesTriangle")
+        assert isinstance(isosceles_triangle, petstore_api.IsoscelesTriangle)
+        scalene_triangle = petstore_api.Triangle(shape_type="Triangle", triangle_type="ScaleneTriangle")
+        assert isinstance(scalene_triangle, petstore_api.ScaleneTriangle)
+>>>>>>> ooof
 
 
 if __name__ == '__main__':

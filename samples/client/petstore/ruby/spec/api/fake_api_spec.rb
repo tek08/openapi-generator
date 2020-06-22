@@ -32,6 +32,7 @@ describe 'FakeApi' do
     end
   end
 
+<<<<<<< HEAD
   # unit tests for fake_health_get
   # Health check endpoint
   # @param [Hash] opts the optional parameters
@@ -50,6 +51,15 @@ describe 'FakeApi' do
   # @option opts [String] :header_1 header parameter
   # @return [nil]
   describe 'fake_http_signature_test test' do
+=======
+  # unit tests for create_xml_item
+  # creates an XmlItem
+  # this route creates an XmlItem
+  # @param xml_item XmlItem Body
+  # @param [Hash] opts the optional parameters
+  # @return [nil]
+  describe 'create_xml_item test' do
+>>>>>>> ooof
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
     end
@@ -69,7 +79,11 @@ describe 'FakeApi' do
   # unit tests for fake_outer_composite_serialize
   # Test serialization of object with outer number type
   # @param [Hash] opts the optional parameters
+<<<<<<< HEAD
   # @option opts [OuterComposite] :outer_composite Input composite as post body
+=======
+  # @option opts [OuterComposite] :body Input composite as post body
+>>>>>>> ooof
   # @return [OuterComposite]
   describe 'fake_outer_composite_serialize test' do
     it 'should work' do
@@ -101,7 +115,11 @@ describe 'FakeApi' do
 
   # unit tests for test_body_with_file_schema
   # For this test, the body for this request much reference a schema named &#x60;File&#x60;.
+<<<<<<< HEAD
   # @param file_schema_test_class 
+=======
+  # @param body 
+>>>>>>> ooof
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'test_body_with_file_schema test' do
@@ -112,7 +130,11 @@ describe 'FakeApi' do
 
   # unit tests for test_body_with_query_params
   # @param query 
+<<<<<<< HEAD
   # @param user 
+=======
+  # @param body 
+>>>>>>> ooof
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'test_body_with_query_params test' do
@@ -124,7 +146,11 @@ describe 'FakeApi' do
   # unit tests for test_client_model
   # To test \&quot;client\&quot; model
   # To test \&quot;client\&quot; model
+<<<<<<< HEAD
   # @param client client model
+=======
+  # @param body client model
+>>>>>>> ooof
   # @param [Hash] opts the optional parameters
   # @return [Client]
   describe 'test_client_model test' do
@@ -134,8 +160,13 @@ describe 'FakeApi' do
   end
 
   # unit tests for test_endpoint_parameters
+<<<<<<< HEAD
   # Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
   # Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
+=======
+  # Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트
+  # Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트
+>>>>>>> ooof
   # @param number None
   # @param double None
   # @param pattern_without_delimiter None
@@ -196,7 +227,11 @@ describe 'FakeApi' do
 
   # unit tests for test_inline_additional_properties
   # test inline additionalProperties
+<<<<<<< HEAD
   # @param request_body request body
+=======
+  # @param param request body
+>>>>>>> ooof
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'test_inline_additional_properties test' do

@@ -7,8 +7,11 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 internal class FakeClassnameTags123API {
     /**
      To test class name in snake case
@@ -17,7 +20,11 @@ internal class FakeClassnameTags123API {
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
+<<<<<<< HEAD
     internal class func testClassname(body: Client, apiResponseQueue: DispatchQueue = PetstoreClientAPI.apiResponseQueue, completion: @escaping ((_ data: Client?,_ error: Error?) -> Void)) {
+=======
+    internal class func testClassname(body: Client, apiResponseQueue: DispatchQueue = PetstoreClientAPI.apiResponseQueue, completion: @escaping ((_ data: Client?, _ error: Error?) -> Void)) {
+>>>>>>> ooof
         testClassnameWithRequestBuilder(body: body).execute(apiResponseQueue) { result -> Void in
             switch result {
             case let .success(response):

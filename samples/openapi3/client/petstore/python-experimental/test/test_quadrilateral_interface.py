@@ -11,11 +11,18 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
 import petstore_api
 from petstore_api.model.quadrilateral_interface import QuadrilateralInterface
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestQuadrilateralInterface(unittest.TestCase):
@@ -30,7 +37,11 @@ class TestQuadrilateralInterface(unittest.TestCase):
     def testQuadrilateralInterface(self):
         """Test QuadrilateralInterface"""
         # FIXME: construct object with mandatory attributes with example values
+<<<<<<< HEAD
         # model = QuadrilateralInterface()  # noqa: E501
+=======
+        # model = petstore_api.QuadrilateralInterface()  # noqa: E501
+>>>>>>> ooof
         pass
 
 

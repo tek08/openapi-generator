@@ -30,7 +30,11 @@ import org.openapitools.client.model.Dog;
 /**
  * Animal
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 
 public class Animal {
   public static final String SERIALIZED_NAME_CLASS_NAME = "className";

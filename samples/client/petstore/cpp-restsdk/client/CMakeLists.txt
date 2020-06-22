@@ -12,11 +12,21 @@ cmake_minimum_required (VERSION 2.8)
 
 #PROJECT's NAME
 project(CppRestOpenAPIClient)
+<<<<<<< HEAD
 set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 # THE LOCATION OF OUTPUT BINARIES
 set(CMAKE_LIBRARY_DIR ${PROJECT_SOURCE_DIR}/lib)
+=======
+
+
+# THE LOCATION OF OUTPUT BINARIES
+set(CMAKE_LIBRARY_DIR ${PROJECT_SOURCE_DIR}/lib)
+set(LIBRARY_OUTPUT_PATH ${CMAKE_LIBRARY_DIR})
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+>>>>>>> ooof
 
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
@@ -25,6 +35,7 @@ endif()
 # BUILD TYPE
 message("A ${CMAKE_BUILD_TYPE} build configuration is detected")
 
+<<<<<<< HEAD
 if (UNIX)
     message(STATUS "Building client library for Linux/Unix")
 
@@ -46,6 +57,26 @@ endif()
 #set(CPPREST_LIBRARY_DIR ${CPPREST_ROOT}/lib)
 #include_directories(${CPPREST_INCLUDE_DIR})
 #link_directories(${CPPREST_LIBRARY_DIR})
+=======
+# Update require components as necessary
+#find_package(Boost 1.45.0 REQUIRED COMPONENTS ${Boost_THREAD_LIBRARY} ${Boost_SYSTEM_LIBRARY} ${Boost_REGEX_LIBRARY} ${Boost_DATE_TIME_LIBRARY} ${Boost_PROGRAM_OPTIONS_LIBRARY} ${Boost_FILESYSTEM_LIBRARY})
+
+# build and set path to cpp rest sdk
+set(CPPREST_ROOT ${PROJECT_SOURCE_DIR}/3rdParty/cpprest)
+set(CPPREST_INCLUDE_DIR ${CPPREST_ROOT}/include)
+set(CPPREST_LIBRARY_DIR ${CPPREST_ROOT}/lib)
+
+include_directories(${PROJECT_SOURCE_DIR} api model ${CPPREST_INCLUDE_DIR})
+
+
+# If using vcpkg, set include directories. Also comment out CPPREST section above since vcpkg will handle it.
+# To install required vcpkg packages execute:
+# > vcpkg install cpprestsdk cpprestsdk:x64-windows boost-uuid boost-uuid:x64-windows
+# set(VCPKG_ROOT "C:\\vcpkg\\installed\\x64-windows")
+# set(VCPKG_INCLUDE_DIR ${VCPKG_ROOT}/include)
+# set(VCPKG_LIBRARY_DIR ${VCPKG_ROOT}/lib)
+# include_directories(${PROJECT_SOURCE_DIR} api model ${VCPKG_INCLUDE_DIR})
+>>>>>>> ooof
 
 #SUPPORTING FILES
 set(SUPPORTING_FILES  "ApiClient" "ApiConfiguration" "ApiException" "HttpContent" "IHttpBody" "JsonBody" "ModelBase" "MultipartFormData" "Object")
@@ -53,6 +84,7 @@ set(SUPPORTING_FILES  "ApiClient" "ApiConfiguration" "ApiException" "HttpContent
 file(GLOB SOURCE_FILES  "api/*"  "model/*")
 
 add_library(${PROJECT_NAME} ${SUPPORTING_FILES} ${SOURCE_FILES})
+<<<<<<< HEAD
 
 target_include_directories(
     ${PROJECT_NAME} PRIVATE
@@ -74,3 +106,5 @@ endif()
 
 set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 14)
 set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
+=======
+>>>>>>> ooof

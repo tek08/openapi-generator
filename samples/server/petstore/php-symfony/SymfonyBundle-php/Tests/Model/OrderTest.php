@@ -2,7 +2,11 @@
 /**
  * OrderTest
  *
+<<<<<<< HEAD
  * PHP version 7.1.3
+=======
+ * PHP version 5
+>>>>>>> ooof
  *
  * @category Class
  * @package  OpenAPI\Server\Tests\Model
@@ -29,8 +33,11 @@
 
 namespace OpenAPI\Server\Model;
 
+<<<<<<< HEAD
 use PHPUnit\Framework\TestCase;
 
+=======
+>>>>>>> ooof
 /**
  * OrderTest Class Doc Comment
  *
@@ -41,7 +48,11 @@ use PHPUnit\Framework\TestCase;
  * @author      openapi-generator contributors
  * @link        https://github.com/openapitools/openapi-generator
  */
+<<<<<<< HEAD
 class OrderTest extends TestCase
+=======
+class OrderTest extends \PHPUnit_Framework_TestCase
+>>>>>>> ooof
 {
 
     /**

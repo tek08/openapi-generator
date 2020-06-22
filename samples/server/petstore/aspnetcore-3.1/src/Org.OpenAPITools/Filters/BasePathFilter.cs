@@ -28,7 +28,11 @@ namespace Org.OpenAPITools.Filters
         /// <summary>
         /// Apply the filter
         /// </summary>
+<<<<<<< HEAD
         /// <param name="swaggerDoc">OpenApiDocument</param>
+=======
+        /// <param name="swaggerDoc">SwaggerDocument</param>
+>>>>>>> ooof
         /// <param name="context">FilterContext</param>
         public void Apply(OpenApiDocument swaggerDoc, DocumentFilterContext context)
         {

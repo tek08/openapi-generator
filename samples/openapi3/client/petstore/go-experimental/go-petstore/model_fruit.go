@@ -20,6 +20,7 @@ type Fruit struct {
 	Banana *Banana
 }
 
+<<<<<<< HEAD
 // AppleAsFruit is a convenience function that returns Apple wrapped in Fruit
 func AppleAsFruit(v *Apple) Fruit {
 	return Fruit{ Apple: v}
@@ -32,11 +33,18 @@ func BananaAsFruit(v *Banana) Fruit {
 
 
 // Unmarshal JSON data into one of the pointers in the struct
+=======
+// Unmarshl JSON data into one of the pointers in the struct
+>>>>>>> ooof
 func (dst *Fruit) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
 	// try to unmarshal data into Apple
+<<<<<<< HEAD
 	err = json.Unmarshal(data, &dst.Apple)
+=======
+	err = json.Unmarshal(data, &dst.Apple);
+>>>>>>> ooof
 	if err == nil {
 		jsonApple, _ := json.Marshal(dst.Apple)
 		if string(jsonApple) == "{}" { // empty struct
@@ -49,7 +57,11 @@ func (dst *Fruit) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal data into Banana
+<<<<<<< HEAD
 	err = json.Unmarshal(data, &dst.Banana)
+=======
+	err = json.Unmarshal(data, &dst.Banana);
+>>>>>>> ooof
 	if err == nil {
 		jsonBanana, _ := json.Marshal(dst.Banana)
 		if string(jsonBanana) == "{}" { // empty struct
@@ -62,10 +74,13 @@ func (dst *Fruit) UnmarshalJSON(data []byte) error {
 	}
 
 	if match > 1 { // more than 1 match
+<<<<<<< HEAD
 		// reset to nil
 		dst.Apple = nil
 		dst.Banana = nil
 
+=======
+>>>>>>> ooof
 		return fmt.Errorf("Data matches more than one schema in oneOf(Fruit)")
 	} else if match == 1 {
 		return nil // exactly one match
@@ -74,8 +89,13 @@ func (dst *Fruit) UnmarshalJSON(data []byte) error {
 	}
 }
 
+<<<<<<< HEAD
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src Fruit) MarshalJSON() ([]byte, error) {
+=======
+// Marshl data from the first non-nil pointers in the struct to JSON
+func (src *Fruit) MarshalJSON() ([]byte, error) {
+>>>>>>> ooof
 	if src.Apple != nil {
 		return json.Marshal(&src.Apple)
 	}
@@ -101,6 +121,7 @@ func (obj *Fruit) GetActualInstance() (interface{}) {
 	return nil
 }
 
+<<<<<<< HEAD
 type NullableFruit struct {
 	value *Fruit
 	isSet bool
@@ -138,3 +159,5 @@ func (v *NullableFruit) UnmarshalJSON(src []byte) error {
 }
 
 
+=======
+>>>>>>> ooof

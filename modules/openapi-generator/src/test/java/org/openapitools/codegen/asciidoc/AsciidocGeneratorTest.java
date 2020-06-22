@@ -48,9 +48,16 @@ public class AsciidocGeneratorTest {
                 .addAdditionalProperty(AsciidocDocumentationCodegen.SPEC_DIR, "MY-SPEC-DIR");
 
         final ClientOptInput clientOptInput = configurator.toClientOptInput();
+<<<<<<< HEAD
         DefaultGenerator generator = new DefaultGenerator();
         generator.setGenerateMetadata(false);
         List<File> generatedFiles = generator.opts(clientOptInput).generate();
+=======
+        MockDefaultGenerator generator = new MockDefaultGenerator();
+        generator.opts(clientOptInput).generate();
+
+        Map<String, String> generatedFiles = generator.getFiles();
+>>>>>>> ooof
         TestUtils.ensureContainsFile(generatedFiles, output, "index.adoc");
     }
 

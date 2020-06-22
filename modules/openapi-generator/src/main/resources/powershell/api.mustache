@@ -223,6 +223,7 @@ function {{{vendorExtensions.x-powershell-method-name}}} {
                                 -CookieParameters $LocalVarCookieParameters `
                                 -ReturnType "{{#returnType}}{{{.}}}{{/returnType}}"
 
+<<<<<<< HEAD
         {{#vendorExtensions.x-ps-return-type-one-of}}
         # process oneOf response
         $LocalVarResult["Response"] = ConvertFrom-{{apiNamePrefix}}JsonTo{{returnType}} (ConvertTo-Json $LocalVarResult["Response"])
@@ -233,6 +234,8 @@ function {{{vendorExtensions.x-powershell-method-name}}} {
         $LocalVarResult["Response"] = ConvertFrom-{{apiNamePrefix}}JsonTo{{returnType}} (ConvertTo-Json $LocalVarResult["Response"])
 
         {{/vendorExtensions.x-ps-return-type-any-of}}
+=======
+>>>>>>> ooof
         if ($WithHttpInfo.IsPresent) {
             return $LocalVarResult
         } else {

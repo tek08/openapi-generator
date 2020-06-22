@@ -9,4 +9,8 @@ class ByteArrayAdapter {
 
     @FromJson
     fun fromJson(data: String): ByteArray = data.toByteArray()
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ooof

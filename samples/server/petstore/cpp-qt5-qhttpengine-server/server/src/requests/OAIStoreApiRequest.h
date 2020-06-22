@@ -75,12 +75,20 @@ private:
     QHttpEngine::Socket  *socket;
     QSharedPointer<OAIStoreApiHandler> handler;
 
+<<<<<<< HEAD
     inline void setSocketResponseHeaders(){
+=======
+    inline void writeResponseHeaders(){
+>>>>>>> ooof
         QHttpEngine::Socket::HeaderMap resHeaders;
         for(auto itr = responseHeaders.begin(); itr != responseHeaders.end(); ++itr) {
             resHeaders.insert(itr.key().toUtf8(), itr.value().toUtf8());
         }
         socket->setHeaders(resHeaders);
+<<<<<<< HEAD
+=======
+        socket->writeHeaders();
+>>>>>>> ooof
     }
 };
 

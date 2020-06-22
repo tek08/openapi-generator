@@ -16,7 +16,10 @@ import org.openapitools.client.models.Tag
 
 import kotlinx.serialization.*
 import kotlinx.serialization.internal.CommonEnumSerializer
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * A pet for sale in the pet store
  * @param name 
@@ -29,10 +32,17 @@ import kotlinx.serialization.internal.CommonEnumSerializer
 @Serializable
 data class Pet (
     @SerialName(value = "name") @Required val name: kotlin.String,
+<<<<<<< HEAD
     @SerialName(value = "photoUrls") @Required val photoUrls: kotlin.collections.List<kotlin.String>,
     @SerialName(value = "id") val id: kotlin.Long? = null,
     @SerialName(value = "category") val category: Category? = null,
     @SerialName(value = "tags") val tags: kotlin.collections.List<Tag>? = null,
+=======
+    @SerialName(value = "photoUrls") @Required val photoUrls: kotlin.Array<kotlin.String>,
+    @SerialName(value = "id") val id: kotlin.Long? = null,
+    @SerialName(value = "category") val category: Category? = null,
+    @SerialName(value = "tags") val tags: kotlin.Array<Tag>? = null,
+>>>>>>> ooof
     /* pet status in the store */
     @SerialName(value = "status") val status: Pet.Status? = null
 ) {

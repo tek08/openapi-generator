@@ -8,8 +8,11 @@
 import Foundation
 import Combine
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 open class FakeClassnameTags123API {
     /**
      To test class name in snake case

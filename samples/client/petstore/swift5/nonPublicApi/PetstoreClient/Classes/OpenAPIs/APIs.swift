@@ -9,15 +9,24 @@ import Foundation
 internal class PetstoreClientAPI {
     internal static var basePath = "http://petstore.swagger.io:80/v2"
     internal static var credential: URLCredential?
+<<<<<<< HEAD
     internal static var customHeaders: [String:String] = [:]
+=======
+    internal static var customHeaders: [String: String] = [:]
+>>>>>>> ooof
     internal static var requestBuilderFactory: RequestBuilderFactory = URLSessionRequestBuilderFactory()
     internal static var apiResponseQueue: DispatchQueue = .main
 }
 
 internal class RequestBuilder<T> {
     var credential: URLCredential?
+<<<<<<< HEAD
     var headers: [String:String]
     internal let parameters: [String:Any]?
+=======
+    var headers: [String: String]
+    internal let parameters: [String: Any]?
+>>>>>>> ooof
     internal let isBody: Bool
     internal let method: String
     internal let URLString: String
@@ -25,9 +34,15 @@ internal class RequestBuilder<T> {
     /// Optional block to obtain a reference to the request's progress instance when available.
     /// With the URLSession http client the request's progress only works on iOS 11.0, macOS 10.13, macCatalyst 13.0, tvOS 11.0, watchOS 4.0.
     /// If you need to get the request's progress in older OS versions, please use Alamofire http client.
+<<<<<<< HEAD
     internal var onProgressReady: ((Progress) -> ())?
 
     required internal init(method: String, URLString: String, parameters: [String:Any]?, isBody: Bool, headers: [String:String] = [:]) {
+=======
+    internal var onProgressReady: ((Progress) -> Void)?
+
+    required internal init(method: String, URLString: String, parameters: [String: Any]?, isBody: Bool, headers: [String: String] = [:]) {
+>>>>>>> ooof
         self.method = method
         self.URLString = URLString
         self.parameters = parameters
@@ -37,7 +52,11 @@ internal class RequestBuilder<T> {
         addHeaders(PetstoreClientAPI.customHeaders)
     }
 
+<<<<<<< HEAD
     internal func addHeaders(_ aHeaders:[String:String]) {
+=======
+    internal func addHeaders(_ aHeaders: [String: String]) {
+>>>>>>> ooof
         for (header, value) in aHeaders {
             headers[header] = value
         }
@@ -60,5 +79,9 @@ internal class RequestBuilder<T> {
 
 internal protocol RequestBuilderFactory {
     func getNonDecodableBuilder<T>() -> RequestBuilder<T>.Type
+<<<<<<< HEAD
     func getBuilder<T:Decodable>() -> RequestBuilder<T>.Type
+=======
+    func getBuilder<T: Decodable>() -> RequestBuilder<T>.Type
+>>>>>>> ooof
 }

@@ -14,11 +14,15 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.File;
+<<<<<<< HEAD
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+=======
+import java.nio.file.Files;
+>>>>>>> ooof
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
@@ -190,6 +194,7 @@ public class JavaJAXRSCXFExtServerCodegenTest extends JavaJaxrsBaseTest {
         codegen = new JavaCXFExtServerCodegenTester();
     }
 
+<<<<<<< HEAD
     private void checkFile(Path path, boolean fileShouldExist, String... regexes) {
         if (!fileShouldExist) {
             assertFalse(path.toFile().exists());
@@ -207,6 +212,16 @@ public class JavaJAXRSCXFExtServerCodegenTest extends JavaJaxrsBaseTest {
 
         for (String regex : regexes)
             assertTrue(Pattern.compile(regex).matcher(contents).find());
+=======
+    private void checkFile(MockDefaultGenerator generator, String path, boolean fileShouldExist, String... regexes) {
+        String file = generator.getFiles().get(path);
+        if (fileShouldExist)
+            assertNotNull(file);
+        else
+            assertNull(file);
+        for (String regex : regexes)
+            assertTrue(Pattern.compile(regex).matcher(file).find());
+>>>>>>> ooof
     }
 
     @SuppressWarnings("unchecked")
@@ -458,7 +473,11 @@ public class JavaJAXRSCXFExtServerCodegenTest extends JavaJaxrsBaseTest {
         input.setOpenAPI(openAPI);
         input.setConfig(codegen);
 
+<<<<<<< HEAD
         DefaultGenerator generator = new DefaultGenerator();
+=======
+        MockDefaultGenerator generator = new MockDefaultGenerator();
+>>>>>>> ooof
         generator.opts(input).generate();
 
         String reGetPetById = "(?s)(?m)public Pet getPetById\\(Long petId\\) \\{" // split
@@ -467,7 +486,11 @@ public class JavaJAXRSCXFExtServerCodegenTest extends JavaJaxrsBaseTest {
                 + ".*" // split
                 + "return response;\\s+" // split
                 + "\\}"; // split
+<<<<<<< HEAD
         checkFile(Paths.get(outputPath + "/src/main/java/org/openapitools/api/impl/PetApiServiceImpl.java"), true,
+=======
+        checkFile(generator, outputPath + "/src/main/java/org/openapitools/api/impl/PetApiServiceImpl.java", true,
+>>>>>>> ooof
                 reGetPetById);
 
         String reFindPetsByStatusTest = "(?s)(?m)public void findPetsByStatusTest\\(\\) throws Exception \\{\\s+"
@@ -478,12 +501,21 @@ public class JavaJAXRSCXFExtServerCodegenTest extends JavaJaxrsBaseTest {
                 + ".*" // split
                 + "validate\\(response\\);\\s+" // split
                 + "\\}";
+<<<<<<< HEAD
         checkFile(Paths.get(outputPath + "/src/test/java/org/openapitools/api/PetApiTest.java"), true,
                 reFindPetsByStatusTest);
 
         checkFile(Paths.get(outputPath + "/src/main/resources/test-data.json"), false);
 
         checkFile(Paths.get(outputPath + "/test-data-control.json"), false);
+=======
+        checkFile(generator, outputPath + "/src/test/java/org/openapitools/api/PetApiTest.java", true,
+                reFindPetsByStatusTest);
+
+        checkFile(generator, outputPath + "/src/main/resources/test-data.json", false);
+
+        checkFile(generator, outputPath + "/test-data-control.json", false);
+>>>>>>> ooof
     }
 
     @Test()
@@ -503,7 +535,11 @@ public class JavaJAXRSCXFExtServerCodegenTest extends JavaJaxrsBaseTest {
         input.setOpenAPI(openAPI);
         input.setConfig(codegen);
 
+<<<<<<< HEAD
         DefaultGenerator generator = new DefaultGenerator();
+=======
+        MockDefaultGenerator generator = new MockDefaultGenerator();
+>>>>>>> ooof
         generator.opts(input).generate();
 
         String reInitCache = "(?s)(?m)\\{\\s+" + "try \\{\\s+"
@@ -512,7 +548,11 @@ public class JavaJAXRSCXFExtServerCodegenTest extends JavaJaxrsBaseTest {
         String reGetPetById = "(?s)(?m)public Pet getPetById\\(Long petId\\) \\{.*" // split
                 + "try \\{\\s*" // split
                 + "Pet response = cache\\.getObject\\(\"/getPetById/response\", Pet\\.class\\);";
+<<<<<<< HEAD
         checkFile(Paths.get(outputPath + "/src/main/java/org/openapitools/api/impl/PetApiServiceImpl.java"), true,
+=======
+        checkFile(generator, outputPath + "/src/main/java/org/openapitools/api/impl/PetApiServiceImpl.java", true,
+>>>>>>> ooof
                 reInitCache, reGetPetById);
 
         reInitCache = "(?s)(?m)public static void beforeClass\\(\\) throws Exception \\{\\s+"
@@ -522,12 +562,21 @@ public class JavaJAXRSCXFExtServerCodegenTest extends JavaJaxrsBaseTest {
                 + "\\.child\\(\"/org\\.openapitools\\.api/PetApi\"\\);";
         String reAddPetTest = "public void addPetTest\\(\\) throws Exception \\{\\s+"
                 + "Pet pet = cache\\.getObject\\(\"/addPet/pet\", Pet\\.class\\);";
+<<<<<<< HEAD
         checkFile(Paths.get(outputPath + "/src/test/java/org/openapitools/api/PetApiTest.java"), true, reInitCache,
                 reAddPetTest);
 
         checkFile(Paths.get(outputPath + "/src/main/resources/test-data.json"), true);
 
         checkFile(Paths.get(outputPath + "/test-data-control.json"), true);
+=======
+        checkFile(generator, outputPath + "/src/test/java/org/openapitools/api/PetApiTest.java", true, reInitCache,
+                reAddPetTest);
+
+        checkFile(generator, outputPath + "/src/main/resources/test-data.json", true);
+
+        checkFile(generator, outputPath + "/test-data-control.json", true);
+>>>>>>> ooof
     }
 
     @Test

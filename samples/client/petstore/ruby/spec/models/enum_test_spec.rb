@@ -78,6 +78,7 @@ describe 'EnumTest' do
     end
   end
 
+<<<<<<< HEAD
   describe 'test attribute "outer_enum_integer"' do
     it 'should work' do
       # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
@@ -96,4 +97,6 @@ describe 'EnumTest' do
     end
   end
 
+=======
+>>>>>>> ooof
 end

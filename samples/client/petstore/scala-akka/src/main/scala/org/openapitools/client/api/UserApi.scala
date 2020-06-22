@@ -29,6 +29,7 @@ class UserApi(baseUrl: String) {
    * Expected answers:
    *   code 0 :  (successful operation)
    * 
+<<<<<<< HEAD
    * Available security schemes:
    *   auth_cookie (apiKey)
    * 
@@ -39,12 +40,21 @@ class UserApi(baseUrl: String) {
       .withApiKey(apiKey, "AUTH_KEY", COOKIE)
       .withBody(user)
       .withDefaultErrorResponse[Unit]
+=======
+   * @param body Created user object
+   */
+  def createUser(body: User): ApiRequest[Unit] =
+    ApiRequest[Unit](ApiMethods.POST, baseUrl, "/user", "application/json")
+      .withBody(body)
+      .withDefaultSuccessResponse[Unit]
+>>>>>>> ooof
       
 
   /**
    * Expected answers:
    *   code 0 :  (successful operation)
    * 
+<<<<<<< HEAD
    * Available security schemes:
    *   auth_cookie (apiKey)
    * 
@@ -55,12 +65,21 @@ class UserApi(baseUrl: String) {
       .withApiKey(apiKey, "AUTH_KEY", COOKIE)
       .withBody(user)
       .withDefaultErrorResponse[Unit]
+=======
+   * @param body List of user object
+   */
+  def createUsersWithArrayInput(body: Seq[User]): ApiRequest[Unit] =
+    ApiRequest[Unit](ApiMethods.POST, baseUrl, "/user/createWithArray", "application/json")
+      .withBody(body)
+      .withDefaultSuccessResponse[Unit]
+>>>>>>> ooof
       
 
   /**
    * Expected answers:
    *   code 0 :  (successful operation)
    * 
+<<<<<<< HEAD
    * Available security schemes:
    *   auth_cookie (apiKey)
    * 
@@ -71,6 +90,14 @@ class UserApi(baseUrl: String) {
       .withApiKey(apiKey, "AUTH_KEY", COOKIE)
       .withBody(user)
       .withDefaultErrorResponse[Unit]
+=======
+   * @param body List of user object
+   */
+  def createUsersWithListInput(body: Seq[User]): ApiRequest[Unit] =
+    ApiRequest[Unit](ApiMethods.POST, baseUrl, "/user/createWithList", "application/json")
+      .withBody(body)
+      .withDefaultSuccessResponse[Unit]
+>>>>>>> ooof
       
 
   /**
@@ -80,6 +107,7 @@ class UserApi(baseUrl: String) {
    *   code 400 :  (Invalid username supplied)
    *   code 404 :  (User not found)
    * 
+<<<<<<< HEAD
    * Available security schemes:
    *   auth_cookie (apiKey)
    * 
@@ -88,6 +116,12 @@ class UserApi(baseUrl: String) {
   def deleteUser(username: String)(implicit apiKey: ApiKeyValue): ApiRequest[Unit] =
     ApiRequest[Unit](ApiMethods.DELETE, baseUrl, "/user/{username}", "application/json")
       .withApiKey(apiKey, "AUTH_KEY", COOKIE)
+=======
+   * @param username The name that needs to be deleted
+   */
+  def deleteUser(username: String): ApiRequest[Unit] =
+    ApiRequest[Unit](ApiMethods.DELETE, baseUrl, "/user/{username}", "application/json")
+>>>>>>> ooof
       .withPathParam("username", username)
       .withErrorResponse[Unit](400)
       .withErrorResponse[Unit](404)
@@ -113,7 +147,10 @@ class UserApi(baseUrl: String) {
    * Expected answers:
    *   code 200 : String (successful operation)
    *              Headers :
+<<<<<<< HEAD
    *                Set-Cookie - Cookie authentication key for use with the `auth_cookie` apiKey authentication.
+=======
+>>>>>>> ooof
    *                X-Rate-Limit - calls per hour allowed by the user
    *                X-Expires-After - date in UTC when toekn expires
    *   code 400 :  (Invalid username/password supplied)
@@ -129,7 +166,10 @@ class UserApi(baseUrl: String) {
       .withErrorResponse[Unit](400)
       
   object LoginUserHeaders {
+<<<<<<< HEAD
     def setCookie(r: ApiReturnWithHeaders) = r.getStringHeader("Set-Cookie")
+=======
+>>>>>>> ooof
     def xRateLimit(r: ApiReturnWithHeaders) = r.getIntHeader("X-Rate-Limit")
     def xExpiresAfter(r: ApiReturnWithHeaders) = r.getOffsetDateTimeHeader("X-Expires-After")
   }
@@ -137,6 +177,7 @@ class UserApi(baseUrl: String) {
   /**
    * Expected answers:
    *   code 0 :  (successful operation)
+<<<<<<< HEAD
    * 
    * Available security schemes:
    *   auth_cookie (apiKey)
@@ -145,6 +186,12 @@ class UserApi(baseUrl: String) {
     ApiRequest[Unit](ApiMethods.GET, baseUrl, "/user/logout", "application/json")
       .withApiKey(apiKey, "AUTH_KEY", COOKIE)
       .withDefaultErrorResponse[Unit]
+=======
+   */
+  def logoutUser(): ApiRequest[Unit] =
+    ApiRequest[Unit](ApiMethods.GET, baseUrl, "/user/logout", "application/json")
+      .withDefaultSuccessResponse[Unit]
+>>>>>>> ooof
       
 
   /**
@@ -154,6 +201,7 @@ class UserApi(baseUrl: String) {
    *   code 400 :  (Invalid user supplied)
    *   code 404 :  (User not found)
    * 
+<<<<<<< HEAD
    * Available security schemes:
    *   auth_cookie (apiKey)
    * 
@@ -164,6 +212,14 @@ class UserApi(baseUrl: String) {
     ApiRequest[Unit](ApiMethods.PUT, baseUrl, "/user/{username}", "application/json")
       .withApiKey(apiKey, "AUTH_KEY", COOKIE)
       .withBody(user)
+=======
+   * @param username name that need to be deleted
+   * @param body Updated user object
+   */
+  def updateUser(username: String, body: User): ApiRequest[Unit] =
+    ApiRequest[Unit](ApiMethods.PUT, baseUrl, "/user/{username}", "application/json")
+      .withBody(body)
+>>>>>>> ooof
       .withPathParam("username", username)
       .withErrorResponse[Unit](400)
       .withErrorResponse[Unit](404)

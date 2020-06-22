@@ -3,7 +3,10 @@ package org.openapitools.api;
 import java.io.File;
 import org.openapitools.model.ModelApiResponse;
 import org.openapitools.model.Pet;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
@@ -16,9 +19,15 @@ import java.util.List;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
+<<<<<<< HEAD
 @Path("/pet")
 @Api(description = "the pet API")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public interface PetApi {
+=======
+@Path("/Pet")
+@Api(description = "the Pet API")
+public interface PetApi {
+>>>>>>> ooof
 
     @POST
     @Consumes({ "application/json", "application/xml" })
@@ -34,7 +43,10 @@ import javax.validation.Valid;
     Response addPet(@Valid Pet body);
 
     @DELETE
+<<<<<<< HEAD
     @Path("/{petId}")
+=======
+>>>>>>> ooof
     @ApiOperation(value = "Deletes a pet", notes = "", authorizations = {
         @Authorization(value = "petstore_auth", scopes = {
             @AuthorizationScope(scope = "write:pets", description = "modify pets in your account"),
@@ -47,7 +59,10 @@ import javax.validation.Valid;
     Response deletePet(@PathParam("petId") @ApiParam("Pet id to delete") Long petId,@HeaderParam("api_key")    String apiKey);
 
     @GET
+<<<<<<< HEAD
     @Path("/findByStatus")
+=======
+>>>>>>> ooof
     @Produces({ "application/xml", "application/json" })
     @ApiOperation(value = "Finds Pets by status", notes = "Multiple status values can be provided with comma separated strings", authorizations = {
         @Authorization(value = "petstore_auth", scopes = {
@@ -61,7 +76,10 @@ import javax.validation.Valid;
     Response findPetsByStatus(@QueryParam("status") @NotNull   @ApiParam("Status values that need to be considered for filter")  List<String> status);
 
     @GET
+<<<<<<< HEAD
     @Path("/findByTags")
+=======
+>>>>>>> ooof
     @Produces({ "application/xml", "application/json" })
     @ApiOperation(value = "Finds Pets by tags", notes = "Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.", authorizations = {
         @Authorization(value = "petstore_auth", scopes = {
@@ -70,12 +88,20 @@ import javax.validation.Valid;
         })
     }, tags={ "pet",  })
     @ApiResponses(value = { 
+<<<<<<< HEAD
         @ApiResponse(code = 200, message = "successful operation", response = Pet.class, responseContainer = "Set"),
         @ApiResponse(code = 400, message = "Invalid tag value", response = Void.class, responseContainer = "Set") })
     Response findPetsByTags(@QueryParam("tags") @NotNull   @ApiParam("Tags to filter by")  Set<String> tags);
 
     @GET
     @Path("/{petId}")
+=======
+        @ApiResponse(code = 200, message = "successful operation", response = Pet.class, responseContainer = "List"),
+        @ApiResponse(code = 400, message = "Invalid tag value", response = Void.class, responseContainer = "List") })
+    Response findPetsByTags(@QueryParam("tags") @NotNull   @ApiParam("Tags to filter by")  List<String> tags);
+
+    @GET
+>>>>>>> ooof
     @Produces({ "application/xml", "application/json" })
     @ApiOperation(value = "Find pet by ID", notes = "Returns a single pet", authorizations = {
         @Authorization(value = "api_key")
@@ -102,7 +128,10 @@ import javax.validation.Valid;
     Response updatePet(@Valid Pet body);
 
     @POST
+<<<<<<< HEAD
     @Path("/{petId}")
+=======
+>>>>>>> ooof
     @Consumes({ "application/x-www-form-urlencoded" })
     @ApiOperation(value = "Updates a pet in the store with form data", notes = "", authorizations = {
         @Authorization(value = "petstore_auth", scopes = {
@@ -115,7 +144,10 @@ import javax.validation.Valid;
     Response updatePetWithForm(@PathParam("petId") @ApiParam("ID of pet that needs to be updated") Long petId,@FormParam(value = "name")  String name,@FormParam(value = "status")  String status);
 
     @POST
+<<<<<<< HEAD
     @Path("/{petId}/uploadImage")
+=======
+>>>>>>> ooof
     @Consumes({ "multipart/form-data" })
     @Produces({ "application/json" })
     @ApiOperation(value = "uploads an image", notes = "", authorizations = {
@@ -123,8 +155,28 @@ import javax.validation.Valid;
             @AuthorizationScope(scope = "write:pets", description = "modify pets in your account"),
             @AuthorizationScope(scope = "read:pets", description = "read your pets")
         })
+<<<<<<< HEAD
     }, tags={ "pet" })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "successful operation", response = ModelApiResponse.class) })
     Response uploadFile(@PathParam("petId") @ApiParam("ID of pet to update") Long petId,@FormParam(value = "additionalMetadata")  String additionalMetadata, @FormParam(value = "file") InputStream fileInputStream);
+=======
+    }, tags={ "pet",  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "successful operation", response = ModelApiResponse.class) })
+    Response uploadFile(@PathParam("petId") @ApiParam("ID of pet to update") Long petId,@FormParam(value = "additionalMetadata")  String additionalMetadata, @FormParam(value = "file") InputStream fileInputStream);
+
+    @POST
+    @Consumes({ "multipart/form-data" })
+    @Produces({ "application/json" })
+    @ApiOperation(value = "uploads an image (required)", notes = "", authorizations = {
+        @Authorization(value = "petstore_auth", scopes = {
+            @AuthorizationScope(scope = "write:pets", description = "modify pets in your account"),
+            @AuthorizationScope(scope = "read:pets", description = "read your pets")
+        })
+    }, tags={ "pet" })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "successful operation", response = ModelApiResponse.class) })
+    Response uploadFileWithRequiredFile(@PathParam("petId") @ApiParam("ID of pet to update") Long petId, @FormParam(value = "requiredFile") InputStream requiredFileInputStream,@FormParam(value = "additionalMetadata")  String additionalMetadata);
+>>>>>>> ooof
 }

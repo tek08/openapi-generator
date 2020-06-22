@@ -12,7 +12,11 @@ import javax.validation.constraints.*;
 /**
  * ReadOnlyFirst
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
+=======
+
+>>>>>>> ooof
 public class ReadOnlyFirst   {
   @JsonProperty("bar")
   private String bar;

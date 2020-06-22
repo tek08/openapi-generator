@@ -39,7 +39,11 @@ import kotlin.collections.Map
 
 @RestController
 @Validated
+<<<<<<< HEAD
 @Api(value = "user", description = "The user API")
+=======
+@Api(value = "User", description = "The User API")
+>>>>>>> ooof
 @RequestMapping("\${api.base-path:/v2}")
 class UserApiController(@Autowired(required = true) val service: UserApiService) {
 
@@ -47,7 +51,11 @@ class UserApiController(@Autowired(required = true) val service: UserApiService)
         value = "Create user",
         nickname = "createUser",
         notes = "This can only be done by the logged in user.",
+<<<<<<< HEAD
         authorizations = [Authorization(value = "api_key")])
+=======
+        authorizations = [Authorization(value = "auth_cookie")])
+>>>>>>> ooof
     @ApiResponses(
         value = [ApiResponse(code = 200, message = "successful operation")])
     @RequestMapping(
@@ -63,7 +71,11 @@ class UserApiController(@Autowired(required = true) val service: UserApiService)
         value = "Creates list of users with given input array",
         nickname = "createUsersWithArrayInput",
         notes = "",
+<<<<<<< HEAD
         authorizations = [Authorization(value = "api_key")])
+=======
+        authorizations = [Authorization(value = "auth_cookie")])
+>>>>>>> ooof
     @ApiResponses(
         value = [ApiResponse(code = 200, message = "successful operation")])
     @RequestMapping(
@@ -79,7 +91,11 @@ class UserApiController(@Autowired(required = true) val service: UserApiService)
         value = "Creates list of users with given input array",
         nickname = "createUsersWithListInput",
         notes = "",
+<<<<<<< HEAD
         authorizations = [Authorization(value = "api_key")])
+=======
+        authorizations = [Authorization(value = "auth_cookie")])
+>>>>>>> ooof
     @ApiResponses(
         value = [ApiResponse(code = 200, message = "successful operation")])
     @RequestMapping(
@@ -95,7 +111,11 @@ class UserApiController(@Autowired(required = true) val service: UserApiService)
         value = "Delete user",
         nickname = "deleteUser",
         notes = "This can only be done by the logged in user.",
+<<<<<<< HEAD
         authorizations = [Authorization(value = "api_key")])
+=======
+        authorizations = [Authorization(value = "auth_cookie")])
+>>>>>>> ooof
     @ApiResponses(
         value = [ApiResponse(code = 400, message = "Invalid username supplied"),ApiResponse(code = 404, message = "User not found")])
     @RequestMapping(
@@ -143,7 +163,11 @@ class UserApiController(@Autowired(required = true) val service: UserApiService)
         value = "Logs out current logged in user session",
         nickname = "logoutUser",
         notes = "",
+<<<<<<< HEAD
         authorizations = [Authorization(value = "api_key")])
+=======
+        authorizations = [Authorization(value = "auth_cookie")])
+>>>>>>> ooof
     @ApiResponses(
         value = [ApiResponse(code = 200, message = "successful operation")])
     @RequestMapping(
@@ -157,7 +181,11 @@ class UserApiController(@Autowired(required = true) val service: UserApiService)
         value = "Updated user",
         nickname = "updateUser",
         notes = "This can only be done by the logged in user.",
+<<<<<<< HEAD
         authorizations = [Authorization(value = "api_key")])
+=======
+        authorizations = [Authorization(value = "auth_cookie")])
+>>>>>>> ooof
     @ApiResponses(
         value = [ApiResponse(code = 400, message = "Invalid user supplied"),ApiResponse(code = 404, message = "User not found")])
     @RequestMapping(

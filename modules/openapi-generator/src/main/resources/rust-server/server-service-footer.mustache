@@ -1,6 +1,26 @@
+<<<<<<< HEAD
             _ => Ok(Response::builder().status(StatusCode::NOT_FOUND)
                     .body(Body::empty())
                     .expect("Unable to create Not Found response"))
         }
     } Box::pin(run(self.api_impl.clone(), req)) }
+=======
+            _ => Box::new(future::ok(
+                Response::builder().status(StatusCode::NOT_FOUND)
+                    .body(Body::empty())
+                    .expect("Unable to create Not Found response")
+            )) as Self::Future
+        }
+    }
+}
+
+impl<T, C> Clone for Service<T, C> where T: Clone
+{
+    fn clone(&self) -> Self {
+        Service {
+            api_impl: self.api_impl.clone(),
+            marker: self.marker.clone(),
+        }
+    }
+>>>>>>> ooof
 }

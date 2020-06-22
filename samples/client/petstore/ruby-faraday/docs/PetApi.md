@@ -18,7 +18,11 @@ Method | HTTP request | Description
 
 ## add_pet
 
+<<<<<<< HEAD
 > add_pet(pet)
+=======
+> add_pet(body)
+>>>>>>> ooof
 
 Add a new pet to the store
 
@@ -34,11 +38,19 @@ Petstore.configure do |config|
 end
 
 api_instance = Petstore::PetApi.new
+<<<<<<< HEAD
 pet = Petstore::Pet.new # Pet | Pet object that needs to be added to the store
 
 begin
   #Add a new pet to the store
   api_instance.add_pet(pet)
+=======
+body = Petstore::Pet.new # Pet | Pet object that needs to be added to the store
+
+begin
+  #Add a new pet to the store
+  api_instance.add_pet(body)
+>>>>>>> ooof
 rescue Petstore::ApiError => e
   puts "Exception when calling PetApi->add_pet: #{e}"
 end
@@ -49,7 +61,11 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **pet** | [**Pet**](Pet.md)| Pet object that needs to be added to the store | 
+=======
+ **body** | [**Pet**](Pet.md)| Pet object that needs to be added to the store | 
+>>>>>>> ooof
 
 ### Return type
 
@@ -278,7 +294,11 @@ Name | Type | Description  | Notes
 
 ## update_pet
 
+<<<<<<< HEAD
 > update_pet(pet)
+=======
+> update_pet(body)
+>>>>>>> ooof
 
 Update an existing pet
 
@@ -294,11 +314,19 @@ Petstore.configure do |config|
 end
 
 api_instance = Petstore::PetApi.new
+<<<<<<< HEAD
 pet = Petstore::Pet.new # Pet | Pet object that needs to be added to the store
 
 begin
   #Update an existing pet
   api_instance.update_pet(pet)
+=======
+body = Petstore::Pet.new # Pet | Pet object that needs to be added to the store
+
+begin
+  #Update an existing pet
+  api_instance.update_pet(body)
+>>>>>>> ooof
 rescue Petstore::ApiError => e
   puts "Exception when calling PetApi->update_pet: #{e}"
 end
@@ -309,7 +337,11 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **pet** | [**Pet**](Pet.md)| Pet object that needs to be added to the store | 
+=======
+ **body** | [**Pet**](Pet.md)| Pet object that needs to be added to the store | 
+>>>>>>> ooof
 
 ### Return type
 

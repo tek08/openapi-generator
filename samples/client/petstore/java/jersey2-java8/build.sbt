@@ -17,9 +17,12 @@ lazy val root = (project in file(".")).
       "com.fasterxml.jackson.core" % "jackson-annotations" % "2.10.4" % "compile",
       "com.fasterxml.jackson.core" % "jackson-databind" % "2.10.4" % "compile",
       "com.fasterxml.jackson.datatype" % "jackson-datatype-jsr310" % "2.9.10" % "compile",
+<<<<<<< HEAD
       "com.github.scribejava" % "scribejava-apis" % "6.9.0" % "compile",
       "org.tomitribe" % "tomitribe-http-signatures" % "1.3" % "compile",
       "javax.annotation" % "javax.annotation-api" % "1.3.2" % "compile",
+=======
+>>>>>>> ooof
       "junit" % "junit" % "4.13" % "test",
       "com.novocode" % "junit-interface" % "0.10" % "test"
     )

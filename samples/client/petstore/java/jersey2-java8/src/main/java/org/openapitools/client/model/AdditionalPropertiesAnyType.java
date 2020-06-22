@@ -13,6 +13,7 @@
 
 package org.openapitools.client.model;
 
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.HashMap;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
@@ -21,15 +22,25 @@ import java.util.Objects;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.HashMap;
+=======
+import java.util.Objects;
+import java.util.Arrays;
+>>>>>>> ooof
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+<<<<<<< HEAD
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.openapitools.client.JSON;
 
+=======
+import java.util.HashMap;
+import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+>>>>>>> ooof
 
 /**
  * AdditionalPropertiesAnyType
@@ -37,13 +48,22 @@ import org.openapitools.client.JSON;
 @JsonPropertyOrder({
   AdditionalPropertiesAnyType.JSON_PROPERTY_NAME
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class AdditionalPropertiesAnyType {
+=======
+
+public class AdditionalPropertiesAnyType extends HashMap<String, Object> {
+>>>>>>> ooof
   public static final String JSON_PROPERTY_NAME = "name";
   private String name;
 
 
   public AdditionalPropertiesAnyType name(String name) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.name = name;
     return this;
   }
@@ -66,6 +86,7 @@ public class AdditionalPropertiesAnyType {
     this.name = name;
   }
 
+<<<<<<< HEAD
   /**
    * A container for additional, undeclared properties.
    * This is a holder for any undeclared properties as specified with
@@ -107,6 +128,9 @@ public class AdditionalPropertiesAnyType {
   /**
    * Return true if this AdditionalPropertiesAnyType object is equal to o.
    */
+=======
+
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -116,13 +140,22 @@ public class AdditionalPropertiesAnyType {
       return false;
     }
     AdditionalPropertiesAnyType additionalPropertiesAnyType = (AdditionalPropertiesAnyType) o;
+<<<<<<< HEAD
     return Objects.equals(this.name, additionalPropertiesAnyType.name)&&
         Objects.equals(this.additionalProperties, additionalPropertiesAnyType.additionalProperties);
+=======
+    return Objects.equals(this.name, additionalPropertiesAnyType.name) &&
+        super.equals(o);
+>>>>>>> ooof
   }
 
   @Override
   public int hashCode() {
+<<<<<<< HEAD
     return Objects.hash(name, additionalProperties);
+=======
+    return Objects.hash(name, super.hashCode());
+>>>>>>> ooof
   }
 
 
@@ -130,8 +163,13 @@ public class AdditionalPropertiesAnyType {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AdditionalPropertiesAnyType {\n");
+<<<<<<< HEAD
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
+=======
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+>>>>>>> ooof
     sb.append("}");
     return sb.toString();
   }

@@ -3,6 +3,7 @@
 mod server;
 
 #[allow(unused_imports)]
+<<<<<<< HEAD
 use futures::{future, Stream, stream};
 #[allow(unused_imports)]
 use openapi_v3::{Api, ApiNoContext, Client, ContextWrapperExt, models,
@@ -10,6 +11,15 @@ use openapi_v3::{Api, ApiNoContext, Client, ContextWrapperExt, models,
                       ComplexQueryParamGetResponse,
                       EnumInPathPathParamGetResponse,
                       JsonComplexQueryParamGetResponse,
+=======
+use futures::{Future, future, Stream, stream};
+#[allow(unused_imports)]
+use openapi_v3::{Api, ApiNoContext, Client, ContextWrapperExt, models,
+                      ApiError,
+                      CallbackWithHeaderPostResponse,
+                      ComplexQueryParamGetResponse,
+                      EnumInPathPathParamGetResponse,
+>>>>>>> ooof
                       MandatoryRequestHeaderGetResponse,
                       MergePatchJsonGetResponse,
                       MultigetGetResponse,
@@ -29,7 +39,11 @@ use openapi_v3::{Api, ApiNoContext, Client, ContextWrapperExt, models,
                       XmlPostResponse,
                       XmlPutResponse,
                       CreateRepoResponse,
+<<<<<<< HEAD
                       GetRepoInfoResponse,
+=======
+                      GetRepoInfoResponse
+>>>>>>> ooof
                      };
 use clap::{App, Arg};
 
@@ -38,9 +52,13 @@ use log::info;
 
 // swagger::Has may be unused if there are no examples
 #[allow(unused_imports)]
+<<<<<<< HEAD
 use swagger::{AuthData, ContextBuilder, EmptyContext, Has, Push, XSpanIdString};
 
 type ClientContext = swagger::make_context_ty!(ContextBuilder, EmptyContext, Option<AuthData>, XSpanIdString);
+=======
+use swagger::{ContextBuilder, EmptyContext, XSpanIdString, Has, Push, AuthData};
+>>>>>>> ooof
 
 // rt may be unused if there are no examples
 #[allow(unused_mut)]
@@ -53,7 +71,10 @@ fn main() {
             .possible_values(&[
                 "CallbackWithHeaderPost",
                 "ComplexQueryParamGet",
+<<<<<<< HEAD
                 "JsonComplexQueryParamGet",
+=======
+>>>>>>> ooof
                 "MandatoryRequestHeaderGet",
                 "MergePatchJsonGet",
                 "MultigetGet",
@@ -98,6 +119,7 @@ fn main() {
                            matches.value_of("host").unwrap(),
                            matches.value_of("port").unwrap());
 
+<<<<<<< HEAD
     let context: ClientContext =
         swagger::make_context!(ContextBuilder, EmptyContext, None as Option<AuthData>, XSpanIdString::default());
 
@@ -114,6 +136,24 @@ fn main() {
         Box::new(client.with_context(context))
     };
 
+=======
+    let client = if matches.is_present("https") {
+        // Using Simple HTTPS
+        Client::try_new_https(&base_url)
+            .expect("Failed to create HTTPS client")
+    } else {
+        // Using HTTP
+        Client::try_new_http(
+            &base_url)
+            .expect("Failed to create HTTP client")
+    };
+
+    let context: swagger::make_context_ty!(ContextBuilder, EmptyContext, Option<AuthData>, XSpanIdString) =
+        swagger::make_context!(ContextBuilder, EmptyContext, None as Option<AuthData>, XSpanIdString::default());
+
+    let client = client.with_context(context);
+
+>>>>>>> ooof
     let mut rt = tokio::runtime::Runtime::new().unwrap();
 
     // We could do HTTPS here, but for simplicity we don't
@@ -140,12 +180,15 @@ fn main() {
             info!("{:?} (X-Span-ID: {:?})", result, (client.context() as &dyn Has<XSpanIdString>).get().clone());
         },
         */
+<<<<<<< HEAD
         Some("JsonComplexQueryParamGet") => {
             let result = rt.block_on(client.json_complex_query_param_get(
                   Some(&Vec::new())
             ));
             info!("{:?} (X-Span-ID: {:?})", result, (client.context() as &dyn Has<XSpanIdString>).get().clone());
         },
+=======
+>>>>>>> ooof
         Some("MandatoryRequestHeaderGet") => {
             let result = rt.block_on(client.mandatory_request_header_get(
                   "x_header_example".to_string()

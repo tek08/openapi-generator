@@ -32,6 +32,13 @@ public class PhpSlim4ServerCodegen extends PhpSlimServerCodegen {
     public static final String PSR7_IMPLEMENTATION = "psr7Implementation";
 
     protected String psr7Implementation = "slim-psr7";
+<<<<<<< HEAD
+=======
+    protected String mockDirName = "Mock";
+    protected String mockPackage = "";
+    protected String utilsDirName = "Utils";
+    protected String utilsPackage = "";
+>>>>>>> ooof
     protected String interfacesDirName = "Interfaces";
     protected String interfacesPackage = "";
 
@@ -42,6 +49,11 @@ public class PhpSlim4ServerCodegen extends PhpSlimServerCodegen {
                 .stability(Stability.STABLE)
                 .build();
 
+<<<<<<< HEAD
+=======
+        mockPackage = invokerPackage + "\\" + mockDirName;
+        utilsPackage = invokerPackage + "\\" + utilsDirName;
+>>>>>>> ooof
         interfacesPackage = invokerPackage + "\\" + interfacesDirName;
         outputFolder = "generated-code" + File.separator + "slim4";
         embeddedTemplateDir = templateDir = "php-slim4-server";
@@ -78,15 +90,40 @@ public class PhpSlim4ServerCodegen extends PhpSlimServerCodegen {
         super.processOpts();
 
         if (additionalProperties.containsKey(CodegenConstants.INVOKER_PACKAGE)) {
+<<<<<<< HEAD
             // Update interfacesPackage
             interfacesPackage = invokerPackage + "\\" + interfacesDirName;
         }
 
+=======
+            // Update mockPackage and utilsPackage
+            mockPackage = invokerPackage + "\\" + mockDirName;
+            utilsPackage = invokerPackage + "\\" + utilsDirName;
+            interfacesPackage = invokerPackage + "\\" + interfacesDirName;
+        }
+
+        // make mock src path available in mustache template
+        additionalProperties.put("mockPackage", mockPackage);
+        additionalProperties.put("mockSrcPath", "./" + toSrcPath(mockPackage, srcBasePath));
+        additionalProperties.put("mockTestPath", "./" + toSrcPath(mockPackage, testBasePath));
+
+        // same for utils package
+        additionalProperties.put("utilsPackage", utilsPackage);
+        additionalProperties.put("utilsSrcPath", "./" + toSrcPath(utilsPackage, srcBasePath));
+        additionalProperties.put("utilsTestPath", "./" + toSrcPath(utilsPackage, testBasePath));
+
+>>>>>>> ooof
         // same for interfaces package
         additionalProperties.put("interfacesPackage", interfacesPackage);
         additionalProperties.put("interfacesSrcPath", "./" + toSrcPath(interfacesPackage, srcBasePath));
         additionalProperties.put("interfacesTestPath", "./" + toSrcPath(interfacesPackage, testBasePath));
 
+<<<<<<< HEAD
+=======
+        // external docs folder
+        additionalProperties.put("docsBasePath", "./" + docsBasePath);
+
+>>>>>>> ooof
         if (additionalProperties.containsKey(PSR7_IMPLEMENTATION)) {
             this.setPsr7Implementation((String) additionalProperties.get(PSR7_IMPLEMENTATION));
         }
@@ -119,8 +156,28 @@ public class PhpSlim4ServerCodegen extends PhpSlimServerCodegen {
         // Slim 4 doesn't parse JSON body anymore we need to add suggested middleware
         // ref: https://www.slimframework.com/docs/v4/objects/request.html#the-request-body
         supportingFiles.add(new SupportingFile("json_body_parser_middleware.mustache", toSrcPath(invokerPackage + "\\Middleware", srcBasePath), "JsonBodyParserMiddleware.php"));
+<<<<<<< HEAD
         supportingFiles.add(new SupportingFile("base_model.mustache", toSrcPath(invokerPackage, srcBasePath), "BaseModel.php"));
         supportingFiles.add(new SupportingFile("base_model_test.mustache", toSrcPath(invokerPackage, testBasePath), "BaseModelTest.php"));
+=======
+
+        // mocking feature
+        supportingFiles.add(new SupportingFile("openapi_data_mocker_interface.mustache", toSrcPath(mockPackage, srcBasePath), toInterfaceName("OpenApiDataMocker") + ".php"));
+        supportingFiles.add(new SupportingFile("openapi_data_mocker.mustache", toSrcPath(mockPackage, srcBasePath), "OpenApiDataMocker.php"));
+        supportingFiles.add(new SupportingFile("openapi_data_mocker_test.mustache", toSrcPath(mockPackage, testBasePath), "OpenApiDataMockerTest.php"));
+        supportingFiles.add(new SupportingFile("openapi_data_mocker_middleware.mustache", toSrcPath(mockPackage, srcBasePath), "OpenApiDataMockerMiddleware.php"));
+        supportingFiles.add(new SupportingFile("openapi_data_mocker_middleware_test.mustache", toSrcPath(mockPackage, testBasePath), "OpenApiDataMockerMiddlewareTest.php"));
+        supportingFiles.add(new SupportingFile("mock_server.mustache", docsBasePath, "MockServer.md"));
+
+        // traits of ported utils
+        supportingFiles.add(new SupportingFile("string_utils_trait.mustache", toSrcPath(utilsPackage, srcBasePath), toTraitName("StringUtils") + ".php"));
+        supportingFiles.add(new SupportingFile("string_utils_trait_test.mustache", toSrcPath(utilsPackage, testBasePath), toTraitName("StringUtils") + "Test.php"));
+        supportingFiles.add(new SupportingFile("model_utils_trait.mustache", toSrcPath(utilsPackage, srcBasePath), toTraitName("ModelUtils") + ".php"));
+        supportingFiles.add(new SupportingFile("model_utils_trait_test.mustache", toSrcPath(utilsPackage, testBasePath), toTraitName("ModelUtils") + "Test.php"));
+
+        // model interface
+        supportingFiles.add(new SupportingFile("model_interface.mustache", toSrcPath(interfacesPackage, srcBasePath), toInterfaceName("Model") + ".php"));
+>>>>>>> ooof
     }
 
     /**

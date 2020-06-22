@@ -27,7 +27,11 @@ import javax.ws.rs.*;
 
 
 @io.swagger.annotations.Api(description = "the store API")
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen")
+=======
+
+>>>>>>> ooof
 public class StoreApi  {
    private final StoreApiService delegate = StoreApiServiceFactory.getStoreApi();
 

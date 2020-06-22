@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 
 @objc public class Capitalization: NSObject, Codable { 
+=======
+@objc public class Capitalization: NSObject, Codable {
+>>>>>>> ooof
 
     public var smallCamel: String?
     public var capitalCamel: String?
@@ -28,7 +32,11 @@ import Foundation
         self.ATT_NAME = ATT_NAME
     }
 
+<<<<<<< HEAD
     public enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    public enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case smallCamel
         case capitalCamel = "CapitalCamel"
         case smallSnake = "small_Snake"

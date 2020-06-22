@@ -13,6 +13,7 @@
   image: "img/companies/docspring.png"
   infoLink: "https://docspring.com/?utm_source=openapi_generator&utm_medium=official_website&utm_campaign=sponsor"
   bronze: true
+<<<<<<< HEAD
 -
   caption: "Datadog"
   image: "img/companies/datadog.png"
@@ -23,3 +24,5 @@
   image: "img/companies/thales.jpg"
   infoLink: "https://cpl.thalesgroup.com/?utm_source=openapi_generator&utm_medium=official_website&utm_campaign=sponsor"
   bronze: true
+=======
+>>>>>>> ooof

@@ -1,5 +1,9 @@
 {{>example-server-common}}
+<<<<<<< HEAD
 use {{{externCrateName}}}::CallbackApi;
+=======
+use {{{externCrateName}}}::{CallbackApi, ApiError};
+>>>>>>> ooof
 {{#apiInfo}}
   {{#apis}}
     {{#operations}}
@@ -16,12 +20,17 @@ use {{{externCrateName}}}::{{{operationId}}}Response;
   {{/apis}}
 {{/apiInfo}}
 use {{{externCrateName}}}::client::callbacks::MakeService;
+<<<<<<< HEAD
 use std::error::Error;
 use swagger::ApiError;
 
 #[async_trait]
 impl<C> CallbackApi<C> for Server<C> where C: Has<XSpanIdString> + Send + Sync
 {
+=======
+
+impl<C> CallbackApi<C> for Server<C> where C: Has<XSpanIdString>{
+>>>>>>> ooof
 {{#apiInfo}}
   {{#apis}}
     {{#operations}}

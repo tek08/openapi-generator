@@ -9,7 +9,11 @@ class PetApi {
     String versionPath = ""
     ApiUtils apiUtils = new ApiUtils();
 
+<<<<<<< HEAD
     def addPet ( Pet pet, Closure onSuccess, Closure onFailure)  {
+=======
+    def addPet ( Pet body, Closure onSuccess, Closure onFailure)  {
+>>>>>>> ooof
         String resourcePath = "/pet"
 
         // params
@@ -19,19 +23,32 @@ class PetApi {
         def contentType
 
         // verify required params are set
+<<<<<<< HEAD
         if (pet == null) {
             throw new RuntimeException("missing required params pet")
+=======
+        if (body == null) {
+            throw new RuntimeException("missing required params body")
+>>>>>>> ooof
         }
 
 
 
         contentType = 'application/json';
+<<<<<<< HEAD
         bodyParams = pet
+=======
+        bodyParams = body
+>>>>>>> ooof
 
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, contentType,
                     "POST", "",
+<<<<<<< HEAD
                     Pet.class )
+=======
+                    null )
+>>>>>>> ooof
 
     }
 
@@ -140,7 +157,11 @@ class PetApi {
 
     }
 
+<<<<<<< HEAD
     def updatePet ( Pet pet, Closure onSuccess, Closure onFailure)  {
+=======
+    def updatePet ( Pet body, Closure onSuccess, Closure onFailure)  {
+>>>>>>> ooof
         String resourcePath = "/pet"
 
         // params
@@ -150,19 +171,32 @@ class PetApi {
         def contentType
 
         // verify required params are set
+<<<<<<< HEAD
         if (pet == null) {
             throw new RuntimeException("missing required params pet")
+=======
+        if (body == null) {
+            throw new RuntimeException("missing required params body")
+>>>>>>> ooof
         }
 
 
 
         contentType = 'application/json';
+<<<<<<< HEAD
         bodyParams = pet
+=======
+        bodyParams = body
+>>>>>>> ooof
 
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, contentType,
                     "PUT", "",
+<<<<<<< HEAD
                     Pet.class )
+=======
+                    null )
+>>>>>>> ooof
 
     }
 

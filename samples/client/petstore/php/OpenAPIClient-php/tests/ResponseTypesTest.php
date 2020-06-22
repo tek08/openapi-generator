@@ -16,7 +16,11 @@ class ResponseTypesTest extends TestCase
     /** @var  FakeHttpClient */
     private $fakeHttpClient;
 
+<<<<<<< HEAD
     public function setUp(): void
+=======
+    public function setUp()
+>>>>>>> ooof
     {
         $this->fakeHttpClient = new FakeHttpClient();
         $this->api = new PetApi($this->fakeHttpClient);
@@ -38,10 +42,19 @@ class ResponseTypesTest extends TestCase
         $this->assertInstanceOf(Pet::class, $result);
     }
 
+<<<<<<< HEAD
     public function testDefinedErrorException()
     {
         $this->expectExceptionCode(400);
         $this->expectException(\OpenAPI\Client\ApiException::class);
+=======
+    /**
+     * @expectedException \OpenAPI\Client\ApiException
+     * @expectedExceptionCode 400
+     */
+    public function testDefinedErrorException()
+    {
+>>>>>>> ooof
         $statusCode = 400;
 
         $this->fakeHttpClient->setResponse(new Response($statusCode, [], '{}'));
@@ -67,10 +80,19 @@ class ResponseTypesTest extends TestCase
 //        $this->assertInstanceOf(Error::class, $result);
 //    }
 
+<<<<<<< HEAD
     public function testDefaultErrorException()
     {
         $this->expectExceptionCode(404);
         $this->expectException(\OpenAPI\Client\ApiException::class);
+=======
+    /**
+     * @expectedException \OpenAPI\Client\ApiException
+     * @expectedExceptionCode 404
+     */
+    public function testDefaultErrorException()
+    {
+>>>>>>> ooof
         $statusCode = 404;
 
         $this->fakeHttpClient->setResponse(new Response($statusCode, [], '{}'));

@@ -1,7 +1,11 @@
 <?php
 /**
  * Configuration
+<<<<<<< HEAD
  * PHP version 7.2
+=======
+ * PHP version 7.1
+>>>>>>> ooof
  *
  * @category Class
  * @package  {{invokerPackage}}
@@ -20,7 +24,11 @@ namespace {{invokerPackage}};
 
 /**
  * Configuration Class Doc Comment
+<<<<<<< HEAD
  * PHP version 7.2
+=======
+ * PHP version 7.1
+>>>>>>> ooof
  *
  * @category Class
  * @package  {{invokerPackage}}
@@ -427,6 +435,7 @@ class Configuration
      */
     public function getHostSettings()
     {
+<<<<<<< HEAD
         return [
         {{#servers}}
             [
@@ -456,6 +465,37 @@ class Configuration
             ]{{^-last}},{{/-last}}
         {{/servers}}
         ];
+=======
+        return array(
+        {{#servers}}
+          array(
+            "url" => "{{{url}}}",
+            "description" => "{{{description}}}{{^description}}No description provided{{/description}}",
+            {{#variables}}
+            {{#-first}}
+            "variables" => array(
+            {{/-first}}
+              "{{{name}}}" => array(
+                  "description" => "{{{description}}}{{^description}}No description provided{{/description}}",
+                  "default_value" => "{{{defaultValue}}}",
+                  {{#enumValues}}
+                  {{#-first}}
+                  "enum_values" => array(
+                  {{/-first}}
+                    "{{{.}}}"{{^-last}},{{/-last}}
+                  {{#-last}}
+                  )
+                  {{/-last}}
+                  {{/enumValues}}
+                ){{^-last}},{{/-last}}
+              {{#-last}}
+              )
+              {{/-last}}
+            {{/variables}}
+          ){{^-last}},{{/-last}}
+        {{/servers}}
+        );
+>>>>>>> ooof
     }
 
     /**
@@ -468,7 +508,11 @@ class Configuration
     public function getHostFromSettings($index, $variables = null)
     {
         if (null === $variables) {
+<<<<<<< HEAD
             $variables = [];
+=======
+            $variables = array();
+>>>>>>> ooof
         }
 
         $hosts = $this->getHostSettings();
@@ -484,7 +528,11 @@ class Configuration
         // go through variable and assign a value
         foreach ($host["variables"] as $name => $variable) {
             if (array_key_exists($name, $variables)) { // check to see if it's in the variables provided by the user
+<<<<<<< HEAD
                 if (in_array($variables[$name], $variable["enum_values"], true)) { // check to see if the value is in the enum
+=======
+                if (in_array($variables[$name], $variable["enum_values"])) { // check to see if the value is in the enum
+>>>>>>> ooof
                     $url = str_replace("{".$name."}", $variables[$name], $url);
                 } else {
                     throw new \InvalidArgumentException("The variable `$name` in the host URL has invalid value ".$variables[$name].". Must be ".join(',', $variable["enum_values"]).".");

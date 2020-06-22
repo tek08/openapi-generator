@@ -28,7 +28,10 @@ import io.swagger.v3.parser.core.models.AuthorizationValue;
 import io.swagger.v3.parser.core.models.ParseOptions;
 import io.swagger.v3.parser.core.models.SwaggerParseResult;
 import org.apache.commons.io.FilenameUtils;
+<<<<<<< HEAD
 import org.apache.commons.lang3.StringUtils;
+=======
+>>>>>>> ooof
 import org.apache.commons.lang3.Validate;
 import org.openapitools.codegen.*;
 import org.openapitools.codegen.api.TemplatingEngineAdapter;
@@ -62,7 +65,11 @@ public class CodegenConfigurator {
     private String generatorName;
     private String inputSpec;
     private String templatingEngineName;
+<<<<<<< HEAD
     private Map<String, String> globalProperties = new HashMap<>();
+=======
+    private Map<String, String> systemProperties = new HashMap<>();
+>>>>>>> ooof
     private Map<String, String> instantiationTypes = new HashMap<>();
     private Map<String, String> typeMappings = new HashMap<>();
     private Map<String, Object> additionalProperties = new HashMap<>();
@@ -92,8 +99,13 @@ public class CodegenConfigurator {
             configurator.generatorName = generatorSettings.getGeneratorName();
             configurator.inputSpec = workflowSettings.getInputSpec();
             configurator.templatingEngineName = workflowSettings.getTemplatingEngineName();
+<<<<<<< HEAD
             if (workflowSettings.getGlobalProperties() != null) {
                 configurator.globalProperties.putAll(workflowSettings.getGlobalProperties());
+=======
+            if (workflowSettings.getSystemProperties() != null) {
+                configurator.systemProperties.putAll(workflowSettings.getSystemProperties());
+>>>>>>> ooof
             }
             if(generatorSettings.getInstantiationTypes() != null) {
                 configurator.instantiationTypes.putAll(generatorSettings.getInstantiationTypes());
@@ -184,9 +196,16 @@ public class CodegenConfigurator {
         return this;
     }
 
+<<<<<<< HEAD
     public CodegenConfigurator addGlobalProperty(String key, String value) {
         this.globalProperties.put(key, value);
         workflowSettingsBuilder.withGlobalProperty(key, value);
+=======
+    // TODO: rename this and other references to "global property" rather than "system property"
+    public CodegenConfigurator addSystemProperty(String key, String value) {
+        this.systemProperties.put(key, value);
+        workflowSettingsBuilder.withSystemProperty(key, value);
+>>>>>>> ooof
         return this;
     }
 
@@ -215,31 +234,43 @@ public class CodegenConfigurator {
     }
 
     public CodegenConfigurator setApiPackage(String apiPackage) {
+<<<<<<< HEAD
         if (StringUtils.isNotEmpty(apiPackage)) {
             addAdditionalProperty(CodegenConstants.API_PACKAGE, apiPackage);
         }
+=======
+>>>>>>> ooof
         generatorSettingsBuilder.withApiPackage(apiPackage);
         return this;
     }
 
     public CodegenConfigurator setArtifactId(String artifactId) {
+<<<<<<< HEAD
         if (StringUtils.isNotEmpty(artifactId)) {
             addAdditionalProperty(CodegenConstants.ARTIFACT_ID, artifactId);
         }
+=======
+>>>>>>> ooof
         generatorSettingsBuilder.withArtifactId(artifactId);
         return this;
     }
 
     public CodegenConfigurator setArtifactVersion(String artifactVersion) {
+<<<<<<< HEAD
         if (StringUtils.isNotEmpty(artifactVersion)) {
             addAdditionalProperty(CodegenConstants.ARTIFACT_VERSION, artifactVersion);
         }
+=======
+>>>>>>> ooof
         generatorSettingsBuilder.withArtifactVersion(artifactVersion);
         return this;
     }
 
     public CodegenConfigurator setAuth(String auth) {
+<<<<<<< HEAD
         // do not cache this in additional properties.
+=======
+>>>>>>> ooof
         this.auth = auth;
         return this;
     }
@@ -255,7 +286,11 @@ public class CodegenConfigurator {
     }
 
     public CodegenConfigurator setGenerateAliasAsModel(boolean generateAliasAsModel) {
+<<<<<<< HEAD
         workflowSettingsBuilder.withGenerateAliasAsModel(generateAliasAsModel);
+=======
+        // TODO: Move to GlobalSettings?
+>>>>>>> ooof
         ModelUtils.setGenerateAliasAsModel(generateAliasAsModel);
         return this;
     }
@@ -276,41 +311,56 @@ public class CodegenConfigurator {
     }
 
     public CodegenConfigurator setGitRepoId(String gitRepoId) {
+<<<<<<< HEAD
         if (StringUtils.isNotEmpty(gitRepoId)) {
             addAdditionalProperty(CodegenConstants.GIT_REPO_ID, gitRepoId);
         }
+=======
+>>>>>>> ooof
         generatorSettingsBuilder.withGitRepoId(gitRepoId);
         return this;
     }
 
     public CodegenConfigurator setGitHost(String gitHost) {
+<<<<<<< HEAD
         if (StringUtils.isNotEmpty(gitHost)) {
             addAdditionalProperty(CodegenConstants.GIT_HOST, gitHost);
         }
+=======
+>>>>>>> ooof
         generatorSettingsBuilder.withGitHost(gitHost);
         return this;
     }
 
     public CodegenConfigurator setGitUserId(String gitUserId) {
+<<<<<<< HEAD
         if (StringUtils.isNotEmpty(gitUserId)) {
             addAdditionalProperty(CodegenConstants.GIT_HOST, gitUserId);
         }
+=======
+>>>>>>> ooof
         generatorSettingsBuilder.withGitUserId(gitUserId);
         return this;
     }
 
     public CodegenConfigurator setGroupId(String groupId) {
+<<<<<<< HEAD
         if (StringUtils.isNotEmpty(groupId)) {
             addAdditionalProperty(CodegenConstants.GROUP_ID, groupId);
         }
+=======
+>>>>>>> ooof
         generatorSettingsBuilder.withGroupId(groupId);
         return this;
     }
 
     public CodegenConfigurator setHttpUserAgent(String httpUserAgent) {
+<<<<<<< HEAD
         if (StringUtils.isNotEmpty(httpUserAgent)) {
             addAdditionalProperty(CodegenConstants.HTTP_USER_AGENT, httpUserAgent);
         }
+=======
+>>>>>>> ooof
         generatorSettingsBuilder.withHttpUserAgent(httpUserAgent);
         return this;
     }
@@ -339,9 +389,12 @@ public class CodegenConfigurator {
     }
 
     public CodegenConfigurator setInvokerPackage(String invokerPackage) {
+<<<<<<< HEAD
         if (StringUtils.isNotEmpty(invokerPackage)) {
             addAdditionalProperty(CodegenConstants.INVOKER_PACKAGE, invokerPackage);
         }
+=======
+>>>>>>> ooof
         generatorSettingsBuilder.withInvokerPackage(invokerPackage);
         return this;
     }
@@ -364,33 +417,45 @@ public class CodegenConfigurator {
     }
 
     public CodegenConfigurator setApiNameSuffix(String suffix) {
+<<<<<<< HEAD
         if (StringUtils.isNotEmpty(suffix)) {
             addAdditionalProperty(CodegenConstants.API_NAME_SUFFIX, suffix);
         }
+=======
+>>>>>>> ooof
         generatorSettingsBuilder.withApiNameSuffix(suffix);
         return this;
     }
 
     public CodegenConfigurator setModelNamePrefix(String prefix) {
+<<<<<<< HEAD
         if (StringUtils.isNotEmpty(prefix)) {
             addAdditionalProperty(CodegenConstants.MODEL_NAME_PREFIX, prefix);
         }
+=======
+>>>>>>> ooof
         generatorSettingsBuilder.withModelNamePrefix(prefix);
         return this;
     }
 
     public CodegenConfigurator setModelNameSuffix(String suffix) {
+<<<<<<< HEAD
         if (StringUtils.isNotEmpty(suffix)) {
             addAdditionalProperty(CodegenConstants.MODEL_NAME_SUFFIX, suffix);
         }
+=======
+>>>>>>> ooof
         generatorSettingsBuilder.withModelNameSuffix(suffix);
         return this;
     }
 
     public CodegenConfigurator setModelPackage(String modelPackage) {
+<<<<<<< HEAD
         if (StringUtils.isNotEmpty(modelPackage)) {
             addAdditionalProperty(CodegenConstants.MODEL_PACKAGE, modelPackage);
         }
+=======
+>>>>>>> ooof
         generatorSettingsBuilder.withModelPackage(modelPackage);
         return this;
     }
@@ -401,17 +466,23 @@ public class CodegenConfigurator {
     }
 
     public CodegenConfigurator setPackageName(String packageName) {
+<<<<<<< HEAD
         if (StringUtils.isNotEmpty(packageName)) {
             addAdditionalProperty(CodegenConstants.PACKAGE_NAME, packageName);
         }
+=======
+>>>>>>> ooof
         generatorSettingsBuilder.withPackageName(packageName);
         return this;
     }
 
     public CodegenConfigurator setReleaseNote(String releaseNote) {
+<<<<<<< HEAD
         if (StringUtils.isNotEmpty(releaseNote)) {
             addAdditionalProperty(CodegenConstants.RELEASE_NOTE, releaseNote);
         }
+=======
+>>>>>>> ooof
         generatorSettingsBuilder.withReleaseNote(releaseNote);
         return this;
     }
@@ -431,9 +502,15 @@ public class CodegenConfigurator {
         return this;
     }
 
+<<<<<<< HEAD
     public CodegenConfigurator setGlobalProperties(Map<String, String> globalProperties) {
         this.globalProperties = globalProperties;
         workflowSettingsBuilder.withGlobalProperties(globalProperties);
+=======
+    public CodegenConfigurator setSystemProperties(Map<String, String> systemProperties) {
+        this.systemProperties = systemProperties;
+        workflowSettingsBuilder.withSystemProperties(systemProperties);
+>>>>>>> ooof
         return this;
     }
 
@@ -466,7 +543,11 @@ public class CodegenConfigurator {
 
     @SuppressWarnings("WeakerAccess")
     public Context<?> toContext() {
+<<<<<<< HEAD
         Validate.notEmpty(generatorName, "generator name must be specified");
+=======
+        Validate.notEmpty(generatorName, "language/generatorName must be specified");
+>>>>>>> ooof
         Validate.notEmpty(inputSpec, "input spec must be specified");
 
         if (isEmpty(templatingEngineName)) {
@@ -496,6 +577,7 @@ public class CodegenConfigurator {
             GlobalSettings.setProperty("verbose", "false");
         }
 
+<<<<<<< HEAD
         for (Map.Entry<String, String> entry : workflowSettings.getGlobalProperties().entrySet()) {
             GlobalSettings.setProperty(entry.getKey(), entry.getValue());
         }
@@ -503,6 +585,12 @@ public class CodegenConfigurator {
         // if caller resets GlobalSettings, we'll need to reset generateAliasAsModel. As noted in this method, this should be moved.
         ModelUtils.setGenerateAliasAsModel(workflowSettings.isGenerateAliasAsModel());
 
+=======
+        for (Map.Entry<String, String> entry : workflowSettings.getSystemProperties().entrySet()) {
+            GlobalSettings.setProperty(entry.getKey(), entry.getValue());
+        }
+
+>>>>>>> ooof
         // TODO: Support custom spec loader implementations (https://github.com/OpenAPITools/openapi-generator/issues/844)
         final List<AuthorizationValue> authorizationValues = AuthParser.parse(this.auth);
         ParseOptions options = new ParseOptions();
@@ -512,10 +600,13 @@ public class CodegenConfigurator {
         // TODO: Move custom validations to a separate type as part of a "Workflow"
         Set<String> validationMessages = new HashSet<>(result.getMessages());
         OpenAPI specification = result.getOpenAPI();
+<<<<<<< HEAD
         // TODO: The line below could be removed when at least one of the issue below has been resolved.
         // https://github.com/swagger-api/swagger-parser/issues/1369
         // https://github.com/swagger-api/swagger-parser/pull/1374
         //ModelUtils.getOpenApiVersion(specification, inputSpec, authorizationValues);
+=======
+>>>>>>> ooof
 
         // NOTE: We will only expose errors+warnings if there are already errors in the spec.
         if (validationMessages.size() > 0) {

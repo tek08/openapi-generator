@@ -9,7 +9,11 @@ Name | Type | Description | Notes
 **id** | **Long** |  |  [optional]
 **category** | [**Category**](Category.md) |  |  [optional]
 **name** | **String** |  | 
+<<<<<<< HEAD
 **photoUrls** | **Set&lt;String&gt;** |  | 
+=======
+**photoUrls** | **List&lt;String&gt;** |  | 
+>>>>>>> ooof
 **tags** | [**List&lt;Tag&gt;**](Tag.md) |  |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) | pet status in the store |  [optional]
 

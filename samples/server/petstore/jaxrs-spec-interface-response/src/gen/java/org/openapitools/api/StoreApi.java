@@ -14,12 +14,20 @@ import java.util.List;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
+<<<<<<< HEAD
 @Path("/store")
 @Api(description = "the store API")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public interface StoreApi {
 
     @DELETE
     @Path("/order/{order_id}")
+=======
+@Path("/Store")
+@Api(description = "the Store API")
+public interface StoreApi {
+
+    @DELETE
+>>>>>>> ooof
     @ApiOperation(value = "Delete purchase order by ID", notes = "For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors", tags={ "store",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 400, message = "Invalid ID supplied", response = Void.class),
@@ -27,7 +35,10 @@ import javax.validation.Valid;
     Response deleteOrder(@PathParam("order_id") @ApiParam("ID of the order that needs to be deleted") String orderId);
 
     @GET
+<<<<<<< HEAD
     @Path("/inventory")
+=======
+>>>>>>> ooof
     @Produces({ "application/json" })
     @ApiOperation(value = "Returns pet inventories by status", notes = "Returns a map of status codes to quantities", authorizations = {
         @Authorization(value = "api_key")
@@ -37,7 +48,10 @@ import javax.validation.Valid;
     Response getInventory();
 
     @GET
+<<<<<<< HEAD
     @Path("/order/{order_id}")
+=======
+>>>>>>> ooof
     @Produces({ "application/xml", "application/json" })
     @ApiOperation(value = "Find purchase order by ID", notes = "For valid response try integer IDs with value <= 5 or > 10. Other values will generated exceptions", tags={ "store",  })
     @ApiResponses(value = { 
@@ -47,7 +61,10 @@ import javax.validation.Valid;
     Response getOrderById(@PathParam("order_id") @Min(1L) @Max(5L) @ApiParam("ID of pet that needs to be fetched") Long orderId);
 
     @POST
+<<<<<<< HEAD
     @Path("/order")
+=======
+>>>>>>> ooof
     @Produces({ "application/xml", "application/json" })
     @ApiOperation(value = "Place an order for a pet", notes = "", tags={ "store" })
     @ApiResponses(value = { 

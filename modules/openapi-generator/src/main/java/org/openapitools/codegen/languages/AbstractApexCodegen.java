@@ -195,7 +195,11 @@ public abstract class AbstractApexCodegen extends DefaultCodegen implements Code
             }
             return getSchemaType(p) + "<" + getTypeDeclaration(inner) + ">";
         } else if (ModelUtils.isMapSchema(p)) {
+<<<<<<< HEAD
             Schema inner = getAdditionalProperties(p);
+=======
+            Schema inner = ModelUtils.getAdditionalProperties(p);
+>>>>>>> ooof
 
             if (inner == null) {
                 LOGGER.warn(p.getName() + "(map property) does not have a proper inner type defined");
@@ -228,11 +232,19 @@ public abstract class AbstractApexCodegen extends DefaultCodegen implements Code
         } else if (ModelUtils.isMapSchema(p)) {
             final MapSchema ap = (MapSchema) p;
             final String pattern = "new HashMap<%s>()";
+<<<<<<< HEAD
             if (getAdditionalProperties(ap) == null) {
                 return null;
             }
 
             return String.format(Locale.ROOT, pattern, String.format(Locale.ROOT, "String, %s", getTypeDeclaration(getAdditionalProperties(ap))));
+=======
+            if (ModelUtils.getAdditionalProperties(ap) == null) {
+                return null;
+            }
+
+            return String.format(Locale.ROOT, pattern, String.format(Locale.ROOT, "String, %s", getTypeDeclaration(ModelUtils.getAdditionalProperties(ap))));
+>>>>>>> ooof
         } else if (ModelUtils.isLongSchema(p)) {
             if (p.getDefault() != null) {
                 return p.getDefault().toString() + "l";
@@ -365,7 +377,11 @@ public abstract class AbstractApexCodegen extends DefaultCodegen implements Code
         } else if (ModelUtils.isLongSchema(p)) {
             example = example.isEmpty() ? "123456789L" : example + "L";
         } else if (ModelUtils.isMapSchema(p)) {
+<<<<<<< HEAD
             example = "new " + getTypeDeclaration(p) + "{'key'=>" + toExampleValue(getAdditionalProperties(p)) + "}";
+=======
+            example = "new " + getTypeDeclaration(p) + "{'key'=>" + toExampleValue(ModelUtils.getAdditionalProperties(p)) + "}";
+>>>>>>> ooof
 
         } else if (ModelUtils.isPasswordSchema(p)) {
             example = example.isEmpty() ? "password123" : escapeText(example);
@@ -456,6 +472,16 @@ public abstract class AbstractApexCodegen extends DefaultCodegen implements Code
             }
         }
 
+<<<<<<< HEAD
+=======
+        // TODO: 5.0: Remove this block and ensure templates use the newer property naming.
+        once(LOGGER).warn("4.3.0 has deprecated the use of vendor extensions which don't follow lower-kebab casing standards with x- prefix.");
+        cm.vendorExtensions.put("hasPropertyMappings", !propertyMappings.isEmpty()); // TODO: 5.0 Remove
+        cm.vendorExtensions.put("hasDefaultValues", hasDefaultValues);  // TODO: 5.0 Remove
+        cm.vendorExtensions.put("propertyMappings", propertyMappings);  // TODO: 5.0 Remove
+
+
+>>>>>>> ooof
         cm.vendorExtensions.put("x-has-property-mappings", !propertyMappings.isEmpty());
         cm.vendorExtensions.put("x-has-default-values", hasDefaultValues);
         cm.vendorExtensions.put("x-property-mappings", propertyMappings);

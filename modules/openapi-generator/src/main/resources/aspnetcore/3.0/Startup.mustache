@@ -31,7 +31,11 @@ namespace {{packageName}}
         /// <summary>
         /// Constructor
         /// </summary>
+<<<<<<< HEAD
         /// <param name="configuration"></param>
+=======
+        /// <param name="env"></param>
+>>>>>>> ooof
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -102,6 +106,10 @@ namespace {{packageName}}
                         Version = "{{#version}}{{{version}}}{{/version}}{{^version}}v1{{/version}}",
                     });
                     c.CustomSchemaIds(type => type.FriendlyId(true));
+<<<<<<< HEAD
+=======
+                    c.DescribeAllEnumsAsStrings();
+>>>>>>> ooof
                     c.IncludeXmlComments($"{AppContext.BaseDirectory}{Path.DirectorySeparatorChar}{Assembly.GetEntryAssembly().GetName().Name}.xml");
                     {{#basePathWithoutHost}}
                     // Sets the basePath property in the Swagger document generated

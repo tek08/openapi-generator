@@ -182,7 +182,11 @@ public class ScalazClientCodegen extends AbstractScalaCodegen implements Codegen
         } else if (ModelUtils.isIntegerSchema(p)) {
             return null;
         } else if (ModelUtils.isMapSchema(p)) {
+<<<<<<< HEAD
             String inner = getSchemaType(getAdditionalProperties(p));
+=======
+            String inner = getSchemaType(ModelUtils.getAdditionalProperties(p));
+>>>>>>> ooof
 
             return "Map.empty[String, " + inner + "] ";
         } else if (ModelUtils.isArraySchema(p)) {

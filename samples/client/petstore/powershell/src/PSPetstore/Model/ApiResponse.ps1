@@ -55,6 +55,7 @@ function Initialize-PSApiResponse {
         return $PSO
     }
 }
+<<<<<<< HEAD
 
 <#
 .SYNOPSIS
@@ -122,3 +123,5 @@ function ConvertFrom-PSJsonToApiResponse {
 
 }
 
+=======
+>>>>>>> ooof

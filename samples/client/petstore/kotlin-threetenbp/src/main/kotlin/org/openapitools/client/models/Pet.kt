@@ -15,7 +15,10 @@ import org.openapitools.client.models.Category
 import org.openapitools.client.models.Tag
 
 import com.squareup.moshi.Json
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * A pet for sale in the pet store
  * @param name 
@@ -30,13 +33,21 @@ data class Pet (
     @Json(name = "name")
     val name: kotlin.String,
     @Json(name = "photoUrls")
+<<<<<<< HEAD
     val photoUrls: kotlin.collections.List<kotlin.String>,
+=======
+    val photoUrls: kotlin.Array<kotlin.String>,
+>>>>>>> ooof
     @Json(name = "id")
     val id: kotlin.Long? = null,
     @Json(name = "category")
     val category: Category? = null,
     @Json(name = "tags")
+<<<<<<< HEAD
     val tags: kotlin.collections.List<Tag>? = null,
+=======
+    val tags: kotlin.Array<Tag>? = null,
+>>>>>>> ooof
     /* pet status in the store */
     @Json(name = "status")
     val status: Pet.Status? = null

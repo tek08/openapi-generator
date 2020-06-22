@@ -15,8 +15,11 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.HashMap;
+=======
+>>>>>>> ooof
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -24,8 +27,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+<<<<<<< HEAD
 import org.openapitools.client.JSON;
 
+=======
+>>>>>>> ooof
 
 /**
  * Capitalization
@@ -38,7 +44,11 @@ import org.openapitools.client.JSON;
   Capitalization.JSON_PROPERTY_SC_A_E_T_H_FLOW_POINTS,
   Capitalization.JSON_PROPERTY_A_T_T_N_A_M_E
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class Capitalization {
   public static final String JSON_PROPERTY_SMALL_CAMEL = "smallCamel";
   private String smallCamel;
@@ -60,6 +70,10 @@ public class Capitalization {
 
 
   public Capitalization smallCamel(String smallCamel) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.smallCamel = smallCamel;
     return this;
   }
@@ -84,6 +98,10 @@ public class Capitalization {
 
 
   public Capitalization capitalCamel(String capitalCamel) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.capitalCamel = capitalCamel;
     return this;
   }
@@ -108,6 +126,10 @@ public class Capitalization {
 
 
   public Capitalization smallSnake(String smallSnake) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.smallSnake = smallSnake;
     return this;
   }
@@ -132,6 +154,10 @@ public class Capitalization {
 
 
   public Capitalization capitalSnake(String capitalSnake) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.capitalSnake = capitalSnake;
     return this;
   }
@@ -156,6 +182,10 @@ public class Capitalization {
 
 
   public Capitalization scAETHFlowPoints(String scAETHFlowPoints) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.scAETHFlowPoints = scAETHFlowPoints;
     return this;
   }
@@ -180,6 +210,10 @@ public class Capitalization {
 
 
   public Capitalization ATT_NAME(String ATT_NAME) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.ATT_NAME = ATT_NAME;
     return this;
   }
@@ -203,9 +237,12 @@ public class Capitalization {
   }
 
 
+<<<<<<< HEAD
   /**
    * Return true if this Capitalization object is equal to o.
    */
+=======
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {

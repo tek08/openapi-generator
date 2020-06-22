@@ -15,8 +15,11 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.HashMap;
+=======
+>>>>>>> ooof
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,8 +32,11 @@ import org.openapitools.client.model.BigCat;
 import org.openapitools.client.model.Cat;
 import org.openapitools.client.model.Dog;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+<<<<<<< HEAD
 import org.openapitools.client.JSON;
 
+=======
+>>>>>>> ooof
 
 /**
  * Animal
@@ -39,7 +45,11 @@ import org.openapitools.client.JSON;
   Animal.JSON_PROPERTY_CLASS_NAME,
   Animal.JSON_PROPERTY_COLOR
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "className", visible = true)
 @JsonSubTypes({
   @JsonSubTypes.Type(value = BigCat.class, name = "BigCat"),
@@ -56,6 +66,10 @@ public class Animal {
 
 
   public Animal className(String className) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.className = className;
     return this;
   }
@@ -79,6 +93,10 @@ public class Animal {
 
 
   public Animal color(String color) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.color = color;
     return this;
   }
@@ -102,9 +120,12 @@ public class Animal {
   }
 
 
+<<<<<<< HEAD
   /**
    * Return true if this Animal object is equal to o.
    */
+=======
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -145,6 +166,7 @@ public class Animal {
     return o.toString().replace("\n", "\n    ");
   }
 
+<<<<<<< HEAD
 static {
   // Initialize and register the discriminator mappings.
   Map<String, Class<?>> mappings = new HashMap<String, Class<?>>();
@@ -154,5 +176,7 @@ static {
   mappings.put("Animal", Animal.class);
   JSON.registerDiscriminator(Animal.class, "className", mappings);
 }
+=======
+>>>>>>> ooof
 }
 

@@ -15,7 +15,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class UserApi {
   private ApiClient apiClient;
 
@@ -107,7 +111,11 @@ public class UserApi {
 
     return apiClient.invokeAPI("UserApi.createUser", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, null);
+=======
+                               localVarAuthNames, null, null);
+>>>>>>> ooof
   }
   /**
    * Creates list of users with given input array
@@ -171,7 +179,11 @@ public class UserApi {
 
     return apiClient.invokeAPI("UserApi.createUsersWithArrayInput", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, null);
+=======
+                               localVarAuthNames, null, null);
+>>>>>>> ooof
   }
   /**
    * Creates list of users with given input array
@@ -235,7 +247,11 @@ public class UserApi {
 
     return apiClient.invokeAPI("UserApi.createUsersWithListInput", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, null);
+=======
+                               localVarAuthNames, null, null);
+>>>>>>> ooof
   }
   /**
    * Delete user
@@ -302,7 +318,11 @@ public class UserApi {
 
     return apiClient.invokeAPI("UserApi.deleteUser", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, null);
+=======
+                               localVarAuthNames, null, null);
+>>>>>>> ooof
   }
   /**
    * Get user by user name
@@ -374,7 +394,11 @@ public class UserApi {
 
     return apiClient.invokeAPI("UserApi.getUserByName", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, localVarReturnType);
+=======
+                               localVarAuthNames, localVarReturnType, null);
+>>>>>>> ooof
   }
   /**
    * Logs user into the system
@@ -452,7 +476,11 @@ public class UserApi {
 
     return apiClient.invokeAPI("UserApi.loginUser", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, localVarReturnType);
+=======
+                               localVarAuthNames, localVarReturnType, null);
+>>>>>>> ooof
   }
   /**
    * Logs out current logged in user session
@@ -509,7 +537,11 @@ public class UserApi {
 
     return apiClient.invokeAPI("UserApi.logoutUser", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, null);
+=======
+                               localVarAuthNames, null, null);
+>>>>>>> ooof
   }
   /**
    * Updated user
@@ -583,6 +615,10 @@ public class UserApi {
 
     return apiClient.invokeAPI("UserApi.updateUser", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, null);
+=======
+                               localVarAuthNames, null, null);
+>>>>>>> ooof
   }
 }

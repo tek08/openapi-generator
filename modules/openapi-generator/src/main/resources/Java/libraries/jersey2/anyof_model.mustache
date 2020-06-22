@@ -1,5 +1,6 @@
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.Response;
+<<<<<<< HEAD
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -97,6 +98,14 @@ public class {{classname}} extends AbstractOpenApiSchema{{#vendorExtensions.x-im
         {{/isNullable}}
         }
     }
+=======
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+{{>additionalModelTypeAnnotations}}{{>generatedAnnotation}}{{>xmlAnnotation}}
+public class {{classname}} extends AbstractOpenApiSchema{{#vendorExtensions.x-implements}}, {{{.}}}{{/vendorExtensions.x-implements}} {
+>>>>>>> ooof
 
     // store a list of schema names defined in anyOf
     public final static Map<String, GenericType> schemas = new HashMap<String, GenericType>();
@@ -104,6 +113,7 @@ public class {{classname}} extends AbstractOpenApiSchema{{#vendorExtensions.x-im
     public {{classname}}() {
         super("anyOf", {{#isNullable}}Boolean.TRUE{{/isNullable}}{{^isNullable}}Boolean.FALSE{{/isNullable}});
     }
+<<<<<<< HEAD
 {{> libraries/jersey2/additional_properties }}
     {{#additionalPropertiesType}}
     /**
@@ -126,11 +136,15 @@ public class {{classname}} extends AbstractOpenApiSchema{{#vendorExtensions.x-im
     }
 
     {{/anyOf}}
+=======
+
+>>>>>>> ooof
     static {
         {{#anyOf}}
         schemas.put("{{{.}}}", new GenericType<{{{.}}}>() {
         });
         {{/anyOf}}
+<<<<<<< HEAD
         JSON.registerDescendants({{classname}}.class, Collections.unmodifiableMap(schemas));
         {{#discriminator}}
         // Initialize and register the discriminator mappings.
@@ -141,6 +155,8 @@ public class {{classname}} extends AbstractOpenApiSchema{{#vendorExtensions.x-im
         mappings.put("{{name}}", {{classname}}.class);
         JSON.registerDiscriminator({{classname}}.class, "{{propertyBaseName}}", mappings);
         {{/discriminator}}
+=======
+>>>>>>> ooof
     }
 
     @Override
@@ -150,20 +166,34 @@ public class {{classname}} extends AbstractOpenApiSchema{{#vendorExtensions.x-im
 
     @Override
     public void setActualInstance(Object instance) {
+<<<<<<< HEAD
         {{#isNullable}}
+=======
+        {{#isNulalble}}
+>>>>>>> ooof
         if (instance == null) {
            super.setActualInstance(instance);
            return;
         }
 
+<<<<<<< HEAD
         {{/isNullable}}
         {{#anyOf}}
         if (JSON.isInstanceOf({{{.}}}.class, instance, new HashSet<Class<?>>())) {
+=======
+        {{/isNulalble}}
+        {{#anyOf}}
+        if (instance instanceof {{{.}}}) {
+>>>>>>> ooof
             super.setActualInstance(instance);
             return;
         }
 
         {{/anyOf}}
+<<<<<<< HEAD
         throw new RuntimeException("Invalid instance type. Must be {{#anyOf}}{{{.}}}{{^-last}}, {{/-last}}{{/anyOf}}");
+=======
+        throw new RuntimeException("Invalid instance type. Must be {{#oneOf}}{{{.}}}{{^-last}}, {{/-last}}{{/oneOf}}");
+>>>>>>> ooof
     }
 }

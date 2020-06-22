@@ -8,8 +8,12 @@
 import Foundation
 
 /** Model for testing model name same as property name */
+<<<<<<< HEAD
 public struct Name: Codable { 
 
+=======
+public struct Name: Codable {
+>>>>>>> ooof
 
     public var name: Int
     public var snakeCase: Int?
@@ -23,7 +27,11 @@ public struct Name: Codable {
         self._123number = _123number
     }
 
+<<<<<<< HEAD
     public enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    public enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case name
         case snakeCase = "snake_case"
         case property

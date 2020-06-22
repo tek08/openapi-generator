@@ -9,7 +9,11 @@ import Foundation
 
 /** Model for testing reserved words */
 
+<<<<<<< HEAD
 @objc public class Return: NSObject, Codable { 
+=======
+@objc public class Return: NSObject, Codable {
+>>>>>>> ooof
 
     public var _return: Int?
     public var _returnNum: NSNumber? {
@@ -22,7 +26,11 @@ import Foundation
         self._return = _return
     }
 
+<<<<<<< HEAD
     public enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    public enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case _return = "return"
     }
 

@@ -41,7 +41,11 @@ export class {{classname}} extends BaseAPI {
         {{#hasParams}}
         {{#allParams}}
         {{#required}}
+<<<<<<< HEAD
         throwIfNullOrUndefined({{> paramNamePartial}}, '{{> paramNamePartial}}', '{{nickname}}');
+=======
+        throwIfNullOrUndefined({{> paramNamePartial}}, '{{nickname}}');
+>>>>>>> ooof
         {{/required}}
         {{/allParams}}
 

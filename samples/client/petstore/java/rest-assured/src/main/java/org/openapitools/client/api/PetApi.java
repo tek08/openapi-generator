@@ -17,7 +17,10 @@ import com.google.gson.reflect.TypeToken;
 import java.io.File;
 import org.openapitools.client.model.ModelApiResponse;
 import org.openapitools.client.model.Pet;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -397,7 +400,11 @@ public class PetApi {
      * Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
      *
      * @see #tagsQuery Tags to filter by (required)
+<<<<<<< HEAD
      * return Set&lt;Pet&gt;
+=======
+     * return List&lt;Pet&gt;
+>>>>>>> ooof
      * @deprecated
      */
     @Deprecated
@@ -429,17 +436,28 @@ public class PetApi {
         /**
          * GET /pet/findByTags
          * @param handler handler
+<<<<<<< HEAD
          * @return Set&lt;Pet&gt;
          */
         public Set<Pet> executeAs(Function<Response, Response> handler) {
             Type type = new TypeToken<Set<Pet>>(){}.getType();
+=======
+         * @return List&lt;Pet&gt;
+         */
+        public List<Pet> executeAs(Function<Response, Response> handler) {
+            Type type = new TypeToken<List<Pet>>(){}.getType();
+>>>>>>> ooof
             return execute(handler).as(type);
         }
 
         public static final String TAGS_QUERY = "tags";
 
         /**
+<<<<<<< HEAD
          * @param tags (Set&lt;String&gt;) Tags to filter by (required)
+=======
+         * @param tags (List&lt;String&gt;) Tags to filter by (required)
+>>>>>>> ooof
          * @return operation
          */
         public FindPetsByTagsOper tagsQuery(Object... tags) {

@@ -13,6 +13,7 @@ type {{classname}} struct {
 {{/description}}
 	{{name}} {{^required}}{{^isNullable}}*{{/isNullable}}{{/required}}{{{dataType}}} `json:"{{baseName}}{{^required}},omitempty{{/required}}"{{#withXml}} xml:"{{baseName}}{{#isXmlAttribute}},attr{{/isXmlAttribute}}"{{/withXml}}{{#vendorExtensions.x-go-custom-tag}} {{{.}}}{{/vendorExtensions.x-go-custom-tag}}`
 {{/vars}}
+<<<<<<< HEAD
 {{#vendorExtensions.x-additional-properties}}
 	AdditionalProperties map[string]interface{}
 {{/vendorExtensions.x-additional-properties}}
@@ -22,6 +23,10 @@ type {{classname}} struct {
 type _{{{classname}}} {{{classname}}}
 
 {{/vendorExtensions.x-additional-properties}}
+=======
+}
+
+>>>>>>> ooof
 // New{{classname}} instantiates a new {{classname}} object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
@@ -253,6 +258,7 @@ func (o {{classname}}) MarshalJSON() ([]byte, error) {
 	}
 	{{/isNullable}}
 	{{/vars}}
+<<<<<<< HEAD
 	{{#vendorExtensions.x-additional-properties}}
 
 	for key, value := range o.AdditionalProperties {
@@ -285,3 +291,43 @@ func (o *{{{classname}}}) UnmarshalJSON(bytes []byte) (err error) {
 
 {{/vendorExtensions.x-additional-properties}}
 {{>nullable_model}}
+=======
+	return json.Marshal(toSerialize)
+}
+
+type Nullable{{{classname}}} struct {
+	value *{{{classname}}}
+	isSet bool
+}
+
+func (v Nullable{{classname}}) Get() *{{classname}} {
+	return v.value
+}
+
+func (v *Nullable{{classname}}) Set(val *{{classname}}) {
+	v.value = val
+	v.isSet = true
+}
+
+func (v Nullable{{classname}}) IsSet() bool {
+	return v.isSet
+}
+
+func (v *Nullable{{classname}}) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+func NewNullable{{classname}}(val *{{classname}}) *Nullable{{classname}} {
+	return &Nullable{{classname}}{value: val, isSet: true}
+}
+
+func (v Nullable{{{classname}}}) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+func (v *Nullable{{{classname}}}) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
+>>>>>>> ooof

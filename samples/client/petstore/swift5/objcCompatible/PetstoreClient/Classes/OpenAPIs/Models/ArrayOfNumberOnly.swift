@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 
 @objc public class ArrayOfNumberOnly: NSObject, Codable { 
+=======
+@objc public class ArrayOfNumberOnly: NSObject, Codable {
+>>>>>>> ooof
 
     public var arrayNumber: [Double]?
 
@@ -17,7 +21,11 @@ import Foundation
         self.arrayNumber = arrayNumber
     }
 
+<<<<<<< HEAD
     public enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    public enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case arrayNumber = "ArrayNumber"
     }
 

@@ -14,7 +14,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class ModelApiResponse  implements Serializable {
+=======
+public class ModelApiResponse  implements Serializable {
+>>>>>>> ooof
   
   private @Valid Integer code;
   private @Valid String type;
@@ -28,17 +32,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("code")
   public Integer getCode() {
     return code;
   }
+<<<<<<< HEAD
 
   public void setCode(Integer code) {
     this.code = code;
   }/**
+=======
+  public void setCode(Integer code) {
+    this.code = code;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public ModelApiResponse type(String type) {
     this.type = type;
@@ -46,17 +61,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("type")
   public String getType() {
     return type;
   }
+<<<<<<< HEAD
 
   public void setType(String type) {
     this.type = type;
   }/**
+=======
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public ModelApiResponse message(String message) {
     this.message = message;
@@ -64,18 +90,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("message")
   public String getMessage() {
     return message;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
   public void setMessage(String message) {
     this.message = message;
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -117,7 +153,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
     }
     return o.toString().replace("\n", "\n    ");
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 }
 

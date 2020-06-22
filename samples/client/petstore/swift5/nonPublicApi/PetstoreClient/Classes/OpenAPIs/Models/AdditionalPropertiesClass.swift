@@ -7,6 +7,7 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 internal struct AdditionalPropertiesClass: Codable { 
 
@@ -15,11 +16,23 @@ internal struct AdditionalPropertiesClass: Codable {
     internal var mapMapString: [String:[String:String]]?
 
     internal init(mapString: [String:String]?, mapMapString: [String:[String:String]]?) {
+=======
+internal struct AdditionalPropertiesClass: Codable {
+
+    internal var mapString: [String: String]?
+    internal var mapMapString: [String: [String: String]]?
+
+    internal init(mapString: [String: String]?, mapMapString: [String: [String: String]]?) {
+>>>>>>> ooof
         self.mapString = mapString
         self.mapMapString = mapMapString
     }
 
+<<<<<<< HEAD
     internal enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    internal enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case mapString = "map_string"
         case mapMapString = "map_map_string"
     }

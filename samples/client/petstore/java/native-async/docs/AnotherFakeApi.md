@@ -10,7 +10,11 @@ Method | HTTP request | Description
 
 ## call123testSpecialTags
 
+<<<<<<< HEAD
 > CompletableFuture<Client> call123testSpecialTags(body)
+=======
+> Client call123testSpecialTags(body)
+>>>>>>> ooof
 
 To test special tags
 
@@ -25,7 +29,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.AnotherFakeApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -35,8 +42,12 @@ public class Example {
         AnotherFakeApi apiInstance = new AnotherFakeApi(defaultClient);
         Client body = new Client(); // Client | client model
         try {
+<<<<<<< HEAD
             CompletableFuture<Client> result = apiInstance.call123testSpecialTags(body);
 
+=======
+            Client result = apiInstance.call123testSpecialTags(body);
+>>>>>>> ooof
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AnotherFakeApi#call123testSpecialTags");
@@ -58,8 +69,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 CompletableFuture<[**Client**](Client.md)>
 
+=======
+[**Client**](Client.md)
+>>>>>>> ooof
 
 ### Authorization
 

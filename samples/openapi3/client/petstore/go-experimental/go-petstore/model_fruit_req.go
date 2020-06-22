@@ -20,6 +20,7 @@ type FruitReq struct {
 	BananaReq *BananaReq
 }
 
+<<<<<<< HEAD
 // AppleReqAsFruitReq is a convenience function that returns AppleReq wrapped in FruitReq
 func AppleReqAsFruitReq(v *AppleReq) FruitReq {
 	return FruitReq{ AppleReq: v}
@@ -32,11 +33,18 @@ func BananaReqAsFruitReq(v *BananaReq) FruitReq {
 
 
 // Unmarshal JSON data into one of the pointers in the struct
+=======
+// Unmarshl JSON data into one of the pointers in the struct
+>>>>>>> ooof
 func (dst *FruitReq) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
 	// try to unmarshal data into AppleReq
+<<<<<<< HEAD
 	err = json.Unmarshal(data, &dst.AppleReq)
+=======
+	err = json.Unmarshal(data, &dst.AppleReq);
+>>>>>>> ooof
 	if err == nil {
 		jsonAppleReq, _ := json.Marshal(dst.AppleReq)
 		if string(jsonAppleReq) == "{}" { // empty struct
@@ -49,7 +57,11 @@ func (dst *FruitReq) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal data into BananaReq
+<<<<<<< HEAD
 	err = json.Unmarshal(data, &dst.BananaReq)
+=======
+	err = json.Unmarshal(data, &dst.BananaReq);
+>>>>>>> ooof
 	if err == nil {
 		jsonBananaReq, _ := json.Marshal(dst.BananaReq)
 		if string(jsonBananaReq) == "{}" { // empty struct
@@ -62,10 +74,13 @@ func (dst *FruitReq) UnmarshalJSON(data []byte) error {
 	}
 
 	if match > 1 { // more than 1 match
+<<<<<<< HEAD
 		// reset to nil
 		dst.AppleReq = nil
 		dst.BananaReq = nil
 
+=======
+>>>>>>> ooof
 		return fmt.Errorf("Data matches more than one schema in oneOf(FruitReq)")
 	} else if match == 1 {
 		return nil // exactly one match
@@ -74,8 +89,13 @@ func (dst *FruitReq) UnmarshalJSON(data []byte) error {
 	}
 }
 
+<<<<<<< HEAD
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src FruitReq) MarshalJSON() ([]byte, error) {
+=======
+// Marshl data from the first non-nil pointers in the struct to JSON
+func (src *FruitReq) MarshalJSON() ([]byte, error) {
+>>>>>>> ooof
 	if src.AppleReq != nil {
 		return json.Marshal(&src.AppleReq)
 	}
@@ -101,6 +121,7 @@ func (obj *FruitReq) GetActualInstance() (interface{}) {
 	return nil
 }
 
+<<<<<<< HEAD
 type NullableFruitReq struct {
 	value *FruitReq
 	isSet bool
@@ -138,3 +159,5 @@ func (v *NullableFruitReq) UnmarshalJSON(src []byte) error {
 }
 
 
+=======
+>>>>>>> ooof

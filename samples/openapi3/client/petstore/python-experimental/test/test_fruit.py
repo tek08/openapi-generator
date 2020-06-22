@@ -11,6 +11,7 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
@@ -26,6 +27,12 @@ except ImportError:
     banana = sys.modules[
         'petstore_api.model.banana']
 from petstore_api.model.fruit import Fruit
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestFruit(unittest.TestCase):
@@ -44,7 +51,11 @@ class TestFruit(unittest.TestCase):
         # banana test
         length_cm = 20.3
         color = 'yellow'
+<<<<<<< HEAD
         fruit = Fruit(length_cm=length_cm, color=color)
+=======
+        fruit = petstore_api.Fruit(length_cm=length_cm, color=color)
+>>>>>>> ooof
         # check its properties
         self.assertEqual(fruit.length_cm, length_cm)
         self.assertEqual(fruit['length_cm'], length_cm)
@@ -85,12 +96,20 @@ class TestFruit(unittest.TestCase):
         # with getattr
         # Per Python doc, if the named attribute does not exist,
         # default is returned if provided.
+<<<<<<< HEAD
         self.assertEqual(getattr(fruit, 'cultivar', 'some value'), 'some value')
+=======
+        self.assertEquals(getattr(fruit, 'cultivar', 'some value'), 'some value')
+>>>>>>> ooof
 
         # Per Python doc, if the named attribute does not exist,
         # default is returned if provided, otherwise AttributeError is raised.
         with self.assertRaises(AttributeError):
+<<<<<<< HEAD
             getattr(fruit, 'cultivar')
+=======
+          getattr(fruit, 'cultivar')
+>>>>>>> ooof
 
         # make sure that the ModelComposed class properties are correct
         # model._composed_schemas stores the anyOf/allOf/oneOf info
@@ -100,15 +119,24 @@ class TestFruit(unittest.TestCase):
                 'anyOf': [],
                 'allOf': [],
                 'oneOf': [
+<<<<<<< HEAD
                     apple.Apple,
                     banana.Banana,
+=======
+                    petstore_api.Apple,
+                    petstore_api.Banana,
+>>>>>>> ooof
                 ],
             }
         )
         # model._composed_instances is a list of the instances that were
         # made from the anyOf/allOf/OneOf classes in model._composed_schemas
         for composed_instance in fruit._composed_instances:
+<<<<<<< HEAD
             if composed_instance.__class__ == banana.Banana:
+=======
+            if composed_instance.__class__ == petstore_api.Banana:
+>>>>>>> ooof
                 banana_instance = composed_instance
         self.assertEqual(
             fruit._composed_instances,
@@ -140,7 +168,11 @@ class TestFruit(unittest.TestCase):
 
         # including extra parameters raises an exception
         with self.assertRaises(petstore_api.ApiValueError):
+<<<<<<< HEAD
             fruit = Fruit(
+=======
+            fruit = petstore_api.Fruit(
+>>>>>>> ooof
                 color=color,
                 length_cm=length_cm,
                 unknown_property='some value'
@@ -148,7 +180,11 @@ class TestFruit(unittest.TestCase):
 
         # including input parameters for two oneOf instances raise an exception
         with self.assertRaises(petstore_api.ApiValueError):
+<<<<<<< HEAD
             fruit = Fruit(
+=======
+            fruit = petstore_api.Fruit(
+>>>>>>> ooof
                 length_cm=length_cm,
                 cultivar='granny smith'
             )
@@ -157,7 +193,11 @@ class TestFruit(unittest.TestCase):
         # apple test
         color = 'red'
         cultivar = 'golden delicious'
+<<<<<<< HEAD
         fruit = Fruit(color=color, cultivar=cultivar)
+=======
+        fruit = petstore_api.Fruit(color=color, cultivar=cultivar)
+>>>>>>> ooof
         # check its properties
         self.assertEqual(fruit.color, color)
         self.assertEqual(fruit['color'], color)
@@ -177,7 +217,11 @@ class TestFruit(unittest.TestCase):
         # model._composed_instances is a list of the instances that were
         # made from the anyOf/allOf/OneOf classes in model._composed_schemas
         for composed_instance in fruit._composed_instances:
+<<<<<<< HEAD
             if composed_instance.__class__ == apple.Apple:
+=======
+            if composed_instance.__class__ == petstore_api.Apple:
+>>>>>>> ooof
                 apple_instance = composed_instance
         self.assertEqual(
             fruit._composed_instances,
@@ -200,6 +244,7 @@ class TestFruit(unittest.TestCase):
             fruit._additional_properties_model_instances, []
         )
 
+<<<<<<< HEAD
     def testFruitNullValue(self):
         # Since 'apple' is nullable, validate we can create an apple with the 'null' value.
         fruit = apple.Apple(None)
@@ -218,5 +263,7 @@ class TestFruit(unittest.TestCase):
         fruit = Fruit(apple.Apple(None))
         self.assertIsNone(fruit)
 
+=======
+>>>>>>> ooof
 if __name__ == '__main__':
     unittest.main()

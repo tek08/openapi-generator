@@ -11,6 +11,7 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
@@ -26,6 +27,12 @@ except ImportError:
     triangle_interface = sys.modules[
         'petstore_api.model.triangle_interface']
 from petstore_api.model.scalene_triangle import ScaleneTriangle
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestScaleneTriangle(unittest.TestCase):
@@ -40,7 +47,11 @@ class TestScaleneTriangle(unittest.TestCase):
     def testScaleneTriangle(self):
         """Test ScaleneTriangle"""
         # FIXME: construct object with mandatory attributes with example values
+<<<<<<< HEAD
         # model = ScaleneTriangle()  # noqa: E501
+=======
+        # model = petstore_api.ScaleneTriangle()  # noqa: E501
+>>>>>>> ooof
         pass
 
 

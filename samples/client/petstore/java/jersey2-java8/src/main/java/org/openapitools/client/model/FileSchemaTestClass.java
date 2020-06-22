@@ -15,8 +15,11 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.HashMap;
+=======
+>>>>>>> ooof
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,8 +29,11 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+<<<<<<< HEAD
 import org.openapitools.client.JSON;
 
+=======
+>>>>>>> ooof
 
 /**
  * FileSchemaTestClass
@@ -36,7 +42,11 @@ import org.openapitools.client.JSON;
   FileSchemaTestClass.JSON_PROPERTY_FILE,
   FileSchemaTestClass.JSON_PROPERTY_FILES
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class FileSchemaTestClass {
   public static final String JSON_PROPERTY_FILE = "file";
   private java.io.File file;
@@ -46,6 +56,10 @@ public class FileSchemaTestClass {
 
 
   public FileSchemaTestClass file(java.io.File file) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.file = file;
     return this;
   }
@@ -70,6 +84,10 @@ public class FileSchemaTestClass {
 
 
   public FileSchemaTestClass files(List<java.io.File> files) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.files = files;
     return this;
   }
@@ -101,9 +119,12 @@ public class FileSchemaTestClass {
   }
 
 
+<<<<<<< HEAD
   /**
    * Return true if this FileSchemaTestClass object is equal to o.
    */
+=======
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {

@@ -8,8 +8,11 @@
 import Foundation
 import Combine
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 open class UserAPI {
     /**
      Create user
@@ -163,8 +166,13 @@ open class UserAPI {
         let usernamePostEscape = usernamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         path = path.replacingOccurrences(of: "{username}", with: usernamePostEscape, options: .literal, range: nil)
         let URLString = PetstoreClientAPI.basePath + path
+<<<<<<< HEAD
         let parameters: [String:Any]? = nil
         
+=======
+        let parameters: [String: Any]? = nil
+
+>>>>>>> ooof
         let url = URLComponents(string: URLString)
 
         let requestBuilder: RequestBuilder<Void>.Type = PetstoreClientAPI.requestBuilderFactory.getNonDecodableBuilder()
@@ -205,8 +213,13 @@ open class UserAPI {
         let usernamePostEscape = usernamePreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
         path = path.replacingOccurrences(of: "{username}", with: usernamePostEscape, options: .literal, range: nil)
         let URLString = PetstoreClientAPI.basePath + path
+<<<<<<< HEAD
         let parameters: [String:Any]? = nil
         
+=======
+        let parameters: [String: Any]? = nil
+
+>>>>>>> ooof
         let url = URLComponents(string: URLString)
 
         let requestBuilder: RequestBuilder<User>.Type = PetstoreClientAPI.requestBuilderFactory.getBuilder()
@@ -247,11 +260,19 @@ open class UserAPI {
     open class func loginUserWithRequestBuilder(username: String, password: String) -> RequestBuilder<String> {
         let path = "/user/login"
         let URLString = PetstoreClientAPI.basePath + path
+<<<<<<< HEAD
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
         url?.queryItems = APIHelper.mapValuesToQueryItems([
             "username": username.encodeToJSON(), 
+=======
+        let parameters: [String: Any]? = nil
+
+        var url = URLComponents(string: URLString)
+        url?.queryItems = APIHelper.mapValuesToQueryItems([
+            "username": username.encodeToJSON(),
+>>>>>>> ooof
             "password": password.encodeToJSON()
         ])
 
@@ -288,8 +309,13 @@ open class UserAPI {
     open class func logoutUserWithRequestBuilder() -> RequestBuilder<Void> {
         let path = "/user/logout"
         let URLString = PetstoreClientAPI.basePath + path
+<<<<<<< HEAD
         let parameters: [String:Any]? = nil
         
+=======
+        let parameters: [String: Any]? = nil
+
+>>>>>>> ooof
         let url = URLComponents(string: URLString)
 
         let requestBuilder: RequestBuilder<Void>.Type = PetstoreClientAPI.requestBuilderFactory.getNonDecodableBuilder()

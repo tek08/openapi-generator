@@ -10,12 +10,21 @@ class UserApi {
   /// Create user
   ///
   /// This can only be done by the logged in user.
+<<<<<<< HEAD
   Future createUser(User user) async {
     Object postBody = user;
 
     // verify required params are set
     if(user == null) {
      throw new ApiException(400, "Missing required param: user");
+=======
+  Future createUser(User body) async {
+    Object postBody = body;
+
+    // verify required params are set
+    if(body == null) {
+     throw new ApiException(400, "Missing required param: body");
+>>>>>>> ooof
     }
 
     // create path and map variables
@@ -26,10 +35,17 @@ class UserApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
 
+<<<<<<< HEAD
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["api_key"];
+=======
+    List<String> contentTypes = [];
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    List<String> authNames = [];
+>>>>>>> ooof
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -59,12 +75,21 @@ class UserApi {
   /// Creates list of users with given input array
   ///
   /// 
+<<<<<<< HEAD
   Future createUsersWithArrayInput(List<User> user) async {
     Object postBody = user;
 
     // verify required params are set
     if(user == null) {
      throw new ApiException(400, "Missing required param: user");
+=======
+  Future createUsersWithArrayInput(List<User> body) async {
+    Object postBody = body;
+
+    // verify required params are set
+    if(body == null) {
+     throw new ApiException(400, "Missing required param: body");
+>>>>>>> ooof
     }
 
     // create path and map variables
@@ -75,10 +100,17 @@ class UserApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
 
+<<<<<<< HEAD
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["api_key"];
+=======
+    List<String> contentTypes = [];
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    List<String> authNames = [];
+>>>>>>> ooof
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -108,12 +140,21 @@ class UserApi {
   /// Creates list of users with given input array
   ///
   /// 
+<<<<<<< HEAD
   Future createUsersWithListInput(List<User> user) async {
     Object postBody = user;
 
     // verify required params are set
     if(user == null) {
      throw new ApiException(400, "Missing required param: user");
+=======
+  Future createUsersWithListInput(List<User> body) async {
+    Object postBody = body;
+
+    // verify required params are set
+    if(body == null) {
+     throw new ApiException(400, "Missing required param: body");
+>>>>>>> ooof
     }
 
     // create path and map variables
@@ -124,10 +165,17 @@ class UserApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
 
+<<<<<<< HEAD
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["api_key"];
+=======
+    List<String> contentTypes = [];
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    List<String> authNames = [];
+>>>>>>> ooof
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -176,7 +224,11 @@ class UserApi {
     List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+<<<<<<< HEAD
     List<String> authNames = ["api_key"];
+=======
+    List<String> authNames = [];
+>>>>>>> ooof
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -327,7 +379,11 @@ class UserApi {
     List<String> contentTypes = [];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+<<<<<<< HEAD
     List<String> authNames = ["api_key"];
+=======
+    List<String> authNames = [];
+>>>>>>> ooof
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;
@@ -357,15 +413,25 @@ class UserApi {
   /// Updated user
   ///
   /// This can only be done by the logged in user.
+<<<<<<< HEAD
   Future updateUser(String username, User user) async {
     Object postBody = user;
+=======
+  Future updateUser(String username, User body) async {
+    Object postBody = body;
+>>>>>>> ooof
 
     // verify required params are set
     if(username == null) {
      throw new ApiException(400, "Missing required param: username");
     }
+<<<<<<< HEAD
     if(user == null) {
      throw new ApiException(400, "Missing required param: user");
+=======
+    if(body == null) {
+     throw new ApiException(400, "Missing required param: body");
+>>>>>>> ooof
     }
 
     // create path and map variables
@@ -376,10 +442,17 @@ class UserApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
 
+<<<<<<< HEAD
     List<String> contentTypes = ["application/json"];
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = ["api_key"];
+=======
+    List<String> contentTypes = [];
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+    List<String> authNames = [];
+>>>>>>> ooof
 
     if(contentType.startsWith("multipart/form-data")) {
       bool hasFields = false;

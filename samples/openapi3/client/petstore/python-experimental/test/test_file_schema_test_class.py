@@ -11,6 +11,7 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
@@ -21,6 +22,12 @@ except ImportError:
     file = sys.modules[
         'petstore_api.model.file']
 from petstore_api.model.file_schema_test_class import FileSchemaTestClass
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestFileSchemaTestClass(unittest.TestCase):
@@ -35,7 +42,11 @@ class TestFileSchemaTestClass(unittest.TestCase):
     def testFileSchemaTestClass(self):
         """Test FileSchemaTestClass"""
         # FIXME: construct object with mandatory attributes with example values
+<<<<<<< HEAD
         # model = FileSchemaTestClass()  # noqa: E501
+=======
+        # model = petstore_api.FileSchemaTestClass()  # noqa: E501
+>>>>>>> ooof
         pass
 
 

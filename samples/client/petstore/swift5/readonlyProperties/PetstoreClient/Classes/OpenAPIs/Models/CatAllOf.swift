@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 public struct CatAllOf: Codable { 
 
+=======
+public struct CatAllOf: Codable {
+>>>>>>> ooof
 
     public private(set) var declawed: Bool?
 

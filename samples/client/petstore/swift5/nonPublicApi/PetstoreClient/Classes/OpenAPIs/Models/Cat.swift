@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 internal struct Cat: Codable { 
 
+=======
+internal struct Cat: Codable {
+>>>>>>> ooof
 
     internal var className: String
     internal var color: String? = "red"

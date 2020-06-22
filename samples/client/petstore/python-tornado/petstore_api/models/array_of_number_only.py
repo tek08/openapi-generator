@@ -68,7 +68,11 @@ class ArrayOfNumberOnly(object):
 
 
         :param array_number: The array_number of this ArrayOfNumberOnly.  # noqa: E501
+<<<<<<< HEAD
         :type array_number: list[float]
+=======
+        :type: list[float]
+>>>>>>> ooof
         """
 
         self._array_number = array_number

@@ -134,6 +134,7 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+<<<<<<< HEAD
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.6.1</version>
                 <configuration>
@@ -143,11 +144,16 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+=======
+>>>>>>> ooof
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.1.1</version>
                 <configuration>
                     <doclint>none</doclint>
+<<<<<<< HEAD
                         <source>1.8</source>
+=======
+>>>>>>> ooof
                 </configuration>
                 <executions>
                     <execution>
@@ -265,12 +271,16 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
+<<<<<<< HEAD
                 <version>${jackson-version}</version>
             </dependency>
             <dependency>
                 <groupId>org.openapitools</groupId>
                 <artifactId>jackson-databind-nullable</artifactId>
                 <version>${jackson-databind-nullable-version}</version>
+=======
+                <version>${jackson-databind-version}</version>
+>>>>>>> ooof
             </dependency>
             <dependency>
                 <groupId>com.fasterxml.jackson.datatype</groupId>
@@ -287,12 +297,20 @@
                 <artifactId>validation-api</artifactId>
                 <version>1.1.0.Final</version>
             </dependency>
+<<<<<<< HEAD
         <dependency>
             <groupId>javax.annotation</groupId>
             <artifactId>javax.annotation-api</artifactId>
             <version>${javax-annotation-version}</version>
             <scope>provided</scope>
         </dependency>
+=======
+            <dependency>
+                <groupId>org.openapitools</groupId>
+                <artifactId>jackson-databind-nullable</artifactId>
+                <version>${jackson-databind-nullable-version}</version>
+            </dependency>
+>>>>>>> ooof
         <!-- test dependencies -->
         <dependency>
             <groupId>junit</groupId>
@@ -308,12 +326,19 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <gson-fire-version>1.8.3</gson-fire-version>
         <swagger-annotations-version>1.5.22</swagger-annotations-version>
+<<<<<<< HEAD
+=======
+        <jackson-databind-version>2.10.3</jackson-databind-version>
+>>>>>>> ooof
         <jackson-version>2.10.4</jackson-version>
         <play-version>2.6.7</play-version>
         <jackson-databind-nullable-version>0.2.1</jackson-databind-nullable-version>
         <retrofit-version>2.5.0</retrofit-version>
         <threetenbp-version>1.4.0</threetenbp-version>
+<<<<<<< HEAD
         <javax-annotation-version>1.3.2</javax-annotation-version>
+=======
+>>>>>>> ooof
         <oltu-version>1.0.1</oltu-version>
         <junit-version>4.13</junit-version>
     </properties>

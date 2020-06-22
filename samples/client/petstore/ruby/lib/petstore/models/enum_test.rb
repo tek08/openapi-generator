@@ -24,12 +24,15 @@ module Petstore
 
     attr_accessor :outer_enum
 
+<<<<<<< HEAD
     attr_accessor :outer_enum_integer
 
     attr_accessor :outer_enum_default_value
 
     attr_accessor :outer_enum_integer_default_value
 
+=======
+>>>>>>> ooof
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -59,10 +62,14 @@ module Petstore
         :'enum_string_required' => :'enum_string_required',
         :'enum_integer' => :'enum_integer',
         :'enum_number' => :'enum_number',
+<<<<<<< HEAD
         :'outer_enum' => :'outerEnum',
         :'outer_enum_integer' => :'outerEnumInteger',
         :'outer_enum_default_value' => :'outerEnumDefaultValue',
         :'outer_enum_integer_default_value' => :'outerEnumIntegerDefaultValue'
+=======
+        :'outer_enum' => :'outerEnum'
+>>>>>>> ooof
       }
     end
 
@@ -73,17 +80,24 @@ module Petstore
         :'enum_string_required' => :'String',
         :'enum_integer' => :'Integer',
         :'enum_number' => :'Float',
+<<<<<<< HEAD
         :'outer_enum' => :'OuterEnum',
         :'outer_enum_integer' => :'OuterEnumInteger',
         :'outer_enum_default_value' => :'OuterEnumDefaultValue',
         :'outer_enum_integer_default_value' => :'OuterEnumIntegerDefaultValue'
+=======
+        :'outer_enum' => :'OuterEnum'
+>>>>>>> ooof
       }
     end
 
     # List of attributes with nullable: true
     def self.openapi_nullable
       Set.new([
+<<<<<<< HEAD
         :'outer_enum',
+=======
+>>>>>>> ooof
       ])
     end
 
@@ -121,6 +135,7 @@ module Petstore
       if attributes.key?(:'outer_enum')
         self.outer_enum = attributes[:'outer_enum']
       end
+<<<<<<< HEAD
 
       if attributes.key?(:'outer_enum_integer')
         self.outer_enum_integer = attributes[:'outer_enum_integer']
@@ -133,6 +148,8 @@ module Petstore
       if attributes.key?(:'outer_enum_integer_default_value')
         self.outer_enum_integer_default_value = attributes[:'outer_enum_integer_default_value']
       end
+=======
+>>>>>>> ooof
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -210,10 +227,14 @@ module Petstore
           enum_string_required == o.enum_string_required &&
           enum_integer == o.enum_integer &&
           enum_number == o.enum_number &&
+<<<<<<< HEAD
           outer_enum == o.outer_enum &&
           outer_enum_integer == o.outer_enum_integer &&
           outer_enum_default_value == o.outer_enum_default_value &&
           outer_enum_integer_default_value == o.outer_enum_integer_default_value
+=======
+          outer_enum == o.outer_enum
+>>>>>>> ooof
     end
 
     # @see the `==` method
@@ -225,7 +246,11 @@ module Petstore
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
+<<<<<<< HEAD
       [enum_string, enum_string_required, enum_integer, enum_number, outer_enum, outer_enum_integer, outer_enum_default_value, outer_enum_integer_default_value].hash
+=======
+      [enum_string, enum_string_required, enum_integer, enum_number, outer_enum].hash
+>>>>>>> ooof
     end
 
     # Builds the object from hash

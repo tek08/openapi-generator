@@ -15,8 +15,11 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.HashMap;
+=======
+>>>>>>> ooof
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -24,8 +27,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+<<<<<<< HEAD
 import org.openapitools.client.JSON;
 
+=======
+>>>>>>> ooof
 
 /**
  * Model for testing model name same as property name
@@ -37,7 +43,11 @@ import org.openapitools.client.JSON;
   Name.JSON_PROPERTY_PROPERTY,
   Name.JSON_PROPERTY_123NUMBER
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class Name {
   public static final String JSON_PROPERTY_NAME = "name";
   private Integer name;
@@ -53,6 +63,10 @@ public class Name {
 
 
   public Name name(Integer name) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.name = name;
     return this;
   }
@@ -92,6 +106,10 @@ public class Name {
 
 
   public Name property(String property) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.property = property;
     return this;
   }
@@ -131,9 +149,12 @@ public class Name {
 
 
 
+<<<<<<< HEAD
   /**
    * Return true if this Name object is equal to o.
    */
+=======
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {

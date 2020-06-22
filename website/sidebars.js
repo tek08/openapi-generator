@@ -5,8 +5,12 @@ module.exports = {
       'installation',
       'plugins',
       'online',
+<<<<<<< HEAD
       'usage',
       'globals'
+=======
+      'usage'
+>>>>>>> ooof
     ],
     'Extending': [
       'templating',

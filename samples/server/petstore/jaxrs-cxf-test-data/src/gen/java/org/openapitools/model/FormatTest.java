@@ -19,7 +19,10 @@ import javax.xml.bind.annotation.XmlEnumValue;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 public class FormatTest  {
   
   @ApiModelProperty(value = "")
@@ -63,9 +66,12 @@ public class FormatTest  {
 
   @ApiModelProperty(required = true, value = "")
   private String password;
+<<<<<<< HEAD
 
   @ApiModelProperty(value = "")
   private BigDecimal bigDecimal;
+=======
+>>>>>>> ooof
  /**
   * Get integer
   * minimum: 10
@@ -392,6 +398,7 @@ public class FormatTest  {
     return this;
   }
 
+<<<<<<< HEAD
  /**
   * Get bigDecimal
   * @return bigDecimal
@@ -416,6 +423,8 @@ public class FormatTest  {
     return this;
   }
 
+=======
+>>>>>>> ooof
 
   @Override
   public String toString() {
@@ -435,7 +444,10 @@ public class FormatTest  {
     sb.append("    dateTime: ").append(toIndentedString(dateTime)).append("\n");
     sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
+<<<<<<< HEAD
     sb.append("    bigDecimal: ").append(toIndentedString(bigDecimal)).append("\n");
+=======
+>>>>>>> ooof
     sb.append("}");
     return sb.toString();
   }

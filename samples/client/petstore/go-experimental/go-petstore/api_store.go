@@ -67,7 +67,11 @@ func (r apiDeleteOrderRequest) Execute() (*_nethttp.Response, error) {
 	}
 
 	localVarPath := localBasePath + "/store/order/{order_id}"
+<<<<<<< HEAD
 	localVarPath = strings.Replace(localVarPath, "{"+"order_id"+"}", _neturl.PathEscape(parameterToString(r.orderId, "")) , -1)
+=======
+	localVarPath = strings.Replace(localVarPath, "{"+"order_id"+"}", _neturl.QueryEscape(parameterToString(r.orderId, "")) , -1)
+>>>>>>> ooof
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}
@@ -269,7 +273,11 @@ func (r apiGetOrderByIdRequest) Execute() (Order, *_nethttp.Response, error) {
 	}
 
 	localVarPath := localBasePath + "/store/order/{order_id}"
+<<<<<<< HEAD
 	localVarPath = strings.Replace(localVarPath, "{"+"order_id"+"}", _neturl.PathEscape(parameterToString(r.orderId, "")) , -1)
+=======
+	localVarPath = strings.Replace(localVarPath, "{"+"order_id"+"}", _neturl.QueryEscape(parameterToString(r.orderId, "")) , -1)
+>>>>>>> ooof
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := _neturl.Values{}

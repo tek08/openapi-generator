@@ -19,6 +19,10 @@ package org.openapitools.codegen.config;
 import org.openapitools.codegen.ClientOptInput;
 import org.openapitools.codegen.CodegenConfig;
 import org.openapitools.codegen.CodegenConstants;
+<<<<<<< HEAD
+=======
+import org.openapitools.codegen.DefaultGenerator;
+>>>>>>> ooof
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -65,7 +69,11 @@ public class CodegenConfiguratorTest {
                 .addImportMapping("one", "two")
                 .addInstantiationType("three", "four")
                 .addLanguageSpecificPrimitive("five")
+<<<<<<< HEAD
                 .addGlobalProperty("six", "seven")
+=======
+                .addSystemProperty("six", "seven")
+>>>>>>> ooof
                 .addTypeMapping("eight", "nine")
                 .setApiPackage("test-api")
                 .setArtifactId("test-artifactId")

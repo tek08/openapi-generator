@@ -28,7 +28,10 @@ package org.openapitools.api;
 import java.io.File;
 import org.openapitools.model.ModelApiResponse;
 import org.openapitools.model.Pet;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.*;
@@ -135,8 +138,13 @@ public class PetApiTest {
      */
     @Test
     public void findPetsByTagsTest() {
+<<<<<<< HEAD
         Set<String> tags = null;
         //Set<Pet> response = api.findPetsByTags(tags);
+=======
+        List<String> tags = null;
+        //List<Pet> response = api.findPetsByTags(tags);
+>>>>>>> ooof
         //assertNotNull(response);
         // TODO: test validations
         

@@ -76,7 +76,11 @@ class StoreApi {
 
     }
 
+<<<<<<< HEAD
     def placeOrder ( Order order, Closure onSuccess, Closure onFailure)  {
+=======
+    def placeOrder ( Order body, Closure onSuccess, Closure onFailure)  {
+>>>>>>> ooof
         String resourcePath = "/store/order"
 
         // params
@@ -86,14 +90,23 @@ class StoreApi {
         def contentType
 
         // verify required params are set
+<<<<<<< HEAD
         if (order == null) {
             throw new RuntimeException("missing required params order")
+=======
+        if (body == null) {
+            throw new RuntimeException("missing required params body")
+>>>>>>> ooof
         }
 
 
 
         contentType = 'application/json';
+<<<<<<< HEAD
         bodyParams = order
+=======
+        bodyParams = body
+>>>>>>> ooof
 
 
         apiUtils.invokeApi(onSuccess, onFailure, basePath, versionPath, resourcePath, queryParams, headerParams, bodyParams, contentType,

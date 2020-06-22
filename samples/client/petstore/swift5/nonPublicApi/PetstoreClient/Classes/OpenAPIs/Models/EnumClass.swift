@@ -7,7 +7,10 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 internal enum EnumClass: String, Codable, CaseIterable {
     case abc = "_abc"
     case efg = "-efg"

@@ -31,7 +31,11 @@ import javax.xml.bind.annotation.*;
 @JsonPropertyOrder({
   BigCatAllOf.JSON_PROPERTY_KIND
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 @XmlRootElement(name = "BigCatAllOf")
 @XmlAccessorType(XmlAccessType.FIELD)
 @JacksonXmlRootElement(localName = "BigCatAllOf")

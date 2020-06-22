@@ -23,7 +23,11 @@ import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.validation.constraints.*;
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen")
+=======
+
+>>>>>>> ooof
 public class FakeApiServiceImpl extends FakeApiService {
     @Override
     public Response createXmlItem(XmlItem xmlItem, SecurityContext securityContext) throws NotFoundException {

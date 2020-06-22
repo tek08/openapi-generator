@@ -15,8 +15,11 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.HashMap;
+=======
+>>>>>>> ooof
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -26,8 +29,11 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+<<<<<<< HEAD
 import org.openapitools.client.JSON;
 
+=======
+>>>>>>> ooof
 
 /**
  * EnumArrays
@@ -36,7 +42,11 @@ import org.openapitools.client.JSON;
   EnumArrays.JSON_PROPERTY_JUST_SYMBOL,
   EnumArrays.JSON_PROPERTY_ARRAY_ENUM
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class EnumArrays {
   /**
    * Gets or Sets justSymbol
@@ -116,6 +126,10 @@ public class EnumArrays {
 
 
   public EnumArrays justSymbol(JustSymbolEnum justSymbol) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.justSymbol = justSymbol;
     return this;
   }
@@ -140,6 +154,10 @@ public class EnumArrays {
 
 
   public EnumArrays arrayEnum(List<ArrayEnumEnum> arrayEnum) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.arrayEnum = arrayEnum;
     return this;
   }
@@ -171,9 +189,12 @@ public class EnumArrays {
   }
 
 
+<<<<<<< HEAD
   /**
    * Return true if this EnumArrays object is equal to o.
    */
+=======
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {

@@ -35,7 +35,11 @@ describe 'FakeClassnameTags123Api' do
   # unit tests for test_classname
   # To test class name in snake case
   # To test class name in snake case
+<<<<<<< HEAD
   # @param client client model
+=======
+  # @param body client model
+>>>>>>> ooof
   # @param [Hash] opts the optional parameters
   # @return [Client]
   describe 'test_classname test' do

@@ -12,7 +12,11 @@ import javax.validation.constraints.*;
 /**
  * Category
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
+=======
+
+>>>>>>> ooof
 public class Category   {
   @JsonProperty("id")
   private Long id;

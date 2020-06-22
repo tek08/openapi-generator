@@ -11,11 +11,18 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
 import petstore_api
 from petstore_api.model.capitalization import Capitalization
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestCapitalization(unittest.TestCase):
@@ -30,7 +37,11 @@ class TestCapitalization(unittest.TestCase):
     def testCapitalization(self):
         """Test Capitalization"""
         # FIXME: construct object with mandatory attributes with example values
+<<<<<<< HEAD
         # model = Capitalization()  # noqa: E501
+=======
+        # model = petstore_api.Capitalization()  # noqa: E501
+>>>>>>> ooof
         pass
 
 

@@ -32,7 +32,11 @@ import javax.validation.Valid;
   InlineObject2.JSON_PROPERTY_ENUM_FORM_STRING_ARRAY,
   InlineObject2.JSON_PROPERTY_ENUM_FORM_STRING
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen")
+=======
+
+>>>>>>> ooof
 public class InlineObject2   {
   /**
    * Gets or Sets enumFormStringArray

@@ -1,10 +1,17 @@
 <project>
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.openapitools</groupId>
+<<<<<<< HEAD
     <artifactId>openapi-v3-petstore-javascript-es6</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>OpenAPI v3 Petstore JS Client (ES6)</name>
+=======
+    <artifactId>openapi-petstore-javascript-es6</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>OpenAPI Petstore JS Client (ES6)</name>
+>>>>>>> ooof
     <build>
         <plugins>
             <plugin>

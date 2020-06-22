@@ -15,7 +15,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class EnumTest  implements Serializable {
+=======
+public class EnumTest  implements Serializable {
+>>>>>>> ooof
   
 
 public enum EnumStringEnum {
@@ -163,17 +167,28 @@ public enum EnumNumberEnum {
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("enum_string")
   public EnumStringEnum getEnumString() {
     return enumString;
   }
+<<<<<<< HEAD
 
   public void setEnumString(EnumStringEnum enumString) {
     this.enumString = enumString;
   }/**
+=======
+  public void setEnumString(EnumStringEnum enumString) {
+    this.enumString = enumString;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public EnumTest enumStringRequired(EnumStringRequiredEnum enumStringRequired) {
     this.enumStringRequired = enumStringRequired;
@@ -181,18 +196,29 @@ public enum EnumNumberEnum {
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(required = true, value = "")
   @JsonProperty("enum_string_required")
   @NotNull
   public EnumStringRequiredEnum getEnumStringRequired() {
     return enumStringRequired;
   }
+<<<<<<< HEAD
 
   public void setEnumStringRequired(EnumStringRequiredEnum enumStringRequired) {
     this.enumStringRequired = enumStringRequired;
   }/**
+=======
+  public void setEnumStringRequired(EnumStringRequiredEnum enumStringRequired) {
+    this.enumStringRequired = enumStringRequired;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public EnumTest enumInteger(EnumIntegerEnum enumInteger) {
     this.enumInteger = enumInteger;
@@ -200,17 +226,28 @@ public enum EnumNumberEnum {
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("enum_integer")
   public EnumIntegerEnum getEnumInteger() {
     return enumInteger;
   }
+<<<<<<< HEAD
 
   public void setEnumInteger(EnumIntegerEnum enumInteger) {
     this.enumInteger = enumInteger;
   }/**
+=======
+  public void setEnumInteger(EnumIntegerEnum enumInteger) {
+    this.enumInteger = enumInteger;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public EnumTest enumNumber(EnumNumberEnum enumNumber) {
     this.enumNumber = enumNumber;
@@ -218,17 +255,28 @@ public enum EnumNumberEnum {
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("enum_number")
   public EnumNumberEnum getEnumNumber() {
     return enumNumber;
   }
+<<<<<<< HEAD
 
   public void setEnumNumber(EnumNumberEnum enumNumber) {
     this.enumNumber = enumNumber;
   }/**
+=======
+  public void setEnumNumber(EnumNumberEnum enumNumber) {
+    this.enumNumber = enumNumber;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public EnumTest outerEnum(OuterEnum outerEnum) {
     this.outerEnum = outerEnum;
@@ -236,18 +284,28 @@ public enum EnumNumberEnum {
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("outerEnum")
   public OuterEnum getOuterEnum() {
     return outerEnum;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
   public void setOuterEnum(OuterEnum outerEnum) {
     this.outerEnum = outerEnum;
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -293,7 +351,10 @@ public enum EnumNumberEnum {
     }
     return o.toString().replace("\n", "\n    ");
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 }
 

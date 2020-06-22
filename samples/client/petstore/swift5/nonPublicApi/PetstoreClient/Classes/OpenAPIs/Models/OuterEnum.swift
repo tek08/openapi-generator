@@ -7,7 +7,10 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 internal enum OuterEnum: String, Codable, CaseIterable {
     case placed = "placed"
     case approved = "approved"

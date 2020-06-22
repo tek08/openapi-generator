@@ -13,7 +13,10 @@ describe('ApiClient', function() {
       expect(apiClient.basePath).to.be('http://petstore.swagger.io:80/v2');
       expect(apiClient.authentications).to.eql({
         petstore_auth: {type: 'oauth2'},
+<<<<<<< HEAD
         bearer_test: {type: 'bearer'},
+=======
+>>>>>>> ooof
         http_basic_test: {type: 'basic'},
         api_key: {type: 'apiKey', 'in': 'header', name: 'api_key'},
         api_key_query: {type: 'apiKey', 'in': 'query', name: 'api_key_query'},

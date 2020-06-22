@@ -15,8 +15,11 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.HashMap;
+=======
+>>>>>>> ooof
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -28,8 +31,11 @@ import io.swagger.annotations.ApiModelProperty;
 import org.openapitools.client.model.Animal;
 import org.openapitools.client.model.DogAllOf;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+<<<<<<< HEAD
 import org.openapitools.client.JSON;
 
+=======
+>>>>>>> ooof
 
 /**
  * Dog
@@ -37,7 +43,11 @@ import org.openapitools.client.JSON;
 @JsonPropertyOrder({
   Dog.JSON_PROPERTY_BREED
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "className", visible = true)
 @JsonSubTypes({
 })
@@ -48,6 +58,10 @@ public class Dog extends Animal {
 
 
   public Dog breed(String breed) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.breed = breed;
     return this;
   }
@@ -71,9 +85,12 @@ public class Dog extends Animal {
   }
 
 
+<<<<<<< HEAD
   /**
    * Return true if this Dog object is equal to o.
    */
+=======
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -114,11 +131,14 @@ public class Dog extends Animal {
     return o.toString().replace("\n", "\n    ");
   }
 
+<<<<<<< HEAD
 static {
   // Initialize and register the discriminator mappings.
   Map<String, Class<?>> mappings = new HashMap<String, Class<?>>();
   mappings.put("Dog", Dog.class);
   JSON.registerDiscriminator(Dog.class, "className", mappings);
 }
+=======
+>>>>>>> ooof
 }
 

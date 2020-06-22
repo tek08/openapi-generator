@@ -17,12 +17,28 @@ require 'petstore/version'
 require 'petstore/configuration'
 
 # Models
+<<<<<<< HEAD
 require 'petstore/models/additional_properties_class'
+=======
+require 'petstore/models/additional_properties_any_type'
+require 'petstore/models/additional_properties_array'
+require 'petstore/models/additional_properties_boolean'
+require 'petstore/models/additional_properties_class'
+require 'petstore/models/additional_properties_integer'
+require 'petstore/models/additional_properties_number'
+require 'petstore/models/additional_properties_object'
+require 'petstore/models/additional_properties_string'
+>>>>>>> ooof
 require 'petstore/models/animal'
 require 'petstore/models/api_response'
 require 'petstore/models/array_of_array_of_number_only'
 require 'petstore/models/array_of_number_only'
 require 'petstore/models/array_test'
+<<<<<<< HEAD
+=======
+require 'petstore/models/big_cat'
+require 'petstore/models/big_cat_all_of'
+>>>>>>> ooof
 require 'petstore/models/capitalization'
 require 'petstore/models/cat'
 require 'petstore/models/cat_all_of'
@@ -36,6 +52,7 @@ require 'petstore/models/enum_class'
 require 'petstore/models/enum_test'
 require 'petstore/models/file'
 require 'petstore/models/file_schema_test_class'
+<<<<<<< HEAD
 require 'petstore/models/foo'
 require 'petstore/models/format_test'
 require 'petstore/models/has_only_read_only'
@@ -47,29 +64,49 @@ require 'petstore/models/inline_object3'
 require 'petstore/models/inline_object4'
 require 'petstore/models/inline_object5'
 require 'petstore/models/inline_response_default'
+=======
+require 'petstore/models/format_test'
+require 'petstore/models/has_only_read_only'
+>>>>>>> ooof
 require 'petstore/models/list'
 require 'petstore/models/map_test'
 require 'petstore/models/mixed_properties_and_additional_properties_class'
 require 'petstore/models/model200_response'
 require 'petstore/models/model_return'
 require 'petstore/models/name'
+<<<<<<< HEAD
 require 'petstore/models/nullable_class'
+=======
+>>>>>>> ooof
 require 'petstore/models/number_only'
 require 'petstore/models/order'
 require 'petstore/models/outer_composite'
 require 'petstore/models/outer_enum'
+<<<<<<< HEAD
 require 'petstore/models/outer_enum_default_value'
 require 'petstore/models/outer_enum_integer'
 require 'petstore/models/outer_enum_integer_default_value'
+=======
+>>>>>>> ooof
 require 'petstore/models/pet'
 require 'petstore/models/read_only_first'
 require 'petstore/models/special_model_name'
 require 'petstore/models/tag'
+<<<<<<< HEAD
 require 'petstore/models/user'
 
 # APIs
 require 'petstore/api/another_fake_api'
 require 'petstore/api/default_api'
+=======
+require 'petstore/models/type_holder_default'
+require 'petstore/models/type_holder_example'
+require 'petstore/models/user'
+require 'petstore/models/xml_item'
+
+# APIs
+require 'petstore/api/another_fake_api'
+>>>>>>> ooof
 require 'petstore/api/fake_api'
 require 'petstore/api/fake_classname_tags123_api'
 require 'petstore/api/pet_api'

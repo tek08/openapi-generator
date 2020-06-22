@@ -3,7 +3,10 @@ package org.openapitools.api;
 import java.io.File;
 import org.openapitools.model.ModelApiResponse;
 import org.openapitools.model.Pet;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
@@ -18,7 +21,11 @@ import javax.validation.Valid;
 
 @Path("/pet")
 @Api(description = "the pet API")
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public interface PetApi {
+=======
+public interface PetApi {
+>>>>>>> ooof
 
     @POST
     @Consumes({ "application/json", "application/xml" })
@@ -70,9 +77,15 @@ import javax.validation.Valid;
         })
     }, tags={ "pet",  })
     @ApiResponses(value = { 
+<<<<<<< HEAD
         @ApiResponse(code = 200, message = "successful operation", response = Pet.class, responseContainer = "Set"),
         @ApiResponse(code = 400, message = "Invalid tag value", response = Void.class, responseContainer = "Set") })
     Set<Pet> findPetsByTags(@QueryParam("tags") @NotNull   @ApiParam("Tags to filter by")  Set<String> tags);
+=======
+        @ApiResponse(code = 200, message = "successful operation", response = Pet.class, responseContainer = "List"),
+        @ApiResponse(code = 400, message = "Invalid tag value", response = Void.class, responseContainer = "List") })
+    List<Pet> findPetsByTags(@QueryParam("tags") @NotNull   @ApiParam("Tags to filter by")  List<String> tags);
+>>>>>>> ooof
 
     @GET
     @Path("/{petId}")

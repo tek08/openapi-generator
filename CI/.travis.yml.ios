@@ -34,4 +34,8 @@ before_install:
 
 script:
   # run integration tests defined in maven pom.xml
+<<<<<<< HEAD
   - mvn --no-snapshot-updates -q --batch-mode verify -Psamples.ios -Dmaven.javadoc.skip=true
+=======
+  - mvn -q --batch-mode verify -Psamples.ios -Dmaven.javadoc.skip=true
+>>>>>>> ooof

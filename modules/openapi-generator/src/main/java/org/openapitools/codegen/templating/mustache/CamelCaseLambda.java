@@ -42,6 +42,7 @@ import static org.openapitools.codegen.utils.StringUtils.camelize;
 public class CamelCaseLambda implements Mustache.Lambda {
     private CodegenConfig generator = null;
     private Boolean escapeParam = false;
+<<<<<<< HEAD
     private Boolean lowercaseFirstLetter = true;
 
     public CamelCaseLambda(boolean lowercaseFirstLetter) {
@@ -49,6 +50,12 @@ public class CamelCaseLambda implements Mustache.Lambda {
     }
 
     public CamelCaseLambda() {}
+=======
+
+    public CamelCaseLambda() {
+
+    }
+>>>>>>> ooof
 
     public CamelCaseLambda generator(final CodegenConfig generator) {
         this.generator = generator;
@@ -62,7 +69,11 @@ public class CamelCaseLambda implements Mustache.Lambda {
 
     @Override
     public void execute(Template.Fragment fragment, Writer writer) throws IOException {
+<<<<<<< HEAD
         String text = camelize(fragment.execute(), lowercaseFirstLetter);
+=======
+        String text = camelize(fragment.execute(), true);
+>>>>>>> ooof
         if (generator != null) {
             text = generator.sanitizeName(text);
             if (generator.reservedWords().contains(text)) {

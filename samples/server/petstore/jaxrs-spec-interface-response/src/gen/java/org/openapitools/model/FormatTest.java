@@ -19,7 +19,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class FormatTest  implements Serializable {
+=======
+public class FormatTest  implements Serializable {
+>>>>>>> ooof
   
   private @Valid Integer integer;
   private @Valid Integer int32;
@@ -46,17 +50,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("integer")
  @Min(10) @Max(100)  public Integer getInteger() {
     return integer;
   }
+<<<<<<< HEAD
 
   public void setInteger(Integer integer) {
     this.integer = integer;
   }/**
+=======
+  public void setInteger(Integer integer) {
+    this.integer = integer;
+  }
+
+  /**
+>>>>>>> ooof
    * minimum: 20
    * maximum: 200
    **/
@@ -66,17 +81,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("int32")
  @Min(20) @Max(200)  public Integer getInt32() {
     return int32;
   }
+<<<<<<< HEAD
 
   public void setInt32(Integer int32) {
     this.int32 = int32;
   }/**
+=======
+  public void setInt32(Integer int32) {
+    this.int32 = int32;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public FormatTest int64(Long int64) {
     this.int64 = int64;
@@ -84,17 +110,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("int64")
   public Long getInt64() {
     return int64;
   }
+<<<<<<< HEAD
 
   public void setInt64(Long int64) {
     this.int64 = int64;
   }/**
+=======
+  public void setInt64(Long int64) {
+    this.int64 = int64;
+  }
+
+  /**
+>>>>>>> ooof
    * minimum: 32.1
    * maximum: 543.2
    **/
@@ -104,18 +141,29 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(required = true, value = "")
   @JsonProperty("number")
   @NotNull
  @DecimalMin("32.1") @DecimalMax("543.2")  public BigDecimal getNumber() {
     return number;
   }
+<<<<<<< HEAD
 
   public void setNumber(BigDecimal number) {
     this.number = number;
   }/**
+=======
+  public void setNumber(BigDecimal number) {
+    this.number = number;
+  }
+
+  /**
+>>>>>>> ooof
    * minimum: 54.3
    * maximum: 987.6
    **/
@@ -125,17 +173,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("float")
  @DecimalMin("54.3") @DecimalMax("987.6")  public Float getFloat() {
     return _float;
   }
+<<<<<<< HEAD
 
   public void setFloat(Float _float) {
     this._float = _float;
   }/**
+=======
+  public void setFloat(Float _float) {
+    this._float = _float;
+  }
+
+  /**
+>>>>>>> ooof
    * minimum: 67.8
    * maximum: 123.4
    **/
@@ -145,17 +204,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("double")
  @DecimalMin("67.8") @DecimalMax("123.4")  public Double getDouble() {
     return _double;
   }
+<<<<<<< HEAD
 
   public void setDouble(Double _double) {
     this._double = _double;
   }/**
+=======
+  public void setDouble(Double _double) {
+    this._double = _double;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public FormatTest string(String string) {
     this.string = string;
@@ -163,17 +233,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("string")
  @Pattern(regexp="/[a-z]/i")  public String getString() {
     return string;
   }
+<<<<<<< HEAD
 
   public void setString(String string) {
     this.string = string;
   }/**
+=======
+  public void setString(String string) {
+    this.string = string;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public FormatTest _byte(byte[] _byte) {
     this._byte = _byte;
@@ -181,18 +262,29 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(required = true, value = "")
   @JsonProperty("byte")
   @NotNull
  @Pattern(regexp="^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$")  public byte[] getByte() {
     return _byte;
   }
+<<<<<<< HEAD
 
   public void setByte(byte[] _byte) {
     this._byte = _byte;
   }/**
+=======
+  public void setByte(byte[] _byte) {
+    this._byte = _byte;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public FormatTest binary(File binary) {
     this.binary = binary;
@@ -200,17 +292,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("binary")
   public File getBinary() {
     return binary;
   }
+<<<<<<< HEAD
 
   public void setBinary(File binary) {
     this.binary = binary;
   }/**
+=======
+  public void setBinary(File binary) {
+    this.binary = binary;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public FormatTest date(LocalDate date) {
     this.date = date;
@@ -218,18 +321,29 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(required = true, value = "")
   @JsonProperty("date")
   @NotNull
   public LocalDate getDate() {
     return date;
   }
+<<<<<<< HEAD
 
   public void setDate(LocalDate date) {
     this.date = date;
   }/**
+=======
+  public void setDate(LocalDate date) {
+    this.date = date;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public FormatTest dateTime(Date dateTime) {
     this.dateTime = dateTime;
@@ -237,17 +351,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("dateTime")
   public Date getDateTime() {
     return dateTime;
   }
+<<<<<<< HEAD
 
   public void setDateTime(Date dateTime) {
     this.dateTime = dateTime;
   }/**
+=======
+  public void setDateTime(Date dateTime) {
+    this.dateTime = dateTime;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public FormatTest uuid(UUID uuid) {
     this.uuid = uuid;
@@ -255,17 +380,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "72f98069-206d-4f12-9f12-3d1e525a8e84", value = "")
   @JsonProperty("uuid")
   public UUID getUuid() {
     return uuid;
   }
+<<<<<<< HEAD
 
   public void setUuid(UUID uuid) {
     this.uuid = uuid;
   }/**
+=======
+  public void setUuid(UUID uuid) {
+    this.uuid = uuid;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public FormatTest password(String password) {
     this.password = password;
@@ -273,18 +409,29 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(required = true, value = "")
   @JsonProperty("password")
   @NotNull
  @Size(min=10,max=64)  public String getPassword() {
     return password;
   }
+<<<<<<< HEAD
 
   public void setPassword(String password) {
     this.password = password;
   }/**
+=======
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public FormatTest bigDecimal(BigDecimal bigDecimal) {
     this.bigDecimal = bigDecimal;
@@ -292,18 +439,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("BigDecimal")
   public BigDecimal getBigDecimal() {
     return bigDecimal;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
   public void setBigDecimal(BigDecimal bigDecimal) {
     this.bigDecimal = bigDecimal;
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -367,7 +524,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
     }
     return o.toString().replace("\n", "\n    ");
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 }
 

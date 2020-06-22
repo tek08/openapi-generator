@@ -73,7 +73,11 @@ class Tag(object):
 
 
         :param id: The id of this Tag.  # noqa: E501
+<<<<<<< HEAD
         :type id: int
+=======
+        :type: int
+>>>>>>> ooof
         """
 
         self._id = id
@@ -94,7 +98,11 @@ class Tag(object):
 
 
         :param name: The name of this Tag.  # noqa: E501
+<<<<<<< HEAD
         :type name: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._name = name

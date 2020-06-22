@@ -56,7 +56,11 @@ No authorization required
 
 ### HTTP request headers
 
+<<<<<<< HEAD
  - **Content-Type**: application/json
+=======
+ - **Content-Type**: Not defined
+>>>>>>> ooof
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -72,7 +76,11 @@ Creates list of users with given input array
 ### Example 
 ```objc
 
+<<<<<<< HEAD
 NSArray<SWGUser>* user = @[[[SWGUser alloc] init]]; // List of user object (optional)
+=======
+NSArray<SWGUser>* user = @[[[NSArray alloc] init]]; // List of user object (optional)
+>>>>>>> ooof
 
 SWGUserApi*apiInstance = [[SWGUserApi alloc] init];
 
@@ -89,7 +97,11 @@ SWGUserApi*apiInstance = [[SWGUserApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **user** | [**NSArray&lt;SWGUser&gt;***](SWGUser.md)| List of user object | [optional] 
+=======
+ **user** | [**NSArray&lt;SWGUser&gt;***](NSArray.md)| List of user object | [optional] 
+>>>>>>> ooof
 
 ### Return type
 
@@ -101,7 +113,11 @@ No authorization required
 
 ### HTTP request headers
 
+<<<<<<< HEAD
  - **Content-Type**: application/json
+=======
+ - **Content-Type**: Not defined
+>>>>>>> ooof
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -117,7 +133,11 @@ Creates list of users with given input array
 ### Example 
 ```objc
 
+<<<<<<< HEAD
 NSArray<SWGUser>* user = @[[[SWGUser alloc] init]]; // List of user object (optional)
+=======
+NSArray<SWGUser>* user = @[[[NSArray alloc] init]]; // List of user object (optional)
+>>>>>>> ooof
 
 SWGUserApi*apiInstance = [[SWGUserApi alloc] init];
 
@@ -134,7 +154,11 @@ SWGUserApi*apiInstance = [[SWGUserApi alloc] init];
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **user** | [**NSArray&lt;SWGUser&gt;***](SWGUser.md)| List of user object | [optional] 
+=======
+ **user** | [**NSArray&lt;SWGUser&gt;***](NSArray.md)| List of user object | [optional] 
+>>>>>>> ooof
 
 ### Return type
 
@@ -146,7 +170,11 @@ No authorization required
 
 ### HTTP request headers
 
+<<<<<<< HEAD
  - **Content-Type**: application/json
+=======
+ - **Content-Type**: Not defined
+>>>>>>> ooof
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -385,7 +413,11 @@ No authorization required
 
 ### HTTP request headers
 
+<<<<<<< HEAD
  - **Content-Type**: application/json
+=======
+ - **Content-Type**: Not defined
+>>>>>>> ooof
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

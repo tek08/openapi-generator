@@ -13,7 +13,10 @@ package org.openapitools.client.models
 
 
 import com.google.gson.annotations.SerializedName
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * An order for a pets from the pet store
  * @param id 
@@ -46,9 +49,15 @@ data class Order (
     */
     
     enum class Status(val value: kotlin.String){
+<<<<<<< HEAD
         @SerializedName(value = "placed") placed("placed"),
         @SerializedName(value = "approved") approved("approved"),
         @SerializedName(value = "delivered") delivered("delivered");
+=======
+        @SerializedName(value="placed")  placed("placed"),
+        @SerializedName(value="approved")  approved("approved"),
+        @SerializedName(value="delivered")  delivered("delivered");
+>>>>>>> ooof
     }
 }
 

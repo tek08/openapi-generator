@@ -14,7 +14,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class ReadOnlyFirst  implements Serializable {
+=======
+public class ReadOnlyFirst  implements Serializable {
+>>>>>>> ooof
   
   private @Valid String bar;
   private @Valid String baz;
@@ -27,17 +31,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("bar")
   public String getBar() {
     return bar;
   }
+<<<<<<< HEAD
 
   public void setBar(String bar) {
     this.bar = bar;
   }/**
+=======
+  public void setBar(String bar) {
+    this.bar = bar;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public ReadOnlyFirst baz(String baz) {
     this.baz = baz;
@@ -45,18 +60,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("baz")
   public String getBaz() {
     return baz;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
   public void setBaz(String baz) {
     this.baz = baz;
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -96,7 +121,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
     }
     return o.toString().replace("\n", "\n    ");
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 }
 

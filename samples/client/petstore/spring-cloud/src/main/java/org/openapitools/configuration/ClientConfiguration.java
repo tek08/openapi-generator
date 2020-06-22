@@ -8,7 +8,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.cloud.security.oauth2.client.feign.OAuth2FeignRequestInterceptor;
 import org.springframework.security.oauth2.client.DefaultOAuth2ClientContext;
+<<<<<<< HEAD
 import org.springframework.security.oauth2.client.OAuth2ClientContext;
+=======
+>>>>>>> ooof
 import org.springframework.security.oauth2.client.token.grant.implicit.ImplicitResourceDetails;
 
 @Configuration
@@ -26,6 +29,7 @@ public class ClientConfiguration {
 
   @Bean
   @ConditionalOnProperty("openapipetstore.security.petstoreAuth.client-id")
+<<<<<<< HEAD
   public OAuth2FeignRequestInterceptor petstoreAuthRequestInterceptor(OAuth2ClientContext oAuth2ClientContext) {
     return new OAuth2FeignRequestInterceptor(oAuth2ClientContext, petstoreAuthResourceDetails());
   }
@@ -34,6 +38,10 @@ public class ClientConfiguration {
   @ConditionalOnProperty("openapipetstore.security.petstoreAuth.client-id")
   public OAuth2ClientContext oAuth2ClientContext() {
     return new DefaultOAuth2ClientContext();
+=======
+  public OAuth2FeignRequestInterceptor petstoreAuthRequestInterceptor() {
+    return new OAuth2FeignRequestInterceptor(new DefaultOAuth2ClientContext(), petstoreAuthResourceDetails());
+>>>>>>> ooof
   }
 
   @Bean

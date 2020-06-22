@@ -5,7 +5,11 @@ import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.parser.core.models.ParseOptions;
 import org.openapitools.codegen.ClientOptInput;
 import org.openapitools.codegen.CodegenConstants;
+<<<<<<< HEAD
 import org.openapitools.codegen.DefaultGenerator;
+=======
+import org.openapitools.codegen.MockDefaultGenerator;
+>>>>>>> ooof
 import org.openapitools.codegen.languages.AbstractKotlinCodegen;
 import org.openapitools.codegen.languages.KotlinClientCodegen;
 import org.openapitools.codegen.languages.KotlinServerCodegen;
@@ -17,7 +21,10 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+<<<<<<< HEAD
 import java.nio.file.Paths;
+=======
+>>>>>>> ooof
 
 import static org.openapitools.codegen.TestUtils.assertFileContains;
 
@@ -65,6 +72,7 @@ public class KotlinModelCodegenTest {
                 .openAPI(openAPI)
                 .config(codegen);
 
+<<<<<<< HEAD
         DefaultGenerator generator = new DefaultGenerator();
 
         generator.setGeneratorPropertyDefault(CodegenConstants.MODELS, "true");
@@ -76,5 +84,11 @@ public class KotlinModelCodegenTest {
         generator.opts(input).generate();
 
         assertFileContains(Paths.get(outputPath + "/src/main/kotlin/models/Animal.kt"), props);
+=======
+        MockDefaultGenerator generator = new MockDefaultGenerator();
+        generator.opts(input).generate();
+
+        assertFileContains(generator, outputPath + "/src/main/kotlin/models/Animal.kt", props);
+>>>>>>> ooof
     }
 }

@@ -11,6 +11,7 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
@@ -26,6 +27,12 @@ except ImportError:
     simple_quadrilateral = sys.modules[
         'petstore_api.model.simple_quadrilateral']
 from petstore_api.model.quadrilateral import Quadrilateral
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestQuadrilateral(unittest.TestCase):
@@ -39,10 +46,17 @@ class TestQuadrilateral(unittest.TestCase):
 
     def testQuadrilateral(self):
         """Test Quadrilateral"""
+<<<<<<< HEAD
         instance = Quadrilateral(shape_type="Quadrilateral", quadrilateral_type="ComplexQuadrilateral")
         assert isinstance(instance, complex_quadrilateral.ComplexQuadrilateral)
         instance = Quadrilateral(shape_type="Quadrilateral", quadrilateral_type="SimpleQuadrilateral")
         assert isinstance(instance, simple_quadrilateral.SimpleQuadrilateral)
+=======
+        complex_quadrilateral = petstore_api.Quadrilateral(shape_type="Quadrilateral", quadrilateral_type="ComplexQuadrilateral")
+        assert isinstance(complex_quadrilateral, petstore_api.ComplexQuadrilateral)
+        simple_quadrilateral = petstore_api.Quadrilateral(shape_type="Quadrilateral", quadrilateral_type="SimpleQuadrilateral")
+        assert isinstance(simple_quadrilateral, petstore_api.SimpleQuadrilateral)
+>>>>>>> ooof
 
 
 if __name__ == '__main__':

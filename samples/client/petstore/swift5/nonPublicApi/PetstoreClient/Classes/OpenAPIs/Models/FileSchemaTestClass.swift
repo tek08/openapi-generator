@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 internal struct FileSchemaTestClass: Codable { 
 
+=======
+internal struct FileSchemaTestClass: Codable {
+>>>>>>> ooof
 
     internal var file: File?
     internal var files: [File]?

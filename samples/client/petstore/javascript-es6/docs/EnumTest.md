@@ -9,9 +9,12 @@ Name | Type | Description | Notes
 **enumInteger** | **Number** |  | [optional] 
 **enumNumber** | **Number** |  | [optional] 
 **outerEnum** | [**OuterEnum**](OuterEnum.md) |  | [optional] 
+<<<<<<< HEAD
 **outerEnumInteger** | [**OuterEnumInteger**](OuterEnumInteger.md) |  | [optional] 
 **outerEnumDefaultValue** | [**OuterEnumDefaultValue**](OuterEnumDefaultValue.md) |  | [optional] 
 **outerEnumIntegerDefaultValue** | [**OuterEnumIntegerDefaultValue**](OuterEnumIntegerDefaultValue.md) |  | [optional] 
+=======
+>>>>>>> ooof
 
 
 

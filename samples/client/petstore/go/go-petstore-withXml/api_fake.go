@@ -1170,7 +1170,11 @@ func (a *FakeApiService) TestQueryParameterCollectionFormat(ctx _context.Context
 
 	localVarQueryParams.Add("pipe", parameterToString(pipe, "csv"))
 	localVarQueryParams.Add("ioutil", parameterToString(ioutil, "csv"))
+<<<<<<< HEAD
 	localVarQueryParams.Add("http", parameterToString(http, "ssv"))
+=======
+	localVarQueryParams.Add("http", parameterToString(http, "space"))
+>>>>>>> ooof
 	localVarQueryParams.Add("url", parameterToString(url, "csv"))
 	{
 		t:=context

@@ -9,7 +9,11 @@ import java.time.OffsetDateTime;
 /**
  * An order for a pets from the pet store
  **/
+<<<<<<< HEAD
 @JsonInclude(JsonInclude.Include.NON_NULL)
+=======
+@JsonInclude(JsonInclude.Include.NON_NULL) 
+>>>>>>> ooof
 public class Order   {
   
   private Long id;

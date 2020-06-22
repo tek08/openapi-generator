@@ -143,8 +143,12 @@ public class K6ClientCodegen extends DefaultCodegen implements CodegenConfig {
 
         public HTTPRequest(String method, String path, @Nullable List<Parameter> query, @Nullable HTTPBody body,
                            @Nullable HTTPParameters params, @Nullable List<k6Check> k6Checks) {
+<<<<<<< HEAD
             // NOTE: https://k6.io/docs/javascript-api/k6-http/del-url-body-params
             this.method = method.equals("delete") ? "del" : method;
+=======
+            this.method = method;
+>>>>>>> ooof
             this.path = path;
             this.query = query;
             this.body = body;
@@ -185,6 +189,10 @@ public class K6ClientCodegen extends DefaultCodegen implements CodegenConfig {
 
     protected String invokerPackage;
     protected String sourceFolder = "";
+<<<<<<< HEAD
+=======
+    protected String localVariablePrefix = "";
+>>>>>>> ooof
     private String modelPropertyNaming = "camelCase";
     protected boolean preserveLeadingParamChar = false;
 

@@ -18,7 +18,11 @@ import com.sun.jersey.multipart.FormDataParam;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.validation.constraints.*;
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen")
+=======
+
+>>>>>>> ooof
 public class AnotherFakeApiServiceImpl extends AnotherFakeApiService {
     @Override
     public Response call123testSpecialTags(Client body, SecurityContext securityContext)

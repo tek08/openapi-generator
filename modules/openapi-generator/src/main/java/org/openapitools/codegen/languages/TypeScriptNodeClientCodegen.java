@@ -316,7 +316,11 @@ public class TypeScriptNodeClientCodegen extends AbstractTypeScriptClientCodegen
 @Override
     protected void addAdditionPropertiesToCodeGenModel(CodegenModel codegenModel, Schema schema) {
         super.addAdditionPropertiesToCodeGenModel(codegenModel, schema);
+<<<<<<< HEAD
         Schema additionalProperties = getAdditionalProperties(schema);
+=======
+        Schema additionalProperties = ModelUtils.getAdditionalProperties(schema);
+>>>>>>> ooof
         codegenModel.additionalPropertiesType = getSchemaType(additionalProperties);
         if ("array".equalsIgnoreCase(codegenModel.additionalPropertiesType)) {
             codegenModel.additionalPropertiesType += '<' + getSchemaType(((ArraySchema) additionalProperties).getItems()) + '>';

@@ -45,6 +45,7 @@ export default class UserApi {
     /**
      * Create user
      * This can only be done by the logged in user.
+<<<<<<< HEAD
      * @param {module:model/User} user Created user object
      * @param {module:api/UserApi~createUserCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -53,6 +54,16 @@ export default class UserApi {
       // verify the required parameter 'user' is set
       if (user === undefined || user === null) {
         throw new Error("Missing the required parameter 'user' when calling createUser");
+=======
+     * @param {module:model/User} body Created user object
+     * @param {module:api/UserApi~createUserCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    createUser(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createUser");
+>>>>>>> ooof
       }
 
       let pathParams = {
@@ -65,7 +76,11 @@ export default class UserApi {
       };
 
       let authNames = [];
+<<<<<<< HEAD
       let contentTypes = ['application/json'];
+=======
+      let contentTypes = [];
+>>>>>>> ooof
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -85,6 +100,7 @@ export default class UserApi {
 
     /**
      * Creates list of users with given input array
+<<<<<<< HEAD
      * @param {Array.<module:model/User>} user List of user object
      * @param {module:api/UserApi~createUsersWithArrayInputCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -93,6 +109,16 @@ export default class UserApi {
       // verify the required parameter 'user' is set
       if (user === undefined || user === null) {
         throw new Error("Missing the required parameter 'user' when calling createUsersWithArrayInput");
+=======
+     * @param {Array.<module:model/User>} body List of user object
+     * @param {module:api/UserApi~createUsersWithArrayInputCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    createUsersWithArrayInput(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createUsersWithArrayInput");
+>>>>>>> ooof
       }
 
       let pathParams = {
@@ -105,7 +131,11 @@ export default class UserApi {
       };
 
       let authNames = [];
+<<<<<<< HEAD
       let contentTypes = ['application/json'];
+=======
+      let contentTypes = [];
+>>>>>>> ooof
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -125,6 +155,7 @@ export default class UserApi {
 
     /**
      * Creates list of users with given input array
+<<<<<<< HEAD
      * @param {Array.<module:model/User>} user List of user object
      * @param {module:api/UserApi~createUsersWithListInputCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -133,6 +164,16 @@ export default class UserApi {
       // verify the required parameter 'user' is set
       if (user === undefined || user === null) {
         throw new Error("Missing the required parameter 'user' when calling createUsersWithListInput");
+=======
+     * @param {Array.<module:model/User>} body List of user object
+     * @param {module:api/UserApi~createUsersWithListInputCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    createUsersWithListInput(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling createUsersWithListInput");
+>>>>>>> ooof
       }
 
       let pathParams = {
@@ -145,7 +186,11 @@ export default class UserApi {
       };
 
       let authNames = [];
+<<<<<<< HEAD
       let contentTypes = ['application/json'];
+=======
+      let contentTypes = [];
+>>>>>>> ooof
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
@@ -334,18 +379,32 @@ export default class UserApi {
      * Updated user
      * This can only be done by the logged in user.
      * @param {String} username name that need to be deleted
+<<<<<<< HEAD
      * @param {module:model/User} user Updated user object
      * @param {module:api/UserApi~updateUserCallback} callback The callback function, accepting three arguments: error, data, response
      */
     updateUser(username, user, callback) {
       let postBody = user;
+=======
+     * @param {module:model/User} body Updated user object
+     * @param {module:api/UserApi~updateUserCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    updateUser(username, body, callback) {
+      let postBody = body;
+>>>>>>> ooof
       // verify the required parameter 'username' is set
       if (username === undefined || username === null) {
         throw new Error("Missing the required parameter 'username' when calling updateUser");
       }
+<<<<<<< HEAD
       // verify the required parameter 'user' is set
       if (user === undefined || user === null) {
         throw new Error("Missing the required parameter 'user' when calling updateUser");
+=======
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling updateUser");
+>>>>>>> ooof
       }
 
       let pathParams = {
@@ -359,7 +418,11 @@ export default class UserApi {
       };
 
       let authNames = [];
+<<<<<<< HEAD
       let contentTypes = ['application/json'];
+=======
+      let contentTypes = [];
+>>>>>>> ooof
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(

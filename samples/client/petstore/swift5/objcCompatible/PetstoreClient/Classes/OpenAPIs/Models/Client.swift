@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 
 @objc public class Client: NSObject, Codable { 
+=======
+@objc public class Client: NSObject, Codable {
+>>>>>>> ooof
 
     public var client: String?
 

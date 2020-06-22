@@ -8,9 +8,15 @@ import play.api.libs.Files.TemporaryFile
 trait PetApi {
   /**
     * Add a new pet to the store
+<<<<<<< HEAD
     * @param pet Pet object that needs to be added to the store
     */
   def addPet(pet: Pet): Pet
+=======
+    * @param body Pet object that needs to be added to the store
+    */
+  def addPet(body: Pet): Unit
+>>>>>>> ooof
 
   /**
     * Deletes a pet
@@ -41,9 +47,15 @@ trait PetApi {
 
   /**
     * Update an existing pet
+<<<<<<< HEAD
     * @param pet Pet object that needs to be added to the store
     */
   def updatePet(pet: Pet): Pet
+=======
+    * @param body Pet object that needs to be added to the store
+    */
+  def updatePet(body: Pet): Unit
+>>>>>>> ooof
 
   /**
     * Updates a pet in the store with form data

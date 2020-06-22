@@ -11,11 +11,18 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
 import petstore_api
 from petstore_api.model.category import Category
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestCategory(unittest.TestCase):
@@ -30,7 +37,11 @@ class TestCategory(unittest.TestCase):
     def testCategory(self):
         """Test Category"""
         # FIXME: construct object with mandatory attributes with example values
+<<<<<<< HEAD
         # model = Category()  # noqa: E501
+=======
+        # model = petstore_api.Category()  # noqa: E501
+>>>>>>> ooof
         pass
 
 

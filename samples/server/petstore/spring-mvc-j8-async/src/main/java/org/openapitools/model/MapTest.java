@@ -16,7 +16,11 @@ import javax.validation.constraints.*;
 /**
  * MapTest
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
+=======
+
+>>>>>>> ooof
 public class MapTest   {
   @JsonProperty("map_map_of_string")
   @Valid

@@ -17,7 +17,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class XmlItem  implements Serializable {
+=======
+public class XmlItem  implements Serializable {
+>>>>>>> ooof
   
   private @Valid String attributeString;
   private @Valid BigDecimal attributeNumber;
@@ -57,17 +61,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "string", value = "")
   @JsonProperty("attribute_string")
   public String getAttributeString() {
     return attributeString;
   }
+<<<<<<< HEAD
 
   public void setAttributeString(String attributeString) {
     this.attributeString = attributeString;
   }/**
+=======
+  public void setAttributeString(String attributeString) {
+    this.attributeString = attributeString;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem attributeNumber(BigDecimal attributeNumber) {
     this.attributeNumber = attributeNumber;
@@ -75,17 +90,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "1.234", value = "")
   @JsonProperty("attribute_number")
   public BigDecimal getAttributeNumber() {
     return attributeNumber;
   }
+<<<<<<< HEAD
 
   public void setAttributeNumber(BigDecimal attributeNumber) {
     this.attributeNumber = attributeNumber;
   }/**
+=======
+  public void setAttributeNumber(BigDecimal attributeNumber) {
+    this.attributeNumber = attributeNumber;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem attributeInteger(Integer attributeInteger) {
     this.attributeInteger = attributeInteger;
@@ -93,17 +119,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "-2", value = "")
   @JsonProperty("attribute_integer")
   public Integer getAttributeInteger() {
     return attributeInteger;
   }
+<<<<<<< HEAD
 
   public void setAttributeInteger(Integer attributeInteger) {
     this.attributeInteger = attributeInteger;
   }/**
+=======
+  public void setAttributeInteger(Integer attributeInteger) {
+    this.attributeInteger = attributeInteger;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem attributeBoolean(Boolean attributeBoolean) {
     this.attributeBoolean = attributeBoolean;
@@ -111,17 +148,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "true", value = "")
   @JsonProperty("attribute_boolean")
   public Boolean getAttributeBoolean() {
     return attributeBoolean;
   }
+<<<<<<< HEAD
 
   public void setAttributeBoolean(Boolean attributeBoolean) {
     this.attributeBoolean = attributeBoolean;
   }/**
+=======
+  public void setAttributeBoolean(Boolean attributeBoolean) {
+    this.attributeBoolean = attributeBoolean;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem wrappedArray(List<Integer> wrappedArray) {
     this.wrappedArray = wrappedArray;
@@ -129,17 +177,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("wrapped_array")
   public List<Integer> getWrappedArray() {
     return wrappedArray;
   }
+<<<<<<< HEAD
 
   public void setWrappedArray(List<Integer> wrappedArray) {
     this.wrappedArray = wrappedArray;
   }/**
+=======
+  public void setWrappedArray(List<Integer> wrappedArray) {
+    this.wrappedArray = wrappedArray;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem nameString(String nameString) {
     this.nameString = nameString;
@@ -147,17 +206,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "string", value = "")
   @JsonProperty("name_string")
   public String getNameString() {
     return nameString;
   }
+<<<<<<< HEAD
 
   public void setNameString(String nameString) {
     this.nameString = nameString;
   }/**
+=======
+  public void setNameString(String nameString) {
+    this.nameString = nameString;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem nameNumber(BigDecimal nameNumber) {
     this.nameNumber = nameNumber;
@@ -165,17 +235,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "1.234", value = "")
   @JsonProperty("name_number")
   public BigDecimal getNameNumber() {
     return nameNumber;
   }
+<<<<<<< HEAD
 
   public void setNameNumber(BigDecimal nameNumber) {
     this.nameNumber = nameNumber;
   }/**
+=======
+  public void setNameNumber(BigDecimal nameNumber) {
+    this.nameNumber = nameNumber;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem nameInteger(Integer nameInteger) {
     this.nameInteger = nameInteger;
@@ -183,17 +264,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "-2", value = "")
   @JsonProperty("name_integer")
   public Integer getNameInteger() {
     return nameInteger;
   }
+<<<<<<< HEAD
 
   public void setNameInteger(Integer nameInteger) {
     this.nameInteger = nameInteger;
   }/**
+=======
+  public void setNameInteger(Integer nameInteger) {
+    this.nameInteger = nameInteger;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem nameBoolean(Boolean nameBoolean) {
     this.nameBoolean = nameBoolean;
@@ -201,17 +293,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "true", value = "")
   @JsonProperty("name_boolean")
   public Boolean getNameBoolean() {
     return nameBoolean;
   }
+<<<<<<< HEAD
 
   public void setNameBoolean(Boolean nameBoolean) {
     this.nameBoolean = nameBoolean;
   }/**
+=======
+  public void setNameBoolean(Boolean nameBoolean) {
+    this.nameBoolean = nameBoolean;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem nameArray(List<Integer> nameArray) {
     this.nameArray = nameArray;
@@ -219,17 +322,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("name_array")
   public List<Integer> getNameArray() {
     return nameArray;
   }
+<<<<<<< HEAD
 
   public void setNameArray(List<Integer> nameArray) {
     this.nameArray = nameArray;
   }/**
+=======
+  public void setNameArray(List<Integer> nameArray) {
+    this.nameArray = nameArray;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem nameWrappedArray(List<Integer> nameWrappedArray) {
     this.nameWrappedArray = nameWrappedArray;
@@ -237,17 +351,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("name_wrapped_array")
   public List<Integer> getNameWrappedArray() {
     return nameWrappedArray;
   }
+<<<<<<< HEAD
 
   public void setNameWrappedArray(List<Integer> nameWrappedArray) {
     this.nameWrappedArray = nameWrappedArray;
   }/**
+=======
+  public void setNameWrappedArray(List<Integer> nameWrappedArray) {
+    this.nameWrappedArray = nameWrappedArray;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem prefixString(String prefixString) {
     this.prefixString = prefixString;
@@ -255,17 +380,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "string", value = "")
   @JsonProperty("prefix_string")
   public String getPrefixString() {
     return prefixString;
   }
+<<<<<<< HEAD
 
   public void setPrefixString(String prefixString) {
     this.prefixString = prefixString;
   }/**
+=======
+  public void setPrefixString(String prefixString) {
+    this.prefixString = prefixString;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem prefixNumber(BigDecimal prefixNumber) {
     this.prefixNumber = prefixNumber;
@@ -273,17 +409,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "1.234", value = "")
   @JsonProperty("prefix_number")
   public BigDecimal getPrefixNumber() {
     return prefixNumber;
   }
+<<<<<<< HEAD
 
   public void setPrefixNumber(BigDecimal prefixNumber) {
     this.prefixNumber = prefixNumber;
   }/**
+=======
+  public void setPrefixNumber(BigDecimal prefixNumber) {
+    this.prefixNumber = prefixNumber;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem prefixInteger(Integer prefixInteger) {
     this.prefixInteger = prefixInteger;
@@ -291,17 +438,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "-2", value = "")
   @JsonProperty("prefix_integer")
   public Integer getPrefixInteger() {
     return prefixInteger;
   }
+<<<<<<< HEAD
 
   public void setPrefixInteger(Integer prefixInteger) {
     this.prefixInteger = prefixInteger;
   }/**
+=======
+  public void setPrefixInteger(Integer prefixInteger) {
+    this.prefixInteger = prefixInteger;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem prefixBoolean(Boolean prefixBoolean) {
     this.prefixBoolean = prefixBoolean;
@@ -309,17 +467,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "true", value = "")
   @JsonProperty("prefix_boolean")
   public Boolean getPrefixBoolean() {
     return prefixBoolean;
   }
+<<<<<<< HEAD
 
   public void setPrefixBoolean(Boolean prefixBoolean) {
     this.prefixBoolean = prefixBoolean;
   }/**
+=======
+  public void setPrefixBoolean(Boolean prefixBoolean) {
+    this.prefixBoolean = prefixBoolean;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem prefixArray(List<Integer> prefixArray) {
     this.prefixArray = prefixArray;
@@ -327,17 +496,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("prefix_array")
   public List<Integer> getPrefixArray() {
     return prefixArray;
   }
+<<<<<<< HEAD
 
   public void setPrefixArray(List<Integer> prefixArray) {
     this.prefixArray = prefixArray;
   }/**
+=======
+  public void setPrefixArray(List<Integer> prefixArray) {
+    this.prefixArray = prefixArray;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem prefixWrappedArray(List<Integer> prefixWrappedArray) {
     this.prefixWrappedArray = prefixWrappedArray;
@@ -345,17 +525,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("prefix_wrapped_array")
   public List<Integer> getPrefixWrappedArray() {
     return prefixWrappedArray;
   }
+<<<<<<< HEAD
 
   public void setPrefixWrappedArray(List<Integer> prefixWrappedArray) {
     this.prefixWrappedArray = prefixWrappedArray;
   }/**
+=======
+  public void setPrefixWrappedArray(List<Integer> prefixWrappedArray) {
+    this.prefixWrappedArray = prefixWrappedArray;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem namespaceString(String namespaceString) {
     this.namespaceString = namespaceString;
@@ -363,17 +554,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "string", value = "")
   @JsonProperty("namespace_string")
   public String getNamespaceString() {
     return namespaceString;
   }
+<<<<<<< HEAD
 
   public void setNamespaceString(String namespaceString) {
     this.namespaceString = namespaceString;
   }/**
+=======
+  public void setNamespaceString(String namespaceString) {
+    this.namespaceString = namespaceString;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem namespaceNumber(BigDecimal namespaceNumber) {
     this.namespaceNumber = namespaceNumber;
@@ -381,17 +583,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "1.234", value = "")
   @JsonProperty("namespace_number")
   public BigDecimal getNamespaceNumber() {
     return namespaceNumber;
   }
+<<<<<<< HEAD
 
   public void setNamespaceNumber(BigDecimal namespaceNumber) {
     this.namespaceNumber = namespaceNumber;
   }/**
+=======
+  public void setNamespaceNumber(BigDecimal namespaceNumber) {
+    this.namespaceNumber = namespaceNumber;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem namespaceInteger(Integer namespaceInteger) {
     this.namespaceInteger = namespaceInteger;
@@ -399,17 +612,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "-2", value = "")
   @JsonProperty("namespace_integer")
   public Integer getNamespaceInteger() {
     return namespaceInteger;
   }
+<<<<<<< HEAD
 
   public void setNamespaceInteger(Integer namespaceInteger) {
     this.namespaceInteger = namespaceInteger;
   }/**
+=======
+  public void setNamespaceInteger(Integer namespaceInteger) {
+    this.namespaceInteger = namespaceInteger;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem namespaceBoolean(Boolean namespaceBoolean) {
     this.namespaceBoolean = namespaceBoolean;
@@ -417,17 +641,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "true", value = "")
   @JsonProperty("namespace_boolean")
   public Boolean getNamespaceBoolean() {
     return namespaceBoolean;
   }
+<<<<<<< HEAD
 
   public void setNamespaceBoolean(Boolean namespaceBoolean) {
     this.namespaceBoolean = namespaceBoolean;
   }/**
+=======
+  public void setNamespaceBoolean(Boolean namespaceBoolean) {
+    this.namespaceBoolean = namespaceBoolean;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem namespaceArray(List<Integer> namespaceArray) {
     this.namespaceArray = namespaceArray;
@@ -435,17 +670,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("namespace_array")
   public List<Integer> getNamespaceArray() {
     return namespaceArray;
   }
+<<<<<<< HEAD
 
   public void setNamespaceArray(List<Integer> namespaceArray) {
     this.namespaceArray = namespaceArray;
   }/**
+=======
+  public void setNamespaceArray(List<Integer> namespaceArray) {
+    this.namespaceArray = namespaceArray;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem namespaceWrappedArray(List<Integer> namespaceWrappedArray) {
     this.namespaceWrappedArray = namespaceWrappedArray;
@@ -453,17 +699,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("namespace_wrapped_array")
   public List<Integer> getNamespaceWrappedArray() {
     return namespaceWrappedArray;
   }
+<<<<<<< HEAD
 
   public void setNamespaceWrappedArray(List<Integer> namespaceWrappedArray) {
     this.namespaceWrappedArray = namespaceWrappedArray;
   }/**
+=======
+  public void setNamespaceWrappedArray(List<Integer> namespaceWrappedArray) {
+    this.namespaceWrappedArray = namespaceWrappedArray;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem prefixNsString(String prefixNsString) {
     this.prefixNsString = prefixNsString;
@@ -471,17 +728,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "string", value = "")
   @JsonProperty("prefix_ns_string")
   public String getPrefixNsString() {
     return prefixNsString;
   }
+<<<<<<< HEAD
 
   public void setPrefixNsString(String prefixNsString) {
     this.prefixNsString = prefixNsString;
   }/**
+=======
+  public void setPrefixNsString(String prefixNsString) {
+    this.prefixNsString = prefixNsString;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem prefixNsNumber(BigDecimal prefixNsNumber) {
     this.prefixNsNumber = prefixNsNumber;
@@ -489,17 +757,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "1.234", value = "")
   @JsonProperty("prefix_ns_number")
   public BigDecimal getPrefixNsNumber() {
     return prefixNsNumber;
   }
+<<<<<<< HEAD
 
   public void setPrefixNsNumber(BigDecimal prefixNsNumber) {
     this.prefixNsNumber = prefixNsNumber;
   }/**
+=======
+  public void setPrefixNsNumber(BigDecimal prefixNsNumber) {
+    this.prefixNsNumber = prefixNsNumber;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem prefixNsInteger(Integer prefixNsInteger) {
     this.prefixNsInteger = prefixNsInteger;
@@ -507,17 +786,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "-2", value = "")
   @JsonProperty("prefix_ns_integer")
   public Integer getPrefixNsInteger() {
     return prefixNsInteger;
   }
+<<<<<<< HEAD
 
   public void setPrefixNsInteger(Integer prefixNsInteger) {
     this.prefixNsInteger = prefixNsInteger;
   }/**
+=======
+  public void setPrefixNsInteger(Integer prefixNsInteger) {
+    this.prefixNsInteger = prefixNsInteger;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem prefixNsBoolean(Boolean prefixNsBoolean) {
     this.prefixNsBoolean = prefixNsBoolean;
@@ -525,17 +815,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "true", value = "")
   @JsonProperty("prefix_ns_boolean")
   public Boolean getPrefixNsBoolean() {
     return prefixNsBoolean;
   }
+<<<<<<< HEAD
 
   public void setPrefixNsBoolean(Boolean prefixNsBoolean) {
     this.prefixNsBoolean = prefixNsBoolean;
   }/**
+=======
+  public void setPrefixNsBoolean(Boolean prefixNsBoolean) {
+    this.prefixNsBoolean = prefixNsBoolean;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem prefixNsArray(List<Integer> prefixNsArray) {
     this.prefixNsArray = prefixNsArray;
@@ -543,17 +844,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("prefix_ns_array")
   public List<Integer> getPrefixNsArray() {
     return prefixNsArray;
   }
+<<<<<<< HEAD
 
   public void setPrefixNsArray(List<Integer> prefixNsArray) {
     this.prefixNsArray = prefixNsArray;
   }/**
+=======
+  public void setPrefixNsArray(List<Integer> prefixNsArray) {
+    this.prefixNsArray = prefixNsArray;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public XmlItem prefixNsWrappedArray(List<Integer> prefixNsWrappedArray) {
     this.prefixNsWrappedArray = prefixNsWrappedArray;
@@ -561,18 +873,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("prefix_ns_wrapped_array")
   public List<Integer> getPrefixNsWrappedArray() {
     return prefixNsWrappedArray;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
   public void setPrefixNsWrappedArray(List<Integer> prefixNsWrappedArray) {
     this.prefixNsWrappedArray = prefixNsWrappedArray;
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -666,7 +988,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
     }
     return o.toString().replace("\n", "\n    ");
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 }
 

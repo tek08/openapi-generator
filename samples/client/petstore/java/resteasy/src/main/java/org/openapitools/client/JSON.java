@@ -9,7 +9,11 @@ import java.text.DateFormat;
 
 import javax.ws.rs.ext.ContextResolver;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class JSON implements ContextResolver<ObjectMapper> {
   private ObjectMapper mapper;
 

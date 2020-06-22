@@ -65,6 +65,7 @@ func (src *GmFruit) MarshalJSON() ([]byte, error) {
 	return nil, nil // no data in anyOf schemas
 }
 
+<<<<<<< HEAD
 type NullableGmFruit struct {
 	value *GmFruit
 	isSet bool
@@ -102,3 +103,5 @@ func (v *NullableGmFruit) UnmarshalJSON(src []byte) error {
 }
 
 
+=======
+>>>>>>> ooof

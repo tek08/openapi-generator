@@ -7,9 +7,14 @@ import play.mvc.Http;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.HashMap;
+<<<<<<< HEAD
 import java.util.LinkedHashSet;
 import java.io.FileInputStream;
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen")
+=======
+import java.io.FileInputStream;
+
+>>>>>>> ooof
 public class UserApiControllerImp implements UserApiControllerImpInterface {
     @Override
     public void createUser(User body) throws Exception {

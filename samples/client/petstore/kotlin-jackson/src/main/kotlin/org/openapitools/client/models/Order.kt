@@ -13,7 +13,10 @@ package org.openapitools.client.models
 
 
 import com.fasterxml.jackson.annotation.JsonProperty
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * An order for a pets from the pet store
  * @param id 
@@ -25,6 +28,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
  */
 
 data class Order (
+<<<<<<< HEAD
     @field:JsonProperty("id")
     val id: kotlin.Long? = null,
     @field:JsonProperty("petId")
@@ -37,6 +41,20 @@ data class Order (
     @field:JsonProperty("status")
     val status: Order.Status? = null,
     @field:JsonProperty("complete")
+=======
+    @JsonProperty("id")
+    val id: kotlin.Long? = null,
+    @JsonProperty("petId")
+    val petId: kotlin.Long? = null,
+    @JsonProperty("quantity")
+    val quantity: kotlin.Int? = null,
+    @JsonProperty("shipDate")
+    val shipDate: java.time.OffsetDateTime? = null,
+    /* Order Status */
+    @JsonProperty("status")
+    val status: Order.Status? = null,
+    @JsonProperty("complete")
+>>>>>>> ooof
     val complete: kotlin.Boolean? = null
 ) {
 
@@ -46,9 +64,15 @@ data class Order (
     */
     
     enum class Status(val value: kotlin.String){
+<<<<<<< HEAD
         @JsonProperty(value = "placed") PLACED("placed"),
         @JsonProperty(value = "approved") APPROVED("approved"),
         @JsonProperty(value = "delivered") DELIVERED("delivered");
+=======
+        @JsonProperty(value="placed") PLACED("placed"),
+        @JsonProperty(value="approved") APPROVED("approved"),
+        @JsonProperty(value="delivered") DELIVERED("delivered");
+>>>>>>> ooof
     }
 }
 

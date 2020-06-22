@@ -5,6 +5,7 @@ use crate::models;
 use crate::header;
 
 
+<<<<<<< HEAD
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
 #[cfg_attr(feature = "conversion", derive(frunk::LabelledGeneric))]
 pub struct AdditionalPropertiesWithList(std::collections::HashMap<String, Vec<String>>);
@@ -65,6 +66,8 @@ impl AdditionalPropertiesWithList {
     }
 }
 
+=======
+>>>>>>> ooof
 // Methods for converting between header::IntoHeaderValue<AnotherXmlArray> and hyper::header::HeaderValue
 
 #[cfg(any(feature = "client", feature = "server"))]

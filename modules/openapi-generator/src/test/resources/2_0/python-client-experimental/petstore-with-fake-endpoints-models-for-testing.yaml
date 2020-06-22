@@ -1356,8 +1356,11 @@ definitions:
         properties:
           breed:
             type: string
+<<<<<<< HEAD
         additionalProperties: false
     additionalProperties: false
+=======
+>>>>>>> ooof
   Cat:
     allOf:
       - $ref: '#/definitions/Animal'
@@ -1376,7 +1379,10 @@ definitions:
       color:
         type: string
         default: 'red'
+<<<<<<< HEAD
     additionalProperties: false
+=======
+>>>>>>> ooof
   AnimalFarm:
     type: array
     items:
@@ -2073,7 +2079,10 @@ definitions:
         properties:
           interNet:
             type: boolean
+<<<<<<< HEAD
     additionalProperties: false
+=======
+>>>>>>> ooof
   GrandparentAnimal:
     type: object
     required:
@@ -2106,4 +2115,8 @@ definitions:
     - type: object
       properties:
         lovesRocks:
+<<<<<<< HEAD
           type: boolean
+=======
+          type: boolean
+>>>>>>> ooof

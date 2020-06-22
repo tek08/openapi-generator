@@ -2,6 +2,10 @@
 
 use {{{externCrateName}}}::{
     Api,
+<<<<<<< HEAD
+=======
+    ApiError,
+>>>>>>> ooof
 {{#apiInfo}}
   {{#apis}}
     {{#operations}}
@@ -13,12 +17,17 @@ use {{{externCrateName}}}::{
 {{/apiInfo}}
 };
 use {{{externCrateName}}}::server::MakeService;
+<<<<<<< HEAD
 use std::error::Error;
 use swagger::ApiError;
 
 #[async_trait]
 impl<C> Api<C> for Server<C> where C: Has<XSpanIdString> + Send + Sync
 {
+=======
+
+impl<C> Api<C> for Server<C> where C: Has<XSpanIdString>{
+>>>>>>> ooof
 {{#apiInfo}}
   {{#apis}}
     {{#operations}}

@@ -201,8 +201,11 @@ public abstract class AbstractJavaJAXRSServerCodegen extends AbstractJavaCodegen
 
                         if ("array".equals(resp.containerType)) {
                             resp.containerType = "List";
+<<<<<<< HEAD
                         } else if ("set".equals(resp.containerType)) {
                             resp.containerType = "Set";
+=======
+>>>>>>> ooof
                         } else if ("map".equals(resp.containerType)) {
                             resp.containerType = "Map";
                         }
@@ -218,8 +221,11 @@ public abstract class AbstractJavaJAXRSServerCodegen extends AbstractJavaCodegen
 
                 if ("array".equals(operation.returnContainer)) {
                     operation.returnContainer = "List";
+<<<<<<< HEAD
                 } else if ("set".equals(operation.returnContainer)) {
                     operation.returnContainer = "Set";
+=======
+>>>>>>> ooof
                 } else if ("map".equals(operation.returnContainer)) {
                     operation.returnContainer = "Map";
                 }

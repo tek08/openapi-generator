@@ -1,7 +1,11 @@
 <?php
 /**
  * AnotherFakeApi
+<<<<<<< HEAD
  * PHP version 7.2
+=======
+ * PHP version 7.1
+>>>>>>> ooof
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -120,15 +124,25 @@ class AnotherFakeApi
      *
      * To test special tags
      *
+<<<<<<< HEAD
      * @param  \OpenAPI\Client\Model\Client $client client model (required)
+=======
+     * @param  \OpenAPI\Client\Model\Client $body client model (required)
+>>>>>>> ooof
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\Client
      */
+<<<<<<< HEAD
     public function call123TestSpecialTags($client)
     {
         list($response) = $this->call123TestSpecialTagsWithHttpInfo($client);
+=======
+    public function call123TestSpecialTags($body)
+    {
+        list($response) = $this->call123TestSpecialTagsWithHttpInfo($body);
+>>>>>>> ooof
         return $response;
     }
 
@@ -137,15 +151,25 @@ class AnotherFakeApi
      *
      * To test special tags
      *
+<<<<<<< HEAD
      * @param  \OpenAPI\Client\Model\Client $client client model (required)
+=======
+     * @param  \OpenAPI\Client\Model\Client $body client model (required)
+>>>>>>> ooof
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\Client, HTTP status code, HTTP response headers (array of strings)
      */
+<<<<<<< HEAD
     public function call123TestSpecialTagsWithHttpInfo($client)
     {
         $request = $this->call123TestSpecialTagsRequest($client);
+=======
+    public function call123TestSpecialTagsWithHttpInfo($body)
+    {
+        $request = $this->call123TestSpecialTagsRequest($body);
+>>>>>>> ooof
 
         try {
             $options = $this->createHttpClientOption();
@@ -225,14 +249,24 @@ class AnotherFakeApi
      *
      * To test special tags
      *
+<<<<<<< HEAD
      * @param  \OpenAPI\Client\Model\Client $client client model (required)
+=======
+     * @param  \OpenAPI\Client\Model\Client $body client model (required)
+>>>>>>> ooof
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+<<<<<<< HEAD
     public function call123TestSpecialTagsAsync($client)
     {
         return $this->call123TestSpecialTagsAsyncWithHttpInfo($client)
+=======
+    public function call123TestSpecialTagsAsync($body)
+    {
+        return $this->call123TestSpecialTagsAsyncWithHttpInfo($body)
+>>>>>>> ooof
             ->then(
                 function ($response) {
                     return $response[0];
@@ -245,15 +279,26 @@ class AnotherFakeApi
      *
      * To test special tags
      *
+<<<<<<< HEAD
      * @param  \OpenAPI\Client\Model\Client $client client model (required)
+=======
+     * @param  \OpenAPI\Client\Model\Client $body client model (required)
+>>>>>>> ooof
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+<<<<<<< HEAD
     public function call123TestSpecialTagsAsyncWithHttpInfo($client)
     {
         $returnType = '\OpenAPI\Client\Model\Client';
         $request = $this->call123TestSpecialTagsRequest($client);
+=======
+    public function call123TestSpecialTagsAsyncWithHttpInfo($body)
+    {
+        $returnType = '\OpenAPI\Client\Model\Client';
+        $request = $this->call123TestSpecialTagsRequest($body);
+>>>>>>> ooof
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -292,17 +337,30 @@ class AnotherFakeApi
     /**
      * Create request for operation 'call123TestSpecialTags'
      *
+<<<<<<< HEAD
      * @param  \OpenAPI\Client\Model\Client $client client model (required)
+=======
+     * @param  \OpenAPI\Client\Model\Client $body client model (required)
+>>>>>>> ooof
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
+<<<<<<< HEAD
     protected function call123TestSpecialTagsRequest($client)
     {
         // verify the required parameter 'client' is set
         if ($client === null || (is_array($client) && count($client) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $client when calling call123TestSpecialTags'
+=======
+    protected function call123TestSpecialTagsRequest($body)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling call123TestSpecialTags'
+>>>>>>> ooof
             );
         }
 
@@ -318,8 +376,13 @@ class AnotherFakeApi
 
         // body params
         $_tempBody = null;
+<<<<<<< HEAD
         if (isset($client)) {
             $_tempBody = $client;
+=======
+        if (isset($body)) {
+            $_tempBody = $body;
+>>>>>>> ooof
         }
 
         if ($multipart) {

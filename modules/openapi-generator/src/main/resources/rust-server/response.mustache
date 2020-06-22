@@ -1,13 +1,23 @@
 #[derive(Debug, PartialEq)]
+<<<<<<< HEAD
 {{#vendorExtensions.x-must-use-response}}
 #[must_use]
 {{/vendorExtensions.x-must-use-response}}
+=======
+{{#vendorExtensions.x-mustUseResponse}}
+#[must_use]
+{{/vendorExtensions.x-mustUseResponse}}
+>>>>>>> ooof
 pub enum {{{operationId}}}Response {
 {{#responses}}
   {{#message}}
     /// {{{message}}}{{/message}}
     {{#vendorExtensions}}
+<<<<<<< HEAD
     {{{x-response-id}}}
+=======
+    {{{x-responseId}}}
+>>>>>>> ooof
     {{/vendorExtensions}}
     {{^dataType}}
       {{#hasHeaders}}
@@ -17,27 +27,46 @@ pub enum {{{operationId}}}Response {
     {{#dataType}}
       {{^hasHeaders}}
         {{#vendorExtensions}}
+<<<<<<< HEAD
           {{#x-produces-plain-text}}
     (String)
           {{/x-produces-plain-text}}
           {{^x-produces-plain-text}}
     ({{{dataType}}})
           {{/x-produces-plain-text}}
+=======
+          {{#producesPlainText}}
+    (String)
+          {{/producesPlainText}}
+          {{^producesPlainText}}
+    ({{{dataType}}})
+          {{/producesPlainText}}
+>>>>>>> ooof
         {{/vendorExtensions}}
       {{/hasHeaders}}
       {{#hasHeaders}}
     {
         {{#vendorExtensions}}
+<<<<<<< HEAD
           {{#x-produces-plain-text}}
         body: String,
             {{/x-produces-plain-text}}
             {{^x-produces-plain-text}}
         body: {{{dataType}}},
             {{/x-produces-plain-text}}
+=======
+          {{#producesPlainText}}
+        body: String,
+            {{/producesPlainText}}
+            {{^producesPlainText}}
+        body: {{{dataType}}},
+            {{/producesPlainText}}
+>>>>>>> ooof
           {{/vendorExtensions}}
       {{/hasHeaders}}
     {{/dataType}}
     {{#headers}}
+<<<<<<< HEAD
         {{{name}}}:
       {{^required}}
         Option<
@@ -49,6 +78,9 @@ pub enum {{{operationId}}}Response {
         {{^-last}}
         ,
         {{/-last}}
+=======
+        {{{name}}}: {{{datatype}}}{{^-last}},{{/-last}}
+>>>>>>> ooof
       {{#-last}}
     }
       {{/-last}}

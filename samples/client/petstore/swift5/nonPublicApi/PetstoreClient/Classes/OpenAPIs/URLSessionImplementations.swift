@@ -14,7 +14,11 @@ class URLSessionRequestBuilderFactory: RequestBuilderFactory {
         return URLSessionRequestBuilder<T>.self
     }
 
+<<<<<<< HEAD
     func getBuilder<T:Decodable>() -> RequestBuilder<T>.Type {
+=======
+    func getBuilder<T: Decodable>() -> RequestBuilder<T>.Type {
+>>>>>>> ooof
         return URLSessionDecodableRequestBuilder<T>.self
     }
 }
@@ -23,6 +27,7 @@ class URLSessionRequestBuilderFactory: RequestBuilderFactory {
 private var urlSessionStore = SynchronizedDictionary<String, URLSession>()
 
 internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
+<<<<<<< HEAD
     
     private var observation: NSKeyValueObservation?
     
@@ -33,6 +38,18 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
     // swiftlint:disable:next weak_delegate
     fileprivate let sessionDelegate = SessionDelegate()
     
+=======
+
+    private var observation: NSKeyValueObservation?
+
+    deinit {
+        observation?.invalidate()
+    }
+
+    // swiftlint:disable:next weak_delegate
+    fileprivate let sessionDelegate = SessionDelegate()
+
+>>>>>>> ooof
     /**
      May be assigned if you want to control the authentication challenges.
      */
@@ -45,11 +62,19 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
      - retry the request.
      */
     internal var taskCompletionShouldRetry: ((Data?, URLResponse?, Error?, @escaping (Bool) -> Void) -> Void)?
+<<<<<<< HEAD
     
     required internal init(method: String, URLString: String, parameters: [String : Any]?, isBody: Bool, headers: [String : String] = [:]) {
         super.init(method: method, URLString: URLString, parameters: parameters, isBody: isBody, headers: headers)
     }
     
+=======
+
+    required internal init(method: String, URLString: String, parameters: [String: Any]?, isBody: Bool, headers: [String: String] = [:]) {
+        super.init(method: method, URLString: URLString, parameters: parameters, isBody: isBody, headers: headers)
+    }
+
+>>>>>>> ooof
     /**
      May be overridden by a subclass if you want to control the URLSession
      configuration.
@@ -77,6 +102,7 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
      May be overridden by a subclass if you want to control the URLRequest
      configuration (e.g. to override the cache policy).
      */
+<<<<<<< HEAD
     internal func createURLRequest(urlSession: URLSession, method: HTTPMethod, encoding: ParameterEncoding, headers: [String:String]) throws -> URLRequest {
         
         guard let url = URL(string: URLString) else {
@@ -97,10 +123,33 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
         
         let modifiedRequest = try encoding.encode(originalRequest, with: parameters)
         
+=======
+    internal func createURLRequest(urlSession: URLSession, method: HTTPMethod, encoding: ParameterEncoding, headers: [String: String]) throws -> URLRequest {
+
+        guard let url = URL(string: URLString) else {
+            throw DownloadException.requestMissingURL
+        }
+
+        var originalRequest = URLRequest(url: url)
+
+        originalRequest.httpMethod = method.rawValue
+
+        buildHeaders().forEach { key, value in
+            originalRequest.setValue(value, forHTTPHeaderField: key)
+        }
+
+        headers.forEach { key, value in
+            originalRequest.setValue(value, forHTTPHeaderField: key)
+        }
+
+        let modifiedRequest = try encoding.encode(originalRequest, with: parameters)
+
+>>>>>>> ooof
         return modifiedRequest
     }
 
     override internal func execute(_ apiResponseQueue: DispatchQueue = PetstoreClientAPI.apiResponseQueue, _ completion: @escaping (_ result: Swift.Result<Response<T>, Error>) -> Void) {
+<<<<<<< HEAD
         let urlSessionId:String = UUID().uuidString
         // Create a new manager for each request to customize its request header
         let urlSession = createURLSession()
@@ -111,6 +160,18 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
         let fileKeys = parameters.filter { $1 is URL }
             .map { $0.0 }
         
+=======
+        let urlSessionId: String = UUID().uuidString
+        // Create a new manager for each request to customize its request header
+        let urlSession = createURLSession()
+        urlSessionStore[urlSessionId] = urlSession
+
+        let parameters: [String: Any] = self.parameters ?? [:]
+
+        let fileKeys = parameters.filter { $1 is URL }
+            .map { $0.0 }
+
+>>>>>>> ooof
         let encoding: ParameterEncoding
         if fileKeys.count > 0 {
             encoding = FileUploadEncoding(contentTypeForFormPart: contentTypeForFormPart(fileURL:))
@@ -119,15 +180,24 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
         } else {
             encoding = URLEncoding()
         }
+<<<<<<< HEAD
         
         guard let xMethod = HTTPMethod(rawValue: method) else {
             fatalError("Unsuported Http method - \(method)")
         }
         
+=======
+
+        guard let xMethod = HTTPMethod(rawValue: method) else {
+            fatalError("Unsuported Http method - \(method)")
+        }
+
+>>>>>>> ooof
         let cleanupRequest = {
             urlSessionStore[urlSessionId] = nil
             self.observation?.invalidate()
         }
+<<<<<<< HEAD
         
         do {
             let request = try createURLRequest(urlSession: urlSession, method: xMethod, encoding: encoding, headers: headers)
@@ -142,6 +212,22 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
                         
                         guard let self = self else { return }
                         
+=======
+
+        do {
+            let request = try createURLRequest(urlSession: urlSession, method: xMethod, encoding: encoding, headers: headers)
+
+            let dataTask = urlSession.dataTask(with: request) { [weak self] data, response, error in
+
+                guard let self = self else { return }
+
+                if let taskCompletionShouldRetry = self.taskCompletionShouldRetry {
+
+                    taskCompletionShouldRetry(data, response, error) { [weak self] shouldRetry in
+
+                        guard let self = self else { return }
+
+>>>>>>> ooof
                         if shouldRetry {
                             cleanupRequest()
                             self.execute(apiResponseQueue, completion)
@@ -157,6 +243,7 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
                     }
                 }
             }
+<<<<<<< HEAD
             
             if #available(iOS 11.0, macOS 10.13, macCatalyst 13.0, tvOS 11.0, watchOS 4.0, *) {
                 onProgressReady?(dataTask.progress)
@@ -164,6 +251,15 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
             
             dataTask.resume()
             
+=======
+
+            if #available(iOS 11.0, macOS 10.13, macCatalyst 13.0, tvOS 11.0, watchOS 4.0, *) {
+                onProgressReady?(dataTask.progress)
+            }
+
+            dataTask.resume()
+
+>>>>>>> ooof
         } catch {
             apiResponseQueue.async {
                 cleanupRequest()
@@ -172,7 +268,11 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
         }
 
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> ooof
     fileprivate func processRequestResponse(urlRequest: URLRequest, data: Data?, response: URLResponse?, error: Error?, completion: @escaping (_ result: Swift.Result<Response<T>, Error>) -> Void) {
 
         if let error = error {
@@ -192,6 +292,7 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
 
         switch T.self {
         case is String.Type:
+<<<<<<< HEAD
             
             let body = data.flatMap { String(data: $0, encoding: .utf8) } ?? ""
             
@@ -226,11 +327,48 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
                 
                 completion(.success(Response(response: httpResponse, body: filePath as? T)))
                 
+=======
+
+            let body = data.flatMap { String(data: $0, encoding: .utf8) } ?? ""
+
+            completion(.success(Response<T>(response: httpResponse, body: body as? T)))
+
+        case is URL.Type:
+            do {
+
+                guard error == nil else {
+                    throw DownloadException.responseFailed
+                }
+
+                guard let data = data else {
+                    throw DownloadException.responseDataMissing
+                }
+
+                let fileManager = FileManager.default
+                let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+                let requestURL = try self.getURL(from: urlRequest)
+
+                var requestPath = try self.getPath(from: requestURL)
+
+                if let headerFileName = self.getFileName(fromContentDisposition: httpResponse.allHeaderFields["Content-Disposition"] as? String) {
+                    requestPath = requestPath.appending("/\(headerFileName)")
+                }
+
+                let filePath = documentsDirectory.appendingPathComponent(requestPath)
+                let directoryPath = filePath.deletingLastPathComponent().path
+
+                try fileManager.createDirectory(atPath: directoryPath, withIntermediateDirectories: true, attributes: nil)
+                try data.write(to: filePath, options: .atomic)
+
+                completion(.success(Response(response: httpResponse, body: filePath as? T)))
+
+>>>>>>> ooof
             } catch let requestParserError as DownloadException {
                 completion(.failure(ErrorResponse.error(400, data, requestParserError)))
             } catch let error {
                 completion(.failure(ErrorResponse.error(400, data, error)))
             }
+<<<<<<< HEAD
             
         case is Void.Type:
             
@@ -238,6 +376,15 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
             
         default:
             
+=======
+
+        case is Void.Type:
+
+            completion(.success(Response(response: httpResponse, body: nil)))
+
+        default:
+
+>>>>>>> ooof
             completion(.success(Response(response: httpResponse, body: data as? T)))
         }
 
@@ -251,7 +398,11 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
         return httpHeaders
     }
 
+<<<<<<< HEAD
     fileprivate func getFileName(fromContentDisposition contentDisposition : String?) -> String? {
+=======
+    fileprivate func getFileName(fromContentDisposition contentDisposition: String?) -> String? {
+>>>>>>> ooof
 
         guard let contentDisposition = contentDisposition else {
             return nil
@@ -270,7 +421,11 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
 
             filename = contentItem
             return filename?
+<<<<<<< HEAD
                 .replacingCharacters(in: range, with:"")
+=======
+                .replacingCharacters(in: range, with: "")
+>>>>>>> ooof
                 .replacingOccurrences(of: "\"", with: "")
                 .trimmingCharacters(in: .whitespacesAndNewlines)
         }
@@ -279,7 +434,11 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
 
     }
 
+<<<<<<< HEAD
     fileprivate func getPath(from url : URL) throws -> String {
+=======
+    fileprivate func getPath(from url: URL) throws -> String {
+>>>>>>> ooof
 
         guard var path = URLComponents(url: url, resolvingAgainstBaseURL: true)?.path else {
             throw DownloadException.requestMissingPath
@@ -293,7 +452,11 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
 
     }
 
+<<<<<<< HEAD
     fileprivate func getURL(from urlRequest : URLRequest) throws -> URL {
+=======
+    fileprivate func getURL(from urlRequest: URLRequest) throws -> URL {
+>>>>>>> ooof
 
         guard let url = urlRequest.url else {
             throw DownloadException.requestMissingURL
@@ -304,7 +467,11 @@ internal class URLSessionRequestBuilder<T>: RequestBuilder<T> {
 
 }
 
+<<<<<<< HEAD
 internal class URLSessionDecodableRequestBuilder<T:Decodable>: URLSessionRequestBuilder<T> {
+=======
+internal class URLSessionDecodableRequestBuilder<T: Decodable>: URLSessionRequestBuilder<T> {
+>>>>>>> ooof
     override fileprivate func processRequestResponse(urlRequest: URLRequest, data: Data?, response: URLResponse?, error: Error?, completion: @escaping (_ result: Swift.Result<Response<T>, Error>) -> Void) {
 
         if let error = error {
@@ -324,6 +491,7 @@ internal class URLSessionDecodableRequestBuilder<T:Decodable>: URLSessionRequest
 
         switch T.self {
         case is String.Type:
+<<<<<<< HEAD
             
             let body = data.flatMap { String(data: $0, encoding: .utf8) } ?? ""
             
@@ -339,13 +507,36 @@ internal class URLSessionDecodableRequestBuilder<T:Decodable>: URLSessionRequest
             
         default:
             
+=======
+
+            let body = data.flatMap { String(data: $0, encoding: .utf8) } ?? ""
+
+            completion(.success(Response<T>(response: httpResponse, body: body as? T)))
+
+        case is Void.Type:
+
+            completion(.success(Response(response: httpResponse, body: nil)))
+
+        case is Data.Type:
+
+            completion(.success(Response(response: httpResponse, body: data as? T)))
+
+        default:
+
+>>>>>>> ooof
             guard let data = data, !data.isEmpty else {
                 completion(.failure(ErrorResponse.error(httpResponse.statusCode, nil, DecodableRequestBuilderError.emptyDataResponse)))
                 return
             }
+<<<<<<< HEAD
             
             let decodeResult = CodableHelper.decode(T.self, from: data)
             
+=======
+
+            let decodeResult = CodableHelper.decode(T.self, from: data)
+
+>>>>>>> ooof
             switch decodeResult {
             case let .success(decodableObj):
                 completion(.success(Response(response: httpResponse, body: decodableObj)))
@@ -356,10 +547,17 @@ internal class URLSessionDecodableRequestBuilder<T:Decodable>: URLSessionRequest
     }
 }
 
+<<<<<<< HEAD
 fileprivate class SessionDelegate: NSObject, URLSessionDelegate, URLSessionDataDelegate {
     
     var credential: URLCredential?
     
+=======
+private class SessionDelegate: NSObject, URLSessionDelegate, URLSessionDataDelegate {
+
+    var credential: URLCredential?
+
+>>>>>>> ooof
     var taskDidReceiveChallenge: ((URLSession, URLSessionTask, URLAuthenticationChallenge) -> (URLSession.AuthChallengeDisposition, URLCredential?))?
 
     func urlSession(_ session: URLSession, task: URLSessionTask, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
@@ -402,6 +600,7 @@ internal protocol ParameterEncoding {
     func encode(_ urlRequest: URLRequest, with parameters: [String: Any]?) throws -> URLRequest
 }
 
+<<<<<<< HEAD
 fileprivate class URLEncoding: ParameterEncoding {
     func encode(_ urlRequest: URLRequest, with parameters: [String : Any]?) throws -> URLRequest {
         
@@ -409,6 +608,15 @@ fileprivate class URLEncoding: ParameterEncoding {
         
         guard let parameters = parameters else { return urlRequest }
         
+=======
+private class URLEncoding: ParameterEncoding {
+    func encode(_ urlRequest: URLRequest, with parameters: [String: Any]?) throws -> URLRequest {
+
+        var urlRequest = urlRequest
+
+        guard let parameters = parameters else { return urlRequest }
+
+>>>>>>> ooof
         guard let url = urlRequest.url else {
             throw DownloadException.requestMissingURL
         }
@@ -417,12 +625,20 @@ fileprivate class URLEncoding: ParameterEncoding {
             urlComponents.queryItems = APIHelper.mapValuesToQueryItems(parameters)
             urlRequest.url = urlComponents.url
         }
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> ooof
         return urlRequest
     }
 }
 
+<<<<<<< HEAD
 fileprivate class FileUploadEncoding: ParameterEncoding {
+=======
+private class FileUploadEncoding: ParameterEncoding {
+>>>>>>> ooof
 
     let contentTypeForFormPart: (_ fileURL: URL) -> String?
 
@@ -433,6 +649,7 @@ fileprivate class FileUploadEncoding: ParameterEncoding {
     func encode(_ urlRequest: URLRequest, with parameters: [String: Any]?) throws -> URLRequest {
 
         var urlRequest = urlRequest
+<<<<<<< HEAD
         
         guard let parameters = parameters, !parameters.isEmpty else {
             return urlRequest
@@ -440,6 +657,15 @@ fileprivate class FileUploadEncoding: ParameterEncoding {
         
         let boundary = "Boundary-\(UUID().uuidString)"
                 
+=======
+
+        guard let parameters = parameters, !parameters.isEmpty else {
+            return urlRequest
+        }
+
+        let boundary = "Boundary-\(UUID().uuidString)"
+
+>>>>>>> ooof
         urlRequest.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
 
         for (key, value) in parameters {
@@ -479,7 +705,11 @@ fileprivate class FileUploadEncoding: ParameterEncoding {
                 fatalError("Unprocessable value \(value) with key \(key)")
             }
         }
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> ooof
         var body = urlRequest.httpBody.orEmpty
 
         body.append("\r\n--\(boundary)--\r\n")
@@ -494,7 +724,11 @@ fileprivate class FileUploadEncoding: ParameterEncoding {
         var urlRequest = urlRequest
 
         var body = urlRequest.httpBody.orEmpty
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> ooof
         let fileData = try Data(contentsOf: fileURL)
 
         let mimetype = self.contentTypeForFormPart(fileURL) ?? mimeType(for: fileURL)
@@ -502,7 +736,11 @@ fileprivate class FileUploadEncoding: ParameterEncoding {
         let fileName = fileURL.lastPathComponent
 
         // If we already added something then we need an additional newline.
+<<<<<<< HEAD
         if (body.count > 0) {
+=======
+        if body.count > 0 {
+>>>>>>> ooof
             body.append("\r\n")
         }
 
@@ -518,11 +756,16 @@ fileprivate class FileUploadEncoding: ParameterEncoding {
 
         // The value data.
         body.append(fileData)
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> ooof
         urlRequest.httpBody = body
 
         return urlRequest
     }
+<<<<<<< HEAD
     
     private func configureDataUploadRequest(urlRequest: URLRequest, boundary: String, name: String, data: Data) -> URLRequest {
 
@@ -532,6 +775,17 @@ fileprivate class FileUploadEncoding: ParameterEncoding {
 
         // If we already added something then we need an additional newline.
         if (body.count > 0) {
+=======
+
+    private func configureDataUploadRequest(urlRequest: URLRequest, boundary: String, name: String, data: Data) -> URLRequest {
+
+        var urlRequest = urlRequest
+
+        var body = urlRequest.httpBody.orEmpty
+
+        // If we already added something then we need an additional newline.
+        if body.count > 0 {
+>>>>>>> ooof
             body.append("\r\n")
         }
 

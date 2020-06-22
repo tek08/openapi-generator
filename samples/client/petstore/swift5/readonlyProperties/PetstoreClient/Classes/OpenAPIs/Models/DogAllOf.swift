@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 public struct DogAllOf: Codable { 
 
+=======
+public struct DogAllOf: Codable {
+>>>>>>> ooof
 
     public private(set) var breed: String?
 

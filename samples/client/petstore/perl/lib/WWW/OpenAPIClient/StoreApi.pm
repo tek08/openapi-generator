@@ -232,10 +232,17 @@ sub get_order_by_id {
 #
 # Place an order for a pet
 # 
+<<<<<<< HEAD
 # @param Order $order order placed for purchasing the pet (required)
 {
     my $params = {
     'order' => {
+=======
+# @param Order $body order placed for purchasing the pet (required)
+{
+    my $params = {
+    'body' => {
+>>>>>>> ooof
         data_type => 'Order',
         description => 'order placed for purchasing the pet',
         required => '1',
@@ -252,9 +259,15 @@ sub get_order_by_id {
 sub place_order {
     my ($self, %args) = @_;
 
+<<<<<<< HEAD
     # verify the required parameter 'order' is set
     unless (exists $args{'order'}) {
       croak("Missing the required parameter 'order' when calling place_order");
+=======
+    # verify the required parameter 'body' is set
+    unless (exists $args{'body'}) {
+      croak("Missing the required parameter 'body' when calling place_order");
+>>>>>>> ooof
     }
 
     # parse inputs
@@ -270,12 +283,21 @@ sub place_order {
     if ($_header_accept) {
         $header_params->{'Accept'} = $_header_accept;
     }
+<<<<<<< HEAD
     $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
 
     my $_body_data;
     # body params
     if ( exists $args{'order'}) {
         $_body_data = $args{'order'};
+=======
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'body'}) {
+        $_body_data = $args{'body'};
+>>>>>>> ooof
     }
 
     # authentication setting, if any

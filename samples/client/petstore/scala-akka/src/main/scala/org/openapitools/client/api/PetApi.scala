@@ -27,6 +27,7 @@ class PetApi(baseUrl: String) {
   
   /**
    * Expected answers:
+<<<<<<< HEAD
    *   code 200 : Pet (successful operation)
    *   code 405 :  (Invalid input)
    * 
@@ -36,6 +37,15 @@ class PetApi(baseUrl: String) {
     ApiRequest[Pet](ApiMethods.POST, baseUrl, "/pet", "application/json")
       .withBody(pet)
       .withSuccessResponse[Pet](200)
+=======
+   *   code 405 :  (Invalid input)
+   * 
+   * @param body Pet object that needs to be added to the store
+   */
+  def addPet(body: Pet): ApiRequest[Unit] =
+    ApiRequest[Unit](ApiMethods.POST, baseUrl, "/pet", "application/json")
+      .withBody(body)
+>>>>>>> ooof
       .withErrorResponse[Unit](405)
       
 
@@ -109,17 +119,28 @@ class PetApi(baseUrl: String) {
 
   /**
    * Expected answers:
+<<<<<<< HEAD
    *   code 200 : Pet (successful operation)
+=======
+>>>>>>> ooof
    *   code 400 :  (Invalid ID supplied)
    *   code 404 :  (Pet not found)
    *   code 405 :  (Validation exception)
    * 
+<<<<<<< HEAD
    * @param pet Pet object that needs to be added to the store
    */
   def updatePet(pet: Pet): ApiRequest[Pet] =
     ApiRequest[Pet](ApiMethods.PUT, baseUrl, "/pet", "application/json")
       .withBody(pet)
       .withSuccessResponse[Pet](200)
+=======
+   * @param body Pet object that needs to be added to the store
+   */
+  def updatePet(body: Pet): ApiRequest[Unit] =
+    ApiRequest[Unit](ApiMethods.PUT, baseUrl, "/pet", "application/json")
+      .withBody(body)
+>>>>>>> ooof
       .withErrorResponse[Unit](400)
       .withErrorResponse[Unit](404)
       .withErrorResponse[Unit](405)
@@ -127,7 +148,10 @@ class PetApi(baseUrl: String) {
 
   /**
    * Expected answers:
+<<<<<<< HEAD
    *   code 200 :  (successful operation)
+=======
+>>>>>>> ooof
    *   code 405 :  (Invalid input)
    * 
    * @param petId ID of pet that needs to be updated
@@ -139,7 +163,10 @@ class PetApi(baseUrl: String) {
       .withFormParam("name", name)
       .withFormParam("status", status)
       .withPathParam("petId", petId)
+<<<<<<< HEAD
       .withSuccessResponse[Unit](200)
+=======
+>>>>>>> ooof
       .withErrorResponse[Unit](405)
       
 

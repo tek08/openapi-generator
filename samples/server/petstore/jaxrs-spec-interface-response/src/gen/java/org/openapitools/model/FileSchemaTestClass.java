@@ -16,7 +16,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class FileSchemaTestClass  implements Serializable {
+=======
+public class FileSchemaTestClass  implements Serializable {
+>>>>>>> ooof
   
   private @Valid java.io.File file;
   private @Valid List<java.io.File> files = new ArrayList<java.io.File>();
@@ -29,17 +33,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("file")
   public java.io.File getFile() {
     return file;
   }
+<<<<<<< HEAD
 
   public void setFile(java.io.File file) {
     this.file = file;
   }/**
+=======
+  public void setFile(java.io.File file) {
+    this.file = file;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public FileSchemaTestClass files(List<java.io.File> files) {
     this.files = files;
@@ -47,18 +62,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("files")
   public List<java.io.File> getFiles() {
     return files;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
   public void setFiles(List<java.io.File> files) {
     this.files = files;
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -98,7 +123,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
     }
     return o.toString().replace("\n", "\n    ");
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 }
 

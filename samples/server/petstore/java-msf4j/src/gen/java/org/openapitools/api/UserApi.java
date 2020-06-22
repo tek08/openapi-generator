@@ -27,7 +27,11 @@ import javax.ws.rs.*;
 
 
 @io.swagger.annotations.Api(description = "the user API")
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen")
+=======
+
+>>>>>>> ooof
 public class UserApi  {
    private final UserApiService delegate = UserApiServiceFactory.getUserApi();
 

@@ -18,7 +18,11 @@ Install the dependencies
 ```R
 install.packages("jsonlite")
 install.packages("httr")
+<<<<<<< HEAD
 install.packages("base64enc")
+=======
+install.packages("caTools")
+>>>>>>> ooof
 ```
 
 ### Build the package

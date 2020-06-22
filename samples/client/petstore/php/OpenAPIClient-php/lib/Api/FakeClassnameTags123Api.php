@@ -1,7 +1,11 @@
 <?php
 /**
  * FakeClassnameTags123Api
+<<<<<<< HEAD
  * PHP version 7.2
+=======
+ * PHP version 7.1
+>>>>>>> ooof
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -120,15 +124,25 @@ class FakeClassnameTags123Api
      *
      * To test class name in snake case
      *
+<<<<<<< HEAD
      * @param  \OpenAPI\Client\Model\Client $client client model (required)
+=======
+     * @param  \OpenAPI\Client\Model\Client $body client model (required)
+>>>>>>> ooof
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\Client
      */
+<<<<<<< HEAD
     public function testClassname($client)
     {
         list($response) = $this->testClassnameWithHttpInfo($client);
+=======
+    public function testClassname($body)
+    {
+        list($response) = $this->testClassnameWithHttpInfo($body);
+>>>>>>> ooof
         return $response;
     }
 
@@ -137,15 +151,25 @@ class FakeClassnameTags123Api
      *
      * To test class name in snake case
      *
+<<<<<<< HEAD
      * @param  \OpenAPI\Client\Model\Client $client client model (required)
+=======
+     * @param  \OpenAPI\Client\Model\Client $body client model (required)
+>>>>>>> ooof
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\Client, HTTP status code, HTTP response headers (array of strings)
      */
+<<<<<<< HEAD
     public function testClassnameWithHttpInfo($client)
     {
         $request = $this->testClassnameRequest($client);
+=======
+    public function testClassnameWithHttpInfo($body)
+    {
+        $request = $this->testClassnameRequest($body);
+>>>>>>> ooof
 
         try {
             $options = $this->createHttpClientOption();
@@ -225,14 +249,24 @@ class FakeClassnameTags123Api
      *
      * To test class name in snake case
      *
+<<<<<<< HEAD
      * @param  \OpenAPI\Client\Model\Client $client client model (required)
+=======
+     * @param  \OpenAPI\Client\Model\Client $body client model (required)
+>>>>>>> ooof
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+<<<<<<< HEAD
     public function testClassnameAsync($client)
     {
         return $this->testClassnameAsyncWithHttpInfo($client)
+=======
+    public function testClassnameAsync($body)
+    {
+        return $this->testClassnameAsyncWithHttpInfo($body)
+>>>>>>> ooof
             ->then(
                 function ($response) {
                     return $response[0];
@@ -245,15 +279,26 @@ class FakeClassnameTags123Api
      *
      * To test class name in snake case
      *
+<<<<<<< HEAD
      * @param  \OpenAPI\Client\Model\Client $client client model (required)
+=======
+     * @param  \OpenAPI\Client\Model\Client $body client model (required)
+>>>>>>> ooof
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
+<<<<<<< HEAD
     public function testClassnameAsyncWithHttpInfo($client)
     {
         $returnType = '\OpenAPI\Client\Model\Client';
         $request = $this->testClassnameRequest($client);
+=======
+    public function testClassnameAsyncWithHttpInfo($body)
+    {
+        $returnType = '\OpenAPI\Client\Model\Client';
+        $request = $this->testClassnameRequest($body);
+>>>>>>> ooof
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -292,17 +337,30 @@ class FakeClassnameTags123Api
     /**
      * Create request for operation 'testClassname'
      *
+<<<<<<< HEAD
      * @param  \OpenAPI\Client\Model\Client $client client model (required)
+=======
+     * @param  \OpenAPI\Client\Model\Client $body client model (required)
+>>>>>>> ooof
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
+<<<<<<< HEAD
     protected function testClassnameRequest($client)
     {
         // verify the required parameter 'client' is set
         if ($client === null || (is_array($client) && count($client) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $client when calling testClassname'
+=======
+    protected function testClassnameRequest($body)
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling testClassname'
+>>>>>>> ooof
             );
         }
 
@@ -318,8 +376,13 @@ class FakeClassnameTags123Api
 
         // body params
         $_tempBody = null;
+<<<<<<< HEAD
         if (isset($client)) {
             $_tempBody = $client;
+=======
+        if (isset($body)) {
+            $_tempBody = $body;
+>>>>>>> ooof
         }
 
         if ($multipart) {

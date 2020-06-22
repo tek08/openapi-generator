@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 
 @objc public class Order: NSObject, Codable { 
+=======
+@objc public class Order: NSObject, Codable {
+>>>>>>> ooof
 
     public enum Status: String, Codable, CaseIterable {
         case placed = "placed"
@@ -53,7 +57,11 @@ import Foundation
         self.complete = complete
     }
 
+<<<<<<< HEAD
     public enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    public enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case _id = "id"
         case petId
         case quantity

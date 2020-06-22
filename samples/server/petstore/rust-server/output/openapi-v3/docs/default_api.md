@@ -7,7 +7,10 @@ Method | HTTP request | Description
 ****](default_api.md#) | **POST** /callback-with-header | 
 ****](default_api.md#) | **GET** /complex-query-param | 
 ****](default_api.md#) | **GET** /enum_in_path/{path_param} | 
+<<<<<<< HEAD
 ****](default_api.md#) | **GET** /json-complex-query-param | 
+=======
+>>>>>>> ooof
 ****](default_api.md#) | **GET** /mandatory-request-header | 
 ****](default_api.md#) | **GET** /merge-patch-json | 
 ****](default_api.md#) | **GET** /multiget | Get some stuff.
@@ -111,6 +114,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # ****
+<<<<<<< HEAD
 > (optional)
 
 
@@ -143,6 +147,8 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # ****
+=======
+>>>>>>> ooof
 > (x_header)
 
 

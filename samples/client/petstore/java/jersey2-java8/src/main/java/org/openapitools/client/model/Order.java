@@ -15,8 +15,11 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.HashMap;
+=======
+>>>>>>> ooof
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -25,8 +28,11 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+<<<<<<< HEAD
 import org.openapitools.client.JSON;
 
+=======
+>>>>>>> ooof
 
 /**
  * Order
@@ -39,7 +45,11 @@ import org.openapitools.client.JSON;
   Order.JSON_PROPERTY_STATUS,
   Order.JSON_PROPERTY_COMPLETE
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class Order {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -98,6 +108,10 @@ public class Order {
 
 
   public Order id(Long id) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.id = id;
     return this;
   }
@@ -122,6 +136,10 @@ public class Order {
 
 
   public Order petId(Long petId) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.petId = petId;
     return this;
   }
@@ -146,6 +164,10 @@ public class Order {
 
 
   public Order quantity(Integer quantity) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.quantity = quantity;
     return this;
   }
@@ -170,6 +192,10 @@ public class Order {
 
 
   public Order shipDate(OffsetDateTime shipDate) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.shipDate = shipDate;
     return this;
   }
@@ -194,6 +220,10 @@ public class Order {
 
 
   public Order status(StatusEnum status) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.status = status;
     return this;
   }
@@ -218,6 +248,10 @@ public class Order {
 
 
   public Order complete(Boolean complete) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.complete = complete;
     return this;
   }
@@ -241,9 +275,12 @@ public class Order {
   }
 
 
+<<<<<<< HEAD
   /**
    * Return true if this Order object is equal to o.
    */
+=======
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {

@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 internal struct ArrayOfArrayOfNumberOnly: Codable { 
 
+=======
+internal struct ArrayOfArrayOfNumberOnly: Codable {
+>>>>>>> ooof
 
     internal var arrayArrayNumber: [[Double]]?
 
@@ -17,7 +21,11 @@ internal struct ArrayOfArrayOfNumberOnly: Codable {
         self.arrayArrayNumber = arrayArrayNumber
     }
 
+<<<<<<< HEAD
     internal enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    internal enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case arrayArrayNumber = "ArrayArrayNumber"
     }
 

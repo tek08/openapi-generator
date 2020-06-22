@@ -10,7 +10,11 @@ import java.math.BigDecimal;
 /**
  * OuterComposite
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen")
+=======
+
+>>>>>>> ooof
 public class OuterComposite   {
   @JsonProperty("my_number")
   private BigDecimal myNumber;

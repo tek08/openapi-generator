@@ -83,13 +83,22 @@ func (c *PetApiController) Routes() Routes {
 
 // AddPet - Add a new pet to the store
 func (c *PetApiController) AddPet(w http.ResponseWriter, r *http.Request) { 
+<<<<<<< HEAD
 	pet := &Pet{}
 	if err := json.NewDecoder(r.Body).Decode(&pet); err != nil {
+=======
+	body := &Pet{}
+	if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
+>>>>>>> ooof
 		w.WriteHeader(500)
 		return
 	}
 	
+<<<<<<< HEAD
 	result, err := c.service.AddPet(*pet)
+=======
+	result, err := c.service.AddPet(*body)
+>>>>>>> ooof
 	if err != nil {
 		w.WriteHeader(500)
 		return
@@ -163,13 +172,22 @@ func (c *PetApiController) GetPetById(w http.ResponseWriter, r *http.Request) {
 
 // UpdatePet - Update an existing pet
 func (c *PetApiController) UpdatePet(w http.ResponseWriter, r *http.Request) { 
+<<<<<<< HEAD
 	pet := &Pet{}
 	if err := json.NewDecoder(r.Body).Decode(&pet); err != nil {
+=======
+	body := &Pet{}
+	if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
+>>>>>>> ooof
 		w.WriteHeader(500)
 		return
 	}
 	
+<<<<<<< HEAD
 	result, err := c.service.UpdatePet(*pet)
+=======
+	result, err := c.service.UpdatePet(*body)
+>>>>>>> ooof
 	if err != nil {
 		w.WriteHeader(500)
 		return

@@ -45,7 +45,11 @@ public class OCamlClientCodegen extends DefaultCodegen implements CodegenConfig 
     public static final String PACKAGE_NAME = "packageName";
     public static final String PACKAGE_VERSION = "packageVersion";
 
+<<<<<<< HEAD
     static final String X_MODEL_MODULE = "x-model-module";
+=======
+    static final String X_MODEL_MODULE = "x-modelModule";
+>>>>>>> ooof
 
     public static final String CO_HTTP = "cohttp";
 
@@ -584,7 +588,11 @@ public class OCamlClientCodegen extends DefaultCodegen implements CodegenConfig 
             }
             return getTypeDeclaration(inner) + " list";
         } else if (ModelUtils.isMapSchema(p)) {
+<<<<<<< HEAD
             Schema inner = getAdditionalProperties(p);
+=======
+            Schema inner = ModelUtils.getAdditionalProperties(p);
+>>>>>>> ooof
             if (inner == null) {
                 LOGGER.warn(p.getName() + "(map property) does not have a proper inner type defined. Default to string");
                 inner = new StringSchema().description("TODO default missing map inner type to string");
@@ -715,6 +723,12 @@ public class OCamlClientCodegen extends DefaultCodegen implements CodegenConfig 
         @SuppressWarnings("unchecked")
         List<CodegenOperation> operations = (List<CodegenOperation>) objectMap.get("operation");
 
+<<<<<<< HEAD
+=======
+        // TODO: 5.0: Remove the camelCased vendorExtension below and ensure templates use the newer property naming.
+        once(LOGGER).warn("4.3.0 has deprecated the use of vendor extensions which don't follow lower-kebab casing standards with x- prefix.");
+
+>>>>>>> ooof
         for (CodegenOperation operation : operations) {
             // http method verb conversion, depending on client library (e.g. Hyper: PUT => Put, Reqwest: PUT => put)
             //if (CO_HTTP.equals(getLibrary())) {
@@ -725,6 +739,10 @@ public class OCamlClientCodegen extends DefaultCodegen implements CodegenConfig 
             }
 
             if ("Yojson.Safe.t".equals(operation.returnBaseType)) {
+<<<<<<< HEAD
+=======
+                operation.vendorExtensions.put("x-returnFreeFormObject", true); // TODO: 5.0 Remove
+>>>>>>> ooof
                 operation.vendorExtensions.put("x-return-free-form-object", true);
             }
         }

@@ -16,13 +16,21 @@ import unittest
 
 import petstore_api
 from petstore_api.api.pet_api import PetApi  # noqa: E501
+<<<<<<< HEAD
+=======
+from petstore_api.rest import ApiException
+>>>>>>> ooof
 
 
 class TestPetApi(unittest.TestCase):
     """PetApi unit test stubs"""
 
     def setUp(self):
+<<<<<<< HEAD
         self.api = PetApi()  # noqa: E501
+=======
+        self.api = petstore_api.api.pet_api.PetApi()  # noqa: E501
+>>>>>>> ooof
 
     def tearDown(self):
         pass

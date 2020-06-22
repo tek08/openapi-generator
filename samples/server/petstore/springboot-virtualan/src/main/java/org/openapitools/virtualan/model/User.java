@@ -12,7 +12,11 @@ import javax.validation.constraints.*;
 /**
  * User
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
+=======
+
+>>>>>>> ooof
 public class User   {
   @JsonProperty("id")
   private Long id;

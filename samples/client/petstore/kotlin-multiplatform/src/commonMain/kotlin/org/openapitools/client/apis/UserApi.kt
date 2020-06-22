@@ -25,15 +25,23 @@ import kotlinx.serialization.*
 import kotlinx.serialization.internal.StringDescriptor
 
 class UserApi @UseExperimental(UnstableDefault::class) constructor(
+<<<<<<< HEAD
     baseUrl: kotlin.String = "http://petstore.swagger.io/v2",
     httpClientEngine: HttpClientEngine? = null,
     serializer: KotlinxSerializer
 ) : ApiClient(baseUrl, httpClientEngine, serializer) {
+=======
+        baseUrl: kotlin.String = "http://petstore.swagger.io/v2",
+        httpClientEngine: HttpClientEngine? = null,
+        serializer: KotlinxSerializer)
+    : ApiClient(baseUrl, httpClientEngine, serializer) {
+>>>>>>> ooof
 
     @UseExperimental(UnstableDefault::class)
     constructor(
         baseUrl: kotlin.String = "http://petstore.swagger.io/v2",
         httpClientEngine: HttpClientEngine? = null,
+<<<<<<< HEAD
         jsonConfiguration: JsonConfiguration = JsonConfiguration.Default
     ) : this(baseUrl, httpClientEngine, KotlinxSerializer(Json(jsonConfiguration)))
 
@@ -44,6 +52,18 @@ class UserApi @UseExperimental(UnstableDefault::class) constructor(
      * @return void
      */
     suspend fun createUser(body: User): HttpResponse<Unit> {
+=======
+        jsonConfiguration: JsonConfiguration = JsonConfiguration.Default)
+    : this(baseUrl, httpClientEngine, KotlinxSerializer(Json(jsonConfiguration)))
+
+    /**
+    * Create user
+    * This can only be done by the logged in user.
+    * @param body Created user object 
+    * @return void
+    */
+    suspend fun createUser(body: User) : HttpResponse<Unit> {
+>>>>>>> ooof
 
         val localVariableAuthNames = listOf<String>()
 
@@ -67,6 +87,7 @@ class UserApi @UseExperimental(UnstableDefault::class) constructor(
         ).wrap()
     }
 
+<<<<<<< HEAD
 
 
     /**
@@ -80,6 +101,21 @@ class UserApi @UseExperimental(UnstableDefault::class) constructor(
         val localVariableAuthNames = listOf<String>()
 
         val localVariableBody = CreateUsersWithArrayInputRequest(body)
+=======
+    
+
+    /**
+    * Creates list of users with given input array
+    * 
+    * @param body List of user object 
+    * @return void
+    */
+    suspend fun createUsersWithArrayInput(body: kotlin.Array<User>) : HttpResponse<Unit> {
+
+        val localVariableAuthNames = listOf<String>()
+
+        val localVariableBody = CreateUsersWithArrayInputRequest(body.asList())
+>>>>>>> ooof
 
         val localVariableQuery = mutableMapOf<String, List<String>>()
 
@@ -100,6 +136,7 @@ class UserApi @UseExperimental(UnstableDefault::class) constructor(
     }
 
     @Serializable
+<<<<<<< HEAD
     private class CreateUsersWithArrayInputRequest(val value: List<User>) {
         @Serializer(CreateUsersWithArrayInputRequest::class)
         companion object : KSerializer<CreateUsersWithArrayInputRequest> {
@@ -121,6 +158,29 @@ class UserApi @UseExperimental(UnstableDefault::class) constructor(
         val localVariableAuthNames = listOf<String>()
 
         val localVariableBody = CreateUsersWithListInputRequest(body)
+=======
+private class CreateUsersWithArrayInputRequest(val value: List<User>) {
+    @Serializer(CreateUsersWithArrayInputRequest::class)
+    companion object : KSerializer<CreateUsersWithArrayInputRequest> {
+        private val serializer: KSerializer<List<User>> = User.serializer().list
+            override val descriptor = StringDescriptor.withName("CreateUsersWithArrayInputRequest")
+            override fun serialize(encoder: Encoder, obj: CreateUsersWithArrayInputRequest) = serializer.serialize(encoder, obj.value)
+            override fun deserialize(decoder: Decoder) = CreateUsersWithArrayInputRequest(serializer.deserialize(decoder))
+    }
+}
+
+    /**
+    * Creates list of users with given input array
+    * 
+    * @param body List of user object 
+    * @return void
+    */
+    suspend fun createUsersWithListInput(body: kotlin.Array<User>) : HttpResponse<Unit> {
+
+        val localVariableAuthNames = listOf<String>()
+
+        val localVariableBody = CreateUsersWithListInputRequest(body.asList())
+>>>>>>> ooof
 
         val localVariableQuery = mutableMapOf<String, List<String>>()
 
@@ -141,6 +201,7 @@ class UserApi @UseExperimental(UnstableDefault::class) constructor(
     }
 
     @Serializable
+<<<<<<< HEAD
     private class CreateUsersWithListInputRequest(val value: List<User>) {
         @Serializer(CreateUsersWithListInputRequest::class)
         companion object : KSerializer<CreateUsersWithListInputRequest> {
@@ -158,6 +219,25 @@ class UserApi @UseExperimental(UnstableDefault::class) constructor(
      * @return void
      */
     suspend fun deleteUser(username: kotlin.String): HttpResponse<Unit> {
+=======
+private class CreateUsersWithListInputRequest(val value: List<User>) {
+    @Serializer(CreateUsersWithListInputRequest::class)
+    companion object : KSerializer<CreateUsersWithListInputRequest> {
+        private val serializer: KSerializer<List<User>> = User.serializer().list
+            override val descriptor = StringDescriptor.withName("CreateUsersWithListInputRequest")
+            override fun serialize(encoder: Encoder, obj: CreateUsersWithListInputRequest) = serializer.serialize(encoder, obj.value)
+            override fun deserialize(decoder: Decoder) = CreateUsersWithListInputRequest(serializer.deserialize(decoder))
+    }
+}
+
+    /**
+    * Delete user
+    * This can only be done by the logged in user.
+    * @param username The name that needs to be deleted 
+    * @return void
+    */
+    suspend fun deleteUser(username: kotlin.String) : HttpResponse<Unit> {
+>>>>>>> ooof
 
         val localVariableAuthNames = listOf<String>()
 
@@ -170,7 +250,11 @@ class UserApi @UseExperimental(UnstableDefault::class) constructor(
 
         val localVariableConfig = RequestConfig(
             RequestMethod.DELETE,
+<<<<<<< HEAD
             "/user/{username}".replace("{" + "username" + "}", "$username"),
+=======
+            "/user/{username}".replace("{"+"username"+"}", "$username"),
+>>>>>>> ooof
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -184,6 +268,7 @@ class UserApi @UseExperimental(UnstableDefault::class) constructor(
 
 
     /**
+<<<<<<< HEAD
      * Get user by user name
      * 
      * @param username The name that needs to be fetched. Use user1 for testing. 
@@ -191,6 +276,15 @@ class UserApi @UseExperimental(UnstableDefault::class) constructor(
      */
     @Suppress("UNCHECKED_CAST")
     suspend fun getUserByName(username: kotlin.String): HttpResponse<User> {
+=======
+    * Get user by user name
+    * 
+    * @param username The name that needs to be fetched. Use user1 for testing. 
+    * @return User
+    */
+    @Suppress("UNCHECKED_CAST")
+    suspend fun getUserByName(username: kotlin.String) : HttpResponse<User> {
+>>>>>>> ooof
 
         val localVariableAuthNames = listOf<String>()
 
@@ -203,7 +297,11 @@ class UserApi @UseExperimental(UnstableDefault::class) constructor(
 
         val localVariableConfig = RequestConfig(
             RequestMethod.GET,
+<<<<<<< HEAD
             "/user/{username}".replace("{" + "username" + "}", "$username"),
+=======
+            "/user/{username}".replace("{"+"username"+"}", "$username"),
+>>>>>>> ooof
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -217,6 +315,7 @@ class UserApi @UseExperimental(UnstableDefault::class) constructor(
 
 
     /**
+<<<<<<< HEAD
      * Logs user into the system
      * 
      * @param username The user name for login 
@@ -225,6 +324,16 @@ class UserApi @UseExperimental(UnstableDefault::class) constructor(
      */
     @Suppress("UNCHECKED_CAST")
     suspend fun loginUser(username: kotlin.String, password: kotlin.String): HttpResponse<kotlin.String> {
+=======
+    * Logs user into the system
+    * 
+    * @param username The user name for login 
+    * @param password The password for login in clear text 
+    * @return kotlin.String
+    */
+    @Suppress("UNCHECKED_CAST")
+    suspend fun loginUser(username: kotlin.String, password: kotlin.String) : HttpResponse<kotlin.String> {
+>>>>>>> ooof
 
         val localVariableAuthNames = listOf<String>()
 
@@ -253,11 +362,19 @@ class UserApi @UseExperimental(UnstableDefault::class) constructor(
 
 
     /**
+<<<<<<< HEAD
      * Logs out current logged in user session
      * 
      * @return void
      */
     suspend fun logoutUser(): HttpResponse<Unit> {
+=======
+    * Logs out current logged in user session
+    * 
+    * @return void
+    */
+    suspend fun logoutUser() : HttpResponse<Unit> {
+>>>>>>> ooof
 
         val localVariableAuthNames = listOf<String>()
 
@@ -284,6 +401,7 @@ class UserApi @UseExperimental(UnstableDefault::class) constructor(
 
 
     /**
+<<<<<<< HEAD
      * Updated user
      * This can only be done by the logged in user.
      * @param username name that need to be deleted 
@@ -291,6 +409,15 @@ class UserApi @UseExperimental(UnstableDefault::class) constructor(
      * @return void
      */
     suspend fun updateUser(username: kotlin.String, body: User): HttpResponse<Unit> {
+=======
+    * Updated user
+    * This can only be done by the logged in user.
+    * @param username name that need to be deleted 
+    * @param body Updated user object 
+    * @return void
+    */
+    suspend fun updateUser(username: kotlin.String, body: User) : HttpResponse<Unit> {
+>>>>>>> ooof
 
         val localVariableAuthNames = listOf<String>()
 
@@ -302,7 +429,11 @@ class UserApi @UseExperimental(UnstableDefault::class) constructor(
 
         val localVariableConfig = RequestConfig(
             RequestMethod.PUT,
+<<<<<<< HEAD
             "/user/{username}".replace("{" + "username" + "}", "$username"),
+=======
+            "/user/{username}".replace("{"+"username"+"}", "$username"),
+>>>>>>> ooof
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -314,7 +445,11 @@ class UserApi @UseExperimental(UnstableDefault::class) constructor(
         ).wrap()
     }
 
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> ooof
 
 
     companion object {

@@ -67,7 +67,11 @@ class HealthCheckResult(object):
 
 
         :param nullable_message: The nullable_message of this HealthCheckResult.  # noqa: E501
+<<<<<<< HEAD
         :type nullable_message: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._nullable_message = nullable_message

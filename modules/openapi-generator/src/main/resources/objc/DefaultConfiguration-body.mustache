@@ -115,7 +115,10 @@
                    },
 {{/isApiKey}}
 {{#isBasic}}
+<<<<<<< HEAD
   {{#isBasicBasic}}
+=======
+>>>>>>> ooof
                @"{{name}}":
                    @{
                        @"type": @"basic",
@@ -123,6 +126,7 @@
                        @"key": @"Authorization",
                        @"value": [self getBasicAuthToken]
                    },
+<<<<<<< HEAD
    {{/isBasicBasic}}
    {{#isBasicBearer}}
                @"{{name}}":
@@ -133,6 +137,8 @@
                        @"value": [self getAccessToken]
                    },
    {{/isBasicBearer}}
+=======
+>>>>>>> ooof
 {{/isBasic}}
 {{#isOAuth}}
                @"{{name}}":

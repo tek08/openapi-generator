@@ -11,14 +11,21 @@ import javax.ws.rs.core.GenericType;
 import java.io.File;
 import org.openapitools.client.model.ModelApiResponse;
 import org.openapitools.client.model.Pet;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class PetApi {
   private ApiClient apiClient;
 
@@ -112,7 +119,11 @@ public class PetApi {
 
     return apiClient.invokeAPI("PetApi.addPet", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, null);
+=======
+                               localVarAuthNames, null, null);
+>>>>>>> ooof
   }
   /**
    * Deletes a pet
@@ -183,7 +194,11 @@ public class PetApi {
 
     return apiClient.invokeAPI("PetApi.deletePet", localVarPath, "DELETE", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, null);
+=======
+                               localVarAuthNames, null, null);
+>>>>>>> ooof
   }
   /**
    * Finds Pets by status
@@ -253,13 +268,21 @@ public class PetApi {
 
     return apiClient.invokeAPI("PetApi.findPetsByStatus", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, localVarReturnType);
+=======
+                               localVarAuthNames, localVarReturnType, null);
+>>>>>>> ooof
   }
   /**
    * Finds Pets by tags
    * Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
    * @param tags Tags to filter by (required)
+<<<<<<< HEAD
    * @return Set&lt;Pet&gt;
+=======
+   * @return List&lt;Pet&gt;
+>>>>>>> ooof
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -270,7 +293,11 @@ public class PetApi {
    * @deprecated
    */
   @Deprecated
+<<<<<<< HEAD
   public Set<Pet> findPetsByTags(Set<String> tags) throws ApiException {
+=======
+  public List<Pet> findPetsByTags(List<String> tags) throws ApiException {
+>>>>>>> ooof
     return findPetsByTagsWithHttpInfo(tags).getData();
   }
 
@@ -278,7 +305,11 @@ public class PetApi {
    * Finds Pets by tags
    * Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
    * @param tags Tags to filter by (required)
+<<<<<<< HEAD
    * @return ApiResponse&lt;Set&lt;Pet&gt;&gt;
+=======
+   * @return ApiResponse&lt;List&lt;Pet&gt;&gt;
+>>>>>>> ooof
    * @throws ApiException if fails to make API call
    * @http.response.details
      <table summary="Response Details" border="1">
@@ -289,7 +320,11 @@ public class PetApi {
    * @deprecated
    */
   @Deprecated
+<<<<<<< HEAD
   public ApiResponse<Set<Pet>> findPetsByTagsWithHttpInfo(Set<String> tags) throws ApiException {
+=======
+  public ApiResponse<List<Pet>> findPetsByTagsWithHttpInfo(List<String> tags) throws ApiException {
+>>>>>>> ooof
     Object localVarPostBody = null;
     
     // verify the required parameter 'tags' is set
@@ -323,11 +358,19 @@ public class PetApi {
 
     String[] localVarAuthNames = new String[] { "petstore_auth" };
 
+<<<<<<< HEAD
     GenericType<Set<Pet>> localVarReturnType = new GenericType<Set<Pet>>() {};
 
     return apiClient.invokeAPI("PetApi.findPetsByTags", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
                                localVarAuthNames, localVarReturnType);
+=======
+    GenericType<List<Pet>> localVarReturnType = new GenericType<List<Pet>>() {};
+
+    return apiClient.invokeAPI("PetApi.findPetsByTags", localVarPath, "GET", localVarQueryParams, localVarPostBody,
+                               localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+                               localVarAuthNames, localVarReturnType, null);
+>>>>>>> ooof
   }
   /**
    * Find pet by ID
@@ -399,7 +442,11 @@ public class PetApi {
 
     return apiClient.invokeAPI("PetApi.getPetById", localVarPath, "GET", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, localVarReturnType);
+=======
+                               localVarAuthNames, localVarReturnType, null);
+>>>>>>> ooof
   }
   /**
    * Update an existing pet
@@ -469,7 +516,11 @@ public class PetApi {
 
     return apiClient.invokeAPI("PetApi.updatePet", localVarPath, "PUT", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, null);
+=======
+                               localVarAuthNames, null, null);
+>>>>>>> ooof
   }
   /**
    * Updates a pet in the store with form data
@@ -542,7 +593,11 @@ if (status != null)
 
     return apiClient.invokeAPI("PetApi.updatePetWithForm", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, null);
+=======
+                               localVarAuthNames, null, null);
+>>>>>>> ooof
   }
   /**
    * uploads an image
@@ -618,7 +673,11 @@ if (file != null)
 
     return apiClient.invokeAPI("PetApi.uploadFile", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, localVarReturnType);
+=======
+                               localVarAuthNames, localVarReturnType, null);
+>>>>>>> ooof
   }
   /**
    * uploads an image (required)
@@ -699,6 +758,10 @@ if (requiredFile != null)
 
     return apiClient.invokeAPI("PetApi.uploadFileWithRequiredFile", localVarPath, "POST", localVarQueryParams, localVarPostBody,
                                localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType,
+<<<<<<< HEAD
                                localVarAuthNames, localVarReturnType);
+=======
+                               localVarAuthNames, localVarReturnType, null);
+>>>>>>> ooof
   }
 }

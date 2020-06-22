@@ -41,7 +41,11 @@ internal struct JSONDataEncoding {
     }
 
     internal static func encodingParameters(jsonData: Data?) -> [String: Any]? {
+<<<<<<< HEAD
         var returnedParams: [String: Any]? = nil
+=======
+        var returnedParams: [String: Any]?
+>>>>>>> ooof
         if let jsonData = jsonData, !jsonData.isEmpty {
             var params: [String: Any] = [:]
             params[jsonDataKey] = jsonData

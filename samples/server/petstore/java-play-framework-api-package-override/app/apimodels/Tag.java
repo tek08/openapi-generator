@@ -8,7 +8,11 @@ import javax.validation.constraints.*;
 /**
  * A tag for a pet
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen")
+=======
+
+>>>>>>> ooof
 @SuppressWarnings({"UnusedReturnValue", "WeakerAccess"})
 public class Tag   {
   @JsonProperty("id")

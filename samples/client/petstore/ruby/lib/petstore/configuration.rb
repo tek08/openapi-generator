@@ -207,6 +207,7 @@ module Petstore
             key: 'api_key_query',
             value: api_key_with_prefix('api_key_query')
           },
+<<<<<<< HEAD
         'bearer_test' =>
           {
             type: 'bearer',
@@ -215,6 +216,8 @@ module Petstore
             key: 'Authorization',
             value: "Bearer #{access_token}"
           },
+=======
+>>>>>>> ooof
         'http_basic_test' =>
           {
             type: 'basic',
@@ -236,6 +239,7 @@ module Petstore
     def server_settings
       [
         {
+<<<<<<< HEAD
           url: "http://{server}.swagger.io:{port}/v2",
           description: "petstore server",
           variables: {
@@ -271,6 +275,10 @@ module Petstore
                 ]
               }
             }
+=======
+          url: "http://petstore.swagger.io:80/v2",
+          description: "No description provided",
+>>>>>>> ooof
         }
       ]
     end

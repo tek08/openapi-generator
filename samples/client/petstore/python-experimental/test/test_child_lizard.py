@@ -11,6 +11,7 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
@@ -26,6 +27,12 @@ except ImportError:
     parent_pet = sys.modules[
         'petstore_api.model.parent_pet']
 from petstore_api.model.child_lizard import ChildLizard
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestChildLizard(unittest.TestCase):
@@ -40,7 +47,11 @@ class TestChildLizard(unittest.TestCase):
     def testChildLizard(self):
         """Test ChildLizard"""
         # FIXME: construct object with mandatory attributes with example values
+<<<<<<< HEAD
         # model = ChildLizard()  # noqa: E501
+=======
+        # model = petstore_api.ChildLizard()  # noqa: E501
+>>>>>>> ooof
         pass
 
 

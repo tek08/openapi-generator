@@ -38,14 +38,22 @@ public abstract class AbstractIntegrationTest {
 
     protected Boolean generateMetadata = true;
 
+<<<<<<< HEAD
     protected Map<String, String> globalPropertyOverrides = new HashMap<>();
+=======
+    protected Map<String, String> systemPropertyOverrides = new HashMap<>();
+>>>>>>> ooof
 
     // @wing328: ignore for the time being until we fix the error with the integration test
     @Test(enabled = false)
     public void generatesCorrectDirectoryStructure() throws IOException {
         DefaultGenerator codeGen = new DefaultGenerator();
         codeGen.setGenerateMetadata(generateMetadata);
+<<<<<<< HEAD
         for (Map.Entry<String, String> propertyOverride : globalPropertyOverrides.entrySet()) {
+=======
+        for (Map.Entry<String, String> propertyOverride : systemPropertyOverrides.entrySet()) {
+>>>>>>> ooof
             codeGen.setGeneratorPropertyDefault(propertyOverride.getKey(), propertyOverride.getValue());
         }
 

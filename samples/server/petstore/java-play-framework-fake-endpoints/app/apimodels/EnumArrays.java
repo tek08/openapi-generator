@@ -10,7 +10,11 @@ import javax.validation.constraints.*;
 /**
  * EnumArrays
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen")
+=======
+
+>>>>>>> ooof
 @SuppressWarnings({"UnusedReturnValue", "WeakerAccess"})
 public class EnumArrays   {
   /**

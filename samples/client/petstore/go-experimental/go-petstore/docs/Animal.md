@@ -4,7 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+<<<<<<< HEAD
 **ClassName** | **string** |  | 
+=======
+**ClassName** | Pointer to **string** |  | 
+>>>>>>> ooof
 **Color** | Pointer to **string** |  | [optional] [default to "red"]
 
 ## Methods

@@ -5,8 +5,13 @@ namespace OpenAPI\Client;
 use OpenAPI\Client\Api\PetApi;
 use OpenAPI\Client\Model\ApiResponse;
 use OpenAPI\Client\Model\Pet;
+<<<<<<< HEAD
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Assert;
+=======
+use PHPUnit\Framework\Assert;
+use PHPUnit\Framework\TestCase;
+>>>>>>> ooof
 
 class PetApiTest extends TestCase
 {
@@ -15,7 +20,11 @@ class PetApiTest extends TestCase
     private $api;
 
     // add a new pet (id 10005) to ensure the pet object is available for all the tests
+<<<<<<< HEAD
     public static function setUpBeforeClass(): void
+=======
+    public static function setUpBeforeClass()
+>>>>>>> ooof
     {
         // increase memory limit to avoid fatal error due to findPetByStatus
         // returning a lot of data
@@ -50,7 +59,11 @@ class PetApiTest extends TestCase
         Assert::assertEquals(200, $status);
     }
 
+<<<<<<< HEAD
     public function setUp(): void
+=======
+    public function setUp()
+>>>>>>> ooof
     {
         $this->api = new Api\PetApi();
     }
@@ -362,12 +375,21 @@ class PetApiTest extends TestCase
 
     /**
      * test invalid argument
+<<<<<<< HEAD
+=======
+     *
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Missing the required parameter $status when calling findPetsByStatus
+>>>>>>> ooof
      */
     public function testInvalidArgument()
     {
         // the argument is required, and we must specify one or some from 'available', 'pending', 'sold'
+<<<<<<< HEAD
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Missing the required parameter $status when calling findPetsByStatus');
+=======
+>>>>>>> ooof
         $this->api->findPetsByStatus([]);
     }
 

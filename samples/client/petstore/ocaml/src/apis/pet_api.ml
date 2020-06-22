@@ -5,6 +5,7 @@
  *
  *)
 
+<<<<<<< HEAD
 let add_pet ~pet_t =
     let open Lwt in
     let uri = Request.build_uri "/pet" in
@@ -12,6 +13,15 @@ let add_pet ~pet_t =
     let body = Request.write_as_json_body Pet.to_yojson pet_t in
     Cohttp_lwt_unix.Client.call `POST uri ~headers ~body >>= fun (resp, body) ->
     Request.read_json_body_as (JsonSupport.unwrap Pet.of_yojson) resp body
+=======
+let add_pet ~body =
+    let open Lwt in
+    let uri = Request.build_uri "/pet" in
+    let headers = Request.default_headers in
+    let body = Request.write_as_json_body Pet.to_yojson body in
+    Cohttp_lwt_unix.Client.call `POST uri ~headers ~body >>= fun (resp, body) ->
+    Request.handle_unit_response resp
+>>>>>>> ooof
 
 let delete_pet ~pet_id ?api_key () =
     let open Lwt in
@@ -47,6 +57,7 @@ let get_pet_by_id ~pet_id =
     Cohttp_lwt_unix.Client.call `GET uri ~headers >>= fun (resp, body) ->
     Request.read_json_body_as (JsonSupport.unwrap Pet.of_yojson) resp body
 
+<<<<<<< HEAD
 let update_pet ~pet_t =
     let open Lwt in
     let uri = Request.build_uri "/pet" in
@@ -54,6 +65,15 @@ let update_pet ~pet_t =
     let body = Request.write_as_json_body Pet.to_yojson pet_t in
     Cohttp_lwt_unix.Client.call `PUT uri ~headers ~body >>= fun (resp, body) ->
     Request.read_json_body_as (JsonSupport.unwrap Pet.of_yojson) resp body
+=======
+let update_pet ~body =
+    let open Lwt in
+    let uri = Request.build_uri "/pet" in
+    let headers = Request.default_headers in
+    let body = Request.write_as_json_body Pet.to_yojson body in
+    Cohttp_lwt_unix.Client.call `PUT uri ~headers ~body >>= fun (resp, body) ->
+    Request.handle_unit_response resp
+>>>>>>> ooof
 
 let update_pet_with_form ~pet_id ?name ?status () =
     let open Lwt in

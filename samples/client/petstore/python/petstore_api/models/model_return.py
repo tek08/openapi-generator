@@ -68,7 +68,11 @@ class ModelReturn(object):
 
 
         :param _return: The _return of this ModelReturn.  # noqa: E501
+<<<<<<< HEAD
         :type _return: int
+=======
+        :type: int
+>>>>>>> ooof
         """
 
         self.__return = _return

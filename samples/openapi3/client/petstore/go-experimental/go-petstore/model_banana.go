@@ -16,11 +16,16 @@ import (
 // Banana struct for Banana
 type Banana struct {
 	LengthCm *float32 `json:"lengthCm,omitempty"`
+<<<<<<< HEAD
 	AdditionalProperties map[string]interface{}
 }
 
 type _Banana Banana
 
+=======
+}
+
+>>>>>>> ooof
 // NewBanana instantiates a new Banana object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
@@ -75,6 +80,7 @@ func (o Banana) MarshalJSON() ([]byte, error) {
 	if o.LengthCm != nil {
 		toSerialize["lengthCm"] = o.LengthCm
 	}
+<<<<<<< HEAD
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -100,6 +106,11 @@ func (o *Banana) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
+=======
+	return json.Marshal(toSerialize)
+}
+
+>>>>>>> ooof
 type NullableBanana struct {
 	value *Banana
 	isSet bool
@@ -136,4 +147,7 @@ func (v *NullableBanana) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof

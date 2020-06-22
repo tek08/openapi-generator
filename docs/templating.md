@@ -50,6 +50,7 @@ java -cp /path/totemplate-classpath-example-1.0-SNAPSHOT.jar:modules/openapi-gen
 
 Note that our template directory is relative to the resource directory of the JAR defined on the classpath.
 
+<<<<<<< HEAD
 ### Retrieving Templates
 
 You will need to find and retrieve the templates for your desired generator in order to redefine structures, documentation, or API logic. We cover template customization in the following sections.
@@ -76,15 +77,21 @@ These templates are in our source repository at [modules/openapi-generator/src/m
 * Embedded top-level path (e.g. `resources/Java/model.mustache`)
 * Common embedded path (e.g. `resources/_common/model.mustache`)
 
+=======
+>>>>>>> ooof
 ### Custom Logic
 
 For this example, let's modify a Java client to use AOP via [jcabi/jcabi-aspects](https://github.com/jcabi/jcabi-aspects). We'll log API method execution at the `INFO` level. The jcabi-aspects project could also be used to implement method retries on failures; this would be a great exercise to further play around with templating.
 
 The Java generator supports a `library` option. This option works by defining base templates, then applying library-specific template overrides. This allows for template reuse for libraries sharing the same programming language. Templates defined as a library need only modify or extend the templates concerning the library, and generation falls back to the root templates (the "defaults") when not extended by the library. Generators which support the `library` option will only support the libraries known by the generator at compile time, and will throw a runtime error if you try to provide a custom library name.
 
+<<<<<<< HEAD
 To get started, we will need to copy our target generator's directory in full.
 
 The directory will be located under `modules/opeanpi-generator/src/main/resources/{generator}`. In general, the generator directory matches the generator name (what you would pass to the `generator` option), but this is not a requirement-- if you are having a hard time finding the template directory, look at the `embeddedTemplateDir` option in your target generator's implementation.
+=======
+To get started, we will need to copy our target generator's directory in full. The directory will be located under `modules/opeanpi-generator/src/main/resources/{generator}`. In general, the generator directory matches the generator name (what you would pass to the `generator` option), but this is not a requirement-- if you are having a hard time finding the template directory, look at the `embeddedTemplateDir` option in your target generator's implementation.
+>>>>>>> ooof
 
 If you've already cloned openapi-generator, find and copy the `modules/opeanpi-generator/src/main/resources/Java` directory. If you have the [Refined GitHub](https://github.com/sindresorhus/refined-github) Chrome or Firefox Extension, you can navigate to this directory on GitHub and click the "Download" button. Or, to pull the directory from latest master:
 

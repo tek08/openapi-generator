@@ -4,12 +4,24 @@ All URIs are relative to *http://petstore.swagger.io/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+<<<<<<< HEAD
 [**deleteOrder**](StoreApi.md#deleteOrder) | **DELETE** store/order/{orderId} | Delete purchase order by ID
 [**getInventory**](StoreApi.md#getInventory) | **GET** store/inventory | Returns pet inventories by status
 [**getOrderById**](StoreApi.md#getOrderById) | **GET** store/order/{orderId} | Find purchase order by ID
 [**placeOrder**](StoreApi.md#placeOrder) | **POST** store/order | Place an order for a pet
 
 
+=======
+[**deleteOrder**](StoreApi.md#deleteOrder) | **DELETE** /store/order/{orderId} | Delete purchase order by ID
+[**getInventory**](StoreApi.md#getInventory) | **GET** /store/inventory | Returns pet inventories by status
+[**getOrderById**](StoreApi.md#getOrderById) | **GET** /store/order/{orderId} | Find purchase order by ID
+[**placeOrder**](StoreApi.md#placeOrder) | **POST** /store/order | Place an order for a pet
+
+
+<a name="deleteOrder"></a>
+# **deleteOrder**
+> deleteOrder(orderId)
+>>>>>>> ooof
 
 Delete purchase order by ID
 
@@ -18,6 +30,7 @@ For valid response try integer IDs with value &lt; 1000. Anything above 1000 or 
 ### Example
 ```kotlin
 // Import classes:
+<<<<<<< HEAD
 //import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import org.openapitools.client.models.*
@@ -27,6 +40,22 @@ val webService = apiClient.createWebservice(StoreApi::class.java)
 val orderId : kotlin.String = orderId_example // kotlin.String | ID of the order that needs to be deleted
 
 webService.deleteOrder(orderId)
+=======
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiInstance = StoreApi()
+val orderId : kotlin.String = orderId_example // kotlin.String | ID of the order that needs to be deleted
+try {
+    apiInstance.deleteOrder(orderId)
+} catch (e: ClientException) {
+    println("4xx response calling StoreApi#deleteOrder")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling StoreApi#deleteOrder")
+    e.printStackTrace()
+}
+>>>>>>> ooof
 ```
 
 ### Parameters
@@ -48,6 +77,12 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+<<<<<<< HEAD
+=======
+<a name="getInventory"></a>
+# **getInventory**
+> kotlin.collections.Map&lt;kotlin.String, kotlin.Int&gt; getInventory()
+>>>>>>> ooof
 
 Returns pet inventories by status
 
@@ -56,6 +91,7 @@ Returns a map of status codes to quantities
 ### Example
 ```kotlin
 // Import classes:
+<<<<<<< HEAD
 //import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import org.openapitools.client.models.*
@@ -64,6 +100,22 @@ val apiClient = ApiClient()
 val webService = apiClient.createWebservice(StoreApi::class.java)
 
 val result : kotlin.collections.Map<kotlin.String, kotlin.Int> = webService.getInventory()
+=======
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiInstance = StoreApi()
+try {
+    val result : kotlin.collections.Map<kotlin.String, kotlin.Int> = apiInstance.getInventory()
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling StoreApi#getInventory")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling StoreApi#getInventory")
+    e.printStackTrace()
+}
+>>>>>>> ooof
 ```
 
 ### Parameters
@@ -76,12 +128,24 @@ This endpoint does not need any parameter.
 ### Authorization
 
 
+<<<<<<< HEAD
+=======
+Configure api_key:
+    ApiClient.apiKey["api_key"] = ""
+    ApiClient.apiKeyPrefix["api_key"] = ""
+>>>>>>> ooof
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<<<<<<< HEAD
+=======
+<a name="getOrderById"></a>
+# **getOrderById**
+> Order getOrderById(orderId)
+>>>>>>> ooof
 
 Find purchase order by ID
 
@@ -90,6 +154,7 @@ For valid response try integer IDs with value &lt;&#x3D; 5 or &gt; 10. Other val
 ### Example
 ```kotlin
 // Import classes:
+<<<<<<< HEAD
 //import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import org.openapitools.client.models.*
@@ -99,6 +164,23 @@ val webService = apiClient.createWebservice(StoreApi::class.java)
 val orderId : kotlin.Long = 789 // kotlin.Long | ID of pet that needs to be fetched
 
 val result : Order = webService.getOrderById(orderId)
+=======
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiInstance = StoreApi()
+val orderId : kotlin.Long = 789 // kotlin.Long | ID of pet that needs to be fetched
+try {
+    val result : Order = apiInstance.getOrderById(orderId)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling StoreApi#getOrderById")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling StoreApi#getOrderById")
+    e.printStackTrace()
+}
+>>>>>>> ooof
 ```
 
 ### Parameters
@@ -120,12 +202,19 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/xml, application/json
 
+<<<<<<< HEAD
+=======
+<a name="placeOrder"></a>
+# **placeOrder**
+> Order placeOrder(body)
+>>>>>>> ooof
 
 Place an order for a pet
 
 ### Example
 ```kotlin
 // Import classes:
+<<<<<<< HEAD
 //import org.openapitools.client.*
 //import org.openapitools.client.infrastructure.*
 //import org.openapitools.client.models.*
@@ -135,6 +224,23 @@ val webService = apiClient.createWebservice(StoreApi::class.java)
 val body : Order =  // Order | order placed for purchasing the pet
 
 val result : Order = webService.placeOrder(body)
+=======
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiInstance = StoreApi()
+val body : Order =  // Order | order placed for purchasing the pet
+try {
+    val result : Order = apiInstance.placeOrder(body)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling StoreApi#placeOrder")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling StoreApi#placeOrder")
+    e.printStackTrace()
+}
+>>>>>>> ooof
 ```
 
 ### Parameters

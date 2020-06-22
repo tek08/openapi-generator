@@ -13,7 +13,11 @@ import org.openapitools.model.*;
 import java.util.List;
 import org.openapitools.model.User;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen")
+=======
+
+>>>>>>> ooof
 public class UserController  {
   /** 
    * Uncomment and implement as you see fit.  These operations will map

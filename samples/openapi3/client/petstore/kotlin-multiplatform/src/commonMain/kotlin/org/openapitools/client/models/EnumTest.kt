@@ -18,11 +18,18 @@ import org.openapitools.client.models.OuterEnumIntegerDefaultValue
 
 import kotlinx.serialization.*
 import kotlinx.serialization.internal.CommonEnumSerializer
+<<<<<<< HEAD
 
 /**
  * 
  * @param enumStringRequired 
  * @param enumString 
+=======
+/**
+ * 
+ * @param enumString 
+ * @param enumStringRequired 
+>>>>>>> ooof
  * @param enumInteger 
  * @param enumNumber 
  * @param outerEnum 
@@ -40,31 +47,56 @@ data class EnumTest (
     @SerialName(value = "outerEnumInteger") val outerEnumInteger: OuterEnumInteger? = null,
     @SerialName(value = "outerEnumDefaultValue") val outerEnumDefaultValue: OuterEnumDefaultValue? = null,
     @SerialName(value = "outerEnumIntegerDefaultValue") val outerEnumIntegerDefaultValue: OuterEnumIntegerDefaultValue? = null
+<<<<<<< HEAD
 ) {
 
+=======
+) 
+
+
+{
+>>>>>>> ooof
     /**
     * 
     * Values: uPPER,lower,eMPTY
     */
+<<<<<<< HEAD
     @Serializable(with = EnumStringRequired.Serializer::class)
     enum class EnumStringRequired(val value: kotlin.String){
+=======
+    @Serializable(with = EnumString.Serializer::class)
+    enum class EnumString(val value: kotlin.String){
+>>>>>>> ooof
         uPPER("UPPER"),
         lower("lower"),
         eMPTY("");
 
+<<<<<<< HEAD
         object Serializer : CommonEnumSerializer<EnumStringRequired>("EnumStringRequired", values(), values().map { it.value.toString() }.toTypedArray())
+=======
+        object Serializer : CommonEnumSerializer<EnumString>("EnumString", values(), values().map { it.value.toString() }.toTypedArray())
+>>>>>>> ooof
     }
     /**
     * 
     * Values: uPPER,lower,eMPTY
     */
+<<<<<<< HEAD
     @Serializable(with = EnumString.Serializer::class)
     enum class EnumString(val value: kotlin.String){
+=======
+    @Serializable(with = EnumStringRequired.Serializer::class)
+    enum class EnumStringRequired(val value: kotlin.String){
+>>>>>>> ooof
         uPPER("UPPER"),
         lower("lower"),
         eMPTY("");
 
+<<<<<<< HEAD
         object Serializer : CommonEnumSerializer<EnumString>("EnumString", values(), values().map { it.value.toString() }.toTypedArray())
+=======
+        object Serializer : CommonEnumSerializer<EnumStringRequired>("EnumStringRequired", values(), values().map { it.value.toString() }.toTypedArray())
+>>>>>>> ooof
     }
     /**
     * 

@@ -16,13 +16,21 @@ import unittest
 
 import petstore_api
 from petstore_api.api.fake_classname_tags_123_api import FakeClassnameTags123Api  # noqa: E501
+<<<<<<< HEAD
+=======
+from petstore_api.rest import ApiException
+>>>>>>> ooof
 
 
 class TestFakeClassnameTags123Api(unittest.TestCase):
     """FakeClassnameTags123Api unit test stubs"""
 
     def setUp(self):
+<<<<<<< HEAD
         self.api = FakeClassnameTags123Api()  # noqa: E501
+=======
+        self.api = petstore_api.api.fake_classname_tags_123_api.FakeClassnameTags123Api()  # noqa: E501
+>>>>>>> ooof
 
     def tearDown(self):
         pass

@@ -5,6 +5,7 @@ mod server;
 {{/hasCallbacks}}
 
 #[allow(unused_imports)]
+<<<<<<< HEAD
 use futures::{future, Stream, stream};
 #[allow(unused_imports)]
 use {{{externCrateName}}}::{Api, ApiNoContext, Client, ContextWrapperExt, models,
@@ -17,6 +18,13 @@ use {{{externCrateName}}}::{Api, ApiNoContext, Client, ContextWrapperExt, models
     {{/operations}}
   {{/apis}}
 {{/apiInfo}}
+=======
+use futures::{Future, future, Stream, stream};
+#[allow(unused_imports)]
+use {{{externCrateName}}}::{Api, ApiNoContext, Client, ContextWrapperExt, models,
+                      ApiError{{#apiInfo}}{{#apis}}{{#operations}}{{#operation}},
+                      {{{operationId}}}Response{{/operation}}{{/operations}}{{/apis}}{{/apiInfo}}
+>>>>>>> ooof
                      };
 use clap::{App, Arg};
 
@@ -25,9 +33,13 @@ use log::info;
 
 // swagger::Has may be unused if there are no examples
 #[allow(unused_imports)]
+<<<<<<< HEAD
 use swagger::{AuthData, ContextBuilder, EmptyContext, Has, Push, XSpanIdString};
 
 type ClientContext = swagger::make_context_ty!(ContextBuilder, EmptyContext, Option<AuthData>, XSpanIdString);
+=======
+use swagger::{ContextBuilder, EmptyContext, XSpanIdString, Has, Push, AuthData};
+>>>>>>> ooof
 
 // rt may be unused if there are no examples
 #[allow(unused_mut)]
@@ -43,9 +55,15 @@ fn main() {
     {{#operations}}
       {{#operation}}
         {{#vendorExtensions}}
+<<<<<<< HEAD
           {{^x-no-client-example}}
                 "{{{operationId}}}",
           {{/x-no-client-example}}
+=======
+          {{^noClientExample}}
+                "{{{operationId}}}",
+          {{/noClientExample}}
+>>>>>>> ooof
         {{/vendorExtensions}}
       {{/operation}}
     {{/operations}}
@@ -75,6 +93,7 @@ fn main() {
                            matches.value_of("host").unwrap(),
                            matches.value_of("port").unwrap());
 
+<<<<<<< HEAD
     let context: ClientContext =
         swagger::make_context!(ContextBuilder, EmptyContext, None as Option<AuthData>, XSpanIdString::default());
 
@@ -91,6 +110,24 @@ fn main() {
         Box::new(client.with_context(context))
     };
 
+=======
+    let client = if matches.is_present("https") {
+        // Using Simple HTTPS
+        Client::try_new_https(&base_url)
+            .expect("Failed to create HTTPS client")
+    } else {
+        // Using HTTP
+        Client::try_new_http(
+            &base_url)
+            .expect("Failed to create HTTP client")
+    };
+
+    let context: swagger::make_context_ty!(ContextBuilder, EmptyContext, Option<AuthData>, XSpanIdString) =
+        swagger::make_context!(ContextBuilder, EmptyContext, None as Option<AuthData>, XSpanIdString::default());
+
+    let client = client.with_context(context);
+
+>>>>>>> ooof
     let mut rt = tokio::runtime::Runtime::new().unwrap();
 {{#hasCallbacks}}
 
@@ -104,6 +141,7 @@ fn main() {
     {{#operations}}
       {{#operation}}
         {{#vendorExtensions}}
+<<<<<<< HEAD
           {{#x-no-client-example}}
         /* Disabled because there's no example.
           {{/x-no-client-example}}
@@ -112,14 +150,30 @@ fn main() {
             let result = rt.block_on(client.{{{vendorExtensions.x-operation-id}}}(
                 {{#allParams}}
                   {{{vendorExtensions.x-example}}}{{^-last}},{{/-last}}
+=======
+          {{#noClientExample}}
+        /* Disabled because there's no example.
+          {{/noClientExample}}
+        {{/vendorExtensions}}
+        Some("{{{operationId}}}") => {
+            let result = rt.block_on(client.{{{vendorExtensions.operation_id}}}(
+                {{#allParams}}
+                  {{{vendorExtensions.example}}}{{^-last}},{{/-last}}
+>>>>>>> ooof
                 {{/allParams}}
             ));
             info!("{:?} (X-Span-ID: {:?})", result, (client.context() as &dyn Has<XSpanIdString>).get().clone());
         },
         {{#vendorExtensions}}
+<<<<<<< HEAD
           {{#x-no-client-example}}
         */
           {{/x-no-client-example}}
+=======
+          {{#noClientExample}}
+        */
+          {{/noClientExample}}
+>>>>>>> ooof
         {{/vendorExtensions}}
       {{/operation}}
     {{/operations}}

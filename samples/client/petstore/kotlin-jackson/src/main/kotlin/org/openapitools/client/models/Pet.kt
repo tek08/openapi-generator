@@ -15,7 +15,10 @@ import org.openapitools.client.models.Category
 import org.openapitools.client.models.Tag
 
 import com.fasterxml.jackson.annotation.JsonProperty
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * A pet for sale in the pet store
  * @param name 
@@ -27,6 +30,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
  */
 
 data class Pet (
+<<<<<<< HEAD
     @field:JsonProperty("name")
     val name: kotlin.String,
     @field:JsonProperty("photoUrls")
@@ -39,6 +43,20 @@ data class Pet (
     val tags: kotlin.collections.List<Tag>? = null,
     /* pet status in the store */
     @field:JsonProperty("status")
+=======
+    @JsonProperty("name")
+    val name: kotlin.String,
+    @JsonProperty("photoUrls")
+    val photoUrls: kotlin.Array<kotlin.String>,
+    @JsonProperty("id")
+    val id: kotlin.Long? = null,
+    @JsonProperty("category")
+    val category: Category? = null,
+    @JsonProperty("tags")
+    val tags: kotlin.Array<Tag>? = null,
+    /* pet status in the store */
+    @JsonProperty("status")
+>>>>>>> ooof
     val status: Pet.Status? = null
 ) {
 
@@ -48,9 +66,15 @@ data class Pet (
     */
     
     enum class Status(val value: kotlin.String){
+<<<<<<< HEAD
         @JsonProperty(value = "available") AVAILABLE("available"),
         @JsonProperty(value = "pending") PENDING("pending"),
         @JsonProperty(value = "sold") SOLD("sold");
+=======
+        @JsonProperty(value="available") AVAILABLE("available"),
+        @JsonProperty(value="pending") PENDING("pending"),
+        @JsonProperty(value="sold") SOLD("sold");
+>>>>>>> ooof
     }
 }
 

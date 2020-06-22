@@ -14,7 +14,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class User  implements Serializable {
+=======
+public class User  implements Serializable {
+>>>>>>> ooof
   
   private @Valid Long id;
   private @Valid String username;

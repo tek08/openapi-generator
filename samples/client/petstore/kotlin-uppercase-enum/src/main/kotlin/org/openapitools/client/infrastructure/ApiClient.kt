@@ -10,6 +10,7 @@ import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import okhttp3.ResponseBody
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.Request
+<<<<<<< HEAD
 import okhttp3.Headers
 import okhttp3.MultipartBody
 import java.io.File
@@ -20,6 +21,9 @@ import java.time.LocalDateTime
 import java.time.LocalTime
 import java.time.OffsetDateTime
 import java.time.OffsetTime
+=======
+import java.io.File
+>>>>>>> ooof
 
 open class ApiClient(val baseUrl: String) {
     companion object {
@@ -46,6 +50,7 @@ open class ApiClient(val baseUrl: String) {
         val builder: OkHttpClient.Builder = OkHttpClient.Builder()
     }
 
+<<<<<<< HEAD
     /**
      * Guess Content-Type header from the given file (defaults to "application/octet-stream").
      *
@@ -57,11 +62,14 @@ open class ApiClient(val baseUrl: String) {
         return contentType ?: "application/octet-stream"
     }
 
+=======
+>>>>>>> ooof
     protected inline fun <reified T> requestBody(content: T, mediaType: String = JsonMediaType): RequestBody =
         when {
             content is File -> content.asRequestBody(
                 mediaType.toMediaTypeOrNull()
             )
+<<<<<<< HEAD
             mediaType == FormDataMediaType -> {
                 MultipartBody.Builder()
                     .setType(MultipartBody.FORM)
@@ -95,6 +103,14 @@ open class ApiClient(val baseUrl: String) {
                     @Suppress("UNCHECKED_CAST")
                     (content as Map<String, Any?>).forEach { (key, value) ->
                         add(key, parameterToString(value))
+=======
+            mediaType == FormDataMediaType || mediaType == FormUrlEncMediaType -> {
+                FormBody.Builder().apply {
+                    // content's type *must* be Map<String, Any>
+                    @Suppress("UNCHECKED_CAST")
+                    (content as Map<String,String>).forEach { (key, value) ->
+                        add(key, value)
+>>>>>>> ooof
                     }
                 }.build()
             }
@@ -186,13 +202,20 @@ open class ApiClient(val baseUrl: String) {
                     response.headers.toMultimap()
             )
             response.isClientError -> return ClientError(
+<<<<<<< HEAD
                     response.message,
+=======
+>>>>>>> ooof
                     response.body?.string(),
                     response.code,
                     response.headers.toMultimap()
             )
             else -> return ServerError(
+<<<<<<< HEAD
                     response.message,
+=======
+                    null,
+>>>>>>> ooof
                     response.body?.string(),
                     response.code,
                     response.headers.toMultimap()
@@ -200,6 +223,7 @@ open class ApiClient(val baseUrl: String) {
         }
     }
 
+<<<<<<< HEAD
     protected fun parameterToString(value: Any?): String {
         when (value) {
             null -> {
@@ -228,5 +252,9 @@ open class ApiClient(val baseUrl: String) {
         inside a gson/moshi adapter.
         */
         return Serializer.moshi.adapter(T::class.java).toJson(value).replace("\"", "")
+=======
+    protected inline fun <reified T: Any> parseDateToQueryString(value : T): String {
+        return value.toString()
+>>>>>>> ooof
     }
 }

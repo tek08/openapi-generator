@@ -22,7 +22,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 })
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class Animal  implements Serializable {
+=======
+public class Animal  implements Serializable {
+>>>>>>> ooof
   
   private @Valid String className;
   private @Valid String color = "red";

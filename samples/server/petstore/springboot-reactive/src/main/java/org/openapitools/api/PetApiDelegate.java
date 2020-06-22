@@ -3,7 +3,10 @@ package org.openapitools.api;
 import org.openapitools.model.ModelApiResponse;
 import org.openapitools.model.Pet;
 import org.springframework.core.io.Resource;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -22,7 +25,11 @@ import java.util.Optional;
  * A delegate to be called by the {@link PetApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
+=======
+
+>>>>>>> ooof
 public interface PetApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -102,7 +109,11 @@ public interface PetApiDelegate {
      * @deprecated
      * @see PetApi#findPetsByTags
      */
+<<<<<<< HEAD
     default Mono<ResponseEntity<Flux<Pet>>> findPetsByTags(Set<String> tags,
+=======
+    default Mono<ResponseEntity<Flux<Pet>>> findPetsByTags(List<String> tags,
+>>>>>>> ooof
         ServerWebExchange exchange) {
         Mono<Void> result = Mono.empty();
         exchange.getResponse().setStatusCode(HttpStatus.NOT_IMPLEMENTED);

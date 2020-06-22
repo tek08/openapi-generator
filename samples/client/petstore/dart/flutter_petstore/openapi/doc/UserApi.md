@@ -20,7 +20,11 @@ Method | HTTP request | Description
 
 
 # **createUser**
+<<<<<<< HEAD
 > createUser(user)
+=======
+> createUser(body)
+>>>>>>> ooof
 
 Create user
 
@@ -29,6 +33,7 @@ This can only be done by the logged in user.
 ### Example 
 ```dart
 import 'package:openapi/api.dart';
+<<<<<<< HEAD
 // TODO Configure API key authorization: api_key
 //openapi.api.Configuration.apiKey{'api_key'} = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -39,6 +44,14 @@ var user = new User(); // User | Created user object
 
 try { 
     api_instance.createUser(user);
+=======
+
+var api_instance = new UserApi();
+var body = new User(); // User | Created user object
+
+try { 
+    api_instance.createUser(body);
+>>>>>>> ooof
 } catch (e) {
     print("Exception when calling UserApi->createUser: $e\n");
 }
@@ -48,7 +61,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **user** | [**User**](User.md)| Created user object | 
+=======
+ **body** | [**User**](User.md)| Created user object | 
+>>>>>>> ooof
 
 ### Return type
 
@@ -56,23 +73,36 @@ void (empty response body)
 
 ### Authorization
 
+<<<<<<< HEAD
 [api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
+=======
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+>>>>>>> ooof
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createUsersWithArrayInput**
+<<<<<<< HEAD
 > createUsersWithArrayInput(user)
+=======
+> createUsersWithArrayInput(body)
+>>>>>>> ooof
 
 Creates list of users with given input array
 
 ### Example 
 ```dart
 import 'package:openapi/api.dart';
+<<<<<<< HEAD
 // TODO Configure API key authorization: api_key
 //openapi.api.Configuration.apiKey{'api_key'} = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -83,6 +113,14 @@ var user = [new List&lt;User&gt;()]; // List<User> | List of user object
 
 try { 
     api_instance.createUsersWithArrayInput(user);
+=======
+
+var api_instance = new UserApi();
+var body = [new List&lt;User&gt;()]; // List<User> | List of user object
+
+try { 
+    api_instance.createUsersWithArrayInput(body);
+>>>>>>> ooof
 } catch (e) {
     print("Exception when calling UserApi->createUsersWithArrayInput: $e\n");
 }
@@ -92,7 +130,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **user** | [**List&lt;User&gt;**](User.md)| List of user object | 
+=======
+ **body** | [**List&lt;User&gt;**](User.md)| List of user object | 
+>>>>>>> ooof
 
 ### Return type
 
@@ -100,23 +142,36 @@ void (empty response body)
 
 ### Authorization
 
+<<<<<<< HEAD
 [api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
+=======
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+>>>>>>> ooof
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createUsersWithListInput**
+<<<<<<< HEAD
 > createUsersWithListInput(user)
+=======
+> createUsersWithListInput(body)
+>>>>>>> ooof
 
 Creates list of users with given input array
 
 ### Example 
 ```dart
 import 'package:openapi/api.dart';
+<<<<<<< HEAD
 // TODO Configure API key authorization: api_key
 //openapi.api.Configuration.apiKey{'api_key'} = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -127,6 +182,14 @@ var user = [new List&lt;User&gt;()]; // List<User> | List of user object
 
 try { 
     api_instance.createUsersWithListInput(user);
+=======
+
+var api_instance = new UserApi();
+var body = [new List&lt;User&gt;()]; // List<User> | List of user object
+
+try { 
+    api_instance.createUsersWithListInput(body);
+>>>>>>> ooof
 } catch (e) {
     print("Exception when calling UserApi->createUsersWithListInput: $e\n");
 }
@@ -136,7 +199,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **user** | [**List&lt;User&gt;**](User.md)| List of user object | 
+=======
+ **body** | [**List&lt;User&gt;**](User.md)| List of user object | 
+>>>>>>> ooof
 
 ### Return type
 
@@ -144,11 +211,19 @@ void (empty response body)
 
 ### Authorization
 
+<<<<<<< HEAD
 [api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
+=======
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+>>>>>>> ooof
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -163,10 +238,13 @@ This can only be done by the logged in user.
 ### Example 
 ```dart
 import 'package:openapi/api.dart';
+<<<<<<< HEAD
 // TODO Configure API key authorization: api_key
 //openapi.api.Configuration.apiKey{'api_key'} = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //openapi.api.Configuration.apiKeyPrefix{'api_key'} = "Bearer";
+=======
+>>>>>>> ooof
 
 var api_instance = new UserApi();
 var username = username_example; // String | The name that needs to be deleted
@@ -190,7 +268,11 @@ void (empty response body)
 
 ### Authorization
 
+<<<<<<< HEAD
 [api_key](../README.md#api_key)
+=======
+No authorization required
+>>>>>>> ooof
 
 ### HTTP request headers
 
@@ -291,10 +373,13 @@ Logs out current logged in user session
 ### Example 
 ```dart
 import 'package:openapi/api.dart';
+<<<<<<< HEAD
 // TODO Configure API key authorization: api_key
 //openapi.api.Configuration.apiKey{'api_key'} = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 //openapi.api.Configuration.apiKeyPrefix{'api_key'} = "Bearer";
+=======
+>>>>>>> ooof
 
 var api_instance = new UserApi();
 
@@ -314,7 +399,11 @@ void (empty response body)
 
 ### Authorization
 
+<<<<<<< HEAD
 [api_key](../README.md#api_key)
+=======
+No authorization required
+>>>>>>> ooof
 
 ### HTTP request headers
 
@@ -324,7 +413,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateUser**
+<<<<<<< HEAD
 > updateUser(username, user)
+=======
+> updateUser(username, body)
+>>>>>>> ooof
 
 Updated user
 
@@ -333,6 +426,7 @@ This can only be done by the logged in user.
 ### Example 
 ```dart
 import 'package:openapi/api.dart';
+<<<<<<< HEAD
 // TODO Configure API key authorization: api_key
 //openapi.api.Configuration.apiKey{'api_key'} = 'YOUR_API_KEY';
 // uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -344,6 +438,15 @@ var user = new User(); // User | Updated user object
 
 try { 
     api_instance.updateUser(username, user);
+=======
+
+var api_instance = new UserApi();
+var username = username_example; // String | name that need to be deleted
+var body = new User(); // User | Updated user object
+
+try { 
+    api_instance.updateUser(username, body);
+>>>>>>> ooof
 } catch (e) {
     print("Exception when calling UserApi->updateUser: $e\n");
 }
@@ -354,7 +457,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| name that need to be deleted | [default to null]
+<<<<<<< HEAD
  **user** | [**User**](User.md)| Updated user object | 
+=======
+ **body** | [**User**](User.md)| Updated user object | 
+>>>>>>> ooof
 
 ### Return type
 
@@ -362,11 +469,19 @@ void (empty response body)
 
 ### Authorization
 
+<<<<<<< HEAD
 [api_key](../README.md#api_key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
+=======
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+>>>>>>> ooof
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

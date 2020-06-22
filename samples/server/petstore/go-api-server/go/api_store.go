@@ -101,13 +101,22 @@ func (c *StoreApiController) GetOrderById(w http.ResponseWriter, r *http.Request
 
 // PlaceOrder - Place an order for a pet
 func (c *StoreApiController) PlaceOrder(w http.ResponseWriter, r *http.Request) { 
+<<<<<<< HEAD
 	order := &Order{}
 	if err := json.NewDecoder(r.Body).Decode(&order); err != nil {
+=======
+	body := &Order{}
+	if err := json.NewDecoder(r.Body).Decode(&body); err != nil {
+>>>>>>> ooof
 		w.WriteHeader(500)
 		return
 	}
 	
+<<<<<<< HEAD
 	result, err := c.service.PlaceOrder(*order)
+=======
+	result, err := c.service.PlaceOrder(*body)
+>>>>>>> ooof
 	if err != nil {
 		w.WriteHeader(500)
 		return

@@ -73,7 +73,11 @@ public interface FakeApi  {
 
     @POST
     @Path("/fake/outer/number")
+<<<<<<< HEAD
     @Consumes({ "text/plain" })
+=======
+    @Consumes({ "application/json" })
+>>>>>>> ooof
     @Produces({ "*/*" })
     @ApiOperation(value = "", tags={ "fake",  })
     @ApiResponses(value = { 
@@ -121,15 +125,25 @@ public interface FakeApi  {
     public Client testClientModel(@Valid Client body);
 
     /**
+<<<<<<< HEAD
      * Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트
      *
      * Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트
+=======
+     * Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
+     *
+     * Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
+>>>>>>> ooof
      *
      */
     @POST
     @Path("/fake")
     @Consumes({ "application/x-www-form-urlencoded" })
+<<<<<<< HEAD
     @ApiOperation(value = "Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트", tags={ "fake",  })
+=======
+    @ApiOperation(value = "Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 ", tags={ "fake",  })
+>>>>>>> ooof
     @ApiResponses(value = { 
         @ApiResponse(code = 400, message = "Invalid username supplied"),
         @ApiResponse(code = 404, message = "User not found") })
@@ -182,6 +196,7 @@ public interface FakeApi  {
     @GET
     @Path("/fake/jsonFormData")
     @Consumes({ "application/x-www-form-urlencoded" })
+<<<<<<< HEAD
     @ApiOperation(value = "test json serialization of form data", tags={ "fake",  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "successful operation") })
@@ -193,5 +208,11 @@ public interface FakeApi  {
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Success") })
     public void testQueryParameterCollectionFormat(@QueryParam("pipe") @NotNull  List<String> pipe, @QueryParam("ioutil") @NotNull  List<String> ioutil, @QueryParam("http") @NotNull  List<String> http, @QueryParam("url") @NotNull  List<String> url, @QueryParam("context") @NotNull  List<String> context);
+=======
+    @ApiOperation(value = "test json serialization of form data", tags={ "fake" })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "successful operation") })
+    public void testJsonFormData(@Multipart(value = "param")  String param, @Multipart(value = "param2")  String param2);
+>>>>>>> ooof
 }
 

@@ -13,7 +13,11 @@ Method | HTTP request | Description
 
 
 # **call_123_test_special_tags**
+<<<<<<< HEAD
 > Client call_123_test_special_tags(client => $client)
+=======
+> Client call_123_test_special_tags(body => $body)
+>>>>>>> ooof
 
 To test special tags
 
@@ -26,10 +30,17 @@ use WWW::OpenAPIClient::AnotherFakeApi;
 my $api_instance = WWW::OpenAPIClient::AnotherFakeApi->new(
 );
 
+<<<<<<< HEAD
 my $client = WWW::OpenAPIClient::Object::Client->new(); # Client | client model
 
 eval { 
     my $result = $api_instance->call_123_test_special_tags(client => $client);
+=======
+my $body = WWW::OpenAPIClient::Object::Client->new(); # Client | client model
+
+eval { 
+    my $result = $api_instance->call_123_test_special_tags(body => $body);
+>>>>>>> ooof
     print Dumper($result);
 };
 if ($@) {
@@ -41,7 +52,11 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **client** | [**Client**](Client.md)| client model | 
+=======
+ **body** | [**Client**](Client.md)| client model | 
+>>>>>>> ooof
 
 ### Return type
 

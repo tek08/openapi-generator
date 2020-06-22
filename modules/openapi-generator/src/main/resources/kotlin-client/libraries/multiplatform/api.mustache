@@ -17,15 +17,23 @@ import kotlinx.serialization.internal.StringDescriptor
 
 {{#operations}}
 {{#nonPublicApi}}internal {{/nonPublicApi}}class {{classname}} @UseExperimental(UnstableDefault::class) constructor(
+<<<<<<< HEAD
     baseUrl: kotlin.String = "{{{basePath}}}",
     httpClientEngine: HttpClientEngine? = null,
     serializer: KotlinxSerializer
 ) : ApiClient(baseUrl, httpClientEngine, serializer) {
+=======
+        baseUrl: kotlin.String = "{{{basePath}}}",
+        httpClientEngine: HttpClientEngine? = null,
+        serializer: KotlinxSerializer)
+    : ApiClient(baseUrl, httpClientEngine, serializer) {
+>>>>>>> ooof
 
     @UseExperimental(UnstableDefault::class)
     constructor(
         baseUrl: kotlin.String = "{{{basePath}}}",
         httpClientEngine: HttpClientEngine? = null,
+<<<<<<< HEAD
         jsonConfiguration: JsonConfiguration = JsonConfiguration.Default
     ) : this(baseUrl, httpClientEngine, KotlinxSerializer(Json(jsonConfiguration)))
 
@@ -44,6 +52,26 @@ import kotlinx.serialization.internal.StringDescriptor
         val localVariableAuthNames = listOf<String>({{#authMethods}}"{{name}}"{{#hasMore}}, {{/hasMore}}{{/authMethods}})
 
         val localVariableBody = {{#hasBodyParam}}{{#bodyParam}}{{#isListContainer}}{{operationIdCamelCase}}Request({{{paramName}}}{{^isList}}.asList(){{/isList}}){{/isListContainer}}{{^isListContainer}}{{#isMapContainer}}{{operationIdCamelCase}}Request({{{paramName}}}){{/isMapContainer}}{{^isMapContainer}}{{{paramName}}}{{/isMapContainer}}{{/isListContainer}}{{/bodyParam}}{{/hasBodyParam}}
+=======
+        jsonConfiguration: JsonConfiguration = JsonConfiguration.Default)
+    : this(baseUrl, httpClientEngine, KotlinxSerializer(Json(jsonConfiguration)))
+
+    {{#operation}}
+    /**
+    * {{summary}}
+    * {{notes}}
+    {{#allParams}}* @param {{{paramName}}} {{description}} {{^required}}(optional{{#defaultValue}}, default to {{{.}}}{{/defaultValue}}){{/required}}
+    {{/allParams}}* @return {{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}void{{/returnType}}
+    */
+    {{#returnType}}
+    @Suppress("UNCHECKED_CAST")
+    {{/returnType}}
+    suspend fun {{operationId}}({{#allParams}}{{{paramName}}}: {{{dataType}}}{{^required}}?{{/required}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) : HttpResponse<{{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}Unit{{/returnType}}> {
+
+        val localVariableAuthNames = listOf<String>({{#authMethods}}"{{name}}"{{#hasMore}}, {{/hasMore}}{{/authMethods}})
+
+        val localVariableBody = {{#hasBodyParam}}{{#bodyParam}}{{#isListContainer}}{{operationIdCamelCase}}Request({{{paramName}}}.asList()){{/isListContainer}}{{^isListContainer}}{{#isMapContainer}}{{operationIdCamelCase}}Request({{{paramName}}}){{/isMapContainer}}{{^isMapContainer}}{{{paramName}}}{{/isMapContainer}}{{/isListContainer}}{{/bodyParam}}{{/hasBodyParam}}
+>>>>>>> ooof
             {{^hasBodyParam}}
             {{#hasFormParams}}
             {{#isMultipart}}
@@ -78,7 +106,11 @@ import kotlinx.serialization.internal.StringDescriptor
 
         val localVariableConfig = RequestConfig(
             RequestMethod.{{httpMethod}},
+<<<<<<< HEAD
             "{{path}}"{{#pathParams}}.replace("{" + "{{baseName}}" + "}", "${{{paramName}}}"){{/pathParams}},
+=======
+            "{{path}}"{{#pathParams}}.replace("{"+"{{baseName}}"+"}", "${{{paramName}}}"){{/pathParams}},
+>>>>>>> ooof
             query = localVariableQuery,
             headers = localVariableHeaders
         )
@@ -87,6 +119,7 @@ import kotlinx.serialization.internal.StringDescriptor
             localVariableConfig,
             localVariableBody,
             localVariableAuthNames
+<<<<<<< HEAD
         ).{{#isListContainer}}wrap<{{operationIdCamelCase}}Response>().map { value{{^isList}}.toTypedArray(){{/isList}} }{{/isListContainer}}{{^isListContainer}}{{#isMapContainer}}wrap<{{operationIdCamelCase}}Response>().map { value }{{/isMapContainer}}{{^isMapContainer}}wrap(){{/isMapContainer}}{{/isListContainer}}
     }
 
@@ -101,6 +134,22 @@ import kotlinx.serialization.internal.StringDescriptor
 {{#isMapContainer}}
 {{>serial_wrapper_response_map}}
 {{/isMapContainer}}
+=======
+        ).{{#isListContainer}}wrap<{{operationIdCamelCase}}Response>().map { value.toTypedArray() }{{/isListContainer}}{{^isListContainer}}{{#isMapContainer}}wrap<{{operationIdCamelCase}}Response>().map { value }{{/isMapContainer}}{{^isMapContainer}}wrap(){{/isMapContainer}}{{/isListContainer}}
+    }
+
+    {{#hasBodyParam}}
+    {{#bodyParam}}
+    {{#isListContainer}}{{>serial_wrapper_request_list}}{{/isListContainer}}{{#isMapContainer}}{{>serial_wrapper_request_map}}{{/isMapContainer}}
+    {{/bodyParam}}
+    {{/hasBodyParam}}
+    {{#isListContainer}}
+    {{>serial_wrapper_response_list}}
+    {{/isListContainer}}
+    {{#isMapContainer}}
+    {{>serial_wrapper_response_map}}
+    {{/isMapContainer}}
+>>>>>>> ooof
 
     {{/operation}}
 

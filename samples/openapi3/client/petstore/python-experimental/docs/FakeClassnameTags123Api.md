@@ -21,8 +21,11 @@ To test class name in snake case
 from __future__ import print_function
 import time
 import petstore_api
+<<<<<<< HEAD
 from petstore_api.api import fake_classname_tags_123_api
 from petstore_api.model import client
+=======
+>>>>>>> ooof
 from pprint import pprint
 # Defining the host is optional and defaults to http://petstore.swagger.io:80/v2
 # See configuration.py for a list of all supported configuration parameters.
@@ -48,8 +51,13 @@ configuration = petstore_api.Configuration(
 # Enter a context with an instance of the API client
 with petstore_api.ApiClient(configuration) as api_client:
     # Create an instance of the API class
+<<<<<<< HEAD
     api_instance = fake_classname_tags_123_api.FakeClassnameTags123Api(api_client)
     client_client = client.Client() # client.Client | client model
+=======
+    api_instance = petstore_api.FakeClassnameTags123Api(api_client)
+    client_client = petstore_api.Client() # client.Client | client model
+>>>>>>> ooof
     
     # example passing only required values which don't have defaults set
     try:

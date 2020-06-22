@@ -39,7 +39,11 @@ import kotlin.collections.Map
 
 @RestController
 @Validated
+<<<<<<< HEAD
 @Api(value = "user", description = "The user API")
+=======
+@Api(value = "User", description = "The User API")
+>>>>>>> ooof
 @RequestMapping("\${api.base-path:/v2}")
 class UserApiController(@Autowired(required = true) val service: UserApiService) {
 

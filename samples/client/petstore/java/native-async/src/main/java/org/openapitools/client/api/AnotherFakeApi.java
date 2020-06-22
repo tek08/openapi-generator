@@ -37,7 +37,11 @@ import java.util.Map;
 
 import java.util.concurrent.CompletableFuture;
 
+<<<<<<< HEAD
 @javax.annotation.processing.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class AnotherFakeApi {
   private final HttpClient memberVarHttpClient;
   private final ObjectMapper memberVarObjectMapper;
@@ -45,7 +49,11 @@ public class AnotherFakeApi {
   private final Consumer<HttpRequest.Builder> memberVarInterceptor;
   private final Duration memberVarReadTimeout;
   private final Consumer<HttpResponse<InputStream>> memberVarResponseInterceptor;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> ooof
   public AnotherFakeApi() {
     this(new ApiClient());
   }
@@ -66,6 +74,7 @@ public class AnotherFakeApi {
    * @return Client
    * @throws ApiException if fails to make API call
    */
+<<<<<<< HEAD
   public CompletableFuture<Client> call123testSpecialTags(Client body) throws ApiException {
     try {
       HttpRequest.Builder localVarRequestBuilder = call123testSpecialTagsRequestBuilder(body);
@@ -98,6 +107,12 @@ public class AnotherFakeApi {
     // verify the required parameter 'body' is set
     if (body == null) {
       throw new ApiException(400, "Missing the required parameter 'body' when calling call123testSpecialTags");
+=======
+  public CompletableFuture<Client> call123testSpecialTags (Client body) throws ApiException {
+    // verify the required parameter 'body' is set
+    if (body == null) {
+        return CompletableFuture.failedFuture(new ApiException(400, "Missing the required parameter 'body' when calling call123testSpecialTags"));
+>>>>>>> ooof
     }
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
@@ -112,6 +127,7 @@ public class AnotherFakeApi {
     try {
       byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(body);
       localVarRequestBuilder.method("PATCH", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+<<<<<<< HEAD
     } catch (IOException e) {
       throw new ApiException(e);
     }
@@ -122,5 +138,31 @@ public class AnotherFakeApi {
       memberVarInterceptor.accept(localVarRequestBuilder);
     }
     return localVarRequestBuilder;
+=======
+      if (memberVarReadTimeout != null) {
+        localVarRequestBuilder.timeout(memberVarReadTimeout);
+      }
+      if (memberVarInterceptor != null) {
+        memberVarInterceptor.accept(localVarRequestBuilder);
+      }
+      return memberVarHttpClient.sendAsync(
+              localVarRequestBuilder.build(),
+              HttpResponse.BodyHandlers.ofString()).thenComposeAsync(localVarResponse -> {
+          if (localVarResponse.statusCode()/ 100 != 2) {
+              return CompletableFuture.failedFuture(new ApiException(localVarResponse.statusCode(),
+                  "call123testSpecialTags call received non-success response",
+                  localVarResponse.headers(),
+                  localVarResponse.body())
+              );
+          } else {
+              return CompletableFuture.completedFuture(
+                      null
+              );
+          }
+      });
+    } catch (IOException e) {
+      return CompletableFuture.failedFuture(new ApiException(e));
+    }
+>>>>>>> ooof
   }
 }

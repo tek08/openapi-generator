@@ -8,8 +8,12 @@
 import Foundation
 
 /** Model for testing model name starting with number */
+<<<<<<< HEAD
 internal struct Model200Response: Codable { 
 
+=======
+internal struct Model200Response: Codable {
+>>>>>>> ooof
 
     internal var name: Int?
     internal var _class: String?
@@ -19,7 +23,11 @@ internal struct Model200Response: Codable {
         self._class = _class
     }
 
+<<<<<<< HEAD
     internal enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    internal enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case name
         case _class = "class"
     }

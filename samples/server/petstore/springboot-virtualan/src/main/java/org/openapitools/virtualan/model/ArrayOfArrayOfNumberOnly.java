@@ -15,7 +15,11 @@ import javax.validation.constraints.*;
 /**
  * ArrayOfArrayOfNumberOnly
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
+=======
+
+>>>>>>> ooof
 public class ArrayOfArrayOfNumberOnly   {
   @JsonProperty("ArrayArrayNumber")
   @Valid

@@ -19,7 +19,11 @@ sidebar_label: rust-server
 | Type/Alias | Instantiated By |
 | ---------- | --------------- |
 |array|Vec|
+<<<<<<< HEAD
 |map|std::collections::HashMap|
+=======
+|map|Map|
+>>>>>>> ooof
 
 
 ## LANGUAGE PRIMITIVES

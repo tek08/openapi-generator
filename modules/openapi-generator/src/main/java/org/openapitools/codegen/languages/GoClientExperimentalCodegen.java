@@ -35,7 +35,10 @@ public class GoClientExperimentalCodegen extends GoClientCodegen {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GoClientExperimentalCodegen.class);
     protected String goImportAlias = "openapiclient";
+<<<<<<< HEAD
     protected boolean useOneOfDiscriminatorLookup = false; // use oneOf discriminator's mapping for model lookup
+=======
+>>>>>>> ooof
 
     public GoClientExperimentalCodegen() {
         super();
@@ -45,8 +48,11 @@ public class GoClientExperimentalCodegen extends GoClientCodegen {
         usesOptionals = false;
 
         generatorMetadata = GeneratorMetadata.newBuilder(generatorMetadata).stability(Stability.EXPERIMENTAL).build();
+<<<<<<< HEAD
 
         cliOptions.add(new CliOption(CodegenConstants.USE_ONEOF_DISCRIMINATOR_LOOKUP, CodegenConstants.USE_ONEOF_DISCRIMINATOR_LOOKUP_DESC).defaultValue("false"));
+=======
+>>>>>>> ooof
     }
 
     /**
@@ -96,6 +102,7 @@ public class GoClientExperimentalCodegen extends GoClientCodegen {
             additionalProperties.put("goImportAlias", goImportAlias);
         }
 
+<<<<<<< HEAD
         if (additionalProperties.containsKey(CodegenConstants.USE_ONEOF_DISCRIMINATOR_LOOKUP)) {
             setUseOneOfDiscriminatorLookup(convertPropertyToBooleanAndWriteBack(CodegenConstants.USE_ONEOF_DISCRIMINATOR_LOOKUP));
         } else {
@@ -110,6 +117,8 @@ public class GoClientExperimentalCodegen extends GoClientCodegen {
 
     public boolean getUseOneOfDiscriminatorLookup() {
         return this.useOneOfDiscriminatorLookup;
+=======
+>>>>>>> ooof
     }
 
     public void setGoImportAlias(String goImportAlias) {
@@ -222,12 +231,18 @@ public class GoClientExperimentalCodegen extends GoClientCodegen {
                 if (model.anyOf != null && !model.anyOf.isEmpty()) {
                     imports.add(createMapping("import", "fmt"));
                 }
+<<<<<<< HEAD
 
                 // add x-additional-properties
                 if ("map[string]map[string]interface{}".equals(model.parent)) {
                     model.vendorExtensions.put("x-additional-properties", true);
                 }
             }
+=======
+            }
+
+
+>>>>>>> ooof
         }
         return objs;
     }

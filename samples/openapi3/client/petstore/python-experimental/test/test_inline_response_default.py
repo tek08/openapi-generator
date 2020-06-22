@@ -11,6 +11,7 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
@@ -21,6 +22,12 @@ except ImportError:
     foo = sys.modules[
         'petstore_api.model.foo']
 from petstore_api.model.inline_response_default import InlineResponseDefault
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestInlineResponseDefault(unittest.TestCase):
@@ -35,7 +42,11 @@ class TestInlineResponseDefault(unittest.TestCase):
     def testInlineResponseDefault(self):
         """Test InlineResponseDefault"""
         # FIXME: construct object with mandatory attributes with example values
+<<<<<<< HEAD
         # model = InlineResponseDefault()  # noqa: E501
+=======
+        # model = petstore_api.InlineResponseDefault()  # noqa: E501
+>>>>>>> ooof
         pass
 
 

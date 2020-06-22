@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 internal struct Category: Codable { 
 
+=======
+internal struct Category: Codable {
+>>>>>>> ooof
 
     internal var id: Int64?
     internal var name: String = "default-name"

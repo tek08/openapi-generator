@@ -18,11 +18,18 @@ import org.openapitools.client.models.OuterEnumIntegerDefaultValue
 
 import com.squareup.moshi.Json
 import java.io.Serializable
+<<<<<<< HEAD
 
 /**
  * 
  * @param enumStringRequired 
  * @param enumString 
+=======
+/**
+ * 
+ * @param enumString 
+ * @param enumStringRequired 
+>>>>>>> ooof
  * @param enumInteger 
  * @param enumNumber 
  * @param outerEnum 
@@ -48,17 +55,31 @@ data class EnumTest (
     val outerEnumDefaultValue: OuterEnumDefaultValue? = null,
     @Json(name = "outerEnumIntegerDefaultValue")
     val outerEnumIntegerDefaultValue: OuterEnumIntegerDefaultValue? = null
+<<<<<<< HEAD
 ) : Serializable {
     companion object {
         private const val serialVersionUID: Long = 123
     }
 
+=======
+) 
+: Serializable 
+
+{
+	companion object {
+		private const val serialVersionUID: Long = 123
+	}
+>>>>>>> ooof
     /**
     * 
     * Values: uPPER,lower,eMPTY
     */
     
+<<<<<<< HEAD
     enum class EnumStringRequired(val value: kotlin.String){
+=======
+    enum class EnumString(val value: kotlin.String){
+>>>>>>> ooof
         @Json(name = "UPPER") uPPER("UPPER"),
         @Json(name = "lower") lower("lower"),
         @Json(name = "") eMPTY("");
@@ -68,7 +89,11 @@ data class EnumTest (
     * Values: uPPER,lower,eMPTY
     */
     
+<<<<<<< HEAD
     enum class EnumString(val value: kotlin.String){
+=======
+    enum class EnumStringRequired(val value: kotlin.String){
+>>>>>>> ooof
         @Json(name = "UPPER") uPPER("UPPER"),
         @Json(name = "lower") lower("lower"),
         @Json(name = "") eMPTY("");
@@ -79,8 +104,13 @@ data class EnumTest (
     */
     
     enum class EnumInteger(val value: kotlin.Int){
+<<<<<<< HEAD
         @Json(name = "1") _1(1),
         @Json(name = "-1") minus1(-1);
+=======
+        @Json(name = 1) _1(1),
+        @Json(name = -1) minus1(-1);
+>>>>>>> ooof
     }
     /**
     * 
@@ -88,8 +118,13 @@ data class EnumTest (
     */
     
     enum class EnumNumber(val value: kotlin.Double){
+<<<<<<< HEAD
         @Json(name = "1.1") _1period1(1.1),
         @Json(name = "-1.2") minus1Period2(-1.2);
+=======
+        @Json(name = 1.1) _1period1(1.1),
+        @Json(name = -1.2) minus1Period2(-1.2);
+>>>>>>> ooof
     }
 }
 

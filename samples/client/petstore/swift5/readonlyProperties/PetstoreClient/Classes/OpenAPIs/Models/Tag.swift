@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 public struct Tag: Codable { 
 
+=======
+public struct Tag: Codable {
+>>>>>>> ooof
 
     public private(set) var id: Int64?
     public private(set) var name: String?

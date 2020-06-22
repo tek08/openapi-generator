@@ -18,7 +18,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class AdditionalPropertiesClass  implements Serializable {
+=======
+public class AdditionalPropertiesClass  implements Serializable {
+>>>>>>> ooof
   
   private @Valid Map<String, String> mapString = new HashMap<String, String>();
   private @Valid Map<String, BigDecimal> mapNumber = new HashMap<String, BigDecimal>();
@@ -40,17 +44,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("map_string")
   public Map<String, String> getMapString() {
     return mapString;
   }
+<<<<<<< HEAD
 
   public void setMapString(Map<String, String> mapString) {
     this.mapString = mapString;
   }/**
+=======
+  public void setMapString(Map<String, String> mapString) {
+    this.mapString = mapString;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public AdditionalPropertiesClass mapNumber(Map<String, BigDecimal> mapNumber) {
     this.mapNumber = mapNumber;
@@ -58,17 +73,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("map_number")
   public Map<String, BigDecimal> getMapNumber() {
     return mapNumber;
   }
+<<<<<<< HEAD
 
   public void setMapNumber(Map<String, BigDecimal> mapNumber) {
     this.mapNumber = mapNumber;
   }/**
+=======
+  public void setMapNumber(Map<String, BigDecimal> mapNumber) {
+    this.mapNumber = mapNumber;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public AdditionalPropertiesClass mapInteger(Map<String, Integer> mapInteger) {
     this.mapInteger = mapInteger;
@@ -76,17 +102,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("map_integer")
   public Map<String, Integer> getMapInteger() {
     return mapInteger;
   }
+<<<<<<< HEAD
 
   public void setMapInteger(Map<String, Integer> mapInteger) {
     this.mapInteger = mapInteger;
   }/**
+=======
+  public void setMapInteger(Map<String, Integer> mapInteger) {
+    this.mapInteger = mapInteger;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public AdditionalPropertiesClass mapBoolean(Map<String, Boolean> mapBoolean) {
     this.mapBoolean = mapBoolean;
@@ -94,17 +131,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("map_boolean")
   public Map<String, Boolean> getMapBoolean() {
     return mapBoolean;
   }
+<<<<<<< HEAD
 
   public void setMapBoolean(Map<String, Boolean> mapBoolean) {
     this.mapBoolean = mapBoolean;
   }/**
+=======
+  public void setMapBoolean(Map<String, Boolean> mapBoolean) {
+    this.mapBoolean = mapBoolean;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public AdditionalPropertiesClass mapArrayInteger(Map<String, List<Integer>> mapArrayInteger) {
     this.mapArrayInteger = mapArrayInteger;
@@ -112,17 +160,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("map_array_integer")
   public Map<String, List<Integer>> getMapArrayInteger() {
     return mapArrayInteger;
   }
+<<<<<<< HEAD
 
   public void setMapArrayInteger(Map<String, List<Integer>> mapArrayInteger) {
     this.mapArrayInteger = mapArrayInteger;
   }/**
+=======
+  public void setMapArrayInteger(Map<String, List<Integer>> mapArrayInteger) {
+    this.mapArrayInteger = mapArrayInteger;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public AdditionalPropertiesClass mapArrayAnytype(Map<String, List<Object>> mapArrayAnytype) {
     this.mapArrayAnytype = mapArrayAnytype;
@@ -130,17 +189,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("map_array_anytype")
   public Map<String, List<Object>> getMapArrayAnytype() {
     return mapArrayAnytype;
   }
+<<<<<<< HEAD
 
   public void setMapArrayAnytype(Map<String, List<Object>> mapArrayAnytype) {
     this.mapArrayAnytype = mapArrayAnytype;
   }/**
+=======
+  public void setMapArrayAnytype(Map<String, List<Object>> mapArrayAnytype) {
+    this.mapArrayAnytype = mapArrayAnytype;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public AdditionalPropertiesClass mapMapString(Map<String, Map<String, String>> mapMapString) {
     this.mapMapString = mapMapString;
@@ -148,17 +218,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("map_map_string")
   public Map<String, Map<String, String>> getMapMapString() {
     return mapMapString;
   }
+<<<<<<< HEAD
 
   public void setMapMapString(Map<String, Map<String, String>> mapMapString) {
     this.mapMapString = mapMapString;
   }/**
+=======
+  public void setMapMapString(Map<String, Map<String, String>> mapMapString) {
+    this.mapMapString = mapMapString;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public AdditionalPropertiesClass mapMapAnytype(Map<String, Map<String, Object>> mapMapAnytype) {
     this.mapMapAnytype = mapMapAnytype;
@@ -166,17 +247,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("map_map_anytype")
   public Map<String, Map<String, Object>> getMapMapAnytype() {
     return mapMapAnytype;
   }
+<<<<<<< HEAD
 
   public void setMapMapAnytype(Map<String, Map<String, Object>> mapMapAnytype) {
     this.mapMapAnytype = mapMapAnytype;
   }/**
+=======
+  public void setMapMapAnytype(Map<String, Map<String, Object>> mapMapAnytype) {
+    this.mapMapAnytype = mapMapAnytype;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public AdditionalPropertiesClass anytype1(Object anytype1) {
     this.anytype1 = anytype1;
@@ -184,17 +276,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("anytype_1")
   public Object getAnytype1() {
     return anytype1;
   }
+<<<<<<< HEAD
 
   public void setAnytype1(Object anytype1) {
     this.anytype1 = anytype1;
   }/**
+=======
+  public void setAnytype1(Object anytype1) {
+    this.anytype1 = anytype1;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public AdditionalPropertiesClass anytype2(Object anytype2) {
     this.anytype2 = anytype2;
@@ -202,17 +305,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("anytype_2")
   public Object getAnytype2() {
     return anytype2;
   }
+<<<<<<< HEAD
 
   public void setAnytype2(Object anytype2) {
     this.anytype2 = anytype2;
   }/**
+=======
+  public void setAnytype2(Object anytype2) {
+    this.anytype2 = anytype2;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public AdditionalPropertiesClass anytype3(Object anytype3) {
     this.anytype3 = anytype3;
@@ -220,18 +334,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("anytype_3")
   public Object getAnytype3() {
     return anytype3;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
   public void setAnytype3(Object anytype3) {
     this.anytype3 = anytype3;
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -289,7 +413,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
     }
     return o.toString().replace("\n", "\n    ");
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 }
 

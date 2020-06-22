@@ -68,9 +68,15 @@ To run a client, follow one of the following simple steps:
     {{#operations}}
       {{#operation}}
         {{#vendorExtensions}}
+<<<<<<< HEAD
           {{^x-no-client-example}}
 cargo run --example client {{{operationId}}}
           {{/x-no-client-example}}
+=======
+          {{^noClientExample}}
+cargo run --example client {{{operationId}}}
+          {{/noClientExample}}
+>>>>>>> ooof
         {{/vendorExtensions}}
       {{/operation}}
     {{/operations}}

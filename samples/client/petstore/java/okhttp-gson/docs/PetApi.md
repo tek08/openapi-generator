@@ -217,7 +217,11 @@ Name | Type | Description  | Notes
 
 <a name="findPetsByTags"></a>
 # **findPetsByTags**
+<<<<<<< HEAD
 > Set&lt;Pet&gt; findPetsByTags(tags)
+=======
+> List&lt;Pet&gt; findPetsByTags(tags)
+>>>>>>> ooof
 
 Finds Pets by tags
 
@@ -243,9 +247,15 @@ public class Example {
     petstore_auth.setAccessToken("YOUR ACCESS TOKEN");
 
     PetApi apiInstance = new PetApi(defaultClient);
+<<<<<<< HEAD
     Set<String> tags = Arrays.asList(); // Set<String> | Tags to filter by
     try {
       Set<Pet> result = apiInstance.findPetsByTags(tags);
+=======
+    List<String> tags = Arrays.asList(); // List<String> | Tags to filter by
+    try {
+      List<Pet> result = apiInstance.findPetsByTags(tags);
+>>>>>>> ooof
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PetApi#findPetsByTags");
@@ -262,11 +272,19 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **tags** | [**Set&lt;String&gt;**](String.md)| Tags to filter by |
 
 ### Return type
 
 [**Set&lt;Pet&gt;**](Pet.md)
+=======
+ **tags** | [**List&lt;String&gt;**](String.md)| Tags to filter by |
+
+### Return type
+
+[**List&lt;Pet&gt;**](Pet.md)
+>>>>>>> ooof
 
 ### Authorization
 

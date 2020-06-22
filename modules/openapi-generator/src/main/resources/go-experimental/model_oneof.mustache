@@ -5,6 +5,7 @@ type {{classname}} struct {
 	{{/oneOf}}
 }
 
+<<<<<<< HEAD
 {{#oneOf}}
 // {{{.}}}As{{classname}} is a convenience function that returns {{{.}}} wrapped in {{classname}}
 func {{{.}}}As{{classname}}(v *{{{.}}}) {{classname}} {
@@ -16,6 +17,12 @@ func {{{.}}}As{{classname}}(v *{{{.}}}) {{classname}} {
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *{{classname}}) UnmarshalJSON(data []byte) error {
 	var err error
+=======
+// Unmarshl JSON data into one of the pointers in the struct
+func (dst *{{classname}}) UnmarshalJSON(data []byte) error {
+	var err error
+	match := 0
+>>>>>>> ooof
 	{{#isNullable}}
 	// this object is nullable so check if the payload is null or empty string
 	if string(data) == "" || string(data) == "{}" {
@@ -23,6 +30,7 @@ func (dst *{{classname}}) UnmarshalJSON(data []byte) error {
 	}
 
 	{{/isNullable}}
+<<<<<<< HEAD
 	{{#useOneOfDiscriminatorLookup}}
 	{{#discriminator}}
 	{{#mappedModels}}
@@ -56,6 +64,11 @@ func (dst *{{classname}}) UnmarshalJSON(data []byte) error {
 	{{#oneOf}}
 	// try to unmarshal data into {{{.}}}
 	err = json.Unmarshal(data, &dst.{{{.}}})
+=======
+	{{#oneOf}}
+	// try to unmarshal data into {{{.}}}
+	err = json.Unmarshal(data, &dst.{{{.}}});
+>>>>>>> ooof
 	if err == nil {
 		json{{{.}}}, _ := json.Marshal(dst.{{{.}}})
 		if string(json{{{.}}}) == "{}" { // empty struct
@@ -69,22 +82,32 @@ func (dst *{{classname}}) UnmarshalJSON(data []byte) error {
 
 	{{/oneOf}}
 	if match > 1 { // more than 1 match
+<<<<<<< HEAD
 		// reset to nil
 		{{#oneOf}}
 		dst.{{{.}}} = nil
 		{{/oneOf}}
 
+=======
+>>>>>>> ooof
 		return fmt.Errorf("Data matches more than one schema in oneOf({{classname}})")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
 		return fmt.Errorf("Data failed to match schemas in oneOf({{classname}})")
 	}
+<<<<<<< HEAD
 	{{/useOneOfDiscriminatorLookup}}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src {{classname}}) MarshalJSON() ([]byte, error) {
+=======
+}
+
+// Marshl data from the first non-nil pointers in the struct to JSON
+func (src *{{classname}}) MarshalJSON() ([]byte, error) {
+>>>>>>> ooof
 {{#oneOf}}
 	if src.{{{.}}} != nil {
 		return json.Marshal(&src.{{{.}}})
@@ -105,5 +128,8 @@ func (obj *{{classname}}) GetActualInstance() (interface{}) {
 	// all schemas are nil
 	return nil
 }
+<<<<<<< HEAD
 
 {{>nullable_model}}
+=======
+>>>>>>> ooof

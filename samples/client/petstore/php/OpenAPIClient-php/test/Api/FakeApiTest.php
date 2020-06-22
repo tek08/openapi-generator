@@ -1,7 +1,11 @@
 <?php
 /**
  * FakeApiTest
+<<<<<<< HEAD
  * PHP version 7.2
+=======
+ * PHP version 7.1
+>>>>>>> ooof
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -47,32 +51,49 @@ class FakeApiTest extends TestCase
     /**
      * Setup before running any test cases
      */
+<<<<<<< HEAD
     public static function setUpBeforeClass(): void
+=======
+    public static function setUpBeforeClass()
+>>>>>>> ooof
     {
     }
 
     /**
      * Setup before running each test case
      */
+<<<<<<< HEAD
     public function setUp(): void
+=======
+    public function setUp()
+>>>>>>> ooof
     {
     }
 
     /**
      * Clean up after running each test case
      */
+<<<<<<< HEAD
     public function tearDown(): void
+=======
+    public function tearDown()
+>>>>>>> ooof
     {
     }
 
     /**
      * Clean up after running all test cases
      */
+<<<<<<< HEAD
     public static function tearDownAfterClass(): void
+=======
+    public static function tearDownAfterClass()
+>>>>>>> ooof
     {
     }
 
     /**
+<<<<<<< HEAD
      * Test case for fakeHealthGet
      *
      * Health check endpoint.
@@ -89,6 +110,14 @@ class FakeApiTest extends TestCase
      *
      */
     public function testFakeHttpSignatureTest()
+=======
+     * Test case for createXmlItem
+     *
+     * creates an XmlItem.
+     *
+     */
+    public function testCreateXmlItem()
+>>>>>>> ooof
     {
     }
 
@@ -165,7 +194,11 @@ class FakeApiTest extends TestCase
     /**
      * Test case for testEndpointParameters
      *
+<<<<<<< HEAD
      * Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트.
+=======
+     * Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트.
+>>>>>>> ooof
      *
      */
     public function testTestEndpointParameters()

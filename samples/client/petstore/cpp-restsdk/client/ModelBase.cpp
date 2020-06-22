@@ -233,9 +233,16 @@ bool ModelBase::fromString( const utility::string_t& val, std::shared_ptr<HttpCo
     {
         outVal = std::shared_ptr<HttpContent>(new HttpContent());
     }
+<<<<<<< HEAD
     if(outVal != nullptr)
     {
         outVal->setData(std::shared_ptr<std::istream>(new std::stringstream(utility::conversions::to_utf8string(val))));
+=======
+    std::shared_ptr<utility::stringstream_t> ssptr = std::make_shared<utility::stringstream_t>(val);
+    if(outVal != nullptr)
+    {
+        outVal->setData(ssptr);
+>>>>>>> ooof
     }
     else
     {

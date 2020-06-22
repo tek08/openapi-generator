@@ -68,7 +68,11 @@ class BigCat(object):
 
 
         :param kind: The kind of this BigCat.  # noqa: E501
+<<<<<<< HEAD
         :type kind: str
+=======
+        :type: str
+>>>>>>> ooof
         """
         allowed_values = ["lions", "tigers", "leopards", "jaguars"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and kind not in allowed_values:  # noqa: E501

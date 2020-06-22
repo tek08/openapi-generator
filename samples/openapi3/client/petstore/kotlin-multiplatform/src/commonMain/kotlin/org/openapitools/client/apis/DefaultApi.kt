@@ -25,15 +25,23 @@ import kotlinx.serialization.*
 import kotlinx.serialization.internal.StringDescriptor
 
 class DefaultApi @UseExperimental(UnstableDefault::class) constructor(
+<<<<<<< HEAD
     baseUrl: kotlin.String = "http://petstore.swagger.io:80/v2",
     httpClientEngine: HttpClientEngine? = null,
     serializer: KotlinxSerializer
 ) : ApiClient(baseUrl, httpClientEngine, serializer) {
+=======
+        baseUrl: kotlin.String = "http://petstore.swagger.io:80/v2",
+        httpClientEngine: HttpClientEngine? = null,
+        serializer: KotlinxSerializer)
+    : ApiClient(baseUrl, httpClientEngine, serializer) {
+>>>>>>> ooof
 
     @UseExperimental(UnstableDefault::class)
     constructor(
         baseUrl: kotlin.String = "http://petstore.swagger.io:80/v2",
         httpClientEngine: HttpClientEngine? = null,
+<<<<<<< HEAD
         jsonConfiguration: JsonConfiguration = JsonConfiguration.Default
     ) : this(baseUrl, httpClientEngine, KotlinxSerializer(Json(jsonConfiguration)))
 
@@ -44,6 +52,18 @@ class DefaultApi @UseExperimental(UnstableDefault::class) constructor(
      */
     @Suppress("UNCHECKED_CAST")
     suspend fun fooGet(): HttpResponse<InlineResponseDefault> {
+=======
+        jsonConfiguration: JsonConfiguration = JsonConfiguration.Default)
+    : this(baseUrl, httpClientEngine, KotlinxSerializer(Json(jsonConfiguration)))
+
+    /**
+    * 
+    * 
+    * @return InlineResponseDefault
+    */
+    @Suppress("UNCHECKED_CAST")
+    suspend fun fooGet() : HttpResponse<InlineResponseDefault> {
+>>>>>>> ooof
 
         val localVariableAuthNames = listOf<String>()
 

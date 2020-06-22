@@ -322,6 +322,11 @@ public class JavaCXFExtServerCodegen extends JavaCXFServerCodegen implements CXF
 
     protected File testDataControlFile = null;
 
+<<<<<<< HEAD
+=======
+    protected String localVariablePrefix = "";
+
+>>>>>>> ooof
     public JavaCXFExtServerCodegen() {
         super();
 
@@ -442,9 +447,15 @@ public class JavaCXFExtServerCodegen extends JavaCXFServerCodegen implements CXF
                                        Collection<String> localVars, Map<String, CodegenModel> models) {
 
         // Ensure that we're using a unique local variable name (to avoid typing and overwriting conflicts).
+<<<<<<< HEAD
         String localVar = var.name;
         for (int i = 2; localVars.contains(localVar); i++)
             localVar = var.name + i;
+=======
+        String localVar = localVariablePrefix + var.name;
+        for (int i = 2; localVars.contains(localVar); i++)
+            localVar = localVariablePrefix + var.name + i;
+>>>>>>> ooof
         localVars.add(localVar);
 
         if (!loadTestDataFromFile)

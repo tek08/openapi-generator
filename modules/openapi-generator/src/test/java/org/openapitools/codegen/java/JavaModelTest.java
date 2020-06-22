@@ -110,11 +110,19 @@ public class JavaModelTest {
     @Test(description = "convert a model with list property")
     public void listPropertyTest() {
         final Schema schema = new Schema()
+<<<<<<< HEAD
             .description("a sample model")
             .addProperties("id", new IntegerSchema().format(SchemaTypeUtil.INTEGER64_FORMAT))
             .addProperties("urls", new ArraySchema()
                 .items(new StringSchema()))
             .addRequiredItem("id");
+=======
+                .description("a sample model")
+                .addProperties("id", new IntegerSchema().format(SchemaTypeUtil.INTEGER64_FORMAT))
+                .addProperties("urls", new ArraySchema()
+                        .items(new StringSchema()))
+                .addRequiredItem("id");
+>>>>>>> ooof
         final DefaultCodegen codegen = new JavaClientCodegen();
         OpenAPI openAPI = TestUtils.createOpenAPIWithOneSchema("sample", schema);
         codegen.setOpenAPI(openAPI);
@@ -138,6 +146,7 @@ public class JavaModelTest {
         Assert.assertTrue(property.isContainer);
     }
 
+<<<<<<< HEAD
     @Test(description = "convert a model with set property")
     public void setPropertyTest() {
         final Schema schema = new Schema()
@@ -170,6 +179,8 @@ public class JavaModelTest {
         Assert.assertTrue(property.isContainer);
     }
 
+=======
+>>>>>>> ooof
     @Test(description = "convert a model with a map property")
     public void mapPropertyTest() {
         final Schema schema = new Schema()
@@ -433,6 +444,7 @@ public class JavaModelTest {
         Assert.assertEquals(Sets.intersection(cm.imports, Sets.newHashSet("ApiModel", "List", "ArrayList", "Children")).size(), 4);
     }
 
+<<<<<<< HEAD
     @Test(description = "convert a set model")
     public void setModelTest() {
         final Schema schema = new ArraySchema()
@@ -454,6 +466,8 @@ public class JavaModelTest {
         Assert.assertEquals(Sets.intersection(cm.imports, Sets.newHashSet("ApiModel", "Set", "LinkedHashSet", "Children")).size(), 4);
     }
 
+=======
+>>>>>>> ooof
     @Test(description = "convert a map model")
     public void mapModelTest() {
         final Schema schema = new Schema()

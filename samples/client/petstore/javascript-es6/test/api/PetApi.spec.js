@@ -14,10 +14,17 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
+<<<<<<< HEAD
     define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     factory(require('expect.js'), require('../../src/index'));
+=======
+    define(['expect.js', process.cwd()+'/src/index'], factory);
+  } else if (typeof module === 'object' && module.exports) {
+    // CommonJS-like environments that support module.exports, like Node.
+    factory(require('expect.js'), require(process.cwd()+'/src/index'));
+>>>>>>> ooof
   } else {
     // Browser globals (root is window)
     factory(root.expect, root.OpenApiPetstore);
@@ -25,10 +32,17 @@
 }(this, function(expect, OpenApiPetstore) {
   'use strict';
 
+<<<<<<< HEAD
   var api_instance;
 
   beforeEach(function() {
     api_instance = new OpenApiPetstore.PetApi();
+=======
+  var instance;
+
+  beforeEach(function() {
+    instance = new OpenApiPetstore.PetApi();
+>>>>>>> ooof
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,6 +61,7 @@
       object[property] = value;
   }
 
+<<<<<<< HEAD
   var createRandomPet = function() {
     var id = new Date().getTime();
     var pet = new OpenApiPetstore.Pet();
@@ -97,6 +112,9 @@
         done(error);
       }
     });
+=======
+  describe('PetApi', function() {
+>>>>>>> ooof
     describe('addPet', function() {
       it('should call addPet successfully', function(done) {
         //uncomment below and update the code to test addPet
@@ -177,6 +195,19 @@
         done();
       });
     });
+<<<<<<< HEAD
+=======
+    describe('uploadFileWithRequiredFile', function() {
+      it('should call uploadFileWithRequiredFile successfully', function(done) {
+        //uncomment below and update the code to test uploadFileWithRequiredFile
+        //instance.uploadFileWithRequiredFile(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+>>>>>>> ooof
   });
 
 }));

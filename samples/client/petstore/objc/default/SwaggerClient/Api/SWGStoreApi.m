@@ -263,7 +263,11 @@ NSInteger kSWGStoreApiMissingParamErrorCode = 234513;
     NSString *responseContentType = [[acceptHeader componentsSeparatedByString:@", "] firstObject] ?: @"";
 
     // request content type
+<<<<<<< HEAD
     NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[@"application/json"]];
+=======
+    NSString *requestContentType = [self.apiClient.sanitizer selectHeaderContentType:@[]];
+>>>>>>> ooof
 
     // Authentication setting
     NSArray *authSettings = @[];

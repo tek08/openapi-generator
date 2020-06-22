@@ -23,7 +23,10 @@ import org.springframework.context.annotation.Configuration;
 {{#isOAuth}}
 import org.springframework.cloud.security.oauth2.client.feign.OAuth2FeignRequestInterceptor;
 import org.springframework.security.oauth2.client.DefaultOAuth2ClientContext;
+<<<<<<< HEAD
 import org.springframework.security.oauth2.client.OAuth2ClientContext;
+=======
+>>>>>>> ooof
 {{#isApplication}}
 import org.springframework.security.oauth2.client.token.grant.client.ClientCredentialsResourceDetails;
 {{/isApplication}}
@@ -72,6 +75,7 @@ public class ClientConfiguration {
     {{#isOAuth}}
   @Bean
   @ConditionalOnProperty("{{#lambda.lowercase}}{{{title}}}{{/lambda.lowercase}}.security.{{{name}}}.client-id")
+<<<<<<< HEAD
   public OAuth2FeignRequestInterceptor {{{name}}}RequestInterceptor(OAuth2ClientContext oAuth2ClientContext) {
     return new OAuth2FeignRequestInterceptor(oAuth2ClientContext, {{{name}}}ResourceDetails());
   }
@@ -80,6 +84,10 @@ public class ClientConfiguration {
   @ConditionalOnProperty("{{#lambda.lowercase}}{{{title}}}{{/lambda.lowercase}}.security.{{{name}}}.client-id")
   public OAuth2ClientContext oAuth2ClientContext() {
     return new DefaultOAuth2ClientContext();
+=======
+  public OAuth2FeignRequestInterceptor {{{name}}}RequestInterceptor() {
+    return new OAuth2FeignRequestInterceptor(new DefaultOAuth2ClientContext(), {{{name}}}ResourceDetails());
+>>>>>>> ooof
   }
 
         {{#isCode}}

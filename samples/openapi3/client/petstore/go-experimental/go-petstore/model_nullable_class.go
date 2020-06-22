@@ -28,11 +28,16 @@ type NullableClass struct {
 	ObjectNullableProp map[string]map[string]interface{} `json:"object_nullable_prop,omitempty"`
 	ObjectAndItemsNullableProp map[string]map[string]interface{} `json:"object_and_items_nullable_prop,omitempty"`
 	ObjectItemsNullable *map[string]map[string]interface{} `json:"object_items_nullable,omitempty"`
+<<<<<<< HEAD
 	AdditionalProperties map[string]interface{}
 }
 
 type _NullableClass NullableClass
 
+=======
+}
+
+>>>>>>> ooof
 // NewNullableClass instantiates a new NullableClass object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
@@ -536,6 +541,7 @@ func (o NullableClass) MarshalJSON() ([]byte, error) {
 	if o.ObjectItemsNullable != nil {
 		toSerialize["object_items_nullable"] = o.ObjectItemsNullable
 	}
+<<<<<<< HEAD
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -572,6 +578,11 @@ func (o *NullableClass) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
+=======
+	return json.Marshal(toSerialize)
+}
+
+>>>>>>> ooof
 type NullableNullableClass struct {
 	value *NullableClass
 	isSet bool
@@ -608,4 +619,7 @@ func (v *NullableNullableClass) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof

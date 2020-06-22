@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 internal struct ReadOnlyFirst: Codable { 
 
+=======
+internal struct ReadOnlyFirst: Codable {
+>>>>>>> ooof
 
     internal var bar: String?
     internal var baz: String?

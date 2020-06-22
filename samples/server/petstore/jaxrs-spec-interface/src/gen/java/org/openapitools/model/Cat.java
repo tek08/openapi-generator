@@ -16,7 +16,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class Cat extends Animal implements Serializable {
+=======
+public class Cat extends Animal implements Serializable {
+>>>>>>> ooof
   
   private @Valid Boolean declawed;
 

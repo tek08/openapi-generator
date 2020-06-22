@@ -28,18 +28,27 @@ import org.openapitools.codegen.CodegenModel;
 import org.openapitools.codegen.CodegenProperty;
 import org.openapitools.codegen.DefaultCodegen;
 import org.openapitools.codegen.templating.mustache.IndentedLambda;
+<<<<<<< HEAD
 import org.openapitools.codegen.utils.ModelUtils;
+=======
+>>>>>>> ooof
 import org.openapitools.codegen.utils.URLPathUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.net.URL;
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+=======
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+>>>>>>> ooof
 
 abstract public class AbstractCppCodegen extends DefaultCodegen implements CodegenConfig {
     private static final Logger LOGGER = LoggerFactory.getLogger(AbstractCppCodegen.class);
@@ -240,7 +249,10 @@ abstract public class AbstractCppCodegen extends DefaultCodegen implements Codeg
         return sanitizeName(super.toParamName(name));
     }
 
+<<<<<<< HEAD
     @SuppressWarnings("rawtypes")
+=======
+>>>>>>> ooof
     @Override
     public CodegenProperty fromProperty(String name, Schema p) {
         CodegenProperty property = super.fromProperty(name, p);
@@ -357,6 +369,7 @@ abstract public class AbstractCppCodegen extends DefaultCodegen implements Codeg
         }
         return postProcessModelsEnum(objs);
     }
+<<<<<<< HEAD
 
     @Override
     public Map<String, Object> postProcessAllModels(Map<String, Object> objs){
@@ -399,4 +412,6 @@ abstract public class AbstractCppCodegen extends DefaultCodegen implements Codeg
         }
         return;
     }
+=======
+>>>>>>> ooof
 }

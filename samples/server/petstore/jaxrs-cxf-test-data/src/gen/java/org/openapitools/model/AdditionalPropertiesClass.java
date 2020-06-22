@@ -18,7 +18,10 @@ import javax.xml.bind.annotation.XmlEnumValue;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 public class AdditionalPropertiesClass  {
   
   @ApiModelProperty(value = "")
@@ -51,6 +54,7 @@ public class AdditionalPropertiesClass  {
   private Map<String, Map<String, Object>> mapMapAnytype = null;
 
   @ApiModelProperty(value = "")
+<<<<<<< HEAD
   private Object anytype1;
 
   @ApiModelProperty(value = "")
@@ -58,6 +62,18 @@ public class AdditionalPropertiesClass  {
 
   @ApiModelProperty(value = "")
   private Object anytype3;
+=======
+  @Valid
+  private Object anytype1 = null;
+
+  @ApiModelProperty(value = "")
+  @Valid
+  private Object anytype2 = null;
+
+  @ApiModelProperty(value = "")
+  @Valid
+  private Object anytype3 = null;
+>>>>>>> ooof
  /**
   * Get mapString
   * @return mapString

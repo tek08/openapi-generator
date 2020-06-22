@@ -16,7 +16,11 @@ import javax.validation.Valid;
 
 @Path("/store")
 @Api(description = "the store API")
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public interface StoreApi {
+=======
+public interface StoreApi {
+>>>>>>> ooof
 
     @DELETE
     @Path("/order/{order_id}")

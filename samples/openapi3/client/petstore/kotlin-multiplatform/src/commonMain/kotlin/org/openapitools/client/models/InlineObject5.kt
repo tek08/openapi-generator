@@ -14,11 +14,18 @@ package org.openapitools.client.models
 
 import kotlinx.serialization.*
 import kotlinx.serialization.internal.CommonEnumSerializer
+<<<<<<< HEAD
 
 /**
  * 
  * @param requiredFile file to upload
  * @param additionalMetadata Additional data to pass to server
+=======
+/**
+ * 
+ * @param additionalMetadata Additional data to pass to server
+ * @param requiredFile file to upload
+>>>>>>> ooof
  */
 @Serializable
 data class InlineObject5 (
@@ -26,5 +33,11 @@ data class InlineObject5 (
     @SerialName(value = "requiredFile") @Required val requiredFile: org.openapitools.client.infrastructure.OctetByteArray,
     /* Additional data to pass to server */
     @SerialName(value = "additionalMetadata") val additionalMetadata: kotlin.String? = null
+<<<<<<< HEAD
 )
+=======
+) 
+
+
+>>>>>>> ooof
 

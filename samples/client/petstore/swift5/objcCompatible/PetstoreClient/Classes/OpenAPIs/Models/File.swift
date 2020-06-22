@@ -9,7 +9,11 @@ import Foundation
 
 /** Must be named &#x60;File&#x60; for test. */
 
+<<<<<<< HEAD
 @objc public class File: NSObject, Codable { 
+=======
+@objc public class File: NSObject, Codable {
+>>>>>>> ooof
 
     /** Test capitalization */
     public var sourceURI: String?

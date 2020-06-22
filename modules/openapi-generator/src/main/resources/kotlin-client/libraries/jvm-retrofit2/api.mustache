@@ -2,6 +2,7 @@ package {{apiPackage}}
 
 import {{packageName}}.infrastructure.CollectionFormats.*
 import retrofit2.http.*
+<<<<<<< HEAD
 {{#doNotUseRxAndCoroutines}}
 import retrofit2.Call
 {{/doNotUseRxAndCoroutines}}
@@ -30,6 +31,12 @@ import io.reactivex.Completable
 {{/useRxJava2}}
 {{/returnType}}
 {{/doNotUseRxAndCoroutines}}
+=======
+import retrofit2.Call
+import okhttp3.RequestBody
+import okhttp3.ResponseBody
+import okhttp3.MultipartBody
+>>>>>>> ooof
 
 {{#imports}}import {{import}}
 {{/imports}}
@@ -37,6 +44,7 @@ import io.reactivex.Completable
 {{#operations}}
 interface {{classname}} {
     {{#operation}}
+<<<<<<< HEAD
     /**
      * {{summary}}
      * {{notes}}
@@ -48,6 +56,8 @@ interface {{classname}} {
     {{/allParams}} 
     * @return {{^useCoroutines}}[Call]<{{/useCoroutines}}{{#isResponseFile}}[ResponseBody]{{/isResponseFile}}{{^isResponseFile}}{{#returnType}}[{{{returnType}}}]{{/returnType}}{{^returnType}}[Unit]{{/returnType}}{{/isResponseFile}}{{^useCoroutines}}>{{/useCoroutines}}
      */
+=======
+>>>>>>> ooof
     {{#isDeprecated}}
     @Deprecated("This api was deprecated")
     {{/isDeprecated}}
@@ -66,7 +76,11 @@ interface {{classname}} {
     {{/prioritizedContentTypes}}
     {{/formParams}}
     @{{httpMethod}}("{{{path}}}")
+<<<<<<< HEAD
     {{^doNotUseRxAndCoroutines}}{{#useCoroutines}}suspend {{/useCoroutines}}{{/doNotUseRxAndCoroutines}}fun {{operationId}}({{^allParams}}){{/allParams}}{{#allParams}}{{>queryParams}}{{>pathParams}}{{>headerParams}}{{>bodyParams}}{{>formParams}}{{#hasMore}}, {{/hasMore}}{{^hasMore}}){{/hasMore}}{{/allParams}}: {{^doNotUseRxAndCoroutines}}{{#useRxJava}}Observable<{{#isResponseFile}}ResponseBody{{/isResponseFile}}{{^isResponseFile}}{{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}Unit{{/returnType}}{{/isResponseFile}}>{{/useRxJava}}{{#useRxJava2}}{{#returnType}}Single<{{#isResponseFile}}ResponseBody{{/isResponseFile}}{{^isResponseFile}}{{{returnType}}}{{/isResponseFile}}>{{/returnType}}{{^returnType}}Completable{{/returnType}}{{/useRxJava2}}{{#useCoroutines}}Response<{{#isResponseFile}}ResponseBody{{/isResponseFile}}{{^isResponseFile}}{{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}Unit{{/returnType}}{{/isResponseFile}}>{{/useCoroutines}}{{/doNotUseRxAndCoroutines}}{{#doNotUseRxAndCoroutines}}Call<{{#isResponseFile}}ResponseBody{{/isResponseFile}}{{^isResponseFile}}{{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}Unit{{/returnType}}{{/isResponseFile}}>{{/doNotUseRxAndCoroutines}}
+=======
+    fun {{operationId}}({{^allParams}}){{/allParams}}{{#allParams}}{{>queryParams}}{{>pathParams}}{{>headerParams}}{{>bodyParams}}{{>formParams}}{{#hasMore}}, {{/hasMore}}{{^hasMore}}){{/hasMore}}{{/allParams}}: Call<{{#isResponseFile}}ResponseBody{{/isResponseFile}}{{^isResponseFile}}{{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}Unit{{/returnType}}{{/isResponseFile}}>
+>>>>>>> ooof
 
     {{/operation}}
 }

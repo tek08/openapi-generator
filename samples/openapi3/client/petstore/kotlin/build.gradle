@@ -7,10 +7,17 @@ wrapper {
 }
 
 buildscript {
+<<<<<<< HEAD
     ext.kotlin_version = '1.3.61'
 
     repositories {
         maven { url "https://repo1.maven.org/maven2" }
+=======
+    ext.kotlin_version = '1.3.41'
+
+    repositories {
+        mavenCentral()
+>>>>>>> ooof
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
@@ -20,7 +27,11 @@ buildscript {
 apply plugin: 'kotlin'
 
 repositories {
+<<<<<<< HEAD
     maven { url "https://repo1.maven.org/maven2" }
+=======
+    mavenCentral()
+>>>>>>> ooof
 }
 
 test {
@@ -29,6 +40,7 @@ test {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+<<<<<<< HEAD
     compile "org.apache.oltu.oauth2:org.apache.oltu.oauth2.client:1.0.0"
     compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
     compile "com.squareup.moshi:moshi-kotlin:1.9.2"
@@ -36,4 +48,11 @@ dependencies {
     compile "com.squareup.okhttp3:okhttp:4.2.2"
     compile "com.squareup.okhttp3:logging-interceptor:4.4.0"
     testCompile "io.kotlintest:kotlintest-runner-junit5:3.1.0"
+=======
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    compile "com.squareup.moshi:moshi-kotlin:1.8.0"
+    compile "com.squareup.moshi:moshi-adapters:1.8.0"
+    compile "com.squareup.okhttp3:okhttp:4.2.0"
+    testImplementation "io.kotlintest:kotlintest-runner-junit5:3.1.0"
+>>>>>>> ooof
 }

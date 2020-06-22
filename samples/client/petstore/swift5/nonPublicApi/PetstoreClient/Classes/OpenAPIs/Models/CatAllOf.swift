@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 internal struct CatAllOf: Codable { 
 
+=======
+internal struct CatAllOf: Codable {
+>>>>>>> ooof
 
     internal var declawed: Bool?
 

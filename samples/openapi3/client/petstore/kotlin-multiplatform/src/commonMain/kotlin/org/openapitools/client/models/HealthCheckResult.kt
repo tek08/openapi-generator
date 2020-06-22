@@ -14,7 +14,10 @@ package org.openapitools.client.models
 
 import kotlinx.serialization.*
 import kotlinx.serialization.internal.CommonEnumSerializer
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * Just a string to inform instance is up and running. Make it nullable in hope to get it as pointer in generated model.
  * @param nullableMessage 
@@ -22,5 +25,11 @@ import kotlinx.serialization.internal.CommonEnumSerializer
 @Serializable
 data class HealthCheckResult (
     @SerialName(value = "NullableMessage") val nullableMessage: kotlin.String? = null
+<<<<<<< HEAD
 )
+=======
+) 
+
+
+>>>>>>> ooof
 

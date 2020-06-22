@@ -23,20 +23,31 @@ from six.moves.urllib.parse import quote
 
 from petstore_api import rest
 from petstore_api.configuration import Configuration
+<<<<<<< HEAD
 from petstore_api.exceptions import ApiTypeError, ApiValueError, ApiException
+=======
+from petstore_api.exceptions import ApiValueError, ApiException
+>>>>>>> ooof
 from petstore_api.model_utils import (
     ModelNormal,
     ModelSimple,
     ModelComposed,
+<<<<<<< HEAD
     check_allowed_values,
     check_validations,
+=======
+>>>>>>> ooof
     date,
     datetime,
     deserialize_file,
     file_type,
+<<<<<<< HEAD
     int,
     model_to_dict,
     none_type,
+=======
+    model_to_dict,
+>>>>>>> ooof
     str,
     validate_and_convert_types
 )
@@ -283,7 +294,10 @@ class ApiClient(object):
             ({str: (bool, str, int, float, date, datetime, str, none_type)},)
         :param _check_type: boolean, whether to check the types of the data
             received from the server
+<<<<<<< HEAD
         :type _check_type: bool
+=======
+>>>>>>> ooof
 
         :return: deserialized object.
         """
@@ -343,6 +357,7 @@ class ApiClient(object):
             (float, none_type)
             ([int, none_type],)
             ({str: (bool, str, int, float, date, datetime, str, none_type)},)
+<<<<<<< HEAD
         :param files: key -> field name, value -> a list of open file
             objects for `multipart/form-data`.
         :type files: dict
@@ -358,13 +373,28 @@ class ApiClient(object):
                                  be returned without reading/decoding response
                                  data. Default is True.
         :type _preload_content: bool, optional
+=======
+        :param files dict: key -> field name, value -> a list of open file
+            objects for `multipart/form-data`.
+        :param async_req bool: execute request asynchronously
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param collection_formats: dict of collection formats for path, query,
+            header, and post parameters.
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+>>>>>>> ooof
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
         :param _check_type: boolean describing if the data back from the server
             should have its type checked.
+<<<<<<< HEAD
         :type _check_type: bool, optional
+=======
+>>>>>>> ooof
         :return:
             If async_req parameter is True,
             the request will be called asynchronously.
@@ -558,9 +588,15 @@ class ApiClient(object):
         :param headers: Header parameters dict to be updated.
         :param querys: Query parameters tuple list to be updated.
         :param auth_settings: Authentication setting identifiers list.
+<<<<<<< HEAD
         :param resource_path: A string representation of the HTTP request resource path.
         :param method: A string representation of the HTTP request method.
         :param body: A object representing the body of the HTTP request.
+=======
+        :resource_path: A string representation of the HTTP request resource path.
+        :method: A string representation of the HTTP request method.
+        :body: A object representing the body of the HTTP request.
+>>>>>>> ooof
             The object type is the return value of sanitize_for_serialization().
         """
         if not auth_settings:
@@ -587,6 +623,7 @@ class ApiClient(object):
                     raise ApiValueError(
                         'Authentication token must be in `query` or `header`'
                     )
+<<<<<<< HEAD
 
 
 class Endpoint(object):
@@ -807,3 +844,5 @@ class Endpoint(object):
             _request_timeout=kwargs['_request_timeout'],
             _host=_host,
             collection_formats=params['collection_format'])
+=======
+>>>>>>> ooof

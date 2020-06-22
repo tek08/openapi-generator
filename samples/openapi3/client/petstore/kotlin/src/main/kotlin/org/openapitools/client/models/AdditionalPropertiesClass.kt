@@ -14,7 +14,10 @@ package org.openapitools.client.models
 
 import com.squareup.moshi.Json
 import java.io.Serializable
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * 
  * @param mapProperty 
@@ -26,10 +29,20 @@ data class AdditionalPropertiesClass (
     val mapProperty: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
     @Json(name = "map_of_map_property")
     val mapOfMapProperty: kotlin.collections.Map<kotlin.String, kotlin.collections.Map<kotlin.String, kotlin.String>>? = null
+<<<<<<< HEAD
 ) : Serializable {
     companion object {
         private const val serialVersionUID: Long = 123
     }
 
+=======
+) 
+: Serializable 
+
+{
+	companion object {
+		private const val serialVersionUID: Long = 123
+	}
+>>>>>>> ooof
 }
 

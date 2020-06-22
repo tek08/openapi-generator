@@ -35,7 +35,11 @@ import javax.ws.rs.*;
 
 
 @io.swagger.annotations.Api(description = "the fake API")
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen")
+=======
+
+>>>>>>> ooof
 public class FakeApi  {
    private final FakeApiService delegate = FakeApiServiceFactory.getFakeApi();
 

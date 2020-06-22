@@ -7,7 +7,10 @@ import java.io.File;
 import org.openapitools.model.FileSchemaTestClass;
 import org.joda.time.LocalDate;
 import java.util.Map;
+<<<<<<< HEAD
 import org.openapitools.model.ModelApiResponse;
+=======
+>>>>>>> ooof
 import org.openapitools.model.OuterComposite;
 import org.openapitools.model.User;
 import org.openapitools.model.XmlItem;
@@ -23,12 +26,20 @@ import java.util.List;
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
+<<<<<<< HEAD
 @Path("/fake")
 @Api(description = "the fake API")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public interface FakeApi {
 
     @POST
     @Path("/create_xml_item")
+=======
+@Path("/Fake")
+@Api(description = "the Fake API")
+public interface FakeApi {
+
+    @POST
+>>>>>>> ooof
     @Consumes({ "application/xml", "application/xml; charset=utf-8", "application/xml; charset=utf-16", "text/xml", "text/xml; charset=utf-8", "text/xml; charset=utf-16" })
     @ApiOperation(value = "creates an XmlItem", notes = "this route creates an XmlItem", tags={ "fake",  })
     @ApiResponses(value = { 
@@ -36,7 +47,10 @@ import javax.validation.Valid;
     Response createXmlItem(@Valid XmlItem xmlItem);
 
     @POST
+<<<<<<< HEAD
     @Path("/outer/boolean")
+=======
+>>>>>>> ooof
     @Produces({ "*/*" })
     @ApiOperation(value = "", notes = "Test serialization of outer boolean types", tags={ "fake",  })
     @ApiResponses(value = { 
@@ -44,7 +58,10 @@ import javax.validation.Valid;
     Response fakeOuterBooleanSerialize(@Valid Boolean body);
 
     @POST
+<<<<<<< HEAD
     @Path("/outer/composite")
+=======
+>>>>>>> ooof
     @Produces({ "*/*" })
     @ApiOperation(value = "", notes = "Test serialization of object with outer number type", tags={ "fake",  })
     @ApiResponses(value = { 
@@ -52,7 +69,10 @@ import javax.validation.Valid;
     Response fakeOuterCompositeSerialize(@Valid OuterComposite body);
 
     @POST
+<<<<<<< HEAD
     @Path("/outer/number")
+=======
+>>>>>>> ooof
     @Produces({ "*/*" })
     @ApiOperation(value = "", notes = "Test serialization of outer number types", tags={ "fake",  })
     @ApiResponses(value = { 
@@ -60,7 +80,10 @@ import javax.validation.Valid;
     Response fakeOuterNumberSerialize(@Valid BigDecimal body);
 
     @POST
+<<<<<<< HEAD
     @Path("/outer/string")
+=======
+>>>>>>> ooof
     @Produces({ "*/*" })
     @ApiOperation(value = "", notes = "Test serialization of outer string types", tags={ "fake",  })
     @ApiResponses(value = { 
@@ -68,7 +91,10 @@ import javax.validation.Valid;
     Response fakeOuterStringSerialize(@Valid String body);
 
     @PUT
+<<<<<<< HEAD
     @Path("/body-with-file-schema")
+=======
+>>>>>>> ooof
     @Consumes({ "application/json" })
     @ApiOperation(value = "", notes = "For this test, the body for this request much reference a schema named `File`.", tags={ "fake",  })
     @ApiResponses(value = { 
@@ -76,7 +102,10 @@ import javax.validation.Valid;
     Response testBodyWithFileSchema(@Valid FileSchemaTestClass body);
 
     @PUT
+<<<<<<< HEAD
     @Path("/body-with-query-params")
+=======
+>>>>>>> ooof
     @Consumes({ "application/json" })
     @ApiOperation(value = "", notes = "", tags={ "fake",  })
     @ApiResponses(value = { 
@@ -93,7 +122,11 @@ import javax.validation.Valid;
 
     @POST
     @Consumes({ "application/x-www-form-urlencoded" })
+<<<<<<< HEAD
     @ApiOperation(value = "Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트", notes = "Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트", authorizations = {
+=======
+    @ApiOperation(value = "Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 ", notes = "Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 ", authorizations = {
+>>>>>>> ooof
         @Authorization(value = "http_basic_test")
     }, tags={ "fake",  })
     @ApiResponses(value = { 
@@ -116,7 +149,10 @@ import javax.validation.Valid;
     Response testGroupParameters(@QueryParam("required_string_group") @NotNull   @ApiParam("Required String in group parameters")  Integer requiredStringGroup,@HeaderParam("required_boolean_group") @NotNull    @ApiParam("Required Boolean in group parameters") Boolean requiredBooleanGroup,@QueryParam("required_int64_group") @NotNull   @ApiParam("Required Integer in group parameters")  Long requiredInt64Group,@QueryParam("string_group")   @ApiParam("String in group parameters")  Integer stringGroup,@HeaderParam("boolean_group")    @ApiParam("Boolean in group parameters") Boolean booleanGroup,@QueryParam("int64_group")   @ApiParam("Integer in group parameters")  Long int64Group);
 
     @POST
+<<<<<<< HEAD
     @Path("/inline-additionalProperties")
+=======
+>>>>>>> ooof
     @Consumes({ "application/json" })
     @ApiOperation(value = "test inline additionalProperties", notes = "", tags={ "fake",  })
     @ApiResponses(value = { 
@@ -124,7 +160,10 @@ import javax.validation.Valid;
     Response testInlineAdditionalProperties(@Valid Map<String, String> param);
 
     @GET
+<<<<<<< HEAD
     @Path("/jsonFormData")
+=======
+>>>>>>> ooof
     @Consumes({ "application/x-www-form-urlencoded" })
     @ApiOperation(value = "test json serialization of form data", notes = "", tags={ "fake",  })
     @ApiResponses(value = { 
@@ -132,6 +171,7 @@ import javax.validation.Valid;
     Response testJsonFormData(@FormParam(value = "param")  String param,@FormParam(value = "param2")  String param2);
 
     @PUT
+<<<<<<< HEAD
     @Path("/test-query-paramters")
     @ApiOperation(value = "", notes = "To test the collection format in query parameters", tags={ "fake",  })
     @ApiResponses(value = { 
@@ -151,4 +191,10 @@ import javax.validation.Valid;
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "successful operation", response = ModelApiResponse.class) })
     Response uploadFileWithRequiredFile(@PathParam("petId") @ApiParam("ID of pet to update") Long petId, @FormParam(value = "requiredFile") InputStream requiredFileInputStream,@FormParam(value = "additionalMetadata")  String additionalMetadata);
+=======
+    @ApiOperation(value = "", notes = "To test the collection format in query parameters", tags={ "fake" })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 200, message = "Success", response = Void.class) })
+    Response testQueryParameterCollectionFormat(@QueryParam("pipe") @NotNull    List<String> pipe,@QueryParam("ioutil") @NotNull    List<String> ioutil,@QueryParam("http") @NotNull    List<String> http,@QueryParam("url") @NotNull    List<String> url,@QueryParam("context") @NotNull    List<String> context);
+>>>>>>> ooof
 }

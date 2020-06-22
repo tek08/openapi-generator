@@ -4,7 +4,11 @@ import org.openapitools.model.ModelApiResponse
 import org.openapitools.model.Pet
 interface PetApiService {
 
+<<<<<<< HEAD
 	fun addPet(pet: Pet): Pet
+=======
+	fun addPet(pet: Pet): Unit
+>>>>>>> ooof
 
 	fun deletePet(petId: kotlin.Long, apiKey: kotlin.String?): Unit
 
@@ -14,7 +18,11 @@ interface PetApiService {
 
 	fun getPetById(petId: kotlin.Long): Pet
 
+<<<<<<< HEAD
 	fun updatePet(pet: Pet): Pet
+=======
+	fun updatePet(pet: Pet): Unit
+>>>>>>> ooof
 
 	fun updatePetWithForm(petId: kotlin.Long, name: kotlin.String?, status: kotlin.String?): Unit
 

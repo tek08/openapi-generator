@@ -2,7 +2,11 @@
 /**
  * AdditionalPropertiesClassTest
  *
+<<<<<<< HEAD
  * PHP version 7.2
+=======
+ * PHP version 7.1
+>>>>>>> ooof
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -46,28 +50,44 @@ class AdditionalPropertiesClassTest extends TestCase
     /**
      * Setup before running any test case
      */
+<<<<<<< HEAD
     public static function setUpBeforeClass(): void
+=======
+    public static function setUpBeforeClass()
+>>>>>>> ooof
     {
     }
 
     /**
      * Setup before running each test case
      */
+<<<<<<< HEAD
     public function setUp(): void
+=======
+    public function setUp()
+>>>>>>> ooof
     {
     }
 
     /**
      * Clean up after running each test case
      */
+<<<<<<< HEAD
     public function tearDown(): void
+=======
+    public function tearDown()
+>>>>>>> ooof
     {
     }
 
     /**
      * Clean up after running all test cases
      */
+<<<<<<< HEAD
     public static function tearDownAfterClass(): void
+=======
+    public static function tearDownAfterClass()
+>>>>>>> ooof
     {
     }
 
@@ -79,16 +99,91 @@ class AdditionalPropertiesClassTest extends TestCase
     }
 
     /**
+<<<<<<< HEAD
      * Test attribute "map_property"
      */
     public function testPropertyMapProperty()
+=======
+     * Test attribute "map_string"
+     */
+    public function testPropertyMapString()
+>>>>>>> ooof
     {
     }
 
     /**
+<<<<<<< HEAD
      * Test attribute "map_of_map_property"
      */
     public function testPropertyMapOfMapProperty()
+=======
+     * Test attribute "map_number"
+     */
+    public function testPropertyMapNumber()
+    {
+    }
+
+    /**
+     * Test attribute "map_integer"
+     */
+    public function testPropertyMapInteger()
+    {
+    }
+
+    /**
+     * Test attribute "map_boolean"
+     */
+    public function testPropertyMapBoolean()
+    {
+    }
+
+    /**
+     * Test attribute "map_array_integer"
+     */
+    public function testPropertyMapArrayInteger()
+    {
+    }
+
+    /**
+     * Test attribute "map_array_anytype"
+     */
+    public function testPropertyMapArrayAnytype()
+    {
+    }
+
+    /**
+     * Test attribute "map_map_string"
+     */
+    public function testPropertyMapMapString()
+    {
+    }
+
+    /**
+     * Test attribute "map_map_anytype"
+     */
+    public function testPropertyMapMapAnytype()
+    {
+    }
+
+    /**
+     * Test attribute "anytype_1"
+     */
+    public function testPropertyAnytype1()
+    {
+    }
+
+    /**
+     * Test attribute "anytype_2"
+     */
+    public function testPropertyAnytype2()
+    {
+    }
+
+    /**
+     * Test attribute "anytype_3"
+     */
+    public function testPropertyAnytype3()
+>>>>>>> ooof
     {
     }
 }

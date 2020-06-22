@@ -47,13 +47,21 @@ OASClient client = api.getClient();
 
 
 Map<String, Object> params = new Map<String, Object>{
+<<<<<<< HEAD
     'oaSPet' => ''
+=======
+    'body' => ''
+>>>>>>> ooof
 };
 
 try {
     // cross your fingers
+<<<<<<< HEAD
     OASPet result = api.addPet(params);
     System.debug(result);
+=======
+    api.addPet(params);
+>>>>>>> ooof
 } catch (OAS.ApiException e) {
     // ...handle your exceptions
 }
@@ -91,8 +99,11 @@ Class | Method | HTTP request | Description
 
  - [OASApiResponse](OASApiResponse.md)
  - [OASCategory](OASCategory.md)
+<<<<<<< HEAD
  - [OASInlineObject](OASInlineObject.md)
  - [OASInlineObject1](OASInlineObject1.md)
+=======
+>>>>>>> ooof
  - [OASOrder](OASOrder.md)
  - [OASPet](OASPet.md)
  - [OASTag](OASTag.md)

@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 internal struct TypeHolderDefault: Codable { 
 
+=======
+internal struct TypeHolderDefault: Codable {
+>>>>>>> ooof
 
     internal var stringItem: String = "what"
     internal var numberItem: Double
@@ -25,7 +29,11 @@ internal struct TypeHolderDefault: Codable {
         self.arrayItem = arrayItem
     }
 
+<<<<<<< HEAD
     internal enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    internal enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case stringItem = "string_item"
         case numberItem = "number_item"
         case integerItem = "integer_item"

@@ -11,11 +11,18 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
 import petstore_api
 from petstore_api.model.additional_properties_class import AdditionalPropertiesClass
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestAdditionalPropertiesClass(unittest.TestCase):
@@ -30,7 +37,11 @@ class TestAdditionalPropertiesClass(unittest.TestCase):
     def testAdditionalPropertiesClass(self):
         """Test AdditionalPropertiesClass"""
         # FIXME: construct object with mandatory attributes with example values
+<<<<<<< HEAD
         # model = AdditionalPropertiesClass()  # noqa: E501
+=======
+        # model = petstore_api.AdditionalPropertiesClass()  # noqa: E501
+>>>>>>> ooof
         pass
 
 

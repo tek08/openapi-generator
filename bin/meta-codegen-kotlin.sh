@@ -26,15 +26,27 @@ ags="meta -n myClientCodegen -t DOCUMENTATION -p com.my.company.codegen -o sampl
 java $JAVA_OPTS -jar $executable $ags
 
 if [ ! -f "${root}"samples/meta-codegen-kotlin/gradle/wrapper/gradle-wrapper.jar ]; then
+<<<<<<< HEAD
   (cd "${root}"/samples/meta-codegen-kotlin/ && gradle --no-daemon wrapper --gradle-version 5.6.2 --distribution-type bin)
+=======
+  (cd "${root}"/samples/meta-codegen-kotlin/ && gradle wrapper --gradle-version 5.6.2 --distribution-type bin)
+>>>>>>> ooof
 fi
 
 
 (cp "${root}"/samples/meta-codegen-kotlin/gradlew "${root}"/samples/meta-codegen-kotlin/lib/ && \
  cp -R "${root}"/samples/meta-codegen-kotlin/gradle "${root}"/samples/meta-codegen-kotlin/lib/ && \
   cd "${root}"/samples/meta-codegen-kotlin/lib && \
+<<<<<<< HEAD
   ./gradlew --no-daemon shadowJar)
 
 ags2="generate -g myClientCodegen -i modules/openapi-generator/src/test/resources/2_0/petstore.json -o samples/meta-codegen-kotlin/usage $@"
 
 java $JAVA_OPTS -cp ${root}/samples/meta-codegen-kotlin/lib/build/libs/my-client-codegen-openapi-generator-1.0-SNAPSHOT-all.jar:$executable org.openapitools.codegen.OpenAPIGenerator $ags2
+=======
+  ./gradlew shadowJar)
+
+ags2="generate -g myClientCodegen -i modules/openapi-generator/src/test/resources/2_0/petstore.json -o samples/meta-codegen-kotlin/usage $@"
+
+java $JAVA_OPTS -cp ${root}/samples/meta-codegen-kotlin/lib/build/libs/my-client-codegen-openapi-generator-1.0-SNAPSHOT-all.jar:$executable org.openapitools.codegen.OpenAPIGenerator $ags2
+>>>>>>> ooof

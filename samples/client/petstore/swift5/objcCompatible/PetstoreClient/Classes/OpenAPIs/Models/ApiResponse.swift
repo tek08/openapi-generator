@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 
 @objc public class ApiResponse: NSObject, Codable { 
+=======
+@objc public class ApiResponse: NSObject, Codable {
+>>>>>>> ooof
 
     public var code: Int?
     public var codeNum: NSNumber? {

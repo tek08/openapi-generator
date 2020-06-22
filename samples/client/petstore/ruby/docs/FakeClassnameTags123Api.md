@@ -10,7 +10,11 @@ Method | HTTP request | Description
 
 ## test_classname
 
+<<<<<<< HEAD
 > Client test_classname(client)
+=======
+> Client test_classname(body)
+>>>>>>> ooof
 
 To test class name in snake case
 
@@ -30,11 +34,19 @@ Petstore.configure do |config|
 end
 
 api_instance = Petstore::FakeClassnameTags123Api.new
+<<<<<<< HEAD
 client = Petstore::Client.new # Client | client model
 
 begin
   #To test class name in snake case
   result = api_instance.test_classname(client)
+=======
+body = Petstore::Client.new # Client | client model
+
+begin
+  #To test class name in snake case
+  result = api_instance.test_classname(body)
+>>>>>>> ooof
   p result
 rescue Petstore::ApiError => e
   puts "Exception when calling FakeClassnameTags123Api->test_classname: #{e}"
@@ -46,7 +58,11 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **client** | [**Client**](Client.md)| client model | 
+=======
+ **body** | [**Client**](Client.md)| client model | 
+>>>>>>> ooof
 
 ### Return type
 

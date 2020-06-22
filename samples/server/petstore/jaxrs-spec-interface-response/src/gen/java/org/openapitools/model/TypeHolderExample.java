@@ -17,7 +17,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class TypeHolderExample  implements Serializable {
+=======
+public class TypeHolderExample  implements Serializable {
+>>>>>>> ooof
   
   private @Valid String stringItem;
   private @Valid BigDecimal numberItem;
@@ -34,18 +38,29 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "what", required = true, value = "")
   @JsonProperty("string_item")
   @NotNull
   public String getStringItem() {
     return stringItem;
   }
+<<<<<<< HEAD
 
   public void setStringItem(String stringItem) {
     this.stringItem = stringItem;
   }/**
+=======
+  public void setStringItem(String stringItem) {
+    this.stringItem = stringItem;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public TypeHolderExample numberItem(BigDecimal numberItem) {
     this.numberItem = numberItem;
@@ -53,18 +68,29 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "1.234", required = true, value = "")
   @JsonProperty("number_item")
   @NotNull
   public BigDecimal getNumberItem() {
     return numberItem;
   }
+<<<<<<< HEAD
 
   public void setNumberItem(BigDecimal numberItem) {
     this.numberItem = numberItem;
   }/**
+=======
+  public void setNumberItem(BigDecimal numberItem) {
+    this.numberItem = numberItem;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public TypeHolderExample floatItem(Float floatItem) {
     this.floatItem = floatItem;
@@ -72,18 +98,29 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "1.234", required = true, value = "")
   @JsonProperty("float_item")
   @NotNull
   public Float getFloatItem() {
     return floatItem;
   }
+<<<<<<< HEAD
 
   public void setFloatItem(Float floatItem) {
     this.floatItem = floatItem;
   }/**
+=======
+  public void setFloatItem(Float floatItem) {
+    this.floatItem = floatItem;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public TypeHolderExample integerItem(Integer integerItem) {
     this.integerItem = integerItem;
@@ -91,18 +128,29 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "-2", required = true, value = "")
   @JsonProperty("integer_item")
   @NotNull
   public Integer getIntegerItem() {
     return integerItem;
   }
+<<<<<<< HEAD
 
   public void setIntegerItem(Integer integerItem) {
     this.integerItem = integerItem;
   }/**
+=======
+  public void setIntegerItem(Integer integerItem) {
+    this.integerItem = integerItem;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public TypeHolderExample boolItem(Boolean boolItem) {
     this.boolItem = boolItem;
@@ -110,18 +158,29 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "true", required = true, value = "")
   @JsonProperty("bool_item")
   @NotNull
   public Boolean getBoolItem() {
     return boolItem;
   }
+<<<<<<< HEAD
 
   public void setBoolItem(Boolean boolItem) {
     this.boolItem = boolItem;
   }/**
+=======
+  public void setBoolItem(Boolean boolItem) {
+    this.boolItem = boolItem;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public TypeHolderExample arrayItem(List<Integer> arrayItem) {
     this.arrayItem = arrayItem;
@@ -129,19 +188,29 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(example = "[0, 1, 2, 3]", required = true, value = "")
   @JsonProperty("array_item")
   @NotNull
   public List<Integer> getArrayItem() {
     return arrayItem;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
   public void setArrayItem(List<Integer> arrayItem) {
     this.arrayItem = arrayItem;
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -189,7 +258,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
     }
     return o.toString().replace("\n", "\n    ");
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 }
 

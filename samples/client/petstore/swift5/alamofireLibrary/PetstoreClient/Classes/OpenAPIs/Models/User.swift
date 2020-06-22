@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 public struct User: Codable { 
 
+=======
+public struct User: Codable {
+>>>>>>> ooof
 
     public var id: Int64?
     public var username: String?

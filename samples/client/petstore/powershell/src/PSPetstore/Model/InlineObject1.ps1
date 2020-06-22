@@ -48,6 +48,7 @@ function Initialize-PSInlineObject1 {
         return $PSO
     }
 }
+<<<<<<< HEAD
 
 <#
 .SYNOPSIS
@@ -108,3 +109,5 @@ function ConvertFrom-PSJsonToInlineObject1 {
 
 }
 
+=======
+>>>>>>> ooof

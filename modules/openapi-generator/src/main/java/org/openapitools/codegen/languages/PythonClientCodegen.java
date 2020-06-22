@@ -128,7 +128,10 @@ public class PythonClientCodegen extends DefaultCodegen implements CodegenConfig
         typeMapping.put("long", "int");
         typeMapping.put("double", "float");
         typeMapping.put("array", "list");
+<<<<<<< HEAD
         typeMapping.put("set", "list");
+=======
+>>>>>>> ooof
         typeMapping.put("map", "dict");
         typeMapping.put("boolean", "bool");
         typeMapping.put("string", "str");
@@ -461,7 +464,11 @@ public class PythonClientCodegen extends DefaultCodegen implements CodegenConfig
             Schema inner = ap.getItems();
             return getSchemaType(p) + "[" + getTypeDeclaration(inner) + "]";
         } else if (ModelUtils.isMapSchema(p)) {
+<<<<<<< HEAD
             Schema inner = getAdditionalProperties(p);
+=======
+            Schema inner = ModelUtils.getAdditionalProperties(p);
+>>>>>>> ooof
 
             return getSchemaType(p) + "(str, " + getTypeDeclaration(inner) + ")";
         }
@@ -722,7 +729,11 @@ public class PythonClientCodegen extends DefaultCodegen implements CodegenConfig
         }
 
         // correct "&#39;"s into "'"s after toString()
+<<<<<<< HEAD
         if (ModelUtils.isStringSchema(schema) && schema.getDefault() != null && !ModelUtils.isDateSchema(schema) && !ModelUtils.isDateTimeSchema(schema)) {
+=======
+        if (ModelUtils.isStringSchema(schema) && schema.getDefault() != null) {
+>>>>>>> ooof
             example = (String) schema.getDefault();
         }
 

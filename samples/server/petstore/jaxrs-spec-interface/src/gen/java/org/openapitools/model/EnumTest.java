@@ -15,7 +15,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class EnumTest  implements Serializable {
+=======
+public class EnumTest  implements Serializable {
+>>>>>>> ooof
   
 
 public enum EnumStringEnum {

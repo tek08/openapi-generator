@@ -15,15 +15,32 @@
             <directory>{{apiTestPath}}</directory>
         </testsuite>
         <testsuite name="Models">
+<<<<<<< HEAD
             <file>./{{testBasePath}}/BaseModelTest.php</file>
             <directory>{{modelTestPath}}</directory>
         </testsuite>
+=======
+            <directory>{{modelTestPath}}</directory>
+        </testsuite>
+        <testsuite name="Mock">
+            <directory>{{mockTestPath}}</directory>
+        </testsuite>
+        <testsuite name="Utils">
+            <directory>{{utilsTestPath}}</directory>
+        </testsuite>
+>>>>>>> ooof
     </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">{{apiSrcPath}}</directory>
+<<<<<<< HEAD
             <file>./{{srcBasePath}}/BaseModel.php</file>
             <directory suffix=".php">{{modelSrcPath}}</directory>
+=======
+            <directory suffix=".php">{{modelSrcPath}}</directory>
+            <directory suffix=".php">{{mockSrcPath}}</directory>
+            <directory suffix=".php">{{utilsSrcPath}}</directory>
+>>>>>>> ooof
         </whitelist>
     </filter>
     <php>

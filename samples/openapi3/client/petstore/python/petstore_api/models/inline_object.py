@@ -75,7 +75,11 @@ class InlineObject(object):
         Updated name of the pet  # noqa: E501
 
         :param name: The name of this InlineObject.  # noqa: E501
+<<<<<<< HEAD
         :type name: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._name = name
@@ -98,7 +102,11 @@ class InlineObject(object):
         Updated status of the pet  # noqa: E501
 
         :param status: The status of this InlineObject.  # noqa: E501
+<<<<<<< HEAD
         :type status: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._status = status

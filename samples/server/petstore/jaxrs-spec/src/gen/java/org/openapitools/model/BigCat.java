@@ -16,7 +16,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class BigCat extends Cat implements Serializable {
+=======
+public class BigCat extends Cat implements Serializable {
+>>>>>>> ooof
   
 
 public enum KindEnum {

@@ -40,6 +40,7 @@ signals:
 protected:
     virtual void process(QHttpEngine::Socket *socket, const QString &path){
         Q_UNUSED(path);
+<<<<<<< HEAD
 
         // If the slot requires all data to be received, check to see if this is
         // already the case, otherwise, wait until the rest of it arrives
@@ -50,6 +51,9 @@ protected:
                 emit requestReceived(socket);
             });
         }
+=======
+        emit requestReceived(socket);
+>>>>>>> ooof
     }
 };
 

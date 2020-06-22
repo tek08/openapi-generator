@@ -1,7 +1,23 @@
 {{>licenseInfo}}
+<<<<<<< HEAD
 import { HttpHeaders }                                       from '@angular/common/http';
 
 import { Observable }                                        from 'rxjs';
+=======
+{{#useHttpClient}}
+import { HttpHeaders }                                       from '@angular/common/http';
+{{/useHttpClient}}
+{{^useHttpClient}}
+import { Headers }                                           from '@angular/http';
+{{/useHttpClient}}
+
+{{^useRxJS6}}
+import { Observable }                                        from 'rxjs/Observable';
+{{/useRxJS6}}
+{{#useRxJS6}}
+import { Observable }                                        from 'rxjs';
+{{/useRxJS6}}
+>>>>>>> ooof
 
 {{#imports}}
 import { {{classname}} } from '../model/models';
@@ -31,8 +47,14 @@ export interface {{#prefixParameterInterfaces}}{{classname}}{{/prefixParameterIn
     */
 {{/description}}
 export interface {{classname}}Interface {
+<<<<<<< HEAD
     defaultHeaders: HttpHeaders;
     configuration: Configuration;
+=======
+    defaultHeaders: {{#useHttpClient}}Http{{/useHttpClient}}Headers;
+    configuration: Configuration;
+    {{^useHttpClient}}[others: string]: any;{{/useHttpClient}}
+>>>>>>> ooof
 
 {{#operation}}
     /**

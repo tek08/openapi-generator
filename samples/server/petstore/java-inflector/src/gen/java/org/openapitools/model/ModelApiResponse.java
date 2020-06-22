@@ -10,7 +10,11 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen")
+=======
+
+>>>>>>> ooof
 public class ModelApiResponse   {
   @JsonProperty("code")
   private Integer code;

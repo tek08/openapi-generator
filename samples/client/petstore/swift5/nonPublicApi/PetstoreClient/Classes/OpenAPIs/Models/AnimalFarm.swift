@@ -7,5 +7,8 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 internal typealias AnimalFarm = [Animal]

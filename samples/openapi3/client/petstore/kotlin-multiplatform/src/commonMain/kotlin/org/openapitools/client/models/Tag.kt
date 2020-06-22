@@ -14,7 +14,10 @@ package org.openapitools.client.models
 
 import kotlinx.serialization.*
 import kotlinx.serialization.internal.CommonEnumSerializer
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * 
  * @param id 
@@ -24,5 +27,11 @@ import kotlinx.serialization.internal.CommonEnumSerializer
 data class Tag (
     @SerialName(value = "id") val id: kotlin.Long? = null,
     @SerialName(value = "name") val name: kotlin.String? = null
+<<<<<<< HEAD
 )
+=======
+) 
+
+
+>>>>>>> ooof
 

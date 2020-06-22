@@ -14,7 +14,10 @@ package org.openapitools.client.models
 
 import kotlinx.serialization.*
 import kotlinx.serialization.internal.CommonEnumSerializer
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * 
  * @param bar 
@@ -24,5 +27,11 @@ import kotlinx.serialization.internal.CommonEnumSerializer
 data class ReadOnlyFirst (
     @SerialName(value = "bar") val bar: kotlin.String? = null,
     @SerialName(value = "baz") val baz: kotlin.String? = null
+<<<<<<< HEAD
 )
+=======
+) 
+
+
+>>>>>>> ooof
 

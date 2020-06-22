@@ -18,7 +18,11 @@ Method | HTTP request | Description
 
 ## addPet
 
+<<<<<<< HEAD
 > addPet($pet)
+=======
+> addPet($body)
+>>>>>>> ooof
 
 Add a new pet to the store
 
@@ -39,10 +43,17 @@ $apiInstance = new OpenAPI\Client\Api\PetApi(
     new GuzzleHttp\Client(),
     $config
 );
+<<<<<<< HEAD
 $pet = new \OpenAPI\Client\Model\Pet(); // \OpenAPI\Client\Model\Pet | Pet object that needs to be added to the store
 
 try {
     $apiInstance->addPet($pet);
+=======
+$body = new \OpenAPI\Client\Model\Pet(); // \OpenAPI\Client\Model\Pet | Pet object that needs to be added to the store
+
+try {
+    $apiInstance->addPet($body);
+>>>>>>> ooof
 } catch (Exception $e) {
     echo 'Exception when calling PetApi->addPet: ', $e->getMessage(), PHP_EOL;
 }
@@ -54,7 +65,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **pet** | [**\OpenAPI\Client\Model\Pet**](../Model/Pet.md)| Pet object that needs to be added to the store |
+=======
+ **body** | [**\OpenAPI\Client\Model\Pet**](../Model/Pet.md)| Pet object that needs to be added to the store |
+>>>>>>> ooof
 
 ### Return type
 
@@ -321,7 +336,11 @@ Name | Type | Description  | Notes
 
 ## updatePet
 
+<<<<<<< HEAD
 > updatePet($pet)
+=======
+> updatePet($body)
+>>>>>>> ooof
 
 Update an existing pet
 
@@ -342,10 +361,17 @@ $apiInstance = new OpenAPI\Client\Api\PetApi(
     new GuzzleHttp\Client(),
     $config
 );
+<<<<<<< HEAD
 $pet = new \OpenAPI\Client\Model\Pet(); // \OpenAPI\Client\Model\Pet | Pet object that needs to be added to the store
 
 try {
     $apiInstance->updatePet($pet);
+=======
+$body = new \OpenAPI\Client\Model\Pet(); // \OpenAPI\Client\Model\Pet | Pet object that needs to be added to the store
+
+try {
+    $apiInstance->updatePet($body);
+>>>>>>> ooof
 } catch (Exception $e) {
     echo 'Exception when calling PetApi->updatePet: ', $e->getMessage(), PHP_EOL;
 }
@@ -357,7 +383,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **pet** | [**\OpenAPI\Client\Model\Pet**](../Model/Pet.md)| Pet object that needs to be added to the store |
+=======
+ **body** | [**\OpenAPI\Client\Model\Pet**](../Model/Pet.md)| Pet object that needs to be added to the store |
+>>>>>>> ooof
 
 ### Return type
 

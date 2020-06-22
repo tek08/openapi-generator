@@ -14,15 +14,28 @@ package org.openapitools.client.models
 
 import kotlinx.serialization.*
 import kotlinx.serialization.internal.CommonEnumSerializer
+<<<<<<< HEAD
 
 /**
  * 
  * @param name 
  * @param id 
+=======
+/**
+ * 
+ * @param id 
+ * @param name 
+>>>>>>> ooof
  */
 @Serializable
 data class Category (
     @SerialName(value = "name") @Required val name: kotlin.String,
     @SerialName(value = "id") val id: kotlin.Long? = null
+<<<<<<< HEAD
 )
+=======
+) 
+
+
+>>>>>>> ooof
 

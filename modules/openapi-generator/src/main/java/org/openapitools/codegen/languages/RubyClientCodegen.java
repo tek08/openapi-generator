@@ -659,7 +659,11 @@ public class RubyClientCodegen extends AbstractRubyCodegen {
 
     @Override
     protected void addAdditionPropertiesToCodeGenModel(CodegenModel codegenModel, Schema schema) {
+<<<<<<< HEAD
         final Schema additionalProperties = getAdditionalProperties(schema);
+=======
+        final Schema additionalProperties = ModelUtils.getAdditionalProperties(schema);
+>>>>>>> ooof
 
         if (additionalProperties != null) {
             codegenModel.additionalPropertiesType = getSchemaType(additionalProperties);

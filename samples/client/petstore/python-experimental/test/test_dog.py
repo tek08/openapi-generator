@@ -11,6 +11,7 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
@@ -26,6 +27,12 @@ except ImportError:
     dog_all_of = sys.modules[
         'petstore_api.model.dog_all_of']
 from petstore_api.model.dog import Dog
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestDog(unittest.TestCase):
@@ -44,7 +51,11 @@ class TestDog(unittest.TestCase):
         class_name = 'Dog'
         color = 'white'
         breed = 'Jack Russel Terrier'
+<<<<<<< HEAD
         dog = Dog(
+=======
+        dog = petstore_api.Dog(
+>>>>>>> ooof
             class_name=class_name,
             color=color,
             breed=breed
@@ -98,8 +109,13 @@ class TestDog(unittest.TestCase):
             {
                 'anyOf': [],
                 'allOf': [
+<<<<<<< HEAD
                     animal.Animal,
                     dog_all_of.DogAllOf,
+=======
+                    petstore_api.Animal,
+                    petstore_api.DogAllOf,
+>>>>>>> ooof
                 ],
                 'oneOf': [],
             }
@@ -107,9 +123,15 @@ class TestDog(unittest.TestCase):
         # model._composed_instances is a list of the instances that were
         # made from the anyOf/allOf/OneOf classes in model._composed_schemas()
         for composed_instance in dog._composed_instances:
+<<<<<<< HEAD
             if composed_instance.__class__ == animal.Animal:
                 animal_instance = composed_instance
             elif composed_instance.__class__ == dog_all_of.DogAllOf:
+=======
+            if composed_instance.__class__ == petstore_api.Animal:
+                animal_instance = composed_instance
+            elif composed_instance.__class__ == petstore_api.DogAllOf:
+>>>>>>> ooof
                 dog_allof_instance = composed_instance
         self.assertEqual(
             dog._composed_instances,
@@ -140,12 +162,20 @@ class TestDog(unittest.TestCase):
 
         # including extra parameters raises an exception
         with self.assertRaises(petstore_api.ApiValueError):
+<<<<<<< HEAD
             dog = Dog(
+=======
+            dog = petstore_api.Dog(
+>>>>>>> ooof
                 class_name=class_name,
                 color=color,
                 breed=breed,
                 unknown_property='some value'
             )
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
 if __name__ == '__main__':
     unittest.main()

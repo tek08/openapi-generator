@@ -9,23 +9,38 @@ import Foundation
 open class PetstoreClientAPI {
     public static var basePath = "http://petstore.swagger.io:80/v2"
     public static var credential: URLCredential?
+<<<<<<< HEAD
     public static var customHeaders: [String:String] = [:]
+=======
+    public static var customHeaders: [String: String] = [:]
+>>>>>>> ooof
     public static var requestBuilderFactory: RequestBuilderFactory = AlamofireRequestBuilderFactory()
     public static var apiResponseQueue: DispatchQueue = .main
 }
 
 open class RequestBuilder<T> {
     var credential: URLCredential?
+<<<<<<< HEAD
     var headers: [String:String]
     public let parameters: [String:Any]?
+=======
+    var headers: [String: String]
+    public let parameters: [String: Any]?
+>>>>>>> ooof
     public let isBody: Bool
     public let method: String
     public let URLString: String
 
     /// Optional block to obtain a reference to the request's progress instance when available.
+<<<<<<< HEAD
     public var onProgressReady: ((Progress) -> ())?
 
     required public init(method: String, URLString: String, parameters: [String:Any]?, isBody: Bool, headers: [String:String] = [:]) {
+=======
+    public var onProgressReady: ((Progress) -> Void)?
+
+    required public init(method: String, URLString: String, parameters: [String: Any]?, isBody: Bool, headers: [String: String] = [:]) {
+>>>>>>> ooof
         self.method = method
         self.URLString = URLString
         self.parameters = parameters
@@ -35,7 +50,11 @@ open class RequestBuilder<T> {
         addHeaders(PetstoreClientAPI.customHeaders)
     }
 
+<<<<<<< HEAD
     open func addHeaders(_ aHeaders:[String:String]) {
+=======
+    open func addHeaders(_ aHeaders: [String: String]) {
+>>>>>>> ooof
         for (header, value) in aHeaders {
             headers[header] = value
         }
@@ -58,5 +77,9 @@ open class RequestBuilder<T> {
 
 public protocol RequestBuilderFactory {
     func getNonDecodableBuilder<T>() -> RequestBuilder<T>.Type
+<<<<<<< HEAD
     func getBuilder<T:Decodable>() -> RequestBuilder<T>.Type
+=======
+    func getBuilder<T: Decodable>() -> RequestBuilder<T>.Type
+>>>>>>> ooof
 }

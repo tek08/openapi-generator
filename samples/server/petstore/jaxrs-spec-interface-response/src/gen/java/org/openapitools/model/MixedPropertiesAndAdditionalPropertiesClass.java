@@ -20,7 +20,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class MixedPropertiesAndAdditionalPropertiesClass  implements Serializable {
+=======
+public class MixedPropertiesAndAdditionalPropertiesClass  implements Serializable {
+>>>>>>> ooof
   
   private @Valid UUID uuid;
   private @Valid Date dateTime;
@@ -34,17 +38,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("uuid")
   public UUID getUuid() {
     return uuid;
   }
+<<<<<<< HEAD
 
   public void setUuid(UUID uuid) {
     this.uuid = uuid;
   }/**
+=======
+  public void setUuid(UUID uuid) {
+    this.uuid = uuid;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public MixedPropertiesAndAdditionalPropertiesClass dateTime(Date dateTime) {
     this.dateTime = dateTime;
@@ -52,17 +67,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("dateTime")
   public Date getDateTime() {
     return dateTime;
   }
+<<<<<<< HEAD
 
   public void setDateTime(Date dateTime) {
     this.dateTime = dateTime;
   }/**
+=======
+  public void setDateTime(Date dateTime) {
+    this.dateTime = dateTime;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public MixedPropertiesAndAdditionalPropertiesClass map(Map<String, Animal> map) {
     this.map = map;
@@ -70,18 +96,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("map")
   public Map<String, Animal> getMap() {
     return map;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
   public void setMap(Map<String, Animal> map) {
     this.map = map;
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -123,7 +159,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
     }
     return o.toString().replace("\n", "\n    ");
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 }
 

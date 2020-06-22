@@ -10,7 +10,11 @@ import io.swagger.annotations.ApiModelProperty;
  * Model for testing model with \&quot;_class\&quot; property
  */
 @ApiModel(description = "Model for testing model with \"_class\" property")
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen")
+=======
+
+>>>>>>> ooof
 public class ClassModel   {
   @JsonProperty("_class")
   private String propertyClass;

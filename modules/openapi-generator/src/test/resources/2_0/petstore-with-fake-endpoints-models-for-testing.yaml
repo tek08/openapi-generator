@@ -132,7 +132,10 @@ paths:
           description: Tags to filter by
           required: true
           type: array
+<<<<<<< HEAD
           uniqueItems: true
+=======
+>>>>>>> ooof
           items:
             type: string
           collectionFormat: csv
@@ -141,7 +144,10 @@ paths:
           description: successful operation
           schema:
             type: array
+<<<<<<< HEAD
             uniqueItems: true
+=======
+>>>>>>> ooof
             items:
               $ref: '#/definitions/Pet'
         '400':
@@ -1236,7 +1242,10 @@ definitions:
         example: doggie
       photoUrls:
         type: array
+<<<<<<< HEAD
         uniqueItems: true
+=======
+>>>>>>> ooof
         xml:
           name: photoUrl
           wrapped: true

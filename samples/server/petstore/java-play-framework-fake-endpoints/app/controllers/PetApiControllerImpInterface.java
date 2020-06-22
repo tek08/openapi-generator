@@ -3,7 +3,10 @@ package controllers;
 import java.io.InputStream;
 import apimodels.ModelApiResponse;
 import apimodels.Pet;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 
 import play.mvc.Http;
 import java.util.List;
@@ -20,7 +23,11 @@ public interface PetApiControllerImpInterface {
 
     List<Pet> findPetsByStatus( @NotNull List<String> status) throws Exception;
 
+<<<<<<< HEAD
     Set<Pet> findPetsByTags( @NotNull Set<String> tags) throws Exception;
+=======
+    List<Pet> findPetsByTags( @NotNull List<String> tags) throws Exception;
+>>>>>>> ooof
 
     Pet getPetById(Long petId) throws Exception;
 

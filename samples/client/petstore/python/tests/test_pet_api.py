@@ -121,6 +121,7 @@ class PetApiTests(unittest.TestCase):
         self.pet_api.add_pet(self.pet, _request_timeout=5)
         self.pet_api.add_pet(self.pet, _request_timeout=(1, 2))
 
+<<<<<<< HEAD
     def test_auth_settings(self):
         mock_pool = MockPoolManager(self)
         self.api_client.rest_client.pool_manager = mock_pool
@@ -145,6 +146,8 @@ class PetApiTests(unittest.TestCase):
             'value': 'Prefix ANOTHER_TOKEN'
         })
 
+=======
+>>>>>>> ooof
     def test_separate_default_client_instances(self):
         pet_api = petstore_api.PetApi()
         pet_api2 = petstore_api.PetApi()

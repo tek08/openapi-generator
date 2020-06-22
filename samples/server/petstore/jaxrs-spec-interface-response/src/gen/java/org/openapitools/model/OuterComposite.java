@@ -15,7 +15,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class OuterComposite  implements Serializable {
+=======
+public class OuterComposite  implements Serializable {
+>>>>>>> ooof
   
   private @Valid BigDecimal myNumber;
   private @Valid String myString;
@@ -29,17 +33,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("my_number")
   public BigDecimal getMyNumber() {
     return myNumber;
   }
+<<<<<<< HEAD
 
   public void setMyNumber(BigDecimal myNumber) {
     this.myNumber = myNumber;
   }/**
+=======
+  public void setMyNumber(BigDecimal myNumber) {
+    this.myNumber = myNumber;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public OuterComposite myString(String myString) {
     this.myString = myString;
@@ -47,17 +62,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("my_string")
   public String getMyString() {
     return myString;
   }
+<<<<<<< HEAD
 
   public void setMyString(String myString) {
     this.myString = myString;
   }/**
+=======
+  public void setMyString(String myString) {
+    this.myString = myString;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public OuterComposite myBoolean(Boolean myBoolean) {
     this.myBoolean = myBoolean;
@@ -65,18 +91,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("my_boolean")
   public Boolean getMyBoolean() {
     return myBoolean;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
   public void setMyBoolean(Boolean myBoolean) {
     this.myBoolean = myBoolean;
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -118,7 +154,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
     }
     return o.toString().replace("\n", "\n    ");
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 }
 

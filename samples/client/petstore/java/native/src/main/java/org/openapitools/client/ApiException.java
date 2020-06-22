@@ -15,7 +15,11 @@ package org.openapitools.client;
 
 import java.net.http.HttpHeaders;
 
+<<<<<<< HEAD
 @javax.annotation.processing.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class ApiException extends Exception {
     private int code = 0;
     private HttpHeaders responseHeaders = null;

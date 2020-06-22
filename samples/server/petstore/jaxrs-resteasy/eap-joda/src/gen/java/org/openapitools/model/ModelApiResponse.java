@@ -9,7 +9,11 @@ import io.swagger.annotations.ApiModelProperty;
 import javax.validation.constraints.*;
 import io.swagger.annotations.*;
 
+<<<<<<< HEAD
 @ApiModel(description="Describes the result of uploading an image resource")@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyEapServerCodegen")
+=======
+@ApiModel(description="Describes the result of uploading an image resource")
+>>>>>>> ooof
 public class ModelApiResponse   {
   
 

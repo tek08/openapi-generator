@@ -3,7 +3,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 buildscript {
     repositories {
         jcenter()
+<<<<<<< HEAD
         maven { url = uri("https://repo1.maven.org/maven2") }
+=======
+        mavenCentral()
+>>>>>>> ooof
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:2.2.0.M3")
@@ -15,7 +19,11 @@ version = "1.0.0"
 
 repositories {
     jcenter()
+<<<<<<< HEAD
     maven { url = uri("https://repo1.maven.org/maven2") }
+=======
+    mavenCentral()
+>>>>>>> ooof
 }
 
 tasks.withType<KotlinCompile> {
@@ -48,7 +56,11 @@ dependencies {
 }
 
 repositories {
+<<<<<<< HEAD
 	maven { url = uri("https://repo1.maven.org/maven2") }
+=======
+	mavenCentral()
+>>>>>>> ooof
 	maven { url = uri("https://repo.spring.io/snapshot") }
 	maven { url = uri("https://repo.spring.io/milestone") }
 }

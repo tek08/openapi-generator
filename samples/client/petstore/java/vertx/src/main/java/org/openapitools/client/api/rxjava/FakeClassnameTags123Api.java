@@ -8,7 +8,11 @@ import rx.Single;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class FakeClassnameTags123Api {
 
 	private final org.openapitools.client.api.FakeClassnameTags123Api delegate;

@@ -13,7 +13,11 @@
 
 package org.openapitools.client;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
 

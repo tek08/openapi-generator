@@ -49,10 +49,13 @@ public class AsciidocDocumentationCodegen extends DefaultCodegen implements Code
     public static final String SPEC_DIR = "specDir";
     public static final String SNIPPET_DIR = "snippetDir";
     public static final String HEADER_ATTRIBUTES_FLAG = "headerAttributes";
+<<<<<<< HEAD
     public static final String USE_INTRODUCTION_FLAG = "useIntroduction";
     public static final String SKIP_EXAMPLES_FLAG = "skipExamples";
     public static final String USE_METHOD_AND_PATH_FLAG = "useMethodAndPath";
     public static final String USE_TABLE_TITLES_FLAG = "useTableTitles";
+=======
+>>>>>>> ooof
 
     /**
      * Lambda emitting an asciidoc "include::filename.adoc[]" if file is found in
@@ -154,10 +157,13 @@ public class AsciidocDocumentationCodegen extends DefaultCodegen implements Code
     protected String artifactId = "openapi-client";
     protected String artifactVersion = "1.0.0";
     protected boolean headerAttributes = true;
+<<<<<<< HEAD
     protected boolean useIntroduction = false;
     protected boolean skipExamples = false;
     protected boolean useMethodAndPath = false;
     protected boolean useTableTitles = false;
+=======
+>>>>>>> ooof
 
     private IncludeMarkupLambda includeSpecMarkupLambda;
     private IncludeMarkupLambda includeSnippetMarkupLambda;
@@ -236,6 +242,7 @@ public class AsciidocDocumentationCodegen extends DefaultCodegen implements Code
         cliOptions.add(CliOption.newBoolean(HEADER_ATTRIBUTES_FLAG,
                 "generation of asciidoc header meta data attributes (set to false to suppress, default: true)",
                 true));
+<<<<<<< HEAD
         cliOptions.add(CliOption.newBoolean(USE_INTRODUCTION_FLAG,
                 "use introduction section, rather than an initial abstract (default: false)",
                 false));
@@ -248,6 +255,8 @@ public class AsciidocDocumentationCodegen extends DefaultCodegen implements Code
         cliOptions.add(CliOption.newBoolean(USE_TABLE_TITLES_FLAG,
                 "Use titles for tables, rather than wrapping tables instead their own section (default: false)",
                 false));
+=======
+>>>>>>> ooof
 
         additionalProperties.put("appName", "OpenAPI Sample description");
         additionalProperties.put("appDescription", "A sample OpenAPI documentation");
@@ -286,6 +295,7 @@ public class AsciidocDocumentationCodegen extends DefaultCodegen implements Code
         this.headerAttributes = headerAttributes;
     }
 
+<<<<<<< HEAD
     public boolean isUseIntroduction() {
         return useIntroduction;
     }
@@ -318,6 +328,8 @@ public class AsciidocDocumentationCodegen extends DefaultCodegen implements Code
         this.useTableTitles = useTableTitles;
     }
 
+=======
+>>>>>>> ooof
     @Override
     public void processOpts() {
         super.processOpts();
@@ -343,6 +355,7 @@ public class AsciidocDocumentationCodegen extends DefaultCodegen implements Code
         this.linkSnippetMarkupLambda = new LinkMarkupLambda(snippetDir);
         additionalProperties.put("snippetlink", this.linkSnippetMarkupLambda);
 
+<<<<<<< HEAD
         processBooleanFlag(HEADER_ATTRIBUTES_FLAG, headerAttributes);
         processBooleanFlag(USE_INTRODUCTION_FLAG, useIntroduction);
         processBooleanFlag(SKIP_EXAMPLES_FLAG, skipExamples);
@@ -355,6 +368,13 @@ public class AsciidocDocumentationCodegen extends DefaultCodegen implements Code
             this.setHeaderAttributes(convertPropertyToBooleanAndWriteBack(flag));
         } else {
             additionalProperties.put(flag, value);
+=======
+
+        if (additionalProperties.containsKey(HEADER_ATTRIBUTES_FLAG)) {
+            this.setHeaderAttributes(convertPropertyToBooleanAndWriteBack(HEADER_ATTRIBUTES_FLAG));
+        } else {
+            additionalProperties.put(HEADER_ATTRIBUTES_FLAG, headerAttributes);
+>>>>>>> ooof
         }
     }
 

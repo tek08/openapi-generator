@@ -18,7 +18,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import java.util.Optional;
 import javax.servlet.ServletContext;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
+=======
+
+>>>>>>> ooof
 @Configuration
 @EnableSwagger2
 public class OpenAPIDocumentationConfig {

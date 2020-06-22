@@ -25,6 +25,7 @@ import org.openapitools.client.infrastructure.ResponseType
 import org.openapitools.client.infrastructure.Success
 import org.openapitools.client.infrastructure.toMultiValue
 
+<<<<<<< HEAD
 class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     companion object {
         @JvmStatic
@@ -32,17 +33,24 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
             System.getProperties().getProperty("org.openapitools.client.baseUrl", "http://petstore.swagger.io:80/v2")
         }
     }
+=======
+class UserApi(basePath: kotlin.String = "http://petstore.swagger.io:80/v2") : ApiClient(basePath) {
+>>>>>>> ooof
 
     /**
     * Create user
     * This can only be done by the logged in user.
     * @param user Created user object 
     * @return void
+<<<<<<< HEAD
     * @throws UnsupportedOperationException If the API returns an informational or redirection response
     * @throws ClientException If the API returns a client error response
     * @throws ServerException If the API returns a server error response
     */
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
+=======
+    */
+>>>>>>> ooof
     fun createUser(user: User) : Unit {
         val localVariableBody: kotlin.Any? = user
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -53,11 +61,16 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
             query = localVariableQuery,
             headers = localVariableHeaders
         )
+<<<<<<< HEAD
         val localVarResponse = request<Any?>(
+=======
+        val response = request<Any?>(
+>>>>>>> ooof
             localVariableConfig,
             localVariableBody
         )
 
+<<<<<<< HEAD
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
@@ -70,6 +83,14 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
                 val localVarError = localVarResponse as ServerError<*>
                 throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
             }
+=======
+        return when (response.responseType) {
+            ResponseType.Success -> Unit
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
+            ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
+>>>>>>> ooof
         }
     }
 
@@ -78,12 +99,17 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     * 
     * @param user List of user object 
     * @return void
+<<<<<<< HEAD
     * @throws UnsupportedOperationException If the API returns an informational or redirection response
     * @throws ClientException If the API returns a client error response
     * @throws ServerException If the API returns a server error response
     */
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
     fun createUsersWithArrayInput(user: kotlin.collections.List<User>) : Unit {
+=======
+    */
+    fun createUsersWithArrayInput(user: kotlin.Array<User>) : Unit {
+>>>>>>> ooof
         val localVariableBody: kotlin.Any? = user
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -93,11 +119,16 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
             query = localVariableQuery,
             headers = localVariableHeaders
         )
+<<<<<<< HEAD
         val localVarResponse = request<Any?>(
+=======
+        val response = request<Any?>(
+>>>>>>> ooof
             localVariableConfig,
             localVariableBody
         )
 
+<<<<<<< HEAD
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
@@ -110,6 +141,14 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
                 val localVarError = localVarResponse as ServerError<*>
                 throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
             }
+=======
+        return when (response.responseType) {
+            ResponseType.Success -> Unit
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
+            ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
+>>>>>>> ooof
         }
     }
 
@@ -118,12 +157,17 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     * 
     * @param user List of user object 
     * @return void
+<<<<<<< HEAD
     * @throws UnsupportedOperationException If the API returns an informational or redirection response
     * @throws ClientException If the API returns a client error response
     * @throws ServerException If the API returns a server error response
     */
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
     fun createUsersWithListInput(user: kotlin.collections.List<User>) : Unit {
+=======
+    */
+    fun createUsersWithListInput(user: kotlin.Array<User>) : Unit {
+>>>>>>> ooof
         val localVariableBody: kotlin.Any? = user
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -133,11 +177,16 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
             query = localVariableQuery,
             headers = localVariableHeaders
         )
+<<<<<<< HEAD
         val localVarResponse = request<Any?>(
+=======
+        val response = request<Any?>(
+>>>>>>> ooof
             localVariableConfig,
             localVariableBody
         )
 
+<<<<<<< HEAD
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
@@ -150,6 +199,14 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
                 val localVarError = localVarResponse as ServerError<*>
                 throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
             }
+=======
+        return when (response.responseType) {
+            ResponseType.Success -> Unit
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
+            ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
+>>>>>>> ooof
         }
     }
 
@@ -158,11 +215,15 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     * This can only be done by the logged in user.
     * @param username The name that needs to be deleted 
     * @return void
+<<<<<<< HEAD
     * @throws UnsupportedOperationException If the API returns an informational or redirection response
     * @throws ClientException If the API returns a client error response
     * @throws ServerException If the API returns a server error response
     */
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
+=======
+    */
+>>>>>>> ooof
     fun deleteUser(username: kotlin.String) : Unit {
         val localVariableBody: kotlin.Any? = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -173,11 +234,16 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
             query = localVariableQuery,
             headers = localVariableHeaders
         )
+<<<<<<< HEAD
         val localVarResponse = request<Any?>(
+=======
+        val response = request<Any?>(
+>>>>>>> ooof
             localVariableConfig,
             localVariableBody
         )
 
+<<<<<<< HEAD
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
@@ -190,6 +256,14 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
                 val localVarError = localVarResponse as ServerError<*>
                 throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
             }
+=======
+        return when (response.responseType) {
+            ResponseType.Success -> Unit
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
+            ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
+>>>>>>> ooof
         }
     }
 
@@ -198,12 +272,17 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     * 
     * @param username The name that needs to be fetched. Use user1 for testing. 
     * @return User
+<<<<<<< HEAD
     * @throws UnsupportedOperationException If the API returns an informational or redirection response
     * @throws ClientException If the API returns a client error response
     * @throws ServerException If the API returns a server error response
     */
     @Suppress("UNCHECKED_CAST")
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
+=======
+    */
+    @Suppress("UNCHECKED_CAST")
+>>>>>>> ooof
     fun getUserByName(username: kotlin.String) : User {
         val localVariableBody: kotlin.Any? = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -214,11 +293,16 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
             query = localVariableQuery,
             headers = localVariableHeaders
         )
+<<<<<<< HEAD
         val localVarResponse = request<User>(
+=======
+        val response = request<User>(
+>>>>>>> ooof
             localVariableConfig,
             localVariableBody
         )
 
+<<<<<<< HEAD
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as User
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
@@ -231,6 +315,14 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
                 val localVarError = localVarResponse as ServerError<*>
                 throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
             }
+=======
+        return when (response.responseType) {
+            ResponseType.Success -> (response as Success<*>).data as User
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
+            ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
+>>>>>>> ooof
         }
     }
 
@@ -240,12 +332,17 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     * @param username The user name for login 
     * @param password The password for login in clear text 
     * @return kotlin.String
+<<<<<<< HEAD
     * @throws UnsupportedOperationException If the API returns an informational or redirection response
     * @throws ClientException If the API returns a client error response
     * @throws ServerException If the API returns a server error response
     */
     @Suppress("UNCHECKED_CAST")
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
+=======
+    */
+    @Suppress("UNCHECKED_CAST")
+>>>>>>> ooof
     fun loginUser(username: kotlin.String, password: kotlin.String) : kotlin.String {
         val localVariableBody: kotlin.Any? = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, List<kotlin.String>>()
@@ -260,11 +357,16 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
             query = localVariableQuery,
             headers = localVariableHeaders
         )
+<<<<<<< HEAD
         val localVarResponse = request<kotlin.String>(
+=======
+        val response = request<kotlin.String>(
+>>>>>>> ooof
             localVariableConfig,
             localVariableBody
         )
 
+<<<<<<< HEAD
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.String
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
@@ -277,6 +379,14 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
                 val localVarError = localVarResponse as ServerError<*>
                 throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
             }
+=======
+        return when (response.responseType) {
+            ResponseType.Success -> (response as Success<*>).data as kotlin.String
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
+            ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
+>>>>>>> ooof
         }
     }
 
@@ -284,11 +394,15 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     * Logs out current logged in user session
     * 
     * @return void
+<<<<<<< HEAD
     * @throws UnsupportedOperationException If the API returns an informational or redirection response
     * @throws ClientException If the API returns a client error response
     * @throws ServerException If the API returns a server error response
     */
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
+=======
+    */
+>>>>>>> ooof
     fun logoutUser() : Unit {
         val localVariableBody: kotlin.Any? = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -299,11 +413,16 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
             query = localVariableQuery,
             headers = localVariableHeaders
         )
+<<<<<<< HEAD
         val localVarResponse = request<Any?>(
+=======
+        val response = request<Any?>(
+>>>>>>> ooof
             localVariableConfig,
             localVariableBody
         )
 
+<<<<<<< HEAD
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
@@ -316,6 +435,14 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
                 val localVarError = localVarResponse as ServerError<*>
                 throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
             }
+=======
+        return when (response.responseType) {
+            ResponseType.Success -> Unit
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
+            ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
+>>>>>>> ooof
         }
     }
 
@@ -325,11 +452,15 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     * @param username name that need to be deleted 
     * @param user Updated user object 
     * @return void
+<<<<<<< HEAD
     * @throws UnsupportedOperationException If the API returns an informational or redirection response
     * @throws ClientException If the API returns a client error response
     * @throws ServerException If the API returns a server error response
     */
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
+=======
+    */
+>>>>>>> ooof
     fun updateUser(username: kotlin.String, user: User) : Unit {
         val localVariableBody: kotlin.Any? = user
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -340,11 +471,16 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
             query = localVariableQuery,
             headers = localVariableHeaders
         )
+<<<<<<< HEAD
         val localVarResponse = request<Any?>(
+=======
+        val response = request<Any?>(
+>>>>>>> ooof
             localVariableConfig,
             localVariableBody
         )
 
+<<<<<<< HEAD
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
@@ -357,6 +493,14 @@ class UserApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
                 val localVarError = localVarResponse as ServerError<*>
                 throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
             }
+=======
+        return when (response.responseType) {
+            ResponseType.Success -> Unit
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
+            ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
+>>>>>>> ooof
         }
     }
 

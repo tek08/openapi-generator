@@ -164,7 +164,10 @@ public abstract class AbstractTypeScriptClientCodegen extends DefaultCodegen imp
         typeMapping.put("UUID", "string");
         typeMapping.put("URI", "string");
         typeMapping.put("Error", "Error");
+<<<<<<< HEAD
         typeMapping.put("AnyType", "any");
+=======
+>>>>>>> ooof
 
         cliOptions.add(new CliOption(CodegenConstants.ENUM_NAME_SUFFIX, CodegenConstants.ENUM_NAME_SUFFIX_DESC).defaultValue(this.enumSuffix));
         cliOptions.add(new CliOption(CodegenConstants.ENUM_PROPERTY_NAMING, CodegenConstants.ENUM_PROPERTY_NAMING_DESC).defaultValue(this.enumPropertyNaming.name()));
@@ -390,7 +393,11 @@ public abstract class AbstractTypeScriptClientCodegen extends DefaultCodegen imp
             inner = mp1.getItems();
             return this.getSchemaType(p) + "<" + this.getParameterDataType(parameter, inner) + ">";
         } else if (ModelUtils.isMapSchema(p)) {
+<<<<<<< HEAD
             inner = getAdditionalProperties(p);
+=======
+            inner = ModelUtils.getAdditionalProperties(p);
+>>>>>>> ooof
             return "{ [key: string]: " + this.getParameterDataType(parameter, inner) + "; }";
         } else if (ModelUtils.isStringSchema(p)) {
             // Handle string enums
@@ -809,20 +816,45 @@ public abstract class AbstractTypeScriptClientCodegen extends DefaultCodegen imp
 
     @Override
     public String toAnyOfName(List<String> names, ComposedSchema composedSchema) {
+<<<<<<< HEAD
         List<String> types = getTypesFromSchemas(composedSchema.getAnyOf());
 
+=======
+        List<String> types = composedSchema.getAnyOf().stream().map(schema -> {
+            String schemaType = getSchemaType(schema);
+            if (ModelUtils.isArraySchema(schema)) {
+                ArraySchema ap = (ArraySchema) schema;
+                Schema inner = ap.getItems();
+                schemaType = schemaType + "<" + getSchemaType(inner) + ">";
+            }
+            return schemaType;
+        }).distinct().collect(Collectors.toList());
+>>>>>>> ooof
         return String.join(" | ", types);
     }
 
     @Override
     public String toOneOfName(List<String> names, ComposedSchema composedSchema) {
+<<<<<<< HEAD
         List<String> types = getTypesFromSchemas(composedSchema.getOneOf());
 
+=======
+        List<String> types = composedSchema.getOneOf().stream().map(schema -> {
+            String schemaType = getSchemaType(schema);
+            if (ModelUtils.isArraySchema(schema)) {
+                ArraySchema ap = (ArraySchema) schema;
+                Schema inner = ap.getItems();
+                schemaType = schemaType + "<" + getSchemaType(inner) + ">";
+            }
+            return schemaType;
+        }).distinct().collect(Collectors.toList());
+>>>>>>> ooof
         return String.join(" | ", types);
     }
 
     @Override
     public String toAllOfName(List<String> names, ComposedSchema composedSchema) {
+<<<<<<< HEAD
         List<String> types = getTypesFromSchemas(composedSchema.getAllOf());
 
         return String.join(" & ", types);
@@ -841,6 +873,9 @@ public abstract class AbstractTypeScriptClientCodegen extends DefaultCodegen imp
             : schemas;
 
         return filteredSchemas.stream().map(schema -> {
+=======
+        List<String> types = composedSchema.getAllOf().stream().map(schema -> {
+>>>>>>> ooof
             String schemaType = getSchemaType(schema);
             if (ModelUtils.isArraySchema(schema)) {
                 ArraySchema ap = (ArraySchema) schema;
@@ -849,5 +884,9 @@ public abstract class AbstractTypeScriptClientCodegen extends DefaultCodegen imp
             }
             return schemaType;
         }).distinct().collect(Collectors.toList());
+<<<<<<< HEAD
+=======
+        return String.join(" & ", types);
+>>>>>>> ooof
     }
 }

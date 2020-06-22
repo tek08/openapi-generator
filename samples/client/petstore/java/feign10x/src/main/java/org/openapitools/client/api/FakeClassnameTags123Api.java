@@ -11,7 +11,11 @@ import java.util.List;
 import java.util.Map;
 import feign.*;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public interface FakeClassnameTags123Api extends ApiClient.Api {
 
 

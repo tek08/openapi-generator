@@ -20,9 +20,13 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+=======
+import java.util.List;
+>>>>>>> ooof
 import org.openapitools.model.Category;
 import org.openapitools.model.Tag;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -41,7 +45,11 @@ import javax.validation.Valid;
   Pet.JSON_PROPERTY_TAGS,
   Pet.JSON_PROPERTY_STATUS
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen")
+=======
+
+>>>>>>> ooof
 public class Pet  implements Serializable {
   public static final String JSON_PROPERTY_ID = "id";
   @JsonProperty(JSON_PROPERTY_ID)
@@ -57,7 +65,11 @@ public class Pet  implements Serializable {
 
   public static final String JSON_PROPERTY_PHOTO_URLS = "photoUrls";
   @JsonProperty(JSON_PROPERTY_PHOTO_URLS)
+<<<<<<< HEAD
   private Set<String> photoUrls = new LinkedHashSet<>();
+=======
+  private List<String> photoUrls = new ArrayList<>();
+>>>>>>> ooof
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   @JsonProperty(JSON_PROPERTY_TAGS)
@@ -160,7 +172,11 @@ public class Pet  implements Serializable {
     this.name = name;
   }
 
+<<<<<<< HEAD
   public Pet photoUrls(Set<String> photoUrls) {
+=======
+  public Pet photoUrls(List<String> photoUrls) {
+>>>>>>> ooof
     this.photoUrls = photoUrls;
     return this;
   }
@@ -177,11 +193,19 @@ public class Pet  implements Serializable {
   @JsonProperty("photoUrls")
   @ApiModelProperty(required = true, value = "")
   @NotNull 
+<<<<<<< HEAD
   public Set<String> getPhotoUrls() {
     return photoUrls;
   }
 
   public void setPhotoUrls(Set<String> photoUrls) {
+=======
+  public List<String> getPhotoUrls() {
+    return photoUrls;
+  }
+
+  public void setPhotoUrls(List<String> photoUrls) {
+>>>>>>> ooof
     this.photoUrls = photoUrls;
   }
 

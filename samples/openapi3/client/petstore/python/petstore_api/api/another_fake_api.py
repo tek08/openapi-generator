@@ -42,6 +42,7 @@ class AnotherFakeApi(object):
         To test special tags and operation ID starting with number  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+<<<<<<< HEAD
 
         >>> thread = api.call_123_test_special_tags(client, async_req=True)
         >>> result = thread.get()
@@ -54,14 +55,30 @@ class AnotherFakeApi(object):
                                  be returned without reading/decoding response
                                  data. Default is True.
         :type _preload_content: bool, optional
+=======
+        >>> thread = api.call_123_test_special_tags(client, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param Client client: client model (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+>>>>>>> ooof
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
+<<<<<<< HEAD
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
         :rtype: Client
+=======
+        :return: Client
+                 If the method is called asynchronously,
+                 returns the request thread.
+>>>>>>> ooof
         """
         kwargs['_return_http_data_only'] = True
         return self.call_123_test_special_tags_with_http_info(client, **kwargs)  # noqa: E501
@@ -72,6 +89,7 @@ class AnotherFakeApi(object):
         To test special tags and operation ID starting with number  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
+<<<<<<< HEAD
 
         >>> thread = api.call_123_test_special_tags_with_http_info(client, async_req=True)
         >>> result = thread.get()
@@ -87,10 +105,23 @@ class AnotherFakeApi(object):
                                  be returned without reading/decoding response
                                  data. Default is True.
         :type _preload_content: bool, optional
+=======
+        >>> thread = api.call_123_test_special_tags_with_http_info(client, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param Client client: client model (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+>>>>>>> ooof
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
                                  (connection, read) timeouts.
+<<<<<<< HEAD
         :param _request_auth: set to override the auth_settings for an a single
                               request; this effectively ignores the authentication
                               in the spec for a single request.
@@ -99,6 +130,11 @@ class AnotherFakeApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         :rtype: tuple(Client, status_code(int), headers(HTTPHeaderDict))
+=======
+        :return: tuple(Client, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+>>>>>>> ooof
         """
 
         local_var_params = locals()
@@ -111,8 +147,12 @@ class AnotherFakeApi(object):
                 'async_req',
                 '_return_http_data_only',
                 '_preload_content',
+<<<<<<< HEAD
                 '_request_timeout',
                 '_request_auth'
+=======
+                '_request_timeout'
+>>>>>>> ooof
             ]
         )
 
@@ -168,5 +208,9 @@ class AnotherFakeApi(object):
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=local_var_params.get('_preload_content', True),
             _request_timeout=local_var_params.get('_request_timeout'),
+<<<<<<< HEAD
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
+=======
+            collection_formats=collection_formats)
+>>>>>>> ooof

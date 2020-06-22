@@ -26,6 +26,18 @@ paths:
       requestBody:
         $ref: '#/components/requestBodies/Pet'
       responses:
+<<<<<<< HEAD
+=======
+        "200":
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Pet'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pet'
+          description: successful operation
+>>>>>>> ooof
         "405":
           description: Invalid input
       security:
@@ -41,6 +53,18 @@ paths:
       requestBody:
         $ref: '#/components/requestBodies/Pet'
       responses:
+<<<<<<< HEAD
+=======
+        "200":
+          content:
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Pet'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pet'
+          description: successful operation
+>>>>>>> ooof
         "400":
           description: Invalid ID supplied
         "404":

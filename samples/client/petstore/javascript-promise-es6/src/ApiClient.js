@@ -43,7 +43,10 @@ class ApiClient {
         this.authentications = {
             'api_key': {type: 'apiKey', 'in': 'header', name: 'api_key'},
             'api_key_query': {type: 'apiKey', 'in': 'query', name: 'api_key_query'},
+<<<<<<< HEAD
             'bearer_test': {type: 'bearer'}, // JWT
+=======
+>>>>>>> ooof
             'http_basic_test': {type: 'basic'},
             'petstore_auth': {type: 'oauth2'}
         }
@@ -559,6 +562,7 @@ class ApiClient {
     hostSettings() {
         return [
             {
+<<<<<<< HEAD
               'url': "http://{server}.swagger.io:{port}/v2",
               'description': "petstore server",
               'variables': {
@@ -594,6 +598,10 @@ class ApiClient {
                     ]
                   }
                 }
+=======
+              'url': "http://petstore.swagger.io:80/v2",
+              'description': "No description provided",
+>>>>>>> ooof
             }
       ];
     }

@@ -177,8 +177,12 @@
             "items" : {
               "type" : "string"
             },
+<<<<<<< HEAD
             "type" : "array",
             "uniqueItems" : true
+=======
+            "type" : "array"
+>>>>>>> ooof
           },
           "style" : "form"
         } ],
@@ -190,8 +194,12 @@
                   "items" : {
                     "$ref" : "#/components/schemas/Pet"
                   },
+<<<<<<< HEAD
                   "type" : "array",
                   "uniqueItems" : true
+=======
+                  "type" : "array"
+>>>>>>> ooof
                 }
               },
               "application/json" : {
@@ -199,8 +207,12 @@
                   "items" : {
                     "$ref" : "#/components/schemas/Pet"
                   },
+<<<<<<< HEAD
                   "type" : "array",
                   "uniqueItems" : true
+=======
+                  "type" : "array"
+>>>>>>> ooof
                 }
               }
             },
@@ -1800,7 +1812,10 @@
               "type" : "string"
             },
             "type" : "array",
+<<<<<<< HEAD
             "uniqueItems" : true,
+=======
+>>>>>>> ooof
             "xml" : {
               "name" : "photoUrl",
               "wrapped" : true

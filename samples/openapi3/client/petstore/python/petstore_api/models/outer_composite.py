@@ -78,7 +78,11 @@ class OuterComposite(object):
 
 
         :param my_number: The my_number of this OuterComposite.  # noqa: E501
+<<<<<<< HEAD
         :type my_number: float
+=======
+        :type: float
+>>>>>>> ooof
         """
 
         self._my_number = my_number
@@ -99,7 +103,11 @@ class OuterComposite(object):
 
 
         :param my_string: The my_string of this OuterComposite.  # noqa: E501
+<<<<<<< HEAD
         :type my_string: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._my_string = my_string
@@ -120,7 +128,11 @@ class OuterComposite(object):
 
 
         :param my_boolean: The my_boolean of this OuterComposite.  # noqa: E501
+<<<<<<< HEAD
         :type my_boolean: bool
+=======
+        :type: bool
+>>>>>>> ooof
         """
 
         self._my_boolean = my_boolean

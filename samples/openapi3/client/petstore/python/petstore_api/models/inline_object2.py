@@ -75,7 +75,11 @@ class InlineObject2(object):
         Form parameter enum test (string array)  # noqa: E501
 
         :param enum_form_string_array: The enum_form_string_array of this InlineObject2.  # noqa: E501
+<<<<<<< HEAD
         :type enum_form_string_array: list[str]
+=======
+        :type: list[str]
+>>>>>>> ooof
         """
         allowed_values = [">", "$"]  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
@@ -106,7 +110,11 @@ class InlineObject2(object):
         Form parameter enum test (string)  # noqa: E501
 
         :param enum_form_string: The enum_form_string of this InlineObject2.  # noqa: E501
+<<<<<<< HEAD
         :type enum_form_string: str
+=======
+        :type: str
+>>>>>>> ooof
         """
         allowed_values = ["_abc", "-efg", "(xyz)"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and enum_form_string not in allowed_values:  # noqa: E501

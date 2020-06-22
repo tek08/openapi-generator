@@ -16,17 +16,31 @@ import org.openapitools.client.models.DogAllOf
 
 import kotlinx.serialization.*
 import kotlinx.serialization.internal.CommonEnumSerializer
+<<<<<<< HEAD
 
 /**
  * 
  * @param className 
  * @param color 
+=======
+/**
+ * 
+>>>>>>> ooof
  * @param breed 
  */
 @Serializable
 data class Dog (
+<<<<<<< HEAD
     @SerialName(value = "className") @Required override val className: kotlin.String,
     @SerialName(value = "color") override val color: kotlin.String? = null,
     @SerialName(value = "breed") val breed: kotlin.String? = null
 ) : Animal
+=======
+    @SerialName(value = "className") @Required val className: kotlin.String,
+    @SerialName(value = "breed") val breed: kotlin.String? = null,
+    @SerialName(value = "color") val color: kotlin.String? = null
+) 
+
+
+>>>>>>> ooof
 

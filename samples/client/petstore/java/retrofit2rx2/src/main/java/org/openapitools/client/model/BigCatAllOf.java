@@ -27,7 +27,11 @@ import java.io.IOException;
 /**
  * BigCatAllOf
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class BigCatAllOf {
   /**
    * Gets or Sets kind

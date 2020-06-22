@@ -33,7 +33,11 @@ import org.hibernate.validator.constraints.*;
 @JsonPropertyOrder({
   ModelReturn.JSON_PROPERTY_RETURN
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class ModelReturn {
   public static final String JSON_PROPERTY_RETURN = "return";
   private Integer _return;

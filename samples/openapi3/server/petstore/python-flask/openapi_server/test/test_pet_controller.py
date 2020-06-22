@@ -41,6 +41,10 @@ class TestPetController(BaseTestCase):
   "status" : "available"
 }
         headers = { 
+<<<<<<< HEAD
+=======
+            'Accept': 'application/json',
+>>>>>>> ooof
             'Content-Type': 'application/json',
             'Authorization': 'Bearer special-key',
         }
@@ -145,6 +149,10 @@ class TestPetController(BaseTestCase):
   "status" : "available"
 }
         headers = { 
+<<<<<<< HEAD
+=======
+            'Accept': 'application/json',
+>>>>>>> ooof
             'Content-Type': 'application/json',
             'Authorization': 'Bearer special-key',
         }

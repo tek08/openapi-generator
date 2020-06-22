@@ -91,8 +91,11 @@ Class | Method | HTTP request | Description
 
  - [ApiResponse](ApiResponse.md)
  - [Category](Category.md)
+<<<<<<< HEAD
  - [InlineObject](InlineObject.md)
  - [InlineObject1](InlineObject1.md)
+=======
+>>>>>>> ooof
  - [Order](Order.md)
  - [Pet](Pet.md)
  - [Tag](Tag.md)
@@ -108,12 +111,15 @@ Authentication schemes defined for the API:
 - **API key parameter name**: api_key
 - **Location**: HTTP header
 
+<<<<<<< HEAD
 ### auth_cookie
 
 - **Type**: API key
 - **API key parameter name**: AUTH_KEY
 - **Location**: 
 
+=======
+>>>>>>> ooof
 
 ## Author
 

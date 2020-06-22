@@ -28,8 +28,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+<<<<<<< HEAD
 import java.util.Set;
 
+=======
+>>>>>>> ooof
 import static io.restassured.config.ObjectMapperConfig.objectMapperConfig;
 import static io.restassured.config.RestAssuredConfig.config;
 import static org.openapitools.client.GsonObjectMapper.gson;
@@ -127,7 +130,11 @@ public class PetApiTest {
      */
     @Test
     public void shouldSee200AfterFindPetsByTags() {
+<<<<<<< HEAD
         Set<String> tags = null;
+=======
+        List<String> tags = null;
+>>>>>>> ooof
         api.findPetsByTags()
                 .tagsQuery(tags).execute(r -> r.prettyPeek());
         // TODO: test validations
@@ -138,7 +145,11 @@ public class PetApiTest {
      */
     @Test
     public void shouldSee400AfterFindPetsByTags() {
+<<<<<<< HEAD
         Set<String> tags = null;
+=======
+        List<String> tags = null;
+>>>>>>> ooof
         api.findPetsByTags()
                 .tagsQuery(tags).execute(r -> r.prettyPeek());
         // TODO: test validations

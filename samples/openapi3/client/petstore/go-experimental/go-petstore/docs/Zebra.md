@@ -5,7 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | Pointer to **string** |  | [optional] 
+<<<<<<< HEAD
 **ClassName** | **string** |  | 
+=======
+**ClassName** | Pointer to **string** |  | 
+>>>>>>> ooof
 
 ## Methods
 

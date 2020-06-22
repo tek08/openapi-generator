@@ -22,9 +22,13 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+=======
+import java.util.List;
+>>>>>>> ooof
 import org.openapitools.client.model.Category;
 import org.openapitools.client.model.Tag;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -42,7 +46,11 @@ import javax.xml.bind.annotation.*;
   Pet.JSON_PROPERTY_TAGS,
   Pet.JSON_PROPERTY_STATUS
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 @XmlRootElement(name = "Pet")
 @XmlAccessorType(XmlAccessType.FIELD)
 @JacksonXmlRootElement(localName = "Pet")
@@ -65,7 +73,11 @@ public class Pet {
   // items.example= items.type=String
   @XmlElement(name = "photoUrls")
   @XmlElementWrapper(name = "photoUrl")
+<<<<<<< HEAD
   private Set<String> photoUrls = new LinkedHashSet<String>();
+=======
+  private List<String> photoUrls = new ArrayList<String>();
+>>>>>>> ooof
 
   public static final String JSON_PROPERTY_TAGS = "tags";
   // Is a container wrapped=true
@@ -194,7 +206,11 @@ public class Pet {
   }
 
 
+<<<<<<< HEAD
   public Pet photoUrls(Set<String> photoUrls) {
+=======
+  public Pet photoUrls(List<String> photoUrls) {
+>>>>>>> ooof
     
     this.photoUrls = photoUrls;
     return this;
@@ -215,12 +231,20 @@ public class Pet {
   // items.xmlName=
   @JacksonXmlElementWrapper(useWrapping = true, localName = "photoUrls")
 
+<<<<<<< HEAD
   public Set<String> getPhotoUrls() {
+=======
+  public List<String> getPhotoUrls() {
+>>>>>>> ooof
     return photoUrls;
   }
 
 
+<<<<<<< HEAD
   public void setPhotoUrls(Set<String> photoUrls) {
+=======
+  public void setPhotoUrls(List<String> photoUrls) {
+>>>>>>> ooof
     this.photoUrls = photoUrls;
   }
 

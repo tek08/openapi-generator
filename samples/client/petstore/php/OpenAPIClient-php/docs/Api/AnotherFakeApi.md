@@ -10,7 +10,11 @@ Method | HTTP request | Description
 
 ## call123TestSpecialTags
 
+<<<<<<< HEAD
 > \OpenAPI\Client\Model\Client call123TestSpecialTags($client)
+=======
+> \OpenAPI\Client\Model\Client call123TestSpecialTags($body)
+>>>>>>> ooof
 
 To test special tags
 
@@ -28,10 +32,17 @@ $apiInstance = new OpenAPI\Client\Api\AnotherFakeApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
+<<<<<<< HEAD
 $client = new \OpenAPI\Client\Model\Client(); // \OpenAPI\Client\Model\Client | client model
 
 try {
     $result = $apiInstance->call123TestSpecialTags($client);
+=======
+$body = new \OpenAPI\Client\Model\Client(); // \OpenAPI\Client\Model\Client | client model
+
+try {
+    $result = $apiInstance->call123TestSpecialTags($body);
+>>>>>>> ooof
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AnotherFakeApi->call123TestSpecialTags: ', $e->getMessage(), PHP_EOL;
@@ -44,7 +55,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **client** | [**\OpenAPI\Client\Model\Client**](../Model/Client.md)| client model |
+=======
+ **body** | [**\OpenAPI\Client\Model\Client**](../Model/Client.md)| client model |
+>>>>>>> ooof
 
 ### Return type
 

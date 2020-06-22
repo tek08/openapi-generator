@@ -16,8 +16,12 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <version.framework>0.1.1</version.framework>
+<<<<<<< HEAD
         <version.jackson>2.9.10</version.jackson>
         <version.jackson.databind>2.9.10.4</version.jackson.databind>
+=======
+        <version.jackson>2.8.2</version.jackson>
+>>>>>>> ooof
         <version.slf4j>1.7.21</version.slf4j>
         <version.jose4j>0.5.2</version.jose4j>
         <version.antlr4>4.5.3</version.antlr4>
@@ -81,7 +85,11 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
+<<<<<<< HEAD
             <version>${version.jackson.databind}</version>
+=======
+            <version>${version.jackson}</version>
+>>>>>>> ooof
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -108,12 +116,15 @@
             <artifactId>swagger-annotations</artifactId>
             <version>${version.swagger}</version>
         </dependency>
+<<<<<<< HEAD
         <!-- @Nullable annotation -->
         <dependency>
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>jsr305</artifactId>
             <version>3.0.2</version>
         </dependency>
+=======
+>>>>>>> ooof
 
         <!-- Test Dependencies -->
         <dependency>

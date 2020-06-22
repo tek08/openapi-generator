@@ -235,14 +235,27 @@ public abstract class AbstractEiffelCodegen extends DefaultCodegen implements Co
 
         char firstChar = parameter.paramName.charAt(0);
 
+<<<<<<< HEAD
         if (Character.isUpperCase(firstChar)) {
             // First char is already uppercase, just use paramName.
+=======
+        // TODO: 5.0: Remove the camelCased vendorExtension below and ensure templates use the newer property naming.
+        once(LOGGER).warn("4.3.0 has deprecated the use of vendor extensions which don't follow lower-kebab casing standards with x- prefix.");
+
+        if (Character.isUpperCase(firstChar)) {
+            // First char is already uppercase, just use paramName.
+            parameter.vendorExtensions.put("x-exportParamName", parameter.paramName);  // TODO: 5.0 Remove
+>>>>>>> ooof
             parameter.vendorExtensions.put("x-export-param-name", parameter.paramName);
         }
 
         // It's a lowercase first char, let's convert it to uppercase
         StringBuilder sb = new StringBuilder(parameter.paramName);
         sb.setCharAt(0, Character.toUpperCase(firstChar));
+<<<<<<< HEAD
+=======
+        parameter.vendorExtensions.put("x-exportParamName", sb.toString());  // TODO: 5.0 Remove
+>>>>>>> ooof
         parameter.vendorExtensions.put("x-export-param-name", sb.toString());
     }
 
@@ -276,7 +289,11 @@ public abstract class AbstractEiffelCodegen extends DefaultCodegen implements Co
             Schema inner = ap.getItems();
             return "LIST [" + getTypeDeclaration(inner) + "]";
         } else if (ModelUtils.isMapSchema(p)) {
+<<<<<<< HEAD
             Schema inner = getAdditionalProperties(p);
+=======
+            Schema inner = ModelUtils.getAdditionalProperties(p);
+>>>>>>> ooof
 
             return getSchemaType(p) + "[" + getTypeDeclaration(inner) + "]";
         }
@@ -544,7 +561,11 @@ public abstract class AbstractEiffelCodegen extends DefaultCodegen implements Co
     @Override
     public String toInstantiationType(Schema p) {
         if (ModelUtils.isMapSchema(p)) {
+<<<<<<< HEAD
             Schema additionalProperties2 = getAdditionalProperties(p);
+=======
+            Schema additionalProperties2 = ModelUtils.getAdditionalProperties(p);
+>>>>>>> ooof
             String type = additionalProperties2.getType();
             if (null == type) {
                 LOGGER.error("No Type defined for Additional Schema " + additionalProperties2 + "\n" //

@@ -1,7 +1,10 @@
 package org.openapitools.model;
 
 import org.openapitools.model.Animal;
+<<<<<<< HEAD
 import org.openapitools.model.CatAllOf;
+=======
+>>>>>>> ooof
 import javax.validation.constraints.*;
 import javax.validation.Valid;
 
@@ -16,7 +19,10 @@ import javax.xml.bind.annotation.XmlEnumValue;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 public class Cat extends Animal {
   
   @ApiModelProperty(value = "")

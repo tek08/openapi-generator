@@ -2,7 +2,11 @@
 /**
  * AdditionalPropertiesAnyType
  *
+<<<<<<< HEAD
  * PHP version 7.2
+=======
+ * PHP version 7.1
+>>>>>>> ooof
  *
  * @category Class
  * @package  OpenAPI\Client

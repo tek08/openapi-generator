@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 public struct FileSchemaTestClass: Codable { 
 
+=======
+public struct FileSchemaTestClass: Codable {
+>>>>>>> ooof
 
     public var file: File?
     public var files: [File]?

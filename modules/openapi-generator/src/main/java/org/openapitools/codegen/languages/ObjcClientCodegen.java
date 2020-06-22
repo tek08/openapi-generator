@@ -389,7 +389,11 @@ public class ObjcClientCodegen extends DefaultCodegen implements CodegenConfig {
                 return getSchemaType(p) + "<" + innerTypeDeclaration + ">*";
             }
         } else if (ModelUtils.isMapSchema(p)) {
+<<<<<<< HEAD
             Schema inner = getAdditionalProperties(p);
+=======
+            Schema inner = ModelUtils.getAdditionalProperties(p);
+>>>>>>> ooof
 
             String innerTypeDeclaration = getTypeDeclaration(inner);
 
@@ -654,11 +658,21 @@ public class ObjcClientCodegen extends DefaultCodegen implements CodegenConfig {
     public Map<String, Object> postProcessOperationsWithModels(Map<String, Object> objs, List<Object> allModels) {
         Map<String, Object> operations = (Map<String, Object>) objs.get("operations");
 
+<<<<<<< HEAD
+=======
+        // TODO: 5.0: Remove the camelCased vendorExtension below and ensure templates use the newer property naming.
+        once(LOGGER).warn("4.3.0 has deprecated the use of vendor extensions which don't follow lower-kebab casing standards with x- prefix.");
+
+>>>>>>> ooof
         if (operations != null) {
             List<CodegenOperation> ops = (List<CodegenOperation>) operations.get("operation");
             for (CodegenOperation operation : ops) {
                 if (!operation.allParams.isEmpty()) {
                     String firstParamName = operation.allParams.get(0).paramName;
+<<<<<<< HEAD
+=======
+                    operation.vendorExtensions.put("firstParamAltName", camelize(firstParamName)); // TODO: 5.0 Remove
+>>>>>>> ooof
                     operation.vendorExtensions.put("x-first-param-alt-name", camelize(firstParamName));
                 }
             }
@@ -669,6 +683,14 @@ public class ObjcClientCodegen extends DefaultCodegen implements CodegenConfig {
     @Override
     public void postProcessModelProperty(CodegenModel model, CodegenProperty schema) {
         super.postProcessModelProperty(model, schema);
+<<<<<<< HEAD
+=======
+
+        // TODO: 5.0: Remove the camelCased vendorExtension below and ensure templates use the newer property naming.
+        once(LOGGER).warn("4.3.0 has deprecated the use of vendor extensions which don't follow lower-kebab casing standards with x- prefix.");
+
+        schema.vendorExtensions.put("x-uppercaseName", camelize(schema.name)); // TODO: 5.0 Remove
+>>>>>>> ooof
         schema.vendorExtensions.put("x-uppercase-name", camelize(schema.name));
     }
 

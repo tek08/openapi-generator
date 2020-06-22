@@ -5,6 +5,7 @@ use PHPUnit\Framework\TestCase;
 
 class DebugTest extends TestCase
 {
+<<<<<<< HEAD
 
     public static function setUpBeforeClass(): void
     {
@@ -15,6 +16,8 @@ class DebugTest extends TestCase
         (new Api\PetApi())->addPetWithHttpInfo($newPet);
     }
 
+=======
+>>>>>>> ooof
     public function testEnableDebugOutput()
     {
         $this->expectOutputRegex('#GET /v2/pet/1 HTTP/1.1#');

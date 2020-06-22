@@ -18,7 +18,11 @@ import io.vertx.core.MultiMap;
 
 import java.util.List;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class ApiKeyAuth implements Authentication {
   private final String location;
   private final String paramName;

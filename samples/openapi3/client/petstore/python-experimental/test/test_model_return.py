@@ -11,11 +11,18 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
 import petstore_api
 from petstore_api.model.model_return import ModelReturn
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestModelReturn(unittest.TestCase):
@@ -30,7 +37,11 @@ class TestModelReturn(unittest.TestCase):
     def testModelReturn(self):
         """Test ModelReturn"""
         # FIXME: construct object with mandatory attributes with example values
+<<<<<<< HEAD
         # model = ModelReturn()  # noqa: E501
+=======
+        # model = petstore_api.ModelReturn()  # noqa: E501
+>>>>>>> ooof
         pass
 
 

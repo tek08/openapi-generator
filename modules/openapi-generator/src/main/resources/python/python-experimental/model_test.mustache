@@ -3,6 +3,7 @@
 {{>partial_header}}
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
@@ -13,6 +14,14 @@ import {{packageName}}
 {{{.}}}
 {{/imports}}
 from {{modelPackage}}.{{classFilename}} import {{unescapedDescription}}
+=======
+
+import unittest
+
+{{#models}}
+{{#model}}
+import {{packageName}}
+>>>>>>> ooof
 
 
 class Test{{unescapedDescription}}(unittest.TestCase):
@@ -27,7 +36,11 @@ class Test{{unescapedDescription}}(unittest.TestCase):
     def test{{unescapedDescription}}(self):
         """Test {{unescapedDescription}}"""
         # FIXME: construct object with mandatory attributes with example values
+<<<<<<< HEAD
         # model = {{unescapedDescription}}()  # noqa: E501
+=======
+        # model = {{packageName}}.{{unescapedDescription}}()  # noqa: E501
+>>>>>>> ooof
         pass
 
 {{/model}}

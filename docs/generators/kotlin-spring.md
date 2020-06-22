@@ -33,7 +33,10 @@ sidebar_label: kotlin-spring
 |swaggerAnnotations|generate swagger annotations to go alongside controllers and models| |false|
 |title|server title name or client service name| |OpenAPI Kotlin Spring|
 |useBeanValidation|Use BeanValidation API annotations to validate data types| |true|
+<<<<<<< HEAD
 |useTags|Whether to use tags for creating interface and controller class names| |false|
+=======
+>>>>>>> ooof
 
 ## IMPORT MAPPING
 
@@ -55,9 +58,15 @@ sidebar_label: kotlin-spring
 
 | Type/Alias | Instantiated By |
 | ---------- | --------------- |
+<<<<<<< HEAD
 |array|kotlin.Array|
 |list|kotlin.collections.ArrayList|
 |map|kotlin.collections.HashMap|
+=======
+|array|kotlin.arrayOf|
+|list|kotlin.arrayOf|
+|map|kotlin.mapOf|
+>>>>>>> ooof
 
 
 ## LANGUAGE PRIMITIVES

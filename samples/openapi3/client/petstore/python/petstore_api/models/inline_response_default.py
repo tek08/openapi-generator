@@ -68,7 +68,11 @@ class InlineResponseDefault(object):
 
 
         :param string: The string of this InlineResponseDefault.  # noqa: E501
+<<<<<<< HEAD
         :type string: Foo
+=======
+        :type: Foo
+>>>>>>> ooof
         """
 
         self._string = string

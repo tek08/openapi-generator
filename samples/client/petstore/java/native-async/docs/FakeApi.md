@@ -23,7 +23,11 @@ Method | HTTP request | Description
 
 ## createXmlItem
 
+<<<<<<< HEAD
 > CompletableFuture<Void> createXmlItem(xmlItem)
+=======
+> createXmlItem(xmlItem)
+>>>>>>> ooof
 
 creates an XmlItem
 
@@ -38,7 +42,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.FakeApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -48,8 +55,12 @@ public class Example {
         FakeApi apiInstance = new FakeApi(defaultClient);
         XmlItem xmlItem = new XmlItem(); // XmlItem | XmlItem Body
         try {
+<<<<<<< HEAD
             CompletableFuture<Void> result = apiInstance.createXmlItem(xmlItem);
 
+=======
+            apiInstance.createXmlItem(xmlItem);
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#createXmlItem");
             System.err.println("Status code: " + e.getCode());
@@ -70,8 +81,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
 CompletableFuture<void> (empty response body)
+=======
+null (empty response body)
+>>>>>>> ooof
 
 ### Authorization
 
@@ -90,7 +105,11 @@ No authorization required
 
 ## fakeOuterBooleanSerialize
 
+<<<<<<< HEAD
 > CompletableFuture<Boolean> fakeOuterBooleanSerialize(body)
+=======
+> Boolean fakeOuterBooleanSerialize(body)
+>>>>>>> ooof
 
 
 
@@ -105,7 +124,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.FakeApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -115,8 +137,12 @@ public class Example {
         FakeApi apiInstance = new FakeApi(defaultClient);
         Boolean body = true; // Boolean | Input boolean as post body
         try {
+<<<<<<< HEAD
             CompletableFuture<Boolean> result = apiInstance.fakeOuterBooleanSerialize(body);
 
+=======
+            Boolean result = apiInstance.fakeOuterBooleanSerialize(body);
+>>>>>>> ooof
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#fakeOuterBooleanSerialize");
@@ -138,8 +164,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 CompletableFuture<**Boolean**>
 
+=======
+**Boolean**
+>>>>>>> ooof
 
 ### Authorization
 
@@ -158,7 +188,11 @@ No authorization required
 
 ## fakeOuterCompositeSerialize
 
+<<<<<<< HEAD
 > CompletableFuture<OuterComposite> fakeOuterCompositeSerialize(body)
+=======
+> OuterComposite fakeOuterCompositeSerialize(body)
+>>>>>>> ooof
 
 
 
@@ -173,7 +207,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.FakeApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -183,8 +220,12 @@ public class Example {
         FakeApi apiInstance = new FakeApi(defaultClient);
         OuterComposite body = new OuterComposite(); // OuterComposite | Input composite as post body
         try {
+<<<<<<< HEAD
             CompletableFuture<OuterComposite> result = apiInstance.fakeOuterCompositeSerialize(body);
 
+=======
+            OuterComposite result = apiInstance.fakeOuterCompositeSerialize(body);
+>>>>>>> ooof
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#fakeOuterCompositeSerialize");
@@ -206,8 +247,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 CompletableFuture<[**OuterComposite**](OuterComposite.md)>
 
+=======
+[**OuterComposite**](OuterComposite.md)
+>>>>>>> ooof
 
 ### Authorization
 
@@ -226,7 +271,11 @@ No authorization required
 
 ## fakeOuterNumberSerialize
 
+<<<<<<< HEAD
 > CompletableFuture<BigDecimal> fakeOuterNumberSerialize(body)
+=======
+> BigDecimal fakeOuterNumberSerialize(body)
+>>>>>>> ooof
 
 
 
@@ -241,7 +290,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.FakeApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -251,8 +303,12 @@ public class Example {
         FakeApi apiInstance = new FakeApi(defaultClient);
         BigDecimal body = new BigDecimal(); // BigDecimal | Input number as post body
         try {
+<<<<<<< HEAD
             CompletableFuture<BigDecimal> result = apiInstance.fakeOuterNumberSerialize(body);
 
+=======
+            BigDecimal result = apiInstance.fakeOuterNumberSerialize(body);
+>>>>>>> ooof
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#fakeOuterNumberSerialize");
@@ -274,8 +330,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 CompletableFuture<[**BigDecimal**](BigDecimal.md)>
 
+=======
+[**BigDecimal**](BigDecimal.md)
+>>>>>>> ooof
 
 ### Authorization
 
@@ -294,7 +354,11 @@ No authorization required
 
 ## fakeOuterStringSerialize
 
+<<<<<<< HEAD
 > CompletableFuture<String> fakeOuterStringSerialize(body)
+=======
+> String fakeOuterStringSerialize(body)
+>>>>>>> ooof
 
 
 
@@ -309,7 +373,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.FakeApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -319,8 +386,12 @@ public class Example {
         FakeApi apiInstance = new FakeApi(defaultClient);
         String body = "body_example"; // String | Input string as post body
         try {
+<<<<<<< HEAD
             CompletableFuture<String> result = apiInstance.fakeOuterStringSerialize(body);
 
+=======
+            String result = apiInstance.fakeOuterStringSerialize(body);
+>>>>>>> ooof
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#fakeOuterStringSerialize");
@@ -342,8 +413,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 CompletableFuture<**String**>
 
+=======
+**String**
+>>>>>>> ooof
 
 ### Authorization
 
@@ -362,7 +437,11 @@ No authorization required
 
 ## testBodyWithFileSchema
 
+<<<<<<< HEAD
 > CompletableFuture<Void> testBodyWithFileSchema(body)
+=======
+> testBodyWithFileSchema(body)
+>>>>>>> ooof
 
 
 
@@ -377,7 +456,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.FakeApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -387,8 +469,12 @@ public class Example {
         FakeApi apiInstance = new FakeApi(defaultClient);
         FileSchemaTestClass body = new FileSchemaTestClass(); // FileSchemaTestClass | 
         try {
+<<<<<<< HEAD
             CompletableFuture<Void> result = apiInstance.testBodyWithFileSchema(body);
 
+=======
+            apiInstance.testBodyWithFileSchema(body);
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#testBodyWithFileSchema");
             System.err.println("Status code: " + e.getCode());
@@ -409,8 +495,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
 CompletableFuture<void> (empty response body)
+=======
+null (empty response body)
+>>>>>>> ooof
 
 ### Authorization
 
@@ -429,7 +519,11 @@ No authorization required
 
 ## testBodyWithQueryParams
 
+<<<<<<< HEAD
 > CompletableFuture<Void> testBodyWithQueryParams(query, body)
+=======
+> testBodyWithQueryParams(query, body)
+>>>>>>> ooof
 
 
 
@@ -442,7 +536,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.FakeApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -453,8 +550,12 @@ public class Example {
         String query = "query_example"; // String | 
         User body = new User(); // User | 
         try {
+<<<<<<< HEAD
             CompletableFuture<Void> result = apiInstance.testBodyWithQueryParams(query, body);
 
+=======
+            apiInstance.testBodyWithQueryParams(query, body);
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#testBodyWithQueryParams");
             System.err.println("Status code: " + e.getCode());
@@ -476,8 +577,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
 CompletableFuture<void> (empty response body)
+=======
+null (empty response body)
+>>>>>>> ooof
 
 ### Authorization
 
@@ -496,7 +601,11 @@ No authorization required
 
 ## testClientModel
 
+<<<<<<< HEAD
 > CompletableFuture<Client> testClientModel(body)
+=======
+> Client testClientModel(body)
+>>>>>>> ooof
 
 To test \&quot;client\&quot; model
 
@@ -511,7 +620,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.FakeApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -521,8 +633,12 @@ public class Example {
         FakeApi apiInstance = new FakeApi(defaultClient);
         Client body = new Client(); // Client | client model
         try {
+<<<<<<< HEAD
             CompletableFuture<Client> result = apiInstance.testClientModel(body);
 
+=======
+            Client result = apiInstance.testClientModel(body);
+>>>>>>> ooof
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#testClientModel");
@@ -544,8 +660,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 CompletableFuture<[**Client**](Client.md)>
 
+=======
+[**Client**](Client.md)
+>>>>>>> ooof
 
 ### Authorization
 
@@ -564,7 +684,11 @@ No authorization required
 
 ## testEndpointParameters
 
+<<<<<<< HEAD
 > CompletableFuture<Void> testEndpointParameters(number, _double, patternWithoutDelimiter, _byte, integer, int32, int64, _float, string, binary, date, dateTime, password, paramCallback)
+=======
+> testEndpointParameters(number, _double, patternWithoutDelimiter, _byte, integer, int32, int64, _float, string, binary, date, dateTime, password, paramCallback)
+>>>>>>> ooof
 
 Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트
 
@@ -580,7 +704,10 @@ import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.FakeApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -608,8 +735,12 @@ public class Example {
         String password = "password_example"; // String | None
         String paramCallback = "paramCallback_example"; // String | None
         try {
+<<<<<<< HEAD
             CompletableFuture<Void> result = apiInstance.testEndpointParameters(number, _double, patternWithoutDelimiter, _byte, integer, int32, int64, _float, string, binary, date, dateTime, password, paramCallback);
 
+=======
+            apiInstance.testEndpointParameters(number, _double, patternWithoutDelimiter, _byte, integer, int32, int64, _float, string, binary, date, dateTime, password, paramCallback);
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#testEndpointParameters");
             System.err.println("Status code: " + e.getCode());
@@ -643,8 +774,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
 CompletableFuture<void> (empty response body)
+=======
+null (empty response body)
+>>>>>>> ooof
 
 ### Authorization
 
@@ -664,7 +799,11 @@ CompletableFuture<void> (empty response body)
 
 ## testEnumParameters
 
+<<<<<<< HEAD
 > CompletableFuture<Void> testEnumParameters(enumHeaderStringArray, enumHeaderString, enumQueryStringArray, enumQueryString, enumQueryInteger, enumQueryDouble, enumFormStringArray, enumFormString)
+=======
+> testEnumParameters(enumHeaderStringArray, enumHeaderString, enumQueryStringArray, enumQueryString, enumQueryInteger, enumQueryDouble, enumFormStringArray, enumFormString)
+>>>>>>> ooof
 
 To test enum parameters
 
@@ -679,7 +818,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.FakeApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -696,8 +838,12 @@ public class Example {
         List<String> enumFormStringArray = "$"; // List<String> | Form parameter enum test (string array)
         String enumFormString = "-efg"; // String | Form parameter enum test (string)
         try {
+<<<<<<< HEAD
             CompletableFuture<Void> result = apiInstance.testEnumParameters(enumHeaderStringArray, enumHeaderString, enumQueryStringArray, enumQueryString, enumQueryInteger, enumQueryDouble, enumFormStringArray, enumFormString);
 
+=======
+            apiInstance.testEnumParameters(enumHeaderStringArray, enumHeaderString, enumQueryStringArray, enumQueryString, enumQueryInteger, enumQueryDouble, enumFormStringArray, enumFormString);
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#testEnumParameters");
             System.err.println("Status code: " + e.getCode());
@@ -725,8 +871,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
 CompletableFuture<void> (empty response body)
+=======
+null (empty response body)
+>>>>>>> ooof
 
 ### Authorization
 
@@ -746,7 +896,11 @@ No authorization required
 
 ## testGroupParameters
 
+<<<<<<< HEAD
 > CompletableFuture<Void> testGroupParameters(testGroupParametersRequest)
+=======
+> testGroupParameters(requiredStringGroup, requiredBooleanGroup, requiredInt64Group, stringGroup, booleanGroup, int64Group)
+>>>>>>> ooof
 
 Fake endpoint to test group parameters (optional)
 
@@ -761,8 +915,11 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.FakeApi;
+<<<<<<< HEAD
 import org.openapitools.client.api.FakeApi.*;
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -777,6 +934,7 @@ public class Example {
         Boolean booleanGroup = true; // Boolean | Boolean in group parameters
         Long int64Group = 56L; // Long | Integer in group parameters
         try {
+<<<<<<< HEAD
             APItestGroupParametersRequest request = APItestGroupParametersRequest.newBuilder()
                 .requiredStringGroup(requiredStringGroup)
                 .requiredBooleanGroup(requiredBooleanGroup)
@@ -786,6 +944,9 @@ public class Example {
                 .int64Group(int64Group)
                 .build();
             CompletableFuture<Void> result = apiInstance.testGroupParameters(request);
+=======
+            apiInstance.testGroupParameters(requiredStringGroup, requiredBooleanGroup, requiredInt64Group, stringGroup, booleanGroup, int64Group);
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#testGroupParameters");
             System.err.println("Status code: " + e.getCode());
@@ -799,6 +960,7 @@ public class Example {
 
 ### Parameters
 
+<<<<<<< HEAD
 |    Name      |    Type       | Description   |     Notes    |
 |------------- | ------------- | ------------- | -------------|
 | testGroupParametersRequest | [**APItestGroupParametersRequest**](FakeApi.md#APItestGroupParametersRequest)|-|-|
@@ -807,6 +969,21 @@ public class Example {
 
 
 CompletableFuture<void> (empty response body)
+=======
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **requiredStringGroup** | **Integer**| Required String in group parameters |
+ **requiredBooleanGroup** | **Boolean**| Required Boolean in group parameters |
+ **requiredInt64Group** | **Long**| Required Integer in group parameters |
+ **stringGroup** | **Integer**| String in group parameters | [optional]
+ **booleanGroup** | **Boolean**| Boolean in group parameters | [optional]
+ **int64Group** | **Long**| Integer in group parameters | [optional]
+
+### Return type
+
+null (empty response body)
+>>>>>>> ooof
 
 ### Authorization
 
@@ -823,6 +1000,7 @@ No authorization required
 | **400** | Someting wrong |  -  |
 
 
+<<<<<<< HEAD
 <a name="APItestGroupParametersRequest"></a>
 ## APItestGroupParametersRequest
 ### Properties
@@ -841,6 +1019,11 @@ No authorization required
 ## testInlineAdditionalProperties
 
 > CompletableFuture<Void> testInlineAdditionalProperties(param)
+=======
+## testInlineAdditionalProperties
+
+> testInlineAdditionalProperties(param)
+>>>>>>> ooof
 
 test inline additionalProperties
 
@@ -853,7 +1036,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.FakeApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -863,8 +1049,12 @@ public class Example {
         FakeApi apiInstance = new FakeApi(defaultClient);
         Map<String, String> param = new HashMap(); // Map<String, String> | request body
         try {
+<<<<<<< HEAD
             CompletableFuture<Void> result = apiInstance.testInlineAdditionalProperties(param);
 
+=======
+            apiInstance.testInlineAdditionalProperties(param);
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#testInlineAdditionalProperties");
             System.err.println("Status code: " + e.getCode());
@@ -885,8 +1075,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
 CompletableFuture<void> (empty response body)
+=======
+null (empty response body)
+>>>>>>> ooof
 
 ### Authorization
 
@@ -905,7 +1099,11 @@ No authorization required
 
 ## testJsonFormData
 
+<<<<<<< HEAD
 > CompletableFuture<Void> testJsonFormData(param, param2)
+=======
+> testJsonFormData(param, param2)
+>>>>>>> ooof
 
 test json serialization of form data
 
@@ -918,7 +1116,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.FakeApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -929,8 +1130,12 @@ public class Example {
         String param = "param_example"; // String | field1
         String param2 = "param2_example"; // String | field2
         try {
+<<<<<<< HEAD
             CompletableFuture<Void> result = apiInstance.testJsonFormData(param, param2);
 
+=======
+            apiInstance.testJsonFormData(param, param2);
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#testJsonFormData");
             System.err.println("Status code: " + e.getCode());
@@ -952,8 +1157,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
 CompletableFuture<void> (empty response body)
+=======
+null (empty response body)
+>>>>>>> ooof
 
 ### Authorization
 
@@ -972,7 +1181,11 @@ No authorization required
 
 ## testQueryParameterCollectionFormat
 
+<<<<<<< HEAD
 > CompletableFuture<Void> testQueryParameterCollectionFormat(pipe, ioutil, http, url, context)
+=======
+> testQueryParameterCollectionFormat(pipe, ioutil, http, url, context)
+>>>>>>> ooof
 
 
 
@@ -987,7 +1200,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.FakeApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -1001,8 +1217,12 @@ public class Example {
         List<String> url = Arrays.asList(); // List<String> | 
         List<String> context = Arrays.asList(); // List<String> | 
         try {
+<<<<<<< HEAD
             CompletableFuture<Void> result = apiInstance.testQueryParameterCollectionFormat(pipe, ioutil, http, url, context);
 
+=======
+            apiInstance.testQueryParameterCollectionFormat(pipe, ioutil, http, url, context);
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#testQueryParameterCollectionFormat");
             System.err.println("Status code: " + e.getCode());
@@ -1027,8 +1247,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
 CompletableFuture<void> (empty response body)
+=======
+null (empty response body)
+>>>>>>> ooof
 
 ### Authorization
 

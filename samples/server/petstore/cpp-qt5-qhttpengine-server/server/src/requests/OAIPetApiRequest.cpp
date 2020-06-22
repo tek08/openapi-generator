@@ -180,25 +180,39 @@ void OAIPetApiRequest::uploadFileRequest(const QString& pet_idstr){
 
 
 void OAIPetApiRequest::addPetResponse(){
+<<<<<<< HEAD
     setSocketResponseHeaders();
     socket->setStatusCode(QHttpEngine::Socket::OK);
     socket->writeHeaders();
+=======
+    writeResponseHeaders();
+    socket->setStatusCode(QHttpEngine::Socket::OK);
+>>>>>>> ooof
     if(socket->isOpen()){
         socket->close();
     }
 }
 
 void OAIPetApiRequest::deletePetResponse(){
+<<<<<<< HEAD
     setSocketResponseHeaders();
     socket->setStatusCode(QHttpEngine::Socket::OK);
     socket->writeHeaders();
+=======
+    writeResponseHeaders();
+    socket->setStatusCode(QHttpEngine::Socket::OK);
+>>>>>>> ooof
     if(socket->isOpen()){
         socket->close();
     }
 }
 
 void OAIPetApiRequest::findPetsByStatusResponse(const QList<OAIPet>& res){
+<<<<<<< HEAD
     setSocketResponseHeaders();
+=======
+    writeResponseHeaders();
+>>>>>>> ooof
     QJsonDocument resDoc(::OpenAPI::toJsonValue(res).toArray());
     socket->writeJson(resDoc);
     if(socket->isOpen()){
@@ -207,7 +221,11 @@ void OAIPetApiRequest::findPetsByStatusResponse(const QList<OAIPet>& res){
 }
 
 void OAIPetApiRequest::findPetsByTagsResponse(const QList<OAIPet>& res){
+<<<<<<< HEAD
     setSocketResponseHeaders();
+=======
+    writeResponseHeaders();
+>>>>>>> ooof
     QJsonDocument resDoc(::OpenAPI::toJsonValue(res).toArray());
     socket->writeJson(resDoc);
     if(socket->isOpen()){
@@ -216,7 +234,11 @@ void OAIPetApiRequest::findPetsByTagsResponse(const QList<OAIPet>& res){
 }
 
 void OAIPetApiRequest::getPetByIdResponse(const OAIPet& res){
+<<<<<<< HEAD
     setSocketResponseHeaders();
+=======
+    writeResponseHeaders();
+>>>>>>> ooof
     QJsonDocument resDoc(::OpenAPI::toJsonValue(res).toObject());
     socket->writeJson(resDoc);
     if(socket->isOpen()){
@@ -225,25 +247,39 @@ void OAIPetApiRequest::getPetByIdResponse(const OAIPet& res){
 }
 
 void OAIPetApiRequest::updatePetResponse(){
+<<<<<<< HEAD
     setSocketResponseHeaders();
     socket->setStatusCode(QHttpEngine::Socket::OK);
     socket->writeHeaders();
+=======
+    writeResponseHeaders();
+    socket->setStatusCode(QHttpEngine::Socket::OK);
+>>>>>>> ooof
     if(socket->isOpen()){
         socket->close();
     }
 }
 
 void OAIPetApiRequest::updatePetWithFormResponse(){
+<<<<<<< HEAD
     setSocketResponseHeaders();
     socket->setStatusCode(QHttpEngine::Socket::OK);
     socket->writeHeaders();
+=======
+    writeResponseHeaders();
+    socket->setStatusCode(QHttpEngine::Socket::OK);
+>>>>>>> ooof
     if(socket->isOpen()){
         socket->close();
     }
 }
 
 void OAIPetApiRequest::uploadFileResponse(const OAIApiResponse& res){
+<<<<<<< HEAD
     setSocketResponseHeaders();
+=======
+    writeResponseHeaders();
+>>>>>>> ooof
     QJsonDocument resDoc(::OpenAPI::toJsonValue(res).toObject());
     socket->writeJson(resDoc);
     if(socket->isOpen()){
@@ -254,7 +290,11 @@ void OAIPetApiRequest::uploadFileResponse(const OAIApiResponse& res){
 
 void OAIPetApiRequest::addPetError(QNetworkReply::NetworkError error_type, QString& error_str){
     Q_UNUSED(error_type); // TODO: Remap error_type to QHttpEngine::Socket errors
+<<<<<<< HEAD
     setSocketResponseHeaders();
+=======
+    writeResponseHeaders();
+>>>>>>> ooof
     socket->setStatusCode(QHttpEngine::Socket::NotFound);
     socket->write(error_str.toUtf8());
     if(socket->isOpen()){
@@ -264,7 +304,11 @@ void OAIPetApiRequest::addPetError(QNetworkReply::NetworkError error_type, QStri
 
 void OAIPetApiRequest::deletePetError(QNetworkReply::NetworkError error_type, QString& error_str){
     Q_UNUSED(error_type); // TODO: Remap error_type to QHttpEngine::Socket errors
+<<<<<<< HEAD
     setSocketResponseHeaders();
+=======
+    writeResponseHeaders();
+>>>>>>> ooof
     socket->setStatusCode(QHttpEngine::Socket::NotFound);
     socket->write(error_str.toUtf8());
     if(socket->isOpen()){
@@ -274,7 +318,11 @@ void OAIPetApiRequest::deletePetError(QNetworkReply::NetworkError error_type, QS
 
 void OAIPetApiRequest::findPetsByStatusError(const QList<OAIPet>& res, QNetworkReply::NetworkError error_type, QString& error_str){
     Q_UNUSED(error_type); // TODO: Remap error_type to QHttpEngine::Socket errors
+<<<<<<< HEAD
     setSocketResponseHeaders();
+=======
+    writeResponseHeaders();
+>>>>>>> ooof
     Q_UNUSED(error_str);  // response will be used instead of error string
     QJsonDocument resDoc(::OpenAPI::toJsonValue(res).toArray());
     socket->writeJson(resDoc);
@@ -285,7 +333,11 @@ void OAIPetApiRequest::findPetsByStatusError(const QList<OAIPet>& res, QNetworkR
 
 void OAIPetApiRequest::findPetsByTagsError(const QList<OAIPet>& res, QNetworkReply::NetworkError error_type, QString& error_str){
     Q_UNUSED(error_type); // TODO: Remap error_type to QHttpEngine::Socket errors
+<<<<<<< HEAD
     setSocketResponseHeaders();
+=======
+    writeResponseHeaders();
+>>>>>>> ooof
     Q_UNUSED(error_str);  // response will be used instead of error string
     QJsonDocument resDoc(::OpenAPI::toJsonValue(res).toArray());
     socket->writeJson(resDoc);
@@ -296,7 +348,11 @@ void OAIPetApiRequest::findPetsByTagsError(const QList<OAIPet>& res, QNetworkRep
 
 void OAIPetApiRequest::getPetByIdError(const OAIPet& res, QNetworkReply::NetworkError error_type, QString& error_str){
     Q_UNUSED(error_type); // TODO: Remap error_type to QHttpEngine::Socket errors
+<<<<<<< HEAD
     setSocketResponseHeaders();
+=======
+    writeResponseHeaders();
+>>>>>>> ooof
     Q_UNUSED(error_str);  // response will be used instead of error string
     QJsonDocument resDoc(::OpenAPI::toJsonValue(res).toObject());
     socket->writeJson(resDoc);
@@ -307,7 +363,11 @@ void OAIPetApiRequest::getPetByIdError(const OAIPet& res, QNetworkReply::Network
 
 void OAIPetApiRequest::updatePetError(QNetworkReply::NetworkError error_type, QString& error_str){
     Q_UNUSED(error_type); // TODO: Remap error_type to QHttpEngine::Socket errors
+<<<<<<< HEAD
     setSocketResponseHeaders();
+=======
+    writeResponseHeaders();
+>>>>>>> ooof
     socket->setStatusCode(QHttpEngine::Socket::NotFound);
     socket->write(error_str.toUtf8());
     if(socket->isOpen()){
@@ -317,7 +377,11 @@ void OAIPetApiRequest::updatePetError(QNetworkReply::NetworkError error_type, QS
 
 void OAIPetApiRequest::updatePetWithFormError(QNetworkReply::NetworkError error_type, QString& error_str){
     Q_UNUSED(error_type); // TODO: Remap error_type to QHttpEngine::Socket errors
+<<<<<<< HEAD
     setSocketResponseHeaders();
+=======
+    writeResponseHeaders();
+>>>>>>> ooof
     socket->setStatusCode(QHttpEngine::Socket::NotFound);
     socket->write(error_str.toUtf8());
     if(socket->isOpen()){
@@ -327,7 +391,11 @@ void OAIPetApiRequest::updatePetWithFormError(QNetworkReply::NetworkError error_
 
 void OAIPetApiRequest::uploadFileError(const OAIApiResponse& res, QNetworkReply::NetworkError error_type, QString& error_str){
     Q_UNUSED(error_type); // TODO: Remap error_type to QHttpEngine::Socket errors
+<<<<<<< HEAD
     setSocketResponseHeaders();
+=======
+    writeResponseHeaders();
+>>>>>>> ooof
     Q_UNUSED(error_str);  // response will be used instead of error string
     QJsonDocument resDoc(::OpenAPI::toJsonValue(res).toObject());
     socket->writeJson(resDoc);

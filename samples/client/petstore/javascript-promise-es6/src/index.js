@@ -13,12 +13,28 @@
 
 
 import ApiClient from './ApiClient';
+<<<<<<< HEAD
 import AdditionalPropertiesClass from './model/AdditionalPropertiesClass';
+=======
+import AdditionalPropertiesAnyType from './model/AdditionalPropertiesAnyType';
+import AdditionalPropertiesArray from './model/AdditionalPropertiesArray';
+import AdditionalPropertiesBoolean from './model/AdditionalPropertiesBoolean';
+import AdditionalPropertiesClass from './model/AdditionalPropertiesClass';
+import AdditionalPropertiesInteger from './model/AdditionalPropertiesInteger';
+import AdditionalPropertiesNumber from './model/AdditionalPropertiesNumber';
+import AdditionalPropertiesObject from './model/AdditionalPropertiesObject';
+import AdditionalPropertiesString from './model/AdditionalPropertiesString';
+>>>>>>> ooof
 import Animal from './model/Animal';
 import ApiResponse from './model/ApiResponse';
 import ArrayOfArrayOfNumberOnly from './model/ArrayOfArrayOfNumberOnly';
 import ArrayOfNumberOnly from './model/ArrayOfNumberOnly';
 import ArrayTest from './model/ArrayTest';
+<<<<<<< HEAD
+=======
+import BigCat from './model/BigCat';
+import BigCatAllOf from './model/BigCatAllOf';
+>>>>>>> ooof
 import Capitalization from './model/Capitalization';
 import Cat from './model/Cat';
 import CatAllOf from './model/CatAllOf';
@@ -32,6 +48,7 @@ import EnumClass from './model/EnumClass';
 import EnumTest from './model/EnumTest';
 import File from './model/File';
 import FileSchemaTestClass from './model/FileSchemaTestClass';
+<<<<<<< HEAD
 import Foo from './model/Foo';
 import FormatTest from './model/FormatTest';
 import HasOnlyReadOnly from './model/HasOnlyReadOnly';
@@ -43,27 +60,45 @@ import InlineObject3 from './model/InlineObject3';
 import InlineObject4 from './model/InlineObject4';
 import InlineObject5 from './model/InlineObject5';
 import InlineResponseDefault from './model/InlineResponseDefault';
+=======
+import FormatTest from './model/FormatTest';
+import HasOnlyReadOnly from './model/HasOnlyReadOnly';
+>>>>>>> ooof
 import List from './model/List';
 import MapTest from './model/MapTest';
 import MixedPropertiesAndAdditionalPropertiesClass from './model/MixedPropertiesAndAdditionalPropertiesClass';
 import Model200Response from './model/Model200Response';
 import ModelReturn from './model/ModelReturn';
 import Name from './model/Name';
+<<<<<<< HEAD
 import NullableClass from './model/NullableClass';
+=======
+>>>>>>> ooof
 import NumberOnly from './model/NumberOnly';
 import Order from './model/Order';
 import OuterComposite from './model/OuterComposite';
 import OuterEnum from './model/OuterEnum';
+<<<<<<< HEAD
 import OuterEnumDefaultValue from './model/OuterEnumDefaultValue';
 import OuterEnumInteger from './model/OuterEnumInteger';
 import OuterEnumIntegerDefaultValue from './model/OuterEnumIntegerDefaultValue';
+=======
+>>>>>>> ooof
 import Pet from './model/Pet';
 import ReadOnlyFirst from './model/ReadOnlyFirst';
 import SpecialModelName from './model/SpecialModelName';
 import Tag from './model/Tag';
+<<<<<<< HEAD
 import User from './model/User';
 import AnotherFakeApi from './api/AnotherFakeApi';
 import DefaultApi from './api/DefaultApi';
+=======
+import TypeHolderDefault from './model/TypeHolderDefault';
+import TypeHolderExample from './model/TypeHolderExample';
+import User from './model/User';
+import XmlItem from './model/XmlItem';
+import AnotherFakeApi from './api/AnotherFakeApi';
+>>>>>>> ooof
 import FakeApi from './api/FakeApi';
 import FakeClassnameTags123Api from './api/FakeClassnameTags123Api';
 import PetApi from './api/PetApi';
@@ -110,12 +145,60 @@ export {
     ApiClient,
 
     /**
+<<<<<<< HEAD
+=======
+     * The AdditionalPropertiesAnyType model constructor.
+     * @property {module:model/AdditionalPropertiesAnyType}
+     */
+    AdditionalPropertiesAnyType,
+
+    /**
+     * The AdditionalPropertiesArray model constructor.
+     * @property {module:model/AdditionalPropertiesArray}
+     */
+    AdditionalPropertiesArray,
+
+    /**
+     * The AdditionalPropertiesBoolean model constructor.
+     * @property {module:model/AdditionalPropertiesBoolean}
+     */
+    AdditionalPropertiesBoolean,
+
+    /**
+>>>>>>> ooof
      * The AdditionalPropertiesClass model constructor.
      * @property {module:model/AdditionalPropertiesClass}
      */
     AdditionalPropertiesClass,
 
     /**
+<<<<<<< HEAD
+=======
+     * The AdditionalPropertiesInteger model constructor.
+     * @property {module:model/AdditionalPropertiesInteger}
+     */
+    AdditionalPropertiesInteger,
+
+    /**
+     * The AdditionalPropertiesNumber model constructor.
+     * @property {module:model/AdditionalPropertiesNumber}
+     */
+    AdditionalPropertiesNumber,
+
+    /**
+     * The AdditionalPropertiesObject model constructor.
+     * @property {module:model/AdditionalPropertiesObject}
+     */
+    AdditionalPropertiesObject,
+
+    /**
+     * The AdditionalPropertiesString model constructor.
+     * @property {module:model/AdditionalPropertiesString}
+     */
+    AdditionalPropertiesString,
+
+    /**
+>>>>>>> ooof
      * The Animal model constructor.
      * @property {module:model/Animal}
      */
@@ -146,6 +229,21 @@ export {
     ArrayTest,
 
     /**
+<<<<<<< HEAD
+=======
+     * The BigCat model constructor.
+     * @property {module:model/BigCat}
+     */
+    BigCat,
+
+    /**
+     * The BigCatAllOf model constructor.
+     * @property {module:model/BigCatAllOf}
+     */
+    BigCatAllOf,
+
+    /**
+>>>>>>> ooof
      * The Capitalization model constructor.
      * @property {module:model/Capitalization}
      */
@@ -224,12 +322,15 @@ export {
     FileSchemaTestClass,
 
     /**
+<<<<<<< HEAD
      * The Foo model constructor.
      * @property {module:model/Foo}
      */
     Foo,
 
     /**
+=======
+>>>>>>> ooof
      * The FormatTest model constructor.
      * @property {module:model/FormatTest}
      */
@@ -242,6 +343,7 @@ export {
     HasOnlyReadOnly,
 
     /**
+<<<<<<< HEAD
      * The HealthCheckResult model constructor.
      * @property {module:model/HealthCheckResult}
      */
@@ -290,6 +392,8 @@ export {
     InlineResponseDefault,
 
     /**
+=======
+>>>>>>> ooof
      * The List model constructor.
      * @property {module:model/List}
      */
@@ -326,12 +430,15 @@ export {
     Name,
 
     /**
+<<<<<<< HEAD
      * The NullableClass model constructor.
      * @property {module:model/NullableClass}
      */
     NullableClass,
 
     /**
+=======
+>>>>>>> ooof
      * The NumberOnly model constructor.
      * @property {module:model/NumberOnly}
      */
@@ -356,6 +463,7 @@ export {
     OuterEnum,
 
     /**
+<<<<<<< HEAD
      * The OuterEnumDefaultValue model constructor.
      * @property {module:model/OuterEnumDefaultValue}
      */
@@ -374,6 +482,8 @@ export {
     OuterEnumIntegerDefaultValue,
 
     /**
+=======
+>>>>>>> ooof
      * The Pet model constructor.
      * @property {module:model/Pet}
      */
@@ -398,24 +508,51 @@ export {
     Tag,
 
     /**
+<<<<<<< HEAD
+=======
+     * The TypeHolderDefault model constructor.
+     * @property {module:model/TypeHolderDefault}
+     */
+    TypeHolderDefault,
+
+    /**
+     * The TypeHolderExample model constructor.
+     * @property {module:model/TypeHolderExample}
+     */
+    TypeHolderExample,
+
+    /**
+>>>>>>> ooof
      * The User model constructor.
      * @property {module:model/User}
      */
     User,
 
     /**
+<<<<<<< HEAD
+=======
+     * The XmlItem model constructor.
+     * @property {module:model/XmlItem}
+     */
+    XmlItem,
+
+    /**
+>>>>>>> ooof
     * The AnotherFakeApi service constructor.
     * @property {module:api/AnotherFakeApi}
     */
     AnotherFakeApi,
 
     /**
+<<<<<<< HEAD
     * The DefaultApi service constructor.
     * @property {module:api/DefaultApi}
     */
     DefaultApi,
 
     /**
+=======
+>>>>>>> ooof
     * The FakeApi service constructor.
     * @property {module:api/FakeApi}
     */

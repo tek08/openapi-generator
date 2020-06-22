@@ -18,7 +18,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 import java.util.List;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
+=======
+
+>>>>>>> ooof
 @Configuration
 @ComponentScan(basePackages = {"org.openapitools.api", "org.openapitools.configuration"})
 @EnableWebMvc

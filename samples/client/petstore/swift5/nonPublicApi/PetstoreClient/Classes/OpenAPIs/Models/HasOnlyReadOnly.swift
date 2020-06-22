@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 internal struct HasOnlyReadOnly: Codable { 
 
+=======
+internal struct HasOnlyReadOnly: Codable {
+>>>>>>> ooof
 
     internal var bar: String?
     internal var foo: String?

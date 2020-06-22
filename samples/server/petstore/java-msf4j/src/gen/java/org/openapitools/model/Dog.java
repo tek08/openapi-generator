@@ -11,7 +11,11 @@ import org.openapitools.model.DogAllOf;
 /**
  * Dog
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen")
+=======
+
+>>>>>>> ooof
 public class Dog extends Animal  {
   @JsonProperty("breed")
   private String breed;

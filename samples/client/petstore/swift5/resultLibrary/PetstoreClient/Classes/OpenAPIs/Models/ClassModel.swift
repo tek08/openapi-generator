@@ -8,8 +8,12 @@
 import Foundation
 
 /** Model for testing model with \&quot;_class\&quot; property */
+<<<<<<< HEAD
 public struct ClassModel: Codable { 
 
+=======
+public struct ClassModel: Codable {
+>>>>>>> ooof
 
     public var _class: String?
 

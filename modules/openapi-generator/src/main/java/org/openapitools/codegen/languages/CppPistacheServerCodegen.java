@@ -253,6 +253,13 @@ public class CppPistacheServerCodegen extends AbstractCppCodegen {
         String classname = (String) operations.get("classname");
         operations.put("classnameSnakeUpperCase", underscore(classname).toUpperCase(Locale.ROOT));
         operations.put("classnameSnakeLowerCase", underscore(classname).toLowerCase(Locale.ROOT));
+<<<<<<< HEAD
+=======
+
+        // TODO: 5.0: Remove the camelCased vendorExtension below and ensure templates use the newer property naming.
+        once(LOGGER).warn("4.3.0 has deprecated the use of vendor extensions which don't follow lower-kebab casing standards with x- prefix.");
+
+>>>>>>> ooof
         List<CodegenOperation> operationList = (List<CodegenOperation>) operations.get("operation");
         for (CodegenOperation op : operationList) {
             boolean consumeJson = false;
@@ -263,6 +270,10 @@ public class CppPistacheServerCodegen extends AbstractCppCodegen {
                 }
 
                 boolean isStringOrDate = op.bodyParam.isString || op.bodyParam.isDate;
+<<<<<<< HEAD
+=======
+                op.bodyParam.vendorExtensions.put("x-codegen-pistache-isStringOrDate", isStringOrDate); // TODO: 5.0 Remove
+>>>>>>> ooof
                 op.bodyParam.vendorExtensions.put("x-codegen-pistache-is-string-or-date", isStringOrDate);
             }
             if (op.consumes != null) {
@@ -297,7 +308,13 @@ public class CppPistacheServerCodegen extends AbstractCppCodegen {
             if (op.vendorExtensions == null) {
                 op.vendorExtensions = new HashMap<>();
             }
+<<<<<<< HEAD
             op.vendorExtensions.put("x-codegen-pistache-consumes-json", consumeJson);
+=======
+            op.vendorExtensions.put("x-codegen-pistache-consumesJson", consumeJson); // TODO: 5.0 Remove
+            op.vendorExtensions.put("x-codegen-pistache-consumes-json", consumeJson);
+            op.vendorExtensions.put("x-codegen-pistache-isParsingSupported", isParsingSupported); // TODO: 5.0 Remove
+>>>>>>> ooof
             op.vendorExtensions.put("x-codegen-pistache-is-parsing-supported", isParsingSupported);
 
             // Check if any one of the operations needs a model, then at API file level, at least one model has to be included.
@@ -356,7 +373,11 @@ public class CppPistacheServerCodegen extends AbstractCppCodegen {
             return getSchemaType(p) + "<" + getTypeDeclaration(inner) + ">";
         }
         if (ModelUtils.isMapSchema(p)) {
+<<<<<<< HEAD
             Schema inner = getAdditionalProperties(p);
+=======
+            Schema inner = ModelUtils.getAdditionalProperties(p);
+>>>>>>> ooof
             return getSchemaType(p) + "<std::string, " + getTypeDeclaration(inner) + ">";
         } else if (ModelUtils.isByteArraySchema(p)) {
             return "std::string";
@@ -392,7 +413,11 @@ public class CppPistacheServerCodegen extends AbstractCppCodegen {
         } else if (ModelUtils.isByteArraySchema(p)) {
             return "\"\"";
         } else if (ModelUtils.isMapSchema(p)) {
+<<<<<<< HEAD
             String inner = getSchemaType(getAdditionalProperties(p));
+=======
+            String inner = getSchemaType(ModelUtils.getAdditionalProperties(p));
+>>>>>>> ooof
             return "std::map<std::string, " + inner + ">()";
         } else if (ModelUtils.isArraySchema(p)) {
             ArraySchema ap = (ArraySchema) p;

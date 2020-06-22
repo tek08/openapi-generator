@@ -104,11 +104,14 @@
   infoLink: "https://www.cupix.com/"
   pinned: false
 -
+<<<<<<< HEAD
   caption: "Datadog"
   image: "img/companies/datadog.png"
   infoLink: "https://www.datadoghq.com"
   pinned: false
 -
+=======
+>>>>>>> ooof
   caption: "DB Systel"
   image: "img/companies/db-systel.png"
   infoLink: "https://www.dbsystel.de"

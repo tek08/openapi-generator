@@ -15,6 +15,7 @@ import com.fasterxml.jackson.datatype.joda.JodaModule;
 {{#threetenbp}}
 import com.fasterxml.jackson.datatype.threetenbp.ThreeTenModule;
 {{/threetenbp}}
+<<<<<<< HEAD
 {{#models.0}}
 import {{modelPackage}}.*;
 {{/models.0}}
@@ -25,6 +26,11 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import javax.ws.rs.core.GenericType;
+=======
+
+import java.text.DateFormat;
+
+>>>>>>> ooof
 import javax.ws.rs.ext.ContextResolver;
 
 {{>generatedAnnotation}}
@@ -76,6 +82,7 @@ public class JSON implements ContextResolver<ObjectMapper> {
    * @return object mapper
    */
   public ObjectMapper getMapper() { return mapper; }
+<<<<<<< HEAD
 
   /**
    * Returns the target model class that should be used to deserialize the input data.
@@ -269,4 +276,6 @@ public class JSON implements ContextResolver<ObjectMapper> {
   public static void setDefault(JSON json) {
     JSON.json = json;
   }
+=======
+>>>>>>> ooof
 }

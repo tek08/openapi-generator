@@ -6,7 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **HasBaleen** | Pointer to **bool** |  | [optional] 
 **HasTeeth** | Pointer to **bool** |  | [optional] 
+<<<<<<< HEAD
 **ClassName** | **string** |  | 
+=======
+**ClassName** | Pointer to **string** |  | 
+>>>>>>> ooof
 **Type** | Pointer to **string** |  | [optional] 
 
 ## Methods

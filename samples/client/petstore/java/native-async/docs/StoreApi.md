@@ -13,7 +13,11 @@ Method | HTTP request | Description
 
 ## deleteOrder
 
+<<<<<<< HEAD
 > CompletableFuture<Void> deleteOrder(orderId)
+=======
+> deleteOrder(orderId)
+>>>>>>> ooof
 
 Delete purchase order by ID
 
@@ -28,7 +32,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.StoreApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -38,8 +45,12 @@ public class Example {
         StoreApi apiInstance = new StoreApi(defaultClient);
         String orderId = "orderId_example"; // String | ID of the order that needs to be deleted
         try {
+<<<<<<< HEAD
             CompletableFuture<Void> result = apiInstance.deleteOrder(orderId);
 
+=======
+            apiInstance.deleteOrder(orderId);
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling StoreApi#deleteOrder");
             System.err.println("Status code: " + e.getCode());
@@ -60,8 +71,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
 CompletableFuture<void> (empty response body)
+=======
+null (empty response body)
+>>>>>>> ooof
 
 ### Authorization
 
@@ -81,7 +96,11 @@ No authorization required
 
 ## getInventory
 
+<<<<<<< HEAD
 > CompletableFuture<Map<String, Integer>> getInventory()
+=======
+> Map&lt;String, Integer&gt; getInventory()
+>>>>>>> ooof
 
 Returns pet inventories by status
 
@@ -97,7 +116,10 @@ import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.StoreApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -112,8 +134,12 @@ public class Example {
 
         StoreApi apiInstance = new StoreApi(defaultClient);
         try {
+<<<<<<< HEAD
             CompletableFuture<Map<String, Integer>> result = apiInstance.getInventory();
 
+=======
+            Map<String, Integer> result = apiInstance.getInventory();
+>>>>>>> ooof
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling StoreApi#getInventory");
@@ -132,8 +158,12 @@ This endpoint does not need any parameter.
 
 ### Return type
 
+<<<<<<< HEAD
 CompletableFuture<**Map&lt;String, Integer&gt;**>
 
+=======
+**Map&lt;String, Integer&gt;**
+>>>>>>> ooof
 
 ### Authorization
 
@@ -152,7 +182,11 @@ CompletableFuture<**Map&lt;String, Integer&gt;**>
 
 ## getOrderById
 
+<<<<<<< HEAD
 > CompletableFuture<Order> getOrderById(orderId)
+=======
+> Order getOrderById(orderId)
+>>>>>>> ooof
 
 Find purchase order by ID
 
@@ -167,7 +201,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.StoreApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -177,8 +214,12 @@ public class Example {
         StoreApi apiInstance = new StoreApi(defaultClient);
         Long orderId = 56L; // Long | ID of pet that needs to be fetched
         try {
+<<<<<<< HEAD
             CompletableFuture<Order> result = apiInstance.getOrderById(orderId);
 
+=======
+            Order result = apiInstance.getOrderById(orderId);
+>>>>>>> ooof
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling StoreApi#getOrderById");
@@ -200,8 +241,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 CompletableFuture<[**Order**](Order.md)>
 
+=======
+[**Order**](Order.md)
+>>>>>>> ooof
 
 ### Authorization
 
@@ -222,7 +267,11 @@ No authorization required
 
 ## placeOrder
 
+<<<<<<< HEAD
 > CompletableFuture<Order> placeOrder(body)
+=======
+> Order placeOrder(body)
+>>>>>>> ooof
 
 Place an order for a pet
 
@@ -235,7 +284,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.StoreApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -245,8 +297,12 @@ public class Example {
         StoreApi apiInstance = new StoreApi(defaultClient);
         Order body = new Order(); // Order | order placed for purchasing the pet
         try {
+<<<<<<< HEAD
             CompletableFuture<Order> result = apiInstance.placeOrder(body);
 
+=======
+            Order result = apiInstance.placeOrder(body);
+>>>>>>> ooof
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling StoreApi#placeOrder");
@@ -268,8 +324,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 CompletableFuture<[**Order**](Order.md)>
 
+=======
+[**Order**](Order.md)
+>>>>>>> ooof
 
 ### Authorization
 

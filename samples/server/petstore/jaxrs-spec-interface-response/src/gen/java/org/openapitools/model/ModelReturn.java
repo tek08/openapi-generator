@@ -12,11 +12,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
 /**
  * Model for testing reserved words
  **/
 @ApiModel(description = "Model for testing reserved words")
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class ModelReturn  implements Serializable {
+=======
+public class ModelReturn  implements Serializable {
+>>>>>>> ooof
   
   private @Valid Integer _return;
 
@@ -28,18 +36,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("return")
   public Integer getReturn() {
     return _return;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
   public void setReturn(Integer _return) {
     this._return = _return;
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -77,7 +95,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
     }
     return o.toString().replace("\n", "\n    ");
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 }
 

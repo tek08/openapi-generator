@@ -17,6 +17,7 @@ use crate::{{{operationId}}}Response;
 {{/apiInfo}}
 
 /// A client that implements the API by making HTTP calls out to a server.
+<<<<<<< HEAD
 pub struct Client<S, C> where
     S: Service<
            (Request<Body>, C),
@@ -39,12 +40,22 @@ impl<S, C> fmt::Debug for Client<S, C> where
            Error=hyper::Error> + Clone + Send + Sync,
     S::Future: Send + 'static,
     C: Clone + Send + Sync + 'static
+=======
+pub struct Client<F>
+{
+    /// Inner service
+    client_service: Arc<Box<dyn Service<ReqBody=Body, Future=F> + Send + Sync>>,
+}
+
+impl<F> fmt::Debug for Client<F>
+>>>>>>> ooof
 {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "Client")
     }
 }
 
+<<<<<<< HEAD
 impl<S, C> Clone for Client<S, C> where
     S: Service<
            (Request<Body>, C),
@@ -57,13 +68,24 @@ impl<S, C> Clone for Client<S, C> where
         Self {
             client_service: self.client_service.clone(),
             marker: PhantomData,
+=======
+impl<F> Clone for Client<F>
+{
+    fn clone(&self) -> Self {
+        Client {
+            client_service: self.client_service.clone(),
+>>>>>>> ooof
         }
     }
 }
 
+<<<<<<< HEAD
 impl<Connector, C> Client<DropContextService<hyper::client::Client<Connector, Body>, C>, C> where
     Connector: hyper::client::connect::Connect + Clone + Send + Sync + 'static,
     C: Clone + Send + Sync + 'static
+=======
+impl Client<hyper::client::ResponseFuture>
+>>>>>>> ooof
 {
     /// Create a client with a custom implementation of hyper::client::Connect.
     ///
@@ -77,6 +99,7 @@ impl<Connector, C> Client<DropContextService<hyper::client::Client<Connector, Bo
     /// # Arguments
     ///
     /// * `connector` - Implementation of `hyper::client::Connect` to use for the client
+<<<<<<< HEAD
     pub fn new_with_connector(connector: Connector) -> Self
     {
         let client_service = hyper::client::Client::builder().build(connector);
@@ -92,11 +115,28 @@ impl<Connector, C> Client<DropContextService<hyper::client::Client<Connector, Bo
 impl<C> Client<DropContextService<hyper::client::Client<hyper::client::HttpConnector, Body>, C>, C> where
     C: Clone + Send + Sync + 'static
 {
+=======
+    pub fn new_with_connector<C>(
+        connector: C,
+    ) -> Self where
+      C: hyper::client::connect::Connect + 'static,
+      C::Transport: 'static,
+      C::Future: 'static,
+    {
+        let client_service = Box::new(hyper::client::Client::builder().build(connector));
+
+        Client {
+            client_service: Arc::new(client_service),
+        }
+    }
+
+>>>>>>> ooof
     /// Create an HTTP client.
     pub fn new_http() -> Self {
         let http_connector = Connector::builder().build();
         Self::new_with_connector(http_connector)
     }
+<<<<<<< HEAD
 }
 
 #[cfg(any(target_os = "macos", target_os = "windows", target_os = "ios"))]
@@ -108,6 +148,9 @@ type HttpsConnector = hyper_openssl::HttpsConnector<hyper::client::HttpConnector
 impl<C> Client<DropContextService<hyper::client::Client<HttpsConnector, Body>, C>, C> where
     C: Clone + Send + Sync + 'static
 {
+=======
+
+>>>>>>> ooof
     /// Create a client with a TLS connection to the server.
     #[cfg(any(target_os = "macos", target_os = "windows", target_os = "ios"))]
     pub fn new_https()  -> Result<Self, native_tls::Error>
@@ -167,6 +210,7 @@ impl<C> Client<DropContextService<hyper::client::Client<HttpsConnector, Body>, C
     }
 }
 
+<<<<<<< HEAD
 impl<S, C> Client<S, C> where
     S: Service<
            (Request<Body>, C),
@@ -174,20 +218,31 @@ impl<S, C> Client<S, C> where
            Error=hyper::Error> + Clone + Send + Sync,
     S::Future: Send + 'static,
     C: Clone + Send + Sync + 'static
+=======
+impl<F> Client<F>
+>>>>>>> ooof
 {
     /// Constructor for creating a `Client` by passing in a pre-made `swagger::Service`
     ///
     /// This allows adding custom wrappers around the underlying transport, for example for logging.
     pub fn new_with_client_service(
+<<<<<<< HEAD
         client_service: S,
     ) -> Self {
         Client {
             client_service,
             marker: PhantomData,
+=======
+        client_service: Arc<Box<dyn Service<ReqBody=Body, Future=F> + Send + Sync>>,
+    ) -> Self {
+        Client {
+            client_service: client_service,
+>>>>>>> ooof
         }
     }
 }
 
+<<<<<<< HEAD
 #[async_trait]
 impl<S, C> CallbackApi<C> for Client<S, C> where
     S: Service<
@@ -206,6 +261,12 @@ impl<S, C> CallbackApi<C> for Client<S, C> where
         }
     }
 
+=======
+impl<C, F> CallbackApi<C> for Client<F> where
+    C: Has<XSpanIdString> {{#hasAuthMethods}}+ Has<Option<AuthData>>{{/hasAuthMethods}},
+    F: Future<Item=Response<Body>, Error=hyper::Error> + Send + 'static
+{
+>>>>>>> ooof
 {{#apiInfo}}
   {{#apis}}
     {{#operations}}

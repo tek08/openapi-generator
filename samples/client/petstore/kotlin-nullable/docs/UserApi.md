@@ -73,7 +73,11 @@ Creates list of users with given input array
 //import org.openapitools.client.models.*
 
 val apiInstance = UserApi()
+<<<<<<< HEAD
 val body : kotlin.collections.List<User> =  // kotlin.collections.List<User> | List of user object
+=======
+val body : kotlin.Array<User> =  // kotlin.Array<User> | List of user object
+>>>>>>> ooof
 try {
     apiInstance.createUsersWithArrayInput(body)
 } catch (e: ClientException) {
@@ -89,7 +93,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **body** | [**kotlin.collections.List&lt;User&gt;**](User.md)| List of user object |
+=======
+ **body** | [**kotlin.Array&lt;User&gt;**](User.md)| List of user object |
+>>>>>>> ooof
 
 ### Return type
 
@@ -117,7 +125,11 @@ Creates list of users with given input array
 //import org.openapitools.client.models.*
 
 val apiInstance = UserApi()
+<<<<<<< HEAD
 val body : kotlin.collections.List<User> =  // kotlin.collections.List<User> | List of user object
+=======
+val body : kotlin.Array<User> =  // kotlin.Array<User> | List of user object
+>>>>>>> ooof
 try {
     apiInstance.createUsersWithListInput(body)
 } catch (e: ClientException) {
@@ -133,7 +145,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **body** | [**kotlin.collections.List&lt;User&gt;**](User.md)| List of user object |
+=======
+ **body** | [**kotlin.Array&lt;User&gt;**](User.md)| List of user object |
+>>>>>>> ooof
 
 ### Return type
 

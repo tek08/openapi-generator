@@ -10,7 +10,11 @@ import java.math.BigDecimal;
 /**
  * NumberOnly
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen")
+=======
+
+>>>>>>> ooof
 public class NumberOnly   {
   @JsonProperty("JustNumber")
   private BigDecimal justNumber;

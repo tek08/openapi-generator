@@ -15,8 +15,11 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.HashMap;
+=======
+>>>>>>> ooof
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -25,8 +28,11 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+<<<<<<< HEAD
 import org.openapitools.client.JSON;
 
+=======
+>>>>>>> ooof
 
 /**
  * OuterComposite
@@ -36,7 +42,11 @@ import org.openapitools.client.JSON;
   OuterComposite.JSON_PROPERTY_MY_STRING,
   OuterComposite.JSON_PROPERTY_MY_BOOLEAN
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class OuterComposite {
   public static final String JSON_PROPERTY_MY_NUMBER = "my_number";
   private BigDecimal myNumber;
@@ -49,6 +59,10 @@ public class OuterComposite {
 
 
   public OuterComposite myNumber(BigDecimal myNumber) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.myNumber = myNumber;
     return this;
   }
@@ -73,6 +87,10 @@ public class OuterComposite {
 
 
   public OuterComposite myString(String myString) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.myString = myString;
     return this;
   }
@@ -97,6 +115,10 @@ public class OuterComposite {
 
 
   public OuterComposite myBoolean(Boolean myBoolean) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.myBoolean = myBoolean;
     return this;
   }
@@ -120,9 +142,12 @@ public class OuterComposite {
   }
 
 
+<<<<<<< HEAD
   /**
    * Return true if this OuterComposite object is equal to o.
    */
+=======
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {

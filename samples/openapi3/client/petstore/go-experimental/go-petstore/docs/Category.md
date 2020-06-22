@@ -5,7 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int64** |  | [optional] 
+<<<<<<< HEAD
 **Name** | **string** |  | [default to "default-name"]
+=======
+**Name** | Pointer to **string** |  | [default to "default-name"]
+>>>>>>> ooof
 
 ## Methods
 

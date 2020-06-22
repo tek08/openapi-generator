@@ -1,9 +1,13 @@
 package org.openapitools.model;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+=======
+import java.util.List;
+>>>>>>> ooof
 import org.openapitools.model.Category;
 import org.openapitools.model.Tag;
 import javax.validation.constraints.*;
@@ -32,7 +36,11 @@ public class Pet  {
   private String name;
 
   @ApiModelProperty(required = true, value = "")
+<<<<<<< HEAD
   private Set<String> photoUrls = new LinkedHashSet<String>();
+=======
+  private List<String> photoUrls = new ArrayList<String>();
+>>>>>>> ooof
 
   @ApiModelProperty(value = "")
   @Valid
@@ -136,6 +144,7 @@ public enum StatusEnum {
   **/
   @JsonProperty("photoUrls")
   @NotNull
+<<<<<<< HEAD
   public Set<String> getPhotoUrls() {
     return photoUrls;
   }
@@ -145,6 +154,17 @@ public enum StatusEnum {
   }
 
   public Pet photoUrls(Set<String> photoUrls) {
+=======
+  public List<String> getPhotoUrls() {
+    return photoUrls;
+  }
+
+  public void setPhotoUrls(List<String> photoUrls) {
+    this.photoUrls = photoUrls;
+  }
+
+  public Pet photoUrls(List<String> photoUrls) {
+>>>>>>> ooof
     this.photoUrls = photoUrls;
     return this;
   }

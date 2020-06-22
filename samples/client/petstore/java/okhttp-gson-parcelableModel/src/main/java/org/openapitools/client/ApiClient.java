@@ -98,6 +98,7 @@ public class ApiClient {
     }
 
     /*
+<<<<<<< HEAD
      * Basic constructor with custom OkHttpClient
      */
     public ApiClient(OkHttpClient client) {
@@ -115,6 +116,8 @@ public class ApiClient {
     }
 
     /*
+=======
+>>>>>>> ooof
      * Constructor for ApiClient to support access token retry on 401/403 configured with client ID
      */
     public ApiClient(String clientId) {

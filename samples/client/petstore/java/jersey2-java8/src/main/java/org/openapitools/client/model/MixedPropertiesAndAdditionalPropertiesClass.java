@@ -15,8 +15,11 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.HashMap;
+=======
+>>>>>>> ooof
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -30,8 +33,11 @@ import java.util.Map;
 import java.util.UUID;
 import org.openapitools.client.model.Animal;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+<<<<<<< HEAD
 import org.openapitools.client.JSON;
 
+=======
+>>>>>>> ooof
 
 /**
  * MixedPropertiesAndAdditionalPropertiesClass
@@ -41,7 +47,11 @@ import org.openapitools.client.JSON;
   MixedPropertiesAndAdditionalPropertiesClass.JSON_PROPERTY_DATE_TIME,
   MixedPropertiesAndAdditionalPropertiesClass.JSON_PROPERTY_MAP
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class MixedPropertiesAndAdditionalPropertiesClass {
   public static final String JSON_PROPERTY_UUID = "uuid";
   private UUID uuid;
@@ -54,6 +64,10 @@ public class MixedPropertiesAndAdditionalPropertiesClass {
 
 
   public MixedPropertiesAndAdditionalPropertiesClass uuid(UUID uuid) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.uuid = uuid;
     return this;
   }
@@ -78,6 +92,10 @@ public class MixedPropertiesAndAdditionalPropertiesClass {
 
 
   public MixedPropertiesAndAdditionalPropertiesClass dateTime(OffsetDateTime dateTime) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.dateTime = dateTime;
     return this;
   }
@@ -102,6 +120,10 @@ public class MixedPropertiesAndAdditionalPropertiesClass {
 
 
   public MixedPropertiesAndAdditionalPropertiesClass map(Map<String, Animal> map) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.map = map;
     return this;
   }
@@ -133,9 +155,12 @@ public class MixedPropertiesAndAdditionalPropertiesClass {
   }
 
 
+<<<<<<< HEAD
   /**
    * Return true if this MixedPropertiesAndAdditionalPropertiesClass object is equal to o.
    */
+=======
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {

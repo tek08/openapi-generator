@@ -78,7 +78,11 @@ class ApiResponse(object):
 
 
         :param code: The code of this ApiResponse.  # noqa: E501
+<<<<<<< HEAD
         :type code: int
+=======
+        :type: int
+>>>>>>> ooof
         """
 
         self._code = code
@@ -99,7 +103,11 @@ class ApiResponse(object):
 
 
         :param type: The type of this ApiResponse.  # noqa: E501
+<<<<<<< HEAD
         :type type: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._type = type
@@ -120,7 +128,11 @@ class ApiResponse(object):
 
 
         :param message: The message of this ApiResponse.  # noqa: E501
+<<<<<<< HEAD
         :type message: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._message = message

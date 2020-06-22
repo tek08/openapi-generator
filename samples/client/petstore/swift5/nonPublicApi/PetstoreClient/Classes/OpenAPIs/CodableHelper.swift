@@ -45,4 +45,8 @@ internal class CodableHelper {
     internal class func encode<T>(_ value: T) -> Swift.Result<Data, Error> where T: Encodable {
         return Swift.Result { try self.jsonEncoder.encode(value) }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ooof

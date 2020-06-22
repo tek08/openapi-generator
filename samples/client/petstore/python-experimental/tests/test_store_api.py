@@ -14,13 +14,21 @@ import time
 import unittest
 
 import petstore_api
+<<<<<<< HEAD
 from petstore_api.api.store_api import StoreApi
+=======
+from petstore_api.rest import ApiException
+>>>>>>> ooof
 
 
 class StoreApiTests(unittest.TestCase):
 
     def setUp(self):
+<<<<<<< HEAD
         self.store_api = StoreApi()
+=======
+        self.store_api = petstore_api.StoreApi()
+>>>>>>> ooof
 
     def tearDown(self):
         # sleep 1 sec between two every 2 tests

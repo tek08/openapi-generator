@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 
 @objc public class Pet: NSObject, Codable { 
+=======
+@objc public class Pet: NSObject, Codable {
+>>>>>>> ooof
 
     public enum Status: String, Codable, CaseIterable {
         case available = "available"
@@ -38,7 +42,11 @@ import Foundation
         self.status = status
     }
 
+<<<<<<< HEAD
     public enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    public enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case _id = "id"
         case category
         case name

@@ -14,7 +14,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class HasOnlyReadOnly  implements Serializable {
+=======
+public class HasOnlyReadOnly  implements Serializable {
+>>>>>>> ooof
   
   private @Valid String bar;
   private @Valid String foo;

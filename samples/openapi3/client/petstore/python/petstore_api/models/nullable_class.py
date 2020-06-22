@@ -113,7 +113,11 @@ class NullableClass(object):
 
 
         :param integer_prop: The integer_prop of this NullableClass.  # noqa: E501
+<<<<<<< HEAD
         :type integer_prop: int
+=======
+        :type: int
+>>>>>>> ooof
         """
 
         self._integer_prop = integer_prop
@@ -134,7 +138,11 @@ class NullableClass(object):
 
 
         :param number_prop: The number_prop of this NullableClass.  # noqa: E501
+<<<<<<< HEAD
         :type number_prop: float
+=======
+        :type: float
+>>>>>>> ooof
         """
 
         self._number_prop = number_prop
@@ -155,7 +163,11 @@ class NullableClass(object):
 
 
         :param boolean_prop: The boolean_prop of this NullableClass.  # noqa: E501
+<<<<<<< HEAD
         :type boolean_prop: bool
+=======
+        :type: bool
+>>>>>>> ooof
         """
 
         self._boolean_prop = boolean_prop
@@ -176,7 +188,11 @@ class NullableClass(object):
 
 
         :param string_prop: The string_prop of this NullableClass.  # noqa: E501
+<<<<<<< HEAD
         :type string_prop: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._string_prop = string_prop
@@ -197,7 +213,11 @@ class NullableClass(object):
 
 
         :param date_prop: The date_prop of this NullableClass.  # noqa: E501
+<<<<<<< HEAD
         :type date_prop: date
+=======
+        :type: date
+>>>>>>> ooof
         """
 
         self._date_prop = date_prop
@@ -218,7 +238,11 @@ class NullableClass(object):
 
 
         :param datetime_prop: The datetime_prop of this NullableClass.  # noqa: E501
+<<<<<<< HEAD
         :type datetime_prop: datetime
+=======
+        :type: datetime
+>>>>>>> ooof
         """
 
         self._datetime_prop = datetime_prop
@@ -239,7 +263,11 @@ class NullableClass(object):
 
 
         :param array_nullable_prop: The array_nullable_prop of this NullableClass.  # noqa: E501
+<<<<<<< HEAD
         :type array_nullable_prop: list[object]
+=======
+        :type: list[object]
+>>>>>>> ooof
         """
 
         self._array_nullable_prop = array_nullable_prop
@@ -260,7 +288,11 @@ class NullableClass(object):
 
 
         :param array_and_items_nullable_prop: The array_and_items_nullable_prop of this NullableClass.  # noqa: E501
+<<<<<<< HEAD
         :type array_and_items_nullable_prop: list[object]
+=======
+        :type: list[object]
+>>>>>>> ooof
         """
 
         self._array_and_items_nullable_prop = array_and_items_nullable_prop
@@ -281,7 +313,11 @@ class NullableClass(object):
 
 
         :param array_items_nullable: The array_items_nullable of this NullableClass.  # noqa: E501
+<<<<<<< HEAD
         :type array_items_nullable: list[object]
+=======
+        :type: list[object]
+>>>>>>> ooof
         """
 
         self._array_items_nullable = array_items_nullable
@@ -302,7 +338,11 @@ class NullableClass(object):
 
 
         :param object_nullable_prop: The object_nullable_prop of this NullableClass.  # noqa: E501
+<<<<<<< HEAD
         :type object_nullable_prop: dict(str, object)
+=======
+        :type: dict(str, object)
+>>>>>>> ooof
         """
 
         self._object_nullable_prop = object_nullable_prop
@@ -323,7 +363,11 @@ class NullableClass(object):
 
 
         :param object_and_items_nullable_prop: The object_and_items_nullable_prop of this NullableClass.  # noqa: E501
+<<<<<<< HEAD
         :type object_and_items_nullable_prop: dict(str, object)
+=======
+        :type: dict(str, object)
+>>>>>>> ooof
         """
 
         self._object_and_items_nullable_prop = object_and_items_nullable_prop
@@ -344,7 +388,11 @@ class NullableClass(object):
 
 
         :param object_items_nullable: The object_items_nullable of this NullableClass.  # noqa: E501
+<<<<<<< HEAD
         :type object_items_nullable: dict(str, object)
+=======
+        :type: dict(str, object)
+>>>>>>> ooof
         """
 
         self._object_items_nullable = object_items_nullable

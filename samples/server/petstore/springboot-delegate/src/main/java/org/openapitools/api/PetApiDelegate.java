@@ -3,7 +3,10 @@ package org.openapitools.api;
 import org.openapitools.model.ModelApiResponse;
 import org.openapitools.model.Pet;
 import org.springframework.core.io.Resource;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,7 +18,11 @@ import java.util.Map;
  * A delegate to be called by the {@link PetApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
+=======
+
+>>>>>>> ooof
 public interface PetApiDelegate {
 
     /**
@@ -61,7 +68,11 @@ public interface PetApiDelegate {
      * @deprecated
      * @see PetApi#findPetsByTags
      */
+<<<<<<< HEAD
     ResponseEntity<Set<Pet>> findPetsByTags(Set<String> tags);
+=======
+    ResponseEntity<List<Pet>> findPetsByTags(List<String> tags);
+>>>>>>> ooof
 
     /**
      * GET /pet/{petId} : Find pet by ID

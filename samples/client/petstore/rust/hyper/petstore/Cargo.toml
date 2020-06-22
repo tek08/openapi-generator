@@ -2,7 +2,10 @@
 name = "petstore-hyper"
 version = "1.0.0"
 authors = ["OpenAPI Generator team and contributors"]
+<<<<<<< HEAD
 edition = "2018"
+=======
+>>>>>>> ooof
 
 [dependencies]
 serde = "^1.0"

@@ -5,7 +5,10 @@ All URIs are relative to *http://petstore.swagger.io:80/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**testClassname**](FakeClassnameTags123Api.md#testClassname) | **PATCH** /fake_classname_test | To test class name in snake case
+<<<<<<< HEAD
 [**testClassnameWithHttpInfo**](FakeClassnameTags123Api.md#testClassname) | **PATCH** /fake_classname_test | To test class name in snake case
+=======
+>>>>>>> ooof
 
 
 
@@ -43,7 +46,10 @@ public class Example {
         Client body = new Client(); // Client | client model
         try {
             Client result = apiInstance.testClassname(body);
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeClassnameTags123Api#testClassname");
@@ -67,6 +73,7 @@ Name | Type | Description  | Notes
 
 [**Client**](Client.md)
 
+<<<<<<< HEAD
 
 ### Authorization
 
@@ -143,6 +150,8 @@ Name | Type | Description  | Notes
 ApiResponse<[**Client**](Client.md)>
 
 
+=======
+>>>>>>> ooof
 ### Authorization
 
 [api_key_query](../README.md#api_key_query)

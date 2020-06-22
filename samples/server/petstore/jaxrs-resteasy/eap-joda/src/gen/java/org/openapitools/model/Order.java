@@ -11,7 +11,11 @@ import org.joda.time.DateTime;
 import javax.validation.constraints.*;
 import io.swagger.annotations.*;
 
+<<<<<<< HEAD
 @ApiModel(description="An order for a pets from the pet store")@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyEapServerCodegen")
+=======
+@ApiModel(description="An order for a pets from the pet store")
+>>>>>>> ooof
 public class Order   {
   
 

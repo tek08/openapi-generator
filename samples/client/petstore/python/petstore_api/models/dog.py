@@ -68,7 +68,11 @@ class Dog(object):
 
 
         :param breed: The breed of this Dog.  # noqa: E501
+<<<<<<< HEAD
         :type breed: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._breed = breed

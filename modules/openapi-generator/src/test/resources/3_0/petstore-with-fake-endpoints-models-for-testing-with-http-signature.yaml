@@ -1810,7 +1810,10 @@ components:
           type: string
     banana:
       type: object
+<<<<<<< HEAD
       additionalProperties: true
+=======
+>>>>>>> ooof
       properties:
         lengthCm:
           type: number

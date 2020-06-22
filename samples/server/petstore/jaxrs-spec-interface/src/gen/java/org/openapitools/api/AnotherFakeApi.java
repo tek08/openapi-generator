@@ -15,7 +15,11 @@ import javax.validation.Valid;
 
 @Path("/another-fake")
 @Api(description = "the another-fake API")
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public interface AnotherFakeApi {
+=======
+public interface AnotherFakeApi {
+>>>>>>> ooof
 
     @PATCH
     @Path("/dummy")

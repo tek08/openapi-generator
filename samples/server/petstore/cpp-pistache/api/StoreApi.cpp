@@ -51,9 +51,12 @@ void StoreApi::delete_order_handler(const Pistache::Rest::Request &request, Pist
         //send a 400 error
         response.send(Pistache::Http::Code::Bad_Request, e.what());
         return;
+<<<<<<< HEAD
     } catch (Pistache::Http::HttpError &e) {
         response.send(static_cast<Pistache::Http::Code>(e.code()), e.what());
         return;
+=======
+>>>>>>> ooof
     } catch (std::exception &e) {
         //send a 500 error
         response.send(Pistache::Http::Code::Internal_Server_Error, e.what());
@@ -69,9 +72,12 @@ void StoreApi::get_inventory_handler(const Pistache::Rest::Request &, Pistache::
         //send a 400 error
         response.send(Pistache::Http::Code::Bad_Request, e.what());
         return;
+<<<<<<< HEAD
     } catch (Pistache::Http::HttpError &e) {
         response.send(static_cast<Pistache::Http::Code>(e.code()), e.what());
         return;
+=======
+>>>>>>> ooof
     } catch (std::exception &e) {
         //send a 500 error
         response.send(Pistache::Http::Code::Internal_Server_Error, e.what());
@@ -89,9 +95,12 @@ void StoreApi::get_order_by_id_handler(const Pistache::Rest::Request &request, P
         //send a 400 error
         response.send(Pistache::Http::Code::Bad_Request, e.what());
         return;
+<<<<<<< HEAD
     } catch (Pistache::Http::HttpError &e) {
         response.send(static_cast<Pistache::Http::Code>(e.code()), e.what());
         return;
+=======
+>>>>>>> ooof
     } catch (std::exception &e) {
         //send a 500 error
         response.send(Pistache::Http::Code::Internal_Server_Error, e.what());
@@ -112,9 +121,12 @@ void StoreApi::place_order_handler(const Pistache::Rest::Request &request, Pista
         //send a 400 error
         response.send(Pistache::Http::Code::Bad_Request, e.what());
         return;
+<<<<<<< HEAD
     } catch (Pistache::Http::HttpError &e) {
         response.send(static_cast<Pistache::Http::Code>(e.code()), e.what());
         return;
+=======
+>>>>>>> ooof
     } catch (std::exception &e) {
         //send a 500 error
         response.send(Pistache::Http::Code::Internal_Server_Error, e.what());

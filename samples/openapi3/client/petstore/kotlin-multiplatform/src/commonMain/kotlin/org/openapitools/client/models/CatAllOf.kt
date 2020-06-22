@@ -14,7 +14,10 @@ package org.openapitools.client.models
 
 import kotlinx.serialization.*
 import kotlinx.serialization.internal.CommonEnumSerializer
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * 
  * @param declawed 
@@ -22,5 +25,11 @@ import kotlinx.serialization.internal.CommonEnumSerializer
 @Serializable
 data class CatAllOf (
     @SerialName(value = "declawed") val declawed: kotlin.Boolean? = null
+<<<<<<< HEAD
 )
+=======
+) 
+
+
+>>>>>>> ooof
 

@@ -25,9 +25,12 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 {{#useRxJava2}}
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 {{/useRxJava2}}
+<<<<<<< HEAD
 {{#useRxJava3}}
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory;
 {{/useRxJava3}}
+=======
+>>>>>>> ooof
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 import {{invokerPackage}}.auth.HttpBasicAuth;
@@ -152,6 +155,7 @@ public class ApiClient {
       .baseUrl(baseUrl)
       {{#useRxJava}}
       .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+<<<<<<< HEAD
       {{/useRxJava}}
       {{#useRxJava2}}
       .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
@@ -159,6 +163,11 @@ public class ApiClient {
       {{#useRxJava3}}
       .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
       {{/useRxJava3}}
+=======
+      {{/useRxJava}}{{#useRxJava2}}
+      .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+      {{/useRxJava2}}
+>>>>>>> ooof
       .addConverterFactory(ScalarsConverterFactory.create())
       .addConverterFactory(GsonCustomConverterFactory.create(json.getGson()));
   }

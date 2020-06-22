@@ -15,8 +15,11 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.HashMap;
+=======
+>>>>>>> ooof
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -27,8 +30,11 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.ReadOnlyFirst;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+<<<<<<< HEAD
 import org.openapitools.client.JSON;
 
+=======
+>>>>>>> ooof
 
 /**
  * ArrayTest
@@ -38,7 +44,11 @@ import org.openapitools.client.JSON;
   ArrayTest.JSON_PROPERTY_ARRAY_ARRAY_OF_INTEGER,
   ArrayTest.JSON_PROPERTY_ARRAY_ARRAY_OF_MODEL
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class ArrayTest {
   public static final String JSON_PROPERTY_ARRAY_OF_STRING = "array_of_string";
   private List<String> arrayOfString = null;
@@ -51,6 +61,10 @@ public class ArrayTest {
 
 
   public ArrayTest arrayOfString(List<String> arrayOfString) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.arrayOfString = arrayOfString;
     return this;
   }
@@ -83,6 +97,10 @@ public class ArrayTest {
 
 
   public ArrayTest arrayArrayOfInteger(List<List<Long>> arrayArrayOfInteger) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.arrayArrayOfInteger = arrayArrayOfInteger;
     return this;
   }
@@ -115,6 +133,10 @@ public class ArrayTest {
 
 
   public ArrayTest arrayArrayOfModel(List<List<ReadOnlyFirst>> arrayArrayOfModel) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.arrayArrayOfModel = arrayArrayOfModel;
     return this;
   }
@@ -146,9 +168,12 @@ public class ArrayTest {
   }
 
 
+<<<<<<< HEAD
   /**
    * Return true if this ArrayTest object is equal to o.
    */
+=======
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {

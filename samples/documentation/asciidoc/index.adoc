@@ -24,6 +24,11 @@ This is a sample server Petstore server. For this sample, you can use the api ke
 
 
 * *APIKey* KeyParamName:     _api_key_,     KeyInQuery: _false_, KeyInHeader: _true_
+<<<<<<< HEAD
+=======
+
+* *APIKey* KeyParamName:     _AUTH_KEY_,     KeyInQuery: _false_, KeyInHeader: _false_
+>>>>>>> ooof
 * *OAuth*  AuthorizationUrl: _http://petstore.swagger.io/api/oauth/dialog_, TokenUrl:   __ 
 
 
@@ -54,7 +59,11 @@ Add a new pet to the store
 ===== Parameters
 
 
+<<<<<<< HEAD
 ====== Body Parameter
+=======
+===== Body Parameter
+>>>>>>> ooof
 
 [cols="2,3,1,1,1"]
 |===         
@@ -504,7 +513,11 @@ Update an existing pet
 ===== Parameters
 
 
+<<<<<<< HEAD
 ====== Body Parameter
+=======
+===== Body Parameter
+>>>>>>> ooof
 
 [cols="2,3,1,1,1"]
 |===         
@@ -616,7 +629,11 @@ Updates a pet in the store with form data
 |===         
 
 
+<<<<<<< HEAD
 ====== Form Parameters
+=======
+===== Form Parameter
+>>>>>>> ooof
 
 [cols="2,3,1,1,1"]
 |===         
@@ -715,7 +732,11 @@ uploads an image
 |===         
 
 
+<<<<<<< HEAD
 ====== Form Parameters
+=======
+===== Form Parameter
+>>>>>>> ooof
 
 [cols="2,3,1,1,1"]
 |===         
@@ -1054,7 +1075,11 @@ Place an order for a pet
 ===== Parameters
 
 
+<<<<<<< HEAD
 ====== Body Parameter
+=======
+===== Body Parameter
+>>>>>>> ooof
 
 [cols="2,3,1,1,1"]
 |===         
@@ -1146,7 +1171,11 @@ This can only be done by the logged in user.
 ===== Parameters
 
 
+<<<<<<< HEAD
 ====== Body Parameter
+=======
+===== Body Parameter
+>>>>>>> ooof
 
 [cols="2,3,1,1,1"]
 |===         
@@ -1226,7 +1255,11 @@ Creates list of users with given input array
 ===== Parameters
 
 
+<<<<<<< HEAD
 ====== Body Parameter
+=======
+===== Body Parameter
+>>>>>>> ooof
 
 [cols="2,3,1,1,1"]
 |===         
@@ -1306,7 +1339,11 @@ Creates list of users with given input array
 ===== Parameters
 
 
+<<<<<<< HEAD
 ====== Body Parameter
+=======
+===== Body Parameter
+>>>>>>> ooof
 
 [cols="2,3,1,1,1"]
 |===         
@@ -1739,7 +1776,11 @@ This can only be done by the logged in user.
 
 |===         
 
+<<<<<<< HEAD
 ====== Body Parameter
+=======
+===== Body Parameter
+>>>>>>> ooof
 
 [cols="2,3,1,1,1"]
 |===         

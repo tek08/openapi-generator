@@ -157,12 +157,21 @@ class StoreApi {
   /// Place an order for a pet
   ///
   /// 
+<<<<<<< HEAD
   Future<Order> placeOrder(Order order) async {
     Object postBody = order;
 
     // verify required params are set
     if(order == null) {
      throw new ApiException(400, "Missing required param: order");
+=======
+  Future<Order> placeOrder(Order body) async {
+    Object postBody = body;
+
+    // verify required params are set
+    if(body == null) {
+     throw new ApiException(400, "Missing required param: body");
+>>>>>>> ooof
     }
 
     // create path and map variables
@@ -173,7 +182,11 @@ class StoreApi {
     Map<String, String> headerParams = {};
     Map<String, String> formParams = {};
 
+<<<<<<< HEAD
     List<String> contentTypes = ["application/json"];
+=======
+    List<String> contentTypes = [];
+>>>>>>> ooof
 
     String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
     List<String> authNames = [];

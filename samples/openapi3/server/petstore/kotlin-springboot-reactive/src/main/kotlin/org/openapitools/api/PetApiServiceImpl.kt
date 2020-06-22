@@ -7,7 +7,11 @@ import org.springframework.stereotype.Service
 @Service
 class PetApiServiceImpl : PetApiService {
 
+<<<<<<< HEAD
     override suspend fun addPet(pet: Pet): Pet {
+=======
+    override suspend fun addPet(pet: Pet): Unit {
+>>>>>>> ooof
         TODO("Implement me")
     }
 
@@ -27,7 +31,11 @@ class PetApiServiceImpl : PetApiService {
         TODO("Implement me")
     }
 
+<<<<<<< HEAD
     override suspend fun updatePet(pet: Pet): Pet {
+=======
+    override suspend fun updatePet(pet: Pet): Unit {
+>>>>>>> ooof
         TODO("Implement me")
     }
 

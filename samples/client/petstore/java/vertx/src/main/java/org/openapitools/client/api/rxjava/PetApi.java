@@ -3,7 +3,10 @@ package org.openapitools.client.api.rxjava;
 import io.vertx.core.file.AsyncFile;
 import org.openapitools.client.model.ModelApiResponse;
 import org.openapitools.client.model.Pet;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 
 import java.util.*;
 
@@ -11,7 +14,11 @@ import rx.Single;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class PetApi {
 
 	private final org.openapitools.client.api.PetApi delegate;
@@ -95,7 +102,11 @@ public class PetApi {
      * @param tags Tags to filter by (required)
      * @param resultHandler Asynchronous result handler
      */
+<<<<<<< HEAD
     public void findPetsByTags(Set<String> tags, Handler<AsyncResult<Set<Pet>>> resultHandler) {
+=======
+    public void findPetsByTags(List<String> tags, Handler<AsyncResult<List<Pet>>> resultHandler) {
+>>>>>>> ooof
         delegate.findPetsByTags(tags, resultHandler);
     }
 
@@ -105,7 +116,11 @@ public class PetApi {
      * @param tags Tags to filter by (required)
      * @return Asynchronous result handler (RxJava Single)
      */
+<<<<<<< HEAD
     public Single<Set<Pet>> rxFindPetsByTags(Set<String> tags) {
+=======
+    public Single<List<Pet>> rxFindPetsByTags(List<String> tags) {
+>>>>>>> ooof
         return Single.create(new io.vertx.rx.java.SingleOnSubscribeAdapter<>(fut -> {
             delegate.findPetsByTags(tags, fut);
         }));

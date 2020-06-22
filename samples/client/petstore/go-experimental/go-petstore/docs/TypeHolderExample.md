@@ -4,12 +4,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+<<<<<<< HEAD
 **StringItem** | **string** |  | 
 **NumberItem** | **float32** |  | 
 **FloatItem** | **float32** |  | 
 **IntegerItem** | **int32** |  | 
 **BoolItem** | **bool** |  | 
 **ArrayItem** | **[]int32** |  | 
+=======
+**StringItem** | Pointer to **string** |  | 
+**NumberItem** | Pointer to **float32** |  | 
+**FloatItem** | Pointer to **float32** |  | 
+**IntegerItem** | Pointer to **int32** |  | 
+**BoolItem** | Pointer to **bool** |  | 
+**ArrayItem** | Pointer to **[]int32** |  | 
+>>>>>>> ooof
 
 ## Methods
 

@@ -12,9 +12,16 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+<<<<<<< HEAD
 import org.springframework.web.util.UriComponentsBuilder;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
+=======
+import org.springframework.web.client.RestClientException;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.util.UriComponentsBuilder;
+import org.springframework.core.ParameterizedTypeReference;
+>>>>>>> ooof
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -23,7 +30,11 @@ import org.springframework.http.MediaType;
 import reactor.core.publisher.Mono;
 import reactor.core.publisher.Flux;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class FakeClassnameTags123Api {
     private ApiClient apiClient;
 
@@ -50,6 +61,7 @@ public class FakeClassnameTags123Api {
      * <p><b>200</b> - successful operation
      * @param body client model
      * @return Client
+<<<<<<< HEAD
      * @throws WebClientResponseException if an error occurs while attempting to invoke the API
      */
     public Mono<Client> testClassname(Client body) throws WebClientResponseException {
@@ -57,6 +69,15 @@ public class FakeClassnameTags123Api {
         // verify the required parameter 'body' is set
         if (body == null) {
             throw new WebClientResponseException("Missing the required parameter 'body' when calling testClassname", HttpStatus.BAD_REQUEST.value(), HttpStatus.BAD_REQUEST.getReasonPhrase(), null, null, null);
+=======
+     * @throws RestClientException if an error occurs while attempting to invoke the API
+     */
+    public Mono<Client> testClassname(Client body) throws RestClientException {
+        Object postBody = body;
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Missing the required parameter 'body' when calling testClassname");
+>>>>>>> ooof
         }
         // create path and map variables
         final Map<String, Object> pathParams = new HashMap<String, Object>();

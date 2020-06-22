@@ -14,7 +14,11 @@ import javax.validation.constraints.*;
 /**
  * Cat
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
+=======
+
+>>>>>>> ooof
 public class Cat extends Animal  {
   @JsonProperty("declawed")
   private Boolean declawed;

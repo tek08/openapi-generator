@@ -7,7 +7,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * Describes the result of uploading an image resource
  **/
+<<<<<<< HEAD
 @JsonInclude(JsonInclude.Include.NON_NULL)
+=======
+@JsonInclude(JsonInclude.Include.NON_NULL) 
+>>>>>>> ooof
 public class ModelApiResponse   {
   
   private Integer code;

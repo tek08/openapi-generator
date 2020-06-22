@@ -77,7 +77,11 @@ class Animal(object):
 
 
         :param class_name: The class_name of this Animal.  # noqa: E501
+<<<<<<< HEAD
         :type class_name: str
+=======
+        :type: str
+>>>>>>> ooof
         """
         if self.local_vars_configuration.client_side_validation and class_name is None:  # noqa: E501
             raise ValueError("Invalid value for `class_name`, must not be `None`")  # noqa: E501
@@ -100,7 +104,11 @@ class Animal(object):
 
 
         :param color: The color of this Animal.  # noqa: E501
+<<<<<<< HEAD
         :type color: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._color = color

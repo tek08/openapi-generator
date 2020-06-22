@@ -99,12 +99,17 @@ public class {{classname}} {{#parent}}extends {{{parent}}} {{/parent}}{{#vendorE
 
   {{^isReadOnly}}
   public {{classname}} {{name}}({{{datatypeWithEnum}}} {{name}}) {
+<<<<<<< HEAD
     {{#vendorExtensions.x-is-jackson-optional-nullable}}
     this.{{name}} = JsonNullable.<{{{datatypeWithEnum}}}>of({{name}});
     {{/vendorExtensions.x-is-jackson-optional-nullable}}
     {{^vendorExtensions.x-is-jackson-optional-nullable}}
     this.{{name}} = {{name}};
     {{/vendorExtensions.x-is-jackson-optional-nullable}}
+=======
+    {{#vendorExtensions.x-is-jackson-optional-nullable}}this.{{name}} = JsonNullable.<{{{datatypeWithEnum}}}>of({{name}});{{/vendorExtensions.x-is-jackson-optional-nullable}}
+    {{^vendorExtensions.x-is-jackson-optional-nullable}}this.{{name}} = {{name}};{{/vendorExtensions.x-is-jackson-optional-nullable}}
+>>>>>>> ooof
     return this;
   }
   {{#isListContainer}}
@@ -230,11 +235,16 @@ public class {{classname}} {{#parent}}extends {{{parent}}} {{/parent}}{{#vendorE
   {{/isReadOnly}}
 
   {{/vars}}
+<<<<<<< HEAD
 {{>libraries/jersey2/additional_properties}}
 {{^supportJava6}}
   /**
    * Return true if this {{name}} object is equal to o.
    */
+=======
+
+{{^supportJava6}}
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
   {{#useReflectionEqualsHashCode}}
@@ -249,8 +259,12 @@ public class {{classname}} {{#parent}}extends {{{parent}}} {{/parent}}{{#vendorE
     }{{#hasVars}}
     {{classname}} {{classVarName}} = ({{classname}}) o;
     return {{#vars}}{{#isByteArray}}Arrays{{/isByteArray}}{{^isByteArray}}Objects{{/isByteArray}}.equals(this.{{name}}, {{classVarName}}.{{name}}){{#hasMore}} &&
+<<<<<<< HEAD
         {{/hasMore}}{{/vars}}{{#additionalPropertiesType}}&&
         Objects.equals(this.additionalProperties, {{classVarName}}.additionalProperties){{/additionalPropertiesType}}{{#parent}} &&
+=======
+        {{/hasMore}}{{/vars}}{{#parent}} &&
+>>>>>>> ooof
         super.equals(o){{/parent}};{{/hasVars}}{{^hasVars}}
     return {{#parent}}super.equals(o){{/parent}}{{^parent}}true{{/parent}};{{/hasVars}}
   {{/useReflectionEqualsHashCode}}
@@ -262,7 +276,11 @@ public class {{classname}} {{#parent}}extends {{{parent}}} {{/parent}}{{#vendorE
     return HashCodeBuilder.reflectionHashCode(this);
   {{/useReflectionEqualsHashCode}}
   {{^useReflectionEqualsHashCode}}
+<<<<<<< HEAD
     return Objects.hash({{#vars}}{{^isByteArray}}{{name}}{{/isByteArray}}{{#isByteArray}}Arrays.hashCode({{name}}){{/isByteArray}}{{#hasMore}}, {{/hasMore}}{{/vars}}{{#parent}}{{#hasVars}}, {{/hasVars}}super.hashCode(){{/parent}}{{#additionalPropertiesType}}, additionalProperties{{/additionalPropertiesType}});
+=======
+    return Objects.hash({{#vars}}{{^isByteArray}}{{name}}{{/isByteArray}}{{#isByteArray}}Arrays.hashCode({{name}}){{/isByteArray}}{{#hasMore}}, {{/hasMore}}{{/vars}}{{#parent}}{{#hasVars}}, {{/hasVars}}super.hashCode(){{/parent}});
+>>>>>>> ooof
   {{/useReflectionEqualsHashCode}}
   }
 
@@ -300,9 +318,12 @@ public class {{classname}} {{#parent}}extends {{{parent}}} {{/parent}}{{#vendorE
     {{#vars}}
     sb.append("    {{name}}: ").append(toIndentedString({{name}})).append("\n");
     {{/vars}}
+<<<<<<< HEAD
     {{#additionalPropertiesType}}
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     {{/additionalPropertiesType}}
+=======
+>>>>>>> ooof
     sb.append("}");
     return sb.toString();
   }
@@ -377,6 +398,7 @@ public class {{classname}} {{#parent}}extends {{{parent}}} {{/parent}}{{#vendorE
     }
   };
 {{/parcelableModel}}
+<<<<<<< HEAD
 {{#discriminator}}
 static {
   // Initialize and register the discriminator mappings.
@@ -388,4 +410,6 @@ static {
   JSON.registerDiscriminator({{classname}}.class, "{{propertyBaseName}}", mappings);
 }
 {{/discriminator}}
+=======
+>>>>>>> ooof
 }

@@ -123,6 +123,10 @@ gen{{classname}} n =
 
 
 {{#x-allUniqueParams}}{{#x-enum}}
+<<<<<<< HEAD
 instance Arbitrary {{{x-param-name-type}}} where
+=======
+instance Arbitrary {{{x-paramNameType}}} where
+>>>>>>> ooof
   arbitrary = arbitraryBoundedEnum
 {{/x-enum}}{{/x-allUniqueParams}}

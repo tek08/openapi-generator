@@ -20,6 +20,7 @@ type Mammal struct {
 	Zebra *Zebra
 }
 
+<<<<<<< HEAD
 // WhaleAsMammal is a convenience function that returns Whale wrapped in Mammal
 func WhaleAsMammal(v *Whale) Mammal {
 	return Mammal{ Whale: v}
@@ -32,11 +33,18 @@ func ZebraAsMammal(v *Zebra) Mammal {
 
 
 // Unmarshal JSON data into one of the pointers in the struct
+=======
+// Unmarshl JSON data into one of the pointers in the struct
+>>>>>>> ooof
 func (dst *Mammal) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
 	// try to unmarshal data into Whale
+<<<<<<< HEAD
 	err = json.Unmarshal(data, &dst.Whale)
+=======
+	err = json.Unmarshal(data, &dst.Whale);
+>>>>>>> ooof
 	if err == nil {
 		jsonWhale, _ := json.Marshal(dst.Whale)
 		if string(jsonWhale) == "{}" { // empty struct
@@ -49,7 +57,11 @@ func (dst *Mammal) UnmarshalJSON(data []byte) error {
 	}
 
 	// try to unmarshal data into Zebra
+<<<<<<< HEAD
 	err = json.Unmarshal(data, &dst.Zebra)
+=======
+	err = json.Unmarshal(data, &dst.Zebra);
+>>>>>>> ooof
 	if err == nil {
 		jsonZebra, _ := json.Marshal(dst.Zebra)
 		if string(jsonZebra) == "{}" { // empty struct
@@ -62,10 +74,13 @@ func (dst *Mammal) UnmarshalJSON(data []byte) error {
 	}
 
 	if match > 1 { // more than 1 match
+<<<<<<< HEAD
 		// reset to nil
 		dst.Whale = nil
 		dst.Zebra = nil
 
+=======
+>>>>>>> ooof
 		return fmt.Errorf("Data matches more than one schema in oneOf(Mammal)")
 	} else if match == 1 {
 		return nil // exactly one match
@@ -74,8 +89,13 @@ func (dst *Mammal) UnmarshalJSON(data []byte) error {
 	}
 }
 
+<<<<<<< HEAD
 // Marshal data from the first non-nil pointers in the struct to JSON
 func (src Mammal) MarshalJSON() ([]byte, error) {
+=======
+// Marshl data from the first non-nil pointers in the struct to JSON
+func (src *Mammal) MarshalJSON() ([]byte, error) {
+>>>>>>> ooof
 	if src.Whale != nil {
 		return json.Marshal(&src.Whale)
 	}
@@ -101,6 +121,7 @@ func (obj *Mammal) GetActualInstance() (interface{}) {
 	return nil
 }
 
+<<<<<<< HEAD
 type NullableMammal struct {
 	value *Mammal
 	isSet bool
@@ -138,3 +159,5 @@ func (v *NullableMammal) UnmarshalJSON(src []byte) error {
 }
 
 
+=======
+>>>>>>> ooof

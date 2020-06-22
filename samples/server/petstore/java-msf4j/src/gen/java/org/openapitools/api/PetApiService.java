@@ -9,7 +9,10 @@ import org.wso2.msf4j.formparam.FileInfo;
 import java.io.File;
 import org.openapitools.model.ModelApiResponse;
 import org.openapitools.model.Pet;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 
 import java.util.List;
 import org.openapitools.api.NotFoundException;
@@ -19,7 +22,11 @@ import java.io.InputStream;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen")
+=======
+
+>>>>>>> ooof
 public abstract class PetApiService {
     public abstract Response addPet(Pet body
  ) throws NotFoundException;
@@ -28,7 +35,11 @@ public abstract class PetApiService {
  ) throws NotFoundException;
     public abstract Response findPetsByStatus(List<String> status
  ) throws NotFoundException;
+<<<<<<< HEAD
     public abstract Response findPetsByTags(Set<String> tags
+=======
+    public abstract Response findPetsByTags(List<String> tags
+>>>>>>> ooof
  ) throws NotFoundException;
     public abstract Response getPetById(Long petId
  ) throws NotFoundException;

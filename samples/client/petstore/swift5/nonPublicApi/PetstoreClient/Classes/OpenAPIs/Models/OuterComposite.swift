@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 internal struct OuterComposite: Codable { 
 
+=======
+internal struct OuterComposite: Codable {
+>>>>>>> ooof
 
     internal var myNumber: Double?
     internal var myString: String?
@@ -21,7 +25,11 @@ internal struct OuterComposite: Codable {
         self.myBoolean = myBoolean
     }
 
+<<<<<<< HEAD
     internal enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    internal enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case myNumber = "my_number"
         case myString = "my_string"
         case myBoolean = "my_boolean"

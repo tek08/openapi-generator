@@ -11,7 +11,10 @@ package petstore
 
 import (
 	"encoding/json"
+<<<<<<< HEAD
 	"fmt"
+=======
+>>>>>>> ooof
 )
 
 // OuterEnumIntegerDefaultValue the model 'OuterEnumIntegerDefaultValue'
@@ -24,6 +27,7 @@ const (
 	OUTERENUMINTEGERDEFAULTVALUE__2 OuterEnumIntegerDefaultValue = 2
 )
 
+<<<<<<< HEAD
 func (v *OuterEnumIntegerDefaultValue) UnmarshalJSON(src []byte) error {
 	var value int32
 	err := json.Unmarshal(src, &value)
@@ -41,6 +45,8 @@ func (v *OuterEnumIntegerDefaultValue) UnmarshalJSON(src []byte) error {
 	return fmt.Errorf("%+v is not a valid OuterEnumIntegerDefaultValue", value)
 }
 
+=======
+>>>>>>> ooof
 // Ptr returns reference to OuterEnumIntegerDefaultValue value
 func (v OuterEnumIntegerDefaultValue) Ptr() *OuterEnumIntegerDefaultValue {
 	return &v

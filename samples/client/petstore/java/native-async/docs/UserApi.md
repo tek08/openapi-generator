@@ -17,7 +17,11 @@ Method | HTTP request | Description
 
 ## createUser
 
+<<<<<<< HEAD
 > CompletableFuture<Void> createUser(body)
+=======
+> createUser(body)
+>>>>>>> ooof
 
 Create user
 
@@ -32,7 +36,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.UserApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -42,8 +49,12 @@ public class Example {
         UserApi apiInstance = new UserApi(defaultClient);
         User body = new User(); // User | Created user object
         try {
+<<<<<<< HEAD
             CompletableFuture<Void> result = apiInstance.createUser(body);
 
+=======
+            apiInstance.createUser(body);
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#createUser");
             System.err.println("Status code: " + e.getCode());
@@ -64,8 +75,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
 CompletableFuture<void> (empty response body)
+=======
+null (empty response body)
+>>>>>>> ooof
 
 ### Authorization
 
@@ -84,7 +99,11 @@ No authorization required
 
 ## createUsersWithArrayInput
 
+<<<<<<< HEAD
 > CompletableFuture<Void> createUsersWithArrayInput(body)
+=======
+> createUsersWithArrayInput(body)
+>>>>>>> ooof
 
 Creates list of users with given input array
 
@@ -97,7 +116,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.UserApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -107,8 +129,12 @@ public class Example {
         UserApi apiInstance = new UserApi(defaultClient);
         List<User> body = Arrays.asList(); // List<User> | List of user object
         try {
+<<<<<<< HEAD
             CompletableFuture<Void> result = apiInstance.createUsersWithArrayInput(body);
 
+=======
+            apiInstance.createUsersWithArrayInput(body);
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#createUsersWithArrayInput");
             System.err.println("Status code: " + e.getCode());
@@ -129,8 +155,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
 CompletableFuture<void> (empty response body)
+=======
+null (empty response body)
+>>>>>>> ooof
 
 ### Authorization
 
@@ -149,7 +179,11 @@ No authorization required
 
 ## createUsersWithListInput
 
+<<<<<<< HEAD
 > CompletableFuture<Void> createUsersWithListInput(body)
+=======
+> createUsersWithListInput(body)
+>>>>>>> ooof
 
 Creates list of users with given input array
 
@@ -162,7 +196,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.UserApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -172,8 +209,12 @@ public class Example {
         UserApi apiInstance = new UserApi(defaultClient);
         List<User> body = Arrays.asList(); // List<User> | List of user object
         try {
+<<<<<<< HEAD
             CompletableFuture<Void> result = apiInstance.createUsersWithListInput(body);
 
+=======
+            apiInstance.createUsersWithListInput(body);
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#createUsersWithListInput");
             System.err.println("Status code: " + e.getCode());
@@ -194,8 +235,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
 CompletableFuture<void> (empty response body)
+=======
+null (empty response body)
+>>>>>>> ooof
 
 ### Authorization
 
@@ -214,7 +259,11 @@ No authorization required
 
 ## deleteUser
 
+<<<<<<< HEAD
 > CompletableFuture<Void> deleteUser(username)
+=======
+> deleteUser(username)
+>>>>>>> ooof
 
 Delete user
 
@@ -229,7 +278,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.UserApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -239,8 +291,12 @@ public class Example {
         UserApi apiInstance = new UserApi(defaultClient);
         String username = "username_example"; // String | The name that needs to be deleted
         try {
+<<<<<<< HEAD
             CompletableFuture<Void> result = apiInstance.deleteUser(username);
 
+=======
+            apiInstance.deleteUser(username);
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#deleteUser");
             System.err.println("Status code: " + e.getCode());
@@ -261,8 +317,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
 CompletableFuture<void> (empty response body)
+=======
+null (empty response body)
+>>>>>>> ooof
 
 ### Authorization
 
@@ -282,7 +342,11 @@ No authorization required
 
 ## getUserByName
 
+<<<<<<< HEAD
 > CompletableFuture<User> getUserByName(username)
+=======
+> User getUserByName(username)
+>>>>>>> ooof
 
 Get user by user name
 
@@ -295,7 +359,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.UserApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -305,8 +372,12 @@ public class Example {
         UserApi apiInstance = new UserApi(defaultClient);
         String username = "username_example"; // String | The name that needs to be fetched. Use user1 for testing.
         try {
+<<<<<<< HEAD
             CompletableFuture<User> result = apiInstance.getUserByName(username);
 
+=======
+            User result = apiInstance.getUserByName(username);
+>>>>>>> ooof
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#getUserByName");
@@ -328,8 +399,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 CompletableFuture<[**User**](User.md)>
 
+=======
+[**User**](User.md)
+>>>>>>> ooof
 
 ### Authorization
 
@@ -350,7 +425,11 @@ No authorization required
 
 ## loginUser
 
+<<<<<<< HEAD
 > CompletableFuture<String> loginUser(username, password)
+=======
+> String loginUser(username, password)
+>>>>>>> ooof
 
 Logs user into the system
 
@@ -363,7 +442,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.UserApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -374,8 +456,12 @@ public class Example {
         String username = "username_example"; // String | The user name for login
         String password = "password_example"; // String | The password for login in clear text
         try {
+<<<<<<< HEAD
             CompletableFuture<String> result = apiInstance.loginUser(username, password);
 
+=======
+            String result = apiInstance.loginUser(username, password);
+>>>>>>> ooof
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#loginUser");
@@ -398,8 +484,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 CompletableFuture<**String**>
 
+=======
+**String**
+>>>>>>> ooof
 
 ### Authorization
 
@@ -419,7 +509,11 @@ No authorization required
 
 ## logoutUser
 
+<<<<<<< HEAD
 > CompletableFuture<Void> logoutUser()
+=======
+> logoutUser()
+>>>>>>> ooof
 
 Logs out current logged in user session
 
@@ -432,7 +526,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.UserApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -441,8 +538,12 @@ public class Example {
 
         UserApi apiInstance = new UserApi(defaultClient);
         try {
+<<<<<<< HEAD
             CompletableFuture<Void> result = apiInstance.logoutUser();
 
+=======
+            apiInstance.logoutUser();
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#logoutUser");
             System.err.println("Status code: " + e.getCode());
@@ -460,8 +561,12 @@ This endpoint does not need any parameter.
 
 ### Return type
 
+<<<<<<< HEAD
 
 CompletableFuture<void> (empty response body)
+=======
+null (empty response body)
+>>>>>>> ooof
 
 ### Authorization
 
@@ -480,7 +585,11 @@ No authorization required
 
 ## updateUser
 
+<<<<<<< HEAD
 > CompletableFuture<Void> updateUser(username, body)
+=======
+> updateUser(username, body)
+>>>>>>> ooof
 
 Updated user
 
@@ -495,7 +604,10 @@ import org.openapitools.client.ApiException;
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.UserApi;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -506,8 +618,12 @@ public class Example {
         String username = "username_example"; // String | name that need to be deleted
         User body = new User(); // User | Updated user object
         try {
+<<<<<<< HEAD
             CompletableFuture<Void> result = apiInstance.updateUser(username, body);
 
+=======
+            apiInstance.updateUser(username, body);
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#updateUser");
             System.err.println("Status code: " + e.getCode());
@@ -529,8 +645,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
 CompletableFuture<void> (empty response body)
+=======
+null (empty response body)
+>>>>>>> ooof
 
 ### Authorization
 

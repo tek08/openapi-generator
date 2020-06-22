@@ -4,10 +4,17 @@
                 {
                     let authorization = match (&context as &dyn Has<Option<Authorization>>).get() {
                         &Some(ref authorization) => authorization,
+<<<<<<< HEAD
                         &None => return Ok(Response::builder()
                                                 .status(StatusCode::FORBIDDEN)
                                                 .body(Body::from("Unauthenticated"))
                                                 .expect("Unable to create Authentication Forbidden response")),
+=======
+                        &None => return Box::new(future::ok(Response::builder()
+                                                .status(StatusCode::FORBIDDEN)
+                                                .body(Body::from("Unauthenticated"))
+                                                .expect("Unable to create Authentication Forbidden response"))),
+>>>>>>> ooof
                     };
                     {{#authMethods}}
                     {{#isOAuth}}
@@ -22,14 +29,22 @@
 
                         if !required_scopes.is_subset(scopes) {
                             let missing_scopes = required_scopes.difference(scopes);
+<<<<<<< HEAD
                             return Ok(Response::builder()
+=======
+                            return Box::new(future::ok(Response::builder()
+>>>>>>> ooof
                                 .status(StatusCode::FORBIDDEN)
                                 .body(Body::from(missing_scopes.fold(
                                     "Insufficient authorization, missing scopes".to_string(),
                                     |s, scope| format!("{} {}", s, scope))
                                 ))
                                 .expect("Unable to create Authentication Insufficient response")
+<<<<<<< HEAD
                             );
+=======
+                            ));
+>>>>>>> ooof
                         }
                     }
                     {{/isOAuth}}
@@ -38,6 +53,7 @@
 
 {{/hasAuthMethods}}
 {{#vendorExtensions}}
+<<<<<<< HEAD
   {{#x-consumes-multipart}}
                 let boundary = match swagger::multipart::boundary(&headers) {
                     Some(boundary) => boundary.to_string(),
@@ -49,6 +65,19 @@
 
   {{/x-consumes-multipart}}
   {{#x-has-path-params}}
+=======
+  {{#consumesMultipart}}
+                let boundary = match swagger::multipart::boundary(&headers) {
+                    Some(boundary) => boundary.to_string(),
+                    None => return Box::new(future::ok(Response::builder()
+                                .status(StatusCode::BAD_REQUEST)
+                                .body(Body::from("Couldn't find valid multipart body".to_string()))
+                                .expect("Unable to create Bad Request response for incorrect boundary"))),
+                };
+
+  {{/consumesMultipart}}
+  {{#hasPathParams}}
+>>>>>>> ooof
                 // Path parameters
                 let path: &str = &uri.path().to_string();
                 let path_params =
@@ -58,12 +87,17 @@
                         panic!("Path {} matched RE {{{x-path-id}}} in set but failed match against \"{}\"", path, paths::REGEX_{{{x-path-id}}}.as_str())
                     );
 
+<<<<<<< HEAD
   {{/x-has-path-params}}
+=======
+  {{/hasPathParams}}
+>>>>>>> ooof
 {{/vendorExtensions}}
 {{#pathParams}}
                 let param_{{{paramName}}} = match percent_encoding::percent_decode(path_params["{{{baseName}}}"].as_bytes()).decode_utf8() {
                     Ok(param_{{{paramName}}}) => match param_{{{paramName}}}.parse::<{{{dataType}}}>() {
                         Ok(param_{{{paramName}}}) => param_{{{paramName}}},
+<<<<<<< HEAD
                         Err(e) => return Ok(Response::builder()
                                         .status(StatusCode::BAD_REQUEST)
                                         .body(Body::from(format!("Couldn't parse path parameter {{{baseName}}}: {}", e)))
@@ -73,13 +107,30 @@
                                         .status(StatusCode::BAD_REQUEST)
                                         .body(Body::from(format!("Couldn't percent-decode path parameter as UTF-8: {}", &path_params["{{{baseName}}}"])))
                                         .expect("Unable to create Bad Request response for invalid percent decode"))
+=======
+                        Err(e) => return Box::new(future::ok(Response::builder()
+                                        .status(StatusCode::BAD_REQUEST)
+                                        .body(Body::from(format!("Couldn't parse path parameter {{{baseName}}}: {}", e)))
+                                        .expect("Unable to create Bad Request response for invalid path parameter"))),
+                    },
+                    Err(_) => return Box::new(future::ok(Response::builder()
+                                        .status(StatusCode::BAD_REQUEST)
+                                        .body(Body::from(format!("Couldn't percent-decode path parameter as UTF-8: {}", &path_params["{{{baseName}}}"])))
+                                        .expect("Unable to create Bad Request response for invalid percent decode")))
+>>>>>>> ooof
                 };
 
 {{/pathParams}}
 {{#vendorExtensions}}
+<<<<<<< HEAD
   {{#x-callback-params}}
                 let callback_{{.}} = path_params["{{{.}}}"].to_string();
   {{/x-callback-params}}
+=======
+  {{#callbackParams}}
+                let callback_{{.}} = path_params["{{{.}}}"].to_string();
+  {{/callbackParams}}
+>>>>>>> ooof
 {{/vendorExtensions}}
 {{#headerParams}}
   {{#-first}}
@@ -97,19 +148,33 @@
                             Some(result.0),
 {{/required}}
                         Err(err) => {
+<<<<<<< HEAD
                             return Ok(Response::builder()
                                         .status(StatusCode::BAD_REQUEST)
                                         .body(Body::from(format!("Invalid header {{{baseName}}} - {}", err)))
                                         .expect("Unable to create Bad Request response for invalid header {{{baseName}}}"));
+=======
+                            return Box::new(future::ok(Response::builder()
+                                        .status(StatusCode::BAD_REQUEST)
+                                        .body(Body::from(format!("Invalid header {{{baseName}}} - {}", err)))
+                                        .expect("Unable to create Bad Request response for invalid header {{{baseName}}}")));
+>>>>>>> ooof
 
                         },
                     },
                     None => {
 {{#required}}
+<<<<<<< HEAD
                         return Ok(Response::builder()
                                         .status(StatusCode::BAD_REQUEST)
                                         .body(Body::from("Missing required header {{{baseName}}}"))
                                         .expect("Unable to create Bad Request response for missing required header {{{baseName}}}"));
+=======
+                        return Box::new(future::ok(Response::builder()
+                                        .status(StatusCode::BAD_REQUEST)
+                                        .body(Body::from("Missing required header {{{baseName}}}"))
+                                        .expect("Unable to create Bad Request response for missing required header {{{baseName}}}")));
+>>>>>>> ooof
 {{/required}}
 {{^required}}
                         None
@@ -121,6 +186,7 @@
   {{/-last}}
 {{/headerParams}}
 {{#queryParams}}
+<<<<<<< HEAD
   {{#-first}}
                 // Query parameters (note that non-required or collection query parameters will ignore garbage values, rather than causing a 400 response)
                 let query_params = form_urlencoded::parse(uri.query().unwrap_or_default().as_bytes()).collect::<Vec<_>>();
@@ -131,11 +197,23 @@
                     .filter_map(|param_{{{paramName}}}| param_{{{paramName}}}.parse().ok())
                     .collect::<Vec<_>>();
       {{^required}}
+=======
+{{#-first}}
+                // Query parameters (note that non-required or collection query parameters will ignore garbage values, rather than causing a 400 response)
+                let query_params = form_urlencoded::parse(uri.query().unwrap_or_default().as_bytes()).collect::<Vec<_>>();
+{{/-first}}
+                let param_{{{paramName}}} = query_params.iter().filter(|e| e.0 == "{{{baseName}}}").map(|e| e.1.to_owned())
+{{#isListContainer}}
+                    .filter_map(|param_{{{paramName}}}| param_{{{paramName}}}.parse().ok())
+                    .collect::<Vec<_>>();
+{{^required}}
+>>>>>>> ooof
                 let param_{{{paramName}}} = if !param_{{{paramName}}}.is_empty() {
                     Some(param_{{{paramName}}})
                 } else {
                     None
                 };
+<<<<<<< HEAD
       {{/required}}
     {{/vendorExtensions.x-consumes-json}}
     {{#vendorExtensions.x-consumes-json}}
@@ -198,17 +276,47 @@
                 };
     {{/required}}
   {{/isListContainer}}
+=======
+{{/required}}
+{{/isListContainer}}
+{{^isListContainer}}
+                    .nth(0);
+{{#required}}
+                let param_{{{paramName}}} = match param_{{{paramName}}} {
+                    Some(param_{{{paramName}}}) => match param_{{{paramName}}}.parse::<{{{dataType}}}>() {
+                        Ok(param_{{{paramName}}}) => param_{{{paramName}}},
+                        Err(e) => return Box::new(future::ok(Response::builder()
+                                        .status(StatusCode::BAD_REQUEST)
+                                        .body(Body::from(format!("Couldn't parse query parameter {{{baseName}}} - doesn't match schema: {}", e)))
+                                        .expect("Unable to create Bad Request response for invalid query parameter {{{baseName}}}"))),
+                    },
+                    None => return Box::new(future::ok(Response::builder()
+                                        .status(StatusCode::BAD_REQUEST)
+                                        .body(Body::from("Missing required query parameter {{{baseName}}}"))
+                                        .expect("Unable to create Bad Request response for missing qeury parameter {{{baseName}}}"))),
+                };
+{{/required}}
+{{^required}}
+                let param_{{{paramName}}} = param_{{{paramName}}}.and_then(|param_{{{paramName}}}| param_{{{paramName}}}.parse::<{{{baseType}}}>().ok());
+{{/required}}
+{{/isListContainer}}
+>>>>>>> ooof
   {{#-last}}
 
   {{/-last}}
 {{/queryParams}}
 {{#vendorExtensions}}
+<<<<<<< HEAD
 {{^x-consumes-multipart}}
+=======
+{{^consumesMultipart}}
+>>>>>>> ooof
 {{#bodyParams}}
 {{#-first}}
                 // Body parameters (note that non-required body parameters will ignore garbage
                 // values, rather than causing a 400 response). Produce warning header and logs for
                 // any unused fields.
+<<<<<<< HEAD
                 let result = body.to_raw().await;
                 match result {
                             Ok(body) => {
@@ -224,29 +332,60 @@
                                     let deserializer = &mut serde_json::Deserializer::from_slice(&*body);
 {{/x-consumes-json}}
 {{^x-consumes-plain-text}}
+=======
+                Box::new(body.concat2()
+                    .then(move |result| -> Self::Future {
+                        match result {
+                            Ok(body) => {
+{{#vendorExtensions}}
+{{^consumesPlainText}}
+                                let mut unused_elements = Vec::new();
+{{/consumesPlainText}}
+                                let param_{{{paramName}}}: Option<{{{dataType}}}> = if !body.is_empty() {
+{{#consumesXml}}
+                                    let deserializer = &mut serde_xml_rs::de::Deserializer::new_from_reader(&*body);
+{{/consumesXml}}
+{{#consumesJson}}
+                                    let deserializer = &mut serde_json::Deserializer::from_slice(&*body);
+{{/consumesJson}}
+{{^consumesPlainText}}
+>>>>>>> ooof
                                     match serde_ignored::deserialize(deserializer, |path| {
                                             warn!("Ignoring unknown field in body: {}", path);
                                             unused_elements.push(path.to_string());
                                     }) {
                                         Ok(param_{{{paramName}}}) => param_{{{paramName}}},
 {{#required}}
+<<<<<<< HEAD
                                         Err(e) => return Ok(Response::builder()
                                                         .status(StatusCode::BAD_REQUEST)
                                                         .body(Body::from(format!("Couldn't parse body parameter {{{baseName}}} - doesn't match schema: {}", e)))
                                                         .expect("Unable to create Bad Request response for invalid body parameter {{{baseName}}} due to schema")),
+=======
+                                        Err(e) => return Box::new(future::ok(Response::builder()
+                                                        .status(StatusCode::BAD_REQUEST)
+                                                        .body(Body::from(format!("Couldn't parse body parameter {{{baseName}}} - doesn't match schema: {}", e)))
+                                                        .expect("Unable to create Bad Request response for invalid body parameter {{{baseName}}} due to schema"))),
+>>>>>>> ooof
 {{/required}}
 {{^required}}
                                         Err(_) => None,
 {{/required}}
                                     }
+<<<<<<< HEAD
 {{/x-consumes-plain-text}}
 {{#x-consumes-plain-text}}
+=======
+{{/consumesPlainText}}
+{{#consumesPlainText}}
+>>>>>>> ooof
 {{#isByteArray}}
                                     Some(swagger::ByteArray(body.to_vec()))
 {{/isByteArray}}
 {{#isString}}
                                     match String::from_utf8(body.to_vec()) {
                                         Ok(param_{{{paramName}}}) => Some(param_{{{paramName}}}),
+<<<<<<< HEAD
                                         Err(e) => return Ok(Response::builder()
                                                         .status(StatusCode::BAD_REQUEST)
                                                         .body(Body::from(format!("Couldn't parse body parameter {{{baseName}}} - not valid UTF-8: {}", e)))
@@ -254,6 +393,15 @@
                                     }
 {{/isString}}
 {{/x-consumes-plain-text}}
+=======
+                                        Err(e) => return Box::new(future::ok(Response::builder()
+                                                        .status(StatusCode::BAD_REQUEST)
+                                                        .body(Body::from(format!("Couldn't parse body parameter {{{baseName}}} - not valid UTF-8: {}", e)))
+                                                        .expect("Unable to create Bad Request response for invalid body parameter {{{baseName}}} due to UTF-8"))),
+                                    }
+{{/isString}}
+{{/consumesPlainText}}
+>>>>>>> ooof
 {{/vendorExtensions}}
                                 } else {
                                     None
@@ -261,10 +409,17 @@
 {{#required}}
                                 let param_{{{paramName}}} = match param_{{{paramName}}} {
                                     Some(param_{{{paramName}}}) => param_{{{paramName}}},
+<<<<<<< HEAD
                                     None => return Ok(Response::builder()
                                                         .status(StatusCode::BAD_REQUEST)
                                                         .body(Body::from("Missing required body parameter {{{baseName}}}"))
                                                         .expect("Unable to create Bad Request response for missing body parameter {{{baseName}}}")),
+=======
+                                    None => return Box::new(future::ok(Response::builder()
+                                                        .status(StatusCode::BAD_REQUEST)
+                                                        .body(Body::from("Missing required body parameter {{{baseName}}}"))
+                                                        .expect("Unable to create Bad Request response for missing body parameter {{{baseName}}}"))),
+>>>>>>> ooof
                                 };
 {{/required}}
 {{/-first}}
@@ -272,15 +427,26 @@
 
   {{/-last}}
 {{/bodyParams}}
+<<<<<<< HEAD
 {{/x-consumes-multipart}}
 {{#x-consumes-multipart}}
+=======
+{{/consumesMultipart}}
+{{#consumesMultipart}}
+>>>>>>> ooof
   {{^bodyParams}}
     {{#vendorExtensions}}
                 // Form Body parameters (note that non-required body parameters will ignore garbage
                 // values, rather than causing a 400 response). Produce warning header and logs for
                 // any unused fields.
+<<<<<<< HEAD
                 let result = body.to_raw();
                 match result.await {
+=======
+                Box::new(body.concat2()
+                    .then(move |result| -> Self::Future {
+                        match result {
+>>>>>>> ooof
                             Ok(body) => {
                                 use std::io::Read;
 
@@ -290,10 +456,17 @@
                                         entries
                                     },
                                     _ => {
+<<<<<<< HEAD
                                         return Ok(Response::builder()
                                                         .status(StatusCode::BAD_REQUEST)
                                                         .body(Body::from(format!("Unable to process all message parts")))
                                                         .expect("Unable to create Bad Request response due to failure to process all message"))
+=======
+                                        return Box::new(future::ok(Response::builder()
+                                                        .status(StatusCode::BAD_REQUEST)
+                                                        .body(Body::from(format!("Unable to process all message parts")))
+                                                        .expect("Unable to create Bad Request response due to failure to process all message")))
+>>>>>>> ooof
                                     },
                                 };
                 {{#formParams}}
@@ -316,11 +489,19 @@
                                         let {{{paramName}}}_model: {{{dataType}}} = match serde_json::from_str(&data) {
                                             Ok(model) => model,
                                             Err(e) => {
+<<<<<<< HEAD
                                                 return Ok(
                                                     Response::builder()
                                                     .status(StatusCode::BAD_REQUEST)
                                                     .body(Body::from(format!("{{{paramName}}} data does not match API definition : {}", e)))
                                                     .expect("Unable to create Bad Request due to missing required form parameter {{{paramName}}}"))
+=======
+                                                return Box::new(future::ok(
+                                                    Response::builder()
+                                                    .status(StatusCode::BAD_REQUEST)
+                                                    .body(Body::from(format!("{{{paramName}}} data does not match API definition : {}", e)))
+                                                    .expect("Unable to create Bad Request due to missing required form parameter {{{paramName}}}")))
+>>>>>>> ooof
                                             }
                                         };
                                         {{{paramName}}}_model
@@ -332,11 +513,19 @@
                                     },
                                     None => {
                 {{#required}}
+<<<<<<< HEAD
                                         return Ok(
                                             Response::builder()
                                             .status(StatusCode::BAD_REQUEST)
                                             .body(Body::from(format!("Missing required form parameter {{{paramName}}}")))
                                             .expect("Unable to create Bad Request due to missing required form parameter {{{paramName}}}"))
+=======
+                                        return Box::new(future::ok(
+                                            Response::builder()
+                                            .status(StatusCode::BAD_REQUEST)
+                                            .body(Body::from(format!("Missing required form parameter {{{paramName}}}")))
+                                            .expect("Unable to create Bad Request due to missing required form parameter {{{paramName}}}")))
+>>>>>>> ooof
                 {{/required}}
                 {{^required}}
                                             None
@@ -346,22 +535,37 @@
       {{/formParams}}
     {{/vendorExtensions}}
   {{/bodyParams}}
+<<<<<<< HEAD
 {{/x-consumes-multipart}}
 {{^x-consumes-multipart-related}}
 {{^x-consumes-multipart}}
 {{^bodyParams}}
 {{#vendorExtensions}}
+=======
+{{/consumesMultipart}}
+{{^consumesMultipartRelated}}
+{{^consumesMultipart}}
+{{^bodyParams}}
+{{#vendorExtensions}}
+                Box::new({
+                        {{
+>>>>>>> ooof
 {{#formParams}}
 {{#-first}}
                                 // Form parameters
 {{/-first}}
+<<<<<<< HEAD
                                 let param_{{{paramName}}} = {{^isContainer}}{{#vendorExtensions}}{{{x-example}}};{{/vendorExtensions}}{{/isContainer}}{{#isListContainer}}{{#required}}Vec::new();{{/required}}{{^required}}None;{{/required}}{{/isListContainer}}{{#isMapContainer}}None;{{/isMapContainer}}
+=======
+                                let param_{{{paramName}}} = {{^isContainer}}{{#vendorExtensions}}{{{example}}};{{/vendorExtensions}}{{/isContainer}}{{#isListContainer}}{{#required}}Vec::new();{{/required}}{{^required}}None;{{/required}}{{/isListContainer}}{{#isMapContainer}}None;{{/isMapContainer}}
+>>>>>>> ooof
 {{#-last}}
 
 {{/-last}}
 {{/formParams}}
 {{/vendorExtensions}}
 {{/bodyParams}}
+<<<<<<< HEAD
 {{/x-consumes-multipart}}
 {{/x-consumes-multipart-related}}
 {{#x-consumes-multipart-related}}
@@ -370,6 +574,17 @@
                 // any unused fields.
                 let result = body.to_raw();
                 match result.await {
+=======
+{{/consumesMultipart}}
+{{/consumesMultipartRelated}}
+{{#consumesMultipartRelated}}
+                // Body parameters (note that non-required body parameters will ignore garbage
+                // values, rather than causing a 400 response). Produce warning header and logs for
+                // any unused fields.
+                Box::new(body.concat2()
+                    .then(move |result| -> Self::Future {
+                        match result {
+>>>>>>> ooof
                             Ok(body) => {
                                 let mut unused_elements: Vec<String> = vec![];
 
@@ -389,10 +604,17 @@
                                         multi_part_headers.set(ContentType(content_type_mime));
                                     },
                                     Err(e) => {
+<<<<<<< HEAD
                                         return Ok(Response::builder()
                                                 .status(StatusCode::BAD_REQUEST)
                                                 .body(Body::from(e))
                                                 .expect("Unable to create Bad Request response due to unable to read content-type header for {{operationId}}"));
+=======
+                                        return Box::new(future::ok(Response::builder()
+                                                .status(StatusCode::BAD_REQUEST)
+                                                .body(Body::from(e))
+                                                .expect("Unable to create Bad Request response due to unable to read content-type header for {{operationId}}")));
+>>>>>>> ooof
                                     }
                                 }
 
@@ -401,10 +623,17 @@
                                 let nodes = match read_multipart_body(&mut&*body, &multi_part_headers, false) {
                                     Ok(nodes) => nodes,
                                     Err(e) => {
+<<<<<<< HEAD
                                         return Ok(Response::builder()
                                                 .status(StatusCode::BAD_REQUEST)
                                                 .body(Body::from(format!("Could not read multipart body for {{operationId}}: {}", e)))
                                                 .expect("Unable to create Bad Request response due to unable to read multipart body for {{operationId}}"));
+=======
+                                        return Box::new(future::ok(Response::builder()
+                                                .status(StatusCode::BAD_REQUEST)
+                                                .body(Body::from(format!("Could not read multipart body for {{operationId}}: {}", e)))
+                                                .expect("Unable to create Bad Request response due to unable to read multipart body for {{operationId}}")));
+>>>>>>> ooof
                                     }
                                 };
 
@@ -426,10 +655,17 @@
                                                     unused_elements.push(path.to_string());
                                                 }) {
                                                     Ok(json_data) => json_data,
+<<<<<<< HEAD
                                                     Err(e) => return Ok(Response::builder()
                                                                     .status(StatusCode::BAD_REQUEST)
                                                                     .body(Body::from(format!("Couldn't parse body parameter {{dataType}} - doesn't match schema: {}", e)))
                                                                     .expect("Unable to create Bad Request response for invalid body parameter {{dataType}} due to schema"))
+=======
+                                                    Err(e) => return Box::new(future::ok(Response::builder()
+                                                                    .status(StatusCode::BAD_REQUEST)
+                                                                    .body(Body::from(format!("Couldn't parse body parameter {{dataType}} - doesn't match schema: {}", e)))
+                                                                    .expect("Unable to create Bad Request response for invalid body parameter {{dataType}} due to schema")))
+>>>>>>> ooof
                                                 };
                                                 // Push JSON part to return object.
                                                 param_{{{paramName}}}.get_or_insert(json_data);
@@ -462,16 +698,24 @@
 {{#required}}
                                 let param_{{{paramName}}} = match param_required_binary_field {
                                     Some(x) => x,
+<<<<<<< HEAD
                                     None =>  return Ok(Response::builder()
                                                                     .status(StatusCode::BAD_REQUEST)
                                                                     .body(Body::from(format!("Missing required multipart/related parameter {{{paramName}}}")))
                                                                     .expect("Unable to create Bad Request response for missing multipart/related parameter {{{paramName}}} due to schema"))
+=======
+                                    None =>  return Box::new(future::ok(Response::builder()
+                                                                    .status(StatusCode::BAD_REQUEST)
+                                                                    .body(Body::from(format!("Missing required multipart/related parameter {{{paramName}}}")))
+                                                                    .expect("Unable to create Bad Request response for missing multipart/related parameter {{{paramName}}} due to schema")))
+>>>>>>> ooof
                                 };
 {{/required}}
 {{#-last}}
 
 {{/-last}}
 {{/formParams}}
+<<<<<<< HEAD
 {{/x-consumes-multipart-related}}
 {{/vendorExtensions}}
                                 let result = api_impl.{{#vendorExtensions}}{{{x-operation-id}}}{{/vendorExtensions}}(
@@ -479,21 +723,41 @@
                                           {{#x-callback-params}}
                                             callback_{{.}},
                                           {{/x-callback-params}}
+=======
+{{/consumesMultipartRelated}}
+{{/vendorExtensions}}
+                                Box::new(
+                                    api_impl.{{#vendorExtensions}}{{{operation_id}}}{{/vendorExtensions}}(
+                                        {{#vendorExtensions}}
+                                          {{#callbackParams}}
+                                            callback_{{.}},
+                                          {{/callbackParams}}
+>>>>>>> ooof
                                         {{/vendorExtensions}}
                                         {{#allParams}}
                                             param_{{{paramName}}}{{#isListContainer}}.as_ref(){{/isListContainer}},
                                         {{/allParams}}
                                         &context
+<<<<<<< HEAD
                                     ).await;
                                 let mut response = Response::new(Body::empty());
                                 response.headers_mut().insert(
+=======
+                                    ).then(move |result| {
+                                        let mut response = Response::new(Body::empty());
+                                        response.headers_mut().insert(
+>>>>>>> ooof
                                             HeaderName::from_static("x-span-id"),
                                             HeaderValue::from_str((&context as &dyn Has<XSpanIdString>).get().0.clone().to_string().as_str())
                                                 .expect("Unable to create X-Span-ID header value"));
 
 {{#bodyParams}}
 {{#vendorExtensions}}
+<<<<<<< HEAD
 {{^x-consumes-plain-text}}
+=======
+{{^consumesPlainText}}
+>>>>>>> ooof
                                         if !unused_elements.is_empty() {
                                             response.headers_mut().insert(
                                                 HeaderName::from_static("warning"),
@@ -501,13 +765,21 @@
                                                     .expect("Unable to create Warning header value"));
                                         }
 
+<<<<<<< HEAD
 {{/x-consumes-plain-text}}
+=======
+{{/consumesPlainText}}
+>>>>>>> ooof
 {{/vendorExtensions}}
 {{/bodyParams}}
                                         match result {
                                             Ok(rsp) => match rsp {
 {{#responses}}
+<<<<<<< HEAD
                                                 {{{operationId}}}Response::{{#vendorExtensions}}{{x-response-id}}{{/vendorExtensions}}
+=======
+                                                {{{operationId}}}Response::{{#vendorExtensions}}{{x-responseId}}{{/vendorExtensions}}
+>>>>>>> ooof
 {{#dataType}}
 {{^headers}}
                                                     (body)
@@ -536,6 +808,7 @@
 {{/dataType}}
                                                 => {
 {{#headers}}
+<<<<<<< HEAD
   {{^required}}
                                                     if let Some({{{name}}}) = {{{name}}} {
   {{/required}}
@@ -543,45 +816,75 @@
                                                         Ok(val) => val,
                                                         Err(e) => {
                                                             return Ok(Response::builder()
+=======
+                                                    let {{{name}}} = match header::IntoHeaderValue({{{name}}}).try_into() {
+                                                        Ok(val) => val,
+                                                        Err(e) => {
+                                                            return future::ok(Response::builder()
+>>>>>>> ooof
                                                                     .status(StatusCode::INTERNAL_SERVER_ERROR)
                                                                     .body(Body::from(format!("An internal server error occurred handling {{name}} header - {}", e)))
                                                                     .expect("Unable to create Internal Server Error for invalid response header"))
                                                         }
                                                     };
 
+<<<<<<< HEAD
+=======
+{{/headers}}
+                                                    *response.status_mut() = StatusCode::from_u16({{{code}}}).expect("Unable to turn {{{code}}} into a StatusCode");
+{{#headers}}
+>>>>>>> ooof
                                                     response.headers_mut().insert(
                                                         HeaderName::from_static("{{{nameInLowerCase}}}"),
                                                         {{name}}
                                                     );
+<<<<<<< HEAD
   {{^required}}
                                                     }
   {{/required}}
 {{/headers}}
                                                     *response.status_mut() = StatusCode::from_u16({{{code}}}).expect("Unable to turn {{{code}}} into a StatusCode");
+=======
+{{/headers}}
+>>>>>>> ooof
 {{#produces}}
 {{#-first}}
 {{#dataType}}
 {{#vendorExtensions}}
                                                     response.headers_mut().insert(
                                                         CONTENT_TYPE,
+<<<<<<< HEAD
                                                         HeaderValue::from_str("{{{x-mime-type}}}")
                                                             .expect("Unable to create Content-Type header for {{{x-uppercase-operation-id}}}_{{x-uppercase-response-id}}"));
+=======
+                                                        HeaderValue::from_str("{{{mimeType}}}")
+                                                            .expect("Unable to create Content-Type header for {{{uppercase_operation_id}}}_{{x-uppercaseResponseId}}"));
+>>>>>>> ooof
 {{/vendorExtensions}}
 {{/dataType}}
 {{/-first}}
 {{/produces}}
 {{#dataType}}
 {{#vendorExtensions}}
+<<<<<<< HEAD
 {{#x-produces-xml}}
 {{^x-has-namespace}}
                                                     let body = serde_xml_rs::to_string(&body).expect("impossible to fail to serialize");
 {{/x-has-namespace}}
 {{#x-has-namespace}}
+=======
+{{#producesXml}}
+{{^has_namespace}}
+                                                    let body = serde_xml_rs::to_string(&body).expect("impossible to fail to serialize");
+{{/has_namespace}}
+{{#has_namespace}}
+>>>>>>> ooof
                                                     let mut namespaces = std::collections::BTreeMap::new();
 
                                                     // An empty string is used to indicate a global namespace in xmltree.
                                                     namespaces.insert("".to_string(), {{{dataType}}}::NAMESPACE.to_string());
                                                     let body = serde_xml_rs::to_string_with_namespaces(&body, namespaces).expect("impossible to fail to serialize");
+<<<<<<< HEAD
 {{/x-has-namespace}}
 {{/x-produces-xml}}
 {{#x-produces-json}}
@@ -593,6 +896,19 @@
 {{#x-produces-plain-text}}
                                                     let body = body;
 {{/x-produces-plain-text}}
+=======
+{{/has_namespace}}
+{{/producesXml}}
+{{#producesJson}}
+                                                    let body = serde_json::to_string(&body).expect("impossible to fail to serialize");
+{{/producesJson}}
+{{#producesBytes}}
+                                                    let body = body.0;
+{{/producesBytes}}
+{{#producesPlainText}}
+                                                    let body = body;
+{{/producesPlainText}}
+>>>>>>> ooof
 {{/vendorExtensions}}
                                                     *response.body_mut() = Body::from(body);
 {{/dataType}}
@@ -607,6 +923,7 @@
                                             },
                                         }
 
+<<<<<<< HEAD
                                         Ok(response)
 {{#vendorExtensions}}
 {{^x-consumes-multipart}}
@@ -623,10 +940,37 @@
 {{/vendorExtensions}}
 {{/bodyParams}}
 {{/x-consumes-multipart}}
+=======
+                                        future::ok(response)
+                                    }
+                                ))
+{{#vendorExtensions}}
+{{^consumesMultipart}}
+{{^bodyParams}}
+{{#vendorExtensions}}
+{{#consumesMultipartRelated}}
+                            },
+                            Err(e) => Box::new(future::ok(Response::builder()
+                                                .status(StatusCode::BAD_REQUEST)
+                                                .body(Body::from(format!("Couldn't read body parameter {{{baseName}}}: {}", e)))
+                                                .expect("Unable to create Bad Request response due to unable to read body parameter {{{baseName}}}"))),
+                        }
+                    })
+                ) as Self::Future
+{{/consumesMultipartRelated}}
+{{^consumesMultipartRelated}}
+                        }}
+                }) as Self::Future
+{{/consumesMultipartRelated}}
+{{/vendorExtensions}}
+{{/bodyParams}}
+{{/consumesMultipart}}
+>>>>>>> ooof
 {{/vendorExtensions}}
 {{#bodyParams}}
 {{#-first}}
                             },
+<<<<<<< HEAD
                             Err(e) => Ok(Response::builder()
                                                 .status(StatusCode::BAD_REQUEST)
                                                 .body(Body::from(format!("Couldn't read body parameter {{{baseName}}}: {}", e)))
@@ -647,5 +991,32 @@
 {{/vendorExtensions}}
 {{/bodyParams}}
 {{/x-consumes-multipart}}
+=======
+                            Err(e) => Box::new(future::ok(Response::builder()
+                                                .status(StatusCode::BAD_REQUEST)
+                                                .body(Body::from(format!("Couldn't read body parameter {{{baseName}}}: {}", e)))
+                                                .expect("Unable to create Bad Request response due to unable to read body parameter {{{baseName}}}"))),
+                        }
+                    })
+                ) as Self::Future
+{{/-first}}
+{{/bodyParams}}
+{{#vendorExtensions}}
+{{#consumesMultipart}}
+{{^bodyParams}}
+{{#vendorExtensions}}
+                                as Self::Future
+                            },
+                            Err(e) => Box::new(future::ok(Response::builder()
+                                                .status(StatusCode::BAD_REQUEST)
+                                                .body(Body::from(format!("Couldn't read multipart body")))
+                                                .expect("Unable to create Bad Request response due to unable read multipart body"))),
+                        }
+                    })
+                )
+{{/vendorExtensions}}
+{{/bodyParams}}
+{{/consumesMultipart}}
+>>>>>>> ooof
 {{/vendorExtensions}}
             },

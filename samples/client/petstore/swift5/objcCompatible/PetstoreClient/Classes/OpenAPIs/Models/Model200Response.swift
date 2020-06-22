@@ -9,7 +9,11 @@ import Foundation
 
 /** Model for testing model name starting with number */
 
+<<<<<<< HEAD
 @objc public class Model200Response: NSObject, Codable { 
+=======
+@objc public class Model200Response: NSObject, Codable {
+>>>>>>> ooof
 
     public var name: Int?
     public var nameNum: NSNumber? {
@@ -24,7 +28,11 @@ import Foundation
         self._class = _class
     }
 
+<<<<<<< HEAD
     public enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    public enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case name
         case _class = "class"
     }

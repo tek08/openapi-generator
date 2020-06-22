@@ -127,11 +127,19 @@ const callouts = [
     {
         id: 'try',
         imageUrl: 'img/tools/npm.svg',
+<<<<<<< HEAD
         title: <>Try via npm</>,
         content: (
             <>
                 <p>
                     The <a href="https://github.com/openapitools/openapi-generator-cli" className="href">npm package
+=======
+        title: <>Try via NPM</>,
+        content: (
+            <>
+                <p>
+                    The <a href="https://github.com/openapitools/openapi-generator-cli" className="href">NPM package
+>>>>>>> ooof
                     wrapper</a> is cross-platform wrapper around the .jar artifact.
                 </p>
                 <p>

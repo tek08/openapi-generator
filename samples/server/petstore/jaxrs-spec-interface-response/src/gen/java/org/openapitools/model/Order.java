@@ -15,7 +15,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class Order  implements Serializable {
+=======
+public class Order  implements Serializable {
+>>>>>>> ooof
   
   private @Valid Long id;
   private @Valid Long petId;
@@ -65,17 +69,28 @@ public enum StatusEnum {
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("id")
   public Long getId() {
     return id;
   }
+<<<<<<< HEAD
 
   public void setId(Long id) {
     this.id = id;
   }/**
+=======
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public Order petId(Long petId) {
     this.petId = petId;
@@ -83,17 +98,28 @@ public enum StatusEnum {
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("petId")
   public Long getPetId() {
     return petId;
   }
+<<<<<<< HEAD
 
   public void setPetId(Long petId) {
     this.petId = petId;
   }/**
+=======
+  public void setPetId(Long petId) {
+    this.petId = petId;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public Order quantity(Integer quantity) {
     this.quantity = quantity;
@@ -101,17 +127,28 @@ public enum StatusEnum {
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("quantity")
   public Integer getQuantity() {
     return quantity;
   }
+<<<<<<< HEAD
 
   public void setQuantity(Integer quantity) {
     this.quantity = quantity;
   }/**
+=======
+  public void setQuantity(Integer quantity) {
+    this.quantity = quantity;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public Order shipDate(Date shipDate) {
     this.shipDate = shipDate;
@@ -119,17 +156,28 @@ public enum StatusEnum {
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("shipDate")
   public Date getShipDate() {
     return shipDate;
   }
+<<<<<<< HEAD
 
   public void setShipDate(Date shipDate) {
     this.shipDate = shipDate;
   }/**
+=======
+  public void setShipDate(Date shipDate) {
+    this.shipDate = shipDate;
+  }
+
+  /**
+>>>>>>> ooof
    * Order Status
    **/
   public Order status(StatusEnum status) {
@@ -138,17 +186,28 @@ public enum StatusEnum {
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "Order Status")
   @JsonProperty("status")
   public StatusEnum getStatus() {
     return status;
   }
+<<<<<<< HEAD
 
   public void setStatus(StatusEnum status) {
     this.status = status;
   }/**
+=======
+  public void setStatus(StatusEnum status) {
+    this.status = status;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public Order complete(Boolean complete) {
     this.complete = complete;
@@ -156,18 +215,28 @@ public enum StatusEnum {
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("complete")
   public Boolean getComplete() {
     return complete;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
   public void setComplete(Boolean complete) {
     this.complete = complete;
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -215,7 +284,10 @@ public enum StatusEnum {
     }
     return o.toString().replace("\n", "\n    ");
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 }
 

@@ -2,7 +2,11 @@
 
 /**
  * UserController
+<<<<<<< HEAD
  * PHP version 7.1.3
+=======
+ * PHP version 5
+>>>>>>> ooof
  *
  * @category Class
  * @package  OpenAPI\Server\Controller
@@ -406,7 +410,11 @@ class UserController extends Controller
             $result = $handler->getUserByName($username, $responseCode, $responseHeaders);
 
             // Find default response message
+<<<<<<< HEAD
             $message = '';
+=======
+            $message = 'successful operation';
+>>>>>>> ooof
 
             // Find a more specific message, if available
             switch ($responseCode) {
@@ -499,7 +507,11 @@ class UserController extends Controller
             $result = $handler->loginUser($username, $password, $responseCode, $responseHeaders);
 
             // Find default response message
+<<<<<<< HEAD
             $message = '';
+=======
+            $message = 'successful operation';
+>>>>>>> ooof
 
             // Find a more specific message, if available
             switch ($responseCode) {

@@ -16,6 +16,7 @@ import unittest
 import datetime
 
 import petstore_api
+<<<<<<< HEAD
 from petstore_api.model import (
     shape,
     equilateral_triangle,
@@ -30,6 +31,8 @@ from petstore_api.model import (
     drawing,
     banana_req,
 )
+=======
+>>>>>>> ooof
 
 
 MockResponse = namedtuple('MockResponse', 'data')
@@ -60,8 +63,13 @@ class DeserializationTests(unittest.TestCase):
         }
         response = MockResponse(data=json.dumps(data))
 
+<<<<<<< HEAD
         deserialized = self.deserialize(response, (shape.Shape,), True)
         self.assertTrue(isinstance(deserialized, equilateral_triangle.EquilateralTriangle))
+=======
+        deserialized = self.deserialize(response, (petstore_api.Shape,), True)
+        self.assertTrue(isinstance(deserialized, petstore_api.EquilateralTriangle))
+>>>>>>> ooof
         self.assertEqual(deserialized.shape_type, shape_type)
         self.assertEqual(deserialized.triangle_type, triangle_type)
 
@@ -81,7 +89,11 @@ class DeserializationTests(unittest.TestCase):
             petstore_api.ApiValueError,
             err_msg.format("quadrilateralType", "Triangle")
         ):
+<<<<<<< HEAD
             self.deserialize(response, (shape.Shape,), True)
+=======
+            self.deserialize(response, (petstore_api.Shape,), True)
+>>>>>>> ooof
 
     def test_deserialize_animal(self):
         """
@@ -100,8 +112,13 @@ class DeserializationTests(unittest.TestCase):
         }
         response = MockResponse(data=json.dumps(data))
 
+<<<<<<< HEAD
         deserialized = self.deserialize(response, (animal.Animal,), True)
         self.assertTrue(isinstance(deserialized, dog.Dog))
+=======
+        deserialized = self.deserialize(response, (petstore_api.Animal,), True)
+        self.assertTrue(isinstance(deserialized, petstore_api.Dog))
+>>>>>>> ooof
         self.assertEqual(deserialized.class_name, class_name)
         self.assertEqual(deserialized.color, color)
         self.assertEqual(deserialized.breed, breed)
@@ -112,6 +129,7 @@ class DeserializationTests(unittest.TestCase):
         """
 
         # Test with valid regex pattern.
+<<<<<<< HEAD
         inst = apple.Apple(
             cultivar="Akane"
         )
@@ -121,6 +139,17 @@ class DeserializationTests(unittest.TestCase):
             origin="cHiLe"
         )
         assert isinstance(inst, apple.Apple)
+=======
+        inst = petstore_api.Apple(
+            cultivar="Akane"
+        )
+        assert isinstance(inst, petstore_api.Apple)
+
+        inst = petstore_api.Apple(
+            origin="cHiLe"
+        )
+        assert isinstance(inst, petstore_api.Apple)
+>>>>>>> ooof
 
         # Test with invalid regex pattern.
         err_msg = ("Invalid value for `{}`, must match regular expression `{}`$")
@@ -128,7 +157,11 @@ class DeserializationTests(unittest.TestCase):
             petstore_api.ApiValueError,
             err_msg.format("cultivar", "[^`]*")
         ):
+<<<<<<< HEAD
             inst = apple.Apple(
+=======
+            inst = petstore_api.Apple(
+>>>>>>> ooof
                 cultivar="!@#%@$#Akane"
             )
 
@@ -137,7 +170,11 @@ class DeserializationTests(unittest.TestCase):
             petstore_api.ApiValueError,
             err_msg.format("origin", "[^`]*")
         ):
+<<<<<<< HEAD
             inst = apple.Apple(
+=======
+            inst = petstore_api.Apple(
+>>>>>>> ooof
                 origin="!@#%@$#Chile"
             )
 
@@ -157,8 +194,13 @@ class DeserializationTests(unittest.TestCase):
             'className': class_name
         }
         response = MockResponse(data=json.dumps(data))
+<<<<<<< HEAD
         deserialized = self.deserialize(response, (mammal.Mammal,), True)
         self.assertTrue(isinstance(deserialized, whale.Whale))
+=======
+        deserialized = self.deserialize(response, (petstore_api.Mammal,), True)
+        self.assertTrue(isinstance(deserialized, petstore_api.Whale))
+>>>>>>> ooof
         self.assertEqual(deserialized.has_baleen, has_baleen)
         self.assertEqual(deserialized.has_teeth, has_teeth)
         self.assertEqual(deserialized.class_name, class_name)
@@ -171,6 +213,7 @@ class DeserializationTests(unittest.TestCase):
             'className': class_name
         }
         response = MockResponse(data=json.dumps(data))
+<<<<<<< HEAD
         deserialized = self.deserialize(response, (mammal.Mammal,), True)
         self.assertTrue(isinstance(deserialized, zebra.Zebra))
         self.assertEqual(deserialized.type, zebra_type)
@@ -197,6 +240,13 @@ class DeserializationTests(unittest.TestCase):
         self.assertTrue(isinstance(deserialized, banana.Banana))
         self.assertEqual(deserialized.length_cm, 3.0)
 
+=======
+        deserialized = self.deserialize(response, (petstore_api.Mammal,), True)
+        self.assertTrue(isinstance(deserialized, petstore_api.Zebra))
+        self.assertEqual(deserialized.type, zebra_type)
+        self.assertEqual(deserialized.class_name, class_name)
+
+>>>>>>> ooof
     def test_deserialize_fruit_null_value(self):
         """
         deserialize fruit with null value.
@@ -206,6 +256,7 @@ class DeserializationTests(unittest.TestCase):
         # Unmarshal 'null' value
         data = None
         response = MockResponse(data=json.dumps(data))
+<<<<<<< HEAD
         deserialized = self.deserialize(response, (fruit_req.FruitReq, type(None)), True)
         self.assertEqual(type(deserialized), type(None))
 
@@ -301,3 +352,10 @@ class DeserializationTests(unittest.TestCase):
         }
         response = MockResponse(data=json.dumps(data))
         deserialized = self.deserialize(response, (drawing.Drawing,), True)
+=======
+        deserialized = self.deserialize(response, (petstore_api.FruitReq, type(None)), True)
+        self.assertEqual(type(deserialized), type(None))
+
+        inst = petstore_api.FruitReq(None)
+        self.assertIsNone(inst)
+>>>>>>> ooof

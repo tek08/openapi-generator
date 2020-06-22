@@ -14,7 +14,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class Capitalization  implements Serializable {
+=======
+public class Capitalization  implements Serializable {
+>>>>>>> ooof
   
   private @Valid String smallCamel;
   private @Valid String capitalCamel;
@@ -31,17 +35,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("smallCamel")
   public String getSmallCamel() {
     return smallCamel;
   }
+<<<<<<< HEAD
 
   public void setSmallCamel(String smallCamel) {
     this.smallCamel = smallCamel;
   }/**
+=======
+  public void setSmallCamel(String smallCamel) {
+    this.smallCamel = smallCamel;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public Capitalization capitalCamel(String capitalCamel) {
     this.capitalCamel = capitalCamel;
@@ -49,17 +64,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("CapitalCamel")
   public String getCapitalCamel() {
     return capitalCamel;
   }
+<<<<<<< HEAD
 
   public void setCapitalCamel(String capitalCamel) {
     this.capitalCamel = capitalCamel;
   }/**
+=======
+  public void setCapitalCamel(String capitalCamel) {
+    this.capitalCamel = capitalCamel;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public Capitalization smallSnake(String smallSnake) {
     this.smallSnake = smallSnake;
@@ -67,17 +93,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("small_Snake")
   public String getSmallSnake() {
     return smallSnake;
   }
+<<<<<<< HEAD
 
   public void setSmallSnake(String smallSnake) {
     this.smallSnake = smallSnake;
   }/**
+=======
+  public void setSmallSnake(String smallSnake) {
+    this.smallSnake = smallSnake;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public Capitalization capitalSnake(String capitalSnake) {
     this.capitalSnake = capitalSnake;
@@ -85,17 +122,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("Capital_Snake")
   public String getCapitalSnake() {
     return capitalSnake;
   }
+<<<<<<< HEAD
 
   public void setCapitalSnake(String capitalSnake) {
     this.capitalSnake = capitalSnake;
   }/**
+=======
+  public void setCapitalSnake(String capitalSnake) {
+    this.capitalSnake = capitalSnake;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public Capitalization scAETHFlowPoints(String scAETHFlowPoints) {
     this.scAETHFlowPoints = scAETHFlowPoints;
@@ -103,17 +151,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("SCA_ETH_Flow_Points")
   public String getScAETHFlowPoints() {
     return scAETHFlowPoints;
   }
+<<<<<<< HEAD
 
   public void setScAETHFlowPoints(String scAETHFlowPoints) {
     this.scAETHFlowPoints = scAETHFlowPoints;
   }/**
+=======
+  public void setScAETHFlowPoints(String scAETHFlowPoints) {
+    this.scAETHFlowPoints = scAETHFlowPoints;
+  }
+
+  /**
+>>>>>>> ooof
    * Name of the pet 
    **/
   public Capitalization ATT_NAME(String ATT_NAME) {
@@ -122,18 +181,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "Name of the pet ")
   @JsonProperty("ATT_NAME")
   public String getATTNAME() {
     return ATT_NAME;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
   public void setATTNAME(String ATT_NAME) {
     this.ATT_NAME = ATT_NAME;
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -181,7 +250,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
     }
     return o.toString().replace("\n", "\n    ");
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 }
 

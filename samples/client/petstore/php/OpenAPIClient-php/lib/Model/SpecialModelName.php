@@ -2,7 +2,11 @@
 /**
  * SpecialModelName
  *
+<<<<<<< HEAD
  * PHP version 7.2
+=======
+ * PHP version 7.1
+>>>>>>> ooof
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -49,7 +53,11 @@ class SpecialModelName implements ModelInterface, ArrayAccess
       *
       * @var string
       */
+<<<<<<< HEAD
     protected static $openAPIModelName = '_special_model.name_';
+=======
+    protected static $openAPIModelName = '$special[model.name]';
+>>>>>>> ooof
 
     /**
       * Array of property to type mappings. Used for (de)serialization

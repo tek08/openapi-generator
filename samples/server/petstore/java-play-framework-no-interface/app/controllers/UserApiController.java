@@ -9,7 +9,10 @@ import play.mvc.Http;
 import java.util.List;
 import java.util.Map;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.LinkedHashSet;
+=======
+>>>>>>> ooof
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.google.inject.Inject;
@@ -22,7 +25,11 @@ import play.Configuration;
 
 import openapitools.OpenAPIUtils.ApiAction;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen")
+=======
+
+>>>>>>> ooof
 public class UserApiController extends Controller {
 
     private final UserApiControllerImp imp;

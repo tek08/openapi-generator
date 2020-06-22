@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 import { HttpParameterCodec } from '@angular/common/http';
+=======
+{{#useHttpClient}}
+import { HttpParameterCodec } from '@angular/common/http';
+{{/useHttpClient}}
+{{^useHttpClient}}
+import { QueryEncoder } from '@angular/http';
+{{/useHttpClient}}
+>>>>>>> ooof
 
 export interface ConfigurationParameters {
     apiKeys?: {[ key: string ]: string};
@@ -7,7 +16,16 @@ export interface ConfigurationParameters {
     accessToken?: string | (() => string);
     basePath?: string;
     withCredentials?: boolean;
+<<<<<<< HEAD
     encoder?: HttpParameterCodec;
+=======
+{{#useHttpClient}}
+    encoder?: HttpParameterCodec;
+{{/useHttpClient}}
+{{^useHttpClient}}
+    encoder?: QueryEncoder;
+{{/useHttpClient}}
+>>>>>>> ooof
 }
 
 export class Configuration {
@@ -17,7 +35,16 @@ export class Configuration {
     accessToken?: string | (() => string);
     basePath?: string;
     withCredentials?: boolean;
+<<<<<<< HEAD
     encoder?: HttpParameterCodec;
+=======
+{{#useHttpClient}}
+    encoder?: HttpParameterCodec;
+{{/useHttpClient}}
+{{^useHttpClient}}
+    encoder?: QueryEncoder;
+{{/useHttpClient}}
+>>>>>>> ooof
 
     constructor(configurationParameters: ConfigurationParameters = {}) {
         this.apiKeys = configurationParameters.apiKeys;

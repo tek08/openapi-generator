@@ -11,6 +11,7 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
@@ -31,17 +32,28 @@ except ImportError:
     shape_or_null = sys.modules[
         'petstore_api.model.shape_or_null']
 from petstore_api.model.drawing import Drawing
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestDrawing(unittest.TestCase):
     """Drawing unit test stubs"""
 
     def setUp(self):
+<<<<<<< HEAD
         pass
+=======
+        self.api_client = petstore_api.ApiClient()
+>>>>>>> ooof
 
     def tearDown(self):
         pass
 
+<<<<<<< HEAD
     def test_create_instances(self):
         """
         Validate instance can be created using pythonic name or OAS names.
@@ -80,11 +92,21 @@ class TestDrawing(unittest.TestCase):
 
         assert isinstance(isosceles_triangle, IsoscelesTriangle)
         inst = Drawing(
+=======
+    def test_deserialize_oneof_reference(self):
+        isosceles_triangle = petstore_api.Shape(
+            shape_type="Triangle",
+            triangle_type="IsoscelesTriangle"
+        )
+        assert isinstance(isosceles_triangle, petstore_api.IsoscelesTriangle)
+        inst = petstore_api.Drawing(
+>>>>>>> ooof
             # 'main_shape' has type 'Shape', which is a oneOf [triangle, quadrilateral]
             # composed schema. So we should be able to assign a petstore_api.Triangle
             # to a 'main_shape'.
             main_shape=isosceles_triangle,
             shapes=[
+<<<<<<< HEAD
                 shape.Shape(
                     shape_type="Triangle",
                     triangle_type="EquilateralTriangle"
@@ -98,11 +120,27 @@ class TestDrawing(unittest.TestCase):
                     triangle_type="EquilateralTriangle"
                 ),
                 shape.Shape(
+=======
+                petstore_api.Shape(
+                    shape_type="Triangle",
+                    triangle_type="EquilateralTriangle"
+                ),
+                petstore_api.Triangle(
+                    shape_type="Triangle",
+                    triangle_type="IsoscelesTriangle"
+                ),
+                petstore_api.EquilateralTriangle(
+                    shape_type="Triangle",
+                    triangle_type="EquilateralTriangle"
+                ),
+                petstore_api.Shape(
+>>>>>>> ooof
                     shape_type="Quadrilateral",
                     quadrilateral_type="ComplexQuadrilateral"
                 ),
             ],
         )
+<<<<<<< HEAD
         from petstore_api.model.complex_quadrilateral import ComplexQuadrilateral
         assert isinstance(inst, Drawing)
         assert isinstance(inst.main_shape, IsoscelesTriangle)
@@ -166,6 +204,15 @@ class TestDrawing(unittest.TestCase):
         self.assertFalse(hasattr(inst, 'main_shape'))
         self.assertTrue(hasattr(inst, 'nullable_shape'))
         self.assertIsNone(inst.nullable_shape)
+=======
+        assert isinstance(inst, petstore_api.Drawing)
+        assert isinstance(inst.main_shape, petstore_api.IsoscelesTriangle)
+        self.assertEqual(len(inst.shapes), 4)
+        assert isinstance(inst.shapes[0], petstore_api.EquilateralTriangle)
+        assert isinstance(inst.shapes[1], petstore_api.IsoscelesTriangle)
+        assert isinstance(inst.shapes[2], petstore_api.EquilateralTriangle)
+        assert isinstance(inst.shapes[3], petstore_api.ComplexQuadrilateral)
+>>>>>>> ooof
 
 if __name__ == '__main__':
     unittest.main()

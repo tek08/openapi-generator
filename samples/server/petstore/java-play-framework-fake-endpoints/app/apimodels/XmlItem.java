@@ -11,7 +11,11 @@ import javax.validation.constraints.*;
 /**
  * XmlItem
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen")
+=======
+
+>>>>>>> ooof
 @SuppressWarnings({"UnusedReturnValue", "WeakerAccess"})
 public class XmlItem   {
   @JsonProperty("attribute_string")

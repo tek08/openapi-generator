@@ -13,7 +13,11 @@ import javax.validation.constraints.*;
 /**
  * NumberOnly
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
+=======
+
+>>>>>>> ooof
 public class NumberOnly   {
   @JsonProperty("JustNumber")
   private BigDecimal justNumber;

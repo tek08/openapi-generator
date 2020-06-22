@@ -28,7 +28,11 @@ import java.io.IOException;
  * Model for testing model name starting with number
  */
 @ApiModel(description = "Model for testing model name starting with number")
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class Model200Response {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

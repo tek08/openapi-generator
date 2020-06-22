@@ -104,6 +104,7 @@ public class {{{classname}}}Example {
         //{{{name}}}.setApiKeyPrefix("Token");{{/isApiKey}}{{#isOAuth}}
         // Configure OAuth2 access token for authorization: {{{name}}}
         OAuth {{{name}}} = (OAuth) defaultClient.getAuthentication("{{{name}}}");
+<<<<<<< HEAD
         {{{name}}}.setAccessToken("YOUR ACCESS TOKEN");{{/isOAuth}}{{#isHttpSignature}}
         // Configure HTTP signature authorization: {{{name}}}
         HttpSignatureAuth {{{name}}} = (HttpSignatureAuth) defaultClient.getAuthentication("{{{name}}}");
@@ -122,6 +123,9 @@ public class {{{classname}}}Example {
         {{{name}}}.setHeaders(Arrays.asList("date", "host"));
         // Set the private key used to sign the HTTP messages
         {{{name}}}.setPrivateKey();{{/isHttpSignature}}
+=======
+        {{{name}}}.setAccessToken("YOUR ACCESS TOKEN");{{/isOAuth}}
+>>>>>>> ooof
         {{/authMethods}}
         {{/hasAuthMethods}}
 

@@ -15,7 +15,10 @@ import org.openapitools.client.models.ReadOnlyFirst
 
 import com.squareup.moshi.Json
 import java.io.Serializable
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * 
  * @param arrayOfString 
@@ -25,6 +28,7 @@ import java.io.Serializable
 
 data class ArrayTest (
     @Json(name = "array_of_string")
+<<<<<<< HEAD
     val arrayOfString: kotlin.collections.List<kotlin.String>? = null,
     @Json(name = "array_array_of_integer")
     val arrayArrayOfInteger: kotlin.collections.List<kotlin.collections.List<kotlin.Long>>? = null,
@@ -35,5 +39,19 @@ data class ArrayTest (
         private const val serialVersionUID: Long = 123
     }
 
+=======
+    val arrayOfString: kotlin.Array<kotlin.String>? = null,
+    @Json(name = "array_array_of_integer")
+    val arrayArrayOfInteger: kotlin.Array<kotlin.Array<kotlin.Long>>? = null,
+    @Json(name = "array_array_of_model")
+    val arrayArrayOfModel: kotlin.Array<kotlin.Array<ReadOnlyFirst>>? = null
+) 
+: Serializable 
+
+{
+	companion object {
+		private const val serialVersionUID: Long = 123
+	}
+>>>>>>> ooof
 }
 

@@ -14,7 +14,10 @@ package org.openapitools.client.models
 
 import kotlinx.serialization.*
 import kotlinx.serialization.internal.CommonEnumSerializer
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * 
  * @param justSymbol 
@@ -23,9 +26,17 @@ import kotlinx.serialization.internal.CommonEnumSerializer
 @Serializable
 data class EnumArrays (
     @SerialName(value = "just_symbol") val justSymbol: EnumArrays.JustSymbol? = null,
+<<<<<<< HEAD
     @SerialName(value = "array_enum") val arrayEnum: kotlin.collections.List<EnumArrays.ArrayEnum>? = null
 ) {
 
+=======
+    @SerialName(value = "array_enum") val arrayEnum: kotlin.Array<EnumArrays.ArrayEnum>? = null
+) 
+
+
+{
+>>>>>>> ooof
     /**
     * 
     * Values: greaterThanEqual,dollar

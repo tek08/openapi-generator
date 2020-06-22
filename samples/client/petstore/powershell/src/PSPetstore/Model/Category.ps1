@@ -49,6 +49,7 @@ function Initialize-PSCategory {
         return $PSO
     }
 }
+<<<<<<< HEAD
 
 <#
 .SYNOPSIS
@@ -109,3 +110,5 @@ function ConvertFrom-PSJsonToCategory {
 
 }
 
+=======
+>>>>>>> ooof

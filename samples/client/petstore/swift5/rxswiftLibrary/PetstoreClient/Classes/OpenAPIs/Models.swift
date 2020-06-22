@@ -10,11 +10,19 @@ protocol JSONEncodable {
     func encodeToJSON() -> Any
 }
 
+<<<<<<< HEAD
 public enum ErrorResponse : Error {
     case error(Int, Data?, Error)
 }
 
 public enum DownloadException : Error {
+=======
+public enum ErrorResponse: Error {
+    case error(Int, Data?, Error)
+}
+
+public enum DownloadException: Error {
+>>>>>>> ooof
     case responseDataMissing
     case responseFailed
     case requestMissing
@@ -30,7 +38,10 @@ public enum DecodableRequestBuilderError: Error {
     case generalError(Error)
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 open class Response<T> {
     public let statusCode: Int
     public let header: [String: String]
@@ -44,7 +55,11 @@ open class Response<T> {
 
     public convenience init(response: HTTPURLResponse, body: T?) {
         let rawHeader = response.allHeaderFields
+<<<<<<< HEAD
         var header = [String:String]()
+=======
+        var header = [String: String]()
+>>>>>>> ooof
         for (key, value) in rawHeader {
             if let key = key.base as? String, let value = value as? String {
                 header[key] = value

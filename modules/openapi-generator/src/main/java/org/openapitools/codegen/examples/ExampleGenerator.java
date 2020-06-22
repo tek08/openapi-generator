@@ -269,10 +269,17 @@ public class ExampleGenerator {
             Map<String, Object> mp = new HashMap<String, Object>();
             if (property.getName() != null) {
                 mp.put(property.getName(),
+<<<<<<< HEAD
                         resolvePropertyToExample(propertyName, mediaType, ModelUtils.getAdditionalProperties(openAPI, property), processedModels));
             } else {
                 mp.put("key",
                         resolvePropertyToExample(propertyName, mediaType, ModelUtils.getAdditionalProperties(openAPI, property), processedModels));
+=======
+                        resolvePropertyToExample(propertyName, mediaType, ModelUtils.getAdditionalProperties(property), processedModels));
+            } else {
+                mp.put("key",
+                        resolvePropertyToExample(propertyName, mediaType, ModelUtils.getAdditionalProperties(property), processedModels));
+>>>>>>> ooof
             }
             return mp;
         } else if (ModelUtils.isUUIDSchema(property)) {

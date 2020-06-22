@@ -10,7 +10,10 @@ import play.mvc.Http;
 import java.util.List;
 import java.util.Map;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.LinkedHashSet;
+=======
+>>>>>>> ooof
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.google.inject.Inject;
@@ -23,7 +26,11 @@ import play.Configuration;
 
 import openapitools.OpenAPIUtils.ApiAction;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen")
+=======
+
+>>>>>>> ooof
 public class PetApiController extends Controller {
 
     private final ObjectMapper mapper;
@@ -70,7 +77,11 @@ public class PetApiController extends Controller {
             throw new IllegalArgumentException("'status' parameter is required");
         }
         List<String> statusList = OpenAPIUtils.parametersToList("csv", statusArray);
+<<<<<<< HEAD
         List<String> status = new ArrayList<>();
+=======
+        List<String> status = new ArrayList<String>();
+>>>>>>> ooof
         for (String curParam : statusList) {
             if (!curParam.isEmpty()) {
                 //noinspection UseBulkOperation
@@ -87,7 +98,11 @@ public class PetApiController extends Controller {
             throw new IllegalArgumentException("'tags' parameter is required");
         }
         List<String> tagsList = OpenAPIUtils.parametersToList("csv", tagsArray);
+<<<<<<< HEAD
         List<String> tags = new ArrayList<>();
+=======
+        List<String> tags = new ArrayList<String>();
+>>>>>>> ooof
         for (String curParam : tagsList) {
             if (!curParam.isEmpty()) {
                 //noinspection UseBulkOperation

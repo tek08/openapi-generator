@@ -18,7 +18,10 @@ lazy val root = (project in file(".")).
       "org.apache.oltu.oauth2" % "org.apache.oltu.oauth2.client" % "1.0.1" % "compile",
       "org.threeten" % "threetenbp" % "1.4.0" % "compile",
       "io.gsonfire" % "gson-fire" % "1.8.0" % "compile",
+<<<<<<< HEAD
       "javax.annotation" % "javax.annotation-api" % "1.3.2" % "compile",
+=======
+>>>>>>> ooof
       "junit" % "junit" % "4.13" % "test",
       "com.novocode" % "junit-interface" % "0.11" % "test"
     )

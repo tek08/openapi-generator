@@ -102,6 +102,7 @@ public class CodegenModel implements IJsonSchemaValidationProperties {
 
     public Map<String, Object> vendorExtensions = new HashMap<String, Object>();
 
+<<<<<<< HEAD
     /**
      * The type of the value for the additionalProperties keyword in the OAS document.
      * Used in map like objects, including composed schemas.
@@ -127,6 +128,9 @@ public class CodegenModel implements IJsonSchemaValidationProperties {
      *   type: integer
      *
      */
+=======
+    //The type of the value from additional properties. Used in map like objects.
+>>>>>>> ooof
     public String additionalPropertiesType;
 
     private Integer maxProperties;

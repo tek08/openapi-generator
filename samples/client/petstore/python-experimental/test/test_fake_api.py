@@ -11,18 +11,36 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 
 import unittest
 
 import petstore_api
 from petstore_api.api.fake_api import FakeApi  # noqa: E501
+=======
+import six
+
+import unittest
+if six.PY3:
+    from unittest.mock import patch
+else:
+    from mock import patch
+
+import petstore_api
+from petstore_api.api.fake_api import FakeApi  # noqa: E501
+from petstore_api.rest import ApiException
+>>>>>>> ooof
 
 
 class TestFakeApi(unittest.TestCase):
     """FakeApi unit test stubs"""
 
     def setUp(self):
+<<<<<<< HEAD
         self.api = FakeApi()  # noqa: E501
+=======
+        self.api = petstore_api.api.fake_api.FakeApi()  # noqa: E501
+>>>>>>> ooof
 
     def tearDown(self):
         pass
@@ -51,20 +69,32 @@ class TestFakeApi(unittest.TestCase):
 
         """
         # verify that the input and output are type OuterEnum
+<<<<<<< HEAD
         from petstore_api.model import outer_enum
         endpoint = self.api.fake_outer_enum_serialize
         assert endpoint.openapi_types['body'] == (outer_enum.OuterEnum,)
         assert endpoint.settings['response_type'] == (outer_enum.OuterEnum,)
+=======
+        endpoint = self.api.fake_outer_enum_serialize
+        assert endpoint.openapi_types['body'] == (petstore_api.OuterEnum,)
+        assert endpoint.settings['response_type'] == (petstore_api.OuterEnum,)
+>>>>>>> ooof
 
     def test_fake_outer_number_serialize(self):
         """Test case for fake_outer_number_serialize
 
         """
         # verify that the input and output are the correct type
+<<<<<<< HEAD
         from petstore_api.model import outer_number
         endpoint = self.api.fake_outer_number_serialize
         assert endpoint.openapi_types['body'] == (outer_number.OuterNumber,)
         assert endpoint.settings['response_type'] == (outer_number.OuterNumber,)
+=======
+        endpoint = self.api.fake_outer_number_serialize
+        assert endpoint.openapi_types['body'] == (petstore_api.OuterNumber,)
+        assert endpoint.settings['response_type'] == (petstore_api.OuterNumber,)
+>>>>>>> ooof
 
     def test_fake_outer_string_serialize(self):
         """Test case for fake_outer_string_serialize
@@ -97,11 +127,14 @@ class TestFakeApi(unittest.TestCase):
         """
         # when we omit the required enums of length one, they are still set
         endpoint = self.api.test_endpoint_enums_length_one
+<<<<<<< HEAD
         import six
         if six.PY3:
             from unittest.mock import patch
         else:
             from mock import patch
+=======
+>>>>>>> ooof
         with patch.object(endpoint, 'call_with_http_info') as call_with_http_info:
             endpoint()
             call_with_http_info.assert_called_with(

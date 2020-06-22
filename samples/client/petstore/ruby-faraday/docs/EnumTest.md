@@ -9,9 +9,12 @@ Name | Type | Description | Notes
 **enum_integer** | **Integer** |  | [optional] 
 **enum_number** | **Float** |  | [optional] 
 **outer_enum** | [**OuterEnum**](OuterEnum.md) |  | [optional] 
+<<<<<<< HEAD
 **outer_enum_integer** | [**OuterEnumInteger**](OuterEnumInteger.md) |  | [optional] 
 **outer_enum_default_value** | [**OuterEnumDefaultValue**](OuterEnumDefaultValue.md) |  | [optional] 
 **outer_enum_integer_default_value** | [**OuterEnumIntegerDefaultValue**](OuterEnumIntegerDefaultValue.md) |  | [optional] 
+=======
+>>>>>>> ooof
 
 ## Code Sample
 
@@ -22,10 +25,14 @@ instance = Petstore::EnumTest.new(enum_string: null,
                                  enum_string_required: null,
                                  enum_integer: null,
                                  enum_number: null,
+<<<<<<< HEAD
                                  outer_enum: null,
                                  outer_enum_integer: null,
                                  outer_enum_default_value: null,
                                  outer_enum_integer_default_value: null)
+=======
+                                 outer_enum: null)
+>>>>>>> ooof
 ```
 
 

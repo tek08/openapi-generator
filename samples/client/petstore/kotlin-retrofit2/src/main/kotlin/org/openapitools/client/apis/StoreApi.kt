@@ -4,10 +4,16 @@ import org.openapitools.client.infrastructure.CollectionFormats.*
 import retrofit2.http.*
 import retrofit2.Call
 import okhttp3.RequestBody
+<<<<<<< HEAD
+=======
+import okhttp3.ResponseBody
+import okhttp3.MultipartBody
+>>>>>>> ooof
 
 import org.openapitools.client.models.Order
 
 interface StoreApi {
+<<<<<<< HEAD
     /**
      * Delete purchase order by ID
      * For valid response try integer IDs with value &lt; 1000. Anything above 1000 or nonintegers will generate API errors
@@ -57,6 +63,18 @@ interface StoreApi {
     * @return [Call]<[Order]>
      */
     @POST("store/order")
+=======
+    @DELETE("/store/order/{orderId}")
+    fun deleteOrder(@Path("orderId") orderId: kotlin.String): Call<Unit>
+
+    @GET("/store/inventory")
+    fun getInventory(): Call<kotlin.collections.Map<kotlin.String, kotlin.Int>>
+
+    @GET("/store/order/{orderId}")
+    fun getOrderById(@Path("orderId") orderId: kotlin.Long): Call<Order>
+
+    @POST("/store/order")
+>>>>>>> ooof
     fun placeOrder(@Body body: Order): Call<Order>
 
 }

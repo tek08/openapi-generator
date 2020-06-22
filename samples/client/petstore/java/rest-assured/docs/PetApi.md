@@ -140,7 +140,11 @@ Name | Type | Description  | Notes
 
 <a name="findPetsByTags"></a>
 # **findPetsByTags**
+<<<<<<< HEAD
 > Set&lt;Pet&gt; findPetsByTags(tags)
+=======
+> List&lt;Pet&gt; findPetsByTags(tags)
+>>>>>>> ooof
 
 Finds Pets by tags
 
@@ -165,11 +169,19 @@ api.findPetsByTags()
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **tags** | [**Set&lt;String&gt;**](String.md)| Tags to filter by | [default to new LinkedHashSet&lt;String&gt;()]
 
 ### Return type
 
 [**Set&lt;Pet&gt;**](Pet.md)
+=======
+ **tags** | [**List&lt;String&gt;**](String.md)| Tags to filter by | [default to new ArrayList&lt;String&gt;()]
+
+### Return type
+
+[**List&lt;Pet&gt;**](Pet.md)
+>>>>>>> ooof
 
 ### Authorization
 

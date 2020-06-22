@@ -77,12 +77,19 @@ public interface StoreApi  {
      */
     @POST
     @Path("/store/order")
+<<<<<<< HEAD
     @Consumes({ "application/json" })
+=======
+>>>>>>> ooof
     @Produces({ "application/xml", "application/json" })
     @ApiOperation(value = "Place an order for a pet", tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "successful operation", response = Order.class),
         @ApiResponse(code = 400, message = "Invalid Order") })
+<<<<<<< HEAD
     public Order placeOrder(Order order);
+=======
+    public Order placeOrder(Order body);
+>>>>>>> ooof
 }
 

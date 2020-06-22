@@ -8,7 +8,10 @@ package org.openapitools.api;
 import org.openapitools.model.ModelApiResponse;
 import org.openapitools.model.Pet;
 import org.springframework.core.io.Resource;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -30,7 +33,11 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
+=======
+
+>>>>>>> ooof
 @Validated
 @Api(value = "pet", description = "the pet API")
 public interface PetApi {
@@ -144,21 +151,33 @@ public interface PetApi {
      *         or Invalid tag value (status code 400)
      * @deprecated
      */
+<<<<<<< HEAD
     @ApiOperation(value = "Finds Pets by tags", nickname = "findPetsByTags", notes = "Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.", response = Pet.class, responseContainer = "Set", authorizations = {
+=======
+    @ApiOperation(value = "Finds Pets by tags", nickname = "findPetsByTags", notes = "Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.", response = Pet.class, responseContainer = "List", authorizations = {
+>>>>>>> ooof
         @Authorization(value = "petstore_auth", scopes = {
             @AuthorizationScope(scope = "write:pets", description = "modify pets in your account"),
             @AuthorizationScope(scope = "read:pets", description = "read your pets")
             })
     }, tags={ "pet", })
     @ApiResponses(value = { 
+<<<<<<< HEAD
         @ApiResponse(code = 200, message = "successful operation", response = Pet.class, responseContainer = "Set"),
+=======
+        @ApiResponse(code = 200, message = "successful operation", response = Pet.class, responseContainer = "List"),
+>>>>>>> ooof
         @ApiResponse(code = 400, message = "Invalid tag value") })
     @ApiImplicitParams({
     })
     @RequestMapping(value = "/pet/findByTags",
         produces = { "application/xml", "application/json" }, 
         method = RequestMethod.GET)
+<<<<<<< HEAD
     default ResponseEntity<Set<Pet>> findPetsByTags(@NotNull @ApiParam(value = "Tags to filter by", required = true) @Valid @RequestParam(value = "tags", required = true) Set<String> tags) {
+=======
+    default ResponseEntity<List<Pet>> findPetsByTags(@NotNull @ApiParam(value = "Tags to filter by", required = true) @Valid @RequestParam(value = "tags", required = true) List<String> tags) {
+>>>>>>> ooof
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {

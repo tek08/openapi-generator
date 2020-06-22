@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 
 @objc public class Animal: NSObject, Codable { 
+=======
+@objc public class Animal: NSObject, Codable {
+>>>>>>> ooof
 
     public var _className: String
     public var color: String? = "red"
@@ -19,7 +23,11 @@ import Foundation
         self.color = color
     }
 
+<<<<<<< HEAD
     public enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    public enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case _className = "className"
         case color
     }

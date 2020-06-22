@@ -15,7 +15,11 @@ import javax.validation.constraints.*;
 /**
  * BigCat
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
+=======
+
+>>>>>>> ooof
 public class BigCat extends Cat  {
   /**
    * Gets or Sets kind

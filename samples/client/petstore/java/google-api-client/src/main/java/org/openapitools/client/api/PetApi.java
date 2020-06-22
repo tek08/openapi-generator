@@ -5,7 +5,10 @@ import org.openapitools.client.ApiClient;
 import java.io.File;
 import org.openapitools.client.model.ModelApiResponse;
 import org.openapitools.client.model.Pet;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.google.api.client.http.EmptyContent;
@@ -24,7 +27,11 @@ import java.util.Map;
 import java.util.List;
 import java.util.ArrayList;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class PetApi {
     private ApiClient apiClient;
 
@@ -304,12 +311,21 @@ public class PetApi {
     * <p><b>200</b> - successful operation
     * <p><b>400</b> - Invalid tag value
     * @param tags Tags to filter by
+<<<<<<< HEAD
     * @return Set&lt;Pet&gt;
     * @throws IOException if an error occurs while attempting to invoke the API
     **/
     public Set<Pet> findPetsByTags(Set<String> tags) throws IOException {
         HttpResponse response = findPetsByTagsForHttpResponse(tags);
         TypeReference<Set<Pet>> typeRef = new TypeReference<Set<Pet>>() {};
+=======
+    * @return List&lt;Pet&gt;
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public List<Pet> findPetsByTags(List<String> tags) throws IOException {
+        HttpResponse response = findPetsByTagsForHttpResponse(tags);
+        TypeReference<List<Pet>> typeRef = new TypeReference<List<Pet>>() {};
+>>>>>>> ooof
         return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
     }
 
@@ -320,6 +336,7 @@ public class PetApi {
     * <p><b>400</b> - Invalid tag value
     * @param tags Tags to filter by
     * @param params Map of query params. A collection will be interpreted as passing in multiple instances of the same query param.
+<<<<<<< HEAD
     * @return Set&lt;Pet&gt;
     * @throws IOException if an error occurs while attempting to invoke the API
     **/
@@ -330,6 +347,18 @@ public class PetApi {
     }
 
     public HttpResponse findPetsByTagsForHttpResponse(Set<String> tags) throws IOException {
+=======
+    * @return List&lt;Pet&gt;
+    * @throws IOException if an error occurs while attempting to invoke the API
+    **/
+    public List<Pet> findPetsByTags(List<String> tags, Map<String, Object> params) throws IOException {
+        HttpResponse response = findPetsByTagsForHttpResponse(tags, params);
+        TypeReference<List<Pet>> typeRef = new TypeReference<List<Pet>>() {};
+        return apiClient.getObjectMapper().readValue(response.getContent(), typeRef);
+    }
+
+    public HttpResponse findPetsByTagsForHttpResponse(List<String> tags) throws IOException {
+>>>>>>> ooof
         // verify the required parameter 'tags' is set
         if (tags == null) {
             throw new IllegalArgumentException("Missing the required parameter 'tags' when calling findPetsByTags");
@@ -354,7 +383,11 @@ public class PetApi {
         return apiClient.getHttpRequestFactory().buildRequest(HttpMethods.GET, genericUrl, content).execute();
     }
 
+<<<<<<< HEAD
     public HttpResponse findPetsByTagsForHttpResponse(Set<String> tags, Map<String, Object> params) throws IOException {
+=======
+    public HttpResponse findPetsByTagsForHttpResponse(List<String> tags, Map<String, Object> params) throws IOException {
+>>>>>>> ooof
         // verify the required parameter 'tags' is set
         if (tags == null) {
             throw new IllegalArgumentException("Missing the required parameter 'tags' when calling findPetsByTags");

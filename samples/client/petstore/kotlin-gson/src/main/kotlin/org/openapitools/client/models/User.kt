@@ -13,7 +13,10 @@ package org.openapitools.client.models
 
 
 import com.google.gson.annotations.SerializedName
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * A User who is purchasing from the pet store
  * @param id 

@@ -85,6 +85,7 @@ function Initialize-PSPet {
         return $PSO
     }
 }
+<<<<<<< HEAD
 
 <#
 .SYNOPSIS
@@ -177,3 +178,5 @@ function ConvertFrom-PSJsonToPet {
 
 }
 
+=======
+>>>>>>> ooof

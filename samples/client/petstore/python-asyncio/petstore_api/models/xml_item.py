@@ -208,7 +208,11 @@ class XmlItem(object):
 
 
         :param attribute_string: The attribute_string of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type attribute_string: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._attribute_string = attribute_string
@@ -229,7 +233,11 @@ class XmlItem(object):
 
 
         :param attribute_number: The attribute_number of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type attribute_number: float
+=======
+        :type: float
+>>>>>>> ooof
         """
 
         self._attribute_number = attribute_number
@@ -250,7 +258,11 @@ class XmlItem(object):
 
 
         :param attribute_integer: The attribute_integer of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type attribute_integer: int
+=======
+        :type: int
+>>>>>>> ooof
         """
 
         self._attribute_integer = attribute_integer
@@ -271,7 +283,11 @@ class XmlItem(object):
 
 
         :param attribute_boolean: The attribute_boolean of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type attribute_boolean: bool
+=======
+        :type: bool
+>>>>>>> ooof
         """
 
         self._attribute_boolean = attribute_boolean
@@ -292,7 +308,11 @@ class XmlItem(object):
 
 
         :param wrapped_array: The wrapped_array of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type wrapped_array: list[int]
+=======
+        :type: list[int]
+>>>>>>> ooof
         """
 
         self._wrapped_array = wrapped_array
@@ -313,7 +333,11 @@ class XmlItem(object):
 
 
         :param name_string: The name_string of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type name_string: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._name_string = name_string
@@ -334,7 +358,11 @@ class XmlItem(object):
 
 
         :param name_number: The name_number of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type name_number: float
+=======
+        :type: float
+>>>>>>> ooof
         """
 
         self._name_number = name_number
@@ -355,7 +383,11 @@ class XmlItem(object):
 
 
         :param name_integer: The name_integer of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type name_integer: int
+=======
+        :type: int
+>>>>>>> ooof
         """
 
         self._name_integer = name_integer
@@ -376,7 +408,11 @@ class XmlItem(object):
 
 
         :param name_boolean: The name_boolean of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type name_boolean: bool
+=======
+        :type: bool
+>>>>>>> ooof
         """
 
         self._name_boolean = name_boolean
@@ -397,7 +433,11 @@ class XmlItem(object):
 
 
         :param name_array: The name_array of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type name_array: list[int]
+=======
+        :type: list[int]
+>>>>>>> ooof
         """
 
         self._name_array = name_array
@@ -418,7 +458,11 @@ class XmlItem(object):
 
 
         :param name_wrapped_array: The name_wrapped_array of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type name_wrapped_array: list[int]
+=======
+        :type: list[int]
+>>>>>>> ooof
         """
 
         self._name_wrapped_array = name_wrapped_array
@@ -439,7 +483,11 @@ class XmlItem(object):
 
 
         :param prefix_string: The prefix_string of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type prefix_string: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._prefix_string = prefix_string
@@ -460,7 +508,11 @@ class XmlItem(object):
 
 
         :param prefix_number: The prefix_number of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type prefix_number: float
+=======
+        :type: float
+>>>>>>> ooof
         """
 
         self._prefix_number = prefix_number
@@ -481,7 +533,11 @@ class XmlItem(object):
 
 
         :param prefix_integer: The prefix_integer of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type prefix_integer: int
+=======
+        :type: int
+>>>>>>> ooof
         """
 
         self._prefix_integer = prefix_integer
@@ -502,7 +558,11 @@ class XmlItem(object):
 
 
         :param prefix_boolean: The prefix_boolean of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type prefix_boolean: bool
+=======
+        :type: bool
+>>>>>>> ooof
         """
 
         self._prefix_boolean = prefix_boolean
@@ -523,7 +583,11 @@ class XmlItem(object):
 
 
         :param prefix_array: The prefix_array of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type prefix_array: list[int]
+=======
+        :type: list[int]
+>>>>>>> ooof
         """
 
         self._prefix_array = prefix_array
@@ -544,7 +608,11 @@ class XmlItem(object):
 
 
         :param prefix_wrapped_array: The prefix_wrapped_array of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type prefix_wrapped_array: list[int]
+=======
+        :type: list[int]
+>>>>>>> ooof
         """
 
         self._prefix_wrapped_array = prefix_wrapped_array
@@ -565,7 +633,11 @@ class XmlItem(object):
 
 
         :param namespace_string: The namespace_string of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type namespace_string: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._namespace_string = namespace_string
@@ -586,7 +658,11 @@ class XmlItem(object):
 
 
         :param namespace_number: The namespace_number of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type namespace_number: float
+=======
+        :type: float
+>>>>>>> ooof
         """
 
         self._namespace_number = namespace_number
@@ -607,7 +683,11 @@ class XmlItem(object):
 
 
         :param namespace_integer: The namespace_integer of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type namespace_integer: int
+=======
+        :type: int
+>>>>>>> ooof
         """
 
         self._namespace_integer = namespace_integer
@@ -628,7 +708,11 @@ class XmlItem(object):
 
 
         :param namespace_boolean: The namespace_boolean of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type namespace_boolean: bool
+=======
+        :type: bool
+>>>>>>> ooof
         """
 
         self._namespace_boolean = namespace_boolean
@@ -649,7 +733,11 @@ class XmlItem(object):
 
 
         :param namespace_array: The namespace_array of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type namespace_array: list[int]
+=======
+        :type: list[int]
+>>>>>>> ooof
         """
 
         self._namespace_array = namespace_array
@@ -670,7 +758,11 @@ class XmlItem(object):
 
 
         :param namespace_wrapped_array: The namespace_wrapped_array of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type namespace_wrapped_array: list[int]
+=======
+        :type: list[int]
+>>>>>>> ooof
         """
 
         self._namespace_wrapped_array = namespace_wrapped_array
@@ -691,7 +783,11 @@ class XmlItem(object):
 
 
         :param prefix_ns_string: The prefix_ns_string of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type prefix_ns_string: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._prefix_ns_string = prefix_ns_string
@@ -712,7 +808,11 @@ class XmlItem(object):
 
 
         :param prefix_ns_number: The prefix_ns_number of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type prefix_ns_number: float
+=======
+        :type: float
+>>>>>>> ooof
         """
 
         self._prefix_ns_number = prefix_ns_number
@@ -733,7 +833,11 @@ class XmlItem(object):
 
 
         :param prefix_ns_integer: The prefix_ns_integer of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type prefix_ns_integer: int
+=======
+        :type: int
+>>>>>>> ooof
         """
 
         self._prefix_ns_integer = prefix_ns_integer
@@ -754,7 +858,11 @@ class XmlItem(object):
 
 
         :param prefix_ns_boolean: The prefix_ns_boolean of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type prefix_ns_boolean: bool
+=======
+        :type: bool
+>>>>>>> ooof
         """
 
         self._prefix_ns_boolean = prefix_ns_boolean
@@ -775,7 +883,11 @@ class XmlItem(object):
 
 
         :param prefix_ns_array: The prefix_ns_array of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type prefix_ns_array: list[int]
+=======
+        :type: list[int]
+>>>>>>> ooof
         """
 
         self._prefix_ns_array = prefix_ns_array
@@ -796,7 +908,11 @@ class XmlItem(object):
 
 
         :param prefix_ns_wrapped_array: The prefix_ns_wrapped_array of this XmlItem.  # noqa: E501
+<<<<<<< HEAD
         :type prefix_ns_wrapped_array: list[int]
+=======
+        :type: list[int]
+>>>>>>> ooof
         """
 
         self._prefix_ns_wrapped_array = prefix_ns_wrapped_array

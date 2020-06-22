@@ -53,10 +53,17 @@ sub new {
 #
 # Create user
 # 
+<<<<<<< HEAD
 # @param User $user Created user object (required)
 {
     my $params = {
     'user' => {
+=======
+# @param User $body Created user object (required)
+{
+    my $params = {
+    'body' => {
+>>>>>>> ooof
         data_type => 'User',
         description => 'Created user object',
         required => '1',
@@ -73,9 +80,15 @@ sub new {
 sub create_user {
     my ($self, %args) = @_;
 
+<<<<<<< HEAD
     # verify the required parameter 'user' is set
     unless (exists $args{'user'}) {
       croak("Missing the required parameter 'user' when calling create_user");
+=======
+    # verify the required parameter 'body' is set
+    unless (exists $args{'body'}) {
+      croak("Missing the required parameter 'body' when calling create_user");
+>>>>>>> ooof
     }
 
     # parse inputs
@@ -91,12 +104,21 @@ sub create_user {
     if ($_header_accept) {
         $header_params->{'Accept'} = $_header_accept;
     }
+<<<<<<< HEAD
     $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
 
     my $_body_data;
     # body params
     if ( exists $args{'user'}) {
         $_body_data = $args{'user'};
+=======
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'body'}) {
+        $_body_data = $args{'body'};
+>>>>>>> ooof
     }
 
     # authentication setting, if any
@@ -114,10 +136,17 @@ sub create_user {
 #
 # Creates list of users with given input array
 # 
+<<<<<<< HEAD
 # @param ARRAY[User] $user List of user object (required)
 {
     my $params = {
     'user' => {
+=======
+# @param ARRAY[User] $body List of user object (required)
+{
+    my $params = {
+    'body' => {
+>>>>>>> ooof
         data_type => 'ARRAY[User]',
         description => 'List of user object',
         required => '1',
@@ -134,9 +163,15 @@ sub create_user {
 sub create_users_with_array_input {
     my ($self, %args) = @_;
 
+<<<<<<< HEAD
     # verify the required parameter 'user' is set
     unless (exists $args{'user'}) {
       croak("Missing the required parameter 'user' when calling create_users_with_array_input");
+=======
+    # verify the required parameter 'body' is set
+    unless (exists $args{'body'}) {
+      croak("Missing the required parameter 'body' when calling create_users_with_array_input");
+>>>>>>> ooof
     }
 
     # parse inputs
@@ -152,12 +187,21 @@ sub create_users_with_array_input {
     if ($_header_accept) {
         $header_params->{'Accept'} = $_header_accept;
     }
+<<<<<<< HEAD
     $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
 
     my $_body_data;
     # body params
     if ( exists $args{'user'}) {
         $_body_data = $args{'user'};
+=======
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'body'}) {
+        $_body_data = $args{'body'};
+>>>>>>> ooof
     }
 
     # authentication setting, if any
@@ -175,10 +219,17 @@ sub create_users_with_array_input {
 #
 # Creates list of users with given input array
 # 
+<<<<<<< HEAD
 # @param ARRAY[User] $user List of user object (required)
 {
     my $params = {
     'user' => {
+=======
+# @param ARRAY[User] $body List of user object (required)
+{
+    my $params = {
+    'body' => {
+>>>>>>> ooof
         data_type => 'ARRAY[User]',
         description => 'List of user object',
         required => '1',
@@ -195,9 +246,15 @@ sub create_users_with_array_input {
 sub create_users_with_list_input {
     my ($self, %args) = @_;
 
+<<<<<<< HEAD
     # verify the required parameter 'user' is set
     unless (exists $args{'user'}) {
       croak("Missing the required parameter 'user' when calling create_users_with_list_input");
+=======
+    # verify the required parameter 'body' is set
+    unless (exists $args{'body'}) {
+      croak("Missing the required parameter 'body' when calling create_users_with_list_input");
+>>>>>>> ooof
     }
 
     # parse inputs
@@ -213,12 +270,21 @@ sub create_users_with_list_input {
     if ($_header_accept) {
         $header_params->{'Accept'} = $_header_accept;
     }
+<<<<<<< HEAD
     $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
 
     my $_body_data;
     # body params
     if ( exists $args{'user'}) {
         $_body_data = $args{'user'};
+=======
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'body'}) {
+        $_body_data = $args{'body'};
+>>>>>>> ooof
     }
 
     # authentication setting, if any
@@ -493,7 +559,11 @@ sub logout_user {
 # Updated user
 # 
 # @param string $username name that need to be deleted (required)
+<<<<<<< HEAD
 # @param User $user Updated user object (required)
+=======
+# @param User $body Updated user object (required)
+>>>>>>> ooof
 {
     my $params = {
     'username' => {
@@ -501,7 +571,11 @@ sub logout_user {
         description => 'name that need to be deleted',
         required => '1',
     },
+<<<<<<< HEAD
     'user' => {
+=======
+    'body' => {
+>>>>>>> ooof
         data_type => 'User',
         description => 'Updated user object',
         required => '1',
@@ -523,9 +597,15 @@ sub update_user {
       croak("Missing the required parameter 'username' when calling update_user");
     }
 
+<<<<<<< HEAD
     # verify the required parameter 'user' is set
     unless (exists $args{'user'}) {
       croak("Missing the required parameter 'user' when calling update_user");
+=======
+    # verify the required parameter 'body' is set
+    unless (exists $args{'body'}) {
+      croak("Missing the required parameter 'body' when calling update_user");
+>>>>>>> ooof
     }
 
     # parse inputs
@@ -541,7 +621,11 @@ sub update_user {
     if ($_header_accept) {
         $header_params->{'Accept'} = $_header_accept;
     }
+<<<<<<< HEAD
     $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+=======
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+>>>>>>> ooof
 
     # path params
     if ( exists $args{'username'}) {
@@ -552,8 +636,13 @@ sub update_user {
 
     my $_body_data;
     # body params
+<<<<<<< HEAD
     if ( exists $args{'user'}) {
         $_body_data = $args{'user'};
+=======
+    if ( exists $args{'body'}) {
+        $_body_data = $args{'body'};
+>>>>>>> ooof
     }
 
     # authentication setting, if any

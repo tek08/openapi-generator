@@ -14,7 +14,10 @@ package org.openapitools.client.models
 
 import com.squareup.moshi.Json
 import java.io.Serializable
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * 
  * @param file 
@@ -25,11 +28,22 @@ data class FileSchemaTestClass (
     @Json(name = "file")
     val file: java.io.File? = null,
     @Json(name = "files")
+<<<<<<< HEAD
     val files: kotlin.collections.List<java.io.File>? = null
 ) : Serializable {
     companion object {
         private const val serialVersionUID: Long = 123
     }
 
+=======
+    val files: kotlin.Array<java.io.File>? = null
+) 
+: Serializable 
+
+{
+	companion object {
+		private const val serialVersionUID: Long = 123
+	}
+>>>>>>> ooof
 }
 

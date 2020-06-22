@@ -14,7 +14,10 @@ package org.openapitools.client.models
 
 import com.squareup.moshi.Json
 import java.io.Serializable
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * 
  * @param justSymbol 
@@ -25,12 +28,23 @@ data class EnumArrays (
     @Json(name = "just_symbol")
     val justSymbol: EnumArrays.JustSymbol? = null,
     @Json(name = "array_enum")
+<<<<<<< HEAD
     val arrayEnum: kotlin.collections.List<EnumArrays.ArrayEnum>? = null
 ) : Serializable {
     companion object {
         private const val serialVersionUID: Long = 123
     }
 
+=======
+    val arrayEnum: kotlin.Array<EnumArrays.ArrayEnum>? = null
+) 
+: Serializable 
+
+{
+	companion object {
+		private const val serialVersionUID: Long = 123
+	}
+>>>>>>> ooof
     /**
     * 
     * Values: greaterThanEqual,dollar

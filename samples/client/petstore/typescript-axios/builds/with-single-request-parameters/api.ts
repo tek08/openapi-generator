@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 /* tslint:disable */
 /* eslint-disable */
+=======
+// tslint:disable
+>>>>>>> ooof
 /**
  * OpenAPI Petstore
  * This is a sample server Petstore server. For this sample, you can use the api key `special-key` to test the authorization filters.
@@ -1251,11 +1255,23 @@ export const StoreApiAxiosParamCreator = function (configuration?: Configuration
         /**
          * 
          * @summary Place an order for a pet
+<<<<<<< HEAD
          * @param {Order} [body] order placed for purchasing the pet
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         placeOrder: async (body?: Order, options: any = {}): Promise<RequestArgs> => {
+=======
+         * @param {Order} body order placed for purchasing the pet
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        placeOrder: async (body: Order, options: any = {}): Promise<RequestArgs> => {
+            // verify required parameter 'body' is not null or undefined
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling placeOrder.');
+            }
+>>>>>>> ooof
             const localVarPath = `/store/order`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -1336,11 +1352,19 @@ export const StoreApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Place an order for a pet
+<<<<<<< HEAD
          * @param {Order} [body] order placed for purchasing the pet
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         async placeOrder(body?: Order, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Order>> {
+=======
+         * @param {Order} body order placed for purchasing the pet
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async placeOrder(body: Order, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Order>> {
+>>>>>>> ooof
             const localVarAxiosArgs = await StoreApiAxiosParamCreator(configuration).placeOrder(body, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
@@ -1388,11 +1412,19 @@ export const StoreApiFactory = function (configuration?: Configuration, basePath
         /**
          * 
          * @summary Place an order for a pet
+<<<<<<< HEAD
          * @param {Order} [body] order placed for purchasing the pet
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
         placeOrder(body?: Order, options?: any): AxiosPromise<Order> {
+=======
+         * @param {Order} body order placed for purchasing the pet
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        placeOrder(body: Order, options?: any): AxiosPromise<Order> {
+>>>>>>> ooof
             return StoreApiFp(configuration).placeOrder(body, options).then((request) => request(axios, basePath));
         },
     };
@@ -1437,7 +1469,11 @@ export interface StoreApiPlaceOrderRequest {
      * @type {Order}
      * @memberof StoreApiPlaceOrder
      */
+<<<<<<< HEAD
     readonly body?: Order
+=======
+    readonly body: Order
+>>>>>>> ooof
 }
 
 /**
@@ -1490,7 +1526,11 @@ export class StoreApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof StoreApi
      */
+<<<<<<< HEAD
     public placeOrder(requestParameters: StoreApiPlaceOrderRequest = {}, options?: any) {
+=======
+    public placeOrder(requestParameters: StoreApiPlaceOrderRequest, options?: any) {
+>>>>>>> ooof
         return StoreApiFp(this.configuration).placeOrder(requestParameters.body, options).then((request) => request(this.axios, this.basePath));
     }
 }

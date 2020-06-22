@@ -24,7 +24,11 @@ import java.io.IOException;
  * @author pkmst
  *
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen")
+=======
+
+>>>>>>> ooof
 @Controller
 public class StoreApiController implements StoreApi {
     private final ObjectMapper objectMapper;

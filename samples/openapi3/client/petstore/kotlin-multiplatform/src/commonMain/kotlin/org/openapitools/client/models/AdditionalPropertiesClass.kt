@@ -14,7 +14,10 @@ package org.openapitools.client.models
 
 import kotlinx.serialization.*
 import kotlinx.serialization.internal.CommonEnumSerializer
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * 
  * @param mapProperty 
@@ -24,5 +27,11 @@ import kotlinx.serialization.internal.CommonEnumSerializer
 data class AdditionalPropertiesClass (
     @SerialName(value = "map_property") val mapProperty: kotlin.collections.Map<kotlin.String, kotlin.String>? = null,
     @SerialName(value = "map_of_map_property") val mapOfMapProperty: kotlin.collections.Map<kotlin.String, kotlin.collections.Map<kotlin.String, kotlin.String>>? = null
+<<<<<<< HEAD
 )
+=======
+) 
+
+
+>>>>>>> ooof
 

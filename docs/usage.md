@@ -15,6 +15,7 @@ openapi-generator help
 usage: openapi-generator-cli <command> [<args>]
 
 The most commonly used openapi-generator-cli commands are:
+<<<<<<< HEAD
     author        Utilities for authoring generators or customizing templates.
     config-help   Config help for chosen lang
     generate      Generate code with the specified generator.
@@ -23,6 +24,15 @@ The most commonly used openapi-generator-cli commands are:
     meta          MetaGenerator. Generator for creating a new template set and configuration for Codegen.  The output will be based on the language you specify, and includes default templates to include.
     validate      Validate specification
     version       Show version information used in tooling
+=======
+    config-help   Config help for chosen lang
+    generate      Generate code with the specified generator.
+    help          Display help information
+    list          Lists the available generators
+    meta          MetaGenerator. Generator for creating a new template set and configuration for Codegen.  The output will be based on the language you specify, and includes default templates to include.
+    validate      Validate specification
+    version       Show version information
+>>>>>>> ooof
 
 See 'openapi-generator-cli help <command>' for more information on a specific
 command.
@@ -261,14 +271,23 @@ SYNOPSIS
                 [(-a <authorization> | --auth <authorization>)]
                 [--api-name-suffix <api name suffix>] [--api-package <api package>]
                 [--artifact-id <artifact id>] [--artifact-version <artifact version>]
+<<<<<<< HEAD
                 [(-c <configuration file> | --config <configuration file>)] [--dry-run]
+=======
+                [(-c <configuration file> | --config <configuration file>)]
+                [-D <system properties>...] [--dry-run]
+>>>>>>> ooof
                 [(-e <templating engine> | --engine <templating engine>)]
                 [--enable-post-process-file]
                 [(-g <generator name> | --generator-name <generator name>)]
                 [--generate-alias-as-model] [--git-host <git host>]
                 [--git-repo-id <git repo id>] [--git-user-id <git user id>]
+<<<<<<< HEAD
                 [--global-property <global properties>...] [--group-id <group id>]
                 [--http-user-agent <http user agent>]
+=======
+                [--group-id <group id>] [--http-user-agent <http user agent>]
+>>>>>>> ooof
                 (-i <spec file> | --input-spec <spec file>)
                 [--ignore-file-override <ignore file override location>]
                 [--import-mappings <import mappings>...]
@@ -324,6 +343,13 @@ OPTIONS
             different for each language. Run config-help -g {generator name}
             command for language-specific config options.
 
+<<<<<<< HEAD
+=======
+        -D <system properties>
+            sets specified system properties in the format of
+            name=value,name=value (or multiple options, each with name=value)
+
+>>>>>>> ooof
         --dry-run
             Try things out and report on potential changes (without actually
             making changes).
@@ -339,11 +365,19 @@ OPTIONS
 
         --generate-alias-as-model
             Generate model implementation for aliases to map and array schemas.
+<<<<<<< HEAD
             An 'alias' is an array, map, or list which is defined inline in a
             OpenAPI document and becomes a model in the generated code. A 'map'
             schema is an object that can have undeclared properties, i.e. the
             'additionalproperties' attribute is set on that object. An 'array'
             schema is a list of sub schemas in a OAS document
+=======
+            An 'alias' is an array, map, or list which is defined inline in a 
+            OpenAPI document and becomes a model in the generated code.
+            A 'map' schema is an object that can have undeclared properties,
+            i.e. the 'additionalproperties' attribute is set on that object.
+            An 'array' schema is a list of sub schemas in a OAS document.
+>>>>>>> ooof
 
         --git-host <git host>
             Git host, e.g. gitlab.com.
@@ -354,11 +388,14 @@ OPTIONS
         --git-user-id <git user id>
             Git user ID, e.g. openapitools.
 
+<<<<<<< HEAD
         --global-property <global properties>
             sets specified global properties (previously called 'system
             properties') in the format of name=value,name=value (or multiple
             options, each with name=value)
 
+=======
+>>>>>>> ooof
         --group-id <group id>
             groupId in generated pom.xml
 
@@ -672,6 +709,7 @@ EOF
 openapi-generator batch *.yaml
 ```
 
+<<<<<<< HEAD
 ## author
 
 This command group contains utilities for authoring generators or customizing templates.
@@ -756,3 +794,5 @@ Extract all Java templates:
 ```
 openapi-generator author template -g java
 ```
+=======
+>>>>>>> ooof

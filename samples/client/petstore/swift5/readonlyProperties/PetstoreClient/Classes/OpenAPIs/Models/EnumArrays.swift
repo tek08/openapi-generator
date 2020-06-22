@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 public struct EnumArrays: Codable { 
 
+=======
+public struct EnumArrays: Codable {
+>>>>>>> ooof
 
     public enum JustSymbol: String, Codable, CaseIterable {
         case greaterThanOrEqualTo = ">="
@@ -27,7 +31,11 @@ public struct EnumArrays: Codable {
         self.arrayEnum = arrayEnum
     }
 
+<<<<<<< HEAD
     public enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    public enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case justSymbol = "just_symbol"
         case arrayEnum = "array_enum"
     }

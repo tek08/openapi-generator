@@ -1,9 +1,13 @@
 package org.openapitools.model;
 
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+=======
+import java.util.List;
+>>>>>>> ooof
 import org.openapitools.model.Category;
 import org.openapitools.model.Tag;
 import javax.validation.constraints.*;
@@ -20,7 +24,10 @@ import javax.xml.bind.annotation.XmlEnumValue;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 public class Pet  {
   
   @ApiModelProperty(value = "")
@@ -28,13 +35,21 @@ public class Pet  {
 
   @ApiModelProperty(value = "")
   @Valid
+<<<<<<< HEAD
   private Category category;
+=======
+  private Category category = null;
+>>>>>>> ooof
 
   @ApiModelProperty(example = "doggie", required = true, value = "")
   private String name;
 
   @ApiModelProperty(required = true, value = "")
+<<<<<<< HEAD
   private Set<String> photoUrls = new LinkedHashSet<>();
+=======
+  private List<String> photoUrls = new ArrayList<>();
+>>>>>>> ooof
 
   @ApiModelProperty(value = "")
   @Valid
@@ -157,21 +172,33 @@ public enum StatusEnum {
   */
   @JsonProperty("photoUrls")
   @NotNull
+<<<<<<< HEAD
   public Set<String> getPhotoUrls() {
+=======
+  public List<String> getPhotoUrls() {
+>>>>>>> ooof
     return photoUrls;
   }
 
   /**
    * Sets the <code>photoUrls</code> property.
    */
+<<<<<<< HEAD
   public void setPhotoUrls(Set<String> photoUrls) {
+=======
+  public void setPhotoUrls(List<String> photoUrls) {
+>>>>>>> ooof
     this.photoUrls = photoUrls;
   }
 
   /**
    * Sets the <code>photoUrls</code> property.
    */
+<<<<<<< HEAD
   public Pet photoUrls(Set<String> photoUrls) {
+=======
+  public Pet photoUrls(List<String> photoUrls) {
+>>>>>>> ooof
     this.photoUrls = photoUrls;
     return this;
   }

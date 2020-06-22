@@ -10,7 +10,11 @@ import javax.validation.constraints.*;
 /**
  * Animal
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen")
+=======
+
+>>>>>>> ooof
 @SuppressWarnings({"UnusedReturnValue", "WeakerAccess"})
 public class Animal   {
   @JsonProperty("className")

@@ -14,10 +14,17 @@ class UserApiController @Inject()(cc: ControllerComponents, api: UserApi) extend
     */
   def createUser(): Action[AnyContent] = Action { request =>
     def executeApi(): Unit = {
+<<<<<<< HEAD
       val user = request.body.asJson.map(_.as[User]).getOrElse {
         throw new OpenApiExceptions.MissingRequiredParameterException("body", "user")
       }
       api.createUser(user)
+=======
+      val body = request.body.asJson.map(_.as[User]).getOrElse {
+        throw new OpenApiExceptions.MissingRequiredParameterException("body", "body")
+      }
+      api.createUser(body)
+>>>>>>> ooof
     }
 
     executeApi()
@@ -29,10 +36,17 @@ class UserApiController @Inject()(cc: ControllerComponents, api: UserApi) extend
     */
   def createUsersWithArrayInput(): Action[AnyContent] = Action { request =>
     def executeApi(): Unit = {
+<<<<<<< HEAD
       val user = request.body.asJson.map(_.as[List[User]]).getOrElse {
         throw new OpenApiExceptions.MissingRequiredParameterException("body", "user")
       }
       api.createUsersWithArrayInput(user)
+=======
+      val body = request.body.asJson.map(_.as[List[User]]).getOrElse {
+        throw new OpenApiExceptions.MissingRequiredParameterException("body", "body")
+      }
+      api.createUsersWithArrayInput(body)
+>>>>>>> ooof
     }
 
     executeApi()
@@ -44,10 +58,17 @@ class UserApiController @Inject()(cc: ControllerComponents, api: UserApi) extend
     */
   def createUsersWithListInput(): Action[AnyContent] = Action { request =>
     def executeApi(): Unit = {
+<<<<<<< HEAD
       val user = request.body.asJson.map(_.as[List[User]]).getOrElse {
         throw new OpenApiExceptions.MissingRequiredParameterException("body", "user")
       }
       api.createUsersWithListInput(user)
+=======
+      val body = request.body.asJson.map(_.as[List[User]]).getOrElse {
+        throw new OpenApiExceptions.MissingRequiredParameterException("body", "body")
+      }
+      api.createUsersWithListInput(body)
+>>>>>>> ooof
     }
 
     executeApi()
@@ -120,10 +141,17 @@ class UserApiController @Inject()(cc: ControllerComponents, api: UserApi) extend
     */
   def updateUser(username: String): Action[AnyContent] = Action { request =>
     def executeApi(): Unit = {
+<<<<<<< HEAD
       val user = request.body.asJson.map(_.as[User]).getOrElse {
         throw new OpenApiExceptions.MissingRequiredParameterException("body", "user")
       }
       api.updateUser(username, user)
+=======
+      val body = request.body.asJson.map(_.as[User]).getOrElse {
+        throw new OpenApiExceptions.MissingRequiredParameterException("body", "body")
+      }
+      api.updateUser(username, body)
+>>>>>>> ooof
     }
 
     executeApi()

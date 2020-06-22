@@ -170,9 +170,15 @@ public class FakeApiTest {
     }
     
     /**
+<<<<<<< HEAD
      * Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트
      *
      * Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트
+=======
+     * Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
+     *
+     * Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
+>>>>>>> ooof
      *
      * @throws ApiException
      *          if the Api call fails
@@ -237,6 +243,7 @@ public class FakeApiTest {
         Integer stringGroup = null;
         Boolean booleanGroup = null;
         Long int64Group = null;
+<<<<<<< HEAD
 
         FakeApi.APItestGroupParametersRequest request = FakeApi.APItestGroupParametersRequest.newBuilder()
           .requiredStringGroup(requiredStringGroup)
@@ -247,6 +254,9 @@ public class FakeApiTest {
           .int64Group(int64Group)
           .build();
         api.testGroupParameters(request);
+=======
+        api.testGroupParameters(requiredStringGroup, requiredBooleanGroup, requiredInt64Group, stringGroup, booleanGroup, int64Group);
+>>>>>>> ooof
 
         // TODO: test validations
     }
@@ -284,6 +294,7 @@ public class FakeApiTest {
         // TODO: test validations
     }
     
+<<<<<<< HEAD
     /**
      * 
      *
@@ -304,4 +315,6 @@ public class FakeApiTest {
         // TODO: test validations
     }
     
+=======
+>>>>>>> ooof
 }

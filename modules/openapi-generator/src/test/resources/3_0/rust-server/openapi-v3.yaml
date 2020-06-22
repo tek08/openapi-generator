@@ -227,7 +227,10 @@ paths:
             Success-Info:
               schema:
                 type: String
+<<<<<<< HEAD
               required: true
+=======
+>>>>>>> ooof
             Bool-Header:
               schema:
                 type: bool
@@ -391,6 +394,7 @@ paths:
       responses:
         '200':
           description: Success
+<<<<<<< HEAD
   /json-complex-query-param:
     get:
       parameters:
@@ -405,6 +409,8 @@ paths:
       responses:
         '200':
           description: Success
+=======
+>>>>>>> ooof
 
 components:
   securitySchemes:
@@ -536,6 +542,7 @@ components:
       type: boolean
     OptionalObjectHeader:
       type: integer
+<<<<<<< HEAD
     AdditionalPropertiesWithList:
       type: object
       maxProperties: 1
@@ -543,6 +550,8 @@ components:
         type: list
         items:
           type: string
+=======
+>>>>>>> ooof
     NullableTest:
       type: object
       required:

@@ -150,7 +150,10 @@ paths:
           items:
             type: string
           type: array
+<<<<<<< HEAD
           uniqueItems: true
+=======
+>>>>>>> ooof
         style: form
       responses:
         "200":
@@ -160,13 +163,19 @@ paths:
                 items:
                   $ref: '#/components/schemas/Pet'
                 type: array
+<<<<<<< HEAD
                 uniqueItems: true
+=======
+>>>>>>> ooof
             application/json:
               schema:
                 items:
                   $ref: '#/components/schemas/Pet'
                 type: array
+<<<<<<< HEAD
                 uniqueItems: true
+=======
+>>>>>>> ooof
           description: successful operation
         "400":
           content: {}
@@ -1461,7 +1470,10 @@ components:
           items:
             type: string
           type: array
+<<<<<<< HEAD
           uniqueItems: true
+=======
+>>>>>>> ooof
           xml:
             name: photoUrl
             wrapped: true

@@ -22,4 +22,7 @@ mvn -f $DIRECTORY/rxswiftLibrary/pom.xml integration-test
 mvn -f $DIRECTORY/urlsessionLibrary/pom.xml integration-test
 mvn -f $DIRECTORY/alamofireLibrary/pom.xml integration-test
 mvn -f $DIRECTORY/combineLibrary/pom.xml integration-test
+<<<<<<< HEAD
 mvn -f $DIRECTORY/deprecated/pom.xml integration-test
+=======
+>>>>>>> ooof

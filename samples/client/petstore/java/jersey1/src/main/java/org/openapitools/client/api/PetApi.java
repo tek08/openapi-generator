@@ -23,7 +23,10 @@ import org.openapitools.client.Pair;
 import java.io.File;
 import org.openapitools.client.model.ModelApiResponse;
 import org.openapitools.client.model.Pet;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 
 
 import java.util.ArrayList;
@@ -31,7 +34,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class PetApi {
   private ApiClient apiClient;
 
@@ -190,12 +197,20 @@ public class PetApi {
    * Finds Pets by tags
    * Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
    * @param tags Tags to filter by (required)
+<<<<<<< HEAD
    * @return Set&lt;Pet&gt;
+=======
+   * @return List&lt;Pet&gt;
+>>>>>>> ooof
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
+<<<<<<< HEAD
   public Set<Pet> findPetsByTags(Set<String> tags) throws ApiException {
+=======
+  public List<Pet> findPetsByTags(List<String> tags) throws ApiException {
+>>>>>>> ooof
     Object localVarPostBody = null;
     
     // verify the required parameter 'tags' is set
@@ -230,7 +245,11 @@ public class PetApi {
 
     String[] localVarAuthNames = new String[] { "petstore_auth" };
 
+<<<<<<< HEAD
     GenericType<Set<Pet>> localVarReturnType = new GenericType<Set<Pet>>() {};
+=======
+    GenericType<List<Pet>> localVarReturnType = new GenericType<List<Pet>>() {};
+>>>>>>> ooof
     return apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       }
   /**

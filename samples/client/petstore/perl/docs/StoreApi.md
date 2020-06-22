@@ -154,7 +154,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **place_order**
+<<<<<<< HEAD
 > Order place_order(order => $order)
+=======
+> Order place_order(body => $body)
+>>>>>>> ooof
 
 Place an order for a pet
 
@@ -165,10 +169,17 @@ use WWW::OpenAPIClient::StoreApi;
 my $api_instance = WWW::OpenAPIClient::StoreApi->new(
 );
 
+<<<<<<< HEAD
 my $order = WWW::OpenAPIClient::Object::Order->new(); # Order | order placed for purchasing the pet
 
 eval { 
     my $result = $api_instance->place_order(order => $order);
+=======
+my $body = WWW::OpenAPIClient::Object::Order->new(); # Order | order placed for purchasing the pet
+
+eval { 
+    my $result = $api_instance->place_order(body => $body);
+>>>>>>> ooof
     print Dumper($result);
 };
 if ($@) {
@@ -180,7 +191,11 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **order** | [**Order**](Order.md)| order placed for purchasing the pet | 
+=======
+ **body** | [**Order**](Order.md)| order placed for purchasing the pet | 
+>>>>>>> ooof
 
 ### Return type
 
@@ -192,7 +207,11 @@ No authorization required
 
 ### HTTP request headers
 
+<<<<<<< HEAD
  - **Content-Type**: application/json
+=======
+ - **Content-Type**: Not defined
+>>>>>>> ooof
  - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

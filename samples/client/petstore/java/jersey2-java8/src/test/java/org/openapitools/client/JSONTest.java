@@ -3,9 +3,13 @@ package org.openapitools.client;
 import org.openapitools.client.model.Order;
 
 import java.lang.Exception;
+<<<<<<< HEAD
 import java.util.Date;
 import java.util.TimeZone;
 import java.text.SimpleDateFormat;
+=======
+
+>>>>>>> ooof
 import java.time.OffsetDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -35,6 +39,7 @@ public class JSONTest {
     }
 
     @Test
+<<<<<<< HEAD
     public void testRFC3339DateFormatDate() throws Exception {
         {
             String dateStr = "2011-01-18 00:00:00.0Z";
@@ -62,6 +67,8 @@ public class JSONTest {
     }
 
     @Test
+=======
+>>>>>>> ooof
     public void testCustomDate() throws Exception {
         final DateTimeFormatter dateFormat = DateTimeFormatter.ISO_OFFSET_DATE_TIME.withZone(ZoneId.of("Etc/GMT+2"));
         final String dateStr = "2015-11-07T14:11:05-02:00";

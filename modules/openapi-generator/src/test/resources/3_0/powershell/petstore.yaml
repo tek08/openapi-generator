@@ -699,7 +699,10 @@ components:
       xml:
         name: User
     Tag:
+<<<<<<< HEAD
       additionalProperties: true
+=======
+>>>>>>> ooof
       title: Pet Tag
       description: A tag for a pet
       type: object

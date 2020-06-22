@@ -5,7 +5,11 @@ import org.openapitools.model.Pet
 import kotlinx.coroutines.flow.Flow;
 interface PetApiService {
 
+<<<<<<< HEAD
 	suspend fun addPet(pet: Pet): Pet
+=======
+	suspend fun addPet(pet: Pet): Unit
+>>>>>>> ooof
 
 	suspend fun deletePet(petId: kotlin.Long, apiKey: kotlin.String?): Unit
 
@@ -15,7 +19,11 @@ interface PetApiService {
 
 	suspend fun getPetById(petId: kotlin.Long): Pet
 
+<<<<<<< HEAD
 	suspend fun updatePet(pet: Pet): Pet
+=======
+	suspend fun updatePet(pet: Pet): Unit
+>>>>>>> ooof
 
 	suspend fun updatePetWithForm(petId: kotlin.Long, name: kotlin.String?, status: kotlin.String?): Unit
 

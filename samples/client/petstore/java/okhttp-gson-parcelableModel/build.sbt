@@ -19,7 +19,10 @@ lazy val root = (project in file(".")).
       "io.gsonfire" % "gson-fire" % "1.8.3" % "compile",
       "javax.annotation" % "javax.annotation-api" % "1.3.2" % "compile",
       "com.google.code.findbugs" % "jsr305" % "3.0.2" % "compile",
+<<<<<<< HEAD
       "javax.annotation" % "javax.annotation-api" % "1.3.2" % "compile",
+=======
+>>>>>>> ooof
       "junit" % "junit" % "4.13" % "test",
       "com.novocode" % "junit-interface" % "0.10" % "test"
     )

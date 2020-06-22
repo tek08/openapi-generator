@@ -15,8 +15,11 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.HashMap;
+=======
+>>>>>>> ooof
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -28,8 +31,11 @@ import io.swagger.annotations.ApiModelProperty;
 import org.openapitools.client.model.BigCatAllOf;
 import org.openapitools.client.model.Cat;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+<<<<<<< HEAD
 import org.openapitools.client.JSON;
 
+=======
+>>>>>>> ooof
 
 /**
  * BigCat
@@ -37,7 +43,11 @@ import org.openapitools.client.JSON;
 @JsonPropertyOrder({
   BigCat.JSON_PROPERTY_KIND
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.EXISTING_PROPERTY, property = "className", visible = true)
 @JsonSubTypes({
 })
@@ -87,6 +97,10 @@ public class BigCat extends Cat {
 
 
   public BigCat kind(KindEnum kind) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.kind = kind;
     return this;
   }
@@ -110,9 +124,12 @@ public class BigCat extends Cat {
   }
 
 
+<<<<<<< HEAD
   /**
    * Return true if this BigCat object is equal to o.
    */
+=======
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -153,11 +170,14 @@ public class BigCat extends Cat {
     return o.toString().replace("\n", "\n    ");
   }
 
+<<<<<<< HEAD
 static {
   // Initialize and register the discriminator mappings.
   Map<String, Class<?>> mappings = new HashMap<String, Class<?>>();
   mappings.put("BigCat", BigCat.class);
   JSON.registerDiscriminator(BigCat.class, "className", mappings);
 }
+=======
+>>>>>>> ooof
 }
 

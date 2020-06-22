@@ -95,6 +95,24 @@ function Invoke-PSApiClient {
         $RequestBody = $Body
     }
 
+<<<<<<< HEAD
+=======
+# http signature authentication
+    if ($null -ne $Configuration['ApiKey'] -and $Configuration['ApiKey'].Count -gt 0) {
+        $httpSignHeaderArgument = @{
+            Method     = $Method
+            UriBuilder = $UriBuilder
+            Body       = $Body
+        }
+        $signedHeader = Get-PSHttpSignedHeader @httpSignHeaderArgument
+        if($null -ne $signedHeader -and $signedHeader.Count -gt 0){
+            foreach($item in $signedHeader.GetEnumerator()){
+                $HeaderParameters[$item.Name] = $item.Value
+            }
+        }
+    }
+
+>>>>>>> ooof
     if ($SkipCertificateCheck -eq $true) {
         $Response = Invoke-WebRequest -Uri $UriBuilder.Uri `
                                   -Method $Method `

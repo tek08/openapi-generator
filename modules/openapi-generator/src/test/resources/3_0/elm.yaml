@@ -64,17 +64,26 @@ paths:
       parameters:
         - name: string
           in: path
+<<<<<<< HEAD
           required: true
+=======
+>>>>>>> ooof
           schema:
             type: string
         - name: integer
           in: path
+<<<<<<< HEAD
           required: true
+=======
+>>>>>>> ooof
           schema:
             type: integer
         - name: enumeration
           in: path
+<<<<<<< HEAD
           required: true
+=======
+>>>>>>> ooof
           schema:
             type: string
             enum: [a, b, c]

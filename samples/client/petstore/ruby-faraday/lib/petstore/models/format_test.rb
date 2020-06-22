@@ -40,11 +40,15 @@ module Petstore
 
     attr_accessor :password
 
+<<<<<<< HEAD
     # A string that is a 10 digit number. Can have leading zeros.
     attr_accessor :pattern_with_digits
 
     # A string starting with 'image_' (case insensitive) and one to three digits following i.e. Image_01.
     attr_accessor :pattern_with_digits_and_delimiter
+=======
+    attr_accessor :big_decimal
+>>>>>>> ooof
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -62,8 +66,12 @@ module Petstore
         :'date_time' => :'dateTime',
         :'uuid' => :'uuid',
         :'password' => :'password',
+<<<<<<< HEAD
         :'pattern_with_digits' => :'pattern_with_digits',
         :'pattern_with_digits_and_delimiter' => :'pattern_with_digits_and_delimiter'
+=======
+        :'big_decimal' => :'BigDecimal'
+>>>>>>> ooof
       }
     end
 
@@ -83,8 +91,12 @@ module Petstore
         :'date_time' => :'DateTime',
         :'uuid' => :'String',
         :'password' => :'String',
+<<<<<<< HEAD
         :'pattern_with_digits' => :'String',
         :'pattern_with_digits_and_delimiter' => :'String'
+=======
+        :'big_decimal' => :'BigDecimal'
+>>>>>>> ooof
       }
     end
 
@@ -161,12 +173,17 @@ module Petstore
         self.password = attributes[:'password']
       end
 
+<<<<<<< HEAD
       if attributes.key?(:'pattern_with_digits')
         self.pattern_with_digits = attributes[:'pattern_with_digits']
       end
 
       if attributes.key?(:'pattern_with_digits_and_delimiter')
         self.pattern_with_digits_and_delimiter = attributes[:'pattern_with_digits_and_delimiter']
+=======
+      if attributes.key?(:'big_decimal')
+        self.big_decimal = attributes[:'big_decimal']
+>>>>>>> ooof
       end
     end
 
@@ -227,6 +244,14 @@ module Petstore
         invalid_properties.push('invalid value for "byte", byte cannot be nil.')
       end
 
+<<<<<<< HEAD
+=======
+      pattern = Regexp.new(/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/)
+      if @byte !~ pattern
+        invalid_properties.push("invalid value for \"byte\", must conform to the pattern #{pattern}.")
+      end
+
+>>>>>>> ooof
       if @date.nil?
         invalid_properties.push('invalid value for "date", date cannot be nil.')
       end
@@ -243,6 +268,7 @@ module Petstore
         invalid_properties.push('invalid value for "password", the character length must be great than or equal to 10.')
       end
 
+<<<<<<< HEAD
       pattern = Regexp.new(/^\d{10}$/)
       if !@pattern_with_digits.nil? && @pattern_with_digits !~ pattern
         invalid_properties.push("invalid value for \"pattern_with_digits\", must conform to the pattern #{pattern}.")
@@ -253,6 +279,8 @@ module Petstore
         invalid_properties.push("invalid value for \"pattern_with_digits_and_delimiter\", must conform to the pattern #{pattern}.")
       end
 
+=======
+>>>>>>> ooof
       invalid_properties
     end
 
@@ -272,12 +300,19 @@ module Petstore
       return false if !@double.nil? && @double < 67.8
       return false if !@string.nil? && @string !~ Regexp.new(/[a-z]/i)
       return false if @byte.nil?
+<<<<<<< HEAD
+=======
+      return false if @byte !~ Regexp.new(/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/)
+>>>>>>> ooof
       return false if @date.nil?
       return false if @password.nil?
       return false if @password.to_s.length > 64
       return false if @password.to_s.length < 10
+<<<<<<< HEAD
       return false if !@pattern_with_digits.nil? && @pattern_with_digits !~ Regexp.new(/^\d{10}$/)
       return false if !@pattern_with_digits_and_delimiter.nil? && @pattern_with_digits_and_delimiter !~ Regexp.new(/^image_\d{1,3}$/i)
+=======
+>>>>>>> ooof
       true
     end
 
@@ -367,6 +402,24 @@ module Petstore
     end
 
     # Custom attribute writer method with validation
+<<<<<<< HEAD
+=======
+    # @param [Object] byte Value to be assigned
+    def byte=(byte)
+      if byte.nil?
+        fail ArgumentError, 'byte cannot be nil'
+      end
+
+      pattern = Regexp.new(/^(?:[A-Za-z0-9+\/]{4})*(?:[A-Za-z0-9+\/]{2}==|[A-Za-z0-9+\/]{3}=)?$/)
+      if byte !~ pattern
+        fail ArgumentError, "invalid value for \"byte\", must conform to the pattern #{pattern}."
+      end
+
+      @byte = byte
+    end
+
+    # Custom attribute writer method with validation
+>>>>>>> ooof
     # @param [Object] password Value to be assigned
     def password=(password)
       if password.nil?
@@ -384,6 +437,7 @@ module Petstore
       @password = password
     end
 
+<<<<<<< HEAD
     # Custom attribute writer method with validation
     # @param [Object] pattern_with_digits Value to be assigned
     def pattern_with_digits=(pattern_with_digits)
@@ -406,6 +460,8 @@ module Petstore
       @pattern_with_digits_and_delimiter = pattern_with_digits_and_delimiter
     end
 
+=======
+>>>>>>> ooof
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -424,8 +480,12 @@ module Petstore
           date_time == o.date_time &&
           uuid == o.uuid &&
           password == o.password &&
+<<<<<<< HEAD
           pattern_with_digits == o.pattern_with_digits &&
           pattern_with_digits_and_delimiter == o.pattern_with_digits_and_delimiter
+=======
+          big_decimal == o.big_decimal
+>>>>>>> ooof
     end
 
     # @see the `==` method
@@ -437,7 +497,11 @@ module Petstore
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
+<<<<<<< HEAD
       [integer, int32, int64, number, float, double, string, byte, binary, date, date_time, uuid, password, pattern_with_digits, pattern_with_digits_and_delimiter].hash
+=======
+      [integer, int32, int64, number, float, double, string, byte, binary, date, date_time, uuid, password, big_decimal].hash
+>>>>>>> ooof
     end
 
     # Builds the object from hash

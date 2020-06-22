@@ -24,12 +24,19 @@ import org.gradle.api.tasks.TaskAction
 import org.gradle.internal.logging.text.StyledTextOutput
 import org.gradle.internal.logging.text.StyledTextOutputFactory
 import org.gradle.kotlin.dsl.property
+<<<<<<< HEAD
 import org.openapitools.codegen.*
 import org.openapitools.codegen.api.TemplatePathLocator
 import org.openapitools.codegen.templating.CommonTemplateContentLocator
 import org.openapitools.codegen.templating.GeneratorTemplateContentLocator
 import org.openapitools.codegen.templating.MustacheEngineAdapter
 import org.openapitools.codegen.templating.TemplateManagerOptions
+=======
+import org.openapitools.codegen.CodegenConfig
+import org.openapitools.codegen.CodegenConstants
+import org.openapitools.codegen.DefaultGenerator
+import org.openapitools.codegen.SupportingFile
+>>>>>>> ooof
 import java.io.File
 import java.io.IOException
 import java.nio.charset.Charset
@@ -85,12 +92,17 @@ open class MetaTask : DefaultTask() {
                 "fullyQualifiedGeneratorClass" to "${packageName.get()}.$klass",
                 "openapiGeneratorVersion" to currentVersion)
 
+<<<<<<< HEAD
+=======
+        val generator = DefaultGenerator()
+>>>>>>> ooof
         supportingFiles.map {
             try {
                 val destinationFolder = File(File(dir.absolutePath), it.folder)
                 destinationFolder.mkdirs()
                 val outputFile = File(destinationFolder, it.destinationFilename)
 
+<<<<<<< HEAD
                 val templateProcessor = TemplateManager(
                     TemplateManagerOptions(false, false),
                     MustacheEngineAdapter(),
@@ -107,6 +119,14 @@ open class MetaTask : DefaultTask() {
                 if (it.templateFile.endsWith(".mustache")) {
                     formatted = Mustache.compiler()
                             .withLoader(loader)
+=======
+                val template = generator.readTemplate(File("codegen", it.templateFile).path)
+                var formatted = template
+
+                if (it.templateFile.endsWith(".mustache")) {
+                    formatted = Mustache.compiler()
+                            .withLoader(loader(generator))
+>>>>>>> ooof
                             .defaultValue("")
                             .compile(template).execute(data)
                 }
@@ -126,6 +146,15 @@ open class MetaTask : DefaultTask() {
         out.formatln("Created generator %s", klass)
     }
 
+<<<<<<< HEAD
+=======
+    private fun loader(generator: DefaultGenerator): Mustache.TemplateLoader {
+        return Mustache.TemplateLoader { name ->
+            generator.getTemplateReader("codegen${File.separator}$name.mustache")
+        }
+    }
+
+>>>>>>> ooof
     private fun String.titleCasedTextOnly(): String =
             this.split(Regex("[^a-zA-Z0-9]")).joinToString(separator = "", transform = String::capitalize)
 

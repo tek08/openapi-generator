@@ -9,7 +9,11 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ReadOnlyFirst
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen")
+=======
+
+>>>>>>> ooof
 public class ReadOnlyFirst   {
   @JsonProperty("bar")
   private String bar;

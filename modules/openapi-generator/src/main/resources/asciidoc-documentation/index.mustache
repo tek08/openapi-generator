@@ -14,6 +14,7 @@
 :app-name: {{appName}}
 {{/headerAttributes}}
 
+<<<<<<< HEAD
 {{#useIntroduction}}
 == Introduction
 {{/useIntroduction}}
@@ -21,6 +22,10 @@
 [abstract]
 .Abstract
 {{/useIntroduction}}
+=======
+[abstract]
+.Abstract
+>>>>>>> ooof
 {{{appDescription}}}
 
 {{#specinclude}}intro.adoc{{/specinclude}}
@@ -51,6 +56,7 @@
 {{#operation}}
 
 [.{{nickname}}]
+<<<<<<< HEAD
 {{#useMethodAndPath}}
 ==== {{httpMethod}} {{path}}
 
@@ -62,6 +68,11 @@ Operation Id:: {{nickname}}
     
 `{{httpMethod}} {{path}}`
 {{/useMethodAndPath}}
+=======
+==== {{nickname}}
+    
+`{{httpMethod}} {{path}}`
+>>>>>>> ooof
 
 {{{summary}}}
 
@@ -109,14 +120,20 @@ Operation Id:: {{nickname}}
 {{/responses}}
 |===         
 
+<<<<<<< HEAD
 {{^skipExamples}}
+=======
+>>>>>>> ooof
 ===== Samples
 
 {{#snippetinclude}}{{path}}/{{httpMethod}}/http-request.adoc{{/snippetinclude}}
 {{#snippetinclude}}{{path}}/{{httpMethod}}/http-response.adoc{{/snippetinclude}}
 
 {{#snippetlink}}* wiremock data, {{path}}/{{httpMethod}}/{{httpMethod}}.json{{/snippetlink}}
+<<<<<<< HEAD
 {{/skipExamples}}
+=======
+>>>>>>> ooof
 
 ifdef::internal-generation[]
 ===== Implementation

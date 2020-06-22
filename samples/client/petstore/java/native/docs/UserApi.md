@@ -5,6 +5,7 @@ All URIs are relative to *http://petstore.swagger.io:80/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createUser**](UserApi.md#createUser) | **POST** /user | Create user
+<<<<<<< HEAD
 [**createUserWithHttpInfo**](UserApi.md#createUser) | **POST** /user | Create user
 [**createUsersWithArrayInput**](UserApi.md#createUsersWithArrayInput) | **POST** /user/createWithArray | Creates list of users with given input array
 [**createUsersWithArrayInputWithHttpInfo**](UserApi.md#createUsersWithArrayInput) | **POST** /user/createWithArray | Creates list of users with given input array
@@ -20,12 +21,25 @@ Method | HTTP request | Description
 [**logoutUserWithHttpInfo**](UserApi.md#logoutUser) | **GET** /user/logout | Logs out current logged in user session
 [**updateUser**](UserApi.md#updateUser) | **PUT** /user/{username} | Updated user
 [**updateUserWithHttpInfo**](UserApi.md#updateUser) | **PUT** /user/{username} | Updated user
+=======
+[**createUsersWithArrayInput**](UserApi.md#createUsersWithArrayInput) | **POST** /user/createWithArray | Creates list of users with given input array
+[**createUsersWithListInput**](UserApi.md#createUsersWithListInput) | **POST** /user/createWithList | Creates list of users with given input array
+[**deleteUser**](UserApi.md#deleteUser) | **DELETE** /user/{username} | Delete user
+[**getUserByName**](UserApi.md#getUserByName) | **GET** /user/{username} | Get user by user name
+[**loginUser**](UserApi.md#loginUser) | **GET** /user/login | Logs user into the system
+[**logoutUser**](UserApi.md#logoutUser) | **GET** /user/logout | Logs out current logged in user session
+[**updateUser**](UserApi.md#updateUser) | **PUT** /user/{username} | Updated user
+>>>>>>> ooof
 
 
 
 ## createUser
 
+<<<<<<< HEAD
 > void createUser(body)
+=======
+> createUser(body)
+>>>>>>> ooof
 
 Create user
 
@@ -50,7 +64,10 @@ public class Example {
         User body = new User(); // User | Created user object
         try {
             apiInstance.createUser(body);
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#createUser");
             System.err.println("Status code: " + e.getCode());
@@ -71,7 +88,10 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 null (empty response body)
 
 ### Authorization
@@ -88,6 +108,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **0** | successful operation |  -  |
 
+<<<<<<< HEAD
 ## createUserWithHttpInfo
 
 > ApiResponse<Void> createUser createUserWithHttpInfo(body)
@@ -159,6 +180,12 @@ No authorization required
 ## createUsersWithArrayInput
 
 > void createUsersWithArrayInput(body)
+=======
+
+## createUsersWithArrayInput
+
+> createUsersWithArrayInput(body)
+>>>>>>> ooof
 
 Creates list of users with given input array
 
@@ -181,7 +208,10 @@ public class Example {
         List<User> body = Arrays.asList(); // List<User> | List of user object
         try {
             apiInstance.createUsersWithArrayInput(body);
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#createUsersWithArrayInput");
             System.err.println("Status code: " + e.getCode());
@@ -202,7 +232,10 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 null (empty response body)
 
 ### Authorization
@@ -219,6 +252,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **0** | successful operation |  -  |
 
+<<<<<<< HEAD
 ## createUsersWithArrayInputWithHttpInfo
 
 > ApiResponse<Void> createUsersWithArrayInput createUsersWithArrayInputWithHttpInfo(body)
@@ -288,6 +322,12 @@ No authorization required
 ## createUsersWithListInput
 
 > void createUsersWithListInput(body)
+=======
+
+## createUsersWithListInput
+
+> createUsersWithListInput(body)
+>>>>>>> ooof
 
 Creates list of users with given input array
 
@@ -310,7 +350,10 @@ public class Example {
         List<User> body = Arrays.asList(); // List<User> | List of user object
         try {
             apiInstance.createUsersWithListInput(body);
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#createUsersWithListInput");
             System.err.println("Status code: " + e.getCode());
@@ -331,7 +374,10 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 null (empty response body)
 
 ### Authorization
@@ -348,6 +394,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **0** | successful operation |  -  |
 
+<<<<<<< HEAD
 ## createUsersWithListInputWithHttpInfo
 
 > ApiResponse<Void> createUsersWithListInput createUsersWithListInputWithHttpInfo(body)
@@ -417,6 +464,12 @@ No authorization required
 ## deleteUser
 
 > void deleteUser(username)
+=======
+
+## deleteUser
+
+> deleteUser(username)
+>>>>>>> ooof
 
 Delete user
 
@@ -441,7 +494,10 @@ public class Example {
         String username = "username_example"; // String | The name that needs to be deleted
         try {
             apiInstance.deleteUser(username);
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#deleteUser");
             System.err.println("Status code: " + e.getCode());
@@ -462,7 +518,10 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 null (empty response body)
 
 ### Authorization
@@ -480,6 +539,7 @@ No authorization required
 | **400** | Invalid username supplied |  -  |
 | **404** | User not found |  -  |
 
+<<<<<<< HEAD
 ## deleteUserWithHttpInfo
 
 > ApiResponse<Void> deleteUser deleteUserWithHttpInfo(username)
@@ -548,6 +608,8 @@ No authorization required
 | **400** | Invalid username supplied |  -  |
 | **404** | User not found |  -  |
 
+=======
+>>>>>>> ooof
 
 ## getUserByName
 
@@ -574,7 +636,10 @@ public class Example {
         String username = "username_example"; // String | The name that needs to be fetched. Use user1 for testing.
         try {
             User result = apiInstance.getUserByName(username);
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#getUserByName");
@@ -598,6 +663,7 @@ Name | Type | Description  | Notes
 
 [**User**](User.md)
 
+<<<<<<< HEAD
 
 ### Authorization
 
@@ -667,6 +733,8 @@ Name | Type | Description  | Notes
 ApiResponse<[**User**](User.md)>
 
 
+=======
+>>>>>>> ooof
 ### Authorization
 
 No authorization required
@@ -710,7 +778,10 @@ public class Example {
         String password = "password_example"; // String | The password for login in clear text
         try {
             String result = apiInstance.loginUser(username, password);
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#loginUser");
@@ -735,6 +806,7 @@ Name | Type | Description  | Notes
 
 **String**
 
+<<<<<<< HEAD
 
 ### Authorization
 
@@ -805,6 +877,8 @@ Name | Type | Description  | Notes
 ApiResponse<**String**>
 
 
+=======
+>>>>>>> ooof
 ### Authorization
 
 No authorization required
@@ -823,7 +897,11 @@ No authorization required
 
 ## logoutUser
 
+<<<<<<< HEAD
 > void logoutUser()
+=======
+> logoutUser()
+>>>>>>> ooof
 
 Logs out current logged in user session
 
@@ -845,7 +923,10 @@ public class Example {
         UserApi apiInstance = new UserApi(defaultClient);
         try {
             apiInstance.logoutUser();
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#logoutUser");
             System.err.println("Status code: " + e.getCode());
@@ -863,7 +944,10 @@ This endpoint does not need any parameter.
 
 ### Return type
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 null (empty response body)
 
 ### Authorization
@@ -880,6 +964,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **0** | successful operation |  -  |
 
+<<<<<<< HEAD
 ## logoutUserWithHttpInfo
 
 > ApiResponse<Void> logoutUser logoutUserWithHttpInfo()
@@ -945,6 +1030,12 @@ No authorization required
 ## updateUser
 
 > void updateUser(username, body)
+=======
+
+## updateUser
+
+> updateUser(username, body)
+>>>>>>> ooof
 
 Updated user
 
@@ -970,7 +1061,10 @@ public class Example {
         User body = new User(); // User | Updated user object
         try {
             apiInstance.updateUser(username, body);
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling UserApi#updateUser");
             System.err.println("Status code: " + e.getCode());
@@ -992,7 +1086,10 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 null (empty response body)
 
 ### Authorization
@@ -1010,6 +1107,7 @@ No authorization required
 | **400** | Invalid user supplied |  -  |
 | **404** | User not found |  -  |
 
+<<<<<<< HEAD
 ## updateUserWithHttpInfo
 
 > ApiResponse<Void> updateUser updateUserWithHttpInfo(username, body)
@@ -1080,3 +1178,5 @@ No authorization required
 | **400** | Invalid user supplied |  -  |
 | **404** | User not found |  -  |
 
+=======
+>>>>>>> ooof

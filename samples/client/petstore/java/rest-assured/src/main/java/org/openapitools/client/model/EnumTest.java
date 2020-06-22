@@ -31,7 +31,11 @@ import org.hibernate.validator.constraints.*;
 /**
  * EnumTest
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class EnumTest {
   /**
    * Gets or Sets enumString

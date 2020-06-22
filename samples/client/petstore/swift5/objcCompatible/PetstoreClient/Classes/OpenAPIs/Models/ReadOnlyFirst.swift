@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 
 @objc public class ReadOnlyFirst: NSObject, Codable { 
+=======
+@objc public class ReadOnlyFirst: NSObject, Codable {
+>>>>>>> ooof
 
     public var bar: String?
     public var baz: String?

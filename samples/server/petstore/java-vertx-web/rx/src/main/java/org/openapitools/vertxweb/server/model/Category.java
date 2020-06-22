@@ -7,7 +7,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * A category for a pet
  **/
+<<<<<<< HEAD
 @JsonInclude(JsonInclude.Include.NON_NULL)
+=======
+@JsonInclude(JsonInclude.Include.NON_NULL) 
+>>>>>>> ooof
 public class Category   {
   
   private Long id;

@@ -2,7 +2,11 @@
 
 /**
  * PetController
+<<<<<<< HEAD
  * PHP version 7.1.3
+=======
+ * PHP version 5
+>>>>>>> ooof
  *
  * @category Class
  * @package  OpenAPI\Server\Controller
@@ -275,7 +279,11 @@ class PetController extends Controller
             $result = $handler->findPetsByStatus($status, $responseCode, $responseHeaders);
 
             // Find default response message
+<<<<<<< HEAD
             $message = '';
+=======
+            $message = 'successful operation';
+>>>>>>> ooof
 
             // Find a more specific message, if available
             switch ($responseCode) {
@@ -363,7 +371,11 @@ class PetController extends Controller
             $result = $handler->findPetsByTags($tags, $responseCode, $responseHeaders);
 
             // Find default response message
+<<<<<<< HEAD
             $message = '';
+=======
+            $message = 'successful operation';
+>>>>>>> ooof
 
             // Find a more specific message, if available
             switch ($responseCode) {
@@ -448,7 +460,11 @@ class PetController extends Controller
             $result = $handler->getPetById($petId, $responseCode, $responseHeaders);
 
             // Find default response message
+<<<<<<< HEAD
             $message = '';
+=======
+            $message = 'successful operation';
+>>>>>>> ooof
 
             // Find a more specific message, if available
             switch ($responseCode) {
@@ -727,7 +743,11 @@ class PetController extends Controller
             $result = $handler->uploadFile($petId, $additionalMetadata, $file, $responseCode, $responseHeaders);
 
             // Find default response message
+<<<<<<< HEAD
             $message = '';
+=======
+            $message = 'successful operation';
+>>>>>>> ooof
 
             // Find a more specific message, if available
             switch ($responseCode) {

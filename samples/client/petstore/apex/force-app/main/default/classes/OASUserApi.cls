@@ -28,69 +28,120 @@ public class OASUserApi {
     /**
      * Create user
      * This can only be done by the logged in user.
+<<<<<<< HEAD
      * @param oaSUser Created user object (required)
      * @throws OAS.ApiException if fails to make API call
      */
     public void createUser(Map<String, Object> params) {
         client.assertNotNull(params.get('oaSUser'), 'oaSUser');
+=======
+     * @param body Created user object (required)
+     * @throws OAS.ApiException if fails to make API call
+     */
+    public void createUser(Map<String, Object> params) {
+        client.assertNotNull(params.get('body'), 'body');
+>>>>>>> ooof
         List<OAS.Param> query = new List<OAS.Param>();
         List<OAS.Param> form = new List<OAS.Param>();
 
         client.invoke(
             'POST', '/user',
+<<<<<<< HEAD
             (OASUser) params.get('oaSUser'),
+=======
+            (OASUser) params.get('body'),
+>>>>>>> ooof
             query, form,
             new Map<String, Object>(),
             new Map<String, Object>(),
             new List<String>(),
+<<<<<<< HEAD
             new List<String>{ 'application/json' },
             new List<String> { 'api_key' },
+=======
+            new List<String>(),
+            new List<String>(),
+>>>>>>> ooof
             null
         );
     }
     /**
      * Creates list of users with given input array
      * 
+<<<<<<< HEAD
      * @param oaSUser List of user object (required)
      * @throws OAS.ApiException if fails to make API call
      */
     public void createUsersWithArrayInput(Map<String, Object> params) {
         client.assertNotNull(params.get('oaSUser'), 'oaSUser');
+=======
+     * @param body List of user object (required)
+     * @throws OAS.ApiException if fails to make API call
+     */
+    public void createUsersWithArrayInput(Map<String, Object> params) {
+        client.assertNotNull(params.get('body'), 'body');
+>>>>>>> ooof
         List<OAS.Param> query = new List<OAS.Param>();
         List<OAS.Param> form = new List<OAS.Param>();
 
         client.invoke(
             'POST', '/user/createWithArray',
+<<<<<<< HEAD
             (List<OASUser>) params.get('oaSUser'),
+=======
+            (List<OASUser>) params.get('body'),
+>>>>>>> ooof
             query, form,
             new Map<String, Object>(),
             new Map<String, Object>(),
             new List<String>(),
+<<<<<<< HEAD
             new List<String>{ 'application/json' },
             new List<String> { 'api_key' },
+=======
+            new List<String>(),
+            new List<String>(),
+>>>>>>> ooof
             null
         );
     }
     /**
      * Creates list of users with given input array
      * 
+<<<<<<< HEAD
      * @param oaSUser List of user object (required)
      * @throws OAS.ApiException if fails to make API call
      */
     public void createUsersWithListInput(Map<String, Object> params) {
         client.assertNotNull(params.get('oaSUser'), 'oaSUser');
+=======
+     * @param body List of user object (required)
+     * @throws OAS.ApiException if fails to make API call
+     */
+    public void createUsersWithListInput(Map<String, Object> params) {
+        client.assertNotNull(params.get('body'), 'body');
+>>>>>>> ooof
         List<OAS.Param> query = new List<OAS.Param>();
         List<OAS.Param> form = new List<OAS.Param>();
 
         client.invoke(
             'POST', '/user/createWithList',
+<<<<<<< HEAD
             (List<OASUser>) params.get('oaSUser'),
+=======
+            (List<OASUser>) params.get('body'),
+>>>>>>> ooof
             query, form,
             new Map<String, Object>(),
             new Map<String, Object>(),
             new List<String>(),
+<<<<<<< HEAD
             new List<String>{ 'application/json' },
             new List<String> { 'api_key' },
+=======
+            new List<String>(),
+            new List<String>(),
+>>>>>>> ooof
             null
         );
     }
@@ -114,7 +165,11 @@ public class OASUserApi {
             new Map<String, Object>(),
             new List<String>(),
             new List<String>(),
+<<<<<<< HEAD
             new List<String> { 'api_key' },
+=======
+            new List<String>(),
+>>>>>>> ooof
             null
         );
     }
@@ -189,7 +244,11 @@ public class OASUserApi {
             new Map<String, Object>(),
             new List<String>(),
             new List<String>(),
+<<<<<<< HEAD
             new List<String> { 'api_key' },
+=======
+            new List<String>(),
+>>>>>>> ooof
             null
         );
     }
@@ -197,26 +256,43 @@ public class OASUserApi {
      * Updated user
      * This can only be done by the logged in user.
      * @param username name that need to be deleted (required)
+<<<<<<< HEAD
      * @param oaSUser Updated user object (required)
+=======
+     * @param body Updated user object (required)
+>>>>>>> ooof
      * @throws OAS.ApiException if fails to make API call
      */
     public void updateUser(Map<String, Object> params) {
         client.assertNotNull(params.get('username'), 'username');
+<<<<<<< HEAD
         client.assertNotNull(params.get('oaSUser'), 'oaSUser');
+=======
+        client.assertNotNull(params.get('body'), 'body');
+>>>>>>> ooof
         List<OAS.Param> query = new List<OAS.Param>();
         List<OAS.Param> form = new List<OAS.Param>();
 
         client.invoke(
             'PUT', '/user/{username}',
+<<<<<<< HEAD
             (OASUser) params.get('oaSUser'),
+=======
+            (OASUser) params.get('body'),
+>>>>>>> ooof
             query, form,
             new Map<String, Object>{
                 'username' => (String) params.get('username')
             },
             new Map<String, Object>(),
             new List<String>(),
+<<<<<<< HEAD
             new List<String>{ 'application/json' },
             new List<String> { 'api_key' },
+=======
+            new List<String>(),
+            new List<String>(),
+>>>>>>> ooof
             null
         );
     }

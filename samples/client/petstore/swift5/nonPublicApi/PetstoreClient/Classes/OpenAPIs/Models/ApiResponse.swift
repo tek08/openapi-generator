@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 internal struct ApiResponse: Codable { 
 
+=======
+internal struct ApiResponse: Codable {
+>>>>>>> ooof
 
     internal var code: Int?
     internal var type: String?

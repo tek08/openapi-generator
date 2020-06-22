@@ -4,11 +4,19 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+<<<<<<< HEAD
 **name** | **kotlin.String** |  | 
 **photoUrls** | **kotlin.collections.List&lt;kotlin.String&gt;** |  | 
 **id** | **kotlin.Long** |  |  [optional]
 **category** | [**Category**](Category.md) |  |  [optional]
 **tags** | [**kotlin.collections.List&lt;Tag&gt;**](Tag.md) |  |  [optional]
+=======
+**id** | **kotlin.Long** |  |  [optional]
+**category** | [**Category**](Category.md) |  |  [optional]
+**name** | **kotlin.String** |  | 
+**photoUrls** | **kotlin.Array&lt;kotlin.String&gt;** |  | 
+**tags** | [**kotlin.Array&lt;Tag&gt;**](Tag.md) |  |  [optional]
+>>>>>>> ooof
 **status** | [**inline**](#StatusEnum) | pet status in the store |  [optional]
 
 

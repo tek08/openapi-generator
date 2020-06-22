@@ -152,14 +152,22 @@ class GenerateTaskDslTest : TestBase()  {
         // Act
         val result = GradleRunner.create()
             .withProjectDir(temp)
+<<<<<<< HEAD
             .withArguments("openApiGenerate", "--stacktrace")
+=======
+            .withArguments("openApiGenerate")
+>>>>>>> ooof
             .withPluginClasspath()
             .buildAndFail()
 
         // Assert
         // rather than write out full handlebars generator templates, we'll just test that the configurator has set handlebars as the engine.
+<<<<<<< HEAD
         assertTrue(result.output.contains("HandlebarsException"), "Stack should expose an exception for missing templates.")
         assertTrue(result.output.contains("handlebars"), "Build should have attempted to use handlebars.")
+=======
+        assertTrue(result.output.contains("kotlin-client/model.handlebars (No such file or directory)"), "Build should have attempted to use handlebars.")
+>>>>>>> ooof
         assertEquals(TaskOutcome.FAILED, result.task(":openApiGenerate")?.outcome,
             "Expected a failed run, but found ${result.task(":openApiGenerate")?.outcome}")
     }

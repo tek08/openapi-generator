@@ -90,8 +90,12 @@ You can use this as additional dependency of the `openapi-generator-maven-plugin
 If you publish your artifact to a distant maven repository, do not forget to add this repository as `pluginRepository` for your project.
 
 ## Selective generation
+<<<<<<< HEAD
 
 You may not want to generate *all* models in your project. Likewise, you may want just one or two apis to be written.  If that's the case, you can use system properties or [global properties](./global-properties.md) to control the output.
+=======
+You may not want to generate *all* models in your project.  Likewise you may want just one or two apis to be written.  If that's the case, you can use system properties to control the output:
+>>>>>>> ooof
 
 The default is generate *everything* supported by the specific library.  Once you enable a feature, it will restrict the contents generated:
 
@@ -143,6 +147,7 @@ When using selective generation, _only_ the templates needed for the specific ge
 To skip models defined as the form parameters in "requestBody", please use `skipFormModel` (default to false) (this option is introduced at v3.2.2)
 
 ```sh
+<<<<<<< HEAD
 java -DskipFormModel=true <path to jar> generate …
 ```
 
@@ -150,6 +155,9 @@ or
 
 ```sh
 java <path to jar> generate --global-property skipFormModel=true …
+=======
+java -DskipFormModel=true
+>>>>>>> ooof
 ```
 
 This option will be helpful to skip model generation due to the form parameter, which is defined differently in OAS3 as there's no form parameter in OAS3

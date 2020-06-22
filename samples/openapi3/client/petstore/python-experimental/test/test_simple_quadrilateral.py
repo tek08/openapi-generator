@@ -11,6 +11,7 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
@@ -26,6 +27,12 @@ except ImportError:
     shape_interface = sys.modules[
         'petstore_api.model.shape_interface']
 from petstore_api.model.simple_quadrilateral import SimpleQuadrilateral
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestSimpleQuadrilateral(unittest.TestCase):
@@ -40,7 +47,11 @@ class TestSimpleQuadrilateral(unittest.TestCase):
     def testSimpleQuadrilateral(self):
         """Test SimpleQuadrilateral"""
         # FIXME: construct object with mandatory attributes with example values
+<<<<<<< HEAD
         # model = SimpleQuadrilateral()  # noqa: E501
+=======
+        # model = petstore_api.SimpleQuadrilateral()  # noqa: E501
+>>>>>>> ooof
         pass
 
 

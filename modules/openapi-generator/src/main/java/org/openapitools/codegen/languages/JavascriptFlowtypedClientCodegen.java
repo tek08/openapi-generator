@@ -107,7 +107,11 @@ public class JavascriptFlowtypedClientCodegen extends AbstractTypeScriptClientCo
 
     @Override
     protected void addAdditionPropertiesToCodeGenModel(CodegenModel codegenModel, Schema schema) {
+<<<<<<< HEAD
         codegenModel.additionalPropertiesType = getTypeDeclaration(getAdditionalProperties(schema));
+=======
+        codegenModel.additionalPropertiesType = getTypeDeclaration(ModelUtils.getAdditionalProperties(schema));
+>>>>>>> ooof
         addImport(codegenModel, codegenModel.additionalPropertiesType);
     }
 

@@ -12,7 +12,11 @@ import org.openapitools.model.DogAllOf;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen")
+=======
+
+>>>>>>> ooof
 public class Dog extends Animal  {
   @JsonProperty("breed")
   private String breed;

@@ -29,11 +29,17 @@ import io.swagger.v3.oas.models.media.Schema;
 import io.swagger.v3.oas.models.parameters.Parameter;
 import io.swagger.v3.oas.models.security.*;
 import io.swagger.v3.oas.models.tags.Tag;
+<<<<<<< HEAD
 import org.apache.commons.io.comparator.PathFileComparator;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.openapitools.codegen.api.TemplatePathLocator;
 import org.openapitools.codegen.api.TemplateProcessor;
+=======
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.StringUtils;
+>>>>>>> ooof
 import org.openapitools.codegen.config.GlobalSettings;
 import org.openapitools.codegen.api.TemplatingEngineAdapter;
 import org.openapitools.codegen.ignore.CodegenIgnoreProcessor;
@@ -41,10 +47,14 @@ import org.openapitools.codegen.languages.PythonClientExperimentalCodegen;
 import org.openapitools.codegen.meta.GeneratorMetadata;
 import org.openapitools.codegen.meta.Stability;
 import org.openapitools.codegen.serializer.SerializerUtils;
+<<<<<<< HEAD
 import org.openapitools.codegen.templating.CommonTemplateContentLocator;
 import org.openapitools.codegen.templating.GeneratorTemplateContentLocator;
 import org.openapitools.codegen.templating.MustacheEngineAdapter;
 import org.openapitools.codegen.templating.TemplateManagerOptions;
+=======
+import org.openapitools.codegen.templating.MustacheEngineAdapter;
+>>>>>>> ooof
 import org.openapitools.codegen.utils.ImplementationVersion;
 import org.openapitools.codegen.utils.ModelUtils;
 import org.openapitools.codegen.utils.ProcessUtils;
@@ -54,7 +64,10 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.net.URL;
+<<<<<<< HEAD
 import java.nio.charset.StandardCharsets;
+=======
+>>>>>>> ooof
 import java.nio.file.Path;
 import java.time.ZonedDateTime;
 import java.util.*;
@@ -62,14 +75,23 @@ import java.util.*;
 import static org.openapitools.codegen.utils.OnceLogger.once;
 
 @SuppressWarnings("rawtypes")
+<<<<<<< HEAD
 public class DefaultGenerator implements Generator {
     private static final String METADATA_DIR = ".openapi-generator";
     protected final Logger LOGGER = LoggerFactory.getLogger(DefaultGenerator.class);
     private final boolean dryRun;
+=======
+public class DefaultGenerator extends AbstractGenerator implements Generator {
+    protected final Logger LOGGER = LoggerFactory.getLogger(DefaultGenerator.class);
+>>>>>>> ooof
     protected CodegenConfig config;
     protected ClientOptInput opts;
     protected OpenAPI openAPI;
     protected CodegenIgnoreProcessor ignoreProcessor;
+<<<<<<< HEAD
+=======
+    protected TemplatingEngineAdapter templatingEngine;
+>>>>>>> ooof
     private Boolean generateApis = null;
     private Boolean generateModels = null;
     private Boolean generateSupportingFiles = null;
@@ -82,11 +104,17 @@ public class DefaultGenerator implements Generator {
     private String basePathWithoutHost;
     private String contextPath;
     private Map<String, String> generatorPropertyDefaults = new HashMap<>();
+<<<<<<< HEAD
     protected TemplateProcessor templateProcessor = null;
 
 
     public DefaultGenerator() {
         this(false);
+=======
+
+
+    public DefaultGenerator() {
+>>>>>>> ooof
     }
 
     public DefaultGenerator(Boolean dryRun) {
@@ -94,12 +122,21 @@ public class DefaultGenerator implements Generator {
         LOGGER.info("Generating with dryRun={}", this.dryRun);
     }
 
+<<<<<<< HEAD
+=======
+    @Override
+    public boolean getEnableMinimalUpdate() {
+        return config.isEnableMinimalUpdate();
+    }
+
+>>>>>>> ooof
     @SuppressWarnings("deprecation")
     @Override
     public Generator opts(ClientOptInput opts) {
         this.opts = opts;
         this.openAPI = opts.getOpenAPI();
         this.config = opts.getConfig();
+<<<<<<< HEAD
 
         TemplateManagerOptions templateManagerOptions = new TemplateManagerOptions(this.config.isEnableMinimalUpdate(),this.config.isSkipOverwrite());
 
@@ -121,6 +158,9 @@ public class DefaultGenerator implements Generator {
                     new TemplatePathLocator[]{generatorTemplateLocator, commonTemplateLocator}
             );
         }
+=======
+        this.templatingEngine = this.config.getTemplatingEngine();
+>>>>>>> ooof
 
         String ignoreFileLocation = this.config.getIgnoreFilePathOverride();
         if (ignoreFileLocation != null) {
@@ -139,6 +179,7 @@ public class DefaultGenerator implements Generator {
         return this;
     }
 
+<<<<<<< HEAD
     /**
      * Retrieves an instance to the configured template processor, available after user-defined options are
      * applied via {@link DefaultGenerator#opts(ClientOptInput)}.
@@ -147,6 +188,13 @@ public class DefaultGenerator implements Generator {
      */
     public TemplateProcessor getTemplateProcessor() {
         return templateProcessor;
+=======
+    private void configPostProcessMustacheCompiler() {
+        if (this.templatingEngine instanceof MustacheEngineAdapter) {
+            MustacheEngineAdapter mustacheEngineAdapter = (MustacheEngineAdapter) this.templatingEngine;
+            mustacheEngineAdapter.setCompiler(this.config.processCompiler(mustacheEngineAdapter.getCompiler()));
+        }
+>>>>>>> ooof
     }
 
     /**
@@ -328,6 +376,7 @@ public class DefaultGenerator implements Generator {
 
             if (generateModelTests) {
                 // do not overwrite test file that already exists (regardless of config's skipOverwrite setting)
+<<<<<<< HEAD
                 File modelTestFile = new File(filename);
                 if (modelTestFile.exists()) {
                     this.templateProcessor.skip(modelTestFile.toPath(), "Test files never overwrite an existing file of the same name.");
@@ -343,6 +392,34 @@ public class DefaultGenerator implements Generator {
             } else if (dryRun) {
                 Path skippedPath = java.nio.file.Paths.get(filename);
                 this.templateProcessor.skip(skippedPath, "Skipped by modelTests option supplied by user.");
+=======
+                if (new File(filename).exists()) {
+                    LOGGER.info("File exists. Skipped overwriting {}", filename);
+                    if (dryRun) {
+                        dryRunStatusMap.put(filename,
+                                new DryRunStatus(
+                                        java.nio.file.Paths.get(filename),
+                                        DryRunStatus.State.SkippedOverwrite,
+                                        "Test files never overwrite an existing file of the same name."
+                                ));
+                    }
+                    continue;
+                }
+                File written = processTemplateToFile(models, templateName, filename);
+                if (written != null) {
+                    files.add(written);
+                    if (config.isEnablePostProcessFile() && !dryRun) {
+                        config.postProcessFile(written, "model-test");
+                    }
+                }
+            } else if (dryRun) {
+                dryRunStatusMap.put(filename,
+                        new DryRunStatus(
+                                java.nio.file.Paths.get(filename),
+                                DryRunStatus.State.Skipped,
+                                "Skipped by modelTests option supplied by user."
+                        ));
+>>>>>>> ooof
             }
         }
     }
@@ -353,25 +430,77 @@ public class DefaultGenerator implements Generator {
             String suffix = docExtension != null ? docExtension : config.modelDocTemplateFiles().get(templateName);
             String filename = config.modelDocFileFolder() + File.separator + config.toModelDocFilename(modelName) + suffix;
 
+<<<<<<< HEAD
             File written = processTemplateToFile(models, templateName, filename, generateModelDocumentation, CodegenConstants.MODEL_DOCS);
             if (written != null) {
                 files.add(written);
                 if (config.isEnablePostProcessFile() && !dryRun) {
                     config.postProcessFile(written, "model-doc");
                 }
+=======
+            if (generateModelDocumentation) {
+                if (!config.shouldOverwrite(filename)) {
+                    LOGGER.info("Skipped overwriting {}", filename);
+                    if (dryRun) {
+                        dryRunStatusMap.put(filename, new DryRunStatus(java.nio.file.Paths.get(filename), DryRunStatus.State.SkippedOverwrite));
+                    }
+                    continue;
+                }
+                File written = processTemplateToFile(models, templateName, filename);
+                if (written != null) {
+                    files.add(written);
+                    if (config.isEnablePostProcessFile() && !dryRun) {
+                        config.postProcessFile(written, "model-doc");
+                    }
+                }
+            } else if (dryRun) {
+                dryRunStatusMap.put(filename,
+                        new DryRunStatus(
+                                java.nio.file.Paths.get(filename),
+                                DryRunStatus.State.Skipped,
+                                "Skipped by modelDocs option supplied by user."
+                        ));
+>>>>>>> ooof
             }
         }
     }
 
+<<<<<<< HEAD
     private void generateModel(List<File> files, Map<String, Object> models, String modelName) throws IOException {
         for (String templateName : config.modelTemplateFiles().keySet()) {
             String filename = config.modelFilename(templateName, modelName);
             File written = processTemplateToFile(models, templateName, filename, generateModels, CodegenConstants.MODELS);
+=======
+    private String getModelFilenameByTemplate(String modelName, String templateName){
+        String suffix = config.modelTemplateFiles().get(templateName);
+        return config.modelFileFolder() + File.separator + config.toModelFilename(modelName) + suffix;
+    }
+
+    private void generateModel(List<File> files, Map<String, Object> models, String modelName) throws IOException {
+        for (String templateName : config.modelTemplateFiles().keySet()) {
+            String filename = getModelFilenameByTemplate(modelName, templateName);
+            if (!config.shouldOverwrite(filename)) {
+                LOGGER.info("Skipped overwriting {}", filename);
+                if (dryRun) {
+                    dryRunStatusMap.put(filename, new DryRunStatus(
+                            java.nio.file.Paths.get(filename),
+                            DryRunStatus.State.SkippedOverwrite
+                    ));
+                }
+                continue;
+            }
+            File written = processTemplateToFile(models, templateName, filename);
+>>>>>>> ooof
             if (written != null) {
                 files.add(written);
                 if (config.isEnablePostProcessFile() && !dryRun) {
                     config.postProcessFile(written, "model");
                 }
+<<<<<<< HEAD
+=======
+            } else {
+                LOGGER.warn("Unknown issue writing {}", filename);
+>>>>>>> ooof
             }
         }
     }
@@ -421,12 +550,25 @@ public class DefaultGenerator implements Generator {
                 //don't generate models that have an import mapping
                 if (config.importMapping().containsKey(name)) {
                     LOGGER.debug("Model {} not imported due to import mapping", name);
+<<<<<<< HEAD
 
                     for (String templateName : config.modelTemplateFiles().keySet()) {
                         // HACK: Because this returns early, could lead to some invalid model reporting.
                         String filename = config.modelFilename(templateName, name);
                         Path path = java.nio.file.Paths.get(filename);
                         this.templateProcessor.skip(path,"Skipped prior to model processing due to import mapping conflict (either by user or by generator)." );
+=======
+                    if (dryRun) {
+                        // HACK: Because this returns early, could lead to some invalid model reporting.
+                        for (String templateName : config.modelTemplateFiles().keySet()) {
+                            String filename = getModelFilenameByTemplate(name, templateName);
+                            dryRunStatusMap.put(filename, new DryRunStatus(
+                                    java.nio.file.Paths.get(filename),
+                                    DryRunStatus.State.Skipped,
+                                    "Skipped prior to model processing due to import mapping conflict (either by user or by generator)."
+                            ));
+                        }
+>>>>>>> ooof
                     }
                     continue;
                 }
@@ -445,7 +587,11 @@ public class DefaultGenerator implements Generator {
 
                 Schema schema = schemas.get(name);
 
+<<<<<<< HEAD
                 if (ModelUtils.isFreeFormObject(this.openAPI, schema)) { // check to see if it'a a free-form object
+=======
+                if (ModelUtils.isFreeFormObject(schema)) { // check to see if it'a a free-form object
+>>>>>>> ooof
                     LOGGER.info("Model {} not generated since it's a free-form object", name);
                     continue;
                 } else if (ModelUtils.isMapSchema(schema)) { // check to see if it's a "map" model
@@ -612,7 +758,21 @@ public class DefaultGenerator implements Generator {
 
                 for (String templateName : config.apiTemplateFiles().keySet()) {
                     String filename = config.apiFilename(templateName, tag);
+<<<<<<< HEAD
                     File written = processTemplateToFile(operation, templateName, filename, generateApis, CodegenConstants.APIS);
+=======
+                    File apiFile = new File(filename);
+                    if (!config.shouldOverwrite(filename) && apiFile.exists()) {
+                        LOGGER.info("Skipped overwriting {}", filename);
+                        if (dryRun) {
+                            DryRunStatus status = new DryRunStatus(apiFile.toPath(), DryRunStatus.State.SkippedOverwrite);
+                            dryRunStatusMap.put(filename, status);
+                        }
+                        continue;
+                    }
+
+                    File written = processTemplateToFile(operation, templateName, filename);
+>>>>>>> ooof
                     if (written != null) {
                         files.add(written);
                         if (config.isEnablePostProcessFile() && !dryRun) {
@@ -625,29 +785,78 @@ public class DefaultGenerator implements Generator {
                 for (String templateName : config.apiTestTemplateFiles().keySet()) {
                     String filename = config.apiTestFilename(templateName, tag);
                     File apiTestFile = new File(filename);
+<<<<<<< HEAD
                     // do not overwrite test file that already exists
                     if (apiTestFile.exists()) {
                         this.templateProcessor.skip(apiTestFile.toPath(), "Test files never overwrite an existing file of the same name.");
                     } else {
                         File written = processTemplateToFile(operation, templateName, filename, generateApiTests, CodegenConstants.API_TESTS);
+=======
+                    if (generateApiTests) {
+                        // do not overwrite test file that already exists
+                        if (apiTestFile.exists()) {
+                            LOGGER.info("File exists. Skipped overwriting {}", filename);
+                            if (dryRun) {
+                                dryRunStatusMap.put(filename, new DryRunStatus(apiTestFile.toPath(), DryRunStatus.State.SkippedOverwrite));
+                            }
+                            continue;
+                        }
+
+                        File written = processTemplateToFile(operation, templateName, filename);
+>>>>>>> ooof
                         if (written != null) {
                             files.add(written);
                             if (config.isEnablePostProcessFile() && !dryRun) {
                                 config.postProcessFile(written, "api-test");
                             }
                         }
+<<<<<<< HEAD
+=======
+                    } else if (dryRun) {
+                        dryRunStatusMap.put(filename, new DryRunStatus(
+                                apiTestFile.toPath(),
+                                DryRunStatus.State.Skipped,
+                                "Skipped by apiTests option supplied by user."
+                        ));
+>>>>>>> ooof
                     }
                 }
 
                 // to generate api documentation files
                 for (String templateName : config.apiDocTemplateFiles().keySet()) {
                     String filename = config.apiDocFilename(templateName, tag);
+<<<<<<< HEAD
                     File written = processTemplateToFile(operation, templateName, filename, generateApiDocumentation, CodegenConstants.API_DOCS);
                     if (written != null) {
                         files.add(written);
                         if (config.isEnablePostProcessFile() && !dryRun) {
                             config.postProcessFile(written, "api-doc");
                         }
+=======
+                    File apiDocFile = new File(filename);
+                    if (generateApiDocumentation) {
+                        if (!config.shouldOverwrite(filename) && apiDocFile.exists()) {
+                            LOGGER.info("Skipped overwriting {}", filename);
+                            if (dryRun) {
+                                dryRunStatusMap.put(filename, new DryRunStatus(apiDocFile.toPath(), DryRunStatus.State.SkippedOverwrite));
+                            }
+                            continue;
+                        }
+
+                        File written = processTemplateToFile(operation, templateName, filename);
+                        if (written != null) {
+                            files.add(written);
+                            if (config.isEnablePostProcessFile() && !dryRun) {
+                                config.postProcessFile(written, "api-doc");
+                            }
+                        }
+                    } else if (dryRun) {
+                        dryRunStatusMap.put(filename, new DryRunStatus(
+                                apiDocFile.toPath(),
+                                DryRunStatus.State.Skipped,
+                                "Skipped by apiDocs option supplied by user."
+                        ));
+>>>>>>> ooof
                     }
                 }
 
@@ -689,11 +898,32 @@ public class DefaultGenerator implements Generator {
                 String outputFilename = new File(support.destinationFilename).isAbsolute() // split
                         ? support.destinationFilename
                         : outputFolder + File.separator + support.destinationFilename.replace('/', File.separatorChar);
+<<<<<<< HEAD
 
+=======
+                if (!config.shouldOverwrite(outputFilename)) {
+                    LOGGER.info("Skipped overwriting {}", outputFilename);
+                    if (dryRun) {
+                        Path skippedSupportingFile = java.nio.file.Paths.get(outputFilename);
+                        DryRunStatus status = new DryRunStatus(
+                                skippedSupportingFile,
+                                DryRunStatus.State.SkippedOverwrite
+                        );
+                    }
+                    continue;
+                }
+                String templateFile;
+                if (support instanceof GlobalSupportingFile) {
+                    templateFile = config.getCommonTemplateDir() + File.separator + support.templateFile;
+                } else {
+                    templateFile = getFullTemplateFile(config, support.templateFile);
+                }
+>>>>>>> ooof
                 boolean shouldGenerate = true;
                 if (supportingFilesToGenerate != null && !supportingFilesToGenerate.isEmpty()) {
                     shouldGenerate = supportingFilesToGenerate.contains(support.destinationFilename);
                 }
+<<<<<<< HEAD
 
                 File written = processTemplateToFile(bundle, support.templateFile, outputFilename, shouldGenerate, CodegenConstants.SUPPORTING_FILES);
                 if (written != null) {
@@ -701,6 +931,65 @@ public class DefaultGenerator implements Generator {
                     if (config.isEnablePostProcessFile() && !dryRun) {
                         config.postProcessFile(written, "api-doc");
                     }
+=======
+                if (!shouldGenerate) {
+                    if (dryRun) {
+                        Path skippedSupportingFile = java.nio.file.Paths.get(outputFilename);
+                        DryRunStatus status = new DryRunStatus(
+                                skippedSupportingFile,
+                                DryRunStatus.State.Skipped,
+                                "Skipped by supportingFiles option supplied by user."
+                        );
+                        dryRunStatusMap.put(outputFilename, status);
+                    }
+                    continue;
+                }
+
+                if (ignoreProcessor.allowsFile(new File(outputFilename))) {
+                    // support.templateFile is the unmodified/original supporting file name (e.g. build.sh.mustache)
+                    // templatingEngine.templateExists dispatches resolution to this, performing template-engine specific inspect of support file extensions.
+                    if (templatingEngine.templateExists(this, support.templateFile)) {
+                        String templateContent = templatingEngine.compileTemplate(this, bundle, support.templateFile);
+                        writeToFile(outputFilename, templateContent);
+                        File written = new File(outputFilename);
+                        files.add(written);
+                        if (config.isEnablePostProcessFile()) {
+                            config.postProcessFile(written, "supporting-mustache");
+                        }
+                    } else {
+                        if (Arrays.stream(templatingEngine.getFileExtensions()).anyMatch(templateFile::endsWith)) {
+                            String templateContent = templatingEngine.compileTemplate(this, bundle, support.templateFile);
+                            writeToFile(outputFilename, templateContent);
+                            File written = new File(outputFilename);
+                            files.add(written);
+                            if (config.isEnablePostProcessFile()) {
+                                config.postProcessFile(written, "supporting-mustache");
+                            }
+                        } else {
+                            InputStream in = null;
+
+                            try {
+                                in = new FileInputStream(templateFile);
+                            } catch (Exception e) {
+                                // continue
+                            }
+                            if (in == null) {
+                                in = this.getClass().getClassLoader().getResourceAsStream(getCPResourcePath(templateFile));
+                            }
+                            File outputFile = writeInputStreamToFile(outputFilename, in, templateFile);
+                            files.add(outputFile);
+                            if (config.isEnablePostProcessFile()) {
+                                config.postProcessFile(outputFile, "supporting-common");
+                            }
+                        }
+                    }
+
+                } else {
+                    if (dryRun) {
+                        dryRunStatusMap.put(outputFilename, new DryRunStatus(java.nio.file.Paths.get(outputFilename), DryRunStatus.State.Ignored));
+                    }
+                    LOGGER.info("Skipped generation of {} due to rule in .openapi-generator-ignore", outputFilename);
+>>>>>>> ooof
                 }
             } catch (Exception e) {
                 throw new RuntimeException("Could not generate supporting file '" + support + "'", e);
@@ -712,6 +1001,7 @@ public class DefaultGenerator implements Generator {
         final String openapiGeneratorIgnore = ".openapi-generator-ignore";
         String ignoreFileNameTarget = config.outputFolder() + File.separator + openapiGeneratorIgnore;
         File ignoreFile = new File(ignoreFileNameTarget);
+<<<<<<< HEAD
         if (generateMetadata) {
             try {
                 boolean shouldGenerate = !ignoreFile.exists();
@@ -733,6 +1023,66 @@ public class DefaultGenerator implements Generator {
         }
 
         generateVersionMetadata(files);
+=======
+        if (generateMetadata && !ignoreFile.exists()) {
+            String ignoreFileNameSource = File.separator + config.getCommonTemplateDir() + File.separator + openapiGeneratorIgnore;
+            String ignoreFileContents = readResourceContents(ignoreFileNameSource);
+            try {
+                writeToFile(ignoreFileNameTarget, ignoreFileContents);
+            } catch (IOException e) {
+                throw new RuntimeException("Could not generate supporting file '" + openapiGeneratorIgnore + "'", e);
+            }
+            files.add(ignoreFile);
+            if (config.isEnablePostProcessFile() && !dryRun) {
+                config.postProcessFile(ignoreFile, "openapi-generator-ignore");
+            }
+        } else if (generateMetadata && dryRun && ignoreFile.exists()) {
+            dryRunStatusMap.put(ignoreFileNameTarget, new DryRunStatus(ignoreFile.toPath(), DryRunStatus.State.SkippedOverwrite));
+        } else if (!generateMetadata && dryRun) {
+            dryRunStatusMap.put(ignoreFileNameTarget, new DryRunStatus(
+                    ignoreFile.toPath(),
+                    DryRunStatus.State.Skipped,
+                    "Skipped by generateMetadata option supplied by user"
+            ));
+        }
+
+        String versionMetadata = config.outputFolder() + File.separator + ".openapi-generator" + File.separator + "VERSION";
+        if (generateMetadata) {
+            File versionMetadataFile = new File(versionMetadata);
+            try {
+                writeToFile(versionMetadata, ImplementationVersion.read());
+                files.add(versionMetadataFile);
+                if (config.isEnablePostProcessFile() && !dryRun) {
+                    config.postProcessFile(ignoreFile, "openapi-generator-version");
+                }
+            } catch (IOException e) {
+                throw new RuntimeException("Could not generate supporting file '" + versionMetadata + "'", e);
+            }
+        } else if(!generateMetadata && dryRun) {
+            Path metadata = java.nio.file.Paths.get(versionMetadata);
+            DryRunStatus status = new DryRunStatus(metadata, DryRunStatus.State.Skipped, "Skipped by generateMetadata option supplied by user.");
+            dryRunStatusMap.put(versionMetadata, status);
+        }
+
+        /*
+         * The following code adds default LICENSE (Apache-2.0) for all generators
+         * To use license other than Apache2.0, update the following file:
+         *   modules/openapi-generator/src/main/resources/_common/LICENSE
+         *
+        final String apache2License = "LICENSE";
+        String licenseFileNameTarget = config.outputFolder() + File.separator + apache2License;
+        File licenseFile = new File(licenseFileNameTarget);
+        String licenseFileNameSource = File.separator + config.getCommonTemplateDir() + File.separator + apache2License;
+        String licenseFileContents = readResourceContents(licenseFileNameSource);
+        try {
+            writeToFile(licenseFileNameTarget, licenseFileContents);
+        } catch (IOException e) {
+            throw new RuntimeException("Could not generate LICENSE file '" + apache2License + "'", e);
+        }
+        files.add(licenseFile);
+         */
+
+>>>>>>> ooof
     }
 
     @SuppressWarnings("unchecked")
@@ -763,12 +1113,22 @@ public class DefaultGenerator implements Generator {
             bundle.put("authMethods", authMethods);
             bundle.put("hasAuthMethods", true);
 
+<<<<<<< HEAD
             if (ProcessUtils.hasOAuthMethods(authMethods)) {
                 bundle.put("hasOAuthMethods", true);
                 bundle.put("oauthMethods", ProcessUtils.getOAuthMethods(authMethods));
             }
             if (ProcessUtils.hasHttpBearerMethods(authMethods)) {
                 bundle.put("hasHttpBearerMethods", true);
+=======
+            if (hasOAuthMethods(authMethods)) {
+                bundle.put("hasOAuthMethods", true);
+                bundle.put("oauthMethods", getOAuthMethods(authMethods));
+            }
+
+            if (hasBearerMethods(authMethods)) {
+                bundle.put("hasBearerMethods", true);
+>>>>>>> ooof
             }
             if (ProcessUtils.hasHttpSignatureMethods(authMethods)) {
                 bundle.put("hasHttpSignatureMethods", true);
@@ -785,6 +1145,21 @@ public class DefaultGenerator implements Generator {
         if (servers != null && !servers.isEmpty()) {
             bundle.put("servers", servers);
             bundle.put("hasServers", true);
+<<<<<<< HEAD
+=======
+
+            if (!config.serverVariableOverrides().isEmpty()) {
+                List<Map<String, String>> keyValuePairs = new ArrayList<>();
+                for (Map.Entry<String, String> entry : config.serverVariableOverrides().entrySet()) {
+                    Map<String, String> keyValuePair = new HashMap<>();
+                    keyValuePair.put("key", entry.getKey());
+                    keyValuePair.put("value", entry.getValue());
+
+                    keyValuePairs.add(keyValuePair);
+                }
+                bundle.put("serverVariables", keyValuePairs);
+            }
+>>>>>>> ooof
         }
 
         if (openAPI.getExternalDocs() != null) {
@@ -841,7 +1216,12 @@ public class DefaultGenerator implements Generator {
         configureGeneratorProperties();
         configureOpenAPIInfo();
 
+<<<<<<< HEAD
         config.processOpenAPI(openAPI);
+=======
+        // If the template adapter is mustache, we'll set the config-modified Compiler.
+        configPostProcessMustacheCompiler();
+>>>>>>> ooof
 
         List<File> files = new ArrayList<>();
         // models
@@ -855,6 +1235,10 @@ public class DefaultGenerator implements Generator {
         // supporting files
         Map<String, Object> bundle = buildSupportFileBundle(allOperations, allModels);
         generateSupportingFiles(files, bundle);
+<<<<<<< HEAD
+=======
+        config.processOpenAPI(openAPI);
+>>>>>>> ooof
 
         if(dryRun) {
             boolean verbose = Boolean.parseBoolean(GlobalSettings.getProperty("verbose"));
@@ -864,8 +1248,11 @@ public class DefaultGenerator implements Generator {
             sb.append("Dry Run Results:");
             sb.append(System.lineSeparator()).append(System.lineSeparator());
 
+<<<<<<< HEAD
             Map<String, DryRunStatus> dryRunStatusMap = ((DryRunTemplateManager) this.templateProcessor).getDryRunStatusMap();
 
+=======
+>>>>>>> ooof
             dryRunStatusMap.entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(entry -> {
                 DryRunStatus status = entry.getValue();
                 try {
@@ -893,11 +1280,14 @@ public class DefaultGenerator implements Generator {
             sb.append(System.lineSeparator());
 
             System.err.println(sb.toString());
+<<<<<<< HEAD
         } else {
             // This exists here rather than in the method which generates supporting files to avoid accidentally adding files after this metadata.
             if (generateSupportingFiles) {
                 generateFilesMetadata(files);
             }
+=======
+>>>>>>> ooof
         }
 
         // reset GlobalSettings, so that the running thread can be reused for another generator-run
@@ -906,6 +1296,7 @@ public class DefaultGenerator implements Generator {
         return files;
     }
 
+<<<<<<< HEAD
     protected File processTemplateToFile(Map<String, Object> templateData, String templateName, String outputFilename, boolean shouldGenerate, String skippedByOption) throws IOException {
         String adjustedOutputFilename = outputFilename.replaceAll("//", "/").replace('/', File.separatorChar);
         File target = new File(adjustedOutputFilename);
@@ -920,6 +1311,39 @@ public class DefaultGenerator implements Generator {
             this.templateProcessor.ignore(target.toPath(), "Ignored by rule in ignore file.");
             return null;
         }
+=======
+    @Override
+    public String getFullTemplateContents(String templateName) {
+        return readTemplate(getFullTemplateFile(config, templateName));
+    }
+
+    /**
+     * Returns the path of a template, allowing access to the template where consuming literal contents aren't desirable or possible.
+     *
+     * @param name the template name (e.g. model.mustache)
+     * @return The {@link Path} to the template
+     */
+    @Override
+    public Path getFullTemplatePath(String name) {
+        String fullPath = getFullTemplateFile(config, name);
+        return java.nio.file.Paths.get(fullPath);
+    }
+
+    protected File processTemplateToFile(Map<String, Object> templateData, String templateName, String outputFilename) throws IOException {
+        String adjustedOutputFilename = outputFilename.replaceAll("//", "/").replace('/', File.separatorChar);
+        File target = new File(adjustedOutputFilename);
+        if (ignoreProcessor.allowsFile(target)) {
+            String templateContent = templatingEngine.compileTemplate(this, templateData, templateName);
+            writeToFile(adjustedOutputFilename, templateContent);
+            return target;
+        } else if (this.dryRun) {
+            dryRunStatusMap.put(adjustedOutputFilename, new DryRunStatus(target.toPath(), DryRunStatus.State.Ignored));
+            return target;
+        }
+
+        LOGGER.info("Skipped generation of {} due to rule in .openapi-generator-ignore", adjustedOutputFilename);
+        return null;
+>>>>>>> ooof
     }
 
     public Map<String, List<CodegenOperation>> processPaths(Paths paths) {
@@ -1269,6 +1693,7 @@ public class DefaultGenerator implements Generator {
         return result;
     }
 
+<<<<<<< HEAD
     /**
      * Generates a file at .openapi-generator/VERSION to track the version of user's latest run.
      *
@@ -1338,4 +1763,84 @@ public class DefaultGenerator implements Generator {
         }
     }
 
+=======
+    private boolean hasOAuthMethods(List<CodegenSecurity> authMethods) {
+        for (CodegenSecurity cs : authMethods) {
+            if (Boolean.TRUE.equals(cs.isOAuth)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private boolean hasBearerMethods(List<CodegenSecurity> authMethods) {
+        for (CodegenSecurity cs : authMethods) {
+            if (Boolean.TRUE.equals(cs.isBasicBearer)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private List<CodegenSecurity> getOAuthMethods(List<CodegenSecurity> authMethods) {
+        List<CodegenSecurity> oauthMethods = new ArrayList<>();
+
+        for (CodegenSecurity cs : authMethods) {
+            if (Boolean.TRUE.equals(cs.isOAuth)) {
+                oauthMethods.add(cs);
+            }
+        }
+
+        return oauthMethods;
+    }
+
+    protected File writeInputStreamToFile(String filename, InputStream in, String templateFile) throws IOException {
+        if (in != null) {
+            byte[] bytes = IOUtils.toByteArray(in);
+            if (dryRun) {
+                Path path = java.nio.file.Paths.get(filename);
+                dryRunStatusMap.put(filename, new DryRunStatus(path));
+                return path.toFile();
+            }
+
+            return writeToFile(filename, bytes);
+        } else {
+            LOGGER.error("can't open '{}' for input; cannot write '{}'", templateFile, filename);
+            if (dryRun) {
+                Path path = java.nio.file.Paths.get(filename);
+                dryRunStatusMap.put(filename, new DryRunStatus(path, DryRunStatus.State.Error));
+            }
+
+            return null;
+        }
+    }
+
+    /**
+     * Write bytes to a file
+     *
+     * @param filename The name of file to write
+     * @param contents The contents bytes.  Typically this is a UTF-8 formatted string.
+     * @return File representing the written file.
+     * @throws IOException If file cannot be written.
+     */
+    @Override
+    public File writeToFile(String filename, byte[] contents) throws IOException {
+        if (dryRun) {
+            Path path = java.nio.file.Paths.get(filename);
+            DryRunStatus status = new DryRunStatus(path);
+            if (getEnableMinimalUpdate()) {
+                status.setState(DryRunStatus.State.WriteIfNewer);
+            } else {
+                status.setState(DryRunStatus.State.Write);
+            }
+
+            dryRunStatusMap.put(filename, status);
+            return path.toFile();
+        } else {
+            return super.writeToFile(filename, contents);
+        }
+    }
+>>>>>>> ooof
 }

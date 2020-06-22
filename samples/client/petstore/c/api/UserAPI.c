@@ -3,7 +3,11 @@
 #include <ctype.h>
 #include "UserAPI.h"
 
+<<<<<<< HEAD
 #define MAX_NUMBER_LENGTH 16
+=======
+
+>>>>>>> ooof
 #define MAX_BUFFER_LENGTH 4096
 #define intToStr(dst, src) \
     do {\

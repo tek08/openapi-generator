@@ -15,8 +15,11 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.HashMap;
+=======
+>>>>>>> ooof
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -25,8 +28,11 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import org.openapitools.client.model.OuterEnum;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+<<<<<<< HEAD
 import org.openapitools.client.JSON;
 
+=======
+>>>>>>> ooof
 
 /**
  * EnumTest
@@ -38,7 +44,11 @@ import org.openapitools.client.JSON;
   EnumTest.JSON_PROPERTY_ENUM_NUMBER,
   EnumTest.JSON_PROPERTY_OUTER_ENUM
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class EnumTest {
   /**
    * Gets or Sets enumString
@@ -201,6 +211,10 @@ public class EnumTest {
 
 
   public EnumTest enumString(EnumStringEnum enumString) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.enumString = enumString;
     return this;
   }
@@ -225,6 +239,10 @@ public class EnumTest {
 
 
   public EnumTest enumStringRequired(EnumStringRequiredEnum enumStringRequired) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.enumStringRequired = enumStringRequired;
     return this;
   }
@@ -248,6 +266,10 @@ public class EnumTest {
 
 
   public EnumTest enumInteger(EnumIntegerEnum enumInteger) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.enumInteger = enumInteger;
     return this;
   }
@@ -272,6 +294,10 @@ public class EnumTest {
 
 
   public EnumTest enumNumber(EnumNumberEnum enumNumber) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.enumNumber = enumNumber;
     return this;
   }
@@ -296,6 +322,10 @@ public class EnumTest {
 
 
   public EnumTest outerEnum(OuterEnum outerEnum) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.outerEnum = outerEnum;
     return this;
   }
@@ -319,9 +349,12 @@ public class EnumTest {
   }
 
 
+<<<<<<< HEAD
   /**
    * Return true if this Enum_Test object is equal to o.
    */
+=======
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {

@@ -16,7 +16,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * Model for testing reserved words
  **/
 @ApiModel(description = "Model for testing reserved words")
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class ModelReturn  implements Serializable {
+=======
+public class ModelReturn  implements Serializable {
+>>>>>>> ooof
   
   private @Valid Integer _return;
 

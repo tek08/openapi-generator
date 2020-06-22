@@ -124,6 +124,10 @@ public class ApiClient {
     adapterBuilder = new Retrofit
       .Builder()
       .baseUrl(baseUrl)
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
       .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
       .addConverterFactory(ScalarsConverterFactory.create())
       .addConverterFactory(GsonCustomConverterFactory.create(json.getGson()));

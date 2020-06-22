@@ -59,6 +59,7 @@
         "param" : {
           "testItemCount" : 1
         }
+<<<<<<< HEAD
       },
       "testQueryParameterCollectionFormat" : {
         "pipe" : {
@@ -76,6 +77,8 @@
         "context" : {
           "testItemCount" : 1
         }
+=======
+>>>>>>> ooof
       }
     },
     "PetApi" : {

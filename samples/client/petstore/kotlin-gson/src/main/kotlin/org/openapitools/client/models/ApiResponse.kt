@@ -13,7 +13,10 @@ package org.openapitools.client.models
 
 
 import com.google.gson.annotations.SerializedName
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * Describes the result of uploading an image resource
  * @param code 

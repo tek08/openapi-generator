@@ -16,7 +16,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class BigCat extends Cat implements Serializable {
+=======
+public class BigCat extends Cat implements Serializable {
+>>>>>>> ooof
   
 
 public enum KindEnum {
@@ -61,18 +65,28 @@ public enum KindEnum {
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("kind")
   public KindEnum getKind() {
     return kind;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
   public void setKind(KindEnum kind) {
     this.kind = kind;
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -111,7 +125,10 @@ public enum KindEnum {
     }
     return o.toString().replace("\n", "\n    ");
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 }
 

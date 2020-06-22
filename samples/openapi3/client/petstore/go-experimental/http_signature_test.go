@@ -11,7 +11,10 @@ import (
 	"context"
 	"crypto"
 	"crypto/ecdsa"
+<<<<<<< HEAD
 	"crypto/elliptic"
+=======
+>>>>>>> ooof
 	"crypto/rand"
 	"crypto/rsa"
 	"crypto/x509"
@@ -61,9 +64,15 @@ func writeTestRsaPemKey(t *testing.T, filePath string) {
 type keyFormat int // The serialization format of the private key.
 
 const (
+<<<<<<< HEAD
 	keyFormatPem      keyFormat = iota // Private key is serialized in PEM format.
 	keyFormatPkcs8Pem                  // Private key is serialized as PKCS#8 encoded in PEM format.
 	keyFormatPkcs8Der                  // Private key is serialized as PKCS#8 encoded in DER format.
+=======
+	keyFormatPem keyFormat = iota // Private key is serialized in PEM format.
+	keyFormatPkcs8Pem             // Private key is serialized as PKCS#8 encoded in PEM format.
+	keyFormatPkcs8Der             // Private key is serialized as PKCS#8 encoded in DER format.
+>>>>>>> ooof
 )
 
 func writeRandomTestRsaPemKey(t *testing.T, filePath string, bits int, format keyFormat, passphrase string, alg *x509.PEMCipher) {
@@ -127,6 +136,12 @@ func writeRandomTestRsaPemKey(t *testing.T, filePath string, bits int, format ke
 	fmt.Printf("Wrote private key '%s'\n", filePath)
 }
 
+<<<<<<< HEAD
+=======
+/*
+Commented out because OpenAPITools is configured to use golang 1.8 at build time
+x509.MarshalPKCS8PrivateKey is not present.
+>>>>>>> ooof
 func writeRandomTestEcdsaPemKey(t *testing.T, filePath string) {
 	key, err := ecdsa.GenerateKey(elliptic.P521(), rand.Reader)
 	if err != nil {
@@ -154,6 +169,10 @@ func writeRandomTestEcdsaPemKey(t *testing.T, filePath string) {
 		t.Fatalf("Error encoding ECDSA private key: %v", err)
 	}
 }
+<<<<<<< HEAD
+=======
+*/
+>>>>>>> ooof
 
 // TestHttpSignaturePrivateKeys creates private keys of various sizes, serialization format,
 // clear-text and password encrypted.
@@ -193,11 +212,19 @@ func TestHttpSignaturePrivateKeys(t *testing.T) {
 			writeRandomTestRsaPemKey(t, privateKeyPath, bits, format, "", nil)
 
 			authConfig := sw.HttpSignatureAuth{
+<<<<<<< HEAD
 				KeyId:          "my-key-id",
 				PrivateKeyPath: privateKeyPath,
 				Passphrase:     "",
 				SigningScheme:  "hs2019",
 				SignedHeaders:  []string{"Content-Type"},
+=======
+				KeyId:           "my-key-id",
+				PrivateKeyPath:  privateKeyPath,
+				Passphrase:      "",
+				SigningScheme:   "hs2019",
+				SignedHeaders:   []string{"Content-Type"},
+>>>>>>> ooof
 			}
 
 			// Create a context with the HTTP signature configuration parameters.
@@ -205,6 +232,7 @@ func TestHttpSignaturePrivateKeys(t *testing.T) {
 			if err != nil {
 				t.Fatalf("Error loading private key '%s': %v", privateKeyPath, err)
 			}
+<<<<<<< HEAD
 
 			authConfig = sw.HttpSignatureAuth{
 				KeyId:          "my-key-id",
@@ -212,6 +240,15 @@ func TestHttpSignaturePrivateKeys(t *testing.T) {
 				Passphrase:     "my-secret-passphrase",
 				SigningScheme:  "hs2019",
 				SignedHeaders:  []string{"Content-Type"},
+=======
+			
+			authConfig = sw.HttpSignatureAuth{
+				KeyId:           "my-key-id",
+				PrivateKeyPath:  privateKeyPath,
+				Passphrase:      "my-secret-passphrase",
+				SigningScheme:   "hs2019",
+				SignedHeaders:   []string{"Content-Type"},
+>>>>>>> ooof
 			}
 			switch format {
 			case keyFormatPem:
@@ -228,6 +265,7 @@ func TestHttpSignaturePrivateKeys(t *testing.T) {
 		}
 	}
 
+<<<<<<< HEAD
 	{
 		privateKeyPath := "privatekey.pem"
 		authConfig := sw.HttpSignatureAuth{
@@ -243,6 +281,26 @@ func TestHttpSignaturePrivateKeys(t *testing.T) {
 			t.Fatalf("Error loading private key '%s': %v", privateKeyPath, err)
 		}
 	}
+=======
+	/*
+		Unfortunately, currently the build environment for OpenAPITools is using an old version
+		of golang that does not support ECDSA keys.
+		{
+			privateKeyPath := "privatekey.pem"
+			authConfig := sw.HttpSignatureAuth{
+				KeyId:         "my-key-id",
+				SigningScheme:     "hs2019",
+				SignedHeaders: []string{"Content-Type"},
+			}
+			// Generate test private key.
+			writeRandomTestEcdsaPemKey(t, privateKeyPath)
+			err := authConfig.LoadPrivateKey(privateKeyPath)
+			if err != nil {
+				t.Fatalf("Error loading private key '%s': %v", privateKeyPath, err)
+			}
+		}
+	*/
+>>>>>>> ooof
 }
 
 func executeHttpSignatureAuth(t *testing.T, authConfig *sw.HttpSignatureAuth, expectSuccess bool) string {
@@ -365,7 +423,11 @@ func executeHttpSignatureAuth(t *testing.T, authConfig *sw.HttpSignatureAuth, ex
 	if !re.MatchString(actual) {
 		t.Errorf("Authorization header is incorrect. Expected regex\n'%s'\nbut got\n'%s'", sb.String(), actual)
 	}
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> ooof
 	validateHttpAuthorizationSignature(t, authConfig, r)
 	return r.Request.Header.Get("Authorization")
 }
@@ -374,7 +436,11 @@ var (
 	// signatureRe is a regular expression to capture the fields from the signature.
 	signatureRe = regexp.MustCompile(
 		`Signature keyId="(?P<keyId>[^"]+)",algorithm="(?P<algorithm>[^"]+)"` +
+<<<<<<< HEAD
 			`(,created=(?P<created>[0-9]+))?(,expires=(?P<expires>[0-9.]+))?,headers="(?P<headers>[^"]+)",signature="(?P<signature>[^"]+)"`)
+=======
+		`(,created=(?P<created>[0-9]+))?(,expires=(?P<expires>[0-9.]+))?,headers="(?P<headers>[^"]+)",signature="(?P<signature>[^"]+)"`)
+>>>>>>> ooof
 )
 
 // validateHttpAuthorizationSignature validates the HTTP signature in the HTTP request.
@@ -390,10 +456,17 @@ func validateHttpAuthorizationSignature(t *testing.T, authConfig *sw.HttpSignatu
 	}
 	result := make(map[string]string)
 	for i, name := range signatureRe.SubexpNames() {
+<<<<<<< HEAD
 		if i != 0 && name != "" {
 			result[name] = match[i]
 		}
 	}
+=======
+        if i != 0 && name != "" {
+            result[name] = match[i]
+        }
+    }
+>>>>>>> ooof
 	b64signature := result["signature"]
 	fmt.Printf("Algorithm: '%s' Headers: '%s' b64signature: '%s'\n", result["algorithm"], result["headers"], b64signature)
 	var sb bytes.Buffer
@@ -412,6 +485,7 @@ func validateHttpAuthorizationSignature(t *testing.T, authConfig *sw.HttpSignatu
 	for _, h := range signedHeaders {
 		var value string
 		switch h {
+<<<<<<< HEAD
 		case sw.HttpSignatureParameterRequestTarget:
 			value = requestTarget
 		case sw.HttpSignatureParameterCreated:
@@ -420,6 +494,16 @@ func validateHttpAuthorizationSignature(t *testing.T, authConfig *sw.HttpSignatu
 			value = result["expires"]
 		default:
 			value = r.Request.Header.Get(h)
+=======
+			case sw.HttpSignatureParameterRequestTarget:
+				value = requestTarget
+			case sw.HttpSignatureParameterCreated:
+				value = result["created"]
+			case sw.HttpSignatureParameterExpires:
+				value = result["expires"]
+			default:
+				value = r.Request.Header.Get(h)
+>>>>>>> ooof
 		}
 		signedHeaderKvs = append(signedHeaderKvs, fmt.Sprintf("%s: %s", h, value))
 	}
@@ -648,14 +732,23 @@ func TestInvalidHttpSignatureConfiguration(t *testing.T) {
 	var err error
 	var authConfig sw.HttpSignatureAuth
 
+<<<<<<< HEAD
 	authConfig = sw.HttpSignatureAuth{}
+=======
+	authConfig = sw.HttpSignatureAuth{
+	}
+>>>>>>> ooof
 	_, err = authConfig.ContextWithValue(context.Background())
 	if err == nil || !strings.Contains(err.Error(), "Key ID must be specified") {
 		t.Fatalf("Invalid configuration: %v", err)
 	}
 
 	authConfig = sw.HttpSignatureAuth{
+<<<<<<< HEAD
 		KeyId: "my-key-id",
+=======
+		KeyId:            "my-key-id",
+>>>>>>> ooof
 	}
 	_, err = authConfig.ContextWithValue(context.Background())
 	if err == nil || !strings.Contains(err.Error(), "Private key path must be specified") {
@@ -663,8 +756,13 @@ func TestInvalidHttpSignatureConfiguration(t *testing.T) {
 	}
 
 	authConfig = sw.HttpSignatureAuth{
+<<<<<<< HEAD
 		KeyId:          "my-key-id",
 		PrivateKeyPath: "test.pem",
+=======
+		KeyId:            "my-key-id",
+		PrivateKeyPath:    "test.pem",
+>>>>>>> ooof
 	}
 	_, err = authConfig.ContextWithValue(context.Background())
 	if err == nil || !strings.Contains(err.Error(), "Invalid signing scheme") {
@@ -672,9 +770,15 @@ func TestInvalidHttpSignatureConfiguration(t *testing.T) {
 	}
 
 	authConfig = sw.HttpSignatureAuth{
+<<<<<<< HEAD
 		KeyId:          "my-key-id",
 		PrivateKeyPath: "test.pem",
 		SigningScheme:  "garbage",
+=======
+		KeyId:            "my-key-id",
+		PrivateKeyPath:   "test.pem",
+		SigningScheme:    "garbage",
+>>>>>>> ooof
 	}
 	_, err = authConfig.ContextWithValue(context.Background())
 	if err == nil || !strings.Contains(err.Error(), "Invalid signing scheme") {
@@ -682,10 +786,17 @@ func TestInvalidHttpSignatureConfiguration(t *testing.T) {
 	}
 
 	authConfig = sw.HttpSignatureAuth{
+<<<<<<< HEAD
 		KeyId:          "my-key-id",
 		PrivateKeyPath: "test.pem",
 		SigningScheme:  sw.HttpSigningSchemeHs2019,
 		SignedHeaders:  []string{"foo", "bar", "foo"},
+=======
+		KeyId:            "my-key-id",
+		PrivateKeyPath:   "test.pem",
+		SigningScheme:    sw.HttpSigningSchemeHs2019,
+		SignedHeaders:    []string{"foo", "bar", "foo"},
+>>>>>>> ooof
 	}
 	_, err = authConfig.ContextWithValue(context.Background())
 	if err == nil || !strings.Contains(err.Error(), "cannot have duplicate names") {
@@ -693,10 +804,17 @@ func TestInvalidHttpSignatureConfiguration(t *testing.T) {
 	}
 
 	authConfig = sw.HttpSignatureAuth{
+<<<<<<< HEAD
 		KeyId:          "my-key-id",
 		PrivateKeyPath: "test.pem",
 		SigningScheme:  sw.HttpSigningSchemeHs2019,
 		SignedHeaders:  []string{"foo", "bar", "Authorization"},
+=======
+		KeyId:            "my-key-id",
+		PrivateKeyPath:   "test.pem",
+		SigningScheme:    sw.HttpSigningSchemeHs2019,
+		SignedHeaders:    []string{"foo", "bar", "Authorization"},
+>>>>>>> ooof
 	}
 	_, err = authConfig.ContextWithValue(context.Background())
 	if err == nil || !strings.Contains(err.Error(), "Signed headers cannot include the 'Authorization' header") {

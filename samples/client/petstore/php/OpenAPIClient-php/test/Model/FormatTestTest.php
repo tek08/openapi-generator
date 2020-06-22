@@ -2,7 +2,11 @@
 /**
  * FormatTestTest
  *
+<<<<<<< HEAD
  * PHP version 7.2
+=======
+ * PHP version 7.1
+>>>>>>> ooof
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -46,28 +50,44 @@ class FormatTestTest extends TestCase
     /**
      * Setup before running any test case
      */
+<<<<<<< HEAD
     public static function setUpBeforeClass(): void
+=======
+    public static function setUpBeforeClass()
+>>>>>>> ooof
     {
     }
 
     /**
      * Setup before running each test case
      */
+<<<<<<< HEAD
     public function setUp(): void
+=======
+    public function setUp()
+>>>>>>> ooof
     {
     }
 
     /**
      * Clean up after running each test case
      */
+<<<<<<< HEAD
     public function tearDown(): void
+=======
+    public function tearDown()
+>>>>>>> ooof
     {
     }
 
     /**
      * Clean up after running all test cases
      */
+<<<<<<< HEAD
     public static function tearDownAfterClass(): void
+=======
+    public static function tearDownAfterClass()
+>>>>>>> ooof
     {
     }
 
@@ -170,6 +190,7 @@ class FormatTestTest extends TestCase
     }
 
     /**
+<<<<<<< HEAD
      * Test attribute "pattern_with_digits"
      */
     public function testPropertyPatternWithDigits()
@@ -180,6 +201,11 @@ class FormatTestTest extends TestCase
      * Test attribute "pattern_with_digits_and_delimiter"
      */
     public function testPropertyPatternWithDigitsAndDelimiter()
+=======
+     * Test attribute "big_decimal"
+     */
+    public function testPropertyBigDecimal()
+>>>>>>> ooof
     {
     }
 }

@@ -55,10 +55,18 @@ import java.text.DateFormat;
 
 import org.openapitools.client.auth.Authentication;
 import org.openapitools.client.auth.HttpBasicAuth;
+<<<<<<< HEAD
 import org.openapitools.client.auth.ApiKeyAuth;
 import org.openapitools.client.auth.OAuth;
 
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+import org.openapitools.client.auth.HttpBearerAuth;
+import org.openapitools.client.auth.ApiKeyAuth;
+import org.openapitools.client.auth.OAuth;
+
+
+>>>>>>> ooof
 public class ApiClient {
   private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
   private Map<String, String> defaultCookieMap = new HashMap<String, String>();
@@ -239,7 +247,10 @@ public class ApiClient {
     return authentications.get(authName);
   }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
   /**
    * Helper method to set username for the first HTTP basic authentication.
    * @param username Username
@@ -268,7 +279,10 @@ public class ApiClient {
     throw new RuntimeException("No HTTP basic authentication configured!");
   }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
   /**
    * Helper method to set API key value for the first API key authentication.
    * @param apiKey the API key
@@ -297,7 +311,10 @@ public class ApiClient {
     throw new RuntimeException("No API key authentication configured!");
   }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
   /**
    * Helper method to set access token for the first OAuth2 authentication.
    * @param accessToken Access token
@@ -314,6 +331,23 @@ public class ApiClient {
 
 
   /**
+<<<<<<< HEAD
+=======
+   * Helper method to set access token for the first Bearer authentication.
+   * @param bearerToken Bearer token
+   */
+  public void setBearerToken(String bearerToken) {
+    for (Authentication auth : authentications.values()) {
+      if (auth instanceof HttpBearerAuth) {
+        ((HttpBearerAuth) auth).setBearerToken(bearerToken);
+        return;
+      }
+    }
+    throw new RuntimeException("No Bearer authentication configured!");
+  }
+
+  /**
+>>>>>>> ooof
    * Set the User-Agent header's value (by adding to the default header map).
    * @param userAgent User agent
    * @return API client

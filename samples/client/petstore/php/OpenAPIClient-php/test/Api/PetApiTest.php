@@ -1,7 +1,11 @@
 <?php
 /**
  * PetApiTest
+<<<<<<< HEAD
  * PHP version 7.2
+=======
+ * PHP version 7.1
+>>>>>>> ooof
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -47,28 +51,44 @@ class PetApiTest extends TestCase
     /**
      * Setup before running any test cases
      */
+<<<<<<< HEAD
     public static function setUpBeforeClass(): void
+=======
+    public static function setUpBeforeClass()
+>>>>>>> ooof
     {
     }
 
     /**
      * Setup before running each test case
      */
+<<<<<<< HEAD
     public function setUp(): void
+=======
+    public function setUp()
+>>>>>>> ooof
     {
     }
 
     /**
      * Clean up after running each test case
      */
+<<<<<<< HEAD
     public function tearDown(): void
+=======
+    public function tearDown()
+>>>>>>> ooof
     {
     }
 
     /**
      * Clean up after running all test cases
      */
+<<<<<<< HEAD
     public static function tearDownAfterClass(): void
+=======
+    public static function tearDownAfterClass()
+>>>>>>> ooof
     {
     }
 

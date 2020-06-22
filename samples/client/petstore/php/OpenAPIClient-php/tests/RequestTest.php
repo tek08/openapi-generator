@@ -9,12 +9,20 @@ require_once __DIR__ . '/FakeHttpClient.php';
 
 class RequestTest extends TestCase
 {
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
     /** @var FakeApi */
     private $api;
     /** @var  FakeHttpClient */
     private $fakeClient;
 
+<<<<<<< HEAD
     public function setUp(): void
+=======
+    public function setUp()
+>>>>>>> ooof
     {
         $this->fakeClient = new FakeHttpClient();
         $this->api = new Api\FakeApi($this->fakeClient);

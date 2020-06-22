@@ -11,7 +11,11 @@ import java.util.List;
 /**
  * FileSchemaTestClass
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen")
+=======
+
+>>>>>>> ooof
 public class FileSchemaTestClass   {
   @JsonProperty("file")
   private java.io.File file;

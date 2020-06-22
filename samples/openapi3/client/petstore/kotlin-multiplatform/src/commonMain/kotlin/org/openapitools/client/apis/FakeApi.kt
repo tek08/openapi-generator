@@ -15,7 +15,10 @@ import org.openapitools.client.models.Client
 import org.openapitools.client.models.FileSchemaTestClass
 import org.openapitools.client.models.HealthCheckResult
 import org.openapitools.client.models.OuterComposite
+<<<<<<< HEAD
 import org.openapitools.client.models.Pet
+=======
+>>>>>>> ooof
 import org.openapitools.client.models.User
 
 import org.openapitools.client.infrastructure.*
@@ -30,15 +33,23 @@ import kotlinx.serialization.*
 import kotlinx.serialization.internal.StringDescriptor
 
 class FakeApi @UseExperimental(UnstableDefault::class) constructor(
+<<<<<<< HEAD
     baseUrl: kotlin.String = "http://petstore.swagger.io:80/v2",
     httpClientEngine: HttpClientEngine? = null,
     serializer: KotlinxSerializer
 ) : ApiClient(baseUrl, httpClientEngine, serializer) {
+=======
+        baseUrl: kotlin.String = "http://petstore.swagger.io:80/v2",
+        httpClientEngine: HttpClientEngine? = null,
+        serializer: KotlinxSerializer)
+    : ApiClient(baseUrl, httpClientEngine, serializer) {
+>>>>>>> ooof
 
     @UseExperimental(UnstableDefault::class)
     constructor(
         baseUrl: kotlin.String = "http://petstore.swagger.io:80/v2",
         httpClientEngine: HttpClientEngine? = null,
+<<<<<<< HEAD
         jsonConfiguration: JsonConfiguration = JsonConfiguration.Default
     ) : this(baseUrl, httpClientEngine, KotlinxSerializer(Json(jsonConfiguration)))
 
@@ -49,6 +60,18 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
      */
     @Suppress("UNCHECKED_CAST")
     suspend fun fakeHealthGet(): HttpResponse<HealthCheckResult> {
+=======
+        jsonConfiguration: JsonConfiguration = JsonConfiguration.Default)
+    : this(baseUrl, httpClientEngine, KotlinxSerializer(Json(jsonConfiguration)))
+
+    /**
+    * Health check endpoint
+    * 
+    * @return HealthCheckResult
+    */
+    @Suppress("UNCHECKED_CAST")
+    suspend fun fakeHealthGet() : HttpResponse<HealthCheckResult> {
+>>>>>>> ooof
 
         val localVariableAuthNames = listOf<String>()
 
@@ -75,6 +98,7 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
 
 
     /**
+<<<<<<< HEAD
      * test http signature authentication
      * 
      * @param pet Pet object that needs to be added to the store 
@@ -118,6 +142,15 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
      */
     @Suppress("UNCHECKED_CAST")
     suspend fun fakeOuterBooleanSerialize(body: kotlin.Boolean?): HttpResponse<kotlin.Boolean> {
+=======
+    * 
+    * Test serialization of outer boolean types
+    * @param body Input boolean as post body (optional)
+    * @return kotlin.Boolean
+    */
+    @Suppress("UNCHECKED_CAST")
+    suspend fun fakeOuterBooleanSerialize(body: kotlin.Boolean?) : HttpResponse<kotlin.Boolean> {
+>>>>>>> ooof
 
         val localVariableAuthNames = listOf<String>()
 
@@ -141,6 +174,7 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
         ).wrap()
     }
 
+<<<<<<< HEAD
 
 
     /**
@@ -151,6 +185,18 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
      */
     @Suppress("UNCHECKED_CAST")
     suspend fun fakeOuterCompositeSerialize(outerComposite: OuterComposite?): HttpResponse<OuterComposite> {
+=======
+    
+
+    /**
+    * 
+    * Test serialization of object with outer number type
+    * @param outerComposite Input composite as post body (optional)
+    * @return OuterComposite
+    */
+    @Suppress("UNCHECKED_CAST")
+    suspend fun fakeOuterCompositeSerialize(outerComposite: OuterComposite?) : HttpResponse<OuterComposite> {
+>>>>>>> ooof
 
         val localVariableAuthNames = listOf<String>()
 
@@ -174,6 +220,7 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
         ).wrap()
     }
 
+<<<<<<< HEAD
 
 
     /**
@@ -184,6 +231,18 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
      */
     @Suppress("UNCHECKED_CAST")
     suspend fun fakeOuterNumberSerialize(body: kotlin.Double?): HttpResponse<kotlin.Double> {
+=======
+    
+
+    /**
+    * 
+    * Test serialization of outer number types
+    * @param body Input number as post body (optional)
+    * @return kotlin.Double
+    */
+    @Suppress("UNCHECKED_CAST")
+    suspend fun fakeOuterNumberSerialize(body: kotlin.Double?) : HttpResponse<kotlin.Double> {
+>>>>>>> ooof
 
         val localVariableAuthNames = listOf<String>()
 
@@ -207,6 +266,7 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
         ).wrap()
     }
 
+<<<<<<< HEAD
 
 
     /**
@@ -217,6 +277,18 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
      */
     @Suppress("UNCHECKED_CAST")
     suspend fun fakeOuterStringSerialize(body: kotlin.String?): HttpResponse<kotlin.String> {
+=======
+    
+
+    /**
+    * 
+    * Test serialization of outer string types
+    * @param body Input string as post body (optional)
+    * @return kotlin.String
+    */
+    @Suppress("UNCHECKED_CAST")
+    suspend fun fakeOuterStringSerialize(body: kotlin.String?) : HttpResponse<kotlin.String> {
+>>>>>>> ooof
 
         val localVariableAuthNames = listOf<String>()
 
@@ -240,6 +312,7 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
         ).wrap()
     }
 
+<<<<<<< HEAD
 
 
     /**
@@ -249,6 +322,17 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
      * @return void
      */
     suspend fun testBodyWithFileSchema(fileSchemaTestClass: FileSchemaTestClass): HttpResponse<Unit> {
+=======
+    
+
+    /**
+    * 
+    * For this test, the body for this request much reference a schema named &#x60;File&#x60;.
+    * @param fileSchemaTestClass  
+    * @return void
+    */
+    suspend fun testBodyWithFileSchema(fileSchemaTestClass: FileSchemaTestClass) : HttpResponse<Unit> {
+>>>>>>> ooof
 
         val localVariableAuthNames = listOf<String>()
 
@@ -272,6 +356,7 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
         ).wrap()
     }
 
+<<<<<<< HEAD
 
 
     /**
@@ -282,6 +367,18 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
      * @return void
      */
     suspend fun testBodyWithQueryParams(query: kotlin.String, user: User): HttpResponse<Unit> {
+=======
+    
+
+    /**
+    * 
+    * 
+    * @param query  
+    * @param user  
+    * @return void
+    */
+    suspend fun testBodyWithQueryParams(query: kotlin.String, user: User) : HttpResponse<Unit> {
+>>>>>>> ooof
 
         val localVariableAuthNames = listOf<String>()
 
@@ -306,6 +403,7 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
         ).wrap()
     }
 
+<<<<<<< HEAD
 
 
     /**
@@ -316,6 +414,18 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
      */
     @Suppress("UNCHECKED_CAST")
     suspend fun testClientModel(client: Client): HttpResponse<Client> {
+=======
+    
+
+    /**
+    * To test \&quot;client\&quot; model
+    * To test \&quot;client\&quot; model
+    * @param client client model 
+    * @return Client
+    */
+    @Suppress("UNCHECKED_CAST")
+    suspend fun testClientModel(client: Client) : HttpResponse<Client> {
+>>>>>>> ooof
 
         val localVariableAuthNames = listOf<String>()
 
@@ -339,6 +449,7 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
         ).wrap()
     }
 
+<<<<<<< HEAD
 
 
     /**
@@ -361,6 +472,30 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
      * @return void
      */
     suspend fun testEndpointParameters(number: kotlin.Double, double: kotlin.Double, patternWithoutDelimiter: kotlin.String, byte: org.openapitools.client.infrastructure.Base64ByteArray, integer: kotlin.Int?, int32: kotlin.Int?, int64: kotlin.Long?, float: kotlin.Float?, string: kotlin.String?, binary: io.ktor.client.request.forms.InputProvider?, date: kotlin.String?, dateTime: kotlin.String?, password: kotlin.String?, paramCallback: kotlin.String?): HttpResponse<Unit> {
+=======
+    
+
+    /**
+    * Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
+    * Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
+    * @param number None 
+    * @param double None 
+    * @param patternWithoutDelimiter None 
+    * @param byte None 
+    * @param integer None (optional)
+    * @param int32 None (optional)
+    * @param int64 None (optional)
+    * @param float None (optional)
+    * @param string None (optional)
+    * @param binary None (optional)
+    * @param date None (optional)
+    * @param dateTime None (optional)
+    * @param password None (optional)
+    * @param paramCallback None (optional)
+    * @return void
+    */
+    suspend fun testEndpointParameters(number: kotlin.Double, double: kotlin.Double, patternWithoutDelimiter: kotlin.String, byte: org.openapitools.client.infrastructure.Base64ByteArray, integer: kotlin.Int?, int32: kotlin.Int?, int64: kotlin.Long?, float: kotlin.Float?, string: kotlin.String?, binary: io.ktor.client.request.forms.InputProvider?, date: kotlin.String?, dateTime: kotlin.String?, password: kotlin.String?, paramCallback: kotlin.String?) : HttpResponse<Unit> {
+>>>>>>> ooof
 
         val localVariableAuthNames = listOf<String>("http_basic_test")
 
@@ -402,6 +537,7 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
 
 
     /**
+<<<<<<< HEAD
      * To test enum parameters
      * To test enum parameters
      * @param enumHeaderStringArray Header parameter enum test (string array) (optional)
@@ -415,6 +551,21 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
      * @return void
      */
     suspend fun testEnumParameters(enumHeaderStringArray: kotlin.collections.List<kotlin.String>?, enumHeaderString: kotlin.String?, enumQueryStringArray: kotlin.collections.List<kotlin.String>?, enumQueryString: kotlin.String?, enumQueryInteger: kotlin.Int?, enumQueryDouble: kotlin.Double?, enumFormStringArray: kotlin.collections.List<kotlin.String>?, enumFormString: kotlin.String?): HttpResponse<Unit> {
+=======
+    * To test enum parameters
+    * To test enum parameters
+    * @param enumHeaderStringArray Header parameter enum test (string array) (optional)
+    * @param enumHeaderString Header parameter enum test (string) (optional, default to '-efg')
+    * @param enumQueryStringArray Query parameter enum test (string array) (optional)
+    * @param enumQueryString Query parameter enum test (string) (optional, default to '-efg')
+    * @param enumQueryInteger Query parameter enum test (double) (optional)
+    * @param enumQueryDouble Query parameter enum test (double) (optional)
+    * @param enumFormStringArray Form parameter enum test (string array) (optional, default to '$')
+    * @param enumFormString Form parameter enum test (string) (optional, default to '-efg')
+    * @return void
+    */
+    suspend fun testEnumParameters(enumHeaderStringArray: kotlin.Array<kotlin.String>?, enumHeaderString: kotlin.String?, enumQueryStringArray: kotlin.Array<kotlin.String>?, enumQueryString: kotlin.String?, enumQueryInteger: kotlin.Int?, enumQueryDouble: kotlin.Double?, enumFormStringArray: kotlin.Array<kotlin.String>?, enumFormString: kotlin.String?) : HttpResponse<Unit> {
+>>>>>>> ooof
 
         val localVariableAuthNames = listOf<String>()
 
@@ -450,6 +601,7 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
 
 
     /**
+<<<<<<< HEAD
      * Fake endpoint to test group parameters (optional)
      * Fake endpoint to test group parameters (optional)
      * @param requiredStringGroup Required String in group parameters 
@@ -461,6 +613,19 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
      * @return void
      */
     suspend fun testGroupParameters(requiredStringGroup: kotlin.Int, requiredBooleanGroup: kotlin.Boolean, requiredInt64Group: kotlin.Long, stringGroup: kotlin.Int?, booleanGroup: kotlin.Boolean?, int64Group: kotlin.Long?): HttpResponse<Unit> {
+=======
+    * Fake endpoint to test group parameters (optional)
+    * Fake endpoint to test group parameters (optional)
+    * @param requiredStringGroup Required String in group parameters 
+    * @param requiredBooleanGroup Required Boolean in group parameters 
+    * @param requiredInt64Group Required Integer in group parameters 
+    * @param stringGroup String in group parameters (optional)
+    * @param booleanGroup Boolean in group parameters (optional)
+    * @param int64Group Integer in group parameters (optional)
+    * @return void
+    */
+    suspend fun testGroupParameters(requiredStringGroup: kotlin.Int, requiredBooleanGroup: kotlin.Boolean, requiredInt64Group: kotlin.Long, stringGroup: kotlin.Int?, booleanGroup: kotlin.Boolean?, int64Group: kotlin.Long?) : HttpResponse<Unit> {
+>>>>>>> ooof
 
         val localVariableAuthNames = listOf<String>("bearer_test")
 
@@ -493,12 +658,21 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
 
 
     /**
+<<<<<<< HEAD
      * test inline additionalProperties
      * 
      * @param requestBody request body 
      * @return void
      */
     suspend fun testInlineAdditionalProperties(requestBody: kotlin.collections.Map<kotlin.String, kotlin.String>): HttpResponse<Unit> {
+=======
+    * test inline additionalProperties
+    * 
+    * @param requestBody request body 
+    * @return void
+    */
+    suspend fun testInlineAdditionalProperties(requestBody: kotlin.collections.Map<kotlin.String, kotlin.String>) : HttpResponse<Unit> {
+>>>>>>> ooof
 
         val localVariableAuthNames = listOf<String>()
 
@@ -523,6 +697,7 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
     }
 
     @Serializable
+<<<<<<< HEAD
     private class TestInlineAdditionalPropertiesRequest(val value: Map<kotlin.String, kotlin.String>) {
         @Serializer(TestInlineAdditionalPropertiesRequest::class)
         companion object : KSerializer<TestInlineAdditionalPropertiesRequest> {
@@ -541,6 +716,26 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
      * @return void
      */
     suspend fun testJsonFormData(param: kotlin.String, param2: kotlin.String): HttpResponse<Unit> {
+=======
+private class TestInlineAdditionalPropertiesRequest(val value: Map<kotlin.String, kotlin.String>) {
+    @Serializer(TestInlineAdditionalPropertiesRequest::class)
+    companion object : KSerializer<TestInlineAdditionalPropertiesRequest> {
+        private val serializer: KSerializer<Map<kotlin.String, kotlin.String>> = (kotlin.String.serializer() to kotlin.String.serializer()).map
+            override val descriptor = StringDescriptor.withName("TestInlineAdditionalPropertiesRequest")
+            override fun serialize(encoder: Encoder, obj: TestInlineAdditionalPropertiesRequest) = serializer.serialize(encoder, obj.value)
+            override fun deserialize(decoder: Decoder) = TestInlineAdditionalPropertiesRequest(serializer.deserialize(decoder))
+    }
+}
+
+    /**
+    * test json serialization of form data
+    * 
+    * @param param field1 
+    * @param param2 field2 
+    * @return void
+    */
+    suspend fun testJsonFormData(param: kotlin.String, param2: kotlin.String) : HttpResponse<Unit> {
+>>>>>>> ooof
 
         val localVariableAuthNames = listOf<String>()
 
@@ -570,6 +765,7 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
 
 
     /**
+<<<<<<< HEAD
      * 
      * To test the collection format in query parameters
      * @param pipe  
@@ -580,6 +776,18 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
      * @return void
      */
     suspend fun testQueryParameterCollectionFormat(pipe: kotlin.collections.List<kotlin.String>, ioutil: kotlin.collections.List<kotlin.String>, http: kotlin.collections.List<kotlin.String>, url: kotlin.collections.List<kotlin.String>, context: kotlin.collections.List<kotlin.String>): HttpResponse<Unit> {
+=======
+    * 
+    * To test the collection format in query parameters
+    * @param pipe  
+    * @param ioutil  
+    * @param http  
+    * @param url  
+    * @param context  
+    * @return void
+    */
+    suspend fun testQueryParameterCollectionFormat(pipe: kotlin.Array<kotlin.String>, ioutil: kotlin.Array<kotlin.String>, http: kotlin.Array<kotlin.String>, url: kotlin.Array<kotlin.String>, context: kotlin.Array<kotlin.String>) : HttpResponse<Unit> {
+>>>>>>> ooof
 
         val localVariableAuthNames = listOf<String>()
 
@@ -589,7 +797,11 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
         val localVariableQuery = mutableMapOf<String, List<String>>()
         pipe?.apply { localVariableQuery["pipe"] = toMultiValue(this, "multi") }
         ioutil?.apply { localVariableQuery["ioutil"] = toMultiValue(this, "csv") }
+<<<<<<< HEAD
         http?.apply { localVariableQuery["http"] = toMultiValue(this, "ssv") }
+=======
+        http?.apply { localVariableQuery["http"] = toMultiValue(this, "space") }
+>>>>>>> ooof
         url?.apply { localVariableQuery["url"] = toMultiValue(this, "csv") }
         context?.apply { localVariableQuery["context"] = toMultiValue(this, "multi") }
 
@@ -620,7 +832,10 @@ class FakeApi @UseExperimental(UnstableDefault::class) constructor(
             
             
             
+<<<<<<< HEAD
             
+=======
+>>>>>>> ooof
             serializer.setMapper(TestInlineAdditionalPropertiesRequest::class, TestInlineAdditionalPropertiesRequest.serializer())
         }
     }

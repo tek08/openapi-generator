@@ -15,6 +15,7 @@ class OuterEnumTest extends TestCase
             OuterEnum::class
         );
 
+<<<<<<< HEAD
         $this->assertIsString($result);
         $this->assertEquals('placed', $result);
     }
@@ -23,6 +24,18 @@ class OuterEnumTest extends TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value for enum');
+=======
+        $this->assertInternalType('string', $result);
+        $this->assertEquals('placed', $result);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid value for enum
+     */
+    public function testDeserializeInvalidValue()
+    {
+>>>>>>> ooof
         ObjectSerializer::deserialize(
             "lkjfalgkdfjg",
             OuterEnum::class
@@ -56,7 +69,11 @@ class OuterEnumTest extends TestCase
             $json
         );
 
+<<<<<<< HEAD
         $this->assertIsString($result);
+=======
+        $this->assertInternalType('string', $result);
+>>>>>>> ooof
     }
 
     public function testSanitizeNested()
@@ -72,6 +89,7 @@ class OuterEnumTest extends TestCase
             $input
         );
 
+<<<<<<< HEAD
         $this->assertIsObject($result);
         $this->assertInstanceOf(\stdClass::class, $result);
 
@@ -83,6 +101,21 @@ class OuterEnumTest extends TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Invalid value for enum');
+=======
+        $this->assertInternalType('object', $result);
+        $this->assertInstanceOf(\stdClass::class, $result);
+
+        $this->assertInternalType('string', $result->outerEnum);
+        $this->assertEquals('approved', $result->outerEnum);
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Invalid value for enum
+     */
+    public function testSanitizeNestedInvalidValue()
+    {
+>>>>>>> ooof
         $input = new EnumTest([
             'enum_string' => 'UPPER',
             'enum_integer' => -1,

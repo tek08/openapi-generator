@@ -30,6 +30,10 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+<<<<<<< HEAD
+=======
+use WWW::OpenAPIClient::Object::BigDecimal;
+>>>>>>> ooof
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -252,6 +256,7 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+<<<<<<< HEAD
     'pattern_with_digits' => {
         datatype => 'string',
         base_name => 'pattern_with_digits',
@@ -263,6 +268,12 @@ __PACKAGE__->method_documentation({
         datatype => 'string',
         base_name => 'pattern_with_digits_and_delimiter',
         description => 'A string starting with &#39;image_&#39; (case insensitive) and one to three digits following i.e. Image_01.',
+=======
+    'big_decimal' => {
+        datatype => 'BigDecimal',
+        base_name => 'BigDecimal',
+        description => '',
+>>>>>>> ooof
         format => '',
         read_only => '',
             },
@@ -282,8 +293,12 @@ __PACKAGE__->openapi_types( {
     'date_time' => 'DateTime',
     'uuid' => 'string',
     'password' => 'string',
+<<<<<<< HEAD
     'pattern_with_digits' => 'string',
     'pattern_with_digits_and_delimiter' => 'string'
+=======
+    'big_decimal' => 'BigDecimal'
+>>>>>>> ooof
 } );
 
 __PACKAGE__->attribute_map( {
@@ -300,8 +315,12 @@ __PACKAGE__->attribute_map( {
     'date_time' => 'dateTime',
     'uuid' => 'uuid',
     'password' => 'password',
+<<<<<<< HEAD
     'pattern_with_digits' => 'pattern_with_digits',
     'pattern_with_digits_and_delimiter' => 'pattern_with_digits_and_delimiter'
+=======
+    'big_decimal' => 'BigDecimal'
+>>>>>>> ooof
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

@@ -11,6 +11,7 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
@@ -26,6 +27,12 @@ except ImportError:
     parent = sys.modules[
         'petstore_api.model.parent']
 from petstore_api.model.child import Child
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestChild(unittest.TestCase):
@@ -44,7 +51,11 @@ class TestChild(unittest.TestCase):
         radio_waves = True
         tele_vision = True
         inter_net = True
+<<<<<<< HEAD
         child = Child(
+=======
+        child = petstore_api.Child(
+>>>>>>> ooof
             radio_waves=radio_waves,
             tele_vision=tele_vision,
             inter_net=inter_net
@@ -75,10 +86,17 @@ class TestChild(unittest.TestCase):
 
         # setting a value that doesn't exist raises an exception
         # with a key
+<<<<<<< HEAD
         with self.assertRaises(petstore_api.ApiAttributeError):
             child['invalid_variable'] = 'some value'
         # with setattr
         with self.assertRaises(petstore_api.ApiAttributeError):
+=======
+        with self.assertRaises(AttributeError):
+            child['invalid_variable'] = 'some value'
+        # with setattr
+        with self.assertRaises(AttributeError):
+>>>>>>> ooof
             setattr(child, 'invalid_variable', 'some value')
 
         # with hasattr
@@ -86,12 +104,20 @@ class TestChild(unittest.TestCase):
 
         # getting a value that doesn't exist raises an exception
         # with a key
+<<<<<<< HEAD
         with self.assertRaises(petstore_api.ApiAttributeError):
+=======
+        with self.assertRaises(AttributeError):
+>>>>>>> ooof
             invalid_variable = child['invalid_variable']
         # with getattr
         self.assertEquals(getattr(child, 'invalid_variable', 'some value'), 'some value')
 
+<<<<<<< HEAD
         with self.assertRaises(petstore_api.ApiAttributeError):
+=======
+        with self.assertRaises(AttributeError):
+>>>>>>> ooof
             invalid_variable = getattr(child, 'invalid_variable')
 
         # make sure that the ModelComposed class properties are correct
@@ -101,8 +127,13 @@ class TestChild(unittest.TestCase):
             {
                 'anyOf': [],
                 'allOf': [
+<<<<<<< HEAD
                     child_all_of.ChildAllOf,
                     parent.Parent,
+=======
+                    petstore_api.ChildAllOf,
+                    petstore_api.Parent,
+>>>>>>> ooof
                 ],
                 'oneOf': [],
             }
@@ -110,9 +141,15 @@ class TestChild(unittest.TestCase):
         # model._composed_instances is a list of the instances that were
         # made from the anyOf/allOf/OneOf classes in model._composed_schemas()
         for composed_instance in child._composed_instances:
+<<<<<<< HEAD
             if composed_instance.__class__ == parent.Parent:
                 parent_instance = composed_instance
             elif composed_instance.__class__ == child_all_of.ChildAllOf:
+=======
+            if composed_instance.__class__ == petstore_api.Parent:
+                parent_instance = composed_instance
+            elif composed_instance.__class__ == petstore_api.ChildAllOf:
+>>>>>>> ooof
                 child_allof_instance = composed_instance
         self.assertEqual(
             child._composed_instances,
@@ -143,11 +180,20 @@ class TestChild(unittest.TestCase):
 
         # including extra parameters raises an exception
         with self.assertRaises(petstore_api.ApiValueError):
+<<<<<<< HEAD
             child = Child(
                 radio_waves=radio_waves,
                 tele_vision=tele_vision,
                 inter_net=inter_net,
                 unknown_property='some value')
+=======
+            child = petstore_api.Child(
+                radio_waves=radio_waves,
+                tele_vision=tele_vision,
+                inter_net=inter_net,
+                unknown_property='some value'
+            )
+>>>>>>> ooof
 
 if __name__ == '__main__':
     unittest.main()

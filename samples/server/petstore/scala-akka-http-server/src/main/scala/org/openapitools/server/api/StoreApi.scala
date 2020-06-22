@@ -36,8 +36,13 @@ class StoreApi(
     } ~
     path("store" / "order") { 
       post {  
+<<<<<<< HEAD
             entity(as[Order]){ order =>
               storeService.placeOrder(order = order)
+=======
+            entity(as[Order]){ body =>
+              storeService.placeOrder(body = body)
+>>>>>>> ooof
             }
       }
     }
@@ -85,7 +90,11 @@ trait StoreApiService {
    * Code: 200, Message: successful operation, DataType: Order
    * Code: 400, Message: Invalid Order
    */
+<<<<<<< HEAD
   def placeOrder(order: Order)
+=======
+  def placeOrder(body: Order)
+>>>>>>> ooof
       (implicit toEntityMarshallerOrder: ToEntityMarshaller[Order]): Route
 
 }

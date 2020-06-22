@@ -14,7 +14,11 @@ import javax.validation.constraints.*;
 /**
  * Order
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
+=======
+
+>>>>>>> ooof
 public class Order   {
   @JsonProperty("id")
   private Long id;

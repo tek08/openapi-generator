@@ -4,7 +4,10 @@ import org.openapitools.api.*;
 import java.io.File;
 import org.openapitools.model.ModelApiResponse;
 import org.openapitools.model.Pet;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -64,7 +67,11 @@ public class PetApiServiceImpl implements PetApi {
      * Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
      *
      */
+<<<<<<< HEAD
     public Set<Pet> findPetsByTags(Set<String> tags) {
+=======
+    public List<Pet> findPetsByTags(List<String> tags) {
+>>>>>>> ooof
         // TODO: Implement...
         
         return null;

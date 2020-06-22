@@ -7,7 +7,10 @@ import java.util.List;
 import java.util.Map;
 import org.openapitools.model.ModelApiResponse;
 import org.openapitools.model.Pet;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -39,7 +42,11 @@ public class PetApiServiceImpl implements PetApi {
     {
         try {
             File cacheFile = new File(System.getProperty("jaxrs.test.server.json",
+<<<<<<< HEAD
                     "/Users/joschi/src/openapi-generator/samples/server/petstore/jaxrs-cxf-test-data/src/main/resources/test-data.json"));
+=======
+                    "/home/tduperron/git/zomzog/openapi-generator/samples/server/petstore/jaxrs-cxf-test-data/src/main/resources/test-data.json"));
+>>>>>>> ooof
             cache = JsonCache.Factory.instance.get("test-data").load(cacheFile).child("/org.openapitools.api/PetApi");
         } catch (CacheException e) {
             e.printStackTrace();
@@ -87,9 +94,15 @@ public class PetApiServiceImpl implements PetApi {
      *
      */
     @Override
+<<<<<<< HEAD
     public Set<Pet> findPetsByTags(Set<String> tags) {
         try {
             Set<Pet> response = cache.getObjects("/findPetsByTags/response", Pet.class);
+=======
+    public List<Pet> findPetsByTags(List<String> tags) {
+        try {
+            List<Pet> response = cache.getObjects("/findPetsByTags/response", Pet.class);
+>>>>>>> ooof
             return response;
         } catch (CacheException e) {
             throw new RuntimeException(e);

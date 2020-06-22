@@ -14,7 +14,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class Capitalization  implements Serializable {
+=======
+public class Capitalization  implements Serializable {
+>>>>>>> ooof
   
   private @Valid String smallCamel;
   private @Valid String capitalCamel;

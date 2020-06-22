@@ -103,7 +103,11 @@ class User(object):
 
 
         :param id: The id of this User.  # noqa: E501
+<<<<<<< HEAD
         :type id: int
+=======
+        :type: int
+>>>>>>> ooof
         """
 
         self._id = id
@@ -124,7 +128,11 @@ class User(object):
 
 
         :param username: The username of this User.  # noqa: E501
+<<<<<<< HEAD
         :type username: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._username = username
@@ -145,7 +153,11 @@ class User(object):
 
 
         :param first_name: The first_name of this User.  # noqa: E501
+<<<<<<< HEAD
         :type first_name: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._first_name = first_name
@@ -166,7 +178,11 @@ class User(object):
 
 
         :param last_name: The last_name of this User.  # noqa: E501
+<<<<<<< HEAD
         :type last_name: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._last_name = last_name
@@ -187,7 +203,11 @@ class User(object):
 
 
         :param email: The email of this User.  # noqa: E501
+<<<<<<< HEAD
         :type email: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._email = email
@@ -208,7 +228,11 @@ class User(object):
 
 
         :param password: The password of this User.  # noqa: E501
+<<<<<<< HEAD
         :type password: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._password = password
@@ -229,7 +253,11 @@ class User(object):
 
 
         :param phone: The phone of this User.  # noqa: E501
+<<<<<<< HEAD
         :type phone: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._phone = phone
@@ -252,7 +280,11 @@ class User(object):
         User Status  # noqa: E501
 
         :param user_status: The user_status of this User.  # noqa: E501
+<<<<<<< HEAD
         :type user_status: int
+=======
+        :type: int
+>>>>>>> ooof
         """
 
         self._user_status = user_status

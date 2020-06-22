@@ -25,6 +25,7 @@ import io.swagger.annotations.ApiModelProperty
 data class User(
 
     @ApiModelProperty(example = "null", value = "")
+<<<<<<< HEAD
     @field:JsonProperty("id") var id: kotlin.Long? = null,
 
     @ApiModelProperty(example = "null", value = "")
@@ -47,6 +48,30 @@ data class User(
 
     @ApiModelProperty(example = "null", value = "User Status")
     @field:JsonProperty("userStatus") var userStatus: kotlin.Int? = null
+=======
+    @JsonProperty("id") var id: kotlin.Long? = null,
+
+    @ApiModelProperty(example = "null", value = "")
+    @JsonProperty("username") var username: kotlin.String? = null,
+
+    @ApiModelProperty(example = "null", value = "")
+    @JsonProperty("firstName") var firstName: kotlin.String? = null,
+
+    @ApiModelProperty(example = "null", value = "")
+    @JsonProperty("lastName") var lastName: kotlin.String? = null,
+
+    @ApiModelProperty(example = "null", value = "")
+    @JsonProperty("email") var email: kotlin.String? = null,
+
+    @ApiModelProperty(example = "null", value = "")
+    @JsonProperty("password") var password: kotlin.String? = null,
+
+    @ApiModelProperty(example = "null", value = "")
+    @JsonProperty("phone") var phone: kotlin.String? = null,
+
+    @ApiModelProperty(example = "null", value = "User Status")
+    @JsonProperty("userStatus") var userStatus: kotlin.Int? = null
+>>>>>>> ooof
 ) {
 
 }

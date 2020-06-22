@@ -93,7 +93,11 @@ class Order(object):
 
 
         :param id: The id of this Order.  # noqa: E501
+<<<<<<< HEAD
         :type id: int
+=======
+        :type: int
+>>>>>>> ooof
         """
 
         self._id = id
@@ -114,7 +118,11 @@ class Order(object):
 
 
         :param pet_id: The pet_id of this Order.  # noqa: E501
+<<<<<<< HEAD
         :type pet_id: int
+=======
+        :type: int
+>>>>>>> ooof
         """
 
         self._pet_id = pet_id
@@ -135,7 +143,11 @@ class Order(object):
 
 
         :param quantity: The quantity of this Order.  # noqa: E501
+<<<<<<< HEAD
         :type quantity: int
+=======
+        :type: int
+>>>>>>> ooof
         """
 
         self._quantity = quantity
@@ -156,7 +168,11 @@ class Order(object):
 
 
         :param ship_date: The ship_date of this Order.  # noqa: E501
+<<<<<<< HEAD
         :type ship_date: datetime
+=======
+        :type: datetime
+>>>>>>> ooof
         """
 
         self._ship_date = ship_date
@@ -179,7 +195,11 @@ class Order(object):
         Order Status  # noqa: E501
 
         :param status: The status of this Order.  # noqa: E501
+<<<<<<< HEAD
         :type status: str
+=======
+        :type: str
+>>>>>>> ooof
         """
         allowed_values = ["placed", "approved", "delivered"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
@@ -206,7 +226,11 @@ class Order(object):
 
 
         :param complete: The complete of this Order.  # noqa: E501
+<<<<<<< HEAD
         :type complete: bool
+=======
+        :type: bool
+>>>>>>> ooof
         """
 
         self._complete = complete

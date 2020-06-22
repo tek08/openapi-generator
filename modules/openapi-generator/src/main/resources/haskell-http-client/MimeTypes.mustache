@@ -195,7 +195,11 @@ instance MimeUnrender MimeNoContent NoContent where mimeUnrender _ = P.Right . P
 {{#x-hasUnknownMimeTypes}}
 -- * Custom Mime Types
 
+<<<<<<< HEAD
 {{#x-unknown-mime-types}}-- ** {{{x-mediaDataType}}}
+=======
+{{#x-unknownMimeTypes}}-- ** {{{x-mediaDataType}}}
+>>>>>>> ooof
 
 data {{{x-mediaDataType}}} = {{{x-mediaDataType}}} deriving (P.Typeable)
 
@@ -207,4 +211,8 @@ instance A.FromJSON a => MimeUnrender {{{x-mediaDataType}}} a where mimeUnrender
 -- instance MimeRender {{{x-mediaDataType}}} T.Text where mimeRender _ = undefined
 -- instance MimeUnrender {{{x-mediaDataType}}} T.Text where mimeUnrender _ = undefined
 
+<<<<<<< HEAD
 {{/x-unknown-mime-types}}{{/x-hasUnknownMimeTypes}}
+=======
+{{/x-unknownMimeTypes}}{{/x-hasUnknownMimeTypes}}
+>>>>>>> ooof

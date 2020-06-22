@@ -68,7 +68,11 @@ class List(object):
 
 
         :param _123_list: The _123_list of this List.  # noqa: E501
+<<<<<<< HEAD
         :type _123_list: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self.__123_list = _123_list

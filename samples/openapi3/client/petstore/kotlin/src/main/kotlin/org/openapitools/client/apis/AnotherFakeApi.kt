@@ -25,6 +25,7 @@ import org.openapitools.client.infrastructure.ResponseType
 import org.openapitools.client.infrastructure.Success
 import org.openapitools.client.infrastructure.toMultiValue
 
+<<<<<<< HEAD
 class AnotherFakeApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     companion object {
         @JvmStatic
@@ -32,18 +33,26 @@ class AnotherFakeApi(basePath: kotlin.String = defaultBasePath) : ApiClient(base
             System.getProperties().getProperty("org.openapitools.client.baseUrl", "http://petstore.swagger.io:80/v2")
         }
     }
+=======
+class AnotherFakeApi(basePath: kotlin.String = "http://petstore.swagger.io:80/v2") : ApiClient(basePath) {
+>>>>>>> ooof
 
     /**
     * To test special tags
     * To test special tags and operation ID starting with number
     * @param client client model 
     * @return Client
+<<<<<<< HEAD
     * @throws UnsupportedOperationException If the API returns an informational or redirection response
     * @throws ClientException If the API returns a client error response
     * @throws ServerException If the API returns a server error response
     */
     @Suppress("UNCHECKED_CAST")
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
+=======
+    */
+    @Suppress("UNCHECKED_CAST")
+>>>>>>> ooof
     fun call123testSpecialTags(client: Client) : Client {
         val localVariableBody: kotlin.Any? = client
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -54,11 +63,16 @@ class AnotherFakeApi(basePath: kotlin.String = defaultBasePath) : ApiClient(base
             query = localVariableQuery,
             headers = localVariableHeaders
         )
+<<<<<<< HEAD
         val localVarResponse = request<Client>(
+=======
+        val response = request<Client>(
+>>>>>>> ooof
             localVariableConfig,
             localVariableBody
         )
 
+<<<<<<< HEAD
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as Client
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
@@ -71,6 +85,14 @@ class AnotherFakeApi(basePath: kotlin.String = defaultBasePath) : ApiClient(base
                 val localVarError = localVarResponse as ServerError<*>
                 throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
             }
+=======
+        return when (response.responseType) {
+            ResponseType.Success -> (response as Success<*>).data as Client
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
+            ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
+>>>>>>> ooof
         }
     }
 

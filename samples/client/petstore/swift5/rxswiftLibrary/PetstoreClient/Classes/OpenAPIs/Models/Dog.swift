@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 public struct Dog: Codable { 
 
+=======
+public struct Dog: Codable {
+>>>>>>> ooof
 
     public var className: String
     public var color: String? = "red"

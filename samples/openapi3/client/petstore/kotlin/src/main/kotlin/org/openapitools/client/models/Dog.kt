@@ -16,16 +16,22 @@ import org.openapitools.client.models.DogAllOf
 
 import com.squareup.moshi.Json
 import java.io.Serializable
+<<<<<<< HEAD
 
 /**
  * 
  * @param className 
  * @param color 
+=======
+/**
+ * 
+>>>>>>> ooof
  * @param breed 
  */
 
 data class Dog (
     @Json(name = "className")
+<<<<<<< HEAD
     override val className: kotlin.String,
     @Json(name = "color")
     override val color: kotlin.String? = null,
@@ -36,5 +42,19 @@ data class Dog (
         private const val serialVersionUID: Long = 123
     }
 
+=======
+    val className: kotlin.String,
+    @Json(name = "breed")
+    val breed: kotlin.String? = null,
+    @Json(name = "color")
+    val color: kotlin.String? = null
+) 
+: Serializable 
+
+{
+	companion object {
+		private const val serialVersionUID: Long = 123
+	}
+>>>>>>> ooof
 }
 

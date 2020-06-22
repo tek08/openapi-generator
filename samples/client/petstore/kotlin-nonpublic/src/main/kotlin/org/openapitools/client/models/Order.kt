@@ -13,7 +13,10 @@ package org.openapitools.client.models
 
 
 import com.squareup.moshi.Json
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * An order for a pets from the pet store
  * @param id 

@@ -26,7 +26,13 @@ trait StoreApi {
 
   /**
     * Place an order for a pet
+<<<<<<< HEAD
     * @param order order placed for purchasing the pet
     */
   def placeOrder(order: Order): Order
+=======
+    * @param body order placed for purchasing the pet
+    */
+  def placeOrder(body: Order): Order
+>>>>>>> ooof
 }

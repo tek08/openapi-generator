@@ -5,7 +5,10 @@ All URIs are relative to *http://petstore.swagger.io:80/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**fakeHealthGet**](FakeApi.md#fakeHealthGet) | **GET** /fake/health | Health check endpoint
+<<<<<<< HEAD
 [**fakeHttpSignatureTest**](FakeApi.md#fakeHttpSignatureTest) | **GET** /fake/http-signature-test | test http signature authentication
+=======
+>>>>>>> ooof
 [**fakeOuterBooleanSerialize**](FakeApi.md#fakeOuterBooleanSerialize) | **POST** /fake/outer/boolean | 
 [**fakeOuterCompositeSerialize**](FakeApi.md#fakeOuterCompositeSerialize) | **POST** /fake/outer/composite | 
 [**fakeOuterNumberSerialize**](FakeApi.md#fakeOuterNumberSerialize) | **POST** /fake/outer/number | 
@@ -62,6 +65,7 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<<<<<<< HEAD
 <a name="fakeHttpSignatureTest"></a>
 # **fakeHttpSignatureTest**
 > fakeHttpSignatureTest(pet, query1, header1)
@@ -110,6 +114,8 @@ null (empty response body)
  - **Content-Type**: application/json, application/xml
  - **Accept**: Not defined
 
+=======
+>>>>>>> ooof
 <a name="fakeOuterBooleanSerialize"></a>
 # **fakeOuterBooleanSerialize**
 > kotlin.Boolean fakeOuterBooleanSerialize(body)
@@ -527,6 +533,7 @@ To test enum parameters
 //import org.openapitools.client.models.*
 
 val apiInstance = FakeApi()
+<<<<<<< HEAD
 val enumHeaderStringArray : kotlin.collections.List<kotlin.String> =  // kotlin.collections.List<kotlin.String> | Header parameter enum test (string array)
 val enumHeaderString : kotlin.String = enumHeaderString_example // kotlin.String | Header parameter enum test (string)
 val enumQueryStringArray : kotlin.collections.List<kotlin.String> =  // kotlin.collections.List<kotlin.String> | Query parameter enum test (string array)
@@ -534,6 +541,15 @@ val enumQueryString : kotlin.String = enumQueryString_example // kotlin.String |
 val enumQueryInteger : kotlin.Int = 56 // kotlin.Int | Query parameter enum test (double)
 val enumQueryDouble : kotlin.Double = 1.2 // kotlin.Double | Query parameter enum test (double)
 val enumFormStringArray : kotlin.collections.List<kotlin.String> = enumFormStringArray_example // kotlin.collections.List<kotlin.String> | Form parameter enum test (string array)
+=======
+val enumHeaderStringArray : kotlin.Array<kotlin.String> =  // kotlin.Array<kotlin.String> | Header parameter enum test (string array)
+val enumHeaderString : kotlin.String = enumHeaderString_example // kotlin.String | Header parameter enum test (string)
+val enumQueryStringArray : kotlin.Array<kotlin.String> =  // kotlin.Array<kotlin.String> | Query parameter enum test (string array)
+val enumQueryString : kotlin.String = enumQueryString_example // kotlin.String | Query parameter enum test (string)
+val enumQueryInteger : kotlin.Int = 56 // kotlin.Int | Query parameter enum test (double)
+val enumQueryDouble : kotlin.Double = 1.2 // kotlin.Double | Query parameter enum test (double)
+val enumFormStringArray : kotlin.Array<kotlin.String> = enumFormStringArray_example // kotlin.Array<kotlin.String> | Form parameter enum test (string array)
+>>>>>>> ooof
 val enumFormString : kotlin.String = enumFormString_example // kotlin.String | Form parameter enum test (string)
 try {
     apiInstance.testEnumParameters(enumHeaderStringArray, enumHeaderString, enumQueryStringArray, enumQueryString, enumQueryInteger, enumQueryDouble, enumFormStringArray, enumFormString)
@@ -550,6 +566,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **enumHeaderStringArray** | [**kotlin.collections.List&lt;kotlin.String&gt;**](kotlin.String.md)| Header parameter enum test (string array) | [optional] [enum: >, $]
  **enumHeaderString** | **kotlin.String**| Header parameter enum test (string) | [optional] [default to &quot;-efg&quot;] [enum: _abc, -efg, (xyz)]
  **enumQueryStringArray** | [**kotlin.collections.List&lt;kotlin.String&gt;**](kotlin.String.md)| Query parameter enum test (string array) | [optional] [enum: >, $]
@@ -558,6 +575,16 @@ Name | Type | Description  | Notes
  **enumQueryDouble** | **kotlin.Double**| Query parameter enum test (double) | [optional] [enum: 1.1, -1.2]
  **enumFormStringArray** | [**kotlin.collections.List&lt;kotlin.String&gt;**](kotlin.String.md)| Form parameter enum test (string array) | [optional] [default to &quot;$&quot;] [enum: >, $]
  **enumFormString** | **kotlin.String**| Form parameter enum test (string) | [optional] [default to &quot;-efg&quot;] [enum: _abc, -efg, (xyz)]
+=======
+ **enumHeaderStringArray** | [**kotlin.Array&lt;kotlin.String&gt;**](kotlin.String.md)| Header parameter enum test (string array) | [optional] [enum: >, $]
+ **enumHeaderString** | **kotlin.String**| Header parameter enum test (string) | [optional] [default to &#39;-efg&#39;] [enum: _abc, -efg, (xyz)]
+ **enumQueryStringArray** | [**kotlin.Array&lt;kotlin.String&gt;**](kotlin.String.md)| Query parameter enum test (string array) | [optional] [enum: >, $]
+ **enumQueryString** | **kotlin.String**| Query parameter enum test (string) | [optional] [default to &#39;-efg&#39;] [enum: _abc, -efg, (xyz)]
+ **enumQueryInteger** | **kotlin.Int**| Query parameter enum test (double) | [optional] [enum: 1, -2]
+ **enumQueryDouble** | **kotlin.Double**| Query parameter enum test (double) | [optional] [enum: 1.1, -1.2]
+ **enumFormStringArray** | [**kotlin.Array&lt;kotlin.String&gt;**](kotlin.String.md)| Form parameter enum test (string array) | [optional] [default to &#39;$&#39;] [enum: >, $]
+ **enumFormString** | **kotlin.String**| Form parameter enum test (string) | [optional] [default to &#39;-efg&#39;] [enum: _abc, -efg, (xyz)]
+>>>>>>> ooof
 
 ### Return type
 
@@ -735,11 +762,19 @@ To test the collection format in query parameters
 //import org.openapitools.client.models.*
 
 val apiInstance = FakeApi()
+<<<<<<< HEAD
 val pipe : kotlin.collections.List<kotlin.String> =  // kotlin.collections.List<kotlin.String> | 
 val ioutil : kotlin.collections.List<kotlin.String> =  // kotlin.collections.List<kotlin.String> | 
 val http : kotlin.collections.List<kotlin.String> =  // kotlin.collections.List<kotlin.String> | 
 val url : kotlin.collections.List<kotlin.String> =  // kotlin.collections.List<kotlin.String> | 
 val context : kotlin.collections.List<kotlin.String> =  // kotlin.collections.List<kotlin.String> | 
+=======
+val pipe : kotlin.Array<kotlin.String> =  // kotlin.Array<kotlin.String> | 
+val ioutil : kotlin.Array<kotlin.String> =  // kotlin.Array<kotlin.String> | 
+val http : kotlin.Array<kotlin.String> =  // kotlin.Array<kotlin.String> | 
+val url : kotlin.Array<kotlin.String> =  // kotlin.Array<kotlin.String> | 
+val context : kotlin.Array<kotlin.String> =  // kotlin.Array<kotlin.String> | 
+>>>>>>> ooof
 try {
     apiInstance.testQueryParameterCollectionFormat(pipe, ioutil, http, url, context)
 } catch (e: ClientException) {
@@ -755,11 +790,19 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **pipe** | [**kotlin.collections.List&lt;kotlin.String&gt;**](kotlin.String.md)|  |
  **ioutil** | [**kotlin.collections.List&lt;kotlin.String&gt;**](kotlin.String.md)|  |
  **http** | [**kotlin.collections.List&lt;kotlin.String&gt;**](kotlin.String.md)|  |
  **url** | [**kotlin.collections.List&lt;kotlin.String&gt;**](kotlin.String.md)|  |
  **context** | [**kotlin.collections.List&lt;kotlin.String&gt;**](kotlin.String.md)|  |
+=======
+ **pipe** | [**kotlin.Array&lt;kotlin.String&gt;**](kotlin.String.md)|  |
+ **ioutil** | [**kotlin.Array&lt;kotlin.String&gt;**](kotlin.String.md)|  |
+ **http** | [**kotlin.Array&lt;kotlin.String&gt;**](kotlin.String.md)|  |
+ **url** | [**kotlin.Array&lt;kotlin.String&gt;**](kotlin.String.md)|  |
+ **context** | [**kotlin.Array&lt;kotlin.String&gt;**](kotlin.String.md)|  |
+>>>>>>> ooof
 
 ### Return type
 

@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 public struct ApiResponse: Codable { 
 
+=======
+public struct ApiResponse: Codable {
+>>>>>>> ooof
 
     public private(set) var code: Int?
     public private(set) var type: String?

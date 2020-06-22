@@ -57,11 +57,19 @@ object PetApi {
 
         /**
         * 
+<<<<<<< HEAD
         * @return An endpoint representing a Pet
         */
         private def addPet(da: DataAccessor): Endpoint[Pet] =
         post("pet" :: jsonBody[Pet]) { (pet: Pet) =>
           da.Pet_addPet(pet) match {
+=======
+        * @return An endpoint representing a Unit
+        */
+        private def addPet(da: DataAccessor): Endpoint[Unit] =
+        post("pet" :: jsonBody[Pet]) { (body: Pet) =>
+          da.Pet_addPet(body) match {
+>>>>>>> ooof
             case Left(error) => checkError(error)
             case Right(data) => Ok(data)
           }
@@ -127,11 +135,19 @@ object PetApi {
 
         /**
         * 
+<<<<<<< HEAD
         * @return An endpoint representing a Pet
         */
         private def updatePet(da: DataAccessor): Endpoint[Pet] =
         put("pet" :: jsonBody[Pet]) { (pet: Pet) =>
           da.Pet_updatePet(pet) match {
+=======
+        * @return An endpoint representing a Unit
+        */
+        private def updatePet(da: DataAccessor): Endpoint[Unit] =
+        put("pet" :: jsonBody[Pet]) { (body: Pet) =>
+          da.Pet_updatePet(body) match {
+>>>>>>> ooof
             case Left(error) => checkError(error)
             case Right(data) => Ok(data)
           }

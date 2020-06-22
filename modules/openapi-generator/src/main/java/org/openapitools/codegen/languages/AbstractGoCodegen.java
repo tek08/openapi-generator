@@ -29,6 +29,10 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.util.*;
 
+<<<<<<< HEAD
+=======
+import static org.openapitools.codegen.utils.OnceLogger.once;
+>>>>>>> ooof
 import static org.openapitools.codegen.utils.StringUtils.camelize;
 import static org.openapitools.codegen.utils.StringUtils.underscore;
 
@@ -93,7 +97,11 @@ public abstract class AbstractGoCodegen extends DefaultCodegen implements Codege
                         "byte",
                         "map[string]interface{}",
                         "interface{}"
+<<<<<<< HEAD
                 )
+=======
+                        )
+>>>>>>> ooof
         );
 
         instantiationTypes.clear();
@@ -129,6 +137,10 @@ public abstract class AbstractGoCodegen extends DefaultCodegen implements Codege
         // in golang as interface{}.
         // See issue #5387 for more details.
         typeMapping.put("object", "map[string]interface{}");
+<<<<<<< HEAD
+=======
+        typeMapping.put("interface{}", "interface{}");
+>>>>>>> ooof
         typeMapping.put("AnyType", "interface{}");
 
         numberTypes = new HashSet<String>(
@@ -208,11 +220,14 @@ public abstract class AbstractGoCodegen extends DefaultCodegen implements Codege
         if (name.matches("^\\d.*"))
             name = "Var" + name;
 
+<<<<<<< HEAD
         if ("AdditionalProperties".equals(name)) {
             // AdditionalProperties is a reserved field (additionalProperties: true), use AdditionalPropertiesField instead
             return "AdditionalPropertiesField";
         }
 
+=======
+>>>>>>> ooof
         return name;
     }
 
@@ -323,7 +338,11 @@ public abstract class AbstractGoCodegen extends DefaultCodegen implements Codege
 
     /**
      * Return the golang implementation type for the specified property.
+<<<<<<< HEAD
      *
+=======
+     * 
+>>>>>>> ooof
      * @param p the OAS property.
      * @return the golang implementation type.
      */
@@ -347,7 +366,11 @@ public abstract class AbstractGoCodegen extends DefaultCodegen implements Codege
             }
             return "[]" + typDecl;
         } else if (ModelUtils.isMapSchema(p)) {
+<<<<<<< HEAD
             Schema inner = getAdditionalProperties(p);
+=======
+            Schema inner = ModelUtils.getAdditionalProperties(p);
+>>>>>>> ooof
             return getSchemaType(p) + "[string]" + getTypeDeclaration(ModelUtils.unaliasSchema(this.openAPI, inner));
         }
         //return super.getTypeDeclaration(p);
@@ -381,7 +404,11 @@ public abstract class AbstractGoCodegen extends DefaultCodegen implements Codege
 
     /**
      * Return the OpenAPI type for the property.
+<<<<<<< HEAD
      *
+=======
+     * 
+>>>>>>> ooof
      * @param p the OAS property.
      * @return the OpenAPI type.
      */
@@ -393,7 +420,11 @@ public abstract class AbstractGoCodegen extends DefaultCodegen implements Codege
 
         if (ref != null && !ref.isEmpty()) {
             type = openAPIType;
+<<<<<<< HEAD
         } else if ("object".equals(openAPIType) && isAnyTypeSchema(p)) {
+=======
+        } else if ("object".equals(openAPIType) && ModelUtils.isAnyTypeSchema(p)) {
+>>>>>>> ooof
             // Arbitrary type. Note this is not the same thing as free-form object.
             type = "interface{}";
         } else if (typeMapping.containsKey(openAPIType)) {
@@ -407,19 +438,34 @@ public abstract class AbstractGoCodegen extends DefaultCodegen implements Codege
 
     /**
      * Determines the golang instantiation type of the specified schema.
+<<<<<<< HEAD
      * <p>
+=======
+     *
+>>>>>>> ooof
      * This function is called when the input schema is a map, and specifically
      * when the 'additionalProperties' attribute is present in the OAS specification.
      * Codegen invokes this function to resolve the "parent" association to
      * 'additionalProperties'.
+<<<<<<< HEAD
      * <p>
+=======
+     *
+>>>>>>> ooof
      * Note the 'parent' attribute in the codegen model is used in the following scenarios:
      * - Indicate a polymorphic association with some other type (e.g. class inheritance).
      * - If the specification has a discriminator, cogegen create a “parent” based on the discriminator.
      * - Use of the 'additionalProperties' attribute in the OAS specification.
+<<<<<<< HEAD
      * This is the specific scenario when codegen invokes this function.
      *
      * @param property the input schema
+=======
+     *   This is the specific scenario when codegen invokes this function.
+     *
+     * @param property the input schema
+     *
+>>>>>>> ooof
      * @return the golang instantiation type of the specified property.
      */
     @Override
@@ -459,6 +505,12 @@ public abstract class AbstractGoCodegen extends DefaultCodegen implements Codege
         @SuppressWarnings("unchecked")
         List<CodegenOperation> operations = (List<CodegenOperation>) objectMap.get("operation");
 
+<<<<<<< HEAD
+=======
+        // TODO: 5.0: Remove the camelCased vendorExtension below and ensure templates use the newer property naming.
+        once(LOGGER).warn("4.3.0 has deprecated the use of vendor extensions which don't follow lower-kebab casing standards with x- prefix.");
+
+>>>>>>> ooof
         for (CodegenOperation operation : operations) {
             // http method verb conversion (e.g. PUT => Put)
             operation.httpMethod = camelize(operation.httpMethod.toLowerCase(Locale.ROOT));
@@ -524,10 +576,18 @@ public abstract class AbstractGoCodegen extends DefaultCodegen implements Codege
 
                     // We need to specially map Time type to the optionals package
                     if ("time.Time".equals(param.dataType)) {
+<<<<<<< HEAD
+=======
+                        param.vendorExtensions.put("x-optionalDataType", "Time"); // TODO: 5.0 Remove
+>>>>>>> ooof
                         param.vendorExtensions.put("x-optional-data-type", "Time");
                     } else {
                         // Map optional type to dataType
                         String optionalType = param.dataType.substring(0, 1).toUpperCase(Locale.ROOT) + param.dataType.substring(1);
+<<<<<<< HEAD
+=======
+                        param.vendorExtensions.put("x-optionalDataType", optionalType); // TODO: 5.0 Remove
+>>>>>>> ooof
                         param.vendorExtensions.put("x-optional-data-type", optionalType);
                     }
                 }
@@ -536,11 +596,19 @@ public abstract class AbstractGoCodegen extends DefaultCodegen implements Codege
                 char nameFirstChar = param.paramName.charAt(0);
                 if (Character.isUpperCase(nameFirstChar)) {
                     // First char is already uppercase, just use paramName.
+<<<<<<< HEAD
+=======
+                    param.vendorExtensions.put("x-exportParamName", param.paramName); // TODO: 5.0 Remove
+>>>>>>> ooof
                     param.vendorExtensions.put("x-export-param-name", param.paramName);
                 } else {
                     // It's a lowercase first char, let's convert it to uppercase
                     StringBuilder sb = new StringBuilder(param.paramName);
                     sb.setCharAt(0, Character.toUpperCase(nameFirstChar));
+<<<<<<< HEAD
+=======
+                    param.vendorExtensions.put("x-exportParamName", sb.toString()); // TODO: 5.0 Remove
+>>>>>>> ooof
                     param.vendorExtensions.put("x-export-param-name", sb.toString());
                 }
             }
@@ -574,15 +642,30 @@ public abstract class AbstractGoCodegen extends DefaultCodegen implements Codege
     }
 
     private void setExportParameterName(List<CodegenParameter> codegenParameters) {
+<<<<<<< HEAD
+=======
+
+        // TODO: 5.0: Remove the camelCased vendorExtension below and ensure templates use the newer property naming.
+        once(LOGGER).warn("4.3.0 has deprecated the use of vendor extensions which don't follow lower-kebab casing standards with x- prefix.");
+
+>>>>>>> ooof
         for (CodegenParameter param : codegenParameters) {
             char nameFirstChar = param.paramName.charAt(0);
             if (Character.isUpperCase(nameFirstChar)) {
                 // First char is already uppercase, just use paramName.
+<<<<<<< HEAD
+=======
+                param.vendorExtensions.put("x-exportParamName", param.paramName); // TODO: 5.0 Remove
+>>>>>>> ooof
                 param.vendorExtensions.put("x-export-param-name", param.paramName);
             } else {
                 // It's a lowercase first char, let's convert it to uppercase
                 StringBuilder sb = new StringBuilder(param.paramName);
                 sb.setCharAt(0, Character.toUpperCase(nameFirstChar));
+<<<<<<< HEAD
+=======
+                param.vendorExtensions.put("x-exportParamName", sb.toString()); // TODO: 5.0 Remove
+>>>>>>> ooof
                 param.vendorExtensions.put("x-export-param-name", sb.toString());
             }
         }
@@ -630,10 +713,13 @@ public abstract class AbstractGoCodegen extends DefaultCodegen implements Codege
                     }
                 }
 
+<<<<<<< HEAD
                 if (this instanceof GoClientExperimentalCodegen && model.isEnum) {
                     imports.add(createMapping("import", "fmt"));
                 }
 
+=======
+>>>>>>> ooof
                 // if oneOf contains "null" type
                 if (model.oneOf != null && !model.oneOf.isEmpty() && model.oneOf.contains("nil")) {
                     model.isNullable = true;

@@ -21,16 +21,25 @@ module Petstore
     end
     # Create user
     # This can only be done by the logged in user.
+<<<<<<< HEAD
     # @param user [User] Created user object
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def create_user(user, opts = {})
       create_user_with_http_info(user, opts)
+=======
+    # @param body [User] Created user object
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def create_user(body, opts = {})
+      create_user_with_http_info(body, opts)
+>>>>>>> ooof
       nil
     end
 
     # Create user
     # This can only be done by the logged in user.
+<<<<<<< HEAD
     # @param user [User] Created user object
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
@@ -41,6 +50,18 @@ module Petstore
       # verify the required parameter 'user' is set
       if @api_client.config.client_side_validation && user.nil?
         fail ArgumentError, "Missing the required parameter 'user' when calling UserApi.create_user"
+=======
+    # @param body [User] Created user object
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def create_user_with_http_info(body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: UserApi.create_user ...'
+      end
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling UserApi.create_user"
+>>>>>>> ooof
       end
       # resource path
       local_var_path = '/user'
@@ -50,14 +71,21 @@ module Petstore
 
       # header parameters
       header_params = opts[:header_params] || {}
+<<<<<<< HEAD
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+=======
+>>>>>>> ooof
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
+<<<<<<< HEAD
       post_body = opts[:body] || @api_client.object_to_http_body(user) 
+=======
+      post_body = opts[:body] || @api_client.object_to_http_body(body) 
+>>>>>>> ooof
 
       # return_type
       return_type = opts[:return_type] 
@@ -82,15 +110,24 @@ module Petstore
     end
 
     # Creates list of users with given input array
+<<<<<<< HEAD
     # @param user [Array<User>] List of user object
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def create_users_with_array_input(user, opts = {})
       create_users_with_array_input_with_http_info(user, opts)
+=======
+    # @param body [Array<User>] List of user object
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def create_users_with_array_input(body, opts = {})
+      create_users_with_array_input_with_http_info(body, opts)
+>>>>>>> ooof
       nil
     end
 
     # Creates list of users with given input array
+<<<<<<< HEAD
     # @param user [Array<User>] List of user object
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
@@ -101,6 +138,18 @@ module Petstore
       # verify the required parameter 'user' is set
       if @api_client.config.client_side_validation && user.nil?
         fail ArgumentError, "Missing the required parameter 'user' when calling UserApi.create_users_with_array_input"
+=======
+    # @param body [Array<User>] List of user object
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def create_users_with_array_input_with_http_info(body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: UserApi.create_users_with_array_input ...'
+      end
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling UserApi.create_users_with_array_input"
+>>>>>>> ooof
       end
       # resource path
       local_var_path = '/user/createWithArray'
@@ -110,14 +159,21 @@ module Petstore
 
       # header parameters
       header_params = opts[:header_params] || {}
+<<<<<<< HEAD
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+=======
+>>>>>>> ooof
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
+<<<<<<< HEAD
       post_body = opts[:body] || @api_client.object_to_http_body(user) 
+=======
+      post_body = opts[:body] || @api_client.object_to_http_body(body) 
+>>>>>>> ooof
 
       # return_type
       return_type = opts[:return_type] 
@@ -142,15 +198,24 @@ module Petstore
     end
 
     # Creates list of users with given input array
+<<<<<<< HEAD
     # @param user [Array<User>] List of user object
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def create_users_with_list_input(user, opts = {})
       create_users_with_list_input_with_http_info(user, opts)
+=======
+    # @param body [Array<User>] List of user object
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def create_users_with_list_input(body, opts = {})
+      create_users_with_list_input_with_http_info(body, opts)
+>>>>>>> ooof
       nil
     end
 
     # Creates list of users with given input array
+<<<<<<< HEAD
     # @param user [Array<User>] List of user object
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
@@ -161,6 +226,18 @@ module Petstore
       # verify the required parameter 'user' is set
       if @api_client.config.client_side_validation && user.nil?
         fail ArgumentError, "Missing the required parameter 'user' when calling UserApi.create_users_with_list_input"
+=======
+    # @param body [Array<User>] List of user object
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def create_users_with_list_input_with_http_info(body, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: UserApi.create_users_with_list_input ...'
+      end
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling UserApi.create_users_with_list_input"
+>>>>>>> ooof
       end
       # resource path
       local_var_path = '/user/createWithList'
@@ -170,14 +247,21 @@ module Petstore
 
       # header parameters
       header_params = opts[:header_params] || {}
+<<<<<<< HEAD
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+=======
+>>>>>>> ooof
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
+<<<<<<< HEAD
       post_body = opts[:body] || @api_client.object_to_http_body(user) 
+=======
+      post_body = opts[:body] || @api_client.object_to_http_body(body) 
+>>>>>>> ooof
 
       # return_type
       return_type = opts[:return_type] 
@@ -225,7 +309,11 @@ module Petstore
         fail ArgumentError, "Missing the required parameter 'username' when calling UserApi.delete_user"
       end
       # resource path
+<<<<<<< HEAD
       local_var_path = '/user/{username}'.sub('{' + 'username' + '}', CGI.escape(username.to_s))
+=======
+      local_var_path = '/user/{username}'.sub('{' + 'username' + '}', CGI.escape(username.to_s).gsub('%2F', '/'))
+>>>>>>> ooof
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -283,7 +371,11 @@ module Petstore
         fail ArgumentError, "Missing the required parameter 'username' when calling UserApi.get_user_by_name"
       end
       # resource path
+<<<<<<< HEAD
       local_var_path = '/user/{username}'.sub('{' + 'username' + '}', CGI.escape(username.to_s))
+=======
+      local_var_path = '/user/{username}'.sub('{' + 'username' + '}', CGI.escape(username.to_s).gsub('%2F', '/'))
+>>>>>>> ooof
 
       # query parameters
       query_params = opts[:query_params] || {}
@@ -444,21 +536,36 @@ module Petstore
     # Updated user
     # This can only be done by the logged in user.
     # @param username [String] name that need to be deleted
+<<<<<<< HEAD
     # @param user [User] Updated user object
     # @param [Hash] opts the optional parameters
     # @return [nil]
     def update_user(username, user, opts = {})
       update_user_with_http_info(username, user, opts)
+=======
+    # @param body [User] Updated user object
+    # @param [Hash] opts the optional parameters
+    # @return [nil]
+    def update_user(username, body, opts = {})
+      update_user_with_http_info(username, body, opts)
+>>>>>>> ooof
       nil
     end
 
     # Updated user
     # This can only be done by the logged in user.
     # @param username [String] name that need to be deleted
+<<<<<<< HEAD
     # @param user [User] Updated user object
     # @param [Hash] opts the optional parameters
     # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
     def update_user_with_http_info(username, user, opts = {})
+=======
+    # @param body [User] Updated user object
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(nil, Integer, Hash)>] nil, response status code and response headers
+    def update_user_with_http_info(username, body, opts = {})
+>>>>>>> ooof
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: UserApi.update_user ...'
       end
@@ -466,26 +573,42 @@ module Petstore
       if @api_client.config.client_side_validation && username.nil?
         fail ArgumentError, "Missing the required parameter 'username' when calling UserApi.update_user"
       end
+<<<<<<< HEAD
       # verify the required parameter 'user' is set
       if @api_client.config.client_side_validation && user.nil?
         fail ArgumentError, "Missing the required parameter 'user' when calling UserApi.update_user"
       end
       # resource path
       local_var_path = '/user/{username}'.sub('{' + 'username' + '}', CGI.escape(username.to_s))
+=======
+      # verify the required parameter 'body' is set
+      if @api_client.config.client_side_validation && body.nil?
+        fail ArgumentError, "Missing the required parameter 'body' when calling UserApi.update_user"
+      end
+      # resource path
+      local_var_path = '/user/{username}'.sub('{' + 'username' + '}', CGI.escape(username.to_s).gsub('%2F', '/'))
+>>>>>>> ooof
 
       # query parameters
       query_params = opts[:query_params] || {}
 
       # header parameters
       header_params = opts[:header_params] || {}
+<<<<<<< HEAD
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+=======
+>>>>>>> ooof
 
       # form parameters
       form_params = opts[:form_params] || {}
 
       # http body (model)
+<<<<<<< HEAD
       post_body = opts[:body] || @api_client.object_to_http_body(user) 
+=======
+      post_body = opts[:body] || @api_client.object_to_http_body(body) 
+>>>>>>> ooof
 
       # return_type
       return_type = opts[:return_type] 

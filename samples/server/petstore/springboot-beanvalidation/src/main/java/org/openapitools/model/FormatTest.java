@@ -17,7 +17,11 @@ import javax.validation.constraints.*;
 /**
  * FormatTest
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
+=======
+
+>>>>>>> ooof
 public class FormatTest   {
   @JsonProperty("integer")
   private Integer integer;

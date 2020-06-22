@@ -28,7 +28,11 @@ import javax.validation.Valid;
 @JsonPropertyOrder({
   Foo.JSON_PROPERTY_BAR
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen")
+=======
+
+>>>>>>> ooof
 public class Foo   {
   public static final String JSON_PROPERTY_BAR = "bar";
   @JsonProperty(JSON_PROPERTY_BAR)

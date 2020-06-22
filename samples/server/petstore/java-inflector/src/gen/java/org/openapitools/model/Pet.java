@@ -7,9 +7,13 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+=======
+import java.util.List;
+>>>>>>> ooof
 import org.openapitools.model.Category;
 import org.openapitools.model.Tag;
 
@@ -17,7 +21,11 @@ import org.openapitools.model.Tag;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaInflectorServerCodegen")
+=======
+
+>>>>>>> ooof
 public class Pet   {
   @JsonProperty("id")
   private Long id;
@@ -29,7 +37,11 @@ public class Pet   {
   private String name;
 
   @JsonProperty("photoUrls")
+<<<<<<< HEAD
   private Set<String> photoUrls = new LinkedHashSet<String>();
+=======
+  private List<String> photoUrls = new ArrayList<String>();
+>>>>>>> ooof
 
   @JsonProperty("tags")
   private List<Tag> tags = null;
@@ -123,7 +135,11 @@ public class Pet   {
 
   /**
    **/
+<<<<<<< HEAD
   public Pet photoUrls(Set<String> photoUrls) {
+=======
+  public Pet photoUrls(List<String> photoUrls) {
+>>>>>>> ooof
     this.photoUrls = photoUrls;
     return this;
   }
@@ -131,10 +147,17 @@ public class Pet   {
   
   @ApiModelProperty(required = true, value = "")
   @JsonProperty("photoUrls")
+<<<<<<< HEAD
   public Set<String> getPhotoUrls() {
     return photoUrls;
   }
   public void setPhotoUrls(Set<String> photoUrls) {
+=======
+  public List<String> getPhotoUrls() {
+    return photoUrls;
+  }
+  public void setPhotoUrls(List<String> photoUrls) {
+>>>>>>> ooof
     this.photoUrls = photoUrls;
   }
 

@@ -1,6 +1,10 @@
 package org.openapitools.api;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyServerCodegen")
+=======
+
+>>>>>>> ooof
 public class StringUtil {
   /**
    * Check if the given array contains the given value (with case-insensitive comparison).

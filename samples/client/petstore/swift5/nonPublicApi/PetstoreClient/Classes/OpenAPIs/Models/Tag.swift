@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 internal struct Tag: Codable { 
 
+=======
+internal struct Tag: Codable {
+>>>>>>> ooof
 
     internal var id: Int64?
     internal var name: String?

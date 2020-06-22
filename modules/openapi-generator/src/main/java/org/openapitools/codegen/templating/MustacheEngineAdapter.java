@@ -19,7 +19,11 @@ package org.openapitools.codegen.templating;
 import com.samskivert.mustache.Mustache;
 import com.samskivert.mustache.Template;
 import org.openapitools.codegen.api.TemplatingEngineAdapter;
+<<<<<<< HEAD
 import org.openapitools.codegen.api.TemplatingExecutor;
+=======
+import org.openapitools.codegen.api.TemplatingGenerator;
+>>>>>>> ooof
 
 import java.io.IOException;
 import java.io.Reader;
@@ -42,6 +46,7 @@ public class MustacheEngineAdapter implements TemplatingEngineAdapter {
     public String[] extensions = new String[]{"mustache"};
     Mustache.Compiler compiler = Mustache.compiler();
 
+<<<<<<< HEAD
     /**
      * Compiles a template into a string
      *
@@ -57,17 +62,31 @@ public class MustacheEngineAdapter implements TemplatingEngineAdapter {
                 .withLoader(name -> findTemplate(executor, name))
                 .defaultValue("")
                 .compile(executor.getFullTemplateContents(templateFile));
+=======
+    @Override
+    public String compileTemplate(TemplatingGenerator generator, Map<String, Object> bundle,
+                                  String templateFile) throws IOException {
+        Template tmpl = compiler
+                .withLoader(name -> findTemplate(generator, name))
+                .defaultValue("")
+                .compile(generator.getFullTemplateContents(templateFile));
+>>>>>>> ooof
 
         return tmpl.execute(bundle);
     }
 
+<<<<<<< HEAD
     public Reader findTemplate(TemplatingExecutor generator, String name) {
+=======
+    public Reader findTemplate(TemplatingGenerator generator, String name) {
+>>>>>>> ooof
         for (String extension : extensions) {
             try {
                 return new StringReader(generator.getFullTemplateContents(name + "." + extension));
             } catch (Exception ignored) {
             }
         }
+<<<<<<< HEAD
 
         // support files without targeted extension (e.g. .gitignore, README.md), etc.
         try {
@@ -75,6 +94,8 @@ public class MustacheEngineAdapter implements TemplatingEngineAdapter {
         } catch (Exception ignored) {
         }
 
+=======
+>>>>>>> ooof
         throw new TemplateNotFoundException(name);
     }
 

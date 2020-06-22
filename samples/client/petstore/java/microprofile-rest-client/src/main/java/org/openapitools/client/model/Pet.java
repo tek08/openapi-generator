@@ -29,6 +29,7 @@ import java.util.List;
 import org.openapitools.client.model.Category;
 import org.openapitools.client.model.Tag;
 
+<<<<<<< HEAD
 import java.lang.reflect.Type;
 import javax.json.bind.annotation.JsonbTypeDeserializer;
 import javax.json.bind.annotation.JsonbTypeSerializer;
@@ -38,6 +39,15 @@ import javax.json.bind.serializer.JsonbSerializer;
 import javax.json.bind.serializer.SerializationContext;
 import javax.json.stream.JsonGenerator;
 import javax.json.stream.JsonParser;
+=======
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlEnum;
+import javax.xml.bind.annotation.XmlEnumValue;
+>>>>>>> ooof
 import javax.json.bind.annotation.JsonbProperty;
 
 /**
@@ -55,6 +65,7 @@ public class Pet  {
 
   private List<Tag> tags = null;
 
+<<<<<<< HEAD
   @JsonbTypeSerializer(StatusEnum.Serializer.class)
   @JsonbTypeDeserializer(StatusEnum.Deserializer.class)
   public enum StatusEnum {
@@ -63,6 +74,16 @@ public class Pet  {
 
 
     String value;
+=======
+@XmlType(name="StatusEnum")
+@XmlEnum(String.class)
+public enum StatusEnum {
+
+@XmlEnumValue("available") AVAILABLE(String.valueOf("available")), @XmlEnumValue("pending") PENDING(String.valueOf("pending")), @XmlEnumValue("sold") SOLD(String.valueOf("sold"));
+
+
+    private String value;
+>>>>>>> ooof
 
     StatusEnum (String v) {
         value = v;
@@ -77,6 +98,7 @@ public class Pet  {
         return String.valueOf(value);
     }
 
+<<<<<<< HEAD
     public static final class Deserializer implements JsonbDeserializer<StatusEnum> {
         @Override
         public StatusEnum deserialize(JsonParser parser, DeserializationContext ctx, Type rtType) {
@@ -96,6 +118,17 @@ public class Pet  {
         }
     }
   }
+=======
+    public static StatusEnum fromValue(String v) {
+        for (StatusEnum b : StatusEnum.values()) {
+            if (String.valueOf(b.value).equals(v)) {
+                return b;
+            }
+        }
+        throw new IllegalArgumentException("Unexpected value '" + v + "'");
+    }
+}
+>>>>>>> ooof
 
  /**
    * pet status in the store
@@ -222,8 +255,16 @@ public class Pet  {
    * @return status
   **/
   @JsonbProperty("status")
+<<<<<<< HEAD
   public StatusEnum getStatus() {
     return status;
+=======
+  public String getStatus() {
+    if (status == null) {
+      return null;
+    }
+    return status.value();
+>>>>>>> ooof
   }
 
   /**

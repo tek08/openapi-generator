@@ -14,16 +14,28 @@ package org.openapitools.client.models
 
 import kotlinx.serialization.*
 import kotlinx.serialization.internal.CommonEnumSerializer
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * 
  * @param className 
  * @param color 
  */
 @Serializable
+<<<<<<< HEAD
 interface Animal {
 
     @SerialName(value = "className") @Required val className: kotlin.String
     @SerialName(value = "color") val color: kotlin.String?
 }
+=======
+data class Animal (
+    @SerialName(value = "className") @Required val className: kotlin.String,
+    @SerialName(value = "color") val color: kotlin.String? = null
+) 
+
+
+>>>>>>> ooof
 

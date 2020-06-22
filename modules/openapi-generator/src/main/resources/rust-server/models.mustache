@@ -159,6 +159,7 @@ impl std::convert::TryFrom<hyper::header::HeaderValue> for header::IntoHeaderVal
     }
 }
 
+<<<<<<< HEAD
 {{#arrayModelType}}{{#vendorExtensions}}{{#x-item-xml-name}}// Utility function for wrapping list elements when serializing xml
 #[allow(non_snake_case)]
 fn wrap_in_{{{x-item-xml-name}}}<S>(item: &Vec<{{{arrayModelType}}}>, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -169,15 +170,33 @@ where
 }
 
 {{/x-item-xml-name}}
+=======
+{{#arrayModelType}}{{#vendorExtensions}}{{#itemXmlName}}// Utility function for wrapping list elements when serializing xml
+#[allow(non_snake_case)]
+fn wrap_in_{{{itemXmlName}}}<S>(item: &Vec<{{{arrayModelType}}}>, serializer: S) -> std::result::Result<S::Ok, S::Error>
+where
+    S: serde::ser::Serializer,
+{
+    serde_xml_rs::wrap_primitives(item, serializer, "{{{itemXmlName}}}")
+}
+
+{{/itemXmlName}}
+>>>>>>> ooof
 {{/vendorExtensions}}
 {{! vec}}
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
 #[cfg_attr(feature = "conversion", derive(frunk::LabelledGeneric))]
 pub struct {{{classname}}}(
 {{#vendorExtensions}}
+<<<<<<< HEAD
 {{#x-item-xml-name}}
     #[serde(serialize_with = "wrap_in_{{{x-item-xml-name}}}")]
 {{/x-item-xml-name}}
+=======
+{{#itemXmlName}}
+    #[serde(serialize_with = "wrap_in_{{{itemXmlName}}}")]
+{{/itemXmlName}}
+>>>>>>> ooof
 {{/vendorExtensions}}
     Vec<{{{arrayModelType}}}>
 );
@@ -277,9 +296,15 @@ pub struct {{{classname}}} {
 {{/isEnum}}
     #[serde(rename = "{{{baseName}}}")]
 {{#vendorExtensions}}
+<<<<<<< HEAD
 {{#x-item-xml-name}}
     #[serde(serialize_with = "wrap_in_{{{x-item-xml-name}}}")]
 {{/x-item-xml-name}}
+=======
+{{#itemXmlName}}
+    #[serde(serialize_with = "wrap_in_{{{itemXmlName}}}")]
+{{/itemXmlName}}
+>>>>>>> ooof
 {{/vendorExtensions}}
 {{#required}}
     pub {{{name}}}: {{#isNullable}}swagger::Nullable<{{/isNullable}}{{{dataType}}}{{#isNullable}}>{{/isNullable}},
@@ -478,4 +503,8 @@ impl {{{classname}}} {
 }
 {{/usesXml}}
 {{/model}}
+<<<<<<< HEAD
 {{/models}}
+=======
+{{/models}}
+>>>>>>> ooof

@@ -26,6 +26,7 @@ import org.openapitools.client.infrastructure.ResponseType
 import org.openapitools.client.infrastructure.Success
 import org.openapitools.client.infrastructure.toMultiValue
 
+<<<<<<< HEAD
 class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     companion object {
         @JvmStatic
@@ -33,17 +34,24 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
             System.getProperties().getProperty("org.openapitools.client.baseUrl", "http://petstore.swagger.io:80/v2")
         }
     }
+=======
+class PetApi(basePath: kotlin.String = "http://petstore.swagger.io:80/v2") : ApiClient(basePath) {
+>>>>>>> ooof
 
     /**
     * Add a new pet to the store
     * 
     * @param pet Pet object that needs to be added to the store 
     * @return void
+<<<<<<< HEAD
     * @throws UnsupportedOperationException If the API returns an informational or redirection response
     * @throws ClientException If the API returns a client error response
     * @throws ServerException If the API returns a server error response
     */
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
+=======
+    */
+>>>>>>> ooof
     fun addPet(pet: Pet) : Unit {
         val localVariableBody: kotlin.Any? = pet
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -54,11 +62,16 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
             query = localVariableQuery,
             headers = localVariableHeaders
         )
+<<<<<<< HEAD
         val localVarResponse = request<Any?>(
+=======
+        val response = request<Any?>(
+>>>>>>> ooof
             localVariableConfig,
             localVariableBody
         )
 
+<<<<<<< HEAD
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
@@ -71,6 +84,14 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
                 val localVarError = localVarResponse as ServerError<*>
                 throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
             }
+=======
+        return when (response.responseType) {
+            ResponseType.Success -> Unit
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
+            ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
+>>>>>>> ooof
         }
     }
 
@@ -80,11 +101,15 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     * @param petId Pet id to delete 
     * @param apiKey  (optional)
     * @return void
+<<<<<<< HEAD
     * @throws UnsupportedOperationException If the API returns an informational or redirection response
     * @throws ClientException If the API returns a client error response
     * @throws ServerException If the API returns a server error response
     */
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
+=======
+    */
+>>>>>>> ooof
     fun deletePet(petId: kotlin.Long, apiKey: kotlin.String?) : Unit {
         val localVariableBody: kotlin.Any? = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -95,11 +120,16 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
             query = localVariableQuery,
             headers = localVariableHeaders
         )
+<<<<<<< HEAD
         val localVarResponse = request<Any?>(
+=======
+        val response = request<Any?>(
+>>>>>>> ooof
             localVariableConfig,
             localVariableBody
         )
 
+<<<<<<< HEAD
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
@@ -112,6 +142,14 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
                 val localVarError = localVarResponse as ServerError<*>
                 throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
             }
+=======
+        return when (response.responseType) {
+            ResponseType.Success -> Unit
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
+            ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
+>>>>>>> ooof
         }
     }
 
@@ -119,6 +157,7 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     * Finds Pets by status
     * Multiple status values can be provided with comma separated strings
     * @param status Status values that need to be considered for filter 
+<<<<<<< HEAD
     * @return kotlin.collections.List<Pet>
     * @throws UnsupportedOperationException If the API returns an informational or redirection response
     * @throws ClientException If the API returns a client error response
@@ -127,6 +166,12 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     @Suppress("UNCHECKED_CAST")
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
     fun findPetsByStatus(status: kotlin.collections.List<kotlin.String>) : kotlin.collections.List<Pet> {
+=======
+    * @return kotlin.Array<Pet>
+    */
+    @Suppress("UNCHECKED_CAST")
+    fun findPetsByStatus(status: kotlin.Array<kotlin.String>) : kotlin.Array<Pet> {
+>>>>>>> ooof
         val localVariableBody: kotlin.Any? = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, List<kotlin.String>>()
             .apply {
@@ -139,11 +184,16 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
             query = localVariableQuery,
             headers = localVariableHeaders
         )
+<<<<<<< HEAD
         val localVarResponse = request<kotlin.collections.List<Pet>>(
+=======
+        val response = request<kotlin.Array<Pet>>(
+>>>>>>> ooof
             localVariableConfig,
             localVariableBody
         )
 
+<<<<<<< HEAD
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<Pet>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
@@ -156,6 +206,14 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
                 val localVarError = localVarResponse as ServerError<*>
                 throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
             }
+=======
+        return when (response.responseType) {
+            ResponseType.Success -> (response as Success<*>).data as kotlin.Array<Pet>
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
+            ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
+>>>>>>> ooof
         }
     }
 
@@ -163,6 +221,7 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     * Finds Pets by tags
     * Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
     * @param tags Tags to filter by 
+<<<<<<< HEAD
     * @return kotlin.collections.List<Pet>
     * @throws UnsupportedOperationException If the API returns an informational or redirection response
     * @throws ClientException If the API returns a client error response
@@ -172,6 +231,12 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
     @Deprecated(message = "This operation is deprecated.")
     fun findPetsByTags(tags: kotlin.collections.List<kotlin.String>) : kotlin.collections.List<Pet> {
+=======
+    * @return kotlin.Array<Pet>
+    */
+    @Suppress("UNCHECKED_CAST")
+    fun findPetsByTags(tags: kotlin.Array<kotlin.String>) : kotlin.Array<Pet> {
+>>>>>>> ooof
         val localVariableBody: kotlin.Any? = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, List<kotlin.String>>()
             .apply {
@@ -184,11 +249,16 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
             query = localVariableQuery,
             headers = localVariableHeaders
         )
+<<<<<<< HEAD
         val localVarResponse = request<kotlin.collections.List<Pet>>(
+=======
+        val response = request<kotlin.Array<Pet>>(
+>>>>>>> ooof
             localVariableConfig,
             localVariableBody
         )
 
+<<<<<<< HEAD
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<Pet>
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
@@ -201,6 +271,14 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
                 val localVarError = localVarResponse as ServerError<*>
                 throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
             }
+=======
+        return when (response.responseType) {
+            ResponseType.Success -> (response as Success<*>).data as kotlin.Array<Pet>
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
+            ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
+>>>>>>> ooof
         }
     }
 
@@ -209,12 +287,17 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     * Returns a single pet
     * @param petId ID of pet to return 
     * @return Pet
+<<<<<<< HEAD
     * @throws UnsupportedOperationException If the API returns an informational or redirection response
     * @throws ClientException If the API returns a client error response
     * @throws ServerException If the API returns a server error response
     */
     @Suppress("UNCHECKED_CAST")
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
+=======
+    */
+    @Suppress("UNCHECKED_CAST")
+>>>>>>> ooof
     fun getPetById(petId: kotlin.Long) : Pet {
         val localVariableBody: kotlin.Any? = null
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -225,11 +308,16 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
             query = localVariableQuery,
             headers = localVariableHeaders
         )
+<<<<<<< HEAD
         val localVarResponse = request<Pet>(
+=======
+        val response = request<Pet>(
+>>>>>>> ooof
             localVariableConfig,
             localVariableBody
         )
 
+<<<<<<< HEAD
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as Pet
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
@@ -242,6 +330,14 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
                 val localVarError = localVarResponse as ServerError<*>
                 throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
             }
+=======
+        return when (response.responseType) {
+            ResponseType.Success -> (response as Success<*>).data as Pet
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
+            ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
+>>>>>>> ooof
         }
     }
 
@@ -250,11 +346,15 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     * 
     * @param pet Pet object that needs to be added to the store 
     * @return void
+<<<<<<< HEAD
     * @throws UnsupportedOperationException If the API returns an informational or redirection response
     * @throws ClientException If the API returns a client error response
     * @throws ServerException If the API returns a server error response
     */
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
+=======
+    */
+>>>>>>> ooof
     fun updatePet(pet: Pet) : Unit {
         val localVariableBody: kotlin.Any? = pet
         val localVariableQuery: MultiValueMap = mutableMapOf()
@@ -265,11 +365,16 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
             query = localVariableQuery,
             headers = localVariableHeaders
         )
+<<<<<<< HEAD
         val localVarResponse = request<Any?>(
+=======
+        val response = request<Any?>(
+>>>>>>> ooof
             localVariableConfig,
             localVariableBody
         )
 
+<<<<<<< HEAD
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
@@ -282,6 +387,14 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
                 val localVarError = localVarResponse as ServerError<*>
                 throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
             }
+=======
+        return when (response.responseType) {
+            ResponseType.Success -> Unit
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
+            ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
+>>>>>>> ooof
         }
     }
 
@@ -292,6 +405,7 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     * @param name Updated name of the pet (optional)
     * @param status Updated status of the pet (optional)
     * @return void
+<<<<<<< HEAD
     * @throws UnsupportedOperationException If the API returns an informational or redirection response
     * @throws ClientException If the API returns a client error response
     * @throws ServerException If the API returns a server error response
@@ -301,17 +415,29 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
         val localVariableBody: kotlin.Any? = mapOf("name" to name, "status" to status)
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf("Content-Type" to "application/x-www-form-urlencoded")
+=======
+    */
+    fun updatePetWithForm(petId: kotlin.Long, name: kotlin.String?, status: kotlin.String?) : Unit {
+        val localVariableBody: kotlin.Any? = mapOf("name" to "$name", "status" to "$status")
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf("Content-Type" to "")
+>>>>>>> ooof
         val localVariableConfig = RequestConfig(
             RequestMethod.POST,
             "/pet/{petId}".replace("{"+"petId"+"}", "$petId"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
+<<<<<<< HEAD
         val localVarResponse = request<Any?>(
+=======
+        val response = request<Any?>(
+>>>>>>> ooof
             localVariableConfig,
             localVariableBody
         )
 
+<<<<<<< HEAD
         return when (localVarResponse.responseType) {
             ResponseType.Success -> Unit
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
@@ -324,6 +450,14 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
                 val localVarError = localVarResponse as ServerError<*>
                 throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
             }
+=======
+        return when (response.responseType) {
+            ResponseType.Success -> Unit
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
+            ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
+>>>>>>> ooof
         }
     }
 
@@ -334,6 +468,7 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     * @param additionalMetadata Additional data to pass to server (optional)
     * @param file file to upload (optional)
     * @return ApiResponse
+<<<<<<< HEAD
     * @throws UnsupportedOperationException If the API returns an informational or redirection response
     * @throws ClientException If the API returns a client error response
     * @throws ServerException If the API returns a server error response
@@ -344,17 +479,30 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
         val localVariableBody: kotlin.Any? = mapOf("additionalMetadata" to additionalMetadata, "file" to file)
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf("Content-Type" to "multipart/form-data")
+=======
+    */
+    @Suppress("UNCHECKED_CAST")
+    fun uploadFile(petId: kotlin.Long, additionalMetadata: kotlin.String?, file: java.io.File?) : ApiResponse {
+        val localVariableBody: kotlin.Any? = mapOf("additionalMetadata" to "$additionalMetadata", "file" to "$file")
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf("Content-Type" to "")
+>>>>>>> ooof
         val localVariableConfig = RequestConfig(
             RequestMethod.POST,
             "/pet/{petId}/uploadImage".replace("{"+"petId"+"}", "$petId"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
+<<<<<<< HEAD
         val localVarResponse = request<ApiResponse>(
+=======
+        val response = request<ApiResponse>(
+>>>>>>> ooof
             localVariableConfig,
             localVariableBody
         )
 
+<<<<<<< HEAD
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ApiResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
@@ -367,6 +515,14 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
                 val localVarError = localVarResponse as ServerError<*>
                 throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
             }
+=======
+        return when (response.responseType) {
+            ResponseType.Success -> (response as Success<*>).data as ApiResponse
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
+            ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
+>>>>>>> ooof
         }
     }
 
@@ -377,6 +533,7 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     * @param requiredFile file to upload 
     * @param additionalMetadata Additional data to pass to server (optional)
     * @return ApiResponse
+<<<<<<< HEAD
     * @throws UnsupportedOperationException If the API returns an informational or redirection response
     * @throws ClientException If the API returns a client error response
     * @throws ServerException If the API returns a server error response
@@ -387,17 +544,30 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
         val localVariableBody: kotlin.Any? = mapOf("additionalMetadata" to additionalMetadata, "requiredFile" to requiredFile)
         val localVariableQuery: MultiValueMap = mutableMapOf()
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf("Content-Type" to "multipart/form-data")
+=======
+    */
+    @Suppress("UNCHECKED_CAST")
+    fun uploadFileWithRequiredFile(petId: kotlin.Long, requiredFile: java.io.File, additionalMetadata: kotlin.String?) : ApiResponse {
+        val localVariableBody: kotlin.Any? = mapOf("additionalMetadata" to "$additionalMetadata", "requiredFile" to "$requiredFile")
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf("Content-Type" to "")
+>>>>>>> ooof
         val localVariableConfig = RequestConfig(
             RequestMethod.POST,
             "/fake/{petId}/uploadImageWithRequiredFile".replace("{"+"petId"+"}", "$petId"),
             query = localVariableQuery,
             headers = localVariableHeaders
         )
+<<<<<<< HEAD
         val localVarResponse = request<ApiResponse>(
+=======
+        val response = request<ApiResponse>(
+>>>>>>> ooof
             localVariableConfig,
             localVariableBody
         )
 
+<<<<<<< HEAD
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ApiResponse
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
@@ -410,6 +580,14 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
                 val localVarError = localVarResponse as ServerError<*>
                 throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
             }
+=======
+        return when (response.responseType) {
+            ResponseType.Success -> (response as Success<*>).data as ApiResponse
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> throw ClientException((response as ClientError<*>).body as? String ?: "Client error")
+            ResponseType.ServerError -> throw ServerException((response as ServerError<*>).message ?: "Server error")
+>>>>>>> ooof
         }
     }
 

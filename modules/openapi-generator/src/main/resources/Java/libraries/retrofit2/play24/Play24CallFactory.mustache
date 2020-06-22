@@ -1,10 +1,15 @@
 package {{invokerPackage}};
 
 import okhttp3.*;
+<<<<<<< HEAD
 import okio.AsyncTimeout;
 import okio.Buffer;
 import okio.BufferedSource;
 import okio.Timeout;
+=======
+import okio.Buffer;
+import okio.BufferedSource;
+>>>>>>> ooof
 import play.libs.F;
 import play.libs.ws.WSClient;
 import play.libs.ws.WSRequest;
@@ -97,12 +102,18 @@ public class Play24CallFactory implements okhttp3.Call.Factory {
         private WSRequest wsRequest;
 
         private final Request request;
+<<<<<<< HEAD
         private final AsyncTimeout timeout;
+=======
+>>>>>>> ooof
 
         public PlayWSCall(WSClient wsClient, Request request) {
             this.wsClient = wsClient;
             this.request = request;
+<<<<<<< HEAD
             this.timeout = new AsyncTimeout();
+=======
+>>>>>>> ooof
         }
 
         @Override
@@ -111,11 +122,14 @@ public class Play24CallFactory implements okhttp3.Call.Factory {
         }
 
         @Override
+<<<<<<< HEAD
         public Timeout timeout() {
             return timeout;
         }
 
         @Override
+=======
+>>>>>>> ooof
         public void enqueue(final okhttp3.Callback responseCallback) {
             final Call call = this;
             final F.Promise<WSResponse> promise = executeAsync();

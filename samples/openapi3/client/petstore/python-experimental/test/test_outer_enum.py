@@ -11,11 +11,18 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
 import petstore_api
 from petstore_api.model.outer_enum import OuterEnum
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestOuterEnum(unittest.TestCase):
@@ -29,6 +36,7 @@ class TestOuterEnum(unittest.TestCase):
 
     def testOuterEnum(self):
         """Test OuterEnum"""
+<<<<<<< HEAD
         # Since 'OuterEnum' is nullable, validate the null value can be assigned
         # to OuterEnum.
         inst = OuterEnum(None)
@@ -39,6 +47,11 @@ class TestOuterEnum(unittest.TestCase):
 
         with self.assertRaises(petstore_api.ApiValueError):
             OuterEnum('garbage')
+=======
+        # FIXME: construct object with mandatory attributes with example values
+        # model = petstore_api.OuterEnum()  # noqa: E501
+        pass
+>>>>>>> ooof
 
 
 if __name__ == '__main__':

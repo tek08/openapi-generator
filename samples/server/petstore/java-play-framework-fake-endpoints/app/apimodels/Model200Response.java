@@ -8,7 +8,11 @@ import javax.validation.constraints.*;
 /**
  * Model for testing model name starting with number
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen")
+=======
+
+>>>>>>> ooof
 @SuppressWarnings({"UnusedReturnValue", "WeakerAccess"})
 public class Model200Response   {
   @JsonProperty("name")

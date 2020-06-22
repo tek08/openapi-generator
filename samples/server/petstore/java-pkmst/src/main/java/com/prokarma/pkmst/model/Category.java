@@ -15,7 +15,11 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @ApiModel(description = "A category for a pet")
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen")
+=======
+
+>>>>>>> ooof
 public class Category   {
   @JsonProperty("id")
   private Long id;

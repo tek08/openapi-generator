@@ -14,7 +14,10 @@ package org.openapitools.client.models
 
 import kotlinx.serialization.*
 import kotlinx.serialization.internal.CommonEnumSerializer
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * 
  * @param `123minusList` 
@@ -22,5 +25,11 @@ import kotlinx.serialization.internal.CommonEnumSerializer
 @Serializable
 data class List (
     @SerialName(value = "123-list") val `123minusList`: kotlin.String? = null
+<<<<<<< HEAD
 )
+=======
+) 
+
+
+>>>>>>> ooof
 

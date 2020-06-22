@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Integer** | Pointer to **int32** |  | [optional] 
 **Int32** | Pointer to **int32** |  | [optional] 
 **Int64** | Pointer to **int64** |  | [optional] 
+<<<<<<< HEAD
 **Number** | **float32** |  | 
 **Float** | Pointer to **float32** |  | [optional] 
 **Double** | Pointer to **float64** |  | [optional] 
@@ -17,6 +18,18 @@ Name | Type | Description | Notes
 **DateTime** | Pointer to [**time.Time**](time.Time.md) |  | [optional] 
 **Uuid** | Pointer to **string** |  | [optional] 
 **Password** | **string** |  | 
+=======
+**Number** | Pointer to **float32** |  | 
+**Float** | Pointer to **float32** |  | [optional] 
+**Double** | Pointer to **float64** |  | [optional] 
+**String** | Pointer to **string** |  | [optional] 
+**Byte** | Pointer to **string** |  | 
+**Binary** | Pointer to [***os.File**](*os.File.md) |  | [optional] 
+**Date** | Pointer to **string** |  | 
+**DateTime** | Pointer to [**time.Time**](time.Time.md) |  | [optional] 
+**Uuid** | Pointer to **string** |  | [optional] 
+**Password** | Pointer to **string** |  | 
+>>>>>>> ooof
 **BigDecimal** | Pointer to **float64** |  | [optional] 
 
 ## Methods

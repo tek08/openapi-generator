@@ -29,7 +29,11 @@ import javax.validation.Valid;
 @JsonPropertyOrder({
   ModelReturn.JSON_PROPERTY_RETURN
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen")
+=======
+
+>>>>>>> ooof
 public class ModelReturn   {
   public static final String JSON_PROPERTY_RETURN = "return";
   @JsonProperty(JSON_PROPERTY_RETURN)

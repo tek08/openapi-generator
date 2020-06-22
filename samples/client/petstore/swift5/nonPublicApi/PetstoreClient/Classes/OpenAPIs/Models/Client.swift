@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 internal struct Client: Codable { 
 
+=======
+internal struct Client: Codable {
+>>>>>>> ooof
 
     internal var client: String?
 

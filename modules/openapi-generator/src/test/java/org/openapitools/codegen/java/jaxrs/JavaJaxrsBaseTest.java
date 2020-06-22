@@ -5,7 +5,10 @@ import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.media.StringSchema;
 import io.swagger.v3.parser.core.models.ParseOptions;
 import org.openapitools.codegen.ClientOptInput;
+<<<<<<< HEAD
 import org.openapitools.codegen.DefaultGenerator;
+=======
+>>>>>>> ooof
 import org.openapitools.codegen.MockDefaultGenerator;
 import org.openapitools.codegen.languages.AbstractJavaJAXRSServerCodegen;
 import org.openapitools.codegen.languages.features.CXFServerFeatures;
@@ -14,7 +17,10 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+<<<<<<< HEAD
 import java.nio.file.Paths;
+=======
+>>>>>>> ooof
 
 import static org.openapitools.codegen.TestUtils.assertFileContains;
 import static org.openapitools.codegen.TestUtils.assertFileNotContains;
@@ -39,16 +45,27 @@ public abstract class JavaJaxrsBaseTest {
                 .openAPI(openAPI)
                 .config(codegen);
 
+<<<<<<< HEAD
         DefaultGenerator generator = new DefaultGenerator();
         generator.opts(input).generate();
 
+=======
+        MockDefaultGenerator generator = new MockDefaultGenerator();
+        generator.opts(input).generate();
+
+
+>>>>>>> ooof
         String jsonTypeInfo = "@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = \"className\", visible = true)";
         String jsonSubType = "@JsonSubTypes({\n" +
                 "  @JsonSubTypes.Type(value = Dog.class, name = \"Dog\"),\n" +
                 "  @JsonSubTypes.Type(value = Cat.class, name = \"Cat\"),\n" +
                 "  @JsonSubTypes.Type(value = BigDog.class, name = \"BigDog\"),\n" +
                 "})";
+<<<<<<< HEAD
         assertFileContains(Paths.get(outputPath + "/src/gen/java/org/openapitools/model/Animal.java"), jsonTypeInfo, jsonSubType);
+=======
+        assertFileContains(generator, outputPath + "/src/gen/java/org/openapitools/model/Animal.java", jsonTypeInfo, jsonSubType);
+>>>>>>> ooof
     }
 
 
@@ -69,7 +86,11 @@ public abstract class JavaJaxrsBaseTest {
                 .openAPI(openAPI)
                 .config(codegen);
 
+<<<<<<< HEAD
         DefaultGenerator generator = new DefaultGenerator();
+=======
+        MockDefaultGenerator generator = new MockDefaultGenerator();
+>>>>>>> ooof
         generator.opts(input).generate();
 
 
@@ -78,7 +99,11 @@ public abstract class JavaJaxrsBaseTest {
                 "  @JsonSubTypes.Type(value = Dog.class, name = \"Dog\"),\n" +
                 "  @JsonSubTypes.Type(value = Cat.class, name = \"Cat\"),\n" +
                 "})";
+<<<<<<< HEAD
         assertFileNotContains(Paths.get(outputPath + "/src/gen/java/org/openapitools/model/Animal.java"),  jsonTypeInfo, jsonSubType);
+=======
+        assertFileNotContains(generator, outputPath + "/src/gen/java/org/openapitools/model/Animal.java",  jsonTypeInfo, jsonSubType);
+>>>>>>> ooof
     }
 
 
@@ -98,10 +123,17 @@ public abstract class JavaJaxrsBaseTest {
                 .openAPI(openAPI)
                 .config(codegen);
 
+<<<<<<< HEAD
         DefaultGenerator generator = new DefaultGenerator();
         generator.opts(input).generate();
 
         assertFileNotContains(Paths.get(outputPath + "/src/gen/java/org/openapitools/api/ExamplesApi.java"),  "DefaultValue");
+=======
+        MockDefaultGenerator generator = new MockDefaultGenerator();
+        generator.opts(input).generate();
+
+        assertFileNotContains(generator, outputPath + "/src/gen/java/org/openapitools/api/ExamplesApi.java",  "DefaultValue");
+>>>>>>> ooof
     }
 
     @Test
@@ -122,9 +154,16 @@ public abstract class JavaJaxrsBaseTest {
         .openAPI(openAPI)
         .config(codegen);
 
+<<<<<<< HEAD
         DefaultGenerator generator = new DefaultGenerator();
         generator.opts(input).generate();
 
         assertFileContains(Paths.get(outputPath + "/src/gen/java/org/openapitools/api/ExamplesApi.java"),  "DefaultValue");
+=======
+        MockDefaultGenerator generator = new MockDefaultGenerator();
+        generator.opts(input).generate();
+
+        assertFileContains(generator, outputPath + "/src/gen/java/org/openapitools/api/ExamplesApi.java",  "DefaultValue");
+>>>>>>> ooof
     }
 }

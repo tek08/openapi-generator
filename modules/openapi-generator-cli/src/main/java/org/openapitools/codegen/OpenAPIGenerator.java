@@ -57,11 +57,14 @@ public class OpenAPIGenerator {
                                 GenerateBatch.class
                         );
 
+<<<<<<< HEAD
         builder.withGroup("author")
                 .withDescription("Utilities for authoring generators or customizing templates.")
                 .withDefaultCommand(HelpCommand.class)
                 .withCommands(AuthorTemplate.class);
 
+=======
+>>>>>>> ooof
         try {
             builder.build().parse(args).run();
 

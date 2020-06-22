@@ -5,6 +5,7 @@ All URIs are relative to *http://petstore.swagger.io:80/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createXmlItem**](FakeApi.md#createXmlItem) | **POST** /fake/create_xml_item | creates an XmlItem
+<<<<<<< HEAD
 [**createXmlItemWithHttpInfo**](FakeApi.md#createXmlItem) | **POST** /fake/create_xml_item | creates an XmlItem
 [**fakeOuterBooleanSerialize**](FakeApi.md#fakeOuterBooleanSerialize) | **POST** /fake/outer/boolean | 
 [**fakeOuterBooleanSerializeWithHttpInfo**](FakeApi.md#fakeOuterBooleanSerialize) | **POST** /fake/outer/boolean | 
@@ -32,12 +33,31 @@ Method | HTTP request | Description
 [**testJsonFormDataWithHttpInfo**](FakeApi.md#testJsonFormData) | **GET** /fake/jsonFormData | test json serialization of form data
 [**testQueryParameterCollectionFormat**](FakeApi.md#testQueryParameterCollectionFormat) | **PUT** /fake/test-query-paramters | 
 [**testQueryParameterCollectionFormatWithHttpInfo**](FakeApi.md#testQueryParameterCollectionFormat) | **PUT** /fake/test-query-paramters | 
+=======
+[**fakeOuterBooleanSerialize**](FakeApi.md#fakeOuterBooleanSerialize) | **POST** /fake/outer/boolean | 
+[**fakeOuterCompositeSerialize**](FakeApi.md#fakeOuterCompositeSerialize) | **POST** /fake/outer/composite | 
+[**fakeOuterNumberSerialize**](FakeApi.md#fakeOuterNumberSerialize) | **POST** /fake/outer/number | 
+[**fakeOuterStringSerialize**](FakeApi.md#fakeOuterStringSerialize) | **POST** /fake/outer/string | 
+[**testBodyWithFileSchema**](FakeApi.md#testBodyWithFileSchema) | **PUT** /fake/body-with-file-schema | 
+[**testBodyWithQueryParams**](FakeApi.md#testBodyWithQueryParams) | **PUT** /fake/body-with-query-params | 
+[**testClientModel**](FakeApi.md#testClientModel) | **PATCH** /fake | To test \&quot;client\&quot; model
+[**testEndpointParameters**](FakeApi.md#testEndpointParameters) | **POST** /fake | Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트
+[**testEnumParameters**](FakeApi.md#testEnumParameters) | **GET** /fake | To test enum parameters
+[**testGroupParameters**](FakeApi.md#testGroupParameters) | **DELETE** /fake | Fake endpoint to test group parameters (optional)
+[**testInlineAdditionalProperties**](FakeApi.md#testInlineAdditionalProperties) | **POST** /fake/inline-additionalProperties | test inline additionalProperties
+[**testJsonFormData**](FakeApi.md#testJsonFormData) | **GET** /fake/jsonFormData | test json serialization of form data
+[**testQueryParameterCollectionFormat**](FakeApi.md#testQueryParameterCollectionFormat) | **PUT** /fake/test-query-paramters | 
+>>>>>>> ooof
 
 
 
 ## createXmlItem
 
+<<<<<<< HEAD
 > void createXmlItem(xmlItem)
+=======
+> createXmlItem(xmlItem)
+>>>>>>> ooof
 
 creates an XmlItem
 
@@ -62,7 +82,10 @@ public class Example {
         XmlItem xmlItem = new XmlItem(); // XmlItem | XmlItem Body
         try {
             apiInstance.createXmlItem(xmlItem);
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#createXmlItem");
             System.err.println("Status code: " + e.getCode());
@@ -83,7 +106,10 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 null (empty response body)
 
 ### Authorization
@@ -100,6 +126,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 
+<<<<<<< HEAD
 ## createXmlItemWithHttpInfo
 
 > ApiResponse<Void> createXmlItem createXmlItemWithHttpInfo(xmlItem)
@@ -107,6 +134,16 @@ No authorization required
 creates an XmlItem
 
 this route creates an XmlItem
+=======
+
+## fakeOuterBooleanSerialize
+
+> Boolean fakeOuterBooleanSerialize(body)
+
+
+
+Test serialization of outer boolean types
+>>>>>>> ooof
 
 ### Example
 
@@ -114,7 +151,10 @@ this route creates an XmlItem
 // Import classes:
 import org.openapitools.client.ApiClient;
 import org.openapitools.client.ApiException;
+<<<<<<< HEAD
 import org.openapitools.client.ApiResponse;
+=======
+>>>>>>> ooof
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.FakeApi;
@@ -125,6 +165,7 @@ public class Example {
         defaultClient.setBasePath("http://petstore.swagger.io:80/v2");
 
         FakeApi apiInstance = new FakeApi(defaultClient);
+<<<<<<< HEAD
         XmlItem xmlItem = new XmlItem(); // XmlItem | XmlItem Body
         try {
             ApiResponse<Void> response = apiInstance.createXmlItemWithHttpInfo(xmlItem);
@@ -132,6 +173,14 @@ public class Example {
             System.out.println("Response headers: " + response.getHeaders().toString());
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#createXmlItem");
+=======
+        Boolean body = true; // Boolean | Input boolean as post body
+        try {
+            Boolean result = apiInstance.fakeOuterBooleanSerialize(body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FakeApi#fakeOuterBooleanSerialize");
+>>>>>>> ooof
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -146,12 +195,20 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **xmlItem** | [**XmlItem**](XmlItem.md)| XmlItem Body |
 
 ### Return type
 
 
 ApiResponse<Void>
+=======
+ **body** | **Boolean**| Input boolean as post body | [optional]
+
+### Return type
+
+**Boolean**
+>>>>>>> ooof
 
 ### Authorization
 
@@ -159,12 +216,18 @@ No authorization required
 
 ### HTTP request headers
 
+<<<<<<< HEAD
 - **Content-Type**: application/xml, application/xml; charset=utf-8, application/xml; charset=utf-16, text/xml, text/xml; charset=utf-8, text/xml; charset=utf-16
 - **Accept**: Not defined
+=======
+- **Content-Type**: Not defined
+- **Accept**: */*
+>>>>>>> ooof
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+<<<<<<< HEAD
 | **200** | successful operation |  -  |
 
 
@@ -175,131 +238,7 @@ No authorization required
 
 
 Test serialization of outer boolean types
-
-### Example
-
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.FakeApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://petstore.swagger.io:80/v2");
-
-        FakeApi apiInstance = new FakeApi(defaultClient);
-        Boolean body = true; // Boolean | Input boolean as post body
-        try {
-            Boolean result = apiInstance.fakeOuterBooleanSerialize(body);
-
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling FakeApi#fakeOuterBooleanSerialize");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **Boolean**| Input boolean as post body | [optional]
-
-### Return type
-
-**Boolean**
-
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: */*
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Output boolean |  -  |
-
-## fakeOuterBooleanSerializeWithHttpInfo
-
-> ApiResponse<Boolean> fakeOuterBooleanSerialize fakeOuterBooleanSerializeWithHttpInfo(body)
-
-
-
-Test serialization of outer boolean types
-
-### Example
-
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.ApiResponse;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.FakeApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://petstore.swagger.io:80/v2");
-
-        FakeApi apiInstance = new FakeApi(defaultClient);
-        Boolean body = true; // Boolean | Input boolean as post body
-        try {
-            ApiResponse<Boolean> response = apiInstance.fakeOuterBooleanSerializeWithHttpInfo(body);
-            System.out.println("Status code: " + response.getStatusCode());
-            System.out.println("Response headers: " + response.getHeaders().toString());
-            System.out.println("Response body: " + response.getData().toString());
-        } catch (ApiException e) {
-            System.err.println("Exception when calling FakeApi#fakeOuterBooleanSerialize");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **Boolean**| Input boolean as post body | [optional]
-
-### Return type
-
-ApiResponse<**Boolean**>
-
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: */*
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
+=======
 | **200** | Output boolean |  -  |
 
 
@@ -310,6 +249,7 @@ No authorization required
 
 
 Test serialization of object with outer number type
+>>>>>>> ooof
 
 ### Example
 
@@ -327,13 +267,22 @@ public class Example {
         defaultClient.setBasePath("http://petstore.swagger.io:80/v2");
 
         FakeApi apiInstance = new FakeApi(defaultClient);
-        OuterComposite body = new OuterComposite(); // OuterComposite | Input composite as post body
+<<<<<<< HEAD
+        Boolean body = true; // Boolean | Input boolean as post body
         try {
-            OuterComposite result = apiInstance.fakeOuterCompositeSerialize(body);
+            Boolean result = apiInstance.fakeOuterBooleanSerialize(body);
 
             System.out.println(result);
         } catch (ApiException e) {
+            System.err.println("Exception when calling FakeApi#fakeOuterBooleanSerialize");
+=======
+        OuterComposite body = new OuterComposite(); // OuterComposite | Input composite as post body
+        try {
+            OuterComposite result = apiInstance.fakeOuterCompositeSerialize(body);
+            System.out.println(result);
+        } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#fakeOuterCompositeSerialize");
+>>>>>>> ooof
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -348,80 +297,20 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
+ **body** | **Boolean**| Input boolean as post body | [optional]
+
+### Return type
+
+**Boolean**
+
+=======
  **body** | [**OuterComposite**](OuterComposite.md)| Input composite as post body | [optional]
 
 ### Return type
 
 [**OuterComposite**](OuterComposite.md)
-
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: */*
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Output composite |  -  |
-
-## fakeOuterCompositeSerializeWithHttpInfo
-
-> ApiResponse<OuterComposite> fakeOuterCompositeSerialize fakeOuterCompositeSerializeWithHttpInfo(body)
-
-
-
-Test serialization of object with outer number type
-
-### Example
-
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.ApiResponse;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.FakeApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://petstore.swagger.io:80/v2");
-
-        FakeApi apiInstance = new FakeApi(defaultClient);
-        OuterComposite body = new OuterComposite(); // OuterComposite | Input composite as post body
-        try {
-            ApiResponse<OuterComposite> response = apiInstance.fakeOuterCompositeSerializeWithHttpInfo(body);
-            System.out.println("Status code: " + response.getStatusCode());
-            System.out.println("Response headers: " + response.getHeaders().toString());
-            System.out.println("Response body: " + response.getData().toString());
-        } catch (ApiException e) {
-            System.err.println("Exception when calling FakeApi#fakeOuterCompositeSerialize");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**OuterComposite**](OuterComposite.md)| Input composite as post body | [optional]
-
-### Return type
-
-ApiResponse<[**OuterComposite**](OuterComposite.md)>
-
+>>>>>>> ooof
 
 ### Authorization
 
@@ -435,6 +324,17 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+<<<<<<< HEAD
+| **200** | Output boolean |  -  |
+
+## fakeOuterBooleanSerializeWithHttpInfo
+
+> ApiResponse<Boolean> fakeOuterBooleanSerialize fakeOuterBooleanSerializeWithHttpInfo(body)
+
+
+
+Test serialization of outer boolean types
+=======
 | **200** | Output composite |  -  |
 
 
@@ -445,6 +345,7 @@ No authorization required
 
 
 Test serialization of outer number types
+>>>>>>> ooof
 
 ### Example
 
@@ -452,6 +353,10 @@ Test serialization of outer number types
 // Import classes:
 import org.openapitools.client.ApiClient;
 import org.openapitools.client.ApiException;
+<<<<<<< HEAD
+import org.openapitools.client.ApiResponse;
+=======
+>>>>>>> ooof
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.FakeApi;
@@ -462,13 +367,23 @@ public class Example {
         defaultClient.setBasePath("http://petstore.swagger.io:80/v2");
 
         FakeApi apiInstance = new FakeApi(defaultClient);
+<<<<<<< HEAD
+        Boolean body = true; // Boolean | Input boolean as post body
+        try {
+            ApiResponse<Boolean> response = apiInstance.fakeOuterBooleanSerializeWithHttpInfo(body);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders().toString());
+            System.out.println("Response body: " + response.getData().toString());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FakeApi#fakeOuterBooleanSerialize");
+=======
         BigDecimal body = new BigDecimal(); // BigDecimal | Input number as post body
         try {
             BigDecimal result = apiInstance.fakeOuterNumberSerialize(body);
-
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#fakeOuterNumberSerialize");
+>>>>>>> ooof
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -483,80 +398,20 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
+ **body** | **Boolean**| Input boolean as post body | [optional]
+
+### Return type
+
+ApiResponse<**Boolean**>
+
+=======
  **body** | **BigDecimal**| Input number as post body | [optional]
 
 ### Return type
 
 [**BigDecimal**](BigDecimal.md)
-
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: */*
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Output number |  -  |
-
-## fakeOuterNumberSerializeWithHttpInfo
-
-> ApiResponse<BigDecimal> fakeOuterNumberSerialize fakeOuterNumberSerializeWithHttpInfo(body)
-
-
-
-Test serialization of outer number types
-
-### Example
-
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.ApiResponse;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.FakeApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://petstore.swagger.io:80/v2");
-
-        FakeApi apiInstance = new FakeApi(defaultClient);
-        BigDecimal body = new BigDecimal(); // BigDecimal | Input number as post body
-        try {
-            ApiResponse<BigDecimal> response = apiInstance.fakeOuterNumberSerializeWithHttpInfo(body);
-            System.out.println("Status code: " + response.getStatusCode());
-            System.out.println("Response headers: " + response.getHeaders().toString());
-            System.out.println("Response body: " + response.getData().toString());
-        } catch (ApiException e) {
-            System.err.println("Exception when calling FakeApi#fakeOuterNumberSerialize");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **BigDecimal**| Input number as post body | [optional]
-
-### Return type
-
-ApiResponse<[**BigDecimal**](BigDecimal.md)>
-
+>>>>>>> ooof
 
 ### Authorization
 
@@ -570,6 +425,18 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+<<<<<<< HEAD
+| **200** | Output boolean |  -  |
+
+
+## fakeOuterCompositeSerialize
+
+> OuterComposite fakeOuterCompositeSerialize(body)
+
+
+
+Test serialization of object with outer number type
+=======
 | **200** | Output number |  -  |
 
 
@@ -580,6 +447,7 @@ No authorization required
 
 
 Test serialization of outer string types
+>>>>>>> ooof
 
 ### Example
 
@@ -597,13 +465,22 @@ public class Example {
         defaultClient.setBasePath("http://petstore.swagger.io:80/v2");
 
         FakeApi apiInstance = new FakeApi(defaultClient);
-        String body = "body_example"; // String | Input string as post body
+<<<<<<< HEAD
+        OuterComposite body = new OuterComposite(); // OuterComposite | Input composite as post body
         try {
-            String result = apiInstance.fakeOuterStringSerialize(body);
+            OuterComposite result = apiInstance.fakeOuterCompositeSerialize(body);
 
             System.out.println(result);
         } catch (ApiException e) {
+            System.err.println("Exception when calling FakeApi#fakeOuterCompositeSerialize");
+=======
+        String body = "body_example"; // String | Input string as post body
+        try {
+            String result = apiInstance.fakeOuterStringSerialize(body);
+            System.out.println(result);
+        } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#fakeOuterStringSerialize");
+>>>>>>> ooof
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -618,6 +495,439 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
+ **body** | [**OuterComposite**](OuterComposite.md)| Input composite as post body | [optional]
+
+### Return type
+
+[**OuterComposite**](OuterComposite.md)
+
+=======
+ **body** | **String**| Input string as post body | [optional]
+
+### Return type
+
+**String**
+>>>>>>> ooof
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+<<<<<<< HEAD
+| **200** | Output composite |  -  |
+
+## fakeOuterCompositeSerializeWithHttpInfo
+
+> ApiResponse<OuterComposite> fakeOuterCompositeSerialize fakeOuterCompositeSerializeWithHttpInfo(body)
+
+
+
+Test serialization of object with outer number type
+=======
+| **200** | Output string |  -  |
+
+
+## testBodyWithFileSchema
+
+> testBodyWithFileSchema(body)
+
+
+
+For this test, the body for this request much reference a schema named &#x60;File&#x60;.
+>>>>>>> ooof
+
+### Example
+
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+<<<<<<< HEAD
+import org.openapitools.client.ApiResponse;
+=======
+>>>>>>> ooof
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.FakeApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://petstore.swagger.io:80/v2");
+
+        FakeApi apiInstance = new FakeApi(defaultClient);
+<<<<<<< HEAD
+        OuterComposite body = new OuterComposite(); // OuterComposite | Input composite as post body
+        try {
+            ApiResponse<OuterComposite> response = apiInstance.fakeOuterCompositeSerializeWithHttpInfo(body);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders().toString());
+            System.out.println("Response body: " + response.getData().toString());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FakeApi#fakeOuterCompositeSerialize");
+=======
+        FileSchemaTestClass body = new FileSchemaTestClass(); // FileSchemaTestClass | 
+        try {
+            apiInstance.testBodyWithFileSchema(body);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FakeApi#testBodyWithFileSchema");
+>>>>>>> ooof
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
+ **body** | [**OuterComposite**](OuterComposite.md)| Input composite as post body | [optional]
+
+### Return type
+
+ApiResponse<[**OuterComposite**](OuterComposite.md)>
+
+=======
+ **body** | [**FileSchemaTestClass**](FileSchemaTestClass.md)|  |
+
+### Return type
+
+null (empty response body)
+>>>>>>> ooof
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+<<<<<<< HEAD
+- **Content-Type**: Not defined
+- **Accept**: */*
+=======
+- **Content-Type**: application/json
+- **Accept**: Not defined
+>>>>>>> ooof
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+<<<<<<< HEAD
+| **200** | Output composite |  -  |
+
+
+## fakeOuterNumberSerialize
+
+> BigDecimal fakeOuterNumberSerialize(body)
+
+
+
+Test serialization of outer number types
+=======
+| **200** | Success |  -  |
+
+
+## testBodyWithQueryParams
+
+> testBodyWithQueryParams(query, body)
+
+
+>>>>>>> ooof
+
+### Example
+
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.FakeApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://petstore.swagger.io:80/v2");
+
+        FakeApi apiInstance = new FakeApi(defaultClient);
+<<<<<<< HEAD
+        BigDecimal body = new BigDecimal(); // BigDecimal | Input number as post body
+        try {
+            BigDecimal result = apiInstance.fakeOuterNumberSerialize(body);
+
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FakeApi#fakeOuterNumberSerialize");
+=======
+        String query = "query_example"; // String | 
+        User body = new User(); // User | 
+        try {
+            apiInstance.testBodyWithQueryParams(query, body);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FakeApi#testBodyWithQueryParams");
+>>>>>>> ooof
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
+ **body** | **BigDecimal**| Input number as post body | [optional]
+
+### Return type
+
+[**BigDecimal**](BigDecimal.md)
+
+=======
+ **query** | **String**|  |
+ **body** | [**User**](User.md)|  |
+
+### Return type
+
+null (empty response body)
+>>>>>>> ooof
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+<<<<<<< HEAD
+- **Content-Type**: Not defined
+- **Accept**: */*
+=======
+- **Content-Type**: application/json
+- **Accept**: Not defined
+>>>>>>> ooof
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+<<<<<<< HEAD
+| **200** | Output number |  -  |
+
+## fakeOuterNumberSerializeWithHttpInfo
+
+> ApiResponse<BigDecimal> fakeOuterNumberSerialize fakeOuterNumberSerializeWithHttpInfo(body)
+
+
+
+Test serialization of outer number types
+=======
+| **200** | Success |  -  |
+
+
+## testClientModel
+
+> Client testClientModel(body)
+
+To test \&quot;client\&quot; model
+
+To test \&quot;client\&quot; model
+>>>>>>> ooof
+
+### Example
+
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+<<<<<<< HEAD
+import org.openapitools.client.ApiResponse;
+=======
+>>>>>>> ooof
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.FakeApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://petstore.swagger.io:80/v2");
+
+        FakeApi apiInstance = new FakeApi(defaultClient);
+<<<<<<< HEAD
+        BigDecimal body = new BigDecimal(); // BigDecimal | Input number as post body
+        try {
+            ApiResponse<BigDecimal> response = apiInstance.fakeOuterNumberSerializeWithHttpInfo(body);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders().toString());
+            System.out.println("Response body: " + response.getData().toString());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FakeApi#fakeOuterNumberSerialize");
+=======
+        Client body = new Client(); // Client | client model
+        try {
+            Client result = apiInstance.testClientModel(body);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FakeApi#testClientModel");
+>>>>>>> ooof
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
+ **body** | **BigDecimal**| Input number as post body | [optional]
+
+### Return type
+
+ApiResponse<[**BigDecimal**](BigDecimal.md)>
+
+=======
+ **body** | [**Client**](Client.md)| client model |
+
+### Return type
+
+[**Client**](Client.md)
+>>>>>>> ooof
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+<<<<<<< HEAD
+- **Content-Type**: Not defined
+- **Accept**: */*
+=======
+- **Content-Type**: application/json
+- **Accept**: application/json
+>>>>>>> ooof
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+<<<<<<< HEAD
+| **200** | Output number |  -  |
+
+
+## fakeOuterStringSerialize
+
+> String fakeOuterStringSerialize(body)
+
+
+
+Test serialization of outer string types
+=======
+| **200** | successful operation |  -  |
+
+
+## testEndpointParameters
+
+> testEndpointParameters(number, _double, patternWithoutDelimiter, _byte, integer, int32, int64, _float, string, binary, date, dateTime, password, paramCallback)
+
+Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트
+
+Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트
+>>>>>>> ooof
+
+### Example
+
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+<<<<<<< HEAD
+=======
+import org.openapitools.client.auth.*;
+>>>>>>> ooof
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.FakeApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://petstore.swagger.io:80/v2");
+<<<<<<< HEAD
+
+        FakeApi apiInstance = new FakeApi(defaultClient);
+        String body = "body_example"; // String | Input string as post body
+        try {
+            String result = apiInstance.fakeOuterStringSerialize(body);
+
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FakeApi#fakeOuterStringSerialize");
+=======
+        
+        // Configure HTTP basic authorization: http_basic_test
+        HttpBasicAuth http_basic_test = (HttpBasicAuth) defaultClient.getAuthentication("http_basic_test");
+        http_basic_test.setUsername("YOUR USERNAME");
+        http_basic_test.setPassword("YOUR PASSWORD");
+
+        FakeApi apiInstance = new FakeApi(defaultClient);
+        BigDecimal number = new BigDecimal(); // BigDecimal | None
+        Double _double = 3.4D; // Double | None
+        String patternWithoutDelimiter = "patternWithoutDelimiter_example"; // String | None
+        byte[] _byte = null; // byte[] | None
+        Integer integer = 56; // Integer | None
+        Integer int32 = 56; // Integer | None
+        Long int64 = 56L; // Long | None
+        Float _float = 3.4F; // Float | None
+        String string = "string_example"; // String | None
+        File binary = new File("/path/to/file"); // File | None
+        LocalDate date = new LocalDate(); // LocalDate | None
+        OffsetDateTime dateTime = new OffsetDateTime(); // OffsetDateTime | None
+        String password = "password_example"; // String | None
+        String paramCallback = "paramCallback_example"; // String | None
+        try {
+            apiInstance.testEndpointParameters(number, _double, patternWithoutDelimiter, _byte, integer, int32, int64, _float, string, binary, date, dateTime, password, paramCallback);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FakeApi#testEndpointParameters");
+>>>>>>> ooof
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **body** | **String**| Input string as post body | [optional]
 
 ### Return type
@@ -633,10 +943,40 @@ No authorization required
 
 - **Content-Type**: Not defined
 - **Accept**: */*
+=======
+ **number** | **BigDecimal**| None |
+ **_double** | **Double**| None |
+ **patternWithoutDelimiter** | **String**| None |
+ **_byte** | **byte[]**| None |
+ **integer** | **Integer**| None | [optional]
+ **int32** | **Integer**| None | [optional]
+ **int64** | **Long**| None | [optional]
+ **_float** | **Float**| None | [optional]
+ **string** | **String**| None | [optional]
+ **binary** | **File**| None | [optional]
+ **date** | **LocalDate**| None | [optional]
+ **dateTime** | **OffsetDateTime**| None | [optional]
+ **password** | **String**| None | [optional]
+ **paramCallback** | **String**| None | [optional]
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[http_basic_test](../README.md#http_basic_test)
+
+### HTTP request headers
+
+- **Content-Type**: application/x-www-form-urlencoded
+- **Accept**: Not defined
+>>>>>>> ooof
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+<<<<<<< HEAD
 | **200** | Output string |  -  |
 
 ## fakeOuterStringSerializeWithHttpInfo
@@ -646,6 +986,19 @@ No authorization required
 
 
 Test serialization of outer string types
+=======
+| **400** | Invalid username supplied |  -  |
+| **404** | User not found |  -  |
+
+
+## testEnumParameters
+
+> testEnumParameters(enumHeaderStringArray, enumHeaderString, enumQueryStringArray, enumQueryString, enumQueryInteger, enumQueryDouble, enumFormStringArray, enumFormString)
+
+To test enum parameters
+
+To test enum parameters
+>>>>>>> ooof
 
 ### Example
 
@@ -653,7 +1006,10 @@ Test serialization of outer string types
 // Import classes:
 import org.openapitools.client.ApiClient;
 import org.openapitools.client.ApiException;
+<<<<<<< HEAD
 import org.openapitools.client.ApiResponse;
+=======
+>>>>>>> ooof
 import org.openapitools.client.Configuration;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.FakeApi;
@@ -664,6 +1020,7 @@ public class Example {
         defaultClient.setBasePath("http://petstore.swagger.io:80/v2");
 
         FakeApi apiInstance = new FakeApi(defaultClient);
+<<<<<<< HEAD
         String body = "body_example"; // String | Input string as post body
         try {
             ApiResponse<String> response = apiInstance.fakeOuterStringSerializeWithHttpInfo(body);
@@ -672,6 +1029,20 @@ public class Example {
             System.out.println("Response body: " + response.getData().toString());
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#fakeOuterStringSerialize");
+=======
+        List<String> enumHeaderStringArray = Arrays.asList("$"); // List<String> | Header parameter enum test (string array)
+        String enumHeaderString = "-efg"; // String | Header parameter enum test (string)
+        List<String> enumQueryStringArray = Arrays.asList("$"); // List<String> | Query parameter enum test (string array)
+        String enumQueryString = "-efg"; // String | Query parameter enum test (string)
+        Integer enumQueryInteger = 56; // Integer | Query parameter enum test (double)
+        Double enumQueryDouble = 3.4D; // Double | Query parameter enum test (double)
+        List<String> enumFormStringArray = "$"; // List<String> | Form parameter enum test (string array)
+        String enumFormString = "-efg"; // String | Form parameter enum test (string)
+        try {
+            apiInstance.testEnumParameters(enumHeaderStringArray, enumHeaderString, enumQueryStringArray, enumQueryString, enumQueryInteger, enumQueryDouble, enumFormStringArray, enumFormString);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling FakeApi#testEnumParameters");
+>>>>>>> ooof
             System.err.println("Status code: " + e.getCode());
             System.err.println("Reason: " + e.getResponseBody());
             System.err.println("Response headers: " + e.getResponseHeaders());
@@ -686,12 +1057,27 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **body** | **String**| Input string as post body | [optional]
 
 ### Return type
 
 ApiResponse<**String**>
 
+=======
+ **enumHeaderStringArray** | [**List&lt;String&gt;**](String.md)| Header parameter enum test (string array) | [optional] [enum: >, $]
+ **enumHeaderString** | **String**| Header parameter enum test (string) | [optional] [default to -efg] [enum: _abc, -efg, (xyz)]
+ **enumQueryStringArray** | [**List&lt;String&gt;**](String.md)| Query parameter enum test (string array) | [optional] [enum: >, $]
+ **enumQueryString** | **String**| Query parameter enum test (string) | [optional] [default to -efg] [enum: _abc, -efg, (xyz)]
+ **enumQueryInteger** | **Integer**| Query parameter enum test (double) | [optional] [enum: 1, -2]
+ **enumQueryDouble** | **Double**| Query parameter enum test (double) | [optional] [enum: 1.1, -1.2]
+ **enumFormStringArray** | [**List&lt;String&gt;**](String.md)| Form parameter enum test (string array) | [optional] [enum: >, $]
+ **enumFormString** | **String**| Form parameter enum test (string) | [optional] [default to -efg] [enum: _abc, -efg, (xyz)]
+
+### Return type
+
+null (empty response body)
+>>>>>>> ooof
 
 ### Authorization
 
@@ -699,12 +1085,18 @@ No authorization required
 
 ### HTTP request headers
 
+<<<<<<< HEAD
 - **Content-Type**: Not defined
 - **Accept**: */*
+=======
+- **Content-Type**: application/x-www-form-urlencoded
+- **Accept**: Not defined
+>>>>>>> ooof
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
+<<<<<<< HEAD
 | **200** | Output string |  -  |
 
 
@@ -715,6 +1107,19 @@ No authorization required
 
 
 For this test, the body for this request much reference a schema named &#x60;File&#x60;.
+=======
+| **400** | Invalid request |  -  |
+| **404** | Not found |  -  |
+
+
+## testGroupParameters
+
+> testGroupParameters(requiredStringGroup, requiredBooleanGroup, requiredInt64Group, stringGroup, booleanGroup, int64Group)
+
+Fake endpoint to test group parameters (optional)
+
+Fake endpoint to test group parameters (optional)
+>>>>>>> ooof
 
 ### Example
 
@@ -732,6 +1137,7 @@ public class Example {
         defaultClient.setBasePath("http://petstore.swagger.io:80/v2");
 
         FakeApi apiInstance = new FakeApi(defaultClient);
+<<<<<<< HEAD
         FileSchemaTestClass body = new FileSchemaTestClass(); // FileSchemaTestClass | 
         try {
             apiInstance.testBodyWithFileSchema(body);
@@ -1592,6 +1998,16 @@ public class Example {
             ApiResponse<Void> response = apiInstance.testGroupParametersWithHttpInfo(request);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders().toString());
+=======
+        Integer requiredStringGroup = 56; // Integer | Required String in group parameters
+        Boolean requiredBooleanGroup = true; // Boolean | Required Boolean in group parameters
+        Long requiredInt64Group = 56L; // Long | Required Integer in group parameters
+        Integer stringGroup = 56; // Integer | String in group parameters
+        Boolean booleanGroup = true; // Boolean | Boolean in group parameters
+        Long int64Group = 56L; // Long | Integer in group parameters
+        try {
+            apiInstance.testGroupParameters(requiredStringGroup, requiredBooleanGroup, requiredInt64Group, stringGroup, booleanGroup, int64Group);
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#testGroupParameters");
             System.err.println("Status code: " + e.getCode());
@@ -1605,6 +2021,7 @@ public class Example {
 
 ### Parameters
 
+<<<<<<< HEAD
 |    Name      |    Type       | Description   |     Notes    |
 |------------- | ------------- | ------------- | -------------|
 | testGroupParametersRequest | [**APItestGroupParametersRequest**](FakeApi.md#APItestGroupParametersRequest)|-|-|
@@ -1613,6 +2030,21 @@ public class Example {
 
 
 ApiResponse<Void>
+=======
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **requiredStringGroup** | **Integer**| Required String in group parameters |
+ **requiredBooleanGroup** | **Boolean**| Required Boolean in group parameters |
+ **requiredInt64Group** | **Long**| Required Integer in group parameters |
+ **stringGroup** | **Integer**| String in group parameters | [optional]
+ **booleanGroup** | **Boolean**| Boolean in group parameters | [optional]
+ **int64Group** | **Long**| Integer in group parameters | [optional]
+
+### Return type
+
+null (empty response body)
+>>>>>>> ooof
 
 ### Authorization
 
@@ -1629,6 +2061,7 @@ No authorization required
 | **400** | Someting wrong |  -  |
 
 
+<<<<<<< HEAD
 <a name="APItestGroupParametersRequest"></a>
 ## APItestGroupParametersRequest
 ### Properties
@@ -1647,6 +2080,11 @@ No authorization required
 ## testInlineAdditionalProperties
 
 > void testInlineAdditionalProperties(param)
+=======
+## testInlineAdditionalProperties
+
+> testInlineAdditionalProperties(param)
+>>>>>>> ooof
 
 test inline additionalProperties
 
@@ -1669,7 +2107,10 @@ public class Example {
         Map<String, String> param = new HashMap(); // Map<String, String> | request body
         try {
             apiInstance.testInlineAdditionalProperties(param);
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#testInlineAdditionalProperties");
             System.err.println("Status code: " + e.getCode());
@@ -1690,7 +2131,10 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 null (empty response body)
 
 ### Authorization
@@ -1707,6 +2151,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 
+<<<<<<< HEAD
 ## testInlineAdditionalPropertiesWithHttpInfo
 
 > ApiResponse<Void> testInlineAdditionalProperties testInlineAdditionalPropertiesWithHttpInfo(param)
@@ -1776,6 +2221,12 @@ No authorization required
 ## testJsonFormData
 
 > void testJsonFormData(param, param2)
+=======
+
+## testJsonFormData
+
+> testJsonFormData(param, param2)
+>>>>>>> ooof
 
 test json serialization of form data
 
@@ -1799,7 +2250,10 @@ public class Example {
         String param2 = "param2_example"; // String | field2
         try {
             apiInstance.testJsonFormData(param, param2);
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#testJsonFormData");
             System.err.println("Status code: " + e.getCode());
@@ -1821,7 +2275,10 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 null (empty response body)
 
 ### Authorization
@@ -1838,6 +2295,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | successful operation |  -  |
 
+<<<<<<< HEAD
 ## testJsonFormDataWithHttpInfo
 
 > ApiResponse<Void> testJsonFormData testJsonFormDataWithHttpInfo(param, param2)
@@ -1909,6 +2367,12 @@ No authorization required
 ## testQueryParameterCollectionFormat
 
 > void testQueryParameterCollectionFormat(pipe, ioutil, http, url, context)
+=======
+
+## testQueryParameterCollectionFormat
+
+> testQueryParameterCollectionFormat(pipe, ioutil, http, url, context)
+>>>>>>> ooof
 
 
 
@@ -1937,7 +2401,10 @@ public class Example {
         List<String> context = Arrays.asList(); // List<String> | 
         try {
             apiInstance.testQueryParameterCollectionFormat(pipe, ioutil, http, url, context);
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeApi#testQueryParameterCollectionFormat");
             System.err.println("Status code: " + e.getCode());
@@ -1962,7 +2429,10 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 null (empty response body)
 
 ### Authorization
@@ -1979,6 +2449,7 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 
+<<<<<<< HEAD
 ## testQueryParameterCollectionFormatWithHttpInfo
 
 > ApiResponse<Void> testQueryParameterCollectionFormat testQueryParameterCollectionFormatWithHttpInfo(pipe, ioutil, http, url, context)
@@ -2054,3 +2525,5 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
 
+=======
+>>>>>>> ooof

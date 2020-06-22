@@ -18,7 +18,11 @@ import org.openapitools.client.Pair;
 import java.util.Map;
 import java.util.List;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class OAuth implements Authentication {
   private String accessToken;
 

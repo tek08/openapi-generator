@@ -10,7 +10,10 @@ import io.swagger.jaxrs.*;
 import java.io.File;
 import org.openapitools.model.ModelApiResponse;
 import org.openapitools.model.Pet;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 
 import java.util.Map;
 import java.util.List;
@@ -33,7 +36,11 @@ import javax.validation.Valid;
 
 
 @io.swagger.annotations.Api(description = "the Pet API")
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen")
+=======
+
+>>>>>>> ooof
 public class PetApi  {
    private final PetApiService delegate;
 
@@ -120,17 +127,28 @@ public class PetApi  {
     @Path("/pet/findByTags")
     
     @Produces({ "application/xml", "application/json" })
+<<<<<<< HEAD
     @io.swagger.annotations.ApiOperation(value = "Finds Pets by tags", notes = "Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.", response = Pet.class, responseContainer = "Set", authorizations = {
+=======
+    @io.swagger.annotations.ApiOperation(value = "Finds Pets by tags", notes = "Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.", response = Pet.class, responseContainer = "List", authorizations = {
+>>>>>>> ooof
         @io.swagger.annotations.Authorization(value = "petstore_auth", scopes = {
             @io.swagger.annotations.AuthorizationScope(scope = "write:pets", description = "modify pets in your account"),
             @io.swagger.annotations.AuthorizationScope(scope = "read:pets", description = "read your pets")
         })
     }, tags={ "pet", })
     @io.swagger.annotations.ApiResponses(value = { 
+<<<<<<< HEAD
         @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Pet.class, responseContainer = "Set"),
         
         @io.swagger.annotations.ApiResponse(code = 400, message = "Invalid tag value", response = Void.class) })
     public Response findPetsByTags(@ApiParam(value = "Tags to filter by", required = true) @QueryParam("tags") @NotNull @Valid  Set<String> tags
+=======
+        @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Pet.class, responseContainer = "List"),
+        
+        @io.swagger.annotations.ApiResponse(code = 400, message = "Invalid tag value", response = Void.class) })
+    public Response findPetsByTags(@ApiParam(value = "Tags to filter by", required = true) @QueryParam("tags") @NotNull @Valid  List<String> tags
+>>>>>>> ooof
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.findPetsByTags(tags, securityContext);

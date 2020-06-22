@@ -34,7 +34,11 @@ describe 'PetApi' do
 
   # unit tests for add_pet
   # Add a new pet to the store
+<<<<<<< HEAD
   # @param pet Pet object that needs to be added to the store
+=======
+  # @param body Pet object that needs to be added to the store
+>>>>>>> ooof
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'add_pet test' do
@@ -93,7 +97,11 @@ describe 'PetApi' do
 
   # unit tests for update_pet
   # Update an existing pet
+<<<<<<< HEAD
   # @param pet Pet object that needs to be added to the store
+=======
+  # @param body Pet object that needs to be added to the store
+>>>>>>> ooof
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'update_pet test' do

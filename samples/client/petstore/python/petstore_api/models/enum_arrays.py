@@ -73,7 +73,11 @@ class EnumArrays(object):
 
 
         :param just_symbol: The just_symbol of this EnumArrays.  # noqa: E501
+<<<<<<< HEAD
         :type just_symbol: str
+=======
+        :type: str
+>>>>>>> ooof
         """
         allowed_values = [">=", "$"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and just_symbol not in allowed_values:  # noqa: E501
@@ -100,7 +104,11 @@ class EnumArrays(object):
 
 
         :param array_enum: The array_enum of this EnumArrays.  # noqa: E501
+<<<<<<< HEAD
         :type array_enum: list[str]
+=======
+        :type: list[str]
+>>>>>>> ooof
         """
         allowed_values = ["fish", "crab"]  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and

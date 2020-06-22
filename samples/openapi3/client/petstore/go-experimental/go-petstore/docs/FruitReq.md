@@ -4,9 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+<<<<<<< HEAD
 **Cultivar** | **string** |  | 
 **Mealy** | Pointer to **bool** |  | [optional] 
 **LengthCm** | **float32** |  | 
+=======
+**Cultivar** | Pointer to **string** |  | 
+**Mealy** | Pointer to **bool** |  | [optional] 
+**LengthCm** | Pointer to **float32** |  | 
+>>>>>>> ooof
 **Sweet** | Pointer to **bool** |  | [optional] 
 
 ## Methods

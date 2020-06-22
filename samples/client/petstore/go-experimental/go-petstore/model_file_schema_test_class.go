@@ -147,4 +147,7 @@ func (v *NullableFileSchemaTestClass) UnmarshalJSON(src []byte) error {
 	return json.Unmarshal(src, &v.value)
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof

@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 internal struct ArrayTest: Codable { 
 
+=======
+internal struct ArrayTest: Codable {
+>>>>>>> ooof
 
     internal var arrayOfString: [String]?
     internal var arrayArrayOfInteger: [[Int64]]?
@@ -21,7 +25,11 @@ internal struct ArrayTest: Codable {
         self.arrayArrayOfModel = arrayArrayOfModel
     }
 
+<<<<<<< HEAD
     internal enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    internal enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case arrayOfString = "array_of_string"
         case arrayArrayOfInteger = "array_array_of_integer"
         case arrayArrayOfModel = "array_array_of_model"

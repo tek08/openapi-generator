@@ -20,8 +20,11 @@ To test special tags and operation ID starting with number
 from __future__ import print_function
 import time
 import petstore_api
+<<<<<<< HEAD
 from petstore_api.api import another_fake_api
 from petstore_api.model import client
+=======
+>>>>>>> ooof
 from pprint import pprint
 # Defining the host is optional and defaults to http://petstore.swagger.io:80/v2
 # See configuration.py for a list of all supported configuration parameters.
@@ -33,8 +36,13 @@ configuration = petstore_api.Configuration(
 # Enter a context with an instance of the API client
 with petstore_api.ApiClient() as api_client:
     # Create an instance of the API class
+<<<<<<< HEAD
     api_instance = another_fake_api.AnotherFakeApi(api_client)
     client_client = client.Client() # client.Client | client model
+=======
+    api_instance = petstore_api.AnotherFakeApi(api_client)
+    client_client = petstore_api.Client() # client.Client | client model
+>>>>>>> ooof
     
     # example passing only required values which don't have defaults set
     try:

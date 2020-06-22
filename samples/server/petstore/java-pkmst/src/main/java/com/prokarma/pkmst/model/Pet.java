@@ -20,7 +20,11 @@ import java.util.List;
  */
 @ApiModel(description = "A pet for sale in the pet store")
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen")
+=======
+
+>>>>>>> ooof
 public class Pet   {
   @JsonProperty("id")
   private Long id;

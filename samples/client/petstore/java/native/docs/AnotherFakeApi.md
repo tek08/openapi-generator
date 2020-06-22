@@ -5,7 +5,10 @@ All URIs are relative to *http://petstore.swagger.io:80/v2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**call123testSpecialTags**](AnotherFakeApi.md#call123testSpecialTags) | **PATCH** /another-fake/dummy | To test special tags
+<<<<<<< HEAD
 [**call123testSpecialTagsWithHttpInfo**](AnotherFakeApi.md#call123testSpecialTags) | **PATCH** /another-fake/dummy | To test special tags
+=======
+>>>>>>> ooof
 
 
 
@@ -36,7 +39,10 @@ public class Example {
         Client body = new Client(); // Client | client model
         try {
             Client result = apiInstance.call123testSpecialTags(body);
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AnotherFakeApi#call123testSpecialTags");
@@ -60,6 +66,7 @@ Name | Type | Description  | Notes
 
 [**Client**](Client.md)
 
+<<<<<<< HEAD
 
 ### Authorization
 
@@ -129,6 +136,8 @@ Name | Type | Description  | Notes
 ApiResponse<[**Client**](Client.md)>
 
 
+=======
+>>>>>>> ooof
 ### Authorization
 
 No authorization required

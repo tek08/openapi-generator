@@ -1,10 +1,18 @@
 if (typeof module === 'object' && module.exports) {
   var expect = require('expect.js');
+<<<<<<< HEAD
   var OpenAPIPetstore = require('../src/index');
   var sinon = require('sinon');
 }
 
 var apiClient = OpenAPIPetstore.ApiClient.instance;
+=======
+  var SwaggerPetstore = require('../src/index');
+  var sinon = require('sinon');
+}
+
+var apiClient = SwaggerPetstore.ApiClient.instance;
+>>>>>>> ooof
 
 describe('ApiClient', function() {
   describe('defaults', function() {
@@ -13,7 +21,10 @@ describe('ApiClient', function() {
       expect(apiClient.basePath).to.be('http://petstore.swagger.io:80/v2');
       expect(apiClient.authentications).to.eql({
         petstore_auth: {type: 'oauth2'},
+<<<<<<< HEAD
         bearer_test: {type: 'bearer'},
+=======
+>>>>>>> ooof
         http_basic_test: {type: 'basic'},
         api_key: {type: 'apiKey', 'in': 'header', name: 'api_key'},
         api_key_query: {type: 'apiKey', 'in': 'query', name: 'api_key_query'},
@@ -46,7 +57,11 @@ describe('ApiClient', function() {
     });
 
     it('should have correct default values with new API client and can customize it', function() {
+<<<<<<< HEAD
       var newClient = new OpenAPIPetstore.ApiClient;
+=======
+      var newClient = new SwaggerPetstore.ApiClient;
+>>>>>>> ooof
       expect(newClient.basePath).to.be('http://petstore.swagger.io:80/v2');
       expect(newClient.buildUrl('/abc', {})).to.be('http://petstore.swagger.io:80/v2/abc');
 
@@ -132,6 +147,7 @@ describe('ApiClient', function() {
     });
   });
 
+<<<<<<< HEAD
   describe('multipleServers', function() {
     describe('host settings', function() {
       var hosts = apiClient.hostSettings();
@@ -161,6 +177,8 @@ describe('ApiClient', function() {
     });
   });
 
+=======
+>>>>>>> ooof
   describe('#applyAuthToRequest', function() {
     var req, newClient;
 
@@ -173,7 +191,11 @@ describe('ApiClient', function() {
       sinon.stub(req, 'auth');
       sinon.stub(req, 'set');
       sinon.stub(req, 'query');
+<<<<<<< HEAD
       newClient = new OpenAPIPetstore.ApiClient();
+=======
+      newClient = new SwaggerPetstore.ApiClient();
+>>>>>>> ooof
     });
 
     describe('basic', function() {
@@ -374,7 +396,11 @@ describe('ApiClient', function() {
     });
 
     it('should put default headers in request', function() {
+<<<<<<< HEAD
       var newClient = new OpenAPIPetstore.ApiClient;
+=======
+      var newClient = new SwaggerPetstore.ApiClient;
+>>>>>>> ooof
       newClient.defaultHeaders['Content-Type'] = 'text/plain'
       newClient.defaultHeaders['api_key'] = 'special-key'
 
@@ -386,7 +412,11 @@ describe('ApiClient', function() {
     });
 
     it('should override default headers with provided header params', function() {
+<<<<<<< HEAD
       var newClient = new OpenAPIPetstore.ApiClient;
+=======
+      var newClient = new SwaggerPetstore.ApiClient;
+>>>>>>> ooof
       newClient.defaultHeaders['Content-Type'] = 'text/plain'
       newClient.defaultHeaders['api_key'] = 'special-key'
 

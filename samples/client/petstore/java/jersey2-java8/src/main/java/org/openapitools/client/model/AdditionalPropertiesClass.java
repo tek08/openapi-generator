@@ -15,8 +15,11 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.HashMap;
+=======
+>>>>>>> ooof
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -28,8 +31,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+<<<<<<< HEAD
 import org.openapitools.client.JSON;
 
+=======
+>>>>>>> ooof
 
 /**
  * AdditionalPropertiesClass
@@ -47,7 +53,11 @@ import org.openapitools.client.JSON;
   AdditionalPropertiesClass.JSON_PROPERTY_ANYTYPE2,
   AdditionalPropertiesClass.JSON_PROPERTY_ANYTYPE3
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class AdditionalPropertiesClass {
   public static final String JSON_PROPERTY_MAP_STRING = "map_string";
   private Map<String, String> mapString = null;
@@ -84,6 +94,10 @@ public class AdditionalPropertiesClass {
 
 
   public AdditionalPropertiesClass mapString(Map<String, String> mapString) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.mapString = mapString;
     return this;
   }
@@ -116,6 +130,10 @@ public class AdditionalPropertiesClass {
 
 
   public AdditionalPropertiesClass mapNumber(Map<String, BigDecimal> mapNumber) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.mapNumber = mapNumber;
     return this;
   }
@@ -148,6 +166,10 @@ public class AdditionalPropertiesClass {
 
 
   public AdditionalPropertiesClass mapInteger(Map<String, Integer> mapInteger) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.mapInteger = mapInteger;
     return this;
   }
@@ -180,6 +202,10 @@ public class AdditionalPropertiesClass {
 
 
   public AdditionalPropertiesClass mapBoolean(Map<String, Boolean> mapBoolean) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.mapBoolean = mapBoolean;
     return this;
   }
@@ -212,6 +238,10 @@ public class AdditionalPropertiesClass {
 
 
   public AdditionalPropertiesClass mapArrayInteger(Map<String, List<Integer>> mapArrayInteger) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.mapArrayInteger = mapArrayInteger;
     return this;
   }
@@ -244,6 +274,10 @@ public class AdditionalPropertiesClass {
 
 
   public AdditionalPropertiesClass mapArrayAnytype(Map<String, List<Object>> mapArrayAnytype) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.mapArrayAnytype = mapArrayAnytype;
     return this;
   }
@@ -276,6 +310,10 @@ public class AdditionalPropertiesClass {
 
 
   public AdditionalPropertiesClass mapMapString(Map<String, Map<String, String>> mapMapString) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.mapMapString = mapMapString;
     return this;
   }
@@ -308,6 +346,10 @@ public class AdditionalPropertiesClass {
 
 
   public AdditionalPropertiesClass mapMapAnytype(Map<String, Map<String, Object>> mapMapAnytype) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.mapMapAnytype = mapMapAnytype;
     return this;
   }
@@ -340,6 +382,10 @@ public class AdditionalPropertiesClass {
 
 
   public AdditionalPropertiesClass anytype1(Object anytype1) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.anytype1 = anytype1;
     return this;
   }
@@ -364,6 +410,10 @@ public class AdditionalPropertiesClass {
 
 
   public AdditionalPropertiesClass anytype2(Object anytype2) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.anytype2 = anytype2;
     return this;
   }
@@ -388,6 +438,10 @@ public class AdditionalPropertiesClass {
 
 
   public AdditionalPropertiesClass anytype3(Object anytype3) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.anytype3 = anytype3;
     return this;
   }
@@ -411,9 +465,12 @@ public class AdditionalPropertiesClass {
   }
 
 
+<<<<<<< HEAD
   /**
    * Return true if this AdditionalPropertiesClass object is equal to o.
    */
+=======
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {

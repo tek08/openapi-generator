@@ -40,7 +40,10 @@ import org.openapitools.codegen.templating.mustache.LowercaseLambda;
 import org.openapitools.codegen.templating.mustache.TitlecaseLambda;
 import org.openapitools.codegen.templating.mustache.UppercaseLambda;
 import org.openapitools.codegen.utils.ModelUtils;
+<<<<<<< HEAD
 import org.openapitools.codegen.utils.SemVer;
+=======
+>>>>>>> ooof
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -224,6 +227,7 @@ public class DefaultCodegenTest {
     }
 
     @Test
+<<<<<<< HEAD
     public void testOriginalOpenApiDocumentVersion() {
         // Test with OAS 2.0 document.
         String location = "src/test/resources/2_0/python-client-experimental/petstore-with-fake-endpoints-models-for-testing.yaml";
@@ -375,6 +379,8 @@ public class DefaultCodegenTest {
     }
 
     @Test
+=======
+>>>>>>> ooof
     public void testEnsureNoDuplicateProduces() {
         final OpenAPI openAPI = TestUtils.parseFlattenSpec("src/test/resources/3_0/two-responses.yaml");
         final DefaultCodegen codegen = new DefaultCodegen();
@@ -1339,8 +1345,11 @@ public class DefaultCodegenTest {
         // check that the model's children contain the x-discriminator-values
         modelName = "BaseObj";
         cm = getModel(allModels, modelName);
+<<<<<<< HEAD
         Assert.assertNotNull(cm);
         Assert.assertNotNull(cm.children);
+=======
+>>>>>>> ooof
         List<String> excpectedDiscriminatorValues = new ArrayList<>(Arrays.asList("daily", "sub-obj"));
         ArrayList<String> xDiscriminatorValues = new ArrayList<>();
         for (CodegenModel child: cm.children) {

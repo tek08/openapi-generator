@@ -32,7 +32,11 @@ import javax.validation.Valid;
   OuterComposite.JSON_PROPERTY_MY_STRING,
   OuterComposite.JSON_PROPERTY_MY_BOOLEAN
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen")
+=======
+
+>>>>>>> ooof
 public class OuterComposite  implements Serializable {
   public static final String JSON_PROPERTY_MY_NUMBER = "my_number";
   @JsonProperty(JSON_PROPERTY_MY_NUMBER)

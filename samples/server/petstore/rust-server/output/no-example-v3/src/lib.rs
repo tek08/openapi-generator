@@ -1,5 +1,6 @@
 #![allow(missing_docs, trivial_casts, unused_variables, unused_mut, unused_imports, unused_extern_crates, non_camel_case_types)]
 
+<<<<<<< HEAD
 use async_trait::async_trait;
 use futures::Stream;
 use std::error::Error;
@@ -7,6 +8,15 @@ use std::task::{Poll, Context};
 use swagger::{ApiError, ContextWrapper};
 
 type ServiceError = Box<dyn Error + Send + Sync + 'static>;
+=======
+use futures::Stream;
+use std::io::Error;
+
+#[deprecated(note = "Import swagger-rs directly")]
+pub use swagger::{ApiError, ContextWrapper};
+#[deprecated(note = "Import futures directly")]
+pub use futures::Future;
+>>>>>>> ooof
 
 pub const BASE_PATH: &'static str = "";
 pub const API_VERSION: &'static str = "0.0.1";
@@ -18,6 +28,7 @@ pub enum OpGetResponse {
 }
 
 /// API
+<<<<<<< HEAD
 #[async_trait]
 pub trait Api<C: Send + Sync> {
     fn poll_ready(&self, _cx: &mut Context) -> Poll<Result<(), Box<dyn Error + Send + Sync + 'static>>> {
@@ -43,10 +54,27 @@ pub trait ApiNoContext<C: Send + Sync> {
         &self,
         inline_object: models::InlineObject,
         ) -> Result<OpGetResponse, ApiError>;
+=======
+pub trait Api<C> {
+    fn op_get(
+        &self,
+        inline_object: models::InlineObject,
+        context: &C) -> Box<dyn Future<Item=OpGetResponse, Error=ApiError> + Send>;
+
+}
+
+/// API without a `Context`
+pub trait ApiNoContext {
+    fn op_get(
+        &self,
+        inline_object: models::InlineObject,
+        ) -> Box<dyn Future<Item=OpGetResponse, Error=ApiError> + Send>;
+>>>>>>> ooof
 
 }
 
 /// Trait to extend an API to make it easy to bind it to a context.
+<<<<<<< HEAD
 pub trait ContextWrapperExt<C: Send + Sync> where Self: Sized
 {
     /// Binds this API to a context.
@@ -55,10 +83,20 @@ pub trait ContextWrapperExt<C: Send + Sync> where Self: Sized
 
 impl<T: Api<C> + Send + Sync, C: Clone + Send + Sync> ContextWrapperExt<C> for T {
     fn with_context(self: T, context: C) -> ContextWrapper<T, C> {
+=======
+pub trait ContextWrapperExt<'a, C> where Self: Sized {
+    /// Binds this API to a context.
+    fn with_context(self: &'a Self, context: C) -> ContextWrapper<'a, Self, C>;
+}
+
+impl<'a, T: Api<C> + Sized, C> ContextWrapperExt<'a, C> for T {
+    fn with_context(self: &'a T, context: C) -> ContextWrapper<'a, T, C> {
+>>>>>>> ooof
          ContextWrapper::<T, C>::new(self, context)
     }
 }
 
+<<<<<<< HEAD
 #[async_trait]
 impl<T: Api<C> + Send + Sync, C: Clone + Send + Sync> ApiNoContext<C> for ContextWrapper<T, C> {
     fn poll_ready(&self, cx: &mut Context) -> Poll<Result<(), ServiceError>> {
@@ -76,11 +114,23 @@ impl<T: Api<C> + Send + Sync, C: Clone + Send + Sync> ApiNoContext<C> for Contex
     {
         let context = self.context().clone();
         self.api().op_get(inline_object, &context).await
+=======
+impl<'a, T: Api<C>, C> ApiNoContext for ContextWrapper<'a, T, C> {
+    fn op_get(
+        &self,
+        inline_object: models::InlineObject,
+        ) -> Box<dyn Future<Item=OpGetResponse, Error=ApiError> + Send>
+    {
+        self.api().op_get(inline_object, &self.context())
+>>>>>>> ooof
     }
 
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 #[cfg(feature = "client")]
 pub mod client;
 

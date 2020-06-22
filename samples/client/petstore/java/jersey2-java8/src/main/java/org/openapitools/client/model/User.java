@@ -15,8 +15,11 @@ package org.openapitools.client.model;
 
 import java.util.Objects;
 import java.util.Arrays;
+<<<<<<< HEAD
 import java.util.Map;
 import java.util.HashMap;
+=======
+>>>>>>> ooof
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -24,8 +27,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+<<<<<<< HEAD
 import org.openapitools.client.JSON;
 
+=======
+>>>>>>> ooof
 
 /**
  * User
@@ -40,7 +46,11 @@ import org.openapitools.client.JSON;
   User.JSON_PROPERTY_PHONE,
   User.JSON_PROPERTY_USER_STATUS
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class User {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;
@@ -68,6 +78,10 @@ public class User {
 
 
   public User id(Long id) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.id = id;
     return this;
   }
@@ -92,6 +106,10 @@ public class User {
 
 
   public User username(String username) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.username = username;
     return this;
   }
@@ -116,6 +134,10 @@ public class User {
 
 
   public User firstName(String firstName) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.firstName = firstName;
     return this;
   }
@@ -140,6 +162,10 @@ public class User {
 
 
   public User lastName(String lastName) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.lastName = lastName;
     return this;
   }
@@ -164,6 +190,10 @@ public class User {
 
 
   public User email(String email) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.email = email;
     return this;
   }
@@ -188,6 +218,10 @@ public class User {
 
 
   public User password(String password) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.password = password;
     return this;
   }
@@ -212,6 +246,10 @@ public class User {
 
 
   public User phone(String phone) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.phone = phone;
     return this;
   }
@@ -236,6 +274,10 @@ public class User {
 
 
   public User userStatus(Integer userStatus) {
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ooof
     this.userStatus = userStatus;
     return this;
   }
@@ -259,9 +301,12 @@ public class User {
   }
 
 
+<<<<<<< HEAD
   /**
    * Return true if this User object is equal to o.
    */
+=======
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {

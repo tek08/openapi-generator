@@ -11,6 +11,7 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
@@ -26,6 +27,12 @@ except ImportError:
     triangle_interface = sys.modules[
         'petstore_api.model.triangle_interface']
 from petstore_api.model.equilateral_triangle import EquilateralTriangle
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestEquilateralTriangle(unittest.TestCase):
@@ -40,7 +47,11 @@ class TestEquilateralTriangle(unittest.TestCase):
     def testEquilateralTriangle(self):
         """Test EquilateralTriangle"""
         # FIXME: construct object with mandatory attributes with example values
+<<<<<<< HEAD
         # model = EquilateralTriangle()  # noqa: E501
+=======
+        # model = petstore_api.EquilateralTriangle()  # noqa: E501
+>>>>>>> ooof
         pass
 
 

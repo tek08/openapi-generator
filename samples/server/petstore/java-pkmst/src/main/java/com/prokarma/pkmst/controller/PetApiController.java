@@ -25,7 +25,11 @@ import java.io.IOException;
  * @author pkmst
  *
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen")
+=======
+
+>>>>>>> ooof
 @Controller
 public class PetApiController implements PetApi {
     private final ObjectMapper objectMapper;

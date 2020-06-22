@@ -68,7 +68,11 @@ class Foo(object):
 
 
         :param bar: The bar of this Foo.  # noqa: E501
+<<<<<<< HEAD
         :type bar: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._bar = bar

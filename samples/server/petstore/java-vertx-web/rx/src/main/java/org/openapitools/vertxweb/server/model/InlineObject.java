@@ -4,7 +4,11 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+<<<<<<< HEAD
 @JsonInclude(JsonInclude.Include.NON_NULL)
+=======
+@JsonInclude(JsonInclude.Include.NON_NULL) 
+>>>>>>> ooof
 public class InlineObject   {
   
   private String name;

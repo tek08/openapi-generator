@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 public struct Order: Codable { 
 
+=======
+public struct Order: Codable {
+>>>>>>> ooof
 
     public enum Status: String, Codable, CaseIterable {
         case placed = "placed"

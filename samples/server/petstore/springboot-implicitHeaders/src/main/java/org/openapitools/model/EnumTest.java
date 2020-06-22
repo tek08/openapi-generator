@@ -14,7 +14,11 @@ import javax.validation.constraints.*;
 /**
  * EnumTest
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
+=======
+
+>>>>>>> ooof
 public class EnumTest   {
   /**
    * Gets or Sets enumString

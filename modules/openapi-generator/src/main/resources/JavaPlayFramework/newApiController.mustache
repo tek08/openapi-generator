@@ -9,7 +9,10 @@ import play.mvc.Http;
 import java.util.List;
 import java.util.Map;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.LinkedHashSet;
+=======
+>>>>>>> ooof
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.google.inject.Inject;
@@ -103,7 +106,11 @@ public class {{classname}}Controller extends Controller {
         }
         {{/required}}
         List<String> {{paramName}}List = OpenAPIUtils.parametersToList("{{collectionFormat}}", {{paramName}}Array);
+<<<<<<< HEAD
         {{{dataType}}} {{paramName}} = new {{#uniqueItems}}LinkedHashSet{{/uniqueItems}}{{^uniqueItems}}ArrayList{{/uniqueItems}}<>();
+=======
+        {{{dataType}}} {{paramName}} = new Array{{{dataType}}}();
+>>>>>>> ooof
         for (String curParam : {{paramName}}List) {
             if (!curParam.isEmpty()) {
                 //noinspection UseBulkOperation
@@ -144,7 +151,11 @@ public class {{classname}}Controller extends Controller {
         }
         {{/required}}
         List<String> {{paramName}}List = OpenAPIUtils.parametersToList("{{collectionFormat}}", {{paramName}}Array);
+<<<<<<< HEAD
         {{{dataType}}} {{paramName}} = new {{#uniqueItems}}LinkedHashSet{{/uniqueItems}}{{^uniqueItems}}ArrayList{{/uniqueItems}}<>();
+=======
+        {{{dataType}}} {{paramName}} = new Array{{{dataType}}}();
+>>>>>>> ooof
         for (String curParam : {{paramName}}List) {
             if (!curParam.isEmpty()) {
                 //noinspection UseBulkOperation
@@ -177,7 +188,11 @@ public class {{classname}}Controller extends Controller {
         }
         {{/required}}
         List<String> {{paramName}}List = OpenAPIUtils.parametersToList("{{collectionFormat}}", {{paramName}}Array);
+<<<<<<< HEAD
         {{{dataType}}} {{paramName}} = new {{#uniqueItems}}LinkedHashSet{{/uniqueItems}}{{^uniqueItems}}ArrayList{{/uniqueItems}}<>();
+=======
+        {{{dataType}}} {{paramName}} = new Array{{{dataType}}}();
+>>>>>>> ooof
         for (String curParam : {{paramName}}List) {
             if (!curParam.isEmpty()) {
                 //noinspection UseBulkOperation

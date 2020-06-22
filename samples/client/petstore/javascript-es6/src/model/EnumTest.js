@@ -13,9 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import OuterEnum from './OuterEnum';
+<<<<<<< HEAD
 import OuterEnumDefaultValue from './OuterEnumDefaultValue';
 import OuterEnumInteger from './OuterEnumInteger';
 import OuterEnumIntegerDefaultValue from './OuterEnumIntegerDefaultValue';
+=======
+>>>>>>> ooof
 
 /**
  * The EnumTest model module.
@@ -68,6 +71,7 @@ class EnumTest {
             if (data.hasOwnProperty('outerEnum')) {
                 obj['outerEnum'] = OuterEnum.constructFromObject(data['outerEnum']);
             }
+<<<<<<< HEAD
             if (data.hasOwnProperty('outerEnumInteger')) {
                 obj['outerEnumInteger'] = OuterEnumInteger.constructFromObject(data['outerEnumInteger']);
             }
@@ -77,6 +81,8 @@ class EnumTest {
             if (data.hasOwnProperty('outerEnumIntegerDefaultValue')) {
                 obj['outerEnumIntegerDefaultValue'] = OuterEnumIntegerDefaultValue.constructFromObject(data['outerEnumIntegerDefaultValue']);
             }
+=======
+>>>>>>> ooof
         }
         return obj;
     }
@@ -109,6 +115,7 @@ EnumTest.prototype['enum_number'] = undefined;
  */
 EnumTest.prototype['outerEnum'] = undefined;
 
+<<<<<<< HEAD
 /**
  * @member {module:model/OuterEnumInteger} outerEnumInteger
  */
@@ -124,6 +131,8 @@ EnumTest.prototype['outerEnumDefaultValue'] = undefined;
  */
 EnumTest.prototype['outerEnumIntegerDefaultValue'] = undefined;
 
+=======
+>>>>>>> ooof
 
 
 

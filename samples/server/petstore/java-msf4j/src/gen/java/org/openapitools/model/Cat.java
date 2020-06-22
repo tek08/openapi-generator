@@ -11,7 +11,11 @@ import org.openapitools.model.CatAllOf;
 /**
  * Cat
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen")
+=======
+
+>>>>>>> ooof
 public class Cat extends Animal  {
   @JsonProperty("declawed")
   private Boolean declawed;

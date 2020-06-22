@@ -278,7 +278,11 @@ public class NimClientCodegen extends DefaultCodegen implements CodegenConfig {
             }
             return "seq[" + getTypeDeclaration(inner) + "]";
         } else if (ModelUtils.isMapSchema(p)) {
+<<<<<<< HEAD
             Schema inner = getAdditionalProperties(p);
+=======
+            Schema inner = ModelUtils.getAdditionalProperties(p);
+>>>>>>> ooof
             if (inner == null) {
                 inner = new StringSchema();
             }

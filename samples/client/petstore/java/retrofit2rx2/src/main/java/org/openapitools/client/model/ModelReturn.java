@@ -28,7 +28,11 @@ import java.io.IOException;
  * Model for testing reserved words
  */
 @ApiModel(description = "Model for testing reserved words")
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class ModelReturn {
   public static final String SERIALIZED_NAME_RETURN = "return";
   @SerializedName(SERIALIZED_NAME_RETURN)

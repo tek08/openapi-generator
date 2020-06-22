@@ -18,8 +18,11 @@ part 'api/user_api.dart';
 
 part 'model/api_response.dart';
 part 'model/category.dart';
+<<<<<<< HEAD
 part 'model/inline_object.dart';
 part 'model/inline_object1.dart';
+=======
+>>>>>>> ooof
 part 'model/order.dart';
 part 'model/pet.dart';
 part 'model/tag.dart';

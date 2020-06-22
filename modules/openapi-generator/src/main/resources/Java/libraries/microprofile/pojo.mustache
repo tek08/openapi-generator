@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 {{#withXml}}
+=======
+>>>>>>> ooof
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -6,6 +9,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlEnum;
 import javax.xml.bind.annotation.XmlEnumValue;
+<<<<<<< HEAD
 {{/withXml}}
 {{^withXml}}
 import java.lang.reflect.Type;
@@ -19,6 +23,9 @@ import javax.json.stream.JsonGenerator;
 import javax.json.stream.JsonParser;
 import javax.json.bind.annotation.JsonbProperty;
 {{/withXml}}
+=======
+import javax.json.bind.annotation.JsonbProperty;
+>>>>>>> ooof
 
 {{#withXml}}
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -69,6 +76,7 @@ public class {{classname}} {{#parent}}extends {{{parent}}}{{/parent}}{{#serializ
   {{/maximum}}
    * @return {{name}}
   **/
+<<<<<<< HEAD
   {{^withXml}}
   @JsonbProperty("{{baseName}}")
   {{/withXml}}
@@ -76,13 +84,24 @@ public class {{classname}} {{#parent}}extends {{{parent}}}{{/parent}}{{#serializ
   {{{vendorExtensions.x-extra-annotation}}}
 {{/vendorExtensions.x-extra-annotation}}
 {{#useBeanValidation}}{{>beanValidation}}{{/useBeanValidation}}  {{#withXml}}{{#isEnum}}{{^isListContainer}}{{^isMapContainer}}public {{dataType}} {{getter}}() {
+=======
+  @JsonbProperty("{{baseName}}")
+{{#vendorExtensions.x-extra-annotation}}
+  {{{vendorExtensions.x-extra-annotation}}}
+{{/vendorExtensions.x-extra-annotation}}
+{{#useBeanValidation}}{{>beanValidation}}{{/useBeanValidation}}  {{#isEnum}}{{^isListContainer}}{{^isMapContainer}}public {{dataType}} {{getter}}() {
+>>>>>>> ooof
     if ({{name}} == null) {
       return null;
     }
     return {{name}}.value();
+<<<<<<< HEAD
   }{{/isMapContainer}}{{/isListContainer}}{{/isEnum}}{{/withXml}}{{^withXml}}{{#isEnum}}{{^isListContainer}}{{^isMapContainer}}public {{datatypeWithEnum}} {{getter}}() {
     return {{name}};
   }{{/isMapContainer}}{{/isListContainer}}{{/isEnum}}{{/withXml}}{{#isEnum}}{{#isListContainer}}public {{{datatypeWithEnum}}} {{getter}}() {
+=======
+  }{{/isMapContainer}}{{/isListContainer}}{{/isEnum}}{{#isEnum}}{{#isListContainer}}public {{{datatypeWithEnum}}} {{getter}}() {
+>>>>>>> ooof
     return {{name}};
   }{{/isListContainer}}{{/isEnum}}{{#isEnum}}{{#isMapContainer}}public {{{datatypeWithEnum}}} {{getter}}() {
     return {{name}};

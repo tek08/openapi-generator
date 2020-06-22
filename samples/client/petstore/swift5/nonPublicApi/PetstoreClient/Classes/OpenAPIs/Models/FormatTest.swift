@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 internal struct FormatTest: Codable { 
 
+=======
+internal struct FormatTest: Codable {
+>>>>>>> ooof
 
     internal var integer: Int?
     internal var int32: Int?

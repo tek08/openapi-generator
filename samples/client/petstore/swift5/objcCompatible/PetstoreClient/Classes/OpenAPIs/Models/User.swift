@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 
 @objc public class User: NSObject, Codable { 
+=======
+@objc public class User: NSObject, Codable {
+>>>>>>> ooof
 
     public var _id: Int64?
     public var _idNum: NSNumber? {
@@ -42,7 +46,11 @@ import Foundation
         self.userStatus = userStatus
     }
 
+<<<<<<< HEAD
     public enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    public enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case _id = "id"
         case username
         case firstName

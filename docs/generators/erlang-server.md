@@ -19,7 +19,10 @@ sidebar_label: erlang-server
 |DateTime|org.joda.time.*|
 |File|java.io.File|
 |HashMap|java.util.HashMap|
+<<<<<<< HEAD
 |LinkedHashSet|java.util.LinkedHashSet|
+=======
+>>>>>>> ooof
 |List|java.util.*|
 |LocalDate|org.joda.time.*|
 |LocalDateTime|org.joda.time.*|

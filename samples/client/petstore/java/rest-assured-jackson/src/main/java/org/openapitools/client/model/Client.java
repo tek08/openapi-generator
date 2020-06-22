@@ -32,7 +32,11 @@ import org.hibernate.validator.constraints.*;
 @JsonPropertyOrder({
   Client.JSON_PROPERTY_CLIENT
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class Client {
   public static final String JSON_PROPERTY_CLIENT = "client";
   private String client;

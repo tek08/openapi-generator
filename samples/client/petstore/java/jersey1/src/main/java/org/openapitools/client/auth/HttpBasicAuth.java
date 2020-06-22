@@ -22,7 +22,11 @@ import java.util.List;
 
 import java.io.UnsupportedEncodingException;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class HttpBasicAuth implements Authentication {
   private String username;
   private String password;

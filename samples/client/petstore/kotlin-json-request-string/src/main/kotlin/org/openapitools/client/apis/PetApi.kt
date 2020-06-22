@@ -119,7 +119,11 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     * Finds Pets by tags
     * Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
     * @param tags Tags to filter by 
+<<<<<<< HEAD
     * @return kotlin.collections.List<Pet>
+=======
+    * @return kotlin.Array<Pet>
+>>>>>>> ooof
     * @throws UnsupportedOperationException If the API returns an informational or redirection response
     * @throws ClientException If the API returns a client error response
     * @throws ServerException If the API returns a server error response
@@ -127,7 +131,11 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     @Suppress("UNCHECKED_CAST")
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
     @Deprecated(message = "This operation is deprecated.")
+<<<<<<< HEAD
     fun findPetsByTags(tags: kotlin.collections.List<kotlin.String>) : kotlin.collections.List<Pet> {
+=======
+    fun findPetsByTags(tags: kotlin.Array<kotlin.String>) : kotlin.Array<Pet> {
+>>>>>>> ooof
         val localVariableBody: kotlin.Any? = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, List<kotlin.String>>()
             .apply {
@@ -140,13 +148,21 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
             query = localVariableQuery,
             headers = localVariableHeaders
         )
+<<<<<<< HEAD
         val localVarResponse = request<kotlin.collections.List<Pet>>(
+=======
+        val localVarResponse = request<kotlin.Array<Pet>>(
+>>>>>>> ooof
             localVariableConfig,
             localVariableBody
         )
 
         return when (localVarResponse.responseType) {
+<<<<<<< HEAD
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<Pet>
+=======
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.Array<Pet>
+>>>>>>> ooof
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -164,14 +180,22 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
     * Get all pets
     * 
     * @param lastUpdated When this endpoint was hit last to help indentify if the client already has the latest copy. (optional)
+<<<<<<< HEAD
     * @return kotlin.collections.List<Pet>
+=======
+    * @return kotlin.Array<Pet>
+>>>>>>> ooof
     * @throws UnsupportedOperationException If the API returns an informational or redirection response
     * @throws ClientException If the API returns a client error response
     * @throws ServerException If the API returns a server error response
     */
     @Suppress("UNCHECKED_CAST")
     @Throws(UnsupportedOperationException::class, ClientException::class, ServerException::class)
+<<<<<<< HEAD
     fun getAllPets(lastUpdated: java.time.OffsetDateTime?) : kotlin.collections.List<Pet> {
+=======
+    fun getAllPets(lastUpdated: java.time.OffsetDateTime?) : kotlin.Array<Pet> {
+>>>>>>> ooof
         val localVariableBody: kotlin.Any? = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, List<kotlin.String>>()
             .apply {
@@ -186,13 +210,21 @@ class PetApi(basePath: kotlin.String = defaultBasePath) : ApiClient(basePath) {
             query = localVariableQuery,
             headers = localVariableHeaders
         )
+<<<<<<< HEAD
         val localVarResponse = request<kotlin.collections.List<Pet>>(
+=======
+        val localVarResponse = request<kotlin.Array<Pet>>(
+>>>>>>> ooof
             localVariableConfig,
             localVariableBody
         )
 
         return when (localVarResponse.responseType) {
+<<<<<<< HEAD
             ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.collections.List<Pet>
+=======
+            ResponseType.Success -> (localVarResponse as Success<*>).data as kotlin.Array<Pet>
+>>>>>>> ooof
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {

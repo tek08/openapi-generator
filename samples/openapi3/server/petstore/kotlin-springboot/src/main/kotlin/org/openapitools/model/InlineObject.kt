@@ -19,10 +19,17 @@ import io.swagger.annotations.ApiModelProperty
 data class InlineObject(
 
     @ApiModelProperty(example = "null", value = "Updated name of the pet")
+<<<<<<< HEAD
     @field:JsonProperty("name") val name: kotlin.String? = null,
 
     @ApiModelProperty(example = "null", value = "Updated status of the pet")
     @field:JsonProperty("status") val status: kotlin.String? = null
+=======
+    @JsonProperty("name") val name: kotlin.String? = null,
+
+    @ApiModelProperty(example = "null", value = "Updated status of the pet")
+    @JsonProperty("status") val status: kotlin.String? = null
+>>>>>>> ooof
 ) {
 
 }

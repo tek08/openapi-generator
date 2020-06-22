@@ -8,7 +8,11 @@ pub struct APIClient {
 {{#operations}}
 {{#operation}}
     {{#-last}}
+<<<<<<< HEAD
     {{{classFilename}}}: Box<dyn crate::apis::{{{classFilename}}}::{{{classname}}}>,
+=======
+    {{{classFilename}}}: Box<dyn crate::apis::{{{classname}}}>,
+>>>>>>> ooof
     {{/-last}}
 {{/operation}}
 {{/operations}}
@@ -26,7 +30,11 @@ impl APIClient {
 {{#operations}}
 {{#operation}}
             {{#-last}}
+<<<<<<< HEAD
             {{{classFilename}}}: Box::new(crate::apis::{{{classFilename}}}::{{{classname}}}Client::new(rc.clone())),
+=======
+            {{{classFilename}}}: Box::new(crate::apis::{{{classname}}}Client::new(rc.clone())),
+>>>>>>> ooof
             {{/-last}}
 {{/operation}}
 {{/operations}}
@@ -40,7 +48,11 @@ impl APIClient {
 {{#operations}}
 {{#operation}}
 {{#-last}}
+<<<<<<< HEAD
     pub fn {{{classFilename}}}(&self) -> &dyn crate::apis::{{{classFilename}}}::{{{classname}}}{
+=======
+    pub fn {{{classFilename}}}(&self) -> &dyn crate::apis::{{{classname}}}{
+>>>>>>> ooof
         self.{{{classFilename}}}.as_ref()
     }
 

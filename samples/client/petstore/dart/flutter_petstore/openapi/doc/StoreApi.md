@@ -144,7 +144,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **placeOrder**
+<<<<<<< HEAD
 > Order placeOrder(order)
+=======
+> Order placeOrder(body)
+>>>>>>> ooof
 
 Place an order for a pet
 
@@ -153,10 +157,17 @@ Place an order for a pet
 import 'package:openapi/api.dart';
 
 var api_instance = new StoreApi();
+<<<<<<< HEAD
 var order = new Order(); // Order | order placed for purchasing the pet
 
 try { 
     var result = api_instance.placeOrder(order);
+=======
+var body = new Order(); // Order | order placed for purchasing the pet
+
+try { 
+    var result = api_instance.placeOrder(body);
+>>>>>>> ooof
     print(result);
 } catch (e) {
     print("Exception when calling StoreApi->placeOrder: $e\n");
@@ -167,7 +178,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **order** | [**Order**](Order.md)| order placed for purchasing the pet | 
+=======
+ **body** | [**Order**](Order.md)| order placed for purchasing the pet | 
+>>>>>>> ooof
 
 ### Return type
 
@@ -179,7 +194,11 @@ No authorization required
 
 ### HTTP request headers
 
+<<<<<<< HEAD
  - **Content-Type**: application/json
+=======
+ - **Content-Type**: Not defined
+>>>>>>> ooof
  - **Accept**: application/xml, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

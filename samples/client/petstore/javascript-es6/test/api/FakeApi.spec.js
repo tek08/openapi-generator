@@ -14,10 +14,17 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD.
+<<<<<<< HEAD
     define(['expect.js', '../../src/index'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
     factory(require('expect.js'), require('../../src/index'));
+=======
+    define(['expect.js', process.cwd()+'/src/index'], factory);
+  } else if (typeof module === 'object' && module.exports) {
+    // CommonJS-like environments that support module.exports, like Node.
+    factory(require('expect.js'), require(process.cwd()+'/src/index'));
+>>>>>>> ooof
   } else {
     // Browser globals (root is window)
     factory(root.expect, root.OpenApiPetstore);
@@ -48,6 +55,19 @@
   }
 
   describe('FakeApi', function() {
+<<<<<<< HEAD
+=======
+    describe('createXmlItem', function() {
+      it('should call createXmlItem successfully', function(done) {
+        //uncomment below and update the code to test createXmlItem
+        //instance.createXmlItem(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+>>>>>>> ooof
     describe('fakeOuterBooleanSerialize', function() {
       it('should call fakeOuterBooleanSerialize successfully', function(done) {
         //uncomment below and update the code to test fakeOuterBooleanSerialize
@@ -88,6 +108,19 @@
         done();
       });
     });
+<<<<<<< HEAD
+=======
+    describe('testBodyWithFileSchema', function() {
+      it('should call testBodyWithFileSchema successfully', function(done) {
+        //uncomment below and update the code to test testBodyWithFileSchema
+        //instance.testBodyWithFileSchema(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+>>>>>>> ooof
     describe('testBodyWithQueryParams', function() {
       it('should call testBodyWithQueryParams successfully', function(done) {
         //uncomment below and update the code to test testBodyWithQueryParams
@@ -128,6 +161,19 @@
         done();
       });
     });
+<<<<<<< HEAD
+=======
+    describe('testGroupParameters', function() {
+      it('should call testGroupParameters successfully', function(done) {
+        //uncomment below and update the code to test testGroupParameters
+        //instance.testGroupParameters(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+>>>>>>> ooof
     describe('testInlineAdditionalProperties', function() {
       it('should call testInlineAdditionalProperties successfully', function(done) {
         //uncomment below and update the code to test testInlineAdditionalProperties

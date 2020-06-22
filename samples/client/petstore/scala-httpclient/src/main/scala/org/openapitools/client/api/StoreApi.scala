@@ -154,11 +154,19 @@ class StoreApi(
    * Place an order for a pet
    * 
    *
+<<<<<<< HEAD
    * @param order order placed for purchasing the pet 
    * @return Order
    */
   def placeOrder(order: Order): Option[Order] = {
     val await = Try(Await.result(placeOrderAsync(order), Duration.Inf))
+=======
+   * @param body order placed for purchasing the pet 
+   * @return Order
+   */
+  def placeOrder(body: Order): Option[Order] = {
+    val await = Try(Await.result(placeOrderAsync(body), Duration.Inf))
+>>>>>>> ooof
     await match {
       case Success(i) => Some(await.get)
       case Failure(t) => None
@@ -169,11 +177,19 @@ class StoreApi(
    * Place an order for a pet asynchronously
    * 
    *
+<<<<<<< HEAD
    * @param order order placed for purchasing the pet 
    * @return Future(Order)
    */
   def placeOrderAsync(order: Order): Future[Order] = {
       helper.placeOrder(order)
+=======
+   * @param body order placed for purchasing the pet 
+   * @return Future(Order)
+   */
+  def placeOrderAsync(body: Order): Future[Order] = {
+      helper.placeOrder(body)
+>>>>>>> ooof
   }
 
 }
@@ -241,7 +257,11 @@ class StoreApiAsyncHelper(client: TransportClient, config: SwaggerConfig) extend
     }
   }
 
+<<<<<<< HEAD
   def placeOrder(order: Order)(implicit reader: ClientResponseReader[Order], writer: RequestWriter[Order]): Future[Order] = {
+=======
+  def placeOrder(body: Order)(implicit reader: ClientResponseReader[Order], writer: RequestWriter[Order]): Future[Order] = {
+>>>>>>> ooof
     // create path and map variables
     val path = (addFmt("/store/order"))
 
@@ -249,9 +269,15 @@ class StoreApiAsyncHelper(client: TransportClient, config: SwaggerConfig) extend
     val queryParams = new mutable.HashMap[String, String]
     val headerParams = new mutable.HashMap[String, String]
 
+<<<<<<< HEAD
     if (order == null) throw new Exception("Missing required parameter 'order' when calling StoreApi->placeOrder")
 
     val resFuture = client.submit("POST", path, queryParams.toMap, headerParams.toMap, writer.write(order))
+=======
+    if (body == null) throw new Exception("Missing required parameter 'body' when calling StoreApi->placeOrder")
+
+    val resFuture = client.submit("POST", path, queryParams.toMap, headerParams.toMap, writer.write(body))
+>>>>>>> ooof
     resFuture flatMap { resp =>
       val status = Response.Status.fromStatusCode(resp.statusCode)
       status.getFamily match {

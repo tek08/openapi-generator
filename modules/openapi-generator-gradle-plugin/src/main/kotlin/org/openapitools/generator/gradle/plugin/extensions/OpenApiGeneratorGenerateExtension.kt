@@ -65,9 +65,15 @@ open class OpenApiGeneratorGenerateExtension(project: Project) {
     val auth = project.objects.property<String>()
 
     /**
+<<<<<<< HEAD
      * Sets specified global properties.
      */
     val globalProperties = project.objects.mapProperty<String, String>()
+=======
+     * Sets specified system properties.
+     */
+    val systemProperties = project.objects.mapProperty<String, String>()
+>>>>>>> ooof
 
     /**
      * Path to json configuration file.

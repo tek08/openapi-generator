@@ -5,7 +5,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.vertx.ext.web.FileUpload;
 
+<<<<<<< HEAD
 @JsonInclude(JsonInclude.Include.NON_NULL)
+=======
+@JsonInclude(JsonInclude.Include.NON_NULL) 
+>>>>>>> ooof
 public class InlineObject1   {
   
   private String additionalMetadata;

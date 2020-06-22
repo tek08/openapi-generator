@@ -2,7 +2,10 @@
 name = "{{{packageName}}}"
 version = "{{{packageVersion}}}"
 authors = ["OpenAPI Generator team and contributors"]
+<<<<<<< HEAD
 edition = "2018"
+=======
+>>>>>>> ooof
 
 [dependencies]
 serde = "^1.0"
@@ -16,6 +19,7 @@ base64 = "~0.7.0"
 futures = "0.1.23"
 {{/hyper}}
 {{#reqwest}}
+<<<<<<< HEAD
 {{^supportAsync}}
 reqwest = "~0.9"
 {{/supportAsync}}
@@ -25,6 +29,9 @@ version = "^0.10"
 default-features = false
 features = ["json"]
 {{/supportAsync}}
+=======
+reqwest = "~0.9"
+>>>>>>> ooof
 {{/reqwest}}
 
 [dev-dependencies]

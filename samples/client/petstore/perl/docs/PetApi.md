@@ -21,7 +21,11 @@ Method | HTTP request | Description
 
 
 # **add_pet**
+<<<<<<< HEAD
 > add_pet(pet => $pet)
+=======
+> add_pet(body => $body)
+>>>>>>> ooof
 
 Add a new pet to the store
 
@@ -35,10 +39,17 @@ my $api_instance = WWW::OpenAPIClient::PetApi->new(
     access_token => 'YOUR_ACCESS_TOKEN',
 );
 
+<<<<<<< HEAD
 my $pet = WWW::OpenAPIClient::Object::Pet->new(); # Pet | Pet object that needs to be added to the store
 
 eval { 
     $api_instance->add_pet(pet => $pet);
+=======
+my $body = WWW::OpenAPIClient::Object::Pet->new(); # Pet | Pet object that needs to be added to the store
+
+eval { 
+    $api_instance->add_pet(body => $body);
+>>>>>>> ooof
 };
 if ($@) {
     warn "Exception when calling PetApi->add_pet: $@\n";
@@ -49,7 +60,11 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **pet** | [**Pet**](Pet.md)| Pet object that needs to be added to the store | 
+=======
+ **body** | [**Pet**](Pet.md)| Pet object that needs to be added to the store | 
+>>>>>>> ooof
 
 ### Return type
 
@@ -264,7 +279,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_pet**
+<<<<<<< HEAD
 > update_pet(pet => $pet)
+=======
+> update_pet(body => $body)
+>>>>>>> ooof
 
 Update an existing pet
 
@@ -278,10 +297,17 @@ my $api_instance = WWW::OpenAPIClient::PetApi->new(
     access_token => 'YOUR_ACCESS_TOKEN',
 );
 
+<<<<<<< HEAD
 my $pet = WWW::OpenAPIClient::Object::Pet->new(); # Pet | Pet object that needs to be added to the store
 
 eval { 
     $api_instance->update_pet(pet => $pet);
+=======
+my $body = WWW::OpenAPIClient::Object::Pet->new(); # Pet | Pet object that needs to be added to the store
+
+eval { 
+    $api_instance->update_pet(body => $body);
+>>>>>>> ooof
 };
 if ($@) {
     warn "Exception when calling PetApi->update_pet: $@\n";
@@ -292,7 +318,11 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **pet** | [**Pet**](Pet.md)| Pet object that needs to be added to the store | 
+=======
+ **body** | [**Pet**](Pet.md)| Pet object that needs to be added to the store | 
+>>>>>>> ooof
 
 ### Return type
 

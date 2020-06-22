@@ -22,7 +22,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 })
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class Animal  implements Serializable {
+=======
+public class Animal  implements Serializable {
+>>>>>>> ooof
   
   private @Valid String className;
   private @Valid String color = "red";
@@ -35,18 +39,29 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(required = true, value = "")
   @JsonProperty("className")
   @NotNull
   public String getClassName() {
     return className;
   }
+<<<<<<< HEAD
 
   public void setClassName(String className) {
     this.className = className;
   }/**
+=======
+  public void setClassName(String className) {
+    this.className = className;
+  }
+
+  /**
+>>>>>>> ooof
    **/
   public Animal color(String color) {
     this.color = color;
@@ -54,18 +69,28 @@ import com.fasterxml.jackson.annotation.JsonValue;
   }
 
   
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> ooof
   @ApiModelProperty(value = "")
   @JsonProperty("color")
   public String getColor() {
     return color;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
   public void setColor(String color) {
     this.color = color;
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -105,7 +130,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
     }
     return o.toString().replace("\n", "\n    ");
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ooof
 }
 

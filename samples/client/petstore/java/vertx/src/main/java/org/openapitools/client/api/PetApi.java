@@ -3,7 +3,10 @@ package org.openapitools.client.api;
 import io.vertx.core.file.AsyncFile;
 import org.openapitools.client.model.ModelApiResponse;
 import org.openapitools.client.model.Pet;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 import io.vertx.core.json.JsonObject;
@@ -18,7 +21,11 @@ public interface PetApi {
 
     void findPetsByStatus(List<String> status, Handler<AsyncResult<List<Pet>>> handler);
 
+<<<<<<< HEAD
     void findPetsByTags(Set<String> tags, Handler<AsyncResult<Set<Pet>>> handler);
+=======
+    void findPetsByTags(List<String> tags, Handler<AsyncResult<List<Pet>>> handler);
+>>>>>>> ooof
 
     void getPetById(Long petId, Handler<AsyncResult<Pet>> handler);
 

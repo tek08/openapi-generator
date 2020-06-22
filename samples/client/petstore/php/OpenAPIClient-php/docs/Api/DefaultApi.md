@@ -7,20 +7,30 @@ Method | HTTP request | Description
 [**fooGet**](DefaultApi.md#fooGet) | **GET** /foo | 
 
 
+<<<<<<< HEAD
 
 ## fooGet
 
+=======
+# **fooGet**
+>>>>>>> ooof
 > \OpenAPI\Client\Model\InlineResponseDefault fooGet()
 
 
 
 ### Example
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 $apiInstance = new OpenAPI\Client\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -37,7 +47,10 @@ try {
 ```
 
 ### Parameters
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 This endpoint does not need any parameter.
 
 ### Return type
@@ -50,10 +63,17 @@ No authorization required
 
 ### HTTP request headers
 
+<<<<<<< HEAD
 - **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../../README.md#documentation-for-models)
 [[Back to README]](../../README.md)
+=======
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+>>>>>>> ooof
 

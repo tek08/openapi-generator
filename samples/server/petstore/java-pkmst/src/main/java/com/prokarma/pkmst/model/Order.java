@@ -17,7 +17,11 @@ import org.threeten.bp.OffsetDateTime;
  */
 @ApiModel(description = "An order for a pets from the pet store")
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen")
+=======
+
+>>>>>>> ooof
 public class Order   {
   @JsonProperty("id")
   private Long id;

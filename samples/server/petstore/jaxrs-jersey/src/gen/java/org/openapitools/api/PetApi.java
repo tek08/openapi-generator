@@ -32,7 +32,11 @@ import javax.validation.Valid;
 
 
 @io.swagger.annotations.Api(description = "the pet API")
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen")
+=======
+
+>>>>>>> ooof
 public class PetApi  {
    private final PetApiService delegate;
 

@@ -30,7 +30,11 @@ import org.openapitools.client.model.CatAllOf;
 /**
  * Cat
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 
 public class Cat extends Animal {
   public static final String SERIALIZED_NAME_DECLAWED = "declawed";

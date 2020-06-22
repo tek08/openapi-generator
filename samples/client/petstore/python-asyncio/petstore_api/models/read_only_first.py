@@ -73,7 +73,11 @@ class ReadOnlyFirst(object):
 
 
         :param bar: The bar of this ReadOnlyFirst.  # noqa: E501
+<<<<<<< HEAD
         :type bar: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._bar = bar
@@ -94,7 +98,11 @@ class ReadOnlyFirst(object):
 
 
         :param baz: The baz of this ReadOnlyFirst.  # noqa: E501
+<<<<<<< HEAD
         :type baz: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._baz = baz

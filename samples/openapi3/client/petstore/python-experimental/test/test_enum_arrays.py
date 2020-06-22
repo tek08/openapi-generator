@@ -11,11 +11,18 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
 import petstore_api
 from petstore_api.model.enum_arrays import EnumArrays
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestEnumArrays(unittest.TestCase):
@@ -30,7 +37,11 @@ class TestEnumArrays(unittest.TestCase):
     def testEnumArrays(self):
         """Test EnumArrays"""
         # FIXME: construct object with mandatory attributes with example values
+<<<<<<< HEAD
         # model = EnumArrays()  # noqa: E501
+=======
+        # model = petstore_api.EnumArrays()  # noqa: E501
+>>>>>>> ooof
         pass
 
 

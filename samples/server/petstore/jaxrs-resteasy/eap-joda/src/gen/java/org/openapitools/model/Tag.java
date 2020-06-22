@@ -9,7 +9,11 @@ import io.swagger.annotations.ApiModelProperty;
 import javax.validation.constraints.*;
 import io.swagger.annotations.*;
 
+<<<<<<< HEAD
 @ApiModel(description="A tag for a pet")@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyEapServerCodegen")
+=======
+@ApiModel(description="A tag for a pet")
+>>>>>>> ooof
 public class Tag   {
   
 

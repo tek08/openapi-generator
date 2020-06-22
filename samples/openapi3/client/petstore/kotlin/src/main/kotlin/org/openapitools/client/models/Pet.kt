@@ -16,6 +16,7 @@ import org.openapitools.client.models.Tag
 
 import com.squareup.moshi.Json
 import java.io.Serializable
+<<<<<<< HEAD
 
 /**
  * 
@@ -23,6 +24,14 @@ import java.io.Serializable
  * @param photoUrls 
  * @param id 
  * @param category 
+=======
+/**
+ * 
+ * @param id 
+ * @param category 
+ * @param name 
+ * @param photoUrls 
+>>>>>>> ooof
  * @param tags 
  * @param status pet status in the store
  */
@@ -31,12 +40,17 @@ data class Pet (
     @Json(name = "name")
     val name: kotlin.String,
     @Json(name = "photoUrls")
+<<<<<<< HEAD
     val photoUrls: kotlin.collections.List<kotlin.String>,
+=======
+    val photoUrls: kotlin.Array<kotlin.String>,
+>>>>>>> ooof
     @Json(name = "id")
     val id: kotlin.Long? = null,
     @Json(name = "category")
     val category: Category? = null,
     @Json(name = "tags")
+<<<<<<< HEAD
     val tags: kotlin.collections.List<Tag>? = null,
     /* pet status in the store */
     @Json(name = "status")
@@ -46,6 +60,19 @@ data class Pet (
         private const val serialVersionUID: Long = 123
     }
 
+=======
+    val tags: kotlin.Array<Tag>? = null,
+    /* pet status in the store */
+    @Json(name = "status")
+    val status: Pet.Status? = null
+) 
+: Serializable 
+
+{
+	companion object {
+		private const val serialVersionUID: Long = 123
+	}
+>>>>>>> ooof
     /**
     * pet status in the store
     * Values: available,pending,sold

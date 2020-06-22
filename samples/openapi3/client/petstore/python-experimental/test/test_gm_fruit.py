@@ -11,6 +11,7 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
@@ -26,6 +27,12 @@ except ImportError:
     banana = sys.modules[
         'petstore_api.model.banana']
 from petstore_api.model.gm_fruit import GmFruit
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestGmFruit(unittest.TestCase):
@@ -44,7 +51,11 @@ class TestGmFruit(unittest.TestCase):
         # banana test
         length_cm = 20.3
         color = 'yellow'
+<<<<<<< HEAD
         fruit = GmFruit(length_cm=length_cm, color=color)
+=======
+        fruit = petstore_api.GmFruit(length_cm=length_cm, color=color)
+>>>>>>> ooof
         # check its properties
         self.assertEqual(fruit.length_cm, length_cm)
         self.assertEqual(fruit['length_cm'], length_cm)
@@ -84,8 +95,13 @@ class TestGmFruit(unittest.TestCase):
             fruit._composed_schemas,
             {
                 'anyOf': [
+<<<<<<< HEAD
                     apple.Apple,
                     banana.Banana,
+=======
+                    petstore_api.Apple,
+                    petstore_api.Banana,
+>>>>>>> ooof
                 ],
                 'allOf': [],
                 'oneOf': [],
@@ -94,7 +110,11 @@ class TestGmFruit(unittest.TestCase):
         # model._composed_instances is a list of the instances that were
         # made from the anyOf/allOf/OneOf classes in model._composed_schemas
         for composed_instance in fruit._composed_instances:
+<<<<<<< HEAD
             if composed_instance.__class__ == banana.Banana:
+=======
+            if composed_instance.__class__ == petstore_api.Banana:
+>>>>>>> ooof
                 banana_instance = composed_instance
         self.assertEqual(
             fruit._composed_instances,
@@ -126,7 +146,11 @@ class TestGmFruit(unittest.TestCase):
 
         # including extra parameters raises an exception
         with self.assertRaises(petstore_api.ApiValueError):
+<<<<<<< HEAD
             fruit = GmFruit(
+=======
+            fruit = petstore_api.GmFruit(
+>>>>>>> ooof
                 color=color,
                 length_cm=length_cm,
                 unknown_property='some value'
@@ -135,7 +159,11 @@ class TestGmFruit(unittest.TestCase):
         # including input parameters for both anyOf instances works
         cultivar = 'banaple'
         color = 'orange'
+<<<<<<< HEAD
         fruit = GmFruit(
+=======
+        fruit = petstore_api.GmFruit(
+>>>>>>> ooof
             color=color,
             cultivar=cultivar,
             length_cm=length_cm
@@ -153,9 +181,15 @@ class TestGmFruit(unittest.TestCase):
         # model._composed_instances is a list of the instances that were
         # made from the anyOf/allOf/OneOf classes in model._composed_schemas
         for composed_instance in fruit._composed_instances:
+<<<<<<< HEAD
             if composed_instance.__class__ == apple.Apple:
                 apple_instance = composed_instance
             elif composed_instance.__class__ == banana.Banana:
+=======
+            if composed_instance.__class__ == petstore_api.Apple:
+                apple_instance = composed_instance
+            elif composed_instance.__class__ == petstore_api.Banana:
+>>>>>>> ooof
                 banana_instance = composed_instance
         self.assertEqual(
             fruit._composed_instances,
@@ -178,7 +212,11 @@ class TestGmFruit(unittest.TestCase):
         color = 'red'
         cultivar = 'golden delicious'
         origin = 'California'
+<<<<<<< HEAD
         fruit = GmFruit(color=color, cultivar=cultivar, origin=origin)
+=======
+        fruit = petstore_api.GmFruit(color=color, cultivar=cultivar, origin=origin)
+>>>>>>> ooof
         # check its properties
         self.assertEqual(fruit.color, color)
         self.assertEqual(fruit['color'], color)
@@ -204,7 +242,11 @@ class TestGmFruit(unittest.TestCase):
         # model._composed_instances is a list of the instances that were
         # made from the anyOf/allOf/OneOf classes in model._composed_schemas
         for composed_instance in fruit._composed_instances:
+<<<<<<< HEAD
             if composed_instance.__class__ == apple.Apple:
+=======
+            if composed_instance.__class__ == petstore_api.Apple:
+>>>>>>> ooof
                 apple_instance = composed_instance
         self.assertEqual(
             fruit._composed_instances,

@@ -1,7 +1,11 @@
 <?php
 /**
  * Configuration
+<<<<<<< HEAD
  * PHP version 7.2
+=======
+ * PHP version 7.1
+>>>>>>> ooof
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -30,7 +34,11 @@ namespace OpenAPI\Client;
 
 /**
  * Configuration Class Doc Comment
+<<<<<<< HEAD
  * PHP version 7.2
+=======
+ * PHP version 7.1
+>>>>>>> ooof
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -434,6 +442,7 @@ class Configuration
      */
     public function getHostSettings()
     {
+<<<<<<< HEAD
         return [
             [
                 "url" => "http://{server}.swagger.io:{port}/v2",
@@ -473,6 +482,14 @@ class Configuration
                 ]
             ]
         ];
+=======
+        return array(
+          array(
+            "url" => "http://petstore.swagger.io:80/v2",
+            "description" => "No description provided",
+          )
+        );
+>>>>>>> ooof
     }
 
     /**
@@ -485,7 +502,11 @@ class Configuration
     public function getHostFromSettings($index, $variables = null)
     {
         if (null === $variables) {
+<<<<<<< HEAD
             $variables = [];
+=======
+            $variables = array();
+>>>>>>> ooof
         }
 
         $hosts = $this->getHostSettings();
@@ -501,7 +522,11 @@ class Configuration
         // go through variable and assign a value
         foreach ($host["variables"] as $name => $variable) {
             if (array_key_exists($name, $variables)) { // check to see if it's in the variables provided by the user
+<<<<<<< HEAD
                 if (in_array($variables[$name], $variable["enum_values"], true)) { // check to see if the value is in the enum
+=======
+                if (in_array($variables[$name], $variable["enum_values"])) { // check to see if the value is in the enum
+>>>>>>> ooof
                     $url = str_replace("{".$name."}", $variables[$name], $url);
                 } else {
                     throw new \InvalidArgumentException("The variable `$name` in the host URL has invalid value ".$variables[$name].". Must be ".join(',', $variable["enum_values"]).".");

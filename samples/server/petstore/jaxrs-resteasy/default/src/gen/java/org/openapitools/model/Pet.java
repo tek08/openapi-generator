@@ -14,7 +14,11 @@ import org.openapitools.model.Tag;
 import javax.validation.constraints.*;
 import io.swagger.annotations.*;
 
+<<<<<<< HEAD
 @ApiModel(description="A pet for sale in the pet store")@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyServerCodegen")
+=======
+@ApiModel(description="A pet for sale in the pet store")
+>>>>>>> ooof
 public class Pet   {
   
   private Long id;

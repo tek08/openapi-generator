@@ -38,6 +38,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+<<<<<<< HEAD
+=======
+import static org.openapitools.codegen.utils.OnceLogger.once;
+>>>>>>> ooof
 import static org.openapitools.codegen.utils.StringUtils.camelize;
 import static org.openapitools.codegen.utils.StringUtils.underscore;
 
@@ -87,7 +91,28 @@ public class HaskellHttpClientCodegen extends DefaultCodegen implements CodegenC
     static final String MIME_ANY = "MimeAny";
 
     // vendor extensions. These must follow our convention of x- prefixed and lower-kebab cased.
+<<<<<<< HEAD
     static final String VENDOR_EXTENSION_X_UNKNOWN_MIME_TYPES = "x-unknown-mime-types";
+=======
+    static final String X_COLLECTION_FORMAT = "x-collectionFormat";  // TODO: 5.0 Remove
+    static final String X_HADDOCK_PATH = "x-haddockPath";  // TODO: 5.0 Remove
+    static final String X_HAS_BODY_OR_FORM_PARAM = "x-hasBodyOrFormParam";  // TODO: 5.0 Remove
+    static final String X_HAS_MIME_FORM_URL_ENCODED = "x-hasMimeFormUrlEncoded";  // TODO: 5.0 Remove
+    static final String X_HAS_NEW_TAG = "x-hasNewTag";  // TODO: 5.0 Remove
+    static final String X_HAS_OPTIONAL_PARAMS = "x-hasOptionalParams";  // TODO: 5.0 Remove
+    static final String X_HAS_UNKNOWN_RETURN = "x-hasUnknownReturn";  // TODO: 5.0 Remove
+    static final String X_INLINE_CONTENT_TYPE = "x-inlineContentType";  // TODO: 5.0 Remove
+    static final String X_INLINE_ACCEPT = "x-inlineAccept";  // TODO: 5.0 Remove
+    static final String X_IS_BODY_OR_FORM_PARAM = "x-isBodyOrFormParam";  // TODO: 5.0 Remove
+    static final String X_IS_MAYBE_VALUE = "x-isMaybeValue";  // TODO: 5.0 Remove
+    static final String X_DATA_TYPE = "x-dataType";  // TODO: 5.0 Remove
+    static final String X_MIME_TYPES = "x-mimeTypes";  // TODO: 5.0 Remove
+    static final String X_OPERATION_TYPE = "x-operationType";  // TODO: 5.0 Remove
+    static final String X_PARAM_NAME_TYPE = "x-paramNameType";  // TODO: 5.0 Remove
+    static final String X_RETURN_TYPE = "x-returnType";  // TODO: 5.0 Remove
+    static final String X_UNKNOWN_MIME_TYPES = "x-unknownMimeTypes";  // TODO: 5.0 Remove
+
+>>>>>>> ooof
     static final String VENDOR_EXTENSION_X_COLLECTION_FORMAT = "x-collection-format";
     static final String VENDOR_EXTENSION_X_HADDOCK_PATH = "x-haddock-path";
     static final String VENDOR_EXTENSION_X_HAS_BODY_OR_FORM_PARAM = "x-has-body-or-form-param";
@@ -629,7 +654,11 @@ public class HaskellHttpClientCodegen extends DefaultCodegen implements CodegenC
             Schema inner = ap.getItems();
             return "[" + getTypeDeclaration(inner) + "]";
         } else if (ModelUtils.isMapSchema(p)) {
+<<<<<<< HEAD
             Schema inner = getAdditionalProperties(p);
+=======
+            Schema inner = ModelUtils.getAdditionalProperties(p);
+>>>>>>> ooof
             return "(Map.Map String " + getTypeDeclaration(inner) + ")";
         }
         return super.getTypeDeclaration(p);
@@ -651,7 +680,11 @@ public class HaskellHttpClientCodegen extends DefaultCodegen implements CodegenC
     @Override
     public String toInstantiationType(Schema p) {
         if (ModelUtils.isMapSchema(p)) {
+<<<<<<< HEAD
             Schema additionalProperties2 = getAdditionalProperties(p);
+=======
+            Schema additionalProperties2 = ModelUtils.getAdditionalProperties(p);
+>>>>>>> ooof
             String type = additionalProperties2.getType();
             if (null == type) {
                 LOGGER.error("No Type defined for Additional Schema " + additionalProperties2 + "\n" //
@@ -669,6 +702,13 @@ public class HaskellHttpClientCodegen extends DefaultCodegen implements CodegenC
 
     @Override
     public void addOperationToGroup(String tag, String resourcePath, Operation operation, CodegenOperation op, Map<String, List<CodegenOperation>> operations) {
+<<<<<<< HEAD
+=======
+
+        // TODO: 5.0: Remove the camelCased vendorExtension below and ensure templates use the newer property naming.
+        once(LOGGER).warn("4.3.0 has deprecated the use of vendor extensions which don't follow lower-kebab casing standards with x- prefix.");
+
+>>>>>>> ooof
         List<CodegenOperation> opList = operations.get(tag);
         if (opList == null || opList.isEmpty()) {
             opList = new ArrayList<CodegenOperation>();
@@ -705,35 +745,71 @@ public class HaskellHttpClientCodegen extends DefaultCodegen implements CodegenC
         op.vendorExtensions = new LinkedHashMap();
 
         String operationType = toTypeName("Op", op.operationId);
+<<<<<<< HEAD
+=======
+        op.vendorExtensions.put(X_OPERATION_TYPE, operationType); // TODO: 5.0 Remove
+>>>>>>> ooof
         op.vendorExtensions.put(VENDOR_EXTENSION_X_OPERATION_TYPE, operationType);
         typeNames.add(operationType);
 
         String xHaddockPath = String.format(Locale.ROOT, "%s %s", op.httpMethod, op.path.replace("/", "\\/"));
+<<<<<<< HEAD
         op.vendorExtensions.put(VENDOR_EXTENSION_X_HADDOCK_PATH, xHaddockPath);
+=======
+        op.vendorExtensions.put(X_HADDOCK_PATH, xHaddockPath); // TODO: 5.0 Remove
+        op.vendorExtensions.put(VENDOR_EXTENSION_X_HADDOCK_PATH, xHaddockPath);
+        op.vendorExtensions.put(X_HAS_BODY_OR_FORM_PARAM, op.getHasBodyParam() || op.getHasFormParams()); // TODO: 5.0 Remove
+>>>>>>> ooof
         op.vendorExtensions.put(VENDOR_EXTENSION_X_HAS_BODY_OR_FORM_PARAM, op.getHasBodyParam() || op.getHasFormParams());
 
         for (CodegenParameter param : op.allParams) {
             param.vendorExtensions = new LinkedHashMap(); // prevent aliasing/sharing
+<<<<<<< HEAD
             param.vendorExtensions.put(VENDOR_EXTENSION_X_OPERATION_TYPE, operationType);
             param.vendorExtensions.put(VENDOR_EXTENSION_X_IS_BODY_OR_FORM_PARAM, param.isBodyParam || param.isFormParam);
             if (!StringUtils.isBlank(param.collectionFormat)) {
+=======
+            param.vendorExtensions.put(X_OPERATION_TYPE, operationType); // TODO: 5.0 Remove
+            param.vendorExtensions.put(VENDOR_EXTENSION_X_OPERATION_TYPE, operationType);
+            param.vendorExtensions.put(X_IS_BODY_OR_FORM_PARAM, param.isBodyParam || param.isFormParam); // TODO: 5.0 Remove
+            param.vendorExtensions.put(VENDOR_EXTENSION_X_IS_BODY_OR_FORM_PARAM, param.isBodyParam || param.isFormParam);
+            if (!StringUtils.isBlank(param.collectionFormat)) {
+                param.vendorExtensions.put(X_COLLECTION_FORMAT, mapCollectionFormat(param.collectionFormat)); // TODO: 5.0 Remove
+>>>>>>> ooof
                 param.vendorExtensions.put(VENDOR_EXTENSION_X_COLLECTION_FORMAT, mapCollectionFormat(param.collectionFormat));
             } else if (!param.isBodyParam && (param.isListContainer || param.dataType.startsWith("["))) { // param.isListContainer is sometimes false for list types
                 // defaulting due to https://github.com/wing328/openapi-generator/issues/72
                 param.collectionFormat = "csv";
+<<<<<<< HEAD
                 param.vendorExtensions.put(VENDOR_EXTENSION_X_COLLECTION_FORMAT, mapCollectionFormat(param.collectionFormat));
             }
             if (!param.required) {
+=======
+                param.vendorExtensions.put(X_COLLECTION_FORMAT, mapCollectionFormat(param.collectionFormat)); // TODO: 5.0 Remove
+                param.vendorExtensions.put(VENDOR_EXTENSION_X_COLLECTION_FORMAT, mapCollectionFormat(param.collectionFormat));
+            }
+            if (!param.required) {
+                op.vendorExtensions.put(X_HAS_OPTIONAL_PARAMS, true); // TODO: 5.0 Remove
+>>>>>>> ooof
                 op.vendorExtensions.put(VENDOR_EXTENSION_X_HAS_OPTIONAL_PARAMS, true);
             }
 
             if (typeMapping.containsKey(param.dataType)
                     || param.isMapContainer || param.isListContainer
+<<<<<<< HEAD
                     || param.isPrimitiveType || param.isFile || (param.isEnum || param.allowableValues != null) || !param.isBodyParam) {
 
                 String dataType = genEnums && param.isEnum ? param.datatypeWithEnum : param.dataType;
 
                 String paramNameType = toDedupedModelName(toTypeName("Param", param.paramName), dataType, !(param.isEnum || param.allowableValues != null));
+=======
+                    || param.isPrimitiveType || param.isFile || param.isEnum) {
+
+                String dataType = genEnums && param.isEnum ? param.datatypeWithEnum : param.dataType;
+
+                String paramNameType = toDedupedModelName(toTypeName("Param", param.paramName), dataType, !param.isEnum);
+                param.vendorExtensions.put(X_PARAM_NAME_TYPE, paramNameType); // TODO: 5.0 Remove
+>>>>>>> ooof
                 param.vendorExtensions.put(VENDOR_EXTENSION_X_PARAM_NAME_TYPE, paramNameType);
 
                 HashMap<String, Object> props = new HashMap<>();
@@ -778,16 +854,26 @@ public class HaskellHttpClientCodegen extends DefaultCodegen implements CodegenC
                 return o1.get(MEDIA_TYPE).compareTo(o2.get(MEDIA_TYPE));
             }
         });
+<<<<<<< HEAD
         additionalProperties.put(VENDOR_EXTENSION_X_UNKNOWN_MIME_TYPES, unknownMimeTypes);
+=======
+        additionalProperties.put(X_UNKNOWN_MIME_TYPES, unknownMimeTypes);
+>>>>>>> ooof
 
         ArrayList<Map<String, Object>> params = new ArrayList<>(uniqueParamNameTypes.values());
         Collections.sort(params, new Comparator<Map<String, Object>>() {
             @Override
             public int compare(Map<String, Object> o1, Map<String, Object> o2) {
                 return
+<<<<<<< HEAD
                         ((String) o1.get(VENDOR_EXTENSION_X_PARAM_NAME_TYPE))
                                 .compareTo(
                                         (String) o2.get(VENDOR_EXTENSION_X_PARAM_NAME_TYPE));
+=======
+                        ((String) o1.get(X_PARAM_NAME_TYPE))
+                                .compareTo(
+                                        (String) o2.get(X_PARAM_NAME_TYPE));
+>>>>>>> ooof
             }
         });
         additionalProperties.put(X_ALL_UNIQUE_PARAMS, params);
@@ -796,9 +882,20 @@ public class HaskellHttpClientCodegen extends DefaultCodegen implements CodegenC
     @Override
     public Map<String, Object> postProcessOperationsWithModels(Map<String, Object> objs, List<Object> allModels) {
         Map<String, Object> ret = super.postProcessOperationsWithModels(objs, allModels);
+<<<<<<< HEAD
         HashMap<String, Object> pathOps = (HashMap<String, Object>) ret.get("operations");
         ArrayList<CodegenOperation> ops = (ArrayList<CodegenOperation>) pathOps.get("operation");
         if (ops.size() > 0) {
+=======
+
+        // TODO: 5.0: Remove the camelCased vendorExtension below and ensure templates use the newer property naming.
+        once(LOGGER).warn("4.3.0 has deprecated the use of vendor extensions which don't follow lower-kebab casing standards with x- prefix.");
+
+        HashMap<String, Object> pathOps = (HashMap<String, Object>) ret.get("operations");
+        ArrayList<CodegenOperation> ops = (ArrayList<CodegenOperation>) pathOps.get("operation");
+        if (ops.size() > 0) {
+            ops.get(0).vendorExtensions.put(X_HAS_NEW_TAG, true); // TODO: 5.0 Remove
+>>>>>>> ooof
             ops.get(0).vendorExtensions.put(VENDOR_EXTENSION_X_HAS_NEW_TAG, true);
         }
 
@@ -810,6 +907,10 @@ public class HaskellHttpClientCodegen extends DefaultCodegen implements CodegenC
             if (modelMimeTypes.containsKey(m.classname)) {
                 Set<String> mimeTypes = modelMimeTypes.get(m.classname);
 
+<<<<<<< HEAD
+=======
+                m.vendorExtensions.put(X_MIME_TYPES, mimeTypes); // TODO: 5.0 Remove
+>>>>>>> ooof
                 m.vendorExtensions.put(VENDOR_EXTENSION_X_MIME_TYPES, mimeTypes);
 
                 if ((boolean) additionalProperties.get(PROP_GENERATE_FORM_URLENCODED_INSTANCES) && mimeTypes.contains("MimeFormUrlEncoded")) {
@@ -820,6 +921,10 @@ public class HaskellHttpClientCodegen extends DefaultCodegen implements CodegenC
                         }
                     }
                     if (hasMimeFormUrlEncoded) {
+<<<<<<< HEAD
+=======
+                        m.vendorExtensions.put(X_HAS_MIME_FORM_URL_ENCODED, true); // TODO: 5.0 Remove
+>>>>>>> ooof
                         m.vendorExtensions.put(VENDOR_EXTENSION_X_HAS_MIME_FORM_URL_ENCODED, true);
                     }
                 }
@@ -881,9 +986,20 @@ public class HaskellHttpClientCodegen extends DefaultCodegen implements CodegenC
         if (returnType == null || returnType.equals("null")) {
             if (op.hasProduces) {
                 returnType = "res";
+<<<<<<< HEAD
                 op.vendorExtensions.put(VENDOR_EXTENSION_X_HAS_UNKNOWN_RETURN, true);
             } else {
                 returnType = "NoContent";
+=======
+                op.vendorExtensions.put(X_HAS_UNKNOWN_RETURN, true); // TODO: 5.0 Remove
+                op.vendorExtensions.put(VENDOR_EXTENSION_X_HAS_UNKNOWN_RETURN, true);
+            } else {
+                returnType = "NoContent";
+                // TODO: 5.0 Remove vendor extension usage which is not lower-kebab cased.
+                if (!op.vendorExtensions.containsKey(X_INLINE_ACCEPT)) {
+                    SetNoContent(op, X_INLINE_ACCEPT);
+                }
+>>>>>>> ooof
                 if (!op.vendorExtensions.containsKey(VENDOR_EXTENSION_X_INLINE_ACCEPT)) {
                     SetNoContent(op, VENDOR_EXTENSION_X_INLINE_ACCEPT);
                 }
@@ -892,11 +1008,20 @@ public class HaskellHttpClientCodegen extends DefaultCodegen implements CodegenC
         if (returnType.contains(" ")) {
             returnType = "(" + returnType + ")";
         }
+<<<<<<< HEAD
+=======
+        op.vendorExtensions.put(X_RETURN_TYPE, returnType); // TODO: 5.0 Remove
+>>>>>>> ooof
         op.vendorExtensions.put(VENDOR_EXTENSION_X_RETURN_TYPE, returnType);
     }
 
     private void processProducesConsumes(CodegenOperation op) {
+<<<<<<< HEAD
         if (!(Boolean) op.vendorExtensions.get(VENDOR_EXTENSION_X_HAS_BODY_OR_FORM_PARAM)) {
+=======
+        if (!(Boolean) op.vendorExtensions.get(X_HAS_BODY_OR_FORM_PARAM)) {
+            SetNoContent(op, X_INLINE_CONTENT_TYPE); // TODO: 5.0 Remove
+>>>>>>> ooof
             SetNoContent(op, VENDOR_EXTENSION_X_INLINE_CONTENT_TYPE);
         }
         if (op.hasConsumes) {
@@ -934,15 +1059,30 @@ public class HaskellHttpClientCodegen extends DefaultCodegen implements CodegenC
     }
 
     private void processInlineConsumesContentType(CodegenOperation op, Map<String, String> m) {
+<<<<<<< HEAD
         if (op.vendorExtensions.containsKey(VENDOR_EXTENSION_X_INLINE_CONTENT_TYPE)) return;
+=======
+        if (op.vendorExtensions.containsKey(X_INLINE_CONTENT_TYPE)) return;
+
+        // TODO: 5.0: Remove the camelCased vendorExtension below and ensure templates use the newer property naming.
+        once(LOGGER).warn("4.3.0 has deprecated the use of vendor extensions which don't follow lower-kebab casing standards with x- prefix.");
+>>>>>>> ooof
 
         if ((boolean) additionalProperties.get(PROP_INLINE_MIME_TYPES)
                 && op.consumes.size() == 1
                 && !MIME_ANY.equals(op.consumes.get(0).get(X_MEDIA_DATA_TYPE))
                 && !MIME_NO_CONTENT.equals(op.consumes.get(0).get(X_MEDIA_DATA_TYPE))) {
+<<<<<<< HEAD
             op.vendorExtensions.put(VENDOR_EXTENSION_X_INLINE_CONTENT_TYPE, m);
             for (CodegenParameter param : op.allParams) {
                 if (param.isBodyParam && param.required) {
+=======
+            op.vendorExtensions.put(X_INLINE_CONTENT_TYPE, m); // TODO: 5.0 Remove
+            op.vendorExtensions.put(VENDOR_EXTENSION_X_INLINE_CONTENT_TYPE, m);
+            for (CodegenParameter param : op.allParams) {
+                if (param.isBodyParam && param.required) {
+                    param.vendorExtensions.put(X_INLINE_CONTENT_TYPE, m); // TODO: 5.0 Remove
+>>>>>>> ooof
                     param.vendorExtensions.put(VENDOR_EXTENSION_X_INLINE_CONTENT_TYPE, m);
                 }
             }
@@ -955,6 +1095,13 @@ public class HaskellHttpClientCodegen extends DefaultCodegen implements CodegenC
                 && !MIME_ANY.equals(op.produces.get(0).get(X_MEDIA_DATA_TYPE))
                 && !MIME_NO_CONTENT.equals(op.produces.get(0).get(X_MEDIA_DATA_TYPE))) {
 
+<<<<<<< HEAD
+=======
+            // TODO: 5.0: Remove the camelCased vendorExtension below and ensure templates use the newer property naming.
+            once(LOGGER).warn("4.3.0 has deprecated the use of vendor extensions which don't follow lower-kebab casing standards with x- prefix.");
+
+            op.vendorExtensions.put(X_INLINE_ACCEPT, m); // TODO: 5.0 Remove
+>>>>>>> ooof
             op.vendorExtensions.put(VENDOR_EXTENSION_X_INLINE_ACCEPT, m);
         }
     }
@@ -987,7 +1134,11 @@ public class HaskellHttpClientCodegen extends DefaultCodegen implements CodegenC
     public Boolean isDuplicate(String paramNameType, String dataType) {
         Map<String, Object> lastParam = this.uniqueParamNameTypes.get(paramNameType);
         if (lastParam != null) {
+<<<<<<< HEAD
             String comparisonKey = lastParam.containsKey(VENDOR_EXTENSION_X_ENUM) ? X_ENUM_VALUES : VENDOR_EXTENSION_X_DATA_TYPE;
+=======
+            String comparisonKey = lastParam.containsKey(VENDOR_EXTENSION_X_ENUM) ? X_ENUM_VALUES : X_DATA_TYPE;
+>>>>>>> ooof
             String lastParamDataType = (String) lastParam.get(comparisonKey);
             if (lastParamDataType != null && lastParamDataType.equals(dataType)) {
                 return true;
@@ -999,7 +1150,11 @@ public class HaskellHttpClientCodegen extends DefaultCodegen implements CodegenC
     private Pair<Boolean, String> isDuplicateEnumValues(String enumValues) {
         for (Map<String, Object> vs : uniqueParamNameTypes.values()) {
             if (enumValues.equals(vs.get(X_ENUM_VALUES))) {
+<<<<<<< HEAD
                 return Pair.of(true, (String) vs.get(VENDOR_EXTENSION_X_PARAM_NAME_TYPE));
+=======
+                return Pair.of(true, (String) vs.get(X_PARAM_NAME_TYPE));
+>>>>>>> ooof
             }
         }
         return Pair.of(false, null);
@@ -1008,8 +1163,13 @@ public class HaskellHttpClientCodegen extends DefaultCodegen implements CodegenC
 
     private void addToUniques(String xGroup, String paramNameType, String dataType, Map<String, Object> props) {
         HashMap<String, Object> m = new HashMap<>();
+<<<<<<< HEAD
         m.put(VENDOR_EXTENSION_X_PARAM_NAME_TYPE, paramNameType);
         m.put(VENDOR_EXTENSION_X_DATA_TYPE, dataType);
+=======
+        m.put(X_PARAM_NAME_TYPE, paramNameType);
+        m.put(X_DATA_TYPE, dataType);
+>>>>>>> ooof
         m.put(xGroup, true);
         m.putAll(props);
         uniqueParamNameTypes.put(paramNameType, m);
@@ -1269,6 +1429,12 @@ public class HaskellHttpClientCodegen extends DefaultCodegen implements CodegenC
     public Map<String, Object> postProcessModels(Map<String, Object> objs) {
         List<Object> models = (List<Object>) objs.get("models");
 
+<<<<<<< HEAD
+=======
+        // TODO: 5.0: Remove the camelCased vendorExtension below and ensure templates use the newer property naming.
+        once(LOGGER).warn("4.3.0 has deprecated the use of vendor extensions which don't follow lower-kebab casing standards with x- prefix.");
+
+>>>>>>> ooof
         for (Object _mo : models) {
             Map<String, Object> mo = (Map<String, Object>) _mo;
             CodegenModel cm = (CodegenModel) mo.get("model");
@@ -1278,8 +1444,15 @@ public class HaskellHttpClientCodegen extends DefaultCodegen implements CodegenC
                 if (dataType == null && cm.isArrayModel) { // isAlias + arrayModelType missing "datatype"
                     dataType = "[" + cm.arrayModelType + "]";
                 }
+<<<<<<< HEAD
                 cm.vendorExtensions.put(VENDOR_EXTENSION_X_DATA_TYPE, dataType);
                 if (dataType.equals("Maybe A.Value")) {
+=======
+                cm.vendorExtensions.put(X_DATA_TYPE, dataType); // TODO: 5.0 Remove
+                cm.vendorExtensions.put(VENDOR_EXTENSION_X_DATA_TYPE, dataType);
+                if (dataType.equals("Maybe A.Value")) {
+                    cm.vendorExtensions.put(X_IS_MAYBE_VALUE, true); // TODO: 5.0 Remove
+>>>>>>> ooof
                     cm.vendorExtensions.put(VENDOR_EXTENSION_X_IS_MAYBE_VALUE, true);
                 }
             }
@@ -1287,8 +1460,15 @@ public class HaskellHttpClientCodegen extends DefaultCodegen implements CodegenC
                 String datatype = genEnums && !StringUtils.isBlank(var.datatypeWithEnum)
                         ? var.datatypeWithEnum
                         : var.dataType;
+<<<<<<< HEAD
                 var.vendorExtensions.put(VENDOR_EXTENSION_X_DATA_TYPE, datatype);
                 if (!var.required && datatype.equals("A.Value") || var.required && datatype.equals("Maybe A.Value")) {
+=======
+                var.vendorExtensions.put(X_DATA_TYPE, datatype); // TODO: 5.0 Remove
+                var.vendorExtensions.put(VENDOR_EXTENSION_X_DATA_TYPE, datatype);
+                if (!var.required && datatype.equals("A.Value") || var.required && datatype.equals("Maybe A.Value")) {
+                    var.vendorExtensions.put(X_IS_MAYBE_VALUE, true); // TODO: 5.0 Remove
+>>>>>>> ooof
                     var.vendorExtensions.put(VENDOR_EXTENSION_X_IS_MAYBE_VALUE, true);
                 }
             }

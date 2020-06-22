@@ -19,7 +19,11 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
 @RequestScoped
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyServerCodegen")
+=======
+
+>>>>>>> ooof
 public class PetApiServiceImpl implements PetApiService {
       public Response addPet(Pet body,SecurityContext securityContext)
       throws NotFoundException {

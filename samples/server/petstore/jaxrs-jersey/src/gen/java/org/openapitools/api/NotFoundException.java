@@ -1,6 +1,10 @@
 package org.openapitools.api;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJerseyServerCodegen")
+=======
+
+>>>>>>> ooof
 public class NotFoundException extends ApiException {
     private int code;
     public NotFoundException (int code, String msg) {

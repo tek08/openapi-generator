@@ -1,12 +1,19 @@
 import {{{invokerPackage}}}.api.{{{classname}}};
 
 public class {{{classname}}}Example {
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
     public static void main(String[] args) {
         {{{classname}}} apiInstance = new {{{classname}}}();
         {{#allParams}}
         {{{dataType}}} {{{paramName}}} = {{{example}}}; // {{{dataType}}} | {{{unescapedDescription}}}
         {{/allParams}}
+<<<<<<< HEAD
         
+=======
+>>>>>>> ooof
         try {
             {{#returnType}}{{{returnType}}} result = {{/returnType}}apiInstance.{{{operationId}}}({{#allParams}}{{{paramName}}}{{#hasMore}}, {{/hasMore}}{{/allParams}});{{#returnType}}
             System.out.println(result);{{/returnType}}

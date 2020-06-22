@@ -4,8 +4,12 @@ All URIs are relative to *http://petstore.swagger.io:80/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+<<<<<<< HEAD
 [**fakeHealthGet**](FakeApi.md#fakeHealthGet) | **GET** /fake/health | Health check endpoint
 [**fakeHttpSignatureTest**](FakeApi.md#fakeHttpSignatureTest) | **GET** /fake/http-signature-test | test http signature authentication
+=======
+[**createXmlItem**](FakeApi.md#createXmlItem) | **POST** /fake/create_xml_item | creates an XmlItem
+>>>>>>> ooof
 [**fakeOuterBooleanSerialize**](FakeApi.md#fakeOuterBooleanSerialize) | **POST** /fake/outer/boolean | 
 [**fakeOuterCompositeSerialize**](FakeApi.md#fakeOuterCompositeSerialize) | **POST** /fake/outer/composite | 
 [**fakeOuterNumberSerialize**](FakeApi.md#fakeOuterNumberSerialize) | **POST** /fake/outer/number | 
@@ -13,7 +17,11 @@ Method | HTTP request | Description
 [**testBodyWithFileSchema**](FakeApi.md#testBodyWithFileSchema) | **PUT** /fake/body-with-file-schema | 
 [**testBodyWithQueryParams**](FakeApi.md#testBodyWithQueryParams) | **PUT** /fake/body-with-query-params | 
 [**testClientModel**](FakeApi.md#testClientModel) | **PATCH** /fake | To test \&quot;client\&quot; model
+<<<<<<< HEAD
 [**testEndpointParameters**](FakeApi.md#testEndpointParameters) | **POST** /fake | Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
+=======
+[**testEndpointParameters**](FakeApi.md#testEndpointParameters) | **POST** /fake | Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트
+>>>>>>> ooof
 [**testEnumParameters**](FakeApi.md#testEnumParameters) | **GET** /fake | To test enum parameters
 [**testGroupParameters**](FakeApi.md#testGroupParameters) | **DELETE** /fake | Fake endpoint to test group parameters (optional)
 [**testInlineAdditionalProperties**](FakeApi.md#testInlineAdditionalProperties) | **POST** /fake/inline-additionalProperties | test inline additionalProperties
@@ -22,6 +30,7 @@ Method | HTTP request | Description
 
 
 
+<<<<<<< HEAD
 ## fakeHealthGet
 
 > HealthCheckResult fakeHealthGet()
@@ -65,11 +74,21 @@ No authorization required
 > fakeHttpSignatureTest(pet, opts)
 
 test http signature authentication
+=======
+## createXmlItem
+
+> createXmlItem(xmlItem)
+
+creates an XmlItem
+
+this route creates an XmlItem
+>>>>>>> ooof
 
 ### Example
 
 ```javascript
 import OpenApiPetstore from 'open_api_petstore';
+<<<<<<< HEAD
 let defaultClient = OpenApiPetstore.ApiClient.instance;
 
 let apiInstance = new OpenApiPetstore.FakeApi();
@@ -79,6 +98,12 @@ let opts = {
   'header1': "header1_example" // String | header parameter
 };
 apiInstance.fakeHttpSignatureTest(pet, opts).then(() => {
+=======
+
+let apiInstance = new OpenApiPetstore.FakeApi();
+let xmlItem = new OpenApiPetstore.XmlItem(); // XmlItem | XmlItem Body
+apiInstance.createXmlItem(xmlItem).then(() => {
+>>>>>>> ooof
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -91,9 +116,13 @@ apiInstance.fakeHttpSignatureTest(pet, opts).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **pet** | [**Pet**](Pet.md)| Pet object that needs to be added to the store | 
  **query1** | **String**| query parameter | [optional] 
  **header1** | **String**| header parameter | [optional] 
+=======
+ **xmlItem** | [**XmlItem**](XmlItem.md)| XmlItem Body | 
+>>>>>>> ooof
 
 ### Return type
 
@@ -101,11 +130,19 @@ null (empty response body)
 
 ### Authorization
 
+<<<<<<< HEAD
 [http_signature_test](../README.md#http_signature_test)
 
 ### HTTP request headers
 
 - **Content-Type**: application/json, application/xml
+=======
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/xml, application/xml; charset=utf-8, application/xml; charset=utf-16, text/xml, text/xml; charset=utf-8, text/xml; charset=utf-16
+>>>>>>> ooof
 - **Accept**: Not defined
 
 
@@ -151,7 +188,11 @@ No authorization required
 
 ### HTTP request headers
 
+<<<<<<< HEAD
 - **Content-Type**: application/json
+=======
+- **Content-Type**: Not defined
+>>>>>>> ooof
 - **Accept**: */*
 
 
@@ -170,7 +211,11 @@ import OpenApiPetstore from 'open_api_petstore';
 
 let apiInstance = new OpenApiPetstore.FakeApi();
 let opts = {
+<<<<<<< HEAD
   'outerComposite': new OpenApiPetstore.OuterComposite() // OuterComposite | Input composite as post body
+=======
+  'body': new OpenApiPetstore.OuterComposite() // OuterComposite | Input composite as post body
+>>>>>>> ooof
 };
 apiInstance.fakeOuterCompositeSerialize(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -185,7 +230,11 @@ apiInstance.fakeOuterCompositeSerialize(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **outerComposite** | [**OuterComposite**](OuterComposite.md)| Input composite as post body | [optional] 
+=======
+ **body** | [**OuterComposite**](OuterComposite.md)| Input composite as post body | [optional] 
+>>>>>>> ooof
 
 ### Return type
 
@@ -197,7 +246,11 @@ No authorization required
 
 ### HTTP request headers
 
+<<<<<<< HEAD
 - **Content-Type**: application/json
+=======
+- **Content-Type**: Not defined
+>>>>>>> ooof
 - **Accept**: */*
 
 
@@ -243,7 +296,11 @@ No authorization required
 
 ### HTTP request headers
 
+<<<<<<< HEAD
 - **Content-Type**: application/json
+=======
+- **Content-Type**: Not defined
+>>>>>>> ooof
 - **Accept**: */*
 
 
@@ -289,13 +346,21 @@ No authorization required
 
 ### HTTP request headers
 
+<<<<<<< HEAD
 - **Content-Type**: application/json
+=======
+- **Content-Type**: Not defined
+>>>>>>> ooof
 - **Accept**: */*
 
 
 ## testBodyWithFileSchema
 
+<<<<<<< HEAD
 > testBodyWithFileSchema(fileSchemaTestClass)
+=======
+> testBodyWithFileSchema(body)
+>>>>>>> ooof
 
 
 
@@ -307,8 +372,13 @@ For this test, the body for this request much reference a schema named &#x60;Fil
 import OpenApiPetstore from 'open_api_petstore';
 
 let apiInstance = new OpenApiPetstore.FakeApi();
+<<<<<<< HEAD
 let fileSchemaTestClass = new OpenApiPetstore.FileSchemaTestClass(); // FileSchemaTestClass | 
 apiInstance.testBodyWithFileSchema(fileSchemaTestClass).then(() => {
+=======
+let body = new OpenApiPetstore.FileSchemaTestClass(); // FileSchemaTestClass | 
+apiInstance.testBodyWithFileSchema(body).then(() => {
+>>>>>>> ooof
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -321,7 +391,11 @@ apiInstance.testBodyWithFileSchema(fileSchemaTestClass).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **fileSchemaTestClass** | [**FileSchemaTestClass**](FileSchemaTestClass.md)|  | 
+=======
+ **body** | [**FileSchemaTestClass**](FileSchemaTestClass.md)|  | 
+>>>>>>> ooof
 
 ### Return type
 
@@ -339,7 +413,11 @@ No authorization required
 
 ## testBodyWithQueryParams
 
+<<<<<<< HEAD
 > testBodyWithQueryParams(query, user)
+=======
+> testBodyWithQueryParams(query, body)
+>>>>>>> ooof
 
 
 
@@ -350,8 +428,13 @@ import OpenApiPetstore from 'open_api_petstore';
 
 let apiInstance = new OpenApiPetstore.FakeApi();
 let query = "query_example"; // String | 
+<<<<<<< HEAD
 let user = new OpenApiPetstore.User(); // User | 
 apiInstance.testBodyWithQueryParams(query, user).then(() => {
+=======
+let body = new OpenApiPetstore.User(); // User | 
+apiInstance.testBodyWithQueryParams(query, body).then(() => {
+>>>>>>> ooof
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -365,7 +448,11 @@ apiInstance.testBodyWithQueryParams(query, user).then(() => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **query** | **String**|  | 
+<<<<<<< HEAD
  **user** | [**User**](User.md)|  | 
+=======
+ **body** | [**User**](User.md)|  | 
+>>>>>>> ooof
 
 ### Return type
 
@@ -383,7 +470,11 @@ No authorization required
 
 ## testClientModel
 
+<<<<<<< HEAD
 > Client testClientModel(client)
+=======
+> Client testClientModel(body)
+>>>>>>> ooof
 
 To test \&quot;client\&quot; model
 
@@ -395,8 +486,13 @@ To test \&quot;client\&quot; model
 import OpenApiPetstore from 'open_api_petstore';
 
 let apiInstance = new OpenApiPetstore.FakeApi();
+<<<<<<< HEAD
 let client = new OpenApiPetstore.Client(); // Client | client model
 apiInstance.testClientModel(client).then((data) => {
+=======
+let body = new OpenApiPetstore.Client(); // Client | client model
+apiInstance.testClientModel(body).then((data) => {
+>>>>>>> ooof
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -409,7 +505,11 @@ apiInstance.testClientModel(client).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **client** | [**Client**](Client.md)| client model | 
+=======
+ **body** | [**Client**](Client.md)| client model | 
+>>>>>>> ooof
 
 ### Return type
 
@@ -429,9 +529,15 @@ No authorization required
 
 > testEndpointParameters(_number, _double, patternWithoutDelimiter, _byte, opts)
 
+<<<<<<< HEAD
 Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
 
 Fake endpoint for testing various parameters 假端點 偽のエンドポイント 가짜 엔드 포인트 
+=======
+Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트
+
+Fake endpoint for testing various parameters  假端點  偽のエンドポイント  가짜 엔드 포인트
+>>>>>>> ooof
 
 ### Example
 
@@ -574,10 +680,13 @@ Fake endpoint to test group parameters (optional)
 
 ```javascript
 import OpenApiPetstore from 'open_api_petstore';
+<<<<<<< HEAD
 let defaultClient = OpenApiPetstore.ApiClient.instance;
 // Configure Bearer (JWT) access token for authorization: bearer_test
 let bearer_test = defaultClient.authentications['bearer_test'];
 bearer_test.accessToken = "YOUR ACCESS TOKEN"
+=======
+>>>>>>> ooof
 
 let apiInstance = new OpenApiPetstore.FakeApi();
 let requiredStringGroup = 56; // Number | Required String in group parameters
@@ -614,7 +723,11 @@ null (empty response body)
 
 ### Authorization
 
+<<<<<<< HEAD
 [bearer_test](../README.md#bearer_test)
+=======
+No authorization required
+>>>>>>> ooof
 
 ### HTTP request headers
 
@@ -624,7 +737,11 @@ null (empty response body)
 
 ## testInlineAdditionalProperties
 
+<<<<<<< HEAD
 > testInlineAdditionalProperties(requestBody)
+=======
+> testInlineAdditionalProperties(param)
+>>>>>>> ooof
 
 test inline additionalProperties
 
@@ -634,8 +751,13 @@ test inline additionalProperties
 import OpenApiPetstore from 'open_api_petstore';
 
 let apiInstance = new OpenApiPetstore.FakeApi();
+<<<<<<< HEAD
 let requestBody = {key: "null"}; // {String: String} | request body
 apiInstance.testInlineAdditionalProperties(requestBody).then(() => {
+=======
+let param = {key: "null"}; // {String: String} | request body
+apiInstance.testInlineAdditionalProperties(param).then(() => {
+>>>>>>> ooof
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -648,7 +770,11 @@ apiInstance.testInlineAdditionalProperties(requestBody).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+<<<<<<< HEAD
  **requestBody** | [**{String: String}**](String.md)| request body | 
+=======
+ **param** | [**{String: String}**](String.md)| request body | 
+>>>>>>> ooof
 
 ### Return type
 

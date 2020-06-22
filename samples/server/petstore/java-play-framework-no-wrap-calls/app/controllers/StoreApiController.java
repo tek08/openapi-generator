@@ -9,7 +9,10 @@ import play.mvc.Http;
 import java.util.List;
 import java.util.Map;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.LinkedHashSet;
+=======
+>>>>>>> ooof
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.google.inject.Inject;
@@ -21,7 +24,11 @@ import javax.validation.constraints.*;
 import play.Configuration;
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen")
+=======
+
+>>>>>>> ooof
 public class StoreApiController extends Controller {
 
     private final StoreApiControllerImpInterface imp;

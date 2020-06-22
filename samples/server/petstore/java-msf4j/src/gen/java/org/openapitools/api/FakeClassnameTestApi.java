@@ -26,7 +26,11 @@ import javax.ws.rs.*;
 
 
 @io.swagger.annotations.Api(description = "the fake_classname_test API")
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen")
+=======
+
+>>>>>>> ooof
 public class FakeClassnameTestApi  {
    private final FakeClassnameTestApiService delegate = FakeClassnameTestApiServiceFactory.getFakeClassnameTestApi();
 

@@ -7,17 +7,26 @@ import java.util.Date
 
 object Serializer {
     @JvmStatic
+<<<<<<< HEAD
     val moshiBuilder: Moshi.Builder = Moshi.Builder()
         .add(Date::class.java, Rfc3339DateJsonAdapter().nullSafe())
         .add(OffsetDateTimeAdapter())
+=======
+    val moshi: Moshi = Moshi.Builder()
+        .add(Date::class.java, Rfc3339DateJsonAdapter().nullSafe())
+>>>>>>> ooof
         .add(LocalDateTimeAdapter())
         .add(LocalDateAdapter())
         .add(UUIDAdapter())
         .add(ByteArrayAdapter())
         .add(KotlinJsonAdapterFactory())
+<<<<<<< HEAD
 
     @JvmStatic
     val moshi: Moshi by lazy {
         moshiBuilder.build()
     }
+=======
+        .build()
+>>>>>>> ooof
 }

@@ -17,7 +17,11 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
 @RequestScoped
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaResteasyServerCodegen")
+=======
+
+>>>>>>> ooof
 public class UserApiServiceImpl implements UserApiService {
       public Response createUser(User body,SecurityContext securityContext)
       throws NotFoundException {

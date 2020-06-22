@@ -13,7 +13,11 @@ import javax.validation.constraints.*;
  * Model for testing model with \&quot;_class\&quot; property
  */
 @ApiModel(description = "Model for testing model with \"_class\" property")
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
+=======
+
+>>>>>>> ooof
 public class ClassModel   {
   @JsonProperty("_class")
   private String propertyClass;

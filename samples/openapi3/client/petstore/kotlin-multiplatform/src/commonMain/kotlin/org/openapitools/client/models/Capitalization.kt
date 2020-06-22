@@ -14,7 +14,10 @@ package org.openapitools.client.models
 
 import kotlinx.serialization.*
 import kotlinx.serialization.internal.CommonEnumSerializer
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * 
  * @param smallCamel 
@@ -33,5 +36,11 @@ data class Capitalization (
     @SerialName(value = "SCA_ETH_Flow_Points") val scAETHFlowPoints: kotlin.String? = null,
     /* Name of the pet  */
     @SerialName(value = "ATT_NAME") val ATT_NAME: kotlin.String? = null
+<<<<<<< HEAD
 )
+=======
+) 
+
+
+>>>>>>> ooof
 

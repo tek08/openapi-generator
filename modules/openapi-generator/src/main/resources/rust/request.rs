@@ -113,7 +113,11 @@ impl Request {
         let mut path = self.path;
         for (k, v) in self.path_params {
             // replace {id} with the value of the id path param
+<<<<<<< HEAD
             {{=<% %>=}}path = path.replace(&format!("{{{}}}", k), &v);<%={{ }}=%>
+=======
+            path = path.replace(&format!("{{{}}}", k), &v);
+>>>>>>> ooof
         }
 
         for (k, v) in self.header_params {

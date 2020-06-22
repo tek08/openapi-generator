@@ -8,8 +8,12 @@
 import Foundation
 
 /** Must be named &#x60;File&#x60; for test. */
+<<<<<<< HEAD
 internal struct File: Codable { 
 
+=======
+internal struct File: Codable {
+>>>>>>> ooof
 
     /** Test capitalization */
     internal var sourceURI: String?

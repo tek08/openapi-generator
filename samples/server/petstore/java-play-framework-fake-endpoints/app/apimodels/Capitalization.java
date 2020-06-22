@@ -8,7 +8,11 @@ import javax.validation.constraints.*;
 /**
  * Capitalization
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen")
+=======
+
+>>>>>>> ooof
 @SuppressWarnings({"UnusedReturnValue", "WeakerAccess"})
 public class Capitalization   {
   @JsonProperty("smallCamel")

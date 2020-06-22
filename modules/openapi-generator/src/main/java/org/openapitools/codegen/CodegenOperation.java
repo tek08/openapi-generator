@@ -29,9 +29,15 @@ public class CodegenOperation {
             isListContainer, isMultipart, hasMore = true,
             isResponseBinary = false, isResponseFile = false, hasReference = false,
             isRestfulIndex, isRestfulShow, isRestfulCreate, isRestfulUpdate, isRestfulDestroy,
+<<<<<<< HEAD
             isRestful, isDeprecated, isCallbackRequest, uniqueItems;
     public String path, operationId, returnType, returnFormat, httpMethod, returnBaseType,
             returnContainer, summary, unescapedNotes, notes, baseName, defaultResponse; 
+=======
+            isRestful, isDeprecated, isCallbackRequest;
+    public String path, operationId, returnType, httpMethod, returnBaseType,
+            returnContainer, summary, unescapedNotes, notes, baseName, defaultResponse;
+>>>>>>> ooof
     public CodegenDiscriminator discriminator;
     public List<Map<String, String>> consumes, produces, prioritizedContentTypes;
     public List<CodegenServer> servers = new ArrayList<CodegenServer>();
@@ -270,7 +276,10 @@ public class CodegenOperation {
         sb.append(", isRestful=").append(isRestful);
         sb.append(", isDeprecated=").append(isDeprecated);
         sb.append(", isCallbackRequest=").append(isCallbackRequest);
+<<<<<<< HEAD
         sb.append(", uniqueItems='").append(uniqueItems);
+=======
+>>>>>>> ooof
         sb.append(", path='").append(path).append('\'');
         sb.append(", operationId='").append(operationId).append('\'');
         sb.append(", returnType='").append(returnType).append('\'');
@@ -344,7 +353,10 @@ public class CodegenOperation {
                 isRestful == that.isRestful &&
                 isDeprecated == that.isDeprecated &&
                 isCallbackRequest == that.isCallbackRequest &&
+<<<<<<< HEAD
                 uniqueItems == that.uniqueItems &&
+=======
+>>>>>>> ooof
                 Objects.equals(responseHeaders, that.responseHeaders) &&
                 Objects.equals(path, that.path) &&
                 Objects.equals(operationId, that.operationId) &&
@@ -395,9 +407,15 @@ public class CodegenOperation {
                 hasRequiredParams, returnTypeIsPrimitive, returnSimpleType, subresourceOperation, isMapContainer,
                 isListContainer, isMultipart, hasMore, isResponseBinary, isResponseFile, hasReference, isRestfulIndex,
                 isRestfulShow, isRestfulCreate, isRestfulUpdate, isRestfulDestroy, isRestful, isDeprecated,
+<<<<<<< HEAD
                 isCallbackRequest, uniqueItems, path, operationId, returnType, httpMethod, returnBaseType,
                 returnContainer, summary, unescapedNotes, notes, baseName, defaultResponse, discriminator, consumes,
                 produces, prioritizedContentTypes, servers, bodyParam, allParams, bodyParams, pathParams, queryParams,
+=======
+                isCallbackRequest, path, operationId, returnType, httpMethod, returnBaseType, returnContainer,
+                summary, unescapedNotes, notes, baseName, defaultResponse, discriminator, consumes, produces,
+                prioritizedContentTypes, servers, bodyParam, allParams, bodyParams, pathParams, queryParams,
+>>>>>>> ooof
                 headerParams, formParams, cookieParams, requiredParams, optionalParams, authMethods, tags,
                 responses, callbacks, imports, examples, requestBodyExamples, externalDocs, vendorExtensions,
                 nickname, operationIdOriginal, operationIdLowerCase, operationIdCamelCase, operationIdSnakeCase);

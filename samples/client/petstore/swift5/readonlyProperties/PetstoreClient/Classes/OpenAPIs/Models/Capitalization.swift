@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 public struct Capitalization: Codable { 
 
+=======
+public struct Capitalization: Codable {
+>>>>>>> ooof
 
     public private(set) var smallCamel: String?
     public private(set) var capitalCamel: String?
@@ -28,7 +32,11 @@ public struct Capitalization: Codable {
         self.ATT_NAME = ATT_NAME
     }
 
+<<<<<<< HEAD
     public enum CodingKeys: String, CodingKey, CaseIterable { 
+=======
+    public enum CodingKeys: String, CodingKey, CaseIterable {
+>>>>>>> ooof
         case smallCamel
         case capitalCamel = "CapitalCamel"
         case smallSnake = "small_Snake"

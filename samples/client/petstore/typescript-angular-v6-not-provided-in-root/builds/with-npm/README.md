@@ -57,6 +57,10 @@ In your Angular project:
 import { ApiModule } from '@openapitools/typescript-angular-petstore';
 import { HttpClientModule } from '@angular/common/http';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
 @NgModule({
     imports: [
         ApiModule,
@@ -136,6 +140,10 @@ import { ApiModule } from 'my-api-path';
 import { ApiModule as OtherApiModule } from 'my-other-api-path';
 import { HttpClientModule } from '@angular/common/http';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ooof
 @NgModule({
   imports: [
     ApiModule,

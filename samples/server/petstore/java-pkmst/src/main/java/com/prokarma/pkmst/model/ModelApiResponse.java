@@ -15,7 +15,11 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @ApiModel(description = "Describes the result of uploading an image resource")
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPKMSTServerCodegen")
+=======
+
+>>>>>>> ooof
 public class ModelApiResponse   {
   @JsonProperty("code")
   private Integer code;

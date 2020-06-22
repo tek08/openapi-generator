@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 public struct Client: Codable { 
 
+=======
+public struct Client: Codable {
+>>>>>>> ooof
 
     public private(set) var client: String?
 

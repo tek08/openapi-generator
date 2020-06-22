@@ -47,6 +47,7 @@ public class SemVer implements Comparable<SemVer> {
     public String toString() {
         return major + "." + minor + "." + revision;
     }
+<<<<<<< HEAD
 
     @Override
     public int hashCode() {
@@ -76,4 +77,6 @@ public class SemVer implements Comparable<SemVer> {
         return true;
     }
 
+=======
+>>>>>>> ooof
 }

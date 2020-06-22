@@ -15,17 +15,26 @@
  */
 
 package org.openapitools.codegen;
+<<<<<<< HEAD
 import org.openapitools.codegen.templating.TemplateManagerOptions;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+=======
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+>>>>>>> ooof
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+<<<<<<< HEAD
 /**
  * Decorates {@link DefaultCodegen and tracks some internal calls}.
  *
@@ -59,6 +68,41 @@ public class MockDefaultGenerator extends DefaultGenerator {
         TemplateManagerOptions templateManagerOptions = new TemplateManagerOptions(this.config.isEnableMinimalUpdate(),this.config.isSkipOverwrite());
         this.templateProcessor = new ObservableDryRunTemplateManager(templateManagerOptions);
         return o;
+=======
+public class MockDefaultGenerator extends DefaultGenerator {
+    public static final String INPUT_STREAM_CONTENT = "INPUT STREAM CONTENT";
+    private List<WrittenTemplateBasedFile> templateBasedFiles = new ArrayList<>();
+    private Map<String, String> files = new HashMap<>();
+
+    @Override
+    protected File processTemplateToFile(Map<String, Object> templateData, String templateName, String outputFilename) throws IOException {
+        templateBasedFiles.add(new WrittenTemplateBasedFile(templateData, templateName, normalizePath(outputFilename)));
+        return super.processTemplateToFile(templateData, templateName, outputFilename);
+    }
+
+    @Override
+    protected File writeInputStreamToFile(String filename, InputStream in, String templateFile) throws FileNotFoundException, IOException {
+        files.put(normalizePath(filename), INPUT_STREAM_CONTENT + ": from template '" + templateFile + "'");
+        return new File(filename);
+    }
+
+    @Override
+    public File writeToFile(String filename, String contents) throws IOException {
+        files.put(normalizePath(filename), contents);
+        return new File(filename);
+    }
+
+    private String normalizePath(String filename) {
+        return filename.replace("\\", "/").replace("//", "/");
+    }
+
+    public List<WrittenTemplateBasedFile> getTemplateBasedFiles() {
+        return templateBasedFiles;
+    }
+
+    public Map<String, String> getFiles() {
+        return files;
+>>>>>>> ooof
     }
 
     public static class WrittenTemplateBasedFile {
@@ -92,6 +136,7 @@ public class MockDefaultGenerator extends DefaultGenerator {
                     "templateData=" + templateData + "]";
         }
     }
+<<<<<<< HEAD
 
     class ObservableDryRunTemplateManager extends DryRunTemplateManager {
         public ObservableDryRunTemplateManager(TemplateManagerOptions options) {
@@ -122,4 +167,6 @@ public class MockDefaultGenerator extends DefaultGenerator {
             return super.writeToFile(filename, contents);
         }
     }
+=======
+>>>>>>> ooof
 }

@@ -7,9 +7,13 @@
 
 import Foundation
 
+<<<<<<< HEAD
 
 public struct HasOnlyReadOnly: Codable { 
 
+=======
+public struct HasOnlyReadOnly: Codable {
+>>>>>>> ooof
 
     public private(set) var bar: String?
     public private(set) var foo: String?

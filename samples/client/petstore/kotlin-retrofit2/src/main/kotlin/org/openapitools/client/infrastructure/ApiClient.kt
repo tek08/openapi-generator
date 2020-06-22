@@ -1,5 +1,6 @@
 package org.openapitools.client.infrastructure
 
+<<<<<<< HEAD
 import org.apache.oltu.oauth2.client.request.OAuthClientRequest.AuthenticationRequestBuilder
 import org.apache.oltu.oauth2.client.request.OAuthClientRequest.TokenRequestBuilder
 import org.openapitools.client.auth.ApiKeyAuth
@@ -13,10 +14,16 @@ import retrofit2.Retrofit
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.converter.scalars.ScalarsConverterFactory
 import com.squareup.moshi.Moshi
+=======
+import okhttp3.OkHttpClient
+import retrofit2.Retrofit
+import retrofit2.converter.scalars.ScalarsConverterFactory
+>>>>>>> ooof
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 class ApiClient(
     private var baseUrl: String = defaultBasePath,
+<<<<<<< HEAD
     private val okHttpClientBuilder: OkHttpClient.Builder? = null,
     private val serializerBuilder: Moshi.Builder = Serializer.moshiBuilder
 ) {
@@ -44,12 +51,22 @@ class ApiClient(
             }).apply {
                 level = HttpLoggingInterceptor.Level.BODY
             })
+=======
+    private var okHttpClient: OkHttpClient
+) {
+    companion object {
+        @JvmStatic
+        val defaultBasePath: String by lazy {
+            System.getProperties().getProperty("org.openapitools.client.baseUrl", "http://petstore.swagger.io/v2")
+        }
+>>>>>>> ooof
     }
 
     init {
         normalizeBaseUrl()
     }
 
+<<<<<<< HEAD
     constructor(
         baseUrl: String = defaultBasePath,
         okHttpClientBuilder: OkHttpClient.Builder? = null,
@@ -172,6 +189,18 @@ class ApiClient(
 
     fun <S> createService(serviceClass: Class<S>): S {
         return retrofitBuilder.client(clientBuilder.build()).build().create(serviceClass)
+=======
+    val retrofitBuilder: Retrofit.Builder by lazy {
+
+        Retrofit.Builder()
+        .baseUrl(baseUrl)
+        .addConverterFactory(ScalarsConverterFactory.create())
+        .addConverterFactory(MoshiConverterFactory.create(Serializer.moshi))
+    }
+
+    fun <S> createService(serviceClass: Class<S>): S {
+        return retrofitBuilder.client(okHttpClient).build().create(serviceClass)
+>>>>>>> ooof
     }
 
     private fun normalizeBaseUrl() {
@@ -179,6 +208,7 @@ class ApiClient(
             baseUrl += "/"
         }
     }
+<<<<<<< HEAD
 
     private inline fun <T, reified U> Iterable<T>.runOnFirst(callback: U.() -> Unit) {
         for (element in this) {
@@ -195,4 +225,6 @@ class ApiClient(
             System.getProperties().getProperty("org.openapitools.client.baseUrl", "http://petstore.swagger.io/v2")
         }
     }
+=======
+>>>>>>> ooof
 }

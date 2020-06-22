@@ -74,7 +74,11 @@ class InlineObject5(object):
         Additional data to pass to server  # noqa: E501
 
         :param additional_metadata: The additional_metadata of this InlineObject5.  # noqa: E501
+<<<<<<< HEAD
         :type additional_metadata: str
+=======
+        :type: str
+>>>>>>> ooof
         """
 
         self._additional_metadata = additional_metadata
@@ -97,7 +101,11 @@ class InlineObject5(object):
         file to upload  # noqa: E501
 
         :param required_file: The required_file of this InlineObject5.  # noqa: E501
+<<<<<<< HEAD
         :type required_file: file
+=======
+        :type: file
+>>>>>>> ooof
         """
         if self.local_vars_configuration.client_side_validation and required_file is None:  # noqa: E501
             raise ValueError("Invalid value for `required_file`, must not be `None`")  # noqa: E501

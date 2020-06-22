@@ -1,15 +1,26 @@
 {{>partial_header}}
+<<<<<<< HEAD
 #[allow(unused_imports)]
 use std::rc::Rc;
 {{^supportAsync}}use std::borrow::Borrow;{{/supportAsync}}
+=======
+use std::rc::Rc;
+use std::borrow::Borrow;
+#[allow(unused_imports)]
+>>>>>>> ooof
 use std::option::Option;
 
 use reqwest;
 
+<<<<<<< HEAD
 use crate::apis::ResponseContent;
 use super::{Error, configuration};
 
 {{^supportAsync}}
+=======
+use super::{Error, configuration};
+
+>>>>>>> ooof
 pub struct {{{classname}}}Client {
     configuration: Rc<configuration::Configuration>,
 }
@@ -22,6 +33,7 @@ impl {{{classname}}}Client {
     }
 }
 
+<<<<<<< HEAD
 {{/supportAsync}}
 {{#operations}}
 {{#operation}}
@@ -90,25 +102,63 @@ pub enum {{{operationIdCamelCase}}}Error {
 {{/operations}}
 
 {{^supportAsync}}
+=======
+{{#operations}}
+{{#operation}}
+    {{#vendorExtensions.x-group-parameters}}
+    {{#allParams}}
+    {{#-first}}
+    /// struct for passing parameters to the method `{{operationId}}`
+    #[derive(Clone, Debug)]
+    struct {{{operationIdCamelCase}}}Params {
+    {{/-first}}
+        {{#description}}
+        /// {{{.}}}
+        {{/description}}
+        {{{paramName}}}: {{^required}}Option<{{/required}}{{#required}}{{#isNullable}}Option<{{/isNullable}}{{/required}}{{#isString}}String{{/isString}}{{#isUuid}}String{{/isUuid}}{{^isString}}{{^isUuid}}{{^isPrimitiveType}}{{^isContainer}}crate::models::{{/isContainer}}{{/isPrimitiveType}}{{{dataType}}}{{/isUuid}}{{/isString}}{{^required}}>{{/required}}{{#required}}{{#isNullable}}>{{/isNullable}}{{/required}}{{#hasMore}}, {{/hasMore}}
+    {{#-last}}
+    }
+
+    {{/-last}}
+    {{/allParams}}
+    {{/vendorExtensions.x-group-parameters}}
+{{/operation}}
+{{/operations}}
+
+>>>>>>> ooof
 pub trait {{{classname}}} {
 {{#operations}}
 {{#operation}}
     {{#vendorExtensions.x-group-parameters}}
+<<<<<<< HEAD
     fn {{{operationId}}}(&self{{#allParams}}{{#-first}}, params: {{{operationIdCamelCase}}}Params{{/-first}}{{/allParams}}) -> Result<{{#supportMultipleResponses}}ResponseContent<{{{operationIdCamelCase}}}Success>{{/supportMultipleResponses}}{{^supportMultipleResponses}}{{^returnType}}(){{/returnType}}{{#returnType}}{{{returnType}}}{{/returnType}}{{/supportMultipleResponses}}, Error<{{{operationIdCamelCase}}}Error>>;
     {{/vendorExtensions.x-group-parameters}}
     {{^vendorExtensions.x-group-parameters}}
     fn {{{operationId}}}(&self, {{#allParams}}{{{paramName}}}: {{^required}}Option<{{/required}}{{#required}}{{#isNullable}}Option<{{/isNullable}}{{/required}}{{#isString}}&str{{/isString}}{{#isUuid}}&str{{/isUuid}}{{^isString}}{{^isUuid}}{{^isPrimitiveType}}{{^isContainer}}crate::models::{{/isContainer}}{{/isPrimitiveType}}{{{dataType}}}{{/isUuid}}{{/isString}}{{^required}}>{{/required}}{{#required}}{{#isNullable}}>{{/isNullable}}{{/required}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) -> Result<{{#supportMultipleResponses}}ResponseContent<{{{operationIdCamelCase}}}Success>{{/supportMultipleResponses}}{{^supportMultipleResponses}}{{^returnType}}(){{/returnType}}{{#returnType}}{{{returnType}}}{{/returnType}}{{/supportMultipleResponses}}, Error<{{{operationIdCamelCase}}}Error>>;
+=======
+    fn {{{operationId}}}(&self{{#allParams}}{{#-first}}, params: {{{operationIdCamelCase}}}Params{{/-first}}{{/allParams}}) -> Result<{{^returnType}}(){{/returnType}}{{#returnType}}{{{returnType}}}{{/returnType}}, Error>;
+    {{/vendorExtensions.x-group-parameters}}
+    {{^vendorExtensions.x-group-parameters}}
+    fn {{{operationId}}}(&self, {{#allParams}}{{{paramName}}}: {{^required}}Option<{{/required}}{{#required}}{{#isNullable}}Option<{{/isNullable}}{{/required}}{{#isString}}&str{{/isString}}{{#isUuid}}&str{{/isUuid}}{{^isString}}{{^isUuid}}{{^isPrimitiveType}}{{^isContainer}}crate::models::{{/isContainer}}{{/isPrimitiveType}}{{{dataType}}}{{/isUuid}}{{/isString}}{{^required}}>{{/required}}{{#required}}{{#isNullable}}>{{/isNullable}}{{/required}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) -> Result<{{^returnType}}(){{/returnType}}{{#returnType}}{{{returnType}}}{{/returnType}}, Error>;
+>>>>>>> ooof
     {{/vendorExtensions.x-group-parameters}}
 {{/operation}}
 {{/operations}}
 }
 
 impl {{{classname}}} for {{{classname}}}Client {
+<<<<<<< HEAD
 {{/supportAsync}}
 {{#operations}}
 {{#operation}}
     {{#vendorExtensions.x-group-parameters}}
     {{#supportAsync}}pub async {{/supportAsync}}fn {{{operationId}}}({{^supportAsync}}&self{{/supportAsync}}{{#supportAsync}}configuration: &configuration::Configuration{{/supportAsync}}{{#allParams}}{{#-first}}, params: {{{operationIdCamelCase}}}Params{{/-first}}{{/allParams}}) -> Result<{{#supportMultipleResponses}}ResponseContent<{{{operationIdCamelCase}}}Success>{{/supportMultipleResponses}}{{^supportMultipleResponses}}{{^returnType}}(){{/returnType}}{{#returnType}}{{{returnType}}}{{/returnType}}{{/supportMultipleResponses}}, Error<{{{operationIdCamelCase}}}Error>> {
+=======
+{{#operations}}
+{{#operation}}
+    {{#vendorExtensions.x-group-parameters}}
+    fn {{{operationId}}}(&self{{#allParams}}{{#-first}}, params: {{{operationIdCamelCase}}}Params{{/-first}}{{/allParams}}) -> Result<{{^returnType}}(){{/returnType}}{{#returnType}}{{{returnType}}}{{/returnType}}, Error> {
+>>>>>>> ooof
         // unbox the parameters
         {{#allParams}}
         let {{paramName}} = params.{{paramName}};
@@ -116,11 +166,17 @@ impl {{{classname}}} for {{{classname}}}Client {
 
     {{/vendorExtensions.x-group-parameters}}
     {{^vendorExtensions.x-group-parameters}}
+<<<<<<< HEAD
     {{#supportAsync}}pub async {{/supportAsync}}fn {{{operationId}}}({{^supportAsync}}&self{{/supportAsync}}{{#supportAsync}}configuration: &configuration::Configuration{{/supportAsync}}, {{#allParams}}{{{paramName}}}: {{^required}}Option<{{/required}}{{#required}}{{#isNullable}}Option<{{/isNullable}}{{/required}}{{#isString}}&str{{/isString}}{{#isUuid}}&str{{/isUuid}}{{^isString}}{{^isUuid}}{{^isPrimitiveType}}{{^isContainer}}crate::models::{{/isContainer}}{{/isPrimitiveType}}{{{dataType}}}{{/isUuid}}{{/isString}}{{^required}}>{{/required}}{{#required}}{{#isNullable}}>{{/isNullable}}{{/required}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) -> Result<{{#supportMultipleResponses}}ResponseContent<{{{operationIdCamelCase}}}Success>{{/supportMultipleResponses}}{{^supportMultipleResponses}}{{^returnType}}(){{/returnType}}{{#returnType}}{{{returnType}}}{{/returnType}}{{/supportMultipleResponses}}, Error<{{{operationIdCamelCase}}}Error>> {
     {{/vendorExtensions.x-group-parameters}}
         {{^supportAsync}}
         let configuration: &configuration::Configuration = self.configuration.borrow();
         {{/supportAsync}}
+=======
+    fn {{{operationId}}}(&self, {{#allParams}}{{{paramName}}}: {{^required}}Option<{{/required}}{{#required}}{{#isNullable}}Option<{{/isNullable}}{{/required}}{{#isString}}&str{{/isString}}{{#isUuid}}&str{{/isUuid}}{{^isString}}{{^isUuid}}{{^isPrimitiveType}}{{^isContainer}}crate::models::{{/isContainer}}{{/isPrimitiveType}}{{{dataType}}}{{/isUuid}}{{/isString}}{{^required}}>{{/required}}{{#required}}{{#isNullable}}>{{/isNullable}}{{/required}}{{#hasMore}}, {{/hasMore}}{{/allParams}}) -> Result<{{^returnType}}(){{/returnType}}{{#returnType}}{{{returnType}}}{{/returnType}}, Error> {
+    {{/vendorExtensions.x-group-parameters}}
+        let configuration: &configuration::Configuration = self.configuration.borrow();
+>>>>>>> ooof
         let client = &configuration.client;
 
         let uri_str = format!("{}{{{path}}}", configuration.base_path{{#pathParams}}, {{{baseName}}}={{#isString}}crate::apis::urlencode({{/isString}}{{{paramName}}}{{^required}}.unwrap(){{/required}}{{#required}}{{#isNullable}}.unwrap(){{/isNullable}}{{/required}}{{#isListContainer}}.join(",").as_ref(){{/isListContainer}}{{#isString}}){{/isString}}{{/pathParams}});
@@ -213,7 +269,10 @@ impl {{{classname}}} for {{{classname}}}Client {
         let mut form = reqwest::multipart::Form::new();
         {{#formParams}}
         {{#isFile}}
+<<<<<<< HEAD
         {{^supportAsync}}
+=======
+>>>>>>> ooof
         {{#required}}
         {{^isNullable}}
         form = form.file("{{{baseName}}}", {{{paramName}}})?;
@@ -230,10 +289,13 @@ impl {{{classname}}} for {{{classname}}}Client {
             form = form.file("{{{baseName}}}", param_value)?;
         }
         {{/required}}
+<<<<<<< HEAD
         {{/supportAsync}}
         {{#supportAsync}}
         // TODO: support file upload for '{{{baseName}}}' parameter
         {{/supportAsync}}
+=======
+>>>>>>> ooof
         {{/isFile}}
         {{^isFile}}
         {{#required}}
@@ -307,6 +369,7 @@ impl {{{classname}}} for {{{classname}}}Client {
         {{/bodyParams}}
         {{/hasBodyParam}}
 
+<<<<<<< HEAD
         let req = req_builder.build()?;
         let {{^supportAsync}}mut {{/supportAsync}}resp = client.execute(req){{#supportAsync}}.await{{/supportAsync}}?;
 
@@ -332,10 +395,26 @@ impl {{{classname}}} for {{{classname}}}Client {
             let error = ResponseContent { status, content, entity };
             Err(Error::ResponseError(error))
         }
+=======
+        // send request
+        let req = req_builder.build()?;
+
+        {{^returnType}}
+        client.execute(req)?.error_for_status()?;
+        Ok(())
+        {{/returnType}}
+        {{#returnType}}
+        Ok(client.execute(req)?.error_for_status()?.json()?)
+        {{/returnType}}
+>>>>>>> ooof
     }
 
 {{/operation}}
 {{/operations}}
+<<<<<<< HEAD
 {{^supportAsync}}
 }
 {{/supportAsync}}
+=======
+}
+>>>>>>> ooof

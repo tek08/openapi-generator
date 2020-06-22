@@ -33,7 +33,11 @@ import org.hibernate.validator.constraints.*;
   Tag.JSON_PROPERTY_ID,
   Tag.JSON_PROPERTY_NAME
 })
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class Tag {
   public static final String JSON_PROPERTY_ID = "id";
   private Long id;

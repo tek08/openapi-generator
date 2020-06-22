@@ -9,7 +9,11 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * User
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaMSF4JServerCodegen")
+=======
+
+>>>>>>> ooof
 public class User   {
   @JsonProperty("id")
   private Long id;

@@ -14,7 +14,10 @@ import okhttp3.MultipartBody;
 import java.io.File;
 import org.openapitools.client.model.ModelApiResponse;
 import org.openapitools.client.model.Pet;
+<<<<<<< HEAD
 import java.util.Set;
+=======
+>>>>>>> ooof
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -66,10 +69,17 @@ public interface PetApi {
    * Finds Pets by tags
    * Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
    * @param tags Tags to filter by (required)
+<<<<<<< HEAD
    * @return Call&lt;Set&lt;Pet&gt;&gt;
    */
   @GET("pet/findByTags")
   CompletionStage<Response<Set<Pet>>> findPetsByTags(
+=======
+   * @return Call&lt;List&lt;Pet&gt;&gt;
+   */
+  @GET("pet/findByTags")
+  CompletionStage<Response<List<Pet>>> findPetsByTags(
+>>>>>>> ooof
     @retrofit2.http.Query("tags") CSVParams tags
   );
 

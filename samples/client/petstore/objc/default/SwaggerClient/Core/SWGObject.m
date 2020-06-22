@@ -8,6 +8,7 @@
  */
 - (instancetype)initWithDictionary:(NSDictionary *)dict error:(NSError **)err {
     static NSMutableSet *classNames;
+<<<<<<< HEAD
     static NSObject *lock;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -17,6 +18,15 @@
     
     BOOL initSync;
     @synchronized(lock)
+=======
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        classNames = [NSMutableSet new];
+    });
+    
+    BOOL initSync;
+    @synchronized([self class])
+>>>>>>> ooof
     {
         NSString *className = NSStringFromClass([self class]);
         initSync = ![classNames containsObject:className];

@@ -3,9 +3,13 @@ package org.openapitools.model;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+=======
+import java.util.List;
+>>>>>>> ooof
 import org.openapitools.model.Category;
 import org.openapitools.model.Tag;
 import java.io.Serializable;
@@ -20,12 +24,20 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class Pet  implements Serializable {
+=======
+public class Pet  implements Serializable {
+>>>>>>> ooof
   
   private @Valid Long id;
   private @Valid Category category;
   private @Valid String name;
+<<<<<<< HEAD
   private @Valid Set<String> photoUrls = new LinkedHashSet<String>();
+=======
+  private @Valid List<String> photoUrls = new ArrayList<String>();
+>>>>>>> ooof
   private @Valid List<Tag> tags = new ArrayList<Tag>();
 
 public enum StatusEnum {
@@ -119,7 +131,11 @@ public enum StatusEnum {
     this.name = name;
   }/**
    **/
+<<<<<<< HEAD
   public Pet photoUrls(Set<String> photoUrls) {
+=======
+  public Pet photoUrls(List<String> photoUrls) {
+>>>>>>> ooof
     this.photoUrls = photoUrls;
     return this;
   }
@@ -130,11 +146,19 @@ public enum StatusEnum {
   @ApiModelProperty(required = true, value = "")
   @JsonProperty("photoUrls")
   @NotNull
+<<<<<<< HEAD
   public Set<String> getPhotoUrls() {
     return photoUrls;
   }
 
   public void setPhotoUrls(Set<String> photoUrls) {
+=======
+  public List<String> getPhotoUrls() {
+    return photoUrls;
+  }
+
+  public void setPhotoUrls(List<String> photoUrls) {
+>>>>>>> ooof
     this.photoUrls = photoUrls;
   }/**
    **/

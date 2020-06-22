@@ -24,7 +24,11 @@ import java.util.Map;
 import java.util.List;
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 public class HttpBasicAuth implements Authentication {
   private String username;
   private String password;

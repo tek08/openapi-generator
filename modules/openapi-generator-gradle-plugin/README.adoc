@@ -135,10 +135,17 @@ apply plugin: 'org.openapi.generator'
 |None
 |Adds authorization headers when fetching the OpenAPI definitions remotely. Pass in a URL-encoded string of name:header with a comma separating multiple values.
 
+<<<<<<< HEAD
 |globalProperties
 |Map(String,String)
 |None
 |Sets specified global properties.
+=======
+|systemProperties
+|Map(String,String)
+|None
+|Sets specified system properties.
+>>>>>>> ooof
 
 |configFile
 |String
@@ -346,12 +353,20 @@ For more control over generation of individual files, configure an ignore file a
 
 [NOTE]
 ====
+<<<<<<< HEAD
 When configuring `globalProperties` in order to perform selective generation you can disable generation of some parts by providing `"false"` value:
+=======
+When configuring `systemProperties` in order to perform selective generation you can disable generation of some parts by providing `"false"` value:
+>>>>>>> ooof
 [source,groovy]
 ----
 openApiGenerate {
     // other settings omitted
+<<<<<<< HEAD
     globalProperties = [
+=======
+    systemProperties = [
+>>>>>>> ooof
         modelDocs: "false",
         apis: "false"
     ]
@@ -362,7 +377,11 @@ When enabling generation of only specific parts you either have to provide CSV l
 ----
 openApiGenerate {
     // other settings omitted
+<<<<<<< HEAD
     globalProperties = [
+=======
+    systemProperties = [
+>>>>>>> ooof
         apis: "",
         models: "User,Pet"
     ]
@@ -609,7 +628,11 @@ task buildKotlinClient(type: org.openapitools.generator.gradle.plugin.tasks.Gene
     configOptions = [
             dateLibrary: "java8"
     ]
+<<<<<<< HEAD
     globalProperties = [
+=======
+    systemProperties = [
+>>>>>>> ooof
             modelDocs: "false"
     ]
 }

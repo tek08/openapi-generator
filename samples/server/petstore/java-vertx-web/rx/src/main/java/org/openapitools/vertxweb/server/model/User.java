@@ -7,7 +7,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /**
  * A User who is purchasing from the pet store
  **/
+<<<<<<< HEAD
 @JsonInclude(JsonInclude.Include.NON_NULL)
+=======
+@JsonInclude(JsonInclude.Include.NON_NULL) 
+>>>>>>> ooof
 public class User   {
   
   private Long id;

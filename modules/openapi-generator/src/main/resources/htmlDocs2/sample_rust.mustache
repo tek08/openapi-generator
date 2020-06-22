@@ -6,6 +6,11 @@ pub fn main() {
 
     let mut context = {{classname}}::Context::default();
     let result = client.{{operationId}}({{#allParams}}{{paramName}}, {{/allParams}}&context).wait();
+<<<<<<< HEAD
 
     println!("{:?}", result);
+=======
+    println!("{:?}", result);
+
+>>>>>>> ooof
 }

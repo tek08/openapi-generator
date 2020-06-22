@@ -11,6 +11,7 @@
 
 
 from __future__ import absolute_import
+<<<<<<< HEAD
 import sys
 import unittest
 
@@ -21,6 +22,12 @@ except ImportError:
     animal = sys.modules[
         'petstore_api.model.animal']
 from petstore_api.model.mixed_properties_and_additional_properties_class import MixedPropertiesAndAdditionalPropertiesClass
+=======
+
+import unittest
+
+import petstore_api
+>>>>>>> ooof
 
 
 class TestMixedPropertiesAndAdditionalPropertiesClass(unittest.TestCase):
@@ -35,7 +42,11 @@ class TestMixedPropertiesAndAdditionalPropertiesClass(unittest.TestCase):
     def testMixedPropertiesAndAdditionalPropertiesClass(self):
         """Test MixedPropertiesAndAdditionalPropertiesClass"""
         # FIXME: construct object with mandatory attributes with example values
+<<<<<<< HEAD
         # model = MixedPropertiesAndAdditionalPropertiesClass()  # noqa: E501
+=======
+        # model = petstore_api.MixedPropertiesAndAdditionalPropertiesClass()  # noqa: E501
+>>>>>>> ooof
         pass
 
 

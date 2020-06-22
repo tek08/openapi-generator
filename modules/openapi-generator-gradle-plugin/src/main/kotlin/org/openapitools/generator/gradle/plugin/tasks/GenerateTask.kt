@@ -97,10 +97,17 @@ open class GenerateTask : DefaultTask() {
     val auth = project.objects.property<String>()
 
     /**
+<<<<<<< HEAD
      * Sets specified global properties.
      */
     @get:Internal
     val globalProperties = project.objects.mapProperty<String, String>()
+=======
+     * Sets specified system properties.
+     */
+    @get:Internal
+    val systemProperties = project.objects.mapProperty<String, String>()
+>>>>>>> ooof
 
     /**
      * Path to json configuration file.
@@ -415,9 +422,15 @@ open class GenerateTask : DefaultTask() {
         } else CodegenConfigurator()
 
         try {
+<<<<<<< HEAD
             if (globalProperties.isPresent) {
                 globalProperties.get().forEach { (key, value) ->
                     configurator.addGlobalProperty(key, value)
+=======
+            if (systemProperties.isPresent) {
+                systemProperties.get().forEach { (key, value) ->
+                    configurator.addSystemProperty(key, value)
+>>>>>>> ooof
                 }
             }
 
@@ -582,9 +595,16 @@ open class GenerateTask : DefaultTask() {
                 }
             }
 
+<<<<<<< HEAD
             if (globalProperties.isPresent) {
                 globalProperties.get().forEach { entry ->
                     configurator.addGlobalProperty(entry.key, entry.value)
+=======
+            if (systemProperties.isPresent) {
+                // TODO: rename to globalProperties in 5.0
+                systemProperties.get().forEach { entry ->
+                    configurator.addSystemProperty(entry.key, entry.value)
+>>>>>>> ooof
                 }
             }
 

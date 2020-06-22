@@ -14,7 +14,10 @@ package org.openapitools.client.models
 
 import com.squareup.moshi.Json
 import java.io.Serializable
+<<<<<<< HEAD
 
+=======
+>>>>>>> ooof
 /**
  * A User who is purchasing from the pet store
  * @param id 
@@ -46,9 +49,15 @@ data class User (
     @Json(name = "userStatus")
     val userStatus: kotlin.Int? = null
 ) : Serializable {
+<<<<<<< HEAD
     companion object {
         private const val serialVersionUID: Long = 123
     }
+=======
+	companion object {
+		private const val serialVersionUID: Long = 123
+	}
+>>>>>>> ooof
 
 }
 

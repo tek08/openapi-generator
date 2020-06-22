@@ -28,7 +28,11 @@ import javax.validation.constraints.*;
 @Api(description = "the pet API")
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSCXFCDIServerCodegen")
+=======
+
+>>>>>>> ooof
 
 public class PetApi  {
 

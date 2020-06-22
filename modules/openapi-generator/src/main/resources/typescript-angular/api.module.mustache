@@ -1,6 +1,11 @@
 import { NgModule, ModuleWithProviders, SkipSelf, Optional } from '@angular/core';
 import { Configuration } from './configuration';
+<<<<<<< HEAD
 import { HttpClient } from '@angular/common/http';
+=======
+{{#useHttpClient}}import { HttpClient } from '@angular/common/http';{{/useHttpClient}}
+{{^useHttpClient}}import { Http } from '@angular/http';{{/useHttpClient}}
+>>>>>>> ooof
 
 {{#apiInfo}}
 {{#apis}}
@@ -25,12 +30,20 @@ export class {{apiModuleClassName}} {
     }
 
     constructor( @Optional() @SkipSelf() parentModule: {{apiModuleClassName}},
+<<<<<<< HEAD
                  @Optional() http: HttpClient) {
+=======
+                 @Optional() http: {{#useHttpClient}}HttpClient{{/useHttpClient}}{{^useHttpClient}}Http{{/useHttpClient}}) {
+>>>>>>> ooof
         if (parentModule) {
             throw new Error('{{apiModuleClassName}} is already loaded. Import in your base AppModule only.');
         }
         if (!http) {
+<<<<<<< HEAD
             throw new Error('You need to import the HttpClientModule in your AppModule! \n' +
+=======
+            throw new Error('You need to import the {{#useHttpClient}}HttpClientModule{{/useHttpClient}}{{^useHttpClient}}HttpModule{{/useHttpClient}} in your AppModule! \n' +
+>>>>>>> ooof
             'See also https://github.com/angular/angular/issues/20575');
         }
     }

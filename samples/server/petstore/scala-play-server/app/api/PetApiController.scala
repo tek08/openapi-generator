@@ -15,6 +15,7 @@ class PetApiController @Inject()(cc: ControllerComponents, api: PetApi) extends 
     * POST /v2/pet
     */
   def addPet(): Action[AnyContent] = Action { request =>
+<<<<<<< HEAD
     def executeApi(): Pet = {
       val pet = request.body.asJson.map(_.as[Pet]).getOrElse {
         throw new OpenApiExceptions.MissingRequiredParameterException("body", "pet")
@@ -25,6 +26,17 @@ class PetApiController @Inject()(cc: ControllerComponents, api: PetApi) extends 
     val result = executeApi()
     val json = Json.toJson(result)
     Ok(json)
+=======
+    def executeApi(): Unit = {
+      val body = request.body.asJson.map(_.as[Pet]).getOrElse {
+        throw new OpenApiExceptions.MissingRequiredParameterException("body", "body")
+      }
+      api.addPet(body)
+    }
+
+    executeApi()
+    Ok
+>>>>>>> ooof
   }
 
   /**
@@ -96,6 +108,7 @@ class PetApiController @Inject()(cc: ControllerComponents, api: PetApi) extends 
     * PUT /v2/pet
     */
   def updatePet(): Action[AnyContent] = Action { request =>
+<<<<<<< HEAD
     def executeApi(): Pet = {
       val pet = request.body.asJson.map(_.as[Pet]).getOrElse {
         throw new OpenApiExceptions.MissingRequiredParameterException("body", "pet")
@@ -106,6 +119,17 @@ class PetApiController @Inject()(cc: ControllerComponents, api: PetApi) extends 
     val result = executeApi()
     val json = Json.toJson(result)
     Ok(json)
+=======
+    def executeApi(): Unit = {
+      val body = request.body.asJson.map(_.as[Pet]).getOrElse {
+        throw new OpenApiExceptions.MissingRequiredParameterException("body", "body")
+      }
+      api.updatePet(body)
+    }
+
+    executeApi()
+    Ok
+>>>>>>> ooof
   }
 
   /**

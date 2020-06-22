@@ -10,7 +10,11 @@ Method | HTTP request | Description
 
 ## testClassname
 
+<<<<<<< HEAD
 > CompletableFuture<Client> testClassname(body)
+=======
+> Client testClassname(body)
+>>>>>>> ooof
 
 To test class name in snake case
 
@@ -26,7 +30,10 @@ import org.openapitools.client.Configuration;
 import org.openapitools.client.auth.*;
 import org.openapitools.client.models.*;
 import org.openapitools.client.api.FakeClassnameTags123Api;
+<<<<<<< HEAD
 import java.util.concurrent.CompletableFuture;
+=======
+>>>>>>> ooof
 
 public class Example {
     public static void main(String[] args) {
@@ -42,8 +49,12 @@ public class Example {
         FakeClassnameTags123Api apiInstance = new FakeClassnameTags123Api(defaultClient);
         Client body = new Client(); // Client | client model
         try {
+<<<<<<< HEAD
             CompletableFuture<Client> result = apiInstance.testClassname(body);
 
+=======
+            Client result = apiInstance.testClassname(body);
+>>>>>>> ooof
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling FakeClassnameTags123Api#testClassname");
@@ -65,8 +76,12 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+<<<<<<< HEAD
 CompletableFuture<[**Client**](Client.md)>
 
+=======
+[**Client**](Client.md)
+>>>>>>> ooof
 
 ### Authorization
 

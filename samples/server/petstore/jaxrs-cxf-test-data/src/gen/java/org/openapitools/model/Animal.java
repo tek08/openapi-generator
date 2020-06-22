@@ -20,9 +20,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonSubTypes({
   @JsonSubTypes.Type(value = Dog.class, name = "Dog"),
   @JsonSubTypes.Type(value = Cat.class, name = "Cat"),
+<<<<<<< HEAD
   @JsonSubTypes.Type(value = BigCat.class, name = "BigCat"),
 })
 
+=======
+})
+>>>>>>> ooof
 public class Animal  {
   
   @ApiModelProperty(required = true, value = "")

@@ -10,7 +10,11 @@ import javax.validation.constraints.*;
 /**
  * AdditionalPropertiesObject
  */
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaPlayFrameworkCodegen")
+=======
+
+>>>>>>> ooof
 @SuppressWarnings({"UnusedReturnValue", "WeakerAccess"})
 public class AdditionalPropertiesObject extends HashMap<String, Map>  {
   @JsonProperty("name")

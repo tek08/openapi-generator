@@ -15,7 +15,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaJAXRSSpecServerCodegen")public class OuterComposite  implements Serializable {
+=======
+public class OuterComposite  implements Serializable {
+>>>>>>> ooof
   
   private @Valid BigDecimal myNumber;
   private @Valid String myString;

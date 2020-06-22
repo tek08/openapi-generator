@@ -10,7 +10,10 @@ import six  # noqa: F401
 import nulltype  # noqa: F401
 
 from {{packageName}}.model_utils import (  # noqa: F401
+<<<<<<< HEAD
     ApiTypeError,
+=======
+>>>>>>> ooof
     ModelComposed,
     ModelNormal,
     ModelSimple,
@@ -37,12 +40,16 @@ from {{packageName}}.model_utils import (  # noqa: F401
 {{> python-experimental/model_templates/model_simple }}
 {{/isAlias}}
 {{^isAlias}}
+<<<<<<< HEAD
 {{#isArrayModel}}
 {{> python-experimental/model_templates/model_simple }}
 {{/isArrayModel}}
 {{^isArrayModel}}
 {{> python-experimental/model_templates/model_normal }}
 {{/isArrayModel}}
+=======
+{{> python-experimental/model_templates/model_normal }}
+>>>>>>> ooof
 {{/isAlias}}
 {{/interfaces}}
 {{#interfaces}}

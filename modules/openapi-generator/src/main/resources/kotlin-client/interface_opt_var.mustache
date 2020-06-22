@@ -6,7 +6,11 @@
     @Json(name = "{{{vendorExtensions.x-base-name-literal}}}")
     {{/moshi}}
     {{#gson}}
+<<<<<<< HEAD
     @get:SerializedName("{{{vendorExtensions.x-base-name-literal}}}")
+=======
+    @SerializedName("{{{vendorExtensions.x-base-name-literal}}}")
+>>>>>>> ooof
     {{/gson}}
     {{#jackson}}
     @get:JsonProperty("{{{vendorExtensions.x-base-name-literal}}}")

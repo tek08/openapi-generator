@@ -13,7 +13,11 @@ import javax.validation.constraints.*;
  * A tag for a pet
  */
 @ApiModel(description = "A tag for a pet")
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
+=======
+
+>>>>>>> ooof
 public class Tag   {
   @JsonProperty("id")
   private Long id;

@@ -98,7 +98,11 @@ class OpenApiGeneratorPlugin : Plugin<Project> {
                     inputSpec.set(generate.inputSpec)
                     templateDir.set(generate.templateDir)
                     auth.set(generate.auth)
+<<<<<<< HEAD
                     globalProperties.set(generate.globalProperties)
+=======
+                    systemProperties.set(generate.systemProperties)
+>>>>>>> ooof
                     configFile.set(generate.configFile)
                     skipOverwrite.set(generate.skipOverwrite)
                     packageName.set(generate.packageName)

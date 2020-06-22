@@ -26,7 +26,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
+<<<<<<< HEAD
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
+=======
+
+>>>>>>> ooof
 @Component("org.openapitools.client.api.AnotherFakeApi")
 public class AnotherFakeApi {
     private ApiClient apiClient;

@@ -1,22 +1,43 @@
 package org.openapitools.codegen.kotlin.spring;
 
+<<<<<<< HEAD
 import com.google.common.collect.testing.Helpers;
 
 import org.apache.commons.io.FileUtils;
 import org.openapitools.codegen.*;
 import org.openapitools.codegen.kotlin.KotlinTestUtils;
 import org.openapitools.codegen.languages.KotlinSpringServerCodegen;
+=======
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.parser.OpenAPIParser;
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.servers.Server;
+import io.swagger.v3.parser.core.models.ParseOptions;
+import org.apache.commons.io.FileUtils;
+import org.openapitools.codegen.*;
+import org.openapitools.codegen.config.CodegenConfigurator;
+import org.openapitools.codegen.kotlin.KotlinTestUtils;
+import org.openapitools.codegen.languages.AbstractJavaCodegen;
+import org.openapitools.codegen.languages.JavaClientCodegen;
+import org.openapitools.codegen.languages.KotlinSpringServerCodegen;
+import org.openapitools.codegen.languages.SpringCodegen;
+import org.openapitools.codegen.languages.features.CXFServerFeatures;
+>>>>>>> ooof
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.File;
 import java.nio.file.Files;
 import java.util.Collections;
+<<<<<<< HEAD
 import java.util.List;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.servers.Server;
+=======
+>>>>>>> ooof
 
 public class KotlinSpringServerCodegenTest {
 
@@ -179,6 +200,7 @@ public class KotlinSpringServerCodegenTest {
 
         Assert.assertTrue(codegen.supportingFiles().stream().anyMatch(supportingFile -> supportingFile.templateFile.equals("apiUtil.mustache")));
     }
+<<<<<<< HEAD
 
     @Test(description = "test delegate with tags")
     public void delegateWithTags() throws Exception {
@@ -203,4 +225,6 @@ public class KotlinSpringServerCodegenTest {
             new File(output, "src/main/kotlin/org/openapitools/api/TestV2ApiDelegate.kt")
         );
     }
+=======
+>>>>>>> ooof
 }

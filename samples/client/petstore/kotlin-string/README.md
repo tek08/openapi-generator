@@ -2,7 +2,11 @@
 
 ## Requires
 
+<<<<<<< HEAD
 * Kotlin 1.3.61
+=======
+* Kotlin 1.3.41
+>>>>>>> ooof
 * Gradle 4.9
 
 ## Build
